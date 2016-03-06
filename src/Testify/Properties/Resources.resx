@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AssertionException_InnerExceptionNull" xml:space="preserve">
+    <value>A null inner exception was specified.</value>
+  </data>
+  <data name="AssertionException_ToString" xml:space="preserve">
+    <value>{0}{1}---&gt; (Inner Exception #{2}) {3}{4}{5}</value>
+  </data>
+  <data name="AssertionException_UnspecifiedAssertionMessage" xml:space="preserve">
+    <value>An assertion failed.</value>
+  </data>
+  <data name="Common_NullInMessages" xml:space="preserve">
+    <value>(null)</value>
+  </data>
+  <data name="Common_ObjectString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FrameworkMessage_AdditionalAssertionsFailed" xml:space="preserve">
+    <value>Caught the expected exception type &lt;{0}&gt;, but additional assertions failed. {1}</value>
+  </data>
+  <data name="FrameworkMessage_AssertionFailed" xml:space="preserve">
+    <value>{0} failed. {1}</value>
+  </data>
+  <data name="FrameworkMessage_BothCollectionsSameElements" xml:space="preserve">
+    <value>(Same elements.)</value>
+  </data>
+  <data name="FrameworkMessage_BothCollectionsSameReference" xml:space="preserve">
+    <value>(Same reference.)</value>
+  </data>
+  <data name="FrameworkMessage_CollectionEqualReason" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="FrameworkMessage_CollectionNotEqualReason" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="FrameworkMessage_ContainsFailMsg" xml:space="preserve">
+    <value>String '{0}' does not contain string '{1}'. {2}</value>
+  </data>
+  <data name="FrameworkMessage_DidNotThrow" xml:space="preserve">
+    <value>Expected exception: &lt;{0}&gt;. The action did not throw any exceptions. {1}</value>
+  </data>
+  <data name="FrameworkMessage_DoesNotMatchFailMsg" xml:space="preserve">
+    <value>String '{0}' matches pattern '{1}'. {2}</value>
+  </data>
+  <data name="FrameworkMessage_DuplicateFound" xml:space="preserve">
+    <value>Duplicate item found: &lt;{0}&gt;. {1}</value>
+  </data>
+  <data name="FrameworkMessage_ElementsAtIndexDoNotMatch" xml:space="preserve">
+    <value>(Elements at index {0} do not match. Expected element: &lt;{1}&gt;. Actual element: &lt;{2}&gt;.)</value>
+  </data>
+  <data name="FrameworkMessage_EndsWithFailMsg" xml:space="preserve">
+    <value>String '{0}' does not end with string '{1}'. {2}</value>
+  </data>
+  <data name="FrameworkMessage_IsEqualToDeltaFailMsg" xml:space="preserve">
+    <value>Expected a difference no greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;. {3}</value>
+  </data>
+  <data name="FrameworkMessage_IsEqualToFailMsg" xml:space="preserve">
+    <value>Expected: &lt;{0}&gt;. Actual: &lt;{1}&gt;. {2}</value>
+  </data>
+  <data name="FrameworkMessage_IsEqualToFailTypesMsg" xml:space="preserve">
+    <value>Expected: &lt;{0} ({1})&gt;. Actual: &lt;{2} ({3})&gt;. {4}</value>
+  </data>
+  <data name="FrameworkMessage_IsInstanceOfTypeFailMsg" xml:space="preserve">
+    <value>Expected type: {0}. Actual type: {1}. {2}</value>
+  </data>
+  <data name="FrameworkMessage_IsNotEqualToDeltaFailMsg" xml:space="preserve">
+    <value>Expected a difference greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;. {3}</value>
+  </data>
+  <data name="FrameworkMessage_IsNotEqualToFailMsg" xml:space="preserve">
+    <value>Expected any value except: &lt;{0}&gt;. Actual: &lt;{1}&gt;. {2}</value>
+  </data>
+  <data name="FrameworkMessage_IsNotInstanceOfTypeFailMsg" xml:space="preserve">
+    <value>Wrong type: {0}. Actual type: {1}. {2}</value>
+  </data>
+  <data name="FrameworkMessage_MatchesFailMsg" xml:space="preserve">
+    <value>String '{0}' does not match pattern '{1}'. {2}</value>
+  </data>
+  <data name="FrameworkMessage_NullParameterToAssert" xml:space="preserve">
+    <value>The parameter '{0}' is invalid. The value cannot be null. {1}</value>
+  </data>
+  <data name="FrameworkMessage_NumberOfElementsDiff" xml:space="preserve">
+    <value>(Different number of elements.)</value>
+  </data>
+  <data name="FrameworkMessage_StartsWithFailMsg" xml:space="preserve">
+    <value>String '{0}' does not start with string '{1}'. {2}</value>
+  </data>
+  <data name="FrameworkMessage_UnexpectedException" xml:space="preserve">
+    <value>Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;. {2}</value>
+  </data>
+  <data name="FrameworMessage_UnexpectedTypeAt" xml:space="preserve">
+    <value>Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;. {3}</value>
+  </data>
+</root>
