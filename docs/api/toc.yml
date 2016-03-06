@@ -1,0 +1,78 @@
+- uid: Testify
+  name: Testify
+  items:
+  - uid: Testify.ActualValue`1
+    name: ActualValue<T>
+    name.vb: ActualValue(Of T)
+  - uid: Testify.AnonymousBool
+    name: AnonymousBool
+  - uid: Testify.AnonymousByte
+    name: AnonymousByte
+  - uid: Testify.AnonymousChar
+    name: AnonymousChar
+  - uid: Testify.AnonymousData
+    name: AnonymousData
+  - uid: Testify.AnonymousDataException
+    name: AnonymousDataException
+  - uid: Testify.AnonymousDataExtensions
+    name: AnonymousDataExtensions
+  - uid: Testify.AnonymousDateTime
+    name: AnonymousDateTime
+  - uid: Testify.AnonymousDateTimeOffset
+    name: AnonymousDateTimeOffset
+  - uid: Testify.AnonymousDouble
+    name: AnonymousDouble
+  - uid: Testify.AnonymousEnum
+    name: AnonymousEnum
+  - uid: Testify.AnonymousEnumerable
+    name: AnonymousEnumerable
+  - uid: Testify.AnonymousInt16
+    name: AnonymousInt16
+  - uid: Testify.AnonymousInt32
+    name: AnonymousInt32
+  - uid: Testify.AnonymousInt64
+    name: AnonymousInt64
+  - uid: Testify.AnonymousSingle
+    name: AnonymousSingle
+  - uid: Testify.AnonymousString
+    name: AnonymousString
+  - uid: Testify.AnonymousTimeSpan
+    name: AnonymousTimeSpan
+  - uid: Testify.AnonymousTimeZoneInfo
+    name: AnonymousTimeZoneInfo
+  - uid: Testify.AssertionException
+    name: AssertionException
+  - uid: Testify.Assertions
+    name: Assertions
+  - uid: Testify.Classifier`1
+    name: Classifier<TValue>
+    name.vb: Classifier(Of TValue)
+  - uid: Testify.CollectionAssertions
+    name: CollectionAssertions
+  - uid: Testify.ComparableVerifier`1
+    name: ComparableVerifier<T>
+    name.vb: ComparableVerifier(Of T)
+  - uid: Testify.ComparisonVerifierBase`1
+    name: ComparisonVerifierBase<T>
+    name.vb: ComparisonVerifierBase(Of T)
+  - uid: Testify.ContractVerifier
+    name: ContractVerifier
+  - uid: Testify.Distribution
+    name: Distribution
+  - uid: Testify.EquatableVerifier`1
+    name: EquatableVerifier<T>
+    name.vb: EquatableVerifier(Of T)
+  - uid: Testify.ExceptionAssertions
+    name: ExceptionAssertions
+  - uid: Testify.IAnonymousData
+    name: IAnonymousData
+  - uid: Testify.IAnonymousDataContext
+    name: IAnonymousDataContext
+  - uid: Testify.IAnonymousDataCustomization
+    name: IAnonymousDataCustomization
+  - uid: Testify.IRegisterAnonymousData
+    name: IRegisterAnonymousData
+  - uid: Testify.StandardAssertions
+    name: StandardAssertions
+  - uid: Testify.StringAssertions
+    name: StringAssertions

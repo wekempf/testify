@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify", "src\Testify\Testify.csproj", "{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{469F900E-5D25-4CD0-A0CC-A255131F2D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Tests", "src\Tests\Testify.Tests\Testify.Tests.csproj", "{FFAC94BB-C0D8-410B-8987-67077FAE24ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB7AA38D-B41B-449B-9431-AB1BE2EB3EE3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		CodeCoverage.runsettings = CodeCoverage.runsettings
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{9DF27E5E-395B-45E6-995A-891542BC0F41}"
+	ProjectSection(SolutionItems) = preProject
+		Build.proj = Build.proj
+		.build\MSBuild.Community.Tasks.dll = .build\MSBuild.Community.Tasks.dll
+		.build\MSBuild.Community.Tasks.targets = .build\MSBuild.Community.Tasks.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFAC94BB-C0D8-410B-8987-67077FAE24ED} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
+	EndGlobalSection
+EndGlobal
