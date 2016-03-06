@@ -36,15 +36,6 @@ try {
     git config --global core.autocrlf false
     $Username = git config --global --get user.name
 
-    Write-Host "- Building documentation..."
-    if (-not ($env:Path -contains "$BuildFolder\docfx")) {
-        $env:Path += ";$BuildFolder\docfx"
-    }
-    cd "$BuildFolder\docs"
-    docfx metadata
-    docfx build
-    7z a "Site.zip" ".\_site"
-
     Write-Host "- Clone gh-pages branch..."
     cd "$BuildFolder\..\"
     git clone --quiet --branch=gh-pages "https://wekempf:$($PersonalAccessToken)@github.com/wekempf/testify.git" gh-pages

@@ -25,9 +25,12 @@ build:
   publish_nuget: true
   publish_nuget_symbols: true
   include_nuget_references: true
+  
+after_build:
+  - ps: .\build_scripts\build_docs.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER"
 
 after_test:
-  - ps: if ($env:APPVEYOR_REPO_BRANCH -eq 'master') { .\build_scripts\push_pages.ps1 -BuildFolder $env:APPVEYOR_BUILD_FOLDER -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken }
+  - ps: if ($env:APPVEYOR_REPO_BRANCH -eq 'master') { .\build_scripts\push_pages.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER" -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken }
 
 artifacts:
   - path: 'docs\site.zip'
