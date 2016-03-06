@@ -100,11 +100,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\packages\SonarLint.1.8.0\analyzers\SonarLint.CSharp.dll" />
-    <Analyzer Include="..\..\packages\SonarLint.1.8.0\analyzers\SonarLint.dll" />
+    <Analyzer Include="..\..\packages\SonarLint.1.9.0\analyzers\SonarLint.CSharp.dll" />
+    <Analyzer Include="..\..\packages\SonarLint.1.9.0\analyzers\SonarLint.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\GitVersionTask.3.4.1\build\portable-net+sl+win+wpa+wp\GitVersionTask.targets" Condition="Exists('..\..\packages\GitVersionTask.3.4.1\build\portable-net+sl+win+wpa+wp\GitVersionTask.targets')" />
