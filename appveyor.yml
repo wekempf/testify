@@ -27,7 +27,7 @@ build:
   include_nuget_references: true
 
 after_test:
-  - ps: .\build_scripts\push_pages.ps1 -BuildFolder $env:APPVEYOR_BUILD_FOLDER -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken
+  - ps: if ($env:APPVEYOR_REPO_BRANCH -eq 'master') { .\build_scripts\push_pages.ps1 -BuildFolder $env:APPVEYOR_BUILD_FOLDER -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken }
 
 artifacts:
   - path: 'docs\site.zip'
