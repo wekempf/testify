@@ -19,7 +19,7 @@ namespace Testify
         public void Verify()
         {
             var verifierName = this.GetType().Name;
-            var index = verifierName.IndexOf("`");
+            var index = verifierName.IndexOf("`", StringComparison.Ordinal);
             if (index >= 0)
             {
                 verifierName = verifierName.Substring(0, index);
