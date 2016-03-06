@@ -2,7 +2,7 @@ branches:
   only:
     - develop
     - master
-    - release/*
+    - /release\/.*/
       
 # Do not build on tags
 skip_tags: true
@@ -46,7 +46,7 @@ deploy:
   on:
     branch:
       - develop
-      - release/*
+      - /release\/.*/
 - provider: NuGet
   api_key:
     secure: #WCC9YoXjXGB6om2aN3jD0n5Jk63LKg42sViodxTK04T16/MQ0e4F8JU2XmoO+iY6
