@@ -43,6 +43,7 @@ try {
     cd "$BuildFolder\docs"
     docfx metadata
     docfx build
+    7z a "Site.zip" ".\_site"
 
     Write-Host "- Clone gh-pages branch..."
     cd "$BuildFolder\..\"
