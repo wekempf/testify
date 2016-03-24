@@ -24,7 +24,7 @@ namespace Testify
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="int"/> value.</returns>
         /// <remarks>
-        /// Overrides should treat <see langword="null"/> values for <paramref name="distribution"/> as
+        /// Overrides should treat <c>null</c> values for <paramref name="distribution"/> as
         /// <see cref="P:Distribution.Uniform"/>.
         /// </remarks>
         double AnyDouble(double minimum, double maximum, Distribution distribution);

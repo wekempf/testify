@@ -143,8 +143,8 @@ namespace Testify
         /// </summary>
         /// <typeparam name="TType">The type to check for.</typeparam>
         /// <param name="sourceType">The source type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is the specified type;
-        /// otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is the specified type;
+        /// otherwise, <c>false</c>.</returns>
         internal static bool Is<TType>(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -158,8 +158,8 @@ namespace Testify
         /// </summary>
         /// <param name="sourceType">Type of the source.</param>
         /// <param name="type">The type to check.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is the specified type;
-        /// otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is the specified type;
+        /// otherwise, <c>false</c>.</returns>
         internal static bool Is(this Type sourceType, Type type)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -177,8 +177,8 @@ namespace Testify
         /// Determines whether the specified source type is abstract.
         /// </summary>
         /// <param name="sourceType">Type of the source.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is abstract;
-        /// otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is abstract;
+        /// otherwise, <c>false</c>.</returns>
         internal static bool IsAbstract(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -191,8 +191,8 @@ namespace Testify
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="sourceType">The source type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is assignable to the
-        /// specified type; otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is assignable to the
+        /// specified type; otherwise, <c>false</c>.</returns>
         internal static bool IsAssignableFrom<TType>(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -205,8 +205,8 @@ namespace Testify
         /// </summary>
         /// <param name="sourceType">The source type.</param>
         /// <param name="type">The type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is assignable to the
-        /// specified type; otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is assignable to the
+        /// specified type; otherwise, <c>false</c>.</returns>
         internal static bool IsAssignableFrom(this Type sourceType, Type type)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -220,8 +220,8 @@ namespace Testify
         /// </summary>
         /// <typeparam name="TType">The type of the type.</typeparam>
         /// <param name="sourceType">The source type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is assignable to the
-        /// specified type; otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is assignable to the
+        /// specified type; otherwise, <c>false</c>.</returns>
         internal static bool IsAssignableTo<TType>(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -233,8 +233,8 @@ namespace Testify
         /// Determines whether or not the specified source type is an enum.
         /// </summary>
         /// <param name="sourceType">The source type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is an enum type; otherwise,
-        /// <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is an enum type; otherwise,
+        /// <c>false</c>.</returns>
         internal static bool IsEnum(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -246,8 +246,8 @@ namespace Testify
         /// Determines whether or not the type is a generic type.
         /// </summary>
         /// <param name="type">The type.</param>
-        /// <returns><see langword="true"/> if the type is a generic type definition; otherwise,
-        /// <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the type is a generic type definition; otherwise,
+        /// <c>false</c>.</returns>
         internal static bool IsGenericType(this Type type)
         {
             Argument.NotNull(type, nameof(type));
@@ -259,8 +259,8 @@ namespace Testify
         /// Determines whether or not the type is a generic type definition.
         /// </summary>
         /// <param name="type">The type.</param>
-        /// <returns><see langword="true"/> if the type is a generic type definition; otherwise,
-        /// <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the type is a generic type definition; otherwise,
+        /// <c>false</c>.</returns>
         internal static bool IsGenericTypeDefinition(this Type type)
         {
             Argument.NotNull(type, nameof(type));
@@ -273,8 +273,8 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type.</param>
         /// <param name="obj">The object.</param>
-        /// <returns><see langword="true"/> if the object is an instance of the specified type;
-        /// otherwise <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the object is an instance of the specified type;
+        /// otherwise <c>false</c>.</returns>
         internal static bool IsInstanceOfType(this Type type, object obj)
         {
             Argument.NotNull(type, nameof(type));
@@ -289,8 +289,8 @@ namespace Testify
         /// Determines whether or not the <paramref name="sourceType"/> is an interface.
         /// </summary>
         /// <param name="sourceType">The source type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is an interface;
-        /// otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is an interface;
+        /// otherwise, <c>false</c>.</returns>
         internal static bool IsInterface(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -303,8 +303,8 @@ namespace Testify
         /// </summary>
         /// <param name="sourceType">The source type.</param>
         /// <param name="type">The type.</param>
-        /// <returns><see langword="true"/> if the instance is the specified type; otherwise,
-        /// <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the instance is the specified type; otherwise,
+        /// <c>false</c>.</returns>
         internal static bool IsType(this Type sourceType, Type type)
         {
             Argument.NotNull(sourceType, nameof(sourceType));
@@ -337,8 +337,8 @@ namespace Testify
         /// Determines whether or not the <paramref name="sourceType"/> is a value type.
         /// </summary>
         /// <param name="sourceType">The source type.</param>
-        /// <returns><see langword="true"/> if the <paramref name="sourceType"/> is a value type;
-        /// otherwise, <see langword="false"/>.</returns>
+        /// <returns><c>true</c> if the <paramref name="sourceType"/> is a value type;
+        /// otherwise, <c>false</c>.</returns>
         internal static bool IsValueType(this Type sourceType)
         {
             Argument.NotNull(sourceType, nameof(sourceType));

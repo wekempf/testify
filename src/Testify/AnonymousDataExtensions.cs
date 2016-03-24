@@ -31,7 +31,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="type">The type to freeze.</param>
         /// <param name="value">The instance to freeze.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="value"/> is not assignable to <paramref name="type"/>.</exception>
         public static void Freeze(this IRegisterAnonymousData anon, Type type, object value)
         {
@@ -49,7 +49,7 @@ namespace Testify
         /// <typeparam name="T">The type to freeze.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="value">The instance to freeze.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static void Freeze<T>(this IRegisterAnonymousData anon, T value)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -63,7 +63,7 @@ namespace Testify
         /// <typeparam name="T">The type of object the factory method creates.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="factory"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="factory"/> is <c>null</c>.</exception>
         public static void Register<T>(this IRegisterAnonymousData anon, Func<IAnonymousData, T> factory)
         {
             Argument.NotNull(anon, nameof(anon));

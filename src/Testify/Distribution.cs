@@ -6,7 +6,7 @@ namespace Testify
     /// Provides random number generation using a specified distribution algorithm.
     /// </summary>
     /// <remarks>
-    /// Methods that take a <see cref="Distribution"/> should generally treat <see langword="null"/> values as
+    /// Methods that take a <see cref="Distribution"/> should generally treat <c>null</c> values as
     /// <see cref="P:Distribution.Uniform"/>.</remarks>
     public abstract class Distribution
     {
@@ -61,7 +61,7 @@ namespace Testify
         /// <param name="random">The random number generator to use.</param>
         /// <param name="sigma">The sigma to use.</param>
         /// <returns>The next double in the Gaussian distribution.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="random"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="random"/> is <c>null</c>.</exception>
         protected double NextGausian(Random random, int sigma)
         {
             Argument.NotNull(random, nameof(random));

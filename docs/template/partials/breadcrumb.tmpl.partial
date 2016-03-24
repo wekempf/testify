@@ -1,0 +1,7 @@
+<div class="subnav navbar2 navbar-default2">
+  <div class="container" id="breadcrumb">
+    <ul class="breadcrumb">
+      <li>{{_tocTitle}}</li>
+    </ul>
+  </div>
+</div>

@@ -85,7 +85,7 @@ namespace Testify
         /// </summary>
         /// <param name="customization">The customization to apply.</param>
         /// <returns>The current <see cref="AnonymousData"/> to allow for method call chaining.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="customization"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="customization"/> is <c>null</c>.</exception>
         public AnonymousData Customize(IAnonymousDataCustomization customization)
         {
             Argument.NotNull(customization, nameof(customization));
@@ -99,7 +99,7 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <c>null</c>.</exception>
         public void Register(Type type, Factory factory)
         {
             Argument.NotNull(type, nameof(type));

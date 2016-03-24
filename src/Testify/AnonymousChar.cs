@@ -21,7 +21,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random alpha character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyAlphaChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -36,7 +36,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random alpha character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyAlphaChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -50,7 +50,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="char"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyAlphaNumericChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -65,7 +65,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random alpha/numeric character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyAlphaNumericChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -79,7 +79,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random basic Latin character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyBasicLatinChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -94,7 +94,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random basic Latin character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyBasicLatinChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -107,7 +107,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="char"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -123,7 +123,7 @@ namespace Testify
         /// <param name="minimum">The minimum value.</param>
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="char"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyChar(this IAnonymousData anon, char minimum, char maximum)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -138,7 +138,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="char"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -155,7 +155,7 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="char"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyChar(this IAnonymousData anon, char minimum, char maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -170,7 +170,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random Latin supplement character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyLatinSupplementChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -185,7 +185,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random Latin supplement character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyLatinSupplementChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -199,7 +199,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random numeric character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyNumericChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -214,7 +214,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random numeric character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyNumericChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -228,7 +228,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random printable character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyPrintableChar(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -243,7 +243,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random printable character.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static char AnyPrintableChar(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
