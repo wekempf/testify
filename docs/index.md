@@ -27,6 +27,6 @@ Testify is a .NET unit testing helper framework providing fluent assertions, con
 	Assert(testResult).IsEqualTo(expectedValue);
 	```
 
-1. Read the @Api.
+1. Read the @Intro and @Api.
 
 1. See the project at [GitHub](https://github.com/wekempf/testify)

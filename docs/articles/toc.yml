@@ -1,3 +1,16 @@
-
-- name: Introduction
+- name: Introduction to Testify
   href: intro.md
+- name: Best Practices
+  href: BestPractices.md
+- name: Assertions
+  href: Assertions.md
+- name: Contract Verifiers
+  href: ContractVerifiers.md
+- name: Using AnonymousData
+  href: UsingAnonymousData.md
+- name: Anti-Patterns
+  href: AntiPatterns.md
+- name: Why Unit Test?
+  href: WhyUnitTest.md
+- name: Good Unit Tests
+  href: GoodUnitTests.md

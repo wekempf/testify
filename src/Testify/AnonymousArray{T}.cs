@@ -15,7 +15,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use when creating items.</param>
         /// <returns>A new anonymous array.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <exception cref="AnonymousDataException">The specified type could not be created.</exception>
         internal static T[] AnyArray(IAnonymousData anon)
         {
@@ -29,7 +29,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use when creating items.</param>
         /// <returns>An <see cref="IEnumerable{T}"/> sequence of new items.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <exception cref="AnonymousDataException">The specified type could not be created.</exception>
         internal static IEnumerable<T> AnyEnumerable(IAnonymousData anon)
         {

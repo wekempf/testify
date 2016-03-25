@@ -16,7 +16,7 @@ namespace Testify
         /// Initializes a new instance of the <see cref="AnonymousDataException"/> class.
         /// </summary>
         /// <param name="type">The type that could not be created.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <c>null</c>.</exception>
         public AnonymousDataException(Type type)
             : this(type, null)
         {
@@ -27,7 +27,7 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type that could not be created.</param>
         /// <param name="innerException">The inner exception.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <c>null</c>.</exception>
         public AnonymousDataException(Type type, Exception innerException)
             : base($"Unable to create instance of specified type {type}.", innerException)
         {

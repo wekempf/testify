@@ -24,7 +24,7 @@ namespace Testify
         /// </summary>
         /// <param name="key">The classification category.</param>
         /// <returns>The number of values that were classified in the specified category.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
         /// <exception cref="KeyNotFoundException">The key does not exist in the collection.</exception>
         public double this[string key] =>
             this.Count == 0 ? 0 : (double)this.classifications[key].Count / (double)this.Count;
@@ -38,7 +38,7 @@ namespace Testify
         /// <exception cref="ArgumentException"><para><paramref name="name"/> is empty.</para>
         /// <para>-or-</para>
         /// <para>A category with the same name already exists in the <see cref="Classifier{TValue}"/>.</para></exception>
-        /// <exception cref="ArgumentNullException"><paramref name="name"/> or <paramref name="predicate"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="name"/> or <paramref name="predicate"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="name"/> is empty.</exception>
         /// <exception cref="InvalidOperationException">Values have already been classified.</exception>
         public void AddClassification(string name, Predicate<TValue> predicate)
