@@ -31,6 +31,7 @@ after_build:
   - ps: .\build_scripts\build_docs.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER"
 
 after_test:
+  - ps: Write-Host $env:APPVEYOR_REPO_BRANCH
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq 'master') { .\build_scripts\push_pages.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER" -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken }
 
 artifacts:
