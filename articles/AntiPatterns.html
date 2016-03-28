@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Anti-Patterns | </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Anti-Patterns | ">
+    
+    <link rel="shortcut icon" href="../images/Logo_DotNet.png" type="image/x-icon">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  </head>  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../">
+                <img id="logo" src="../\images\gavel_icon-64x64.png" height="46" width="46" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        <div class="subnav navbar2 navbar-default2">
+          <div class="container" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>      </header>
+      <div role="main" class="container body-content">
+        
+        <div class="sidenav">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AntiPatterns">
+              <a href="https://github.com/wekempf/testify/blob/develop/docs/articles/AntiPatterns.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
+              <h1 id="anti-patterns">Anti-Patterns</h1>
+              
+<ul>
+<li><strong>The Liar</strong><ul>
+<li>An entire unit test that passes all of the test cases it has and appears valid, but upon closer inspection it is discovered that it doesn’t really test the intended target at all.</li>
+</ul>
+</li>
+<li><strong>Excessive Setup</strong><ul>
+<li>A test that requires a lot of work setting up in order to even begin testing. Sometimes several hundred lines of code is used to setup the environment for one test, with several objects involved, which can make it difficult to really ascertain what is tested due to the “noise” of all of the setup going on.</li>
+</ul>
+</li>
+<li><strong>The Giant</strong><ul>
+<li>A unit test that, although it is validly testing the object under test, can span thousands of lines and contain many test cases. This can be an indicator that the system under test is a God Object.</li>
+</ul>
+</li>
+<li><strong>The Mockery</strong><ul>
+<li>A unit test contains so many mocks, stubs and/or fakes that the system under test isn’t even being tested at all, instead data returned from mocks is what is being tested.</li>
+</ul>
+</li>
+<li><strong>The Inspector</strong><ul>
+<li>A unit test that violates encapsulation in an effort to achieve 100% code coverage, but knows so much about what is going on in the object that any attempt to refactor will break the existing test and require any change to be reflected in the unit test.</li>
+</ul>
+</li>
+<li><strong>Wet Floor</strong><ul>
+<li>A test that fails to clean up after itself, leaving data persisted somewhere that causes another test, or the same test on subsequent runs, to fail.</li>
+</ul>
+</li>
+<li><strong>Generous Leftovers</strong><ul>
+<li>An instance where one unit test creates data that is persisted somewhere, and another test reuses the data for its own devious purposes. If the “generator” is run afterword, or not at all, the test using the data will outright fail.</li>
+</ul>
+</li>
+<li><strong>The Local Hero</strong><ul>
+<li>A test case that is dependent on something specific to the development environment it was written on in order to run. The result is the test passes on development boxes, but fails when someone attempts to run it elsewhere.</li>
+</ul>
+</li>
+<li><strong>The Nitpicker</strong><ul>
+<li>A unit test which compares a complete output when it’s really only interested in a small part of it, so the test has to continually be kept in line with otherwise unimportant details.</li>
+</ul>
+</li>
+<li><strong>The Secret Catcher</strong><ul>
+<li>A test that at first glance appears to be doing no testing due to the absence of assertions, but as they say, “the devil is in the details.” The test is really relying on an exception to be thrown when a mishap occurs, and is expecting the testing framework to capture the exception and report it to the user as a failure.</li>
+</ul>
+</li>
+<li><strong>The Silent Catcher</strong><ul>
+<li>A test that passes if an exception is thrown, even if the exception that actually occurs is one that is different from the one the developer intended.</li>
+</ul>
+</li>
+<li><strong>The Dodger</strong><ul>
+<li>A unit test which has lots of tests for minor (and presumably easy to test) side effects, but never tests the core desired behavior. Sometimes you may find this in database access related tests, where a method is called, then the test selects from the database and runs assertions against the result.</li>
+</ul>
+</li>
+<li><strong>The Loudmouth</strong><ul>
+<li>A unit test (or test suite) that clutters up the console with diagnostic messages, logging messages, and other miscellaneous chatter, even when tests are passing. Sometimes during test creation there was a desire to manually see output, but even though it’s no longer needed, it was left behind.</li>
+</ul>
+</li>
+<li><strong>The Greedy Catcher</strong><ul>
+<li>A unit test which catches exceptions and swallows the stack trace, sometimes replacing it with a less informative failure message, but sometimes even just logging (c.f. Loudmouth) and letting the test pass.</li>
+</ul>
+</li>
+<li><strong>The Sequencer</strong><ul>
+<li>A unit test that depends on items in an unordered list appearing in the same order during assertions.</li>
+</ul>
+</li>
+<li><strong>Hidden Dependency</strong><ul>
+<li>A close cousin of the Local Hero, a unit test that requires existing data to have been populated somewhere before the test runs. If that data wasn’t populated, the test will fail and leave little indication to the developer what it wanted, or why… forcing them to dig through acres of code to find out where the data it was using was supposed to come from.</li>
+</ul>
+</li>
+<li><strong>The Enumerator</strong><ul>
+<li>A unit test where each test case method name is only an enumeration, i.e. test1, test2, test3. As a result, the intention of the test case is unclear, and the only way to be sure is to read the test case code and pray for clarity.</li>
+</ul>
+</li>
+<li><strong>The Stranger/Distant relative</strong><ul>
+<li>A test case that doesn’t even belong in the unit test it is part of. It’s really testing a separate object, most likely an object that is used by the object under test, but the test case has gone and tested that object directly without relying on the output from the object under test making use of that object for its own behavior.</li>
+</ul>
+</li>
+<li><strong>The Operating System Evangelist</strong><ul>
+<li>A unit test that relies on a specific operating system environment to be in place in order to work. A good example would be a test case that uses the newline sequence for Windows in an assertion, only to break when run on Linux.</li>
+</ul>
+</li>
+<li><strong>Success Against All Odds</strong><ul>
+<li>A test that was written to pass first rather than fail first. As an unfortunate side effect, the test case happens to always pass even though the test should fail.</li>
+</ul>
+</li>
+<li><strong>The Free Ride/Piggyback</strong><ul>
+<li>Rather than write a new test case method to test another feature or functionality, a new assertion rides along in an existing test case.</li>
+</ul>
+</li>
+<li><strong>The One/Silver Bullet</strong><ul>
+<li>A combination of several patterns, particularly The Free Ride and The Giant, a unit test that contains only one test method which tests the entire set of functionality an object has. A common indicator is that the test method name is often the same as the unit test name, and contains multiple lines of setup and assertions.</li>
+</ul>
+</li>
+<li><strong>The Peeping Tom/The Uninvited Guest</strong><ul>
+<li>A test that, due to the shared resources, can see the result data of another test, and may cause the test to fail even though the system under test is perfectly valid. This has been seen commonly in Fitnesse, where the use of static member variables to hold collections aren’t properly cleaned after test execution, often popping up unexpectedly in other test runs.</li>
+</ul>
+</li>
+<li><strong>The Slow Poke</strong><ul>
+<li>A unit test that runs incredibly slow. When developer kick it off, they have time to go to the bathroom, grab a smoke, or worse, go home for the day.</li>
+</ul>
+</li>
+<li><strong>Second Class Citizens</strong><ul>
+<li>Test code isn’t as well refactored/structured as production code, containing a lot of duplicated code, making it hard to maintain tests.</li>
+</ul>
+</li>
+<li><strong>Happy Path</strong><ul>
+<li>The test “stays on the happy path” (i.e. expected results) without testing for boundaries and exceptions.</li>
+</ul>
+</li>
+<li><strong>Chain Gang</strong><ul>
+<li>Two or more tests that must run in a certain order, i.e. one test changes the global state of the system and the next test(s) depend on it.</li>
+</ul>
+</li>
+<li><strong>The Test With No Name</strong><ul>
+<li>The test that gets added to reproduce a specific bug in the bug tracker and whose author thinks does not warrant a name of its own. Instead of enhancing an existing, lacking test, a new test is created called TestForBug123.</li>
+</ul>
+</li>
+<li><strong>Wait and See</strong><ul>
+<li>A test that runs some setup code and the needs to “wait” a specific amount of time before it can “see” if the code under test functioned as expected. A test method that uses Sleep() or equivalent is most certainly a “Wait and See” test.</li>
+</ul>
+</li>
+<li><strong>The Sleeper/Mount Vesuvius</strong><ul>
+<li>A test that is destined to fail at some specific time and date in the future. This is often caused by incorrect bounds checking when testing code which uses a Date or Calendar object. Sometimes, the test may fail if run at a very specific time of day, such as midnight.</li>
+</ul>
+</li>
+<li><strong>The Flickering Test</strong><ul>
+<li>A test which just occasionally fails, and is generally due to race conditions within the test. Typically occurs when testing something that is asynchronous. Possibly a superset of the Wait and See and The Sleeper anti-patterns.</li>
+</ul>
+</li>
+<li><strong>The Cuckoo/Inappropriately Shared Fixture/The Mother Hen</strong><ul>
+<li>Several test cases in the test fixture do not even use or need the setup/teardown shared code. Partly due to developer inertia to create a new test fixture… easier to just add one or more test cases to the pile.</li>
+</ul>
+</li>
+<li><strong>I’ll believe it when I see some flashing GUIs</strong><ul>
+<li>An unhealthy fixation/obsession with testing the app via its GUI, “just like a real user.”</li>
+</ul>
+</li>
+<li><strong>The Forty Foot Pole Test</strong><ul>
+<li>Afraid of getting too close to the class they are trying to test, these tests act at a distance, separated by countless layers of abstraction and thousands of lines of code from the logic they are checking. As such they are extremely brittle, and susceptible to all sorts of side-effects that happen on the epic journey to and from the class interest.</li>
+</ul>
+</li>
+<li><strong>Doppelgänger</strong><ul>
+<li>In order to test something, you have to copy parts of the code under test into a new class with the same name and package and you have to use classpath magic or custom classloader to make sure it is visible first (so your copy is picked up). This pattern indicates an unhealthy amount of hidden dependencies which you can’t control from a test.</li>
+</ul>
+</li>
+<li><strong>The Ugly Mirror</strong><ul>
+<li>Test code that looks exactly like the code under test. Example, a SUT that formats a string tested by code that formats the expected string result in the exact same manner.</li>
+</ul>
+</li>
+</ul>
+
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2016 William E. Kempf<br>Generated by <a href="http://dotnet.github.io/docfx/">DocFX</a>.</span>
+          </div>
+        </div>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

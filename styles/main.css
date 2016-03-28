@@ -1,0 +1,22 @@
+.navbar-inverse {
+  background: #4C6E8A
+}
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+  color: #D9EDF7;
+}
+#logo {
+  margin: 2px;
+}
+.sidetoc {
+  background-color: #D9EDF7;
+}
+body .toc {
+  background-color: #D9EDF7;
+}
+.sidefilter {
+  background-color: #D9EDF7;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #143653;
+}
