@@ -4,11 +4,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>&#128295; Using AnonymousData | </title>
+    <title>Introduction to Testify | </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="&#128295; Using AnonymousData | ">
+    <meta name="title" content="Introduction to Testify | ">
     
-    <link rel="shortcut icon" href="../images/Logo_DotNet.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/gavel_icon-128x128.png" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -57,13 +57,15 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="UsingAnonymousData">
-              <a href="https://github.com/wekempf/testify/blob/develop/docs/articles/UsingAnonymousData.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
-              <h1 id="-using-anonymousdata">🔧 Using AnonymousData</h1>
+            <article class="content wrap" id="_content" data-uid="Intro">
+              <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/intro.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
+              <h1 id="introduction-to-testify">Introduction to Testify</h1>
               
-<blockquote><p><strong>Note</strong></p>
-<p>This topic hasn&#39;t been written yet!</p>
-</blockquote>
+<p>Testify is a .NET unit test assertions, test data creation and contract verification framework. It&#39;s not dependent on any specific unit testing framework, and can be used with the unit test framework of your choice.</p>
+<p>Testify <a class="xref" href="Assertions.html#Assertions">Assertions</a> use a fluent syntax that makes it easy to discover what assertions are valid for the actual value being tested through strong IntelliSense support. In addition, because of the fluent syntax, it is easy to add your own custom assertions.</p>
+<p>Testify&#39;s <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> allows you to create test data and objects that are necessary for the test but that aren&#39;t otherwise relevant. This helps to decouple the test from non-relevant production code (making the tests less &quot;brittle&quot;), as well as helps to clarify what&#39;s actually being tested. For more information see <a class="xref" href="UsingAnonymousData.html#UsingAnonymousData">&#128295; Using AnonymousData</a>.</p>
+<p>Testify <a class="xref" href="ContractVerifiers.html#ContractVerifiers">&#128295; Contract Verifiers</a> make it easy to test that a type adheres to a contract by running a suite of tests against the type.</p>
+<p>If you&#39;re new to unit testing or want to know how best to apply Testify in your unit tests, see the <a class="xref" href="WhyUnitTest.html#WhyUnitTest">Find Bugs</a> and <a class="xref" href="BestPractices.html#BestPractices">&#128295; Best Practices</a> documentation.</p>
 
             </article>
           </div>

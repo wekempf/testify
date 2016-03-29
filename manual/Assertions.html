@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assertions | </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assertions | ">
+    
+    <link rel="shortcut icon" href="../images/gavel_icon-128x128.png" type="image/x-icon">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  </head>  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../">
+                <img id="logo" src="../images/gavel_icon-64x64.png" height="46" width="46" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>        <div class="subnav navbar2 navbar-default2">
+          <div class="container" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>      </header>
+      <div role="main" class="container body-content">
+        
+        <div class="sidenav">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Assertions">
+              <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/Assertions.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
+              <h1 id="assertions">Assertions</h1>
+              
+<p>Assertions are a corner stone of any unit test framework. Testify provides a framework of assertions that can replace the assertions provided by your unit test framework. These assertions are designed to be discoverable through IntelliSense, readable due to their fluent syntax and extensible using extension methods.</p>
+<p>To use Testify assertions include the following using statements in your unit test file.</p>
+<pre><code class="lang-csharp">using Testify;
+using static Testify.Assertions;
+</code></pre>
+<blockquote><p><strong>Note</strong></p>
+<p>The static using for <code>Testify.Assertions</code> is used to allow you to use the static methods on the <code>Testify.Assertions</code> class without having to include the class name on every call. If you&#39;re using a C# 5 or older or just prefer to not use static usings you can either fully specify the call, or add an <code>Assert</code> helper method to your unit test class, possibly through a base class.</p>
+</blockquote>
+<p>With the using statements in place you can add <code>Assert(result).</code> to any unit test, at which point IntelliSense will provide you with a list of valid assertions based on the type of <code>result</code>. For instance, if <code>result</code> is a <code>List&lt;int&gt;</code> the assertions you&#39;d be presented with in IntelliSense would include <code>AllItemsAreUnique</code>. Another common assertion for collections, <code>AllItemsAreNotNull</code> would not be presented in IntelliSense because <code>int</code> is a value type and can&#39;t be <code>null</code>. This strong typing and IntelliSense support is one of the key benefits to Testify over the built-in assertions of your unit test framework of choice.</p>
+<h2 id="compound-assertions">Compound Assertions</h2>
+<p>Testify also supports the concept of a compound assertion. A compound assertion is an assertion composed of multiple other assertions. All of the assertions that fail in a compound assertion are reported, ensuring that no relevant information about a test failure is lost. Normally, compound assertions are used to compose ad hoc &quot;logical assertions&quot;. In other words, the intent is to make a single logical assertion by making multiple assertions. If you have a logical assertion that is likely to be made frequently it is probably better that you write an extension to add that assertion to the framework rather than using an ad hoc compound assertion.</p>
+<p>Here&#39;s an example of a compound assertion.</p>
+<pre><code class="lang-csharp">public void Stack_Push_ShouldAddItem()
+{
+   var stack = new Stack();
+
+   stack.Push(10);
+
+   AssertAll(
+      &quot;Item was not added to the stack properly.&quot;,
+      () =&gt; Assert(stack.Count).IsEqualTo(1, &quot;Count was not incremented.&quot;),
+      () =&gt; Assert(stack.Peek()).IsEqualTo(10, &quot;Top of the stack doesn&#39;t contain item that was pushed.&quot;));
+}
+</code></pre>
+<h2 id="custom-assertions">Custom Assertions</h2>
+<p>It&#39;s easy to add assertions when using Testify. <code>Assertions.Assert</code> returns an <code>ActualValue&lt;T&gt;</code> which can be used in extension methods to add custom assertions. By using strong typing for <code>T</code> or using generic constraints you can expose assertions that are valid and present in IntelliSense only for specific types. Inside your custom assertion method you can use <code>Assertions.Throw</code> to report failures, which helps to ensure the exception message is formatted in a consistent manner.</p>
+<p>Here&#39;s an example of a custom assertion.</p>
+<pre><code class="lang-csharp">using System.Linq;
+using Testify;
+using static Testify.Assertions;
+
+public static class MyAssertions
+{
+   public static void IsLower(this ActualValue&lt;string&gt; actual, string message, params object[] args)
+   {
+      if (!actual.Value.All(c =&gt; char.IsLower(c)))
+      {
+         Throw(
+            &quot;IsLower&quot;,
+            $&quot;{actual.Value} is not all lowercase.&quot;,
+            string.Format(message, args));
+      }
+   } 
+}
+</code></pre>
+<blockquote><p>Note</p>
+<p>Custom assertions, like the assertions provided by Testify, should include overloads with and without a user message and user arguments. The example above only shows the full overload and not the simpler overloads that should be included as well.</p>
+</blockquote>
+<h2 id="assertionexception">AssertionException</h2>
+<p>Testify assertions all throw an <code>AssertionException</code> on failure. This type is derived from <code>AggregateException</code> allowing for multiple inner exceptions. This is how compound assertions are able to report multiple failures. This is also how contract verifiers can run multiple tests and report all of the failures.</p>
+
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2016 William E. Kempf<br>Generated by <a href="http://dotnet.github.io/docfx/">DocFX</a>.</span>
+          </div>
+        </div>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

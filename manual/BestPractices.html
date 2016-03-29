@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="&#128295; Best Practices | ">
     
-    <link rel="shortcut icon" href="../images/Logo_DotNet.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/gavel_icon-128x128.png" type="image/x-icon">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
@@ -58,7 +58,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="BestPractices">
-              <a href="https://github.com/wekempf/testify/blob/develop/docs/articles/BestPractices.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
+              <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/BestPractices.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
               <h1 id="-best-practices">🔧 Best Practices</h1>
               
 <ol>
@@ -123,7 +123,7 @@
 </ul>
 </blockquote>
 <p>Testify considers this idea to be a &quot;logical&quot; assertion.</p>
-<p>Let&#39;s think about this at a higher level. Let&#39;s consider unit testing the <code>Push</code> method on a <code>Stack</code> class. We want to have a unit test <code>Push_Value_AddsValueToStack</code>. This means there&#39;s one &quot;logical&quot; assertion of &quot;value was added.&quot; To actually assert this, though, we&#39;d need to assert several observable states: <code>stack.Count</code> is incremented by one and <code>stack.Contains(value)</code> is <code>true</code>. Testify includes support for &quot;compound assertions&quot; for these scenarios. For more information see <a class="xref" href="Assertions.html#Assertions">&#128295; Assertions</a>.</p>
+<p>Let&#39;s think about this at a higher level. Let&#39;s consider unit testing the <code>Push</code> method on a <code>Stack</code> class. We want to have a unit test <code>Push_Value_AddsValueToStack</code>. This means there&#39;s one &quot;logical&quot; assertion of &quot;value was added.&quot; To actually assert this, though, we&#39;d need to assert several observable states: <code>stack.Count</code> is incremented by one and <code>stack.Contains(value)</code> is <code>true</code>. Testify includes support for &quot;compound assertions&quot; for these scenarios. For more information see <a class="xref" href="Assertions.html#Assertions">Assertions</a>.</p>
 <h2 id="ensure-the-assertion-message-is-clear">Ensure the Assertion Message is Clear</h2>
 <p>It&#39;s best practice to not rely on the default messages provided by your assertion framework. When a test fails it&#39;s not very useful to read a message along the lines of &quot;Expected: &#39;1&#39;. Actual: &#39;2&#39;.&quot; This tells you absolutely nothing about why the test fails. Most frameworks, Testify included, allow you to add a more meaningful message to assertion failures, such as &quot;Count was not incremented after adding a new value. Expected: &#39;1&#39;. Actual: &#39;2&#39;.&quot; It&#39;s best practice to always provide such messages with your assertions.</p>
 <h2 id="ensure-tests-are-quick">Ensure Tests are Quick</h2>
