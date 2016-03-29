@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Testify.Properties;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -78,8 +80,11 @@ namespace Testify
             {
                 if (!expectedType.IsInstanceOfType(item))
                 {
-                    var finalMessage = FrameworkMessages.UnexpectedTypeAt(index, expectedType, item.GetType(), message);
-                    Assertions.HandleFail("AllItemsAreInstancesOfType", finalMessage, parameters);
+                    Throw(
+                        nameof(AllItemsAreInstancesOfType),
+                        UnexpectedTypeAt(index, expectedType, item.GetType()),
+                        message,
+                        parameters);
                 }
 
                 ++index;
@@ -143,7 +148,11 @@ namespace Testify
             {
                 if (item == null)
                 {
-                    Assertions.HandleFail("AllItemsAreNotNull", message, parameters);
+                    Throw(
+                        nameof(AllItemsAreNotNull),
+                        null,
+                        message,
+                        parameters);
                 }
             }
         }
@@ -275,16 +284,22 @@ namespace Testify
                     }
                     else
                     {
-                        var finalMessage = FrameworkMessages.DuplicateFound(item, message);
-                        Assertions.HandleFail("AllItemsAreUnique", finalMessage, parameters);
+                        Throw(
+                            nameof(AllItemsAreUnique),
+                            DuplicateFound(item),
+                            message,
+                            parameters);
                     }
                 }
                 else
                 {
                     if (!found.Add(item))
                     {
-                        var finalMessage = FrameworkMessages.DuplicateFound(item, message);
-                        Assertions.HandleFail("AllItemsAreUnique", finalMessage, parameters);
+                        Throw(
+                            "AllItemsAreUnique",
+                            DuplicateFound(item),
+                            message,
+                            parameters);
                     }
                 }
             }
@@ -425,7 +440,11 @@ namespace Testify
                 }
             }
 
-            Assertions.HandleFail("Contains", message, parameters);
+            Throw(
+                nameof(Contains),
+                null,
+                message,
+                parameters);
         }
 
         /// <summary>
@@ -559,7 +578,7 @@ namespace Testify
             {
                 if (comparer.Equals(item, element))
                 {
-                    Assertions.HandleFail("DoesNotContain", message, parameters);
+                    Throw(nameof(DoesNotContain), null, message, parameters);
                 }
             }
         }
@@ -708,7 +727,7 @@ namespace Testify
             var expectedCollection = CollectionAssertions.GetCollection(expected);
             if (expectedCollection.Count != actualCollection.Count)
             {
-                Assertions.HandleFail("IsEquivalentTo", message, parameters);
+                Throw(nameof(IsEquivalentTo), null, message, parameters);
             }
 
             int expectedCount;
@@ -719,7 +738,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsEquivalentTo", message, parameters);
+            Throw(nameof(IsEquivalentTo), null, message, parameters);
         }
 
         /// <summary>
@@ -863,7 +882,7 @@ namespace Testify
 
             if (object.ReferenceEquals(expected, collection.Value))
             {
-                Assertions.HandleFail("IsNotEquivalentTo", message, parameters);
+                Throw(nameof(IsNotEquivalentTo), null, message, parameters);
             }
 
             var expectedCollection = CollectionAssertions.GetCollection(expected);
@@ -881,7 +900,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotEquivalentTo", message, parameters);
+            Throw(nameof(IsNotEquivalentTo), null, message, parameters);
         }
 
         /// <summary>
@@ -1022,7 +1041,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotSequenceEqualTo", FrameworkMessages.CollectionNotEqualReason(message, reason), parameters);
+            Throw(nameof(IsNotSequenceEqualTo), CollectionNotEqualReason(reason), message, parameters);
         }
 
         /// <summary>
@@ -1032,7 +1051,8 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection not expected to be a subset of <paramref name="superset"/>.</param>
         /// <param name="superset">The collection not expected to be a superset of <paramref name="collection"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset)
             where T : IEnumerable
@@ -1074,7 +1094,8 @@ namespace Testify
         /// <param name="superset">The collection not expected to be a superset of <paramref name="collection"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, string message)
             where T : IEnumerable
@@ -1157,7 +1178,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotSubsetOf", message, parameters);
+            Throw(nameof(IsNotSubsetOf), null, message, parameters);
         }
 
         /// <summary>
@@ -1271,7 +1292,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsSequenceEqualTo", FrameworkMessages.CollectionEqualReason(message, reason), parameters);
+            Throw(nameof(IsSequenceEqualTo), CollectionEqualReason(reason), message, parameters);
         }
 
         /// <summary>
@@ -1400,7 +1421,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsSubsetOf", message, parameters);
+            Throw(nameof(IsSubsetOf), null, message, parameters);
         }
 
         private static bool AreCollectionsEqual(ICollection expected, ICollection actual, IEqualityComparer comparer, ref string reason)

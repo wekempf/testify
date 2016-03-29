@@ -1,4 +1,6 @@
 ﻿using System;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -119,20 +121,17 @@ namespace Testify
                 }
                 catch (Exception additionalException)
                 {
-                    var additionalAssertionsFailedMessage = FrameworkMessages.AdditionalAssertionsFailed(typeof(T), message);
-                    Assertions.HandleFail("Throws", additionalException, additionalAssertionsFailedMessage, parameters);
+                    Throw(nameof(Throws), additionalException, AdditionalAssertionsFailed(typeof(T)), message, parameters);
                 }
 
                 return;
             }
             catch (Exception e)
             {
-                var unexpectedExceptionMessage = FrameworkMessages.UnexpectedException(typeof(T), e.GetType(), message);
-                Assertions.HandleFail("Throws", unexpectedExceptionMessage, parameters);
+                Throw(nameof(Throws), UnexpectedException(typeof(T), e.GetType()), message, parameters);
             }
 
-            var didNotThrowMessage = FrameworkMessages.DidNotThrow(typeof(T), message);
-            Assertions.HandleFail("Throws", didNotThrowMessage, parameters);
+            Throw(nameof(Throws), DidNotThrow(typeof(T)), message, parameters);
         }
     }
 }

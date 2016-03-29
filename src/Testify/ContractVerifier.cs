@@ -31,7 +31,7 @@ namespace Testify
             }
             catch (Exception e)
             {
-                HandleFail(verifierName, e.Message);
+                Throw(verifierName, e.Message, null);
             }
 
             var tests = this.GetTests();

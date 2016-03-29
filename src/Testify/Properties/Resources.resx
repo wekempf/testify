@@ -133,10 +133,10 @@
     <value />
   </data>
   <data name="FrameworkMessage_AdditionalAssertionsFailed" xml:space="preserve">
-    <value>Caught the expected exception type &lt;{0}&gt;, but additional assertions failed. {1}</value>
+    <value>Caught the expected exception type &lt;{0}&gt;, but additional assertions failed.</value>
   </data>
   <data name="FrameworkMessage_AssertionFailed" xml:space="preserve">
-    <value>{0} failed. {1}</value>
+    <value>{2} {0} failed. {1}</value>
   </data>
   <data name="FrameworkMessage_BothCollectionsSameElements" xml:space="preserve">
     <value>(Same elements.)</value>
@@ -145,66 +145,66 @@
     <value>(Same reference.)</value>
   </data>
   <data name="FrameworkMessage_CollectionEqualReason" xml:space="preserve">
-    <value>{0} {1}</value>
+    <value>{0}</value>
   </data>
   <data name="FrameworkMessage_CollectionNotEqualReason" xml:space="preserve">
-    <value>{0} {1}</value>
+    <value>{0}</value>
   </data>
   <data name="FrameworkMessage_ContainsFailMsg" xml:space="preserve">
-    <value>String '{0}' does not contain string '{1}'. {2}</value>
+    <value>String '{0}' does not contain string '{1}'.</value>
   </data>
   <data name="FrameworkMessage_DidNotThrow" xml:space="preserve">
-    <value>Expected exception: &lt;{0}&gt;. The action did not throw any exceptions. {1}</value>
+    <value>Expected exception: &lt;{0}&gt;. The action did not throw any exceptions.</value>
   </data>
   <data name="FrameworkMessage_DoesNotMatchFailMsg" xml:space="preserve">
-    <value>String '{0}' matches pattern '{1}'. {2}</value>
+    <value>String '{0}' matches pattern '{1}'.</value>
   </data>
   <data name="FrameworkMessage_DuplicateFound" xml:space="preserve">
-    <value>Duplicate item found: &lt;{0}&gt;. {1}</value>
+    <value>Duplicate item found: &lt;{0}&gt;.</value>
   </data>
   <data name="FrameworkMessage_ElementsAtIndexDoNotMatch" xml:space="preserve">
     <value>(Elements at index {0} do not match. Expected element: &lt;{1}&gt;. Actual element: &lt;{2}&gt;.)</value>
   </data>
   <data name="FrameworkMessage_EndsWithFailMsg" xml:space="preserve">
-    <value>String '{0}' does not end with string '{1}'. {2}</value>
+    <value>String '{0}' does not end with string '{1}'.</value>
   </data>
   <data name="FrameworkMessage_IsEqualToDeltaFailMsg" xml:space="preserve">
-    <value>Expected a difference no greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;. {3}</value>
+    <value>Expected a difference no greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;.</value>
   </data>
   <data name="FrameworkMessage_IsEqualToFailMsg" xml:space="preserve">
-    <value>Expected: &lt;{0}&gt;. Actual: &lt;{1}&gt;. {2}</value>
+    <value>Expected: &lt;{0}&gt;. Actual: &lt;{1}&gt;.</value>
   </data>
   <data name="FrameworkMessage_IsEqualToFailTypesMsg" xml:space="preserve">
-    <value>Expected: &lt;{0} ({1})&gt;. Actual: &lt;{2} ({3})&gt;. {4}</value>
+    <value>Expected: &lt;{0} ({1})&gt;. Actual: &lt;{2} ({3})&gt;.</value>
   </data>
   <data name="FrameworkMessage_IsInstanceOfTypeFailMsg" xml:space="preserve">
-    <value>Expected type: {0}. Actual type: {1}. {2}</value>
+    <value>Expected type: {0}. Actual type: {1}.</value>
   </data>
   <data name="FrameworkMessage_IsNotEqualToDeltaFailMsg" xml:space="preserve">
-    <value>Expected a difference greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;. {3}</value>
+    <value>Expected a difference greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;.</value>
   </data>
   <data name="FrameworkMessage_IsNotEqualToFailMsg" xml:space="preserve">
-    <value>Expected any value except: &lt;{0}&gt;. Actual: &lt;{1}&gt;. {2}</value>
+    <value>Expected any value except: &lt;{0}&gt;. Actual: &lt;{1}&gt;.</value>
   </data>
   <data name="FrameworkMessage_IsNotInstanceOfTypeFailMsg" xml:space="preserve">
-    <value>Wrong type: {0}. Actual type: {1}. {2}</value>
+    <value>Wrong type: {0}. Actual type: {1}.</value>
   </data>
   <data name="FrameworkMessage_MatchesFailMsg" xml:space="preserve">
-    <value>String '{0}' does not match pattern '{1}'. {2}</value>
+    <value>String '{0}' does not match pattern '{1}'.</value>
   </data>
   <data name="FrameworkMessage_NullParameterToAssert" xml:space="preserve">
-    <value>The parameter '{0}' is invalid. The value cannot be null. {1}</value>
+    <value>The parameter '{0}' is invalid. The value cannot be null.</value>
   </data>
   <data name="FrameworkMessage_NumberOfElementsDiff" xml:space="preserve">
     <value>(Different number of elements.)</value>
   </data>
   <data name="FrameworkMessage_StartsWithFailMsg" xml:space="preserve">
-    <value>String '{0}' does not start with string '{1}'. {2}</value>
+    <value>String '{0}' does not start with string '{1}'.</value>
   </data>
   <data name="FrameworkMessage_UnexpectedException" xml:space="preserve">
-    <value>Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;. {2}</value>
+    <value>Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;.</value>
   </data>
   <data name="FrameworMessage_UnexpectedTypeAt" xml:space="preserve">
-    <value>Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;. {3}</value>
+    <value>Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;.</value>
   </data>
 </root>

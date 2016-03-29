@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -62,8 +64,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.ContainsFailMsg(value.Value, substring, message);
-            Assertions.HandleFail("Contains", message, parameters);
+            Throw(nameof(Contains), ContainsFailMsg(value.Value, substring), message, parameters);
         }
 
         /// <summary>
@@ -118,8 +119,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.DoesNotMatchFailMsg(value.Value, pattern.ToString(), message);
-            Assertions.HandleFail("DoesNotMatch", message, parameters);
+            Throw(nameof(DoesNotMatch), DoesNotMatchFailMsg(value.Value, pattern), message, parameters);
         }
 
         /// <summary>
@@ -174,8 +174,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.EndsWithFailMsg(value.Value, substring, message);
-            Assertions.HandleFail("EndsWith", message, parameters);
+            Throw(nameof(EndsWith), EndsWithFailMsg(value.Value, substring), message, parameters);
         }
 
         /// <summary>
@@ -230,8 +229,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.MatchesFailMsg(value.Value, pattern.ToString(), message);
-            Assertions.HandleFail("Matches", message, parameters);
+            Throw(nameof(Matches), MatchesFailMsg(value.Value, pattern), message, parameters);
         }
 
         /// <summary>
@@ -286,8 +284,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.StartsWithFailMsg(value.Value, substring, message);
-            Assertions.HandleFail("StartsWith", message, parameters);
+            Throw(nameof(StartsWith), StartsWithFailMsg(value.Value, substring), message, parameters);
         }
     }
 }

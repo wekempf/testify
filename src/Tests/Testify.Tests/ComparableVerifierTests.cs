@@ -55,7 +55,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. IsNotNull failed. OrderedItemsFactory is not set.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory is not set. IsNotNull failed.");
                 return;
             }
 
@@ -76,7 +76,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. IsNotNull failed. OrderedItemsFactory did not produce any items.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory did not produce any items. IsNotNull failed.");
                 return;
             }
 
@@ -97,7 +97,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. IsTrue failed. OrderedItemsFactory did not produce 3 or more items.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory did not produce 3 or more items. IsTrue failed.");
                 return;
             }
 
@@ -118,7 +118,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. AllItemsAreNotNull failed. OrderedItemsFactory should not produce null values.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory should not produce null values. AllItemsAreNotNull failed.");
                 return;
             }
 
@@ -144,7 +144,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. IsEqualTo failed. Expected: <4>. Actual: <5>. OrderedItemsFactory is not stable.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory is not stable. IsEqualTo failed. Expected: <4>. Actual: <5>.");
                 return;
             }
 

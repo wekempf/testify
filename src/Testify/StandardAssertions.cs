@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.Globalization;
 using Testify.Properties;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -63,17 +65,9 @@ namespace Testify
         {
             Argument.NotNull(actualValue, nameof(actualValue));
 
-            string formattedMessage;
             if (double.IsNaN(expected) || double.IsNaN(actualValue.Value) || double.IsNaN(delta))
             {
-                formattedMessage = FrameworkMessages.IsEqualToDeltaFailMsg(
-                        message == null
-                            ? string.Empty
-                            : Assertions.ReplaceNullChars(message),
-                        expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                        actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                        delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsEqualTo", formattedMessage, parameters);
+                Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) <= delta)
@@ -81,12 +75,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsEqualTo", finalMessage, parameters);
+            Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -143,12 +132,7 @@ namespace Testify
 
             if (float.IsNaN(expected) || float.IsNaN(actualValue.Value) || float.IsNaN(delta))
             {
-                var finalMessage1 = FrameworkMessages.IsEqualToDeltaFailMsg(
-                    Assertions.ReplaceNullChars(message) ?? string.Empty,
-                    expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsEqualTo", finalMessage1, parameters);
+                Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) <= delta)
@@ -156,12 +140,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage2 = FrameworkMessages.IsEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsEqualTo", finalMessage2, parameters);
+            Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -217,10 +196,10 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = (object)actualValue.Value == null || expected == null || actualValue.Value.GetType().Equals(expected.GetType())
-                    ? FrameworkMessages.IsEqualToFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), Assertions.ReplaceNulls(actualValue.Value))
-                    : FrameworkMessages.IsEqualToDifferentTypesFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), expected.GetType().FullName, Assertions.ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
-            Assertions.HandleFail("IsEqualTo", finalMessage, parameters);
+            var assertionMessage = (object)actualValue.Value == null || expected == null || actualValue.Value.GetType().Equals(expected.GetType())
+                    ? IsEqualToFailMsg(ReplaceNulls(expected), ReplaceNulls(actualValue.Value))
+                    : IsEqualToDifferentTypesFailMsg(ReplaceNulls(expected), expected.GetType().FullName, ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
+            Throw(nameof(IsEqualTo), assertionMessage, message, parameters);
         }
 
         /// <summary>
@@ -277,9 +256,9 @@ namespace Testify
             }
 
             var finalMessage = (object)actualValue.Value == null || (object)expected == null || actualValue.Value.GetType().Equals(expected.GetType())
-                    ? FrameworkMessages.IsEqualToFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), Assertions.ReplaceNulls(actualValue.Value))
-                    : FrameworkMessages.IsEqualToDifferentTypesFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), expected.GetType().FullName, Assertions.ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
-            Assertions.HandleFail("IsEqualTo", finalMessage, parameters);
+                ? IsEqualToFailMsg(ReplaceNulls(expected), ReplaceNulls(actualValue.Value))
+                : IsEqualToDifferentTypesFailMsg(ReplaceNulls(expected), expected.GetType().FullName, ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
+            Throw(nameof(IsEqualTo), finalMessage, message, parameters);
         }
 
         /// <summary>
@@ -327,7 +306,7 @@ namespace Testify
 
             if (actualValue.Value)
             {
-                Assertions.HandleFail("IsFalse", message, parameters);
+                Throw(nameof(IsFalse), null, message, parameters);
             }
         }
 
@@ -387,21 +366,12 @@ namespace Testify
             Argument.NotNull(actualValue, nameof(actualValue));
             Argument.NotNull(expectedType, nameof(expectedType));
 
-            if (expectedType == null)
-            {
-                Assertions.HandleFail("IsInstanceOfType", message, parameters);
-            }
-
             if (expectedType.IsInstanceOfType(actualValue.Value))
             {
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsInstanceOfTypeFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expectedType.ToString(),
-                (object)actualValue.Value == null ? Resources.Common_NullInMessages : actualValue.Value.GetType().ToString());
-            Assertions.HandleFail("IsInstanceOfType", finalMessage, parameters);
+            Throw(nameof(IsInstanceOfType), IsInstanceOfTypeFailMsg(expectedType, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -459,12 +429,7 @@ namespace Testify
 
             if (double.IsNaN(expected) || double.IsNaN(actualValue.Value) || double.IsNaN(delta))
             {
-                var finalMessage1 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                    Assertions.ReplaceNullChars(message) ?? string.Empty,
-                    expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsNotEqualTo", finalMessage1, parameters);
+                Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) > delta)
@@ -472,12 +437,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage2 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage2, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -534,12 +494,7 @@ namespace Testify
 
             if (float.IsNaN(expected) || float.IsNaN(actualValue.Value) || float.IsNaN(delta))
             {
-                var finalMessage1 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                    Assertions.ReplaceNullChars(message) ?? string.Empty,
-                    expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsNotEqualTo", finalMessage1, parameters);
+                Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) > delta)
@@ -547,12 +502,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage2 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage2, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -608,11 +558,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsNotEqualToFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                Assertions.ReplaceNulls(expected),
-                Assertions.ReplaceNulls(actualValue.Value));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToFailMsg(expected, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -668,11 +614,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsNotEqualToFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                Assertions.ReplaceNulls(expected),
-                Assertions.ReplaceNulls(actualValue.Value));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToFailMsg(expected, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -731,21 +673,12 @@ namespace Testify
             Argument.NotNull(actualValue, nameof(actualValue));
             Argument.NotNull(expectedType, nameof(expectedType));
 
-            if (expectedType == null)
-            {
-                Assertions.HandleFail("IsNotInstanceOfType", message, parameters);
-            }
-
             if (!expectedType.IsInstanceOfType(actualValue.Value))
             {
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsNotInstanceOfTypeFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expectedType.ToString(),
-                (object)actualValue.Value == null ? Resources.Common_NullInMessages : actualValue.Value.GetType().ToString());
-            Assertions.HandleFail("IsNotInstanceOfType", finalMessage, parameters);
+            Throw(nameof(IsNotInstanceOfType), IsNotInstanceOfTypeFailMsg(expectedType, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -803,7 +736,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotNull", message, parameters);
+            Throw(nameof(IsNotNull), null, message, parameters);
         }
 
         /// <summary>
@@ -864,7 +797,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotSameAs", message, parameters);
+            Throw(nameof(IsNotSameAs), null, message, parameters);
         }
 
         /// <summary>
@@ -922,7 +855,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNull", message, parameters);
+            Throw(nameof(IsNull), null, message, parameters);
         }
 
         /// <summary>
@@ -982,7 +915,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsSameAs", message, parameters);
+            Throw(nameof(IsSameAs), null, message, parameters);
         }
 
         /// <summary>
@@ -1030,7 +963,7 @@ namespace Testify
 
             if (!actualValue.Value)
             {
-                Assertions.HandleFail("IsTrue", message, parameters);
+                Throw(nameof(IsTrue), null, message, parameters);
             }
         }
     }
