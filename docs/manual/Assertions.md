@@ -16,9 +16,9 @@ using static Testify.Assertions;
 
 > **Note**
 >
-> The static using for `Testify.Assertions` is used to allow you to use the static methods on the `Testify.Assertions` class without having to include the class name on every call. If you're using a C# 5 or older or just prefer to not use static usings you can either fully specify the call, or add an `Assert` helper method to your unit test class, possibly through a base class.
+> The static using for `Testify.Assertions` is used to allow you to use the static methods on the `Testify.Assertions` class without having to include the class name on every call. If you're using C# 5 or older or just prefer to not use static usings you can either fully specify the call, or add an `Assert` helper method to your unit test class, possibly through a base class.
 
-With the using statements in place you can add `Assert(result).` to any unit test, at which point IntelliSense will provide you with a list of valid assertions based on the type of `result`. For instance, if `result` is a `List<int>` the assertions you'd be presented with in IntelliSense would include `AllItemsAreUnique`. Another common assertion for collections, `AllItemsAreNotNull` would not be presented in IntelliSense because `int` is a value type and can't be `null`. This strong typing and IntelliSense support is one of the key benefits to Testify over the built-in assertions of your unit test framework of choice.
+With the using statements in place you can add `Assert(result).` to any unit test, at which point IntelliSense will provide you with a list of valid assertions based on the type of `result`. For instance, if `result` is a `List<int>` the assertions you'd be presented with in IntelliSense would include `AllItemsAreUnique`. Another common assertion for collections, `AllItemsAreNotNull`, would not be presented in IntelliSense because `int` is a value type and can't be `null`. This strong typing and IntelliSense support is one of the key benefits to Testify over the built-in assertions of your unit test framework of choice.
 
 ## Compound Assertions
 
