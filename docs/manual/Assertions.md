@@ -73,3 +73,12 @@ public static class MyAssertions
 ## AssertionException
 
 Testify assertions all throw an `AssertionException` on failure. This type is derived from `AggregateException` allowing for multiple inner exceptions. This is how compound assertions are able to report multiple failures. This is also how contract verifiers can run multiple tests and report all of the failures.
+
+## Provided Assertions
+
+See the API documentation for the following classes.
+
+* @Testify.StandardAssertions
+* @Testify.CollectionAssertions
+* @Testify.StringAssertions
+* @Testify.ExceptionAssertions
