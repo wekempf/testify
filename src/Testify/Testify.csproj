@@ -77,6 +77,7 @@
     <Compile Include="IAnonymousDataContext.cs" />
     <Compile Include="IAnonymousDataCustomization.cs" />
     <Compile Include="IRegisterAnonymousData.cs" />
+    <Compile Include="PopulateOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
