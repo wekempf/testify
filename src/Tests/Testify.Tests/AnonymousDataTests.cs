@@ -7,27 +7,6 @@ namespace Testify
 {
     public class ObjectFactoryTests
     {
-        [Flags]
-        private enum FlagsEnum
-        {
-            None = 0x0,
-            First = 0x1,
-            Second = 0x2,
-            Third = 0x4
-        }
-
-        private enum SimpleEnum
-        {
-            One,
-            Two,
-            Three
-        }
-
-        private interface IModel
-        {
-            string Value { get; set; }
-        }
-
         [Fact]
         public void Any_ArrayOfType()
         {
@@ -238,6 +217,52 @@ namespace Testify
             Assert.NotNull(result);
         }
 
+        [Fact]
+        public void Any_PopulateShallow_ShouldPopulateFirstLevel()
+        {
+            var anon = new AnonymousData();
+
+            var result = anon.Any<DeepModel>(PopulateOption.Shallow);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Model);
+            Assert.Equal(result.Model.Value, nameof(Model));
+        }
+
+        [Fact]
+        public void Any_PopulateDeep_ShouldPopulateAllLevels()
+        {
+            var anon = new AnonymousData();
+            anon.Freeze("xyzzy");
+
+            var result = anon.Any<DeepModel>(PopulateOption.Deep);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Model);
+            Assert.Equal(result.Model.Value, "xyzzy");
+        }
+
+        [Flags]
+        private enum FlagsEnum
+        {
+            None = 0x0,
+            First = 0x1,
+            Second = 0x2,
+            Third = 0x4
+        }
+
+        private enum SimpleEnum
+        {
+            One,
+            Two,
+            Three
+        }
+
+        private interface IModel
+        {
+            string Value { get; set; }
+        }
+
         private class Customization : IAnonymousDataCustomization
         {
             public bool Create(IAnonymousDataContext context, out object result)
@@ -262,6 +287,11 @@ namespace Testify
 
         private class ModelList : List<Model>
         {
+        }
+
+        private class DeepModel
+        {
+            public Model Model { get; set; }
         }
     }
 }

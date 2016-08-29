@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Testify.Properties;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -19,7 +21,7 @@ namespace Testify
         /// <param name="collection">The collection to verify.</param>
         /// <param name="expectedType">The type expected to be found in the inheritance hierarchy of every
         /// element in.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">Not all items in the collection were of the specified type.</exception>
         public static void AllItemsAreInstancesOfType<T>(this ActualValue<T> collection, Type expectedType)
             where T : IEnumerable
@@ -41,7 +43,7 @@ namespace Testify
         /// element in.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">Not all items in the collection were of the specified type.</exception>
         public static void AllItemsAreInstancesOfType<T>(this ActualValue<T> collection, Type expectedType, string message)
             where T : IEnumerable
@@ -64,7 +66,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">Not all items in the collection were of the specified type.</exception>
         public static void AllItemsAreInstancesOfType<T>(this ActualValue<T> collection, Type expectedType, string message, params object[] parameters)
             where T : IEnumerable
@@ -78,8 +80,11 @@ namespace Testify
             {
                 if (!expectedType.IsInstanceOfType(item))
                 {
-                    var finalMessage = FrameworkMessages.UnexpectedTypeAt(index, expectedType, item.GetType(), message);
-                    Assertions.HandleFail("AllItemsAreInstancesOfType", finalMessage, parameters);
+                    Throw(
+                        nameof(AllItemsAreInstancesOfType),
+                        UnexpectedTypeAt(index, expectedType, item.GetType()),
+                        message,
+                        parameters);
                 }
 
                 ++index;
@@ -87,13 +92,13 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that all items in the specified collection are not <see langword="null"/>. Displays a message if
+        /// Verifies that all items in the specified collection are not <c>null</c>. Displays a message if
         /// the assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the collection.</typeparam>
-        /// <param name="collection">The collection in which to search for elements that are <see langword="null"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException">One or more items in the collection were <see langword="null"/>.</exception>
+        /// <param name="collection">The collection in which to search for elements that are <c>null</c>.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="AssertionException">One or more items in the collection were <c>null</c>.</exception>
         public static void AllItemsAreNotNull<T>(this ActualValue<T> collection)
             where T : IEnumerable
         {
@@ -104,15 +109,15 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that all items in the specified collection are not <see langword="null"/>. Displays a message if
+        /// Verifies that all items in the specified collection are not <c>null</c>. Displays a message if
         /// the assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the collection.</typeparam>
-        /// <param name="collection">The collection in which to search for elements that are <see langword="null"/>.</param>
+        /// <param name="collection">The collection in which to search for elements that are <c>null</c>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException">One or more items in the collection were <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="AssertionException">One or more items in the collection were <c>null</c>.</exception>
         public static void AllItemsAreNotNull<T>(this ActualValue<T> collection, string message)
             where T : IEnumerable
         {
@@ -123,16 +128,16 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that all items in the specified collection are not <see langword="null"/>. Displays a message if
+        /// Verifies that all items in the specified collection are not <c>null</c>. Displays a message if
         /// the assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the collection.</typeparam>
-        /// <param name="collection">The collection in which to search for elements that are <see langword="null"/>.</param>
+        /// <param name="collection">The collection in which to search for elements that are <c>null</c>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException">One or more items in the collection were <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="AssertionException">One or more items in the collection were <c>null</c>.</exception>
         public static void AllItemsAreNotNull<T>(this ActualValue<T> collection, string message, params object[] parameters)
             where T : IEnumerable
         {
@@ -143,7 +148,11 @@ namespace Testify
             {
                 if (item == null)
                 {
-                    Assertions.HandleFail("AllItemsAreNotNull", message, parameters);
+                    Throw(
+                        nameof(AllItemsAreNotNull),
+                        null,
+                        message,
+                        parameters);
                 }
             }
         }
@@ -154,7 +163,7 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection in which to search for duplicate elements.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection)
             where T : IEnumerable
@@ -172,7 +181,7 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection in which to search for duplicate elements.</param>
         /// <param name="comparer">The comparer.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, IEqualityComparer comparer)
             where T : IEnumerable
@@ -192,7 +201,7 @@ namespace Testify
         /// <param name="collection">The collection in which to search for duplicate elements.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, string message)
             where T : IEnumerable
@@ -212,7 +221,7 @@ namespace Testify
         /// <param name="comparer">The comparer.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -233,7 +242,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message" />.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, string message, params object[] parameters)
             where T : IEnumerable
@@ -254,7 +263,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message" />.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -275,16 +284,22 @@ namespace Testify
                     }
                     else
                     {
-                        var finalMessage = FrameworkMessages.DuplicateFound(item, message);
-                        Assertions.HandleFail("AllItemsAreUnique", finalMessage, parameters);
+                        Throw(
+                            nameof(AllItemsAreUnique),
+                            DuplicateFound(item),
+                            message,
+                            parameters);
                     }
                 }
                 else
                 {
                     if (!found.Add(item))
                     {
-                        var finalMessage = FrameworkMessages.DuplicateFound(item, message);
-                        Assertions.HandleFail("AllItemsAreUnique", finalMessage, parameters);
+                        Throw(
+                            "AllItemsAreUnique",
+                            DuplicateFound(item),
+                            message,
+                            parameters);
                     }
                 }
             }
@@ -298,7 +313,7 @@ namespace Testify
         /// <typeparam name="TElement">The type of the element.</typeparam>
         /// <param name="collection">The collection in which to search for the element.</param>
         /// <param name="element">The element that is expected to be in the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection does not contain the specified element.</exception>
         public static void Contains<T, TElement>(this ActualValue<T> collection, TElement element)
             where T : IEnumerable
@@ -318,7 +333,7 @@ namespace Testify
         /// <param name="collection">The collection in which to search for the element.</param>
         /// <param name="element">The element that is expected to be in the collection.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection does not contain the specified element.</exception>
         public static void Contains<T, TElement>(this ActualValue<T> collection, TElement element, IEqualityComparer comparer)
             where T : IEnumerable
@@ -340,7 +355,7 @@ namespace Testify
         /// <param name="element">The element that is expected to be in the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection does not contain the specified element.</exception>
         public static void Contains<T, TElement>(this ActualValue<T> collection, TElement element, string message)
             where T : IEnumerable
@@ -362,7 +377,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection does not contain the specified element.</exception>
         public static void Contains<T, TElement>(this ActualValue<T> collection, TElement element, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -385,7 +400,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection does not contain the specified element.</exception>
         public static void Contains<T, TElement>(this ActualValue<T> collection, TElement element, string message, params object[] parameters)
             where T : IEnumerable
@@ -408,7 +423,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection does not contain the specified element.</exception>
         public static void Contains<T, TElement>(this ActualValue<T> collection, TElement element, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -425,7 +440,11 @@ namespace Testify
                 }
             }
 
-            Assertions.HandleFail("Contains", message, parameters);
+            Throw(
+                nameof(Contains),
+                null,
+                message,
+                parameters);
         }
 
         /// <summary>
@@ -436,7 +455,7 @@ namespace Testify
         /// <typeparam name="TElement">The type of the element.</typeparam>
         /// <param name="collection">The collection in which to search for the element.</param>
         /// <param name="element">The element that is expected to be in the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection contains the specified element.</exception>
         public static void DoesNotContain<T, TElement>(this ActualValue<T> collection, TElement element)
             where T : IEnumerable
@@ -456,7 +475,7 @@ namespace Testify
         /// <param name="collection">The collection in which to search for the element.</param>
         /// <param name="element">The element that is expected to be in the collection.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection contains the specified element.</exception>
         public static void DoesNotContain<T, TElement>(this ActualValue<T> collection, TElement element, IEqualityComparer comparer)
             where T : IEnumerable
@@ -478,7 +497,7 @@ namespace Testify
         /// <param name="element">The element that is expected to be in the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection contains the specified element.</exception>
         public static void DoesNotContain<T, TElement>(this ActualValue<T> collection, TElement element, string message)
             where T : IEnumerable
@@ -500,7 +519,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection contains the specified element.</exception>
         public static void DoesNotContain<T, TElement>(this ActualValue<T> collection, TElement element, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -523,7 +542,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection contains the specified element.</exception>
         public static void DoesNotContain<T, TElement>(this ActualValue<T> collection, TElement element, string message, params object[] parameters)
             where T : IEnumerable
@@ -546,7 +565,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection contains the specified element.</exception>
         public static void DoesNotContain<T, TElement>(this ActualValue<T> collection, TElement element, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -559,7 +578,7 @@ namespace Testify
             {
                 if (comparer.Equals(item, element))
                 {
-                    Assertions.HandleFail("DoesNotContain", message, parameters);
+                    Throw(nameof(DoesNotContain), null, message, parameters);
                 }
             }
         }
@@ -573,7 +592,7 @@ namespace Testify
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are not equivalent.</exception>
         public static void IsEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected)
             where T : IEnumerable
@@ -593,7 +612,7 @@ namespace Testify
         /// <param name="collection">The collection to compare. This is the collection the unit test produced.</param>
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are not equivalent.</exception>
         public static void IsEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer)
             where T : IEnumerable
@@ -617,7 +636,7 @@ namespace Testify
         /// be seen in the unit test results.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are not equivalent.</exception>
         public static void IsEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, string message)
             where T : IEnumerable
@@ -639,7 +658,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are not equivalent.</exception>
         public static void IsEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -664,7 +683,7 @@ namespace Testify
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are not equivalent.</exception>
         public static void IsEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, string message, params object[] parameters)
             where T : IEnumerable
@@ -689,7 +708,7 @@ namespace Testify
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are not equivalent.</exception>
         public static void IsEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -708,7 +727,7 @@ namespace Testify
             var expectedCollection = CollectionAssertions.GetCollection(expected);
             if (expectedCollection.Count != actualCollection.Count)
             {
-                Assertions.HandleFail("IsEquivalentTo", message, parameters);
+                Throw(nameof(IsEquivalentTo), null, message, parameters);
             }
 
             int expectedCount;
@@ -719,7 +738,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsEquivalentTo", message, parameters);
+            Throw(nameof(IsEquivalentTo), null, message, parameters);
         }
 
         /// <summary>
@@ -731,7 +750,7 @@ namespace Testify
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected)
             where T : IEnumerable
@@ -753,7 +772,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer)
             where T : IEnumerable
@@ -777,7 +796,7 @@ namespace Testify
         /// be seen in the unit test results.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, string message)
             where T : IEnumerable
@@ -801,7 +820,7 @@ namespace Testify
         /// be seen in the unit test results.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -826,7 +845,7 @@ namespace Testify
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, string message, params object[] parameters)
             where T : IEnumerable
@@ -851,7 +870,7 @@ namespace Testify
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -863,7 +882,7 @@ namespace Testify
 
             if (object.ReferenceEquals(expected, collection.Value))
             {
-                Assertions.HandleFail("IsNotEquivalentTo", message, parameters);
+                Throw(nameof(IsNotEquivalentTo), null, message, parameters);
             }
 
             var expectedCollection = CollectionAssertions.GetCollection(expected);
@@ -881,7 +900,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotEquivalentTo", message, parameters);
+            Throw(nameof(IsNotEquivalentTo), null, message, parameters);
         }
 
         /// <summary>
@@ -891,7 +910,7 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection to compare. This is the collection the unit test produced.</param>
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected)
             where T : IEnumerable
@@ -911,7 +930,7 @@ namespace Testify
         /// <param name="collection">The collection to compare. This is the collection the unit test produced.</param>
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer)
             where T : IEnumerable
@@ -933,7 +952,7 @@ namespace Testify
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, string message)
             where T : IEnumerable
@@ -955,7 +974,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -978,7 +997,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, string message, params object[] parameters)
             where T : IEnumerable
@@ -1001,7 +1020,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -1022,7 +1041,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotSequenceEqualTo", FrameworkMessages.CollectionNotEqualReason(message, reason), parameters);
+            Throw(nameof(IsNotSequenceEqualTo), CollectionNotEqualReason(reason), message, parameters);
         }
 
         /// <summary>
@@ -1032,7 +1051,8 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection not expected to be a subset of <paramref name="superset"/>.</param>
         /// <param name="superset">The collection not expected to be a superset of <paramref name="collection"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset)
             where T : IEnumerable
@@ -1052,7 +1072,7 @@ namespace Testify
         /// <param name="collection">The collection not expected to be a subset of <paramref name="superset"/>.</param>
         /// <param name="superset">The collection not expected to be a superset of <paramref name="collection"/>.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, IEqualityComparer comparer)
             where T : IEnumerable
@@ -1074,7 +1094,8 @@ namespace Testify
         /// <param name="superset">The collection not expected to be a superset of <paramref name="collection"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, string message)
             where T : IEnumerable
@@ -1096,7 +1117,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -1119,7 +1140,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, string message, params object[] parameters)
             where T : IEnumerable
@@ -1142,7 +1163,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsNotSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -1157,7 +1178,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotSubsetOf", message, parameters);
+            Throw(nameof(IsNotSubsetOf), null, message, parameters);
         }
 
         /// <summary>
@@ -1167,7 +1188,7 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection to compare. This is the collection the unit test produced.</param>
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected)
             where T : IEnumerable
@@ -1183,7 +1204,7 @@ namespace Testify
         /// <param name="collection">The collection to compare. This is the collection the unit test produced.</param>
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer)
             where T : IEnumerable
@@ -1200,7 +1221,7 @@ namespace Testify
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, string message)
             where T : IEnumerable
@@ -1218,7 +1239,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -1236,7 +1257,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, string message, params object[] parameters)
             where T : IEnumerable
@@ -1255,7 +1276,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -1271,7 +1292,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsSequenceEqualTo", FrameworkMessages.CollectionEqualReason(message, reason), parameters);
+            Throw(nameof(IsSequenceEqualTo), CollectionEqualReason(reason), message, parameters);
         }
 
         /// <summary>
@@ -1280,7 +1301,7 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection expected to be a subset of <paramref name="superset"/>.</param>
         /// <param name="superset">The collection expected to be a superset of <paramref name="collection"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset)
             where T : IEnumerable
@@ -1299,7 +1320,7 @@ namespace Testify
         /// <param name="collection">The collection expected to be a subset of <paramref name="superset"/>.</param>
         /// <param name="superset">The collection expected to be a superset of <paramref name="collection"/>.</param>
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, IEqualityComparer comparer)
             where T : IEnumerable
@@ -1320,7 +1341,7 @@ namespace Testify
         /// <param name="superset">The collection expected to be a superset of <paramref name="collection"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, string message)
             where T : IEnumerable
@@ -1342,7 +1363,7 @@ namespace Testify
         /// <param name="comparer">The compare implementation to use when comparing elements of the collection.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, IEqualityComparer comparer, string message)
             where T : IEnumerable
@@ -1364,7 +1385,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="superset"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, string message, params object[] parameters)
             where T : IEnumerable
@@ -1387,7 +1408,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="superset"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The actual collection is a subset of the superset.</exception>
         public static void IsSubsetOf<T>(this ActualValue<T> collection, IEnumerable superset, IEqualityComparer comparer, string message, params object[] parameters)
             where T : IEnumerable
@@ -1400,7 +1421,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsSubsetOf", message, parameters);
+            Throw(nameof(IsSubsetOf), null, message, parameters);
         }
 
         private static bool AreCollectionsEqual(ICollection expected, ICollection actual, IEqualityComparer comparer, ref string reason)

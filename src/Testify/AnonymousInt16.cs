@@ -14,7 +14,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static short AnyInt16(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -30,7 +30,7 @@ namespace Testify
         /// <param name="minimum">The minimum value.</param>
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
         public static short AnyInt16(this IAnonymousData anon, short minimum, short maximum)
         {
@@ -46,7 +46,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static short AnyInt16(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -63,7 +63,7 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
         public static short AnyInt16(this IAnonymousData anon, short minimum, short maximum, Distribution distribution)
         {
@@ -78,7 +78,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random positive <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <remarks>
         /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
         /// perspective, but the term "positive" is used because this is what many would expect.
@@ -96,7 +96,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random positive <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <remarks>
         /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
         /// perspective, but the term "positive" is used because this is what many would expect.
@@ -113,7 +113,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random positive <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static short AnyNegativeInt16(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -127,7 +127,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random positive <see langword="short"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         public static short AnyNegativeInt16(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));

@@ -38,9 +38,12 @@ namespace Testify
         /// Creates an instance of the specified type of object.
         /// </summary>
         /// <param name="type">The type to create.</param>
-        /// <returns>An instance of the specified type.</returns>
+        /// <param name="populateOption">The populate option.</param>
+        /// <returns>
+        /// An instance of the specified type.
+        /// </returns>
         /// <exception cref="AnonymousDataException">The specified type could not be created.</exception>
-        public object Any(Type type)
+        public object Any(Type type, PopulateOption populateOption)
         {
             Argument.NotNull(type, nameof(type));
 
@@ -52,14 +55,14 @@ namespace Testify
             Factory factory;
             if (this.factories.TryGetValue(type, out factory))
             {
-                return factory(this);
+                return this.Populate(factory(this), populateOption);
             }
 
             var context = new AnonymousDataContext(this, type);
             object result;
             if (context.CallNextCustomization(out result))
             {
-                return result;
+                return this.Populate(result, populateOption);
             }
 
             throw new AnonymousDataException(type);
@@ -85,7 +88,7 @@ namespace Testify
         /// </summary>
         /// <param name="customization">The customization to apply.</param>
         /// <returns>The current <see cref="AnonymousData"/> to allow for method call chaining.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="customization"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="customization"/> is <c>null</c>.</exception>
         public AnonymousData Customize(IAnonymousDataCustomization customization)
         {
             Argument.NotNull(customization, nameof(customization));
@@ -95,17 +98,90 @@ namespace Testify
         }
 
         /// <summary>
+        /// Populates the specified instance by assigning all properties to anonymous values.
+        /// </summary>
+        /// <param name="instance">The instance to populate.</param>
+        /// <param name="deep">If set to <see langword="true"/> then properties are assigned recursively, populating
+        /// the entire object tree.</param>
+        public void Populate(object instance, bool deep)
+        {
+            var queue = deep ? new Queue<object>() : null;
+            var current = instance;
+            while (true)
+            {
+                if (current != null)
+                {
+                    var type = current.GetType();
+                    var properties =
+                        from prop in type.GetRuntimeProperties()
+                        where prop.CanWrite && prop.SetMethod.IsPublic
+                        select prop;
+                    foreach (var prop in properties)
+                    {
+                        var value = this.Any(prop.PropertyType);
+                        prop.SetValue(current, value);
+                        if (deep)
+                        {
+                            queue.Enqueue(value);
+                        }
+                    }
+                }
+
+                if (!deep || !queue.Any())
+                {
+                    break;
+                }
+
+                current = queue.Dequeue();
+            }
+        }
+
+        /// <summary>
         /// Register a factory method for the specified type.
         /// </summary>
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <c>null</c>.</exception>
         public void Register(Type type, Factory factory)
         {
             Argument.NotNull(type, nameof(type));
             Argument.NotNull(factory, nameof(factory));
 
             this.factories[type] = factory;
+        }
+
+        private bool Any(Type type, out object result)
+        {
+            Argument.NotNull(type, nameof(type));
+
+            if (type.IsEnum())
+            {
+                result = this.AnyEnumValue(type);
+                return true;
+            }
+
+            var constructors =
+                from constructor in type.GetConstructors()
+                let parameters = constructor.GetParameters()
+                orderby parameters.Length ascending
+                select new { Constructor = constructor, Parameters = parameters };
+            var info = constructors.FirstOrDefault();
+            if (info == null)
+            {
+                throw new AnonymousDataException(type);
+            }
+
+            var args = info.Parameters.Select(a => this.Any(a.ParameterType)).ToArray();
+            try
+            {
+                result = info.Constructor.Invoke(args);
+            }
+            catch (Exception e)
+            {
+                throw new AnonymousDataException(type, e);
+            }
+
+            return true;
         }
 
         private object BuildArray(Type type)
@@ -174,38 +250,14 @@ namespace Testify
             return factory(this);
         }
 
-        private bool Any(Type type, out object result)
+        private object Populate(object instance, PopulateOption populateOption)
         {
-            Argument.NotNull(type, nameof(type));
-
-            if (type.IsEnum())
+            if (populateOption != PopulateOption.None)
             {
-                result = this.AnyEnumValue(type);
-                return true;
+                this.Populate(instance, populateOption == PopulateOption.Deep);
             }
 
-            var constructors =
-                from constructor in type.GetConstructors()
-                let parameters = constructor.GetParameters()
-                orderby parameters.Length ascending
-                select new { Constructor = constructor, Parameters = parameters };
-            var info = constructors.FirstOrDefault();
-            if (info == null)
-            {
-                throw new AnonymousDataException(type);
-            }
-
-            var args = info.Parameters.Select(a => this.Any(a.ParameterType)).ToArray();
-            try
-            {
-                result = info.Constructor.Invoke(args);
-            }
-            catch (Exception e)
-            {
-                throw new AnonymousDataException(type, e);
-            }
-
-            return true;
+            return instance;
         }
 
         private void Register()
@@ -242,6 +294,20 @@ namespace Testify
 
             public Type ResultType { get; }
 
+            public object Any(Type type, PopulateOption populateOption)
+            {
+                Argument.NotNull(type, nameof(type));
+
+                return this.factory.Any(type, populateOption);
+            }
+
+            public double AnyDouble(double minimum, double maximum, Distribution distribution)
+            {
+                Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+
+                return this.factory.AnyDouble(minimum, maximum, distribution);
+            }
+
             public bool CallNextCustomization(out object result)
             {
                 if (this.current != 0)
@@ -263,18 +329,15 @@ namespace Testify
                 return this.factory.Any(this.ResultType, out result);
             }
 
-            public object Any(Type type)
+            /// <summary>
+            /// Populates the specified instance by assigning all properties to anonymous values.
+            /// </summary>
+            /// <param name="instance">The instance to populate.</param>
+            /// <param name="deep">If set to <see langword="true"/> then properties are assigned recursively, populating
+            /// the entire object tree.</param>
+            public void Populate(object instance, bool deep)
             {
-                Argument.NotNull(type, nameof(type));
-
-                return this.factory.Any(type);
-            }
-
-            public double AnyDouble(double minimum, double maximum, Distribution distribution)
-            {
-                Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
-
-                return this.factory.AnyDouble(minimum, maximum, distribution);
+                this.factory.Populate(instance, deep);
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Contains failed. String 'foobar' does not contain string 'baz'. Some message.");
+                e.ExpectMessage("Some message. Contains failed. String 'foobar' does not contain string 'baz'.");
                 return;
             }
 
@@ -31,7 +31,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Contains failed. String 'foobar' does not contain string 'baz'. Some message.");
+                e.ExpectMessage("Some message. Contains failed. String 'foobar' does not contain string 'baz'.");
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("DoesNotMatch failed. String 'foo' matches pattern 'foo'. Some message.");
+                e.ExpectMessage("Some message. DoesNotMatch failed. String 'foo' matches pattern 'foo'.");
                 return;
             }
 
@@ -85,7 +85,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("DoesNotMatch failed. String 'foo' matches pattern 'foo'. Some message.");
+                e.ExpectMessage("Some message. DoesNotMatch failed. String 'foo' matches pattern 'foo'.");
                 return;
             }
 
@@ -123,7 +123,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EndsWith failed. String 'foo' does not end with string 'bar'. Some message.");
+                e.ExpectMessage("Some message. EndsWith failed. String 'foo' does not end with string 'bar'.");
                 return;
             }
 
@@ -139,7 +139,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EndsWith failed. String 'foo' does not end with string 'bar'. Some message.");
+                e.ExpectMessage("Some message. EndsWith failed. String 'foo' does not end with string 'bar'.");
                 return;
             }
 
@@ -177,7 +177,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Matches failed. String 'foo' does not match pattern 'bar'. Some message.");
+                e.ExpectMessage("Some message. Matches failed. String 'foo' does not match pattern 'bar'.");
                 return;
             }
 
@@ -193,7 +193,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Matches failed. String 'foo' does not match pattern 'bar'. Some message.");
+                e.ExpectMessage("Some message. Matches failed. String 'foo' does not match pattern 'bar'.");
                 return;
             }
 
@@ -231,7 +231,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("StartsWith failed. String 'foo' does not start with string 'bar'. Some message.");
+                e.ExpectMessage("Some message. StartsWith failed. String 'foo' does not start with string 'bar'.");
                 return;
             }
 
@@ -247,7 +247,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("StartsWith failed. String 'foo' does not start with string 'bar'. Some message.");
+                e.ExpectMessage("Some message. StartsWith failed. String 'foo' does not start with string 'bar'.");
                 return;
             }
 

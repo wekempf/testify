@@ -66,12 +66,12 @@ namespace Testify
         }
 
         /// <summary>
-        /// Ensures the argument is not <see langword="null"/>.
+        /// Ensures the argument is not <c>null</c>.
         /// </summary>
         /// <typeparam name="T">The value type.</typeparam>
         /// <param name="value">The argument value.</param>
         /// <param name="argName">The argument name.</param>
-        /// <exception cref="ArgumentNullException">The argument was <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">The argument was <c>null</c>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void NotNull<T>(T value, string argName)
             where T : class
@@ -83,11 +83,11 @@ namespace Testify
         }
 
         /// <summary>
-        /// Ensures the argument is not <see langword="null"/> or <see cref="string.Empty"/>.
+        /// Ensures the argument is not <c>null</c> or <see cref="string.Empty"/>.
         /// </summary>
         /// <param name="value">The argument value.</param>
         /// <param name="argName">The argument name.</param>
-        /// <exception cref="ArgumentNullException">The argument was <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">The argument was <c>null</c>.</exception>
         /// <exception cref="ArgumentException">The argument was <see cref="string.Empty"/>.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static void NotNullOrEmpty(string value, string argName)

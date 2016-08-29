@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -16,7 +18,7 @@ namespace Testify
         /// </summary>
         /// <param name="value">The actual value.</param>
         /// <param name="substring">The string expected to occur within <paramref name="value"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not contain <paramref name="substring"/>.</exception>
         public static void Contains(this ActualValue<string> value, string substring)
         {
@@ -33,7 +35,7 @@ namespace Testify
         /// <param name="substring">The string expected to occur within <paramref name="value"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not contain <paramref name="substring"/>.</exception>
         public static void Contains(this ActualValue<string> value, string substring, string message)
         {
@@ -51,7 +53,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not contain <paramref name="substring"/>.</exception>
         public static void Contains(this ActualValue<string> value, string substring, string message, params object[] parameters)
         {
@@ -62,8 +64,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.ContainsFailMsg(value.Value, substring, message);
-            Assertions.HandleFail("Contains", message, parameters);
+            Throw(nameof(Contains), ContainsFailMsg(value.Value, substring), message, parameters);
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Testify
         /// </summary>
         /// <param name="value">The actual value.</param>
         /// <param name="pattern">The regular expression that <paramref name="value"/> is not expected to match.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> matches <paramref name="pattern"/>.</exception>
         public static void DoesNotMatch(this ActualValue<string> value, Regex pattern)
         {
@@ -89,7 +90,7 @@ namespace Testify
         /// <param name="pattern">The regular expression that <paramref name="value"/> is not expected to match.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> matches <paramref name="pattern"/>.</exception>
         public static void DoesNotMatch(this ActualValue<string> value, Regex pattern, string message)
         {
@@ -107,7 +108,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> matches <paramref name="pattern"/>.</exception>
         public static void DoesNotMatch(this ActualValue<string> value, Regex pattern, string message, params object[] parameters)
         {
@@ -118,8 +119,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.DoesNotMatchFailMsg(value.Value, pattern.ToString(), message);
-            Assertions.HandleFail("DoesNotMatch", message, parameters);
+            Throw(nameof(DoesNotMatch), DoesNotMatchFailMsg(value.Value, pattern), message, parameters);
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Testify
         /// </summary>
         /// <param name="value">The actual value.</param>
         /// <param name="substring">The string expected to be a suffix of <paramref name="value"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not end with <paramref name="substring"/>.</exception>
         public static void EndsWith(this ActualValue<string> value, string substring)
         {
@@ -145,7 +145,7 @@ namespace Testify
         /// <param name="substring">The string expected to be a suffix of <paramref name="value"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not end with <paramref name="substring"/>.</exception>
         public static void EndsWith(this ActualValue<string> value, string substring, string message)
         {
@@ -163,7 +163,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not end with <paramref name="substring"/>.</exception>
         public static void EndsWith(this ActualValue<string> value, string substring, string message, params object[] parameters)
         {
@@ -174,8 +174,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.EndsWithFailMsg(value.Value, substring, message);
-            Assertions.HandleFail("EndsWith", message, parameters);
+            Throw(nameof(EndsWith), EndsWithFailMsg(value.Value, substring), message, parameters);
         }
 
         /// <summary>
@@ -184,7 +183,7 @@ namespace Testify
         /// </summary>
         /// <param name="value">The actual value.</param>
         /// <param name="pattern">The regular expression that <paramref name="value"/> is expected to match.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not match <paramref name="pattern"/>.</exception>
         public static void Matches(this ActualValue<string> value, Regex pattern)
         {
@@ -201,7 +200,7 @@ namespace Testify
         /// <param name="pattern">The regular expression that <paramref name="value"/> is expected to match.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not match <paramref name="pattern"/>.</exception>
         public static void Matches(this ActualValue<string> value, Regex pattern, string message)
         {
@@ -219,7 +218,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not match <paramref name="pattern"/>.</exception>
         public static void Matches(this ActualValue<string> value, Regex pattern, string message, params object[] parameters)
         {
@@ -230,8 +229,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.MatchesFailMsg(value.Value, pattern.ToString(), message);
-            Assertions.HandleFail("Matches", message, parameters);
+            Throw(nameof(Matches), MatchesFailMsg(value.Value, pattern), message, parameters);
         }
 
         /// <summary>
@@ -240,7 +238,7 @@ namespace Testify
         /// </summary>
         /// <param name="value">The actual value.</param>
         /// <param name="substring">The string expected to be a suffix of <paramref name="value"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not start with <paramref name="substring"/>.</exception>
         public static void StartsWith(this ActualValue<string> value, string substring)
         {
@@ -257,7 +255,7 @@ namespace Testify
         /// <param name="substring">The string expected to be a suffix of <paramref name="value"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not start with <paramref name="substring"/>.</exception>
         public static void StartsWith(this ActualValue<string> value, string substring, string message)
         {
@@ -275,7 +273,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="value"/> does not start with <paramref name="substring"/>.</exception>
         public static void StartsWith(this ActualValue<string> value, string substring, string message, params object[] parameters)
         {
@@ -286,8 +284,7 @@ namespace Testify
                 return;
             }
 
-            message = FrameworkMessages.StartsWithFailMsg(value.Value, substring, message);
-            Assertions.HandleFail("StartsWith", message, parameters);
+            Throw(nameof(StartsWith), StartsWithFailMsg(value.Value, substring), message, parameters);
         }
     }
 }

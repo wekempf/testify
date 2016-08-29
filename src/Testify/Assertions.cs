@@ -5,13 +5,13 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using Testify.Properties;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
     /// <summary>
     /// Provides methods for starting fluent assertions.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class Assertions
     {
         /// <summary>
@@ -30,7 +30,7 @@ namespace Testify
         /// <param name="action">The action.</param>
         /// <returns>An <see cref="ActualValue{T}"/> instance that can be used to declare
         /// fluent assertions.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="action"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="action"/> is <c>null</c>.</exception>
         public static ActualValue<Action> Assert(Action action)
         {
             Argument.NotNull(action, nameof(action));
@@ -43,7 +43,7 @@ namespace Testify
         /// </summary>
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">A list of actions to be invoked to make assertions.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static void AssertAll(string message, params Action[] assertions)
         {
@@ -58,7 +58,7 @@ namespace Testify
         /// </summary>
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">A list of actions to be invoked to make assertions.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static void AssertAll(string message, IEnumerable<Action> assertions)
         {
@@ -91,7 +91,7 @@ namespace Testify
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">The assertion actions to invoke.</param>
         /// <returns>An <see cref="Action{T}"/> that combines the assertions.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static Action<T> Combine<T>(string message, params Action<T>[] assertions)
         {
@@ -108,7 +108,7 @@ namespace Testify
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">The assertion actions to invoke.</param>
         /// <returns>An <see cref="Action{T}"/> that combines the assertions.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static Action<T> Combine<T>(string message, IEnumerable<Action<T>> assertions)
         {
@@ -180,6 +180,56 @@ namespace Testify
         }
 
         /// <summary>
+        /// Throws the specified assertion name.
+        /// </summary>
+        /// <param name="assertionName">Name of the assertion.</param>
+        /// <param name="assertionMessage">The assertion message.</param>
+        /// <param name="userMessage">The user message.</param>
+        /// <param name="userArgs">The user arguments used to format the user message.</param>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void Throw(string assertionName, string assertionMessage, string userMessage, params object[] userArgs)
+        {
+            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
+
+            var message = AssertionFailed(assertionName, assertionMessage, userMessage, userArgs);
+            throw new AssertionException(message);
+        }
+
+        /// <summary>
+        /// Throws the specified assertion name.
+        /// </summary>
+        /// <param name="assertionName">Name of the assertion.</param>
+        /// <param name="innerException">The inner exception.</param>
+        /// <param name="assertionMessage">The assertion message.</param>
+        /// <param name="userMessage">The user message.</param>
+        /// <param name="userArgs">The user arguments used to format the user message.</param>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void Throw(string assertionName, Exception innerException, string assertionMessage, string userMessage, params object[] userArgs)
+        {
+            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
+
+            var message = AssertionFailed(assertionName, assertionMessage, userMessage, userArgs);
+            throw new AssertionException(message, innerException);
+        }
+
+        /// <summary>
+        /// Throws the specified assertion name.
+        /// </summary>
+        /// <param name="assertionName">Name of the assertion.</param>
+        /// <param name="innerExceptions">The inner exceptions.</param>
+        /// <param name="assertionMessage">The assertion message.</param>
+        /// <param name="userMessage">The user message.</param>
+        /// <param name="userArgs">The user arguments used to format the user message.</param>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void Throw(string assertionName, IEnumerable<Exception> innerExceptions, string assertionMessage, string userMessage, params object[] userArgs)
+        {
+            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
+
+            var message = AssertionFailed(assertionName, assertionMessage, userMessage, userArgs);
+            throw new AssertionException(message, innerExceptions);
+        }
+
+        /// <summary>
         /// Creates the complete message.
         /// </summary>
         /// <param name="message">The message.</param>
@@ -194,83 +244,6 @@ namespace Testify
             }
 
             return str;
-        }
-
-        /// <summary>
-        /// Raises failure exceptions.
-        /// </summary>
-        /// <param name="assertionName">Name of the assertion.</param>
-        internal static void HandleFail(string assertionName)
-        {
-            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
-
-            throw new AssertionException(FrameworkMessages.AssertionFailed(assertionName, null));
-        }
-
-        /// <summary>
-        /// Raises failure exceptions.
-        /// </summary>
-        /// <param name="assertionName">Name of the assertion.</param>
-        /// <param name="message">The message.</param>
-        internal static void HandleFail(string assertionName, string message)
-        {
-            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
-
-            throw new AssertionException(FrameworkMessages.AssertionFailed(assertionName, message));
-        }
-
-        /// <summary>
-        /// Raises failure exceptions.
-        /// </summary>
-        /// <param name="assertionName">Name of the assertion.</param>
-        /// <param name="message">The message.</param>
-        /// <param name="parameters">The parameters.</param>
-        internal static void HandleFail(string assertionName, string message, params object[] parameters)
-        {
-            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
-
-            string completeMessage = Assertions.CreateCompleteMessage(message, parameters);
-            throw new AssertionException(FrameworkMessages.AssertionFailed(assertionName, completeMessage));
-        }
-
-        /// <summary>
-        /// Raises failure exceptions.
-        /// </summary>
-        /// <param name="assertionName">Name of the assertion.</param>
-        /// <param name="innerException">The inner exception.</param>
-        internal static void HandleFail(string assertionName, Exception innerException)
-        {
-            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
-
-            throw new AssertionException(FrameworkMessages.AssertionFailed(assertionName, null), innerException);
-        }
-
-        /// <summary>
-        /// Raises failure exceptions.
-        /// </summary>
-        /// <param name="assertionName">Name of the assertion.</param>
-        /// <param name="innerException">The inner exception.</param>
-        /// <param name="message">The message.</param>
-        internal static void HandleFail(string assertionName, Exception innerException, string message)
-        {
-            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
-
-            throw new AssertionException(FrameworkMessages.AssertionFailed(assertionName, message), innerException);
-        }
-
-        /// <summary>
-        /// Raises failure exceptions.
-        /// </summary>
-        /// <param name="assertionName">Name of the assertion.</param>
-        /// <param name="innerException">The inner exception.</param>
-        /// <param name="message">The message.</param>
-        /// <param name="parameters">The parameters.</param>
-        internal static void HandleFail(string assertionName, Exception innerException, string message, params object[] parameters)
-        {
-            Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
-
-            string completeMessage = Assertions.CreateCompleteMessage(message, parameters);
-            throw new AssertionException(FrameworkMessages.AssertionFailed(assertionName, completeMessage), innerException);
         }
 
         /// <summary>

@@ -14,6 +14,7 @@ param(
 
 pushd $BuildFolder
 try {
+    Write-Host "Pushing web site..."
     if (-not (git config --global --get user.email)) {
         if (-not ($PsBoundParameters.ContainsKey('Email'))) {
             throw "Email not specified"

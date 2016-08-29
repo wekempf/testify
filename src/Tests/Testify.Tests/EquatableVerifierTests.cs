@@ -212,7 +212,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EquatableVerifier failed. IsTrue failed. UniqueItemsFactory did not produce 3 or more items.");
+                e.ExpectMessage("EquatableVerifier failed. UniqueItemsFactory did not produce 3 or more items. IsTrue failed.");
                 return;
             }
 
@@ -307,7 +307,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EquatableVerifier failed. IsNotNull failed. UniqueItemsFactory is not set.");
+                e.ExpectMessage("EquatableVerifier failed. UniqueItemsFactory is not set. IsNotNull failed.");
                 return;
             }
 
@@ -328,7 +328,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EquatableVerifier failed. AllItemsAreNotNull failed. UniqueItemsFactory should not produce null values.");
+                e.ExpectMessage("EquatableVerifier failed. UniqueItemsFactory should not produce null values. AllItemsAreNotNull failed.");
                 return;
             }
 
@@ -349,7 +349,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EquatableVerifier failed. IsNotNull failed. UniqueItemsFactory did not produce any items.");
+                e.ExpectMessage("EquatableVerifier failed. UniqueItemsFactory did not produce any items. IsNotNull failed.");
                 return;
             }
 
@@ -408,7 +408,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("EquatableVerifier failed. IsEqualTo failed. Expected: <4>. Actual: <5>. UniqueItemsFactory is not stable.");
+                e.ExpectMessage("EquatableVerifier failed. UniqueItemsFactory is not stable. IsEqualTo failed. Expected: <4>. Actual: <5>.");
                 return;
             }
 

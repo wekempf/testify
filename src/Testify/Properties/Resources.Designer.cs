@@ -107,7 +107,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caught the expected exception type &lt;{0}&gt;, but additional assertions failed. {1}.
+        ///   Looks up a localized string similar to Caught the expected exception type &lt;{0}&gt;, but additional assertions failed..
         /// </summary>
         internal static string FrameworkMessage_AdditionalAssertionsFailed {
             get {
@@ -116,7 +116,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} failed. {1}.
+        ///   Looks up a localized string similar to {2} {0} failed. {1}.
         /// </summary>
         internal static string FrameworkMessage_AssertionFailed {
             get {
@@ -143,7 +143,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} {1}.
+        ///   Looks up a localized string similar to {0}.
         /// </summary>
         internal static string FrameworkMessage_CollectionEqualReason {
             get {
@@ -152,7 +152,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} {1}.
+        ///   Looks up a localized string similar to {0}.
         /// </summary>
         internal static string FrameworkMessage_CollectionNotEqualReason {
             get {
@@ -161,7 +161,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String &apos;{0}&apos; does not contain string &apos;{1}&apos;. {2}.
+        ///   Looks up a localized string similar to String &apos;{0}&apos; does not contain string &apos;{1}&apos;..
         /// </summary>
         internal static string FrameworkMessage_ContainsFailMsg {
             get {
@@ -170,7 +170,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected exception: &lt;{0}&gt;. The action did not throw any exceptions. {1}.
+        ///   Looks up a localized string similar to Expected exception: &lt;{0}&gt;. The action did not throw any exceptions..
         /// </summary>
         internal static string FrameworkMessage_DidNotThrow {
             get {
@@ -179,7 +179,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String &apos;{0}&apos; matches pattern &apos;{1}&apos;. {2}.
+        ///   Looks up a localized string similar to String &apos;{0}&apos; matches pattern &apos;{1}&apos;..
         /// </summary>
         internal static string FrameworkMessage_DoesNotMatchFailMsg {
             get {
@@ -188,7 +188,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Duplicate item found: &lt;{0}&gt;. {1}.
+        ///   Looks up a localized string similar to Duplicate item found: &lt;{0}&gt;..
         /// </summary>
         internal static string FrameworkMessage_DuplicateFound {
             get {
@@ -206,7 +206,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String &apos;{0}&apos; does not end with string &apos;{1}&apos;. {2}.
+        ///   Looks up a localized string similar to String &apos;{0}&apos; does not end with string &apos;{1}&apos;..
         /// </summary>
         internal static string FrameworkMessage_EndsWithFailMsg {
             get {
@@ -215,7 +215,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected a difference no greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;. {3}.
+        ///   Looks up a localized string similar to Expected a difference no greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;..
         /// </summary>
         internal static string FrameworkMessage_IsEqualToDeltaFailMsg {
             get {
@@ -224,7 +224,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected: &lt;{0}&gt;. Actual: &lt;{1}&gt;. {2}.
+        ///   Looks up a localized string similar to Expected: &lt;{0}&gt;. Actual: &lt;{1}&gt;..
         /// </summary>
         internal static string FrameworkMessage_IsEqualToFailMsg {
             get {
@@ -233,7 +233,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected: &lt;{0} ({1})&gt;. Actual: &lt;{2} ({3})&gt;. {4}.
+        ///   Looks up a localized string similar to Expected: &lt;{0} ({1})&gt;. Actual: &lt;{2} ({3})&gt;..
         /// </summary>
         internal static string FrameworkMessage_IsEqualToFailTypesMsg {
             get {
@@ -242,7 +242,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected type: {0}. Actual type: {1}. {2}.
+        ///   Looks up a localized string similar to Expected type: {0}. Actual type: {1}..
         /// </summary>
         internal static string FrameworkMessage_IsInstanceOfTypeFailMsg {
             get {
@@ -251,7 +251,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected a difference greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;. {3}.
+        ///   Looks up a localized string similar to Expected a difference greater than &lt;{0}&gt; between expected value &lt;{1}&gt; and actual value &lt;{2}&gt;..
         /// </summary>
         internal static string FrameworkMessage_IsNotEqualToDeltaFailMsg {
             get {
@@ -260,7 +260,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected any value except: &lt;{0}&gt;. Actual: &lt;{1}&gt;. {2}.
+        ///   Looks up a localized string similar to Expected any value except: &lt;{0}&gt;. Actual: &lt;{1}&gt;..
         /// </summary>
         internal static string FrameworkMessage_IsNotEqualToFailMsg {
             get {
@@ -269,7 +269,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wrong type: {0}. Actual type: {1}. {2}.
+        ///   Looks up a localized string similar to Wrong type: {0}. Actual type: {1}..
         /// </summary>
         internal static string FrameworkMessage_IsNotInstanceOfTypeFailMsg {
             get {
@@ -278,7 +278,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String &apos;{0}&apos; does not match pattern &apos;{1}&apos;. {2}.
+        ///   Looks up a localized string similar to String &apos;{0}&apos; does not match pattern &apos;{1}&apos;..
         /// </summary>
         internal static string FrameworkMessage_MatchesFailMsg {
             get {
@@ -287,7 +287,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The parameter &apos;{0}&apos; is invalid. The value cannot be null. {1}.
+        ///   Looks up a localized string similar to The parameter &apos;{0}&apos; is invalid. The value cannot be null..
         /// </summary>
         internal static string FrameworkMessage_NullParameterToAssert {
             get {
@@ -305,7 +305,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to String &apos;{0}&apos; does not start with string &apos;{1}&apos;. {2}.
+        ///   Looks up a localized string similar to String &apos;{0}&apos; does not start with string &apos;{1}&apos;..
         /// </summary>
         internal static string FrameworkMessage_StartsWithFailMsg {
             get {
@@ -314,7 +314,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;. {2}.
+        ///   Looks up a localized string similar to Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;..
         /// </summary>
         internal static string FrameworkMessage_UnexpectedException {
             get {
@@ -323,7 +323,7 @@ namespace Testify.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;. {3}.
+        ///   Looks up a localized string similar to Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;..
         /// </summary>
         internal static string FrameworMessage_UnexpectedTypeAt {
             get {

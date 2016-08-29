@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.Globalization;
 using Testify.Properties;
+using static Testify.Assertions;
+using static Testify.FrameworkMessages;
 
 namespace Testify
 {
@@ -18,7 +20,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="delta">The required accuracy. The assertion will fail only if <paramref name="expected"/>
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo(this ActualValue<double> actualValue, double expected, double delta)
         {
@@ -37,7 +39,7 @@ namespace Testify
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo(this ActualValue<double> actualValue, double expected, double delta, string message)
         {
@@ -57,23 +59,15 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo(this ActualValue<double> actualValue, double expected, double delta, string message, params object[] parameters)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
 
-            string formattedMessage;
             if (double.IsNaN(expected) || double.IsNaN(actualValue.Value) || double.IsNaN(delta))
             {
-                formattedMessage = FrameworkMessages.IsEqualToDeltaFailMsg(
-                        message == null
-                            ? string.Empty
-                            : Assertions.ReplaceNullChars(message),
-                        expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                        actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                        delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsEqualTo", formattedMessage, parameters);
+                Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) <= delta)
@@ -81,12 +75,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsEqualTo", finalMessage, parameters);
+            Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -96,7 +85,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="delta">The required accuracy. The assertion will fail only if <paramref name="expected"/>
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo(this ActualValue<float> actualValue, float expected, float delta)
         {
@@ -115,7 +104,7 @@ namespace Testify
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo(this ActualValue<float> actualValue, float expected, float delta, string message)
         {
@@ -135,7 +124,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo(this ActualValue<float> actualValue, float expected, float delta, string message, params object[] parameters)
         {
@@ -143,12 +132,7 @@ namespace Testify
 
             if (float.IsNaN(expected) || float.IsNaN(actualValue.Value) || float.IsNaN(delta))
             {
-                var finalMessage1 = FrameworkMessages.IsEqualToDeltaFailMsg(
-                    Assertions.ReplaceNullChars(message) ?? string.Empty,
-                    expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsEqualTo", finalMessage1, parameters);
+                Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) <= delta)
@@ -156,12 +140,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage2 = FrameworkMessages.IsEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsEqualTo", finalMessage2, parameters);
+            Throw(nameof(IsEqualTo), IsEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -170,7 +149,7 @@ namespace Testify
         /// <typeparam name="T">The actual value type.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo<T>(this ActualValue<T> actualValue, object expected)
         {
@@ -187,7 +166,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo<T>(this ActualValue<T> actualValue, object expected, string message)
         {
@@ -206,7 +185,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo<T>(this ActualValue<T> actualValue, object expected, string message, params object[] parameters)
         {
@@ -217,10 +196,10 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = (object)actualValue.Value == null || expected == null || actualValue.Value.GetType().Equals(expected.GetType())
-                    ? FrameworkMessages.IsEqualToFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), Assertions.ReplaceNulls(actualValue.Value))
-                    : FrameworkMessages.IsEqualToDifferentTypesFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), expected.GetType().FullName, Assertions.ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
-            Assertions.HandleFail("IsEqualTo", finalMessage, parameters);
+            var assertionMessage = (object)actualValue.Value == null || expected == null || actualValue.Value.GetType().Equals(expected.GetType())
+                    ? IsEqualToFailMsg(ReplaceNulls(expected), ReplaceNulls(actualValue.Value))
+                    : IsEqualToDifferentTypesFailMsg(ReplaceNulls(expected), expected.GetType().FullName, ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
+            Throw(nameof(IsEqualTo), assertionMessage, message, parameters);
         }
 
         /// <summary>
@@ -229,7 +208,7 @@ namespace Testify
         /// <typeparam name="T">The actual value type.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo<T>(this ActualValue<T> actualValue, T expected)
         {
@@ -246,7 +225,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo<T>(this ActualValue<T> actualValue, T expected, string message)
         {
@@ -265,7 +244,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
         public static void IsEqualTo<T>(this ActualValue<T> actualValue, T expected, string message, params object[] parameters)
         {
@@ -277,17 +256,17 @@ namespace Testify
             }
 
             var finalMessage = (object)actualValue.Value == null || (object)expected == null || actualValue.Value.GetType().Equals(expected.GetType())
-                    ? FrameworkMessages.IsEqualToFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), Assertions.ReplaceNulls(actualValue.Value))
-                    : FrameworkMessages.IsEqualToDifferentTypesFailMsg(Assertions.ReplaceNullChars(message) ?? string.Empty, Assertions.ReplaceNulls(expected), expected.GetType().FullName, Assertions.ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
-            Assertions.HandleFail("IsEqualTo", finalMessage, parameters);
+                ? IsEqualToFailMsg(ReplaceNulls(expected), ReplaceNulls(actualValue.Value))
+                : IsEqualToDifferentTypesFailMsg(ReplaceNulls(expected), expected.GetType().FullName, ReplaceNulls(actualValue.Value), actualValue.Value.GetType().FullName);
+            Throw(nameof(IsEqualTo), finalMessage, message, parameters);
         }
 
         /// <summary>
-        /// Asserts that the actual value is <see langword="false"/>.
+        /// Asserts that the actual value is <c>false</c>.
         /// </summary>
         /// <param name="actualValue">The actual value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/> is <see langword="true"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/> is <c>true</c>.</exception>
         public static void IsFalse(this ActualValue<bool> actualValue)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
@@ -296,14 +275,14 @@ namespace Testify
         }
 
         /// <summary>
-        /// Asserts that the actual value is <see langword="false"/>. Displays a message if the assertion
+        /// Asserts that the actual value is <c>false</c>. Displays a message if the assertion
         /// fails.
         /// </summary>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/> is <see langword="true"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/> is <c>true</c>.</exception>
         public static void IsFalse(this ActualValue<bool> actualValue, string message)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
@@ -312,22 +291,22 @@ namespace Testify
         }
 
         /// <summary>
-        /// Asserts that the actual value is <see langword="false"/>. Displays a message if the assertion
+        /// Asserts that the actual value is <c>false</c>. Displays a message if the assertion
         /// fails, and applies the specified formatting to it.
         /// </summary>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/> is <see langword="true"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/> is <c>true</c>.</exception>
         public static void IsFalse(this ActualValue<bool> actualValue, string message, params object[] parameters)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
 
             if (actualValue.Value)
             {
-                Assertions.HandleFail("IsFalse", message, parameters);
+                Throw(nameof(IsFalse), null, message, parameters);
             }
         }
 
@@ -339,7 +318,7 @@ namespace Testify
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expectedType">The type expected to be found in the inheritance hierarchy of
         /// <paramref name="actualValue.Value"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is not an instance of <paramref name="expectedType"/>.</exception>
         public static void IsInstanceOfType<T>(this ActualValue<T> actualValue, Type expectedType)
         {
@@ -359,7 +338,7 @@ namespace Testify
         /// <paramref name="actualValue.Value"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is not an instance of <paramref name="expectedType"/>.</exception>
         public static void IsInstanceOfType<T>(this ActualValue<T> actualValue, Type expectedType, string message)
         {
@@ -380,28 +359,19 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is not an instance of <paramref name="expectedType"/>.</exception>
         public static void IsInstanceOfType<T>(this ActualValue<T> actualValue, Type expectedType, string message, params object[] parameters)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
             Argument.NotNull(expectedType, nameof(expectedType));
 
-            if (expectedType == null)
-            {
-                Assertions.HandleFail("IsInstanceOfType", message, parameters);
-            }
-
             if (expectedType.IsInstanceOfType(actualValue.Value))
             {
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsInstanceOfTypeFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expectedType.ToString(),
-                (object)actualValue.Value == null ? Resources.Common_NullInMessages : actualValue.Value.GetType().ToString());
-            Assertions.HandleFail("IsInstanceOfType", finalMessage, parameters);
+            Throw(nameof(IsInstanceOfType), IsInstanceOfTypeFailMsg(expectedType, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -412,7 +382,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="delta">The required accuracy. The assertion will fail only if <paramref name="expected"/>
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo(this ActualValue<double> actualValue, double expected, double delta)
         {
@@ -431,7 +401,7 @@ namespace Testify
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo(this ActualValue<double> actualValue, double expected, double delta, string message)
         {
@@ -451,7 +421,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo(this ActualValue<double> actualValue, double expected, double delta, string message, params object[] parameters)
         {
@@ -459,12 +429,7 @@ namespace Testify
 
             if (double.IsNaN(expected) || double.IsNaN(actualValue.Value) || double.IsNaN(delta))
             {
-                var finalMessage1 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                    Assertions.ReplaceNullChars(message) ?? string.Empty,
-                    expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsNotEqualTo", finalMessage1, parameters);
+                Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) > delta)
@@ -472,12 +437,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage2 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage2, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -487,7 +447,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="delta">The required accuracy. The assertion will fail only if <paramref name="expected"/>
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo(this ActualValue<float> actualValue, float expected, float delta)
         {
@@ -506,7 +466,7 @@ namespace Testify
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo(this ActualValue<float> actualValue, float expected, float delta, string message)
         {
@@ -526,7 +486,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo(this ActualValue<float> actualValue, float expected, float delta, string message, params object[] parameters)
         {
@@ -534,12 +494,7 @@ namespace Testify
 
             if (float.IsNaN(expected) || float.IsNaN(actualValue.Value) || float.IsNaN(delta))
             {
-                var finalMessage1 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                    Assertions.ReplaceNullChars(message) ?? string.Empty,
-                    expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                    delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-                Assertions.HandleFail("IsNotEqualTo", finalMessage1, parameters);
+                Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
             }
 
             if (Math.Abs(expected - actualValue.Value) > delta)
@@ -547,12 +502,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage2 = FrameworkMessages.IsNotEqualToDeltaFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expected.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                actualValue.Value.ToString(CultureInfo.CurrentCulture.NumberFormat),
-                delta.ToString(CultureInfo.CurrentCulture.NumberFormat));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage2, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToDeltaFailMsg(expected, actualValue.Value, delta), message, parameters);
         }
 
         /// <summary>
@@ -561,7 +511,7 @@ namespace Testify
         /// <typeparam name="T">The actual value type.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo<T>(this ActualValue<T> actualValue, object expected)
         {
@@ -578,7 +528,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo<T>(this ActualValue<T> actualValue, object expected, string message)
         {
@@ -597,7 +547,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo<T>(this ActualValue<T> actualValue, object expected, string message, params object[] parameters)
         {
@@ -608,11 +558,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsNotEqualToFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                Assertions.ReplaceNulls(expected),
-                Assertions.ReplaceNulls(actualValue.Value));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToFailMsg(expected, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -621,7 +567,7 @@ namespace Testify
         /// <typeparam name="T">The actual value type.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo<T>(this ActualValue<T> actualValue, T expected)
         {
@@ -638,7 +584,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo<T>(this ActualValue<T> actualValue, T expected, string message)
         {
@@ -657,7 +603,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is equal to <paramref name="expected"/>.</exception>
         public static void IsNotEqualTo<T>(this ActualValue<T> actualValue, T expected, string message, params object[] parameters)
         {
@@ -668,11 +614,7 @@ namespace Testify
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsNotEqualToFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                Assertions.ReplaceNulls(expected),
-                Assertions.ReplaceNulls(actualValue.Value));
-            Assertions.HandleFail("IsNotEqualTo", finalMessage, parameters);
+            Throw(nameof(IsNotEqualTo), IsNotEqualToFailMsg(expected, actualValue.Value), message, parameters);
         }
 
         /// <summary>
@@ -683,7 +625,7 @@ namespace Testify
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expectedType">The type not expected to be found in the inheritance hierarchy of
         /// <paramref name="actualValue.Value"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is an instance of <paramref name="expectedType"/>.</exception>
         public static void IsNotInstanceOfType<T>(this ActualValue<T> actualValue, Type expectedType)
         {
@@ -703,7 +645,7 @@ namespace Testify
         /// <paramref name="actualValue.Value"/>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> or <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is an instance of <paramref name="expectedType"/>.</exception>
         public static void IsNotInstanceOfType<T>(this ActualValue<T> actualValue, Type expectedType, string message)
         {
@@ -724,38 +666,29 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> <paramref name="expectedType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> <paramref name="expectedType"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/> is an instance of <paramref name="expectedType"/>.</exception>
         public static void IsNotInstanceOfType<T>(this ActualValue<T> actualValue, Type expectedType, string message, params object[] parameters)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
             Argument.NotNull(expectedType, nameof(expectedType));
 
-            if (expectedType == null)
-            {
-                Assertions.HandleFail("IsNotInstanceOfType", message, parameters);
-            }
-
             if (!expectedType.IsInstanceOfType(actualValue.Value))
             {
                 return;
             }
 
-            var finalMessage = FrameworkMessages.IsNotInstanceOfTypeFailMsg(
-                Assertions.ReplaceNullChars(message) ?? string.Empty,
-                expectedType.ToString(),
-                (object)actualValue.Value == null ? Resources.Common_NullInMessages : actualValue.Value.GetType().ToString());
-            Assertions.HandleFail("IsNotInstanceOfType", finalMessage, parameters);
+            Throw(nameof(IsNotInstanceOfType), IsNotInstanceOfTypeFailMsg(expectedType, actualValue.Value), message, parameters);
         }
 
         /// <summary>
-        /// Verifies that the specified object is not <see langword="null"/>. Displays a message if the
+        /// Verifies that the specified object is not <c>null</c>. Displays a message if the
         /// assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the actual value.</typeparam>
         /// <param name="actualValue">The actual value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <c>null</c>.</exception>
         public static void IsNotNull<T>(this ActualValue<T> actualValue)
             where T : class
         {
@@ -765,15 +698,15 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that the specified object is not <see langword="null"/>. Displays a message if the
+        /// Verifies that the specified object is not <c>null</c>. Displays a message if the
         /// assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the actual value.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <c>null</c>.</exception>
         public static void IsNotNull<T>(this ActualValue<T> actualValue, string message)
             where T : class
         {
@@ -783,7 +716,7 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that the specified object is not <see langword="null"/>. Displays a message if the
+        /// Verifies that the specified object is not <c>null</c>. Displays a message if the
         /// assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the actual value.</typeparam>
@@ -791,8 +724,8 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <c>null</c>.</exception>
         public static void IsNotNull<T>(this ActualValue<T> actualValue, string message, params object[] parameters)
             where T : class
         {
@@ -803,7 +736,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotNull", message, parameters);
+            Throw(nameof(IsNotNull), null, message, parameters);
         }
 
         /// <summary>
@@ -813,7 +746,7 @@ namespace Testify
         /// <typeparam name="T">The type of the actual object.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is the same as <paramref name="expected"/>.</exception>
         public static void IsNotSameAs<T>(this ActualValue<T> actualValue, T expected)
             where T : class
@@ -832,7 +765,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is the same as <paramref name="expected"/>.</exception>
         public static void IsNotSameAs<T>(this ActualValue<T> actualValue, T expected, string message)
             where T : class
@@ -852,7 +785,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is the same as <paramref name="expected"/>.</exception>
         public static void IsNotSameAs<T>(this ActualValue<T> actualValue, T expected, string message, params object[] parameters)
             where T : class
@@ -864,17 +797,17 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNotSameAs", message, parameters);
+            Throw(nameof(IsNotSameAs), null, message, parameters);
         }
 
         /// <summary>
-        /// Verifies that the specified object is <see langword="null"/>. Displays a message if the
+        /// Verifies that the specified object is <c>null</c>. Displays a message if the
         /// assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the actual value.</typeparam>
         /// <param name="actualValue">The actual value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not <c>null</c>.</exception>
         public static void IsNull<T>(this ActualValue<T> actualValue)
             where T : class
         {
@@ -884,15 +817,15 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that the specified object is <see langword="null"/>. Displays a message if the
+        /// Verifies that the specified object is <c>null</c>. Displays a message if the
         /// assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the actual value.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not <c>null</c>.</exception>
         public static void IsNull<T>(this ActualValue<T> actualValue, string message)
             where T : class
         {
@@ -902,7 +835,7 @@ namespace Testify
         }
 
         /// <summary>
-        /// Verifies that the specified object is <see langword="null"/>. Displays a message if the
+        /// Verifies that the specified object is <c>null</c>. Displays a message if the
         /// assertion fails, and applies the specified formatting to it.
         /// </summary>
         /// <typeparam name="T">The type of the actual value.</typeparam>
@@ -910,8 +843,8 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not <c>null</c>.</exception>
         public static void IsNull<T>(this ActualValue<T> actualValue, string message, params object[] parameters)
             where T : class
         {
@@ -922,7 +855,7 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsNull", message, parameters);
+            Throw(nameof(IsNull), null, message, parameters);
         }
 
         /// <summary>
@@ -931,7 +864,7 @@ namespace Testify
         /// <typeparam name="T">The type of the actual object.</typeparam>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not the same as <paramref name="expected"/>.</exception>
         public static void IsSameAs<T>(this ActualValue<T> actualValue, T expected)
             where T : class
@@ -950,7 +883,7 @@ namespace Testify
         /// <param name="expected">The expected value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not the same as <paramref name="expected"/>.</exception>
         public static void IsSameAs<T>(this ActualValue<T> actualValue, T expected, string message)
             where T : class
@@ -970,7 +903,7 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is not the same as <paramref name="expected"/>.</exception>
         public static void IsSameAs<T>(this ActualValue<T> actualValue, T expected, string message, params object[] parameters)
             where T : class
@@ -982,15 +915,15 @@ namespace Testify
                 return;
             }
 
-            Assertions.HandleFail("IsSameAs", message, parameters);
+            Throw(nameof(IsSameAs), null, message, parameters);
         }
 
         /// <summary>
-        /// Asserts that the actual value is <see langword="true"/>.
+        /// Asserts that the actual value is <c>true</c>.
         /// </summary>
         /// <param name="actualValue">The actual value.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <see langword="false"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <c>false</c>.</exception>
         public static void IsTrue(this ActualValue<bool> actualValue)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
@@ -999,14 +932,14 @@ namespace Testify
         }
 
         /// <summary>
-        /// Asserts that the actual value is <see langword="true"/>. Displays a message if the assertion
+        /// Asserts that the actual value is <c>true</c>. Displays a message if the assertion
         /// fails.
         /// </summary>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <see langword="false"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <c>false</c>.</exception>
         public static void IsTrue(this ActualValue<bool> actualValue, string message)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
@@ -1015,22 +948,22 @@ namespace Testify
         }
 
         /// <summary>
-        /// Asserts that the actual value is <see langword="true"/>. Displays a message if the assertion
+        /// Asserts that the actual value is <c>true</c>. Displays a message if the assertion
         /// fails, and applies the specified formatting to it.
         /// </summary>
         /// <param name="actualValue">The actual value.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <see langword="false"/>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException"><paramref name="actualValue"/>'s value is <c>false</c>.</exception>
         public static void IsTrue(this ActualValue<bool> actualValue, string message, params object[] parameters)
         {
             Argument.NotNull(actualValue, nameof(actualValue));
 
             if (!actualValue.Value)
             {
-                Assertions.HandleFail("IsTrue", message, parameters);
+                Throw(nameof(IsTrue), null, message, parameters);
             }
         }
     }

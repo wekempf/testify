@@ -49,7 +49,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreNotNull failed. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreNotNull failed.");
                 return;
             }
 
@@ -131,7 +131,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreNotNull failed. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreNotNull failed.");
                 return;
             }
 
@@ -181,7 +181,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <(null)>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <(null)>.");
                 return;
             }
 
@@ -197,7 +197,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <(null)>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <(null)>.");
                 return;
             }
 
@@ -229,7 +229,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <(null)>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <(null)>.");
                 return;
             }
 
@@ -245,7 +245,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <(null)>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <(null)>.");
                 return;
             }
 
@@ -277,7 +277,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <bar>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <bar>.");
                 return;
             }
 
@@ -293,7 +293,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <bar>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <bar>.");
                 return;
             }
 
@@ -325,7 +325,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <Bar>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <Bar>.");
                 return;
             }
 
@@ -341,7 +341,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreUnique failed. Duplicate item found: <Bar>. Some message.");
+                e.ExpectMessage("Some message. AllItemsAreUnique failed. Duplicate item found: <Bar>.");
                 return;
             }
 
@@ -391,7 +391,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Contains failed. Some message.");
+                e.ExpectMessage("Some message. Contains failed.");
                 return;
             }
 
@@ -407,7 +407,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Contains failed. Some message.");
+                e.ExpectMessage("Some message. Contains failed.");
                 return;
             }
 
@@ -457,7 +457,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Contains failed. Some message.");
+                e.ExpectMessage("Some message. Contains failed.");
                 return;
             }
 
@@ -473,7 +473,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Contains failed. Some message.");
+                e.ExpectMessage("Some message. Contains failed.");
                 return;
             }
 
@@ -523,7 +523,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("DoesNotContain failed. Some message.");
+                e.ExpectMessage("Some message. DoesNotContain failed.");
                 return;
             }
 
@@ -539,7 +539,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("DoesNotContain failed. Some message.");
+                e.ExpectMessage("Some message. DoesNotContain failed.");
                 return;
             }
 
@@ -571,7 +571,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("DoesNotContain failed. Some message.");
+                e.ExpectMessage("Some message. DoesNotContain failed.");
                 return;
             }
 
@@ -587,7 +587,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("DoesNotContain failed. Some message.");
+                e.ExpectMessage("Some message. DoesNotContain failed.");
                 return;
             }
 
@@ -658,7 +658,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -674,7 +674,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -706,7 +706,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -722,7 +722,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -793,7 +793,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -809,7 +809,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -841,7 +841,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -857,7 +857,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsEquivalentTo failed.");
                 return;
             }
 
@@ -909,7 +909,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -926,7 +926,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -958,7 +958,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -974,7 +974,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -1026,7 +1026,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -1043,7 +1043,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -1075,7 +1075,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -1091,7 +1091,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEquivalentTo failed. Some message.");
+                e.ExpectMessage("Some message. IsNotEquivalentTo failed.");
                 return;
             }
 
@@ -1141,7 +1141,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same elements.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same elements.)");
                 return;
             }
 
@@ -1157,7 +1157,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same elements.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same elements.)");
                 return;
             }
 
@@ -1191,7 +1191,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same reference.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same reference.)");
                 return;
             }
 
@@ -1208,7 +1208,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same reference.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same reference.)");
                 return;
             }
 
@@ -1258,7 +1258,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same elements.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same elements.)");
                 return;
             }
 
@@ -1274,7 +1274,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same elements.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same elements.)");
                 return;
             }
 
@@ -1308,7 +1308,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same reference.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same reference.)");
                 return;
             }
 
@@ -1325,7 +1325,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSequenceEqualTo failed. (Same reference.) Some message.");
+                e.ExpectMessage("Some message. IsNotSequenceEqualTo failed. (Same reference.)");
                 return;
             }
 
@@ -1375,7 +1375,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSubsetOf failed. Some message.");
+                e.ExpectMessage("Some message. IsNotSubsetOf failed.");
                 return;
             }
 
@@ -1391,7 +1391,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSubsetOf failed. Some message.");
+                e.ExpectMessage("Some message. IsNotSubsetOf failed.");
                 return;
             }
 
@@ -1441,7 +1441,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSubsetOf failed. Some message.");
+                e.ExpectMessage("Some message. IsNotSubsetOf failed.");
                 return;
             }
 
@@ -1457,7 +1457,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotSubsetOf failed. Some message.");
+                e.ExpectMessage("Some message. IsNotSubsetOf failed.");
                 return;
             }
 
@@ -1507,7 +1507,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Different number of elements.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Different number of elements.)");
                 return;
             }
 
@@ -1539,7 +1539,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
                 return;
             }
 
@@ -1555,7 +1555,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
                 return;
             }
 
@@ -1605,7 +1605,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Different number of elements.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Different number of elements.)");
                 return;
             }
 
@@ -1621,7 +1621,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Different number of elements.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Different number of elements.)");
                 return;
             }
 
@@ -1653,7 +1653,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
                 return;
             }
 
@@ -1669,7 +1669,7 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.) Some message.");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
                 return;
             }
 

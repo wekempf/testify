@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Testify.Properties;
+using static Testify.Assertions;
 
 namespace Testify
 {
@@ -13,109 +16,91 @@ namespace Testify
         /// Additionals the assertions failed.
         /// </summary>
         /// <param name="expectedExceptionType">Expected type of the exception.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string AdditionalAssertionsFailed(Type expectedExceptionType, string message) =>
-                    string.Format(
-                        CultureInfo.CurrentCulture,
-                        Resources.FrameworkMessage_AdditionalAssertionsFailed,
-                        expectedExceptionType,
-                        message).Trim();
+        internal static string AdditionalAssertionsFailed(Type expectedExceptionType) =>
+            Format(
+                Resources.FrameworkMessage_AdditionalAssertionsFailed,
+                expectedExceptionType).Trim();
 
         /// <summary>
         /// Formats a framework message for assertion failures.
         /// </summary>
         /// <param name="assertionName">Name of the assertion.</param>
-        /// <param name="message">The message.</param>
+        /// <param name="assertionMessage">Assertion message.</param>
+        /// <param name="userMessage">User message or format string.</param>
+        /// <param name="userArgs">User arguments.</param>
         /// <returns>The formatted text.</returns>
-        internal static string AssertionFailed(string assertionName, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string AssertionFailed(
+            string assertionName,
+            string assertionMessage,
+            string userMessage,
+            params object[] userArgs) =>
+            Format(
                 Resources.FrameworkMessage_AssertionFailed,
                 assertionName,
-                message).Trim();
+                assertionMessage,
+                (userArgs != null && userArgs.Any()) ? Format(ReplaceNullChars(userMessage), userArgs) : ReplaceNullChars(userMessage));
 
         /// <summary>
         /// Collections the equal reason.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="reason">The reason.</param>
         /// <returns>The formatted message.</returns>
-        internal static string CollectionEqualReason(string message, string reason) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string CollectionEqualReason(string reason) =>
+            Format(
                 Resources.FrameworkMessage_CollectionEqualReason,
-                reason,
-                message);
+                reason);
 
         /// <summary>
         /// Collections the equal reason.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="reason">The reason.</param>
         /// <returns>The formatted message.</returns>
-        internal static string CollectionNotEqualReason(string message, string reason) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string CollectionNotEqualReason(string reason) =>
+            Format(
                 Resources.FrameworkMessage_CollectionNotEqualReason,
-                reason,
-                message);
+                reason);
 
         /// <summary>
         /// Determines whether [contains fail MSG] [the specified value].
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="substring">The substring.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string ContainsFailMsg(string value, string substring, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string ContainsFailMsg(string value, string substring) =>
+            Format(
                 Resources.FrameworkMessage_ContainsFailMsg,
                 value,
-                substring,
-                message).Trim();
+                substring);
 
         /// <summary>
         /// Dids the not throw.
         /// </summary>
         /// <param name="type">The type.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string DidNotThrow(Type type, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
-                Resources.FrameworkMessage_DidNotThrow,
-                type,
-                message).Trim();
+        internal static string DidNotThrow(Type type) => Format(Resources.FrameworkMessage_DidNotThrow, type);
 
         /// <summary>
         /// Doeses the not match fail MSG.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="pattern">The pattern.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string DoesNotMatchFailMsg(string value, string pattern, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string DoesNotMatchFailMsg(string value, Regex pattern) =>
+            Format(
                 Resources.FrameworkMessage_DoesNotMatchFailMsg,
                 value,
-                pattern,
-                message).Trim();
+                pattern);
 
         /// <summary>
-        /// Duplicates the found.
+        /// Formats a message for duplicate item failures.
         /// </summary>
         /// <param name="duplicateValue">The duplicate value.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string DuplicateFound(object duplicateValue, string message) =>
-                    string.Format(
-                        CultureInfo.CurrentCulture,
-                        Resources.FrameworkMessage_DuplicateFound,
-                        Assertions.ReplaceNulls(duplicateValue),
-                        message);
+        internal static string DuplicateFound(object duplicateValue) =>
+            Format(
+                Resources.FrameworkMessage_DuplicateFound,
+                ReplaceNulls(duplicateValue));
 
         /// <summary>
         /// Elementses at index do not match.
@@ -125,214 +110,177 @@ namespace Testify
         /// <param name="actual">The actual.</param>
         /// <returns>The formatted message.</returns>
         internal static string ElementsAtIndexDoNotMatch(int index, object expected, object actual) =>
-                    string.Format(
-                        CultureInfo.CurrentCulture,
-                        Resources.FrameworkMessage_ElementsAtIndexDoNotMatch,
-                        index,
-                        expected,
-                        actual);
+            Format(
+                Resources.FrameworkMessage_ElementsAtIndexDoNotMatch,
+                index,
+                expected,
+                actual);
 
         /// <summary>
         /// Endses the with fail MSG.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="substring">The substring.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string EndsWithFailMsg(string value, string substring, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string EndsWithFailMsg(string value, string substring) =>
+            Format(
                 Resources.FrameworkMessage_EndsWithFailMsg,
                 value,
-                substring,
-                message).Trim();
+                substring);
 
         /// <summary>
         /// Formats a framework message for equality failures with a delta.
         /// </summary>
-        /// <param name="message">The user message.</param>
+        /// <typeparam name="T">The value type.</typeparam>
         /// <param name="expected">The expected value.</param>
         /// <param name="actual">The actual value.</param>
         /// <param name="delta">The delta.</param>
         /// <returns>The formatted text.</returns>
-        internal static string IsEqualToDeltaFailMsg(string message, string expected, string actual, string delta) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsEqualToDeltaFailMsg<T>(T expected, T actual, T delta) =>
+            Format(
                 Resources.FrameworkMessage_IsEqualToDeltaFailMsg,
                 delta,
                 expected,
-                actual,
-                message).Trim();
+                actual);
 
         /// <summary>
         /// Formats a framework message for equality failures where the types differ.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="expected">The expected value.</param>
         /// <param name="expectedType">The expected type.</param>
         /// <param name="actual">The actual value.</param>
         /// <param name="actualType">The actual type.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsEqualToDifferentTypesFailMsg(string message, string expected, string expectedType, string actual, string actualType) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsEqualToDifferentTypesFailMsg(string expected, string expectedType, string actual, string actualType) =>
+            Format(
                 Resources.FrameworkMessage_IsEqualToFailTypesMsg,
                 expected,
                 expectedType,
                 actual,
-                actualType,
-                message).Trim();
+                actualType);
 
         /// <summary>
         /// Formats a framework message for equality failures.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="expected">The expected value.</param>
         /// <param name="actual">The actual value.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsEqualToFailMsg(string message, string expected, string actual) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsEqualToFailMsg(string expected, string actual) =>
+            Format(
                 Resources.FrameworkMessage_IsEqualToFailMsg,
                 expected,
-                actual,
-                message).Trim();
+                actual);
 
         /// <summary>
         /// Determines whether [is instance of type fail MSG] [the specified message].
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="expectedType">The expected type.</param>
-        /// <param name="actualType">The actual type.</param>
+        /// <param name="actualValue">The actual value.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsInstanceOfTypeFailMsg(string message, string expectedType, string actualType) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsInstanceOfTypeFailMsg(Type expectedType, object actualValue) =>
+            Format(
                 Resources.FrameworkMessage_IsInstanceOfTypeFailMsg,
                 expectedType,
-                actualType,
-                message).Trim();
+                actualValue?.GetType()?.FullName ?? Resources.Common_NullInMessages);
 
         /// <summary>
         /// Formats a framework message for inequality failures.
         /// </summary>
-        /// <param name="message">The message.</param>
+        /// <typeparam name="T">The value type.</typeparam>
         /// <param name="expected">The expected value.</param>
         /// <param name="actual">The actual value.</param>
         /// <param name="delta">The delta.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsNotEqualToDeltaFailMsg(string message, string expected, string actual, string delta) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsNotEqualToDeltaFailMsg<T>(T expected, T actual, T delta) =>
+            Format(
                 Resources.FrameworkMessage_IsNotEqualToDeltaFailMsg,
                 delta,
                 expected,
-                actual,
-                message).Trim();
+                actual);
 
         /// <summary>
         /// Formats a framework message for inequality failures.
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="expected">The expected value.</param>
         /// <param name="actual">The actual value.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsNotEqualToFailMsg(string message, string expected, string actual) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsNotEqualToFailMsg(object expected, object actual) =>
+            Format(
                 Resources.FrameworkMessage_IsNotEqualToFailMsg,
-                expected,
-                actual,
-                message).Trim();
+                ReplaceNulls(expected),
+                ReplaceNulls(actual));
 
         /// <summary>
         /// Determines whether [is instance of type fail MSG] [the specified message].
         /// </summary>
-        /// <param name="message">The message.</param>
         /// <param name="expectedType">The expected type.</param>
-        /// <param name="actualType">The actual type.</param>
+        /// <param name="actualValue">The actual value.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsNotInstanceOfTypeFailMsg(string message, string expectedType, string actualType) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string IsNotInstanceOfTypeFailMsg(Type expectedType, object actualValue) =>
+            Format(
                 Resources.FrameworkMessage_IsNotInstanceOfTypeFailMsg,
                 expectedType,
-                actualType,
-                message).Trim();
+                actualValue?.GetType()?.ToString() ?? Resources.Common_NullInMessages);
 
         /// <summary>
         /// Doeses the not match fail MSG.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="pattern">The pattern.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string MatchesFailMsg(string value, string pattern, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string MatchesFailMsg(string value, Regex pattern) =>
+            Format(
                 Resources.FrameworkMessage_MatchesFailMsg,
                 value,
-                pattern,
-                message).Trim();
+                pattern);
 
         /// <summary>
         /// Nulls the parameter to assert.
         /// </summary>
         /// <param name="parameterName">Name of the parameter.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string NullParameterToAssert(string parameterName, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string NullParameterToAssert(string parameterName) =>
+            Format(
                 Resources.FrameworkMessage_NullParameterToAssert,
-                parameterName,
-                message).Trim();
+                parameterName);
 
         /// <summary>
         /// Endses the with fail MSG.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="substring">The substring.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string StartsWithFailMsg(string value, string substring, string message) =>
-            string.Format(
-                CultureInfo.CurrentCulture,
+        internal static string StartsWithFailMsg(string value, string substring) =>
+            Format(
                 Resources.FrameworkMessage_StartsWithFailMsg,
                 value,
-                substring,
-                message).Trim();
+                substring);
 
         /// <summary>
         /// Unexpecteds the exception.
         /// </summary>
         /// <param name="expectedExceptionType">Expected type of the exception.</param>
         /// <param name="actualExceptionType">Actual type of the exception.</param>
-        /// <param name="message">The message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string UnexpectedException(Type expectedExceptionType, Type actualExceptionType, string message) =>
-                    string.Format(
-                        CultureInfo.CurrentCulture,
-                        Resources.FrameworkMessage_UnexpectedException,
-                        expectedExceptionType,
-                        actualExceptionType,
-                        message).Trim();
+        internal static string UnexpectedException(Type expectedExceptionType, Type actualExceptionType) =>
+            Format(
+                Resources.FrameworkMessage_UnexpectedException,
+                expectedExceptionType,
+                actualExceptionType);
 
         /// <summary>
-        /// Unexpecteds the type at.
+        /// Formats a message for unexpected type failures.
         /// </summary>
         /// <param name="index">The index.</param>
         /// <param name="expectedType">The expected type.</param>
         /// <param name="actualType">The actual type.</param>
-        /// <param name="message">The user message.</param>
         /// <returns>The formatted message.</returns>
-        internal static string UnexpectedTypeAt(int index, Type expectedType, Type actualType, string message) =>
+        internal static string UnexpectedTypeAt(int index, Type expectedType, Type actualType) =>
             Format(
                 Resources.FrameworMessage_UnexpectedTypeAt,
                 index,
                 expectedType,
-                actualType,
-                message);
+                actualType);
 
         private static string Format(string format, params object[] args) =>
             string.Format(CultureInfo.CurrentCulture, format, args).Trim();
