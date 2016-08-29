@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
 
 namespace Testify
 {
@@ -31,20 +28,13 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="type">The type to create..</param>
-        /// <param name="populateOption">Specifies how to populate the properties.</param>
         /// <returns>An instance of the specified type.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/>
         /// is null.</exception>
-        public static object Any(this IAnonymousData anon, Type type, PopulateOption populateOption)
+        public static object Any(this IAnonymousData anon, Type type)
         {
             Argument.NotNull(anon, nameof(anon));
-            var instance = anon.Any(type);
-            if (populateOption != PopulateOption.None)
-            {
-                anon.Populate(instance, populateOption == PopulateOption.Deep);
-            }
-
-            return instance;
+            return anon.Any(type, PopulateOption.None);
         }
 
         /// <summary>
@@ -106,49 +96,6 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
 
             anon.Populate(instance, true);
-        }
-
-        /// <summary>
-        /// Populates the specified instance by assigning all properties to anonymous values.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="instance">The instance to populate.</param>
-        /// <param name="deep">If set to <see langword="true"/> then properties are assigned recursively, populating
-        /// the entire object tree.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is null.</exception>
-        public static void Populate(this IAnonymousData anon, object instance, bool deep)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            var queue = deep ? new Queue<object>() : null;
-            var current = instance;
-            while (true)
-            {
-                if (current != null)
-                {
-                    var type = current.GetType();
-                    var properties =
-                        from prop in type.GetRuntimeProperties()
-                        where prop.CanWrite && prop.SetMethod.IsPublic
-                        select prop;
-                    foreach (var prop in properties)
-                    {
-                        var value = anon.Any(prop.PropertyType);
-                        prop.SetValue(current, value);
-                        if (deep)
-                        {
-                            queue.Enqueue(value);
-                        }
-                    }
-                }
-
-                if (!deep || !queue.Any())
-                {
-                    break;
-                }
-
-                current = queue.Dequeue();
-            }
         }
 
         /// <summary>
