@@ -314,6 +314,15 @@ namespace Testify.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Task did not complete within allotted time and may be deadlocked..
+        /// </summary>
+        internal static string FrameworkMessage_TaskDidNotComplete {
+            get {
+                return ResourceManager.GetString("FrameworkMessage_TaskDidNotComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;..
         /// </summary>
         internal static string FrameworkMessage_UnexpectedException {
@@ -325,9 +334,9 @@ namespace Testify.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;..
         /// </summary>
-        internal static string FrameworMessage_UnexpectedTypeAt {
+        internal static string FrameworkMessage_UnexpectedTypeAt {
             get {
-                return ResourceManager.GetString("FrameworMessage_UnexpectedTypeAt", resourceCulture);
+                return ResourceManager.GetString("FrameworkMessage_UnexpectedTypeAt", resourceCulture);
             }
         }
     }

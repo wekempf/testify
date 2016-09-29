@@ -88,6 +88,7 @@
     <Compile Include="ReflectionExtensions.cs" />
     <Compile Include="StandardAssertions.cs" />
     <Compile Include="StringAssertions.cs" />
+    <Compile Include="TaskAssertions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

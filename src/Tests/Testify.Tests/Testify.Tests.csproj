@@ -85,6 +85,7 @@
     <Compile Include="StringAssertionsTests.cs" />
     <Compile Include="AnonymousStringTests.cs" />
     <Compile Include="AnonymousTimeSpanTests.cs" />
+    <Compile Include="TaskAssertionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

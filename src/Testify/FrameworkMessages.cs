@@ -277,10 +277,17 @@ namespace Testify
         /// <returns>The formatted message.</returns>
         internal static string UnexpectedTypeAt(int index, Type expectedType, Type actualType) =>
             Format(
-                Resources.FrameworMessage_UnexpectedTypeAt,
+                Resources.FrameworkMessage_UnexpectedTypeAt,
                 index,
                 expectedType,
                 actualType);
+
+        /// <summary>
+        /// Formats a message for Task not completing failures.
+        /// </summary>
+        /// <returns>The message.</returns>
+        internal static string TaskDidNotComplete() =>
+            Resources.FrameworkMessage_TaskDidNotComplete;
 
         private static string Format(string format, params object[] args) =>
             string.Format(CultureInfo.CurrentCulture, format, args).Trim();
