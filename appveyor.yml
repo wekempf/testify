@@ -18,6 +18,9 @@ environment:
 install:
   - ps: .\build_scripts\install.ps1 $env:APPVEYOR_BUILD_FOLDER
 
+assembly_info:
+  patch: false
+
 before_build:
   - ps: nuget restore
 
