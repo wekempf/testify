@@ -204,7 +204,10 @@
   <data name="FrameworkMessage_UnexpectedException" xml:space="preserve">
     <value>Expected exception: &lt;{0}&gt;. Actual exception: &lt;{1}&gt;.</value>
   </data>
-  <data name="FrameworMessage_UnexpectedTypeAt" xml:space="preserve">
+  <data name="FrameworkMessage_UnexpectedTypeAt" xml:space="preserve">
     <value>Element at index {0} is not of expected type: &lt;{1}&gt;. Actual type: &lt;{2}&gt;.</value>
+  </data>
+  <data name="FrameworkMessage_TaskDidNotComplete" xml:space="preserve">
+    <value>Task did not complete within allotted time and may be deadlocked.</value>
   </data>
 </root>

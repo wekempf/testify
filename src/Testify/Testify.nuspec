@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>$GitVersion_NuGetVersion$</version>
     <title>$title$</title>
     <authors>William E. Kempf</authors>
     <owners>William E. Kempf</owners>

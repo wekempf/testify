@@ -88,6 +88,7 @@
     <Compile Include="ReflectionExtensions.cs" />
     <Compile Include="StandardAssertions.cs" />
     <Compile Include="StringAssertions.cs" />
+    <Compile Include="TaskAssertions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -122,12 +123,11 @@
   <PropertyGroup>
     <NuGetExe>$(MSBuildProjectDirectory)\..\..\.build\nuget.exe</NuGetExe>
   </PropertyGroup>
-  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
-    <!-- Only download a new copy of nuget.exe if we don't have a copy available -->
+  <!--<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
     <WebDownload Condition="!Exists('$(NuGetExe)')" FileName="$(NuGetExe)" FileUri="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
-    <Exec Command="&quot;$(NuGetExe)&quot; pack &quot;$(MSBuildProjectDirectory)\Testify.csproj&quot; -Prop Configuration=Release -OutputDirectory &quot;$(MSBuildProjectDirectory)\$(OutputPath)\&quot; -Version $(GitVersion_LegacySemVer)">
+    <Exec Command="&quot;$(NuGetExe)&quot; pack &quot;$(MSBuildProjectDirectory)\Testify.csproj&quot; -Properties &quot;Configuration=Release;Platform=AnyCPU&quot; -Symbols -IncludeReferencedProjects -OutputDirectory &quot;$(MSBuildProjectDirectory)\$(OutputPath)\&quot;">
     </Exec>
-  </Target>
+  </Target>-->
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
