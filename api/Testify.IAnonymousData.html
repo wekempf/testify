@@ -76,18 +76,18 @@
               </h3>
               <span class="small pull-right mobile-hide">
                 <span class="divider">|</span>
-                <a href="https://github.com/wekempf/testify/new/develop/docs/apispec/new?filename=Testify_IAnonymousData_Any_System_Type_.md&amp;value=---%0Auid%3A%20Testify.IAnonymousData.Any(System.Type)%0Aremarks%3A%20'*THIS*%20is%20remarks%20overriden%20in%20*MARKDOWN*%20file'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+                <a href="https://github.com/wekempf/testify/new/develop/docs/apispec/new?filename=Testify_IAnonymousData_Any_System_Type_Testify_PopulateOption_.md&amp;value=---%0Auid%3A%20Testify.IAnonymousData.Any(System.Type%2CTestify.PopulateOption)%0Aremarks%3A%20'*THIS*%20is%20remarks%20overriden%20in%20*MARKDOWN*%20file'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/wekempf/testify/blob/develop/src/Testify/IAnonymousData.cs/#L16">View Source</a>
+                <a href="https://github.com/wekempf/testify/blob/develop/src/Testify/IAnonymousData.cs/#L19">View Source</a>
               </span>
-              <h4 id="Testify_IAnonymousData_Any_System_Type_" data-uid="Testify.IAnonymousData.Any(System.Type)">Any(Type)</h4>
+              <h4 id="Testify_IAnonymousData_Any_System_Type_Testify_PopulateOption_" data-uid="Testify.IAnonymousData.Any(System.Type,Testify.PopulateOption)">Any(Type, PopulateOption)</h4>
               <div class="markdown level1 summary"><p>Creates an object of the specified type.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
               <h5 class="decalaration">Declaration</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">object Any(Type type)</code></pre>
+                <pre><code class="lang-csharp hljs">object Any(Type type, PopulateOption populateOption)</code></pre>
               </div>
               <h5 class="parameters">Parameters</h5>
               <table class="table table-bordered table-striped table-condensed">
@@ -103,6 +103,12 @@
                     <td><span class="xref">System.Type</span></td>
                     <td><em>type</em></td>
                     <td><p>The type of object to create.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="Testify.PopulateOption.html#Testify_PopulateOption">PopulateOption</a></td>
+                    <td><em>populateOption</em></td>
+                    <td><p>The populate option.</p>
 </td>
                   </tr>
                 </tbody>
@@ -144,7 +150,7 @@
                 <a href="https://github.com/wekempf/testify/new/develop/docs/apispec/new?filename=Testify_IAnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution_.md&amp;value=---%0Auid%3A%20Testify.IAnonymousData.AnyDouble(System.Double%2CSystem.Double%2CTestify.Distribution)%0Aremarks%3A%20'*THIS*%20is%20remarks%20overriden%20in%20*MARKDOWN*%20file'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
               </span>
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/wekempf/testify/blob/develop/src/Testify/IAnonymousData.cs/#L30">View Source</a>
+                <a href="https://github.com/wekempf/testify/blob/develop/src/Testify/IAnonymousData.cs/#L33">View Source</a>
               </span>
               <h4 id="Testify_IAnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution_" data-uid="Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)">AnyDouble(Double, Double, Distribution)</h4>
               <div class="markdown level1 summary"><p>Creates a random <see langword="double"></see> value within the specified range using the specified
@@ -201,6 +207,46 @@ distribution algorithm.</p>
                   <tr>
                     <td><span class="xref">System.Double</span></td>
                     <td><p>A random <see langword="int"></see> value.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/wekempf/testify/new/develop/docs/apispec/new?filename=Testify_IAnonymousData_Populate_System_Object_System_Boolean_.md&amp;value=---%0Auid%3A%20Testify.IAnonymousData.Populate(System.Object%2CSystem.Boolean)%0Aremarks%3A%20'*THIS*%20is%20remarks%20overriden%20in%20*MARKDOWN*%20file'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/develop/src/Testify/IAnonymousData.cs/#L41">View Source</a>
+              </span>
+              <h4 id="Testify_IAnonymousData_Populate_System_Object_System_Boolean_" data-uid="Testify.IAnonymousData.Populate(System.Object,System.Boolean)">Populate(Object, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Populates the specified instance by assigning all properties to anonymous values.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">void Populate(object instance, bool deep)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>instance</em></td>
+                    <td><p>The instance to populate.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><em>deep</em></td>
+                    <td><p>If set to <see langword="true"></see> then properties are assigned recursively, populating
+the entire object tree.</p>
 </td>
                   </tr>
                 </tbody>
