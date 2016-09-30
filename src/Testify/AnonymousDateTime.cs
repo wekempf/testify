@@ -1,12 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Testify
 {
     /// <summary>
     /// Defines factory methods for creating anonymous <see langword="DateTime"/> values.
     /// </summary>
-    // Temorary (hopefull) workaround for DocFX
-    // [EditorBrowsable(EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousDateTime
     {
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using static Testify.Assertions;
 using static Testify.FrameworkMessages;
@@ -8,8 +9,7 @@ namespace Testify
     /// <summary>
     /// Provides assertion methods associated with strings in unit tests.
     /// </summary>
-    // Temorary (hopefull) workaround for DocFX
-    // [EditorBrowsable(EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class StringAssertions
     {
         /// <summary>

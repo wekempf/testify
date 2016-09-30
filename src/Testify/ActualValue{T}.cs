@@ -1,11 +1,12 @@
-﻿namespace Testify
+﻿using System.ComponentModel;
+
+namespace Testify
 {
     /// <summary>
     /// Represents the actual value in an assertion statement.
     /// </summary>
     /// <typeparam name="T">The type of the actual value.</typeparam>
-    // Temorary (hopefull) workaround for DocFX
-    // [EditorBrowsable(EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public sealed class ActualValue<T>
     {
         /// <summary>

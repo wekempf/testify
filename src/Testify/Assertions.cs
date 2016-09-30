@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -185,8 +186,7 @@ namespace Testify
         /// <param name="assertionMessage">The assertion message.</param>
         /// <param name="userMessage">The user message.</param>
         /// <param name="userArgs">The user arguments used to format the user message.</param>
-        // Temorary (hopefull) workaround for DocFX
-        // [EditorBrowsable(EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public static void Throw(string assertionName, string assertionMessage, string userMessage, params object[] userArgs)
         {
             Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
@@ -203,8 +203,7 @@ namespace Testify
         /// <param name="assertionMessage">The assertion message.</param>
         /// <param name="userMessage">The user message.</param>
         /// <param name="userArgs">The user arguments used to format the user message.</param>
-        // Temorary (hopefull) workaround for DocFX
-        // [EditorBrowsable(EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public static void Throw(string assertionName, Exception innerException, string assertionMessage, string userMessage, params object[] userArgs)
         {
             Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
@@ -221,8 +220,7 @@ namespace Testify
         /// <param name="assertionMessage">The assertion message.</param>
         /// <param name="userMessage">The user message.</param>
         /// <param name="userArgs">The user arguments used to format the user message.</param>
-        // Temorary (hopefull) workaround for DocFX
-        // [EditorBrowsable(EditorBrowsableState.Never)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public static void Throw(string assertionName, IEnumerable<Exception> innerExceptions, string assertionMessage, string userMessage, params object[] userArgs)
         {
             Argument.NotNullOrEmpty(assertionName, nameof(assertionName));

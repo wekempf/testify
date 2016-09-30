@@ -1,12 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Testify
 {
     /// <summary>
     /// Extension methods for <see cref="AnonymousData"/> use.
     /// </summary>
-    // Temorary (hopefull) workaround for DocFX
-    // [EditorBrowsable(EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousDataExtensions
     {
         /// <summary>

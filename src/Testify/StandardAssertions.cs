@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using static Testify.Assertions;
 using static Testify.FrameworkMessages;
 
@@ -7,8 +8,7 @@ namespace Testify
     /// <summary>
     /// Defines standard assertion methods used with the fluent <see cref="Assertions.Assert{T}(T)"/> method.
     /// </summary>
-    // Temorary (hopefull) workaround for DocFX
-    // [EditorBrowsable(EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class StandardAssertions
     {
         /// <summary>

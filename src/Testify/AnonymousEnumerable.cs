@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Testify
@@ -8,8 +9,7 @@ namespace Testify
     /// <summary>
     /// Defines factory methods for creating <see langword="IEnumerable"/> values.
     /// </summary>
-    // Temorary (hopefull) workaround for DocFX
-    // [EditorBrowsable(EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousEnumerable
     {
         /// <summary>
