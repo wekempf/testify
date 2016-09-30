@@ -1,0 +1,2177 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: AntiPatterns
+  name: Anti-Patterns
+  href: manual/AntiPatterns.html#AntiPatterns
+- uid: Api
+  name: Api Documentation
+  href: api/index.html#Api
+- uid: Assertions
+  name: Assertions
+  href: manual/Assertions.html#Assertions
+- uid: BestPractices
+  name: "\xD83D\xDD27 Best Practices"
+  href: manual/BestPractices.html#BestPractices
+- uid: ContractVerifiers
+  name: Contract Verifiers
+  href: manual/ContractVerifiers.html#ContractVerifiers
+- uid: GoodUnitTests
+  name: Good Unit Tests
+  href: manual/GoodUnitTests.html#GoodUnitTests
+- uid: Home
+  name: Testify
+  href: index.html#Home
+- uid: Intro
+  name: Introduction to Testify
+  href: manual/intro.html#Intro
+- uid: Testify
+  name: Testify
+  href: api/Testify.html#Testify
+  commentId: N:Testify
+  fullName: Testify
+- uid: Testify.ActualValue`1
+  name: ActualValue<T>
+  href: api/Testify.ActualValue-1.html#Testify_ActualValue_1
+  commentId: T:Testify.ActualValue`1
+  name.vb: ActualValue(Of T)
+  fullName: Testify.ActualValue<T>
+  fullName.vb: Testify.ActualValue(Of T)
+- uid: Testify.ActualValue`1.#ctor(`0)
+  name: ActualValue(T)
+  href: api/Testify.ActualValue-1.html#Testify_ActualValue_1__ctor__0_
+  commentId: M:Testify.ActualValue`1.#ctor(`0)
+  fullName: Testify.ActualValue<T>.ActualValue(T)
+  fullName.vb: Testify.ActualValue(Of T).ActualValue(T)
+- uid: Testify.ActualValue`1.Value
+  name: Value
+  href: api/Testify.ActualValue-1.html#Testify_ActualValue_1_Value
+  commentId: P:Testify.ActualValue`1.Value
+  fullName: Testify.ActualValue<T>.Value
+  fullName.vb: Testify.ActualValue(Of T).Value
+- uid: Testify.AnonymousBool
+  name: AnonymousBool
+  href: api/Testify.AnonymousBool.html#Testify_AnonymousBool
+  commentId: T:Testify.AnonymousBool
+  fullName: Testify.AnonymousBool
+- uid: Testify.AnonymousBool.AnyBool(Testify.IAnonymousData)
+  name: AnyBool(IAnonymousData)
+  href: api/Testify.AnonymousBool.html#Testify_AnonymousBool_AnyBool_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousBool.AnyBool(Testify.IAnonymousData)
+  fullName: Testify.AnonymousBool.AnyBool(Testify.IAnonymousData)
+- uid: Testify.AnonymousBool.AnyBool(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyBool(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousBool.html#Testify_AnonymousBool_AnyBool_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousBool.AnyBool(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousBool.AnyBool(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousByte
+  name: AnonymousByte
+  href: api/Testify.AnonymousByte.html#Testify_AnonymousByte
+  commentId: T:Testify.AnonymousByte
+  fullName: Testify.AnonymousByte
+- uid: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData)
+  name: AnyByte(IAnonymousData)
+  href: api/Testify.AnonymousByte.html#Testify_AnonymousByte_AnyByte_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousByte.AnyByte(Testify.IAnonymousData)
+  fullName: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData)
+- uid: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData,System.Byte,System.Byte)
+  name: AnyByte(IAnonymousData, Byte, Byte)
+  href: api/Testify.AnonymousByte.html#Testify_AnonymousByte_AnyByte_Testify_IAnonymousData_System_Byte_System_Byte_
+  commentId: M:Testify.AnonymousByte.AnyByte(Testify.IAnonymousData,System.Byte,System.Byte)
+  fullName: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData, System.Byte, System.Byte)
+- uid: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData,System.Byte,System.Byte,Testify.Distribution)
+  name: AnyByte(IAnonymousData, Byte, Byte, Distribution)
+  href: api/Testify.AnonymousByte.html#Testify_AnonymousByte_AnyByte_Testify_IAnonymousData_System_Byte_System_Byte_Testify_Distribution_
+  commentId: M:Testify.AnonymousByte.AnyByte(Testify.IAnonymousData,System.Byte,System.Byte,Testify.Distribution)
+  fullName: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData, System.Byte, System.Byte, Testify.Distribution)
+- uid: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyByte(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousByte.html#Testify_AnonymousByte_AnyByte_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousByte.AnyByte(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousByte.AnyByte(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar
+  name: AnonymousChar
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar
+  commentId: T:Testify.AnonymousChar
+  fullName: Testify.AnonymousChar
+- uid: Testify.AnonymousChar.AnyAlphaChar(Testify.IAnonymousData)
+  name: AnyAlphaChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyAlphaChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyAlphaChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyAlphaChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyAlphaChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyAlphaChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyAlphaChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyAlphaChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyAlphaChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyAlphaNumericChar(Testify.IAnonymousData)
+  name: AnyAlphaNumericChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyAlphaNumericChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyAlphaNumericChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyAlphaNumericChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyAlphaNumericChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyAlphaNumericChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyAlphaNumericChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyAlphaNumericChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyAlphaNumericChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyBasicLatinChar(Testify.IAnonymousData)
+  name: AnyBasicLatinChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyBasicLatinChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyBasicLatinChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyBasicLatinChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyBasicLatinChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyBasicLatinChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyBasicLatinChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyBasicLatinChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyBasicLatinChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData)
+  name: AnyChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData,System.Char,System.Char)
+  name: AnyChar(IAnonymousData, Char, Char)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyChar_Testify_IAnonymousData_System_Char_System_Char_
+  commentId: M:Testify.AnonymousChar.AnyChar(Testify.IAnonymousData,System.Char,System.Char)
+  fullName: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData, System.Char, System.Char)
+- uid: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData,System.Char,System.Char,Testify.Distribution)
+  name: AnyChar(IAnonymousData, Char, Char, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyChar_Testify_IAnonymousData_System_Char_System_Char_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyChar(Testify.IAnonymousData,System.Char,System.Char,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData, System.Char, System.Char, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyLatinSupplementChar(Testify.IAnonymousData)
+  name: AnyLatinSupplementChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyLatinSupplementChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyLatinSupplementChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyLatinSupplementChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyLatinSupplementChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyLatinSupplementChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyLatinSupplementChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyLatinSupplementChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyLatinSupplementChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyNumericChar(Testify.IAnonymousData)
+  name: AnyNumericChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyNumericChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyNumericChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyNumericChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyNumericChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyNumericChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyNumericChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyNumericChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyNumericChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousChar.AnyPrintableChar(Testify.IAnonymousData)
+  name: AnyPrintableChar(IAnonymousData)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyPrintableChar_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousChar.AnyPrintableChar(Testify.IAnonymousData)
+  fullName: Testify.AnonymousChar.AnyPrintableChar(Testify.IAnonymousData)
+- uid: Testify.AnonymousChar.AnyPrintableChar(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyPrintableChar(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousChar.html#Testify_AnonymousChar_AnyPrintableChar_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousChar.AnyPrintableChar(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousChar.AnyPrintableChar(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousData
+  name: AnonymousData
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData
+  commentId: T:Testify.AnonymousData
+  fullName: Testify.AnonymousData
+- uid: Testify.AnonymousData.#ctor
+  name: AnonymousData()
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData__ctor
+  commentId: M:Testify.AnonymousData.#ctor
+  fullName: Testify.AnonymousData.AnonymousData()
+- uid: Testify.AnonymousData.#ctor(System.Int32)
+  name: AnonymousData(Int32)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData__ctor_System_Int32_
+  commentId: M:Testify.AnonymousData.#ctor(System.Int32)
+  fullName: Testify.AnonymousData.AnonymousData(System.Int32)
+- uid: Testify.AnonymousData.Any(System.Type,Testify.PopulateOption)
+  name: Any(Type, PopulateOption)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Any_System_Type_Testify_PopulateOption_
+  commentId: M:Testify.AnonymousData.Any(System.Type,Testify.PopulateOption)
+  fullName: Testify.AnonymousData.Any(System.Type, Testify.PopulateOption)
+- uid: Testify.AnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)
+  name: AnyDouble(Double, Double, Distribution)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution_
+  commentId: M:Testify.AnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)
+  fullName: Testify.AnonymousData.AnyDouble(System.Double, System.Double, Testify.Distribution)
+- uid: Testify.AnonymousData.Customize(Testify.IAnonymousDataCustomization)
+  name: Customize(IAnonymousDataCustomization)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Customize_Testify_IAnonymousDataCustomization_
+  commentId: M:Testify.AnonymousData.Customize(Testify.IAnonymousDataCustomization)
+  fullName: Testify.AnonymousData.Customize(Testify.IAnonymousDataCustomization)
+- uid: Testify.AnonymousData.Populate(System.Object,System.Boolean)
+  name: Populate(Object, Boolean)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Populate_System_Object_System_Boolean_
+  commentId: M:Testify.AnonymousData.Populate(System.Object,System.Boolean)
+  fullName: Testify.AnonymousData.Populate(System.Object, System.Boolean)
+- uid: Testify.AnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
+  name: Register(Type, Func<IAnonymousData, Object>)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Register_System_Type_System_Func_Testify_IAnonymousData_System_Object__
+  commentId: M:Testify.AnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
+  name.vb: Register(Type, Func(Of IAnonymousData, Object))
+  fullName: Testify.AnonymousData.Register(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
+  fullName.vb: Testify.AnonymousData.Register(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
+- uid: Testify.AnonymousDataException
+  name: AnonymousDataException
+  href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException
+  commentId: T:Testify.AnonymousDataException
+  fullName: Testify.AnonymousDataException
+- uid: Testify.AnonymousDataException.#ctor(System.Type)
+  name: AnonymousDataException(Type)
+  href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException__ctor_System_Type_
+  commentId: M:Testify.AnonymousDataException.#ctor(System.Type)
+  fullName: Testify.AnonymousDataException.AnonymousDataException(System.Type)
+- uid: Testify.AnonymousDataException.#ctor(System.Type,System.Exception)
+  name: AnonymousDataException(Type, Exception)
+  href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException__ctor_System_Type_System_Exception_
+  commentId: M:Testify.AnonymousDataException.#ctor(System.Type,System.Exception)
+  fullName: Testify.AnonymousDataException.AnonymousDataException(System.Type, System.Exception)
+- uid: Testify.AnonymousDataException.AnonymousType
+  name: AnonymousType
+  href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException_AnonymousType
+  commentId: P:Testify.AnonymousDataException.AnonymousType
+  fullName: Testify.AnonymousDataException.AnonymousType
+- uid: Testify.AnonymousDataExtensions
+  name: AnonymousDataExtensions
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions
+  commentId: T:Testify.AnonymousDataExtensions
+  fullName: Testify.AnonymousDataExtensions
+- uid: Testify.AnonymousDataExtensions.Any(Testify.IAnonymousData,System.Type)
+  name: Any(IAnonymousData, Type)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Any_Testify_IAnonymousData_System_Type_
+  commentId: M:Testify.AnonymousDataExtensions.Any(Testify.IAnonymousData,System.Type)
+  fullName: Testify.AnonymousDataExtensions.Any(Testify.IAnonymousData, System.Type)
+- uid: Testify.AnonymousDataExtensions.Any``1(Testify.IAnonymousData)
+  name: Any<T>(IAnonymousData)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Any__1_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousDataExtensions.Any``1(Testify.IAnonymousData)
+  name.vb: Any(Of T)(IAnonymousData)
+  fullName: Testify.AnonymousDataExtensions.Any<T>(Testify.IAnonymousData)
+  fullName.vb: Testify.AnonymousDataExtensions.Any(Of T)(Testify.IAnonymousData)
+- uid: Testify.AnonymousDataExtensions.Any``1(Testify.IAnonymousData,Testify.PopulateOption)
+  name: Any<T>(IAnonymousData, PopulateOption)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Any__1_Testify_IAnonymousData_Testify_PopulateOption_
+  commentId: M:Testify.AnonymousDataExtensions.Any``1(Testify.IAnonymousData,Testify.PopulateOption)
+  name.vb: Any(Of T)(IAnonymousData, PopulateOption)
+  fullName: Testify.AnonymousDataExtensions.Any<T>(Testify.IAnonymousData, Testify.PopulateOption)
+  fullName.vb: Testify.AnonymousDataExtensions.Any(Of T)(Testify.IAnonymousData, Testify.PopulateOption)
+- uid: Testify.AnonymousDataExtensions.Freeze(Testify.IRegisterAnonymousData,System.Type,System.Object)
+  name: Freeze(IRegisterAnonymousData, Type, Object)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Freeze_Testify_IRegisterAnonymousData_System_Type_System_Object_
+  commentId: M:Testify.AnonymousDataExtensions.Freeze(Testify.IRegisterAnonymousData,System.Type,System.Object)
+  fullName: Testify.AnonymousDataExtensions.Freeze(Testify.IRegisterAnonymousData, System.Type, System.Object)
+- uid: Testify.AnonymousDataExtensions.Freeze``1(Testify.IRegisterAnonymousData,``0)
+  name: Freeze<T>(IRegisterAnonymousData, T)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Freeze__1_Testify_IRegisterAnonymousData___0_
+  commentId: M:Testify.AnonymousDataExtensions.Freeze``1(Testify.IRegisterAnonymousData,``0)
+  name.vb: Freeze(Of T)(IRegisterAnonymousData, T)
+  fullName: Testify.AnonymousDataExtensions.Freeze<T>(Testify.IRegisterAnonymousData, T)
+  fullName.vb: Testify.AnonymousDataExtensions.Freeze(Of T)(Testify.IRegisterAnonymousData, T)
+- uid: Testify.AnonymousDataExtensions.Populate(Testify.IAnonymousData,System.Object)
+  name: Populate(IAnonymousData, Object)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Populate_Testify_IAnonymousData_System_Object_
+  commentId: M:Testify.AnonymousDataExtensions.Populate(Testify.IAnonymousData,System.Object)
+  fullName: Testify.AnonymousDataExtensions.Populate(Testify.IAnonymousData, System.Object)
+- uid: Testify.AnonymousDataExtensions.Register``1(Testify.IRegisterAnonymousData,System.Func{Testify.IAnonymousData,``0})
+  name: Register<T>(IRegisterAnonymousData, Func<IAnonymousData, T>)
+  href: api/Testify.AnonymousDataExtensions.html#Testify_AnonymousDataExtensions_Register__1_Testify_IRegisterAnonymousData_System_Func_Testify_IAnonymousData___0__
+  commentId: M:Testify.AnonymousDataExtensions.Register``1(Testify.IRegisterAnonymousData,System.Func{Testify.IAnonymousData,``0})
+  name.vb: Register(Of T)(IRegisterAnonymousData, Func(Of IAnonymousData, T))
+  fullName: Testify.AnonymousDataExtensions.Register<T>(Testify.IRegisterAnonymousData, System.Func<Testify.IAnonymousData, T>)
+  fullName.vb: Testify.AnonymousDataExtensions.Register(Of T)(Testify.IRegisterAnonymousData, System.Func(Of Testify.IAnonymousData, T))
+- uid: Testify.AnonymousDateTime
+  name: AnonymousDateTime
+  href: api/Testify.AnonymousDateTime.html#Testify_AnonymousDateTime
+  commentId: T:Testify.AnonymousDateTime
+  fullName: Testify.AnonymousDateTime
+- uid: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData)
+  name: AnyDateTime(IAnonymousData)
+  href: api/Testify.AnonymousDateTime.html#Testify_AnonymousDateTime_AnyDateTime_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData)
+  fullName: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData)
+- uid: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData,System.DateTime,System.DateTime)
+  name: AnyDateTime(IAnonymousData, DateTime, DateTime)
+  href: api/Testify.AnonymousDateTime.html#Testify_AnonymousDateTime_AnyDateTime_Testify_IAnonymousData_System_DateTime_System_DateTime_
+  commentId: M:Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData,System.DateTime,System.DateTime)
+  fullName: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData, System.DateTime, System.DateTime)
+- uid: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData,System.DateTime,System.DateTime,Testify.Distribution)
+  name: AnyDateTime(IAnonymousData, DateTime, DateTime, Distribution)
+  href: api/Testify.AnonymousDateTime.html#Testify_AnonymousDateTime_AnyDateTime_Testify_IAnonymousData_System_DateTime_System_DateTime_Testify_Distribution_
+  commentId: M:Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData,System.DateTime,System.DateTime,Testify.Distribution)
+  fullName: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData, System.DateTime, System.DateTime, Testify.Distribution)
+- uid: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyDateTime(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousDateTime.html#Testify_AnonymousDateTime_AnyDateTime_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousDateTime.AnyDateTime(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousDateTimeOffset
+  name: AnonymousDateTimeOffset
+  href: api/Testify.AnonymousDateTimeOffset.html#Testify_AnonymousDateTimeOffset
+  commentId: T:Testify.AnonymousDateTimeOffset
+  fullName: Testify.AnonymousDateTimeOffset
+- uid: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData)
+  name: AnyDateTimeOffset(IAnonymousData)
+  href: api/Testify.AnonymousDateTimeOffset.html#Testify_AnonymousDateTimeOffset_AnyDateTimeOffset_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData)
+  fullName: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData)
+- uid: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData,System.DateTimeOffset,System.DateTimeOffset)
+  name: AnyDateTimeOffset(IAnonymousData, DateTimeOffset, DateTimeOffset)
+  href: api/Testify.AnonymousDateTimeOffset.html#Testify_AnonymousDateTimeOffset_AnyDateTimeOffset_Testify_IAnonymousData_System_DateTimeOffset_System_DateTimeOffset_
+  commentId: M:Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData,System.DateTimeOffset,System.DateTimeOffset)
+  fullName: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData, System.DateTimeOffset, System.DateTimeOffset)
+- uid: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData,System.DateTimeOffset,System.DateTimeOffset,Testify.Distribution)
+  name: AnyDateTimeOffset(IAnonymousData, DateTimeOffset, DateTimeOffset, Distribution)
+  href: api/Testify.AnonymousDateTimeOffset.html#Testify_AnonymousDateTimeOffset_AnyDateTimeOffset_Testify_IAnonymousData_System_DateTimeOffset_System_DateTimeOffset_Testify_Distribution_
+  commentId: M:Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData,System.DateTimeOffset,System.DateTimeOffset,Testify.Distribution)
+  fullName: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData, System.DateTimeOffset, System.DateTimeOffset, Testify.Distribution)
+- uid: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyDateTimeOffset(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousDateTimeOffset.html#Testify_AnonymousDateTimeOffset_AnyDateTimeOffset_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousDateTimeOffset.AnyDateTimeOffset(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousDouble
+  name: AnonymousDouble
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble
+  commentId: T:Testify.AnonymousDouble
+  fullName: Testify.AnonymousDouble
+- uid: Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData)
+  name: AnyDouble(IAnonymousData)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyDouble_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData)
+  fullName: Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData)
+- uid: Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData,System.Double,System.Double)
+  name: AnyDouble(IAnonymousData, Double, Double)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyDouble_Testify_IAnonymousData_System_Double_System_Double_
+  commentId: M:Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData,System.Double,System.Double)
+  fullName: Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData, System.Double, System.Double)
+- uid: Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyDouble(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyDouble_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousDouble.AnyDouble(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousDouble.AnyNegativeDouble(Testify.IAnonymousData)
+  name: AnyNegativeDouble(IAnonymousData)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyNegativeDouble_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousDouble.AnyNegativeDouble(Testify.IAnonymousData)
+  fullName: Testify.AnonymousDouble.AnyNegativeDouble(Testify.IAnonymousData)
+- uid: Testify.AnonymousDouble.AnyNegativeDouble(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyNegativeDouble(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyNegativeDouble_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousDouble.AnyNegativeDouble(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousDouble.AnyNegativeDouble(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousDouble.AnyPositiveDouble(Testify.IAnonymousData)
+  name: AnyPositiveDouble(IAnonymousData)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyPositiveDouble_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousDouble.AnyPositiveDouble(Testify.IAnonymousData)
+  fullName: Testify.AnonymousDouble.AnyPositiveDouble(Testify.IAnonymousData)
+- uid: Testify.AnonymousDouble.AnyPositiveDouble(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyPositiveDouble(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousDouble.html#Testify_AnonymousDouble_AnyPositiveDouble_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousDouble.AnyPositiveDouble(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousDouble.AnyPositiveDouble(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousEnum
+  name: AnonymousEnum
+  href: api/Testify.AnonymousEnum.html#Testify_AnonymousEnum
+  commentId: T:Testify.AnonymousEnum
+  fullName: Testify.AnonymousEnum
+- uid: Testify.AnonymousEnum.AnyEnumValue(Testify.IAnonymousData,System.Type)
+  name: AnyEnumValue(IAnonymousData, Type)
+  href: api/Testify.AnonymousEnum.html#Testify_AnonymousEnum_AnyEnumValue_Testify_IAnonymousData_System_Type_
+  commentId: M:Testify.AnonymousEnum.AnyEnumValue(Testify.IAnonymousData,System.Type)
+  fullName: Testify.AnonymousEnum.AnyEnumValue(Testify.IAnonymousData, System.Type)
+- uid: Testify.AnonymousEnum.AnyEnumValue(Testify.IAnonymousData,System.Type,Testify.Distribution)
+  name: AnyEnumValue(IAnonymousData, Type, Distribution)
+  href: api/Testify.AnonymousEnum.html#Testify_AnonymousEnum_AnyEnumValue_Testify_IAnonymousData_System_Type_Testify_Distribution_
+  commentId: M:Testify.AnonymousEnum.AnyEnumValue(Testify.IAnonymousData,System.Type,Testify.Distribution)
+  fullName: Testify.AnonymousEnum.AnyEnumValue(Testify.IAnonymousData, System.Type, Testify.Distribution)
+- uid: Testify.AnonymousEnum.AnyEnumValue``1(Testify.IAnonymousData)
+  name: AnyEnumValue<T>(IAnonymousData)
+  href: api/Testify.AnonymousEnum.html#Testify_AnonymousEnum_AnyEnumValue__1_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousEnum.AnyEnumValue``1(Testify.IAnonymousData)
+  name.vb: AnyEnumValue(Of T)(IAnonymousData)
+  fullName: Testify.AnonymousEnum.AnyEnumValue<T>(Testify.IAnonymousData)
+  fullName.vb: Testify.AnonymousEnum.AnyEnumValue(Of T)(Testify.IAnonymousData)
+- uid: Testify.AnonymousEnum.AnyEnumValue``1(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyEnumValue<T>(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousEnum.html#Testify_AnonymousEnum_AnyEnumValue__1_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousEnum.AnyEnumValue``1(Testify.IAnonymousData,Testify.Distribution)
+  name.vb: AnyEnumValue(Of T)(IAnonymousData, Distribution)
+  fullName: Testify.AnonymousEnum.AnyEnumValue<T>(Testify.IAnonymousData, Testify.Distribution)
+  fullName.vb: Testify.AnonymousEnum.AnyEnumValue(Of T)(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousEnumerable
+  name: AnonymousEnumerable
+  href: api/Testify.AnonymousEnumerable.html#Testify_AnonymousEnumerable
+  commentId: T:Testify.AnonymousEnumerable
+  fullName: Testify.AnonymousEnumerable
+- uid: Testify.AnonymousEnumerable.AnyEnumerable(Testify.IAnonymousData,System.Type)
+  name: AnyEnumerable(IAnonymousData, Type)
+  href: api/Testify.AnonymousEnumerable.html#Testify_AnonymousEnumerable_AnyEnumerable_Testify_IAnonymousData_System_Type_
+  commentId: M:Testify.AnonymousEnumerable.AnyEnumerable(Testify.IAnonymousData,System.Type)
+  fullName: Testify.AnonymousEnumerable.AnyEnumerable(Testify.IAnonymousData, System.Type)
+- uid: Testify.AnonymousEnumerable.AnyEnumerable(Testify.IAnonymousData,System.Type,System.Int32,System.Int32)
+  name: AnyEnumerable(IAnonymousData, Type, Int32, Int32)
+  href: api/Testify.AnonymousEnumerable.html#Testify_AnonymousEnumerable_AnyEnumerable_Testify_IAnonymousData_System_Type_System_Int32_System_Int32_
+  commentId: M:Testify.AnonymousEnumerable.AnyEnumerable(Testify.IAnonymousData,System.Type,System.Int32,System.Int32)
+  fullName: Testify.AnonymousEnumerable.AnyEnumerable(Testify.IAnonymousData, System.Type, System.Int32, System.Int32)
+- uid: Testify.AnonymousEnumerable.AnyEnumerable``1(Testify.IAnonymousData)
+  name: AnyEnumerable<T>(IAnonymousData)
+  href: api/Testify.AnonymousEnumerable.html#Testify_AnonymousEnumerable_AnyEnumerable__1_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousEnumerable.AnyEnumerable``1(Testify.IAnonymousData)
+  name.vb: AnyEnumerable(Of T)(IAnonymousData)
+  fullName: Testify.AnonymousEnumerable.AnyEnumerable<T>(Testify.IAnonymousData)
+  fullName.vb: Testify.AnonymousEnumerable.AnyEnumerable(Of T)(Testify.IAnonymousData)
+- uid: Testify.AnonymousEnumerable.AnyEnumerable``1(Testify.IAnonymousData,System.Int32,System.Int32)
+  name: AnyEnumerable<T>(IAnonymousData, Int32, Int32)
+  href: api/Testify.AnonymousEnumerable.html#Testify_AnonymousEnumerable_AnyEnumerable__1_Testify_IAnonymousData_System_Int32_System_Int32_
+  commentId: M:Testify.AnonymousEnumerable.AnyEnumerable``1(Testify.IAnonymousData,System.Int32,System.Int32)
+  name.vb: AnyEnumerable(Of T)(IAnonymousData, Int32, Int32)
+  fullName: Testify.AnonymousEnumerable.AnyEnumerable<T>(Testify.IAnonymousData, System.Int32, System.Int32)
+  fullName.vb: Testify.AnonymousEnumerable.AnyEnumerable(Of T)(Testify.IAnonymousData, System.Int32, System.Int32)
+- uid: Testify.AnonymousEnumerable.AnyItem``1(Testify.IAnonymousData,System.Collections.Generic.IEnumerable{``0})
+  name: AnyItem<T>(IAnonymousData, IEnumerable<T>)
+  href: api/Testify.AnonymousEnumerable.html#Testify_AnonymousEnumerable_AnyItem__1_Testify_IAnonymousData_System_Collections_Generic_IEnumerable___0__
+  commentId: M:Testify.AnonymousEnumerable.AnyItem``1(Testify.IAnonymousData,System.Collections.Generic.IEnumerable{``0})
+  name.vb: AnyItem(Of T)(IAnonymousData, IEnumerable(Of T))
+  fullName: Testify.AnonymousEnumerable.AnyItem<T>(Testify.IAnonymousData, System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Testify.AnonymousEnumerable.AnyItem(Of T)(Testify.IAnonymousData, System.Collections.Generic.IEnumerable(Of T))
+- uid: Testify.AnonymousInt16
+  name: AnonymousInt16
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16
+  commentId: T:Testify.AnonymousInt16
+  fullName: Testify.AnonymousInt16
+- uid: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData)
+  name: AnyInt16(IAnonymousData)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyInt16_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData,System.Int16,System.Int16)
+  name: AnyInt16(IAnonymousData, Int16, Int16)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyInt16_Testify_IAnonymousData_System_Int16_System_Int16_
+  commentId: M:Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData,System.Int16,System.Int16)
+  fullName: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData, System.Int16, System.Int16)
+- uid: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData,System.Int16,System.Int16,Testify.Distribution)
+  name: AnyInt16(IAnonymousData, Int16, Int16, Distribution)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyInt16_Testify_IAnonymousData_System_Int16_System_Int16_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData,System.Int16,System.Int16,Testify.Distribution)
+  fullName: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData, System.Int16, System.Int16, Testify.Distribution)
+- uid: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyInt16(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyInt16_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt16.AnyInt16(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt16.AnyNegativeInt16(Testify.IAnonymousData)
+  name: AnyNegativeInt16(IAnonymousData)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyNegativeInt16_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt16.AnyNegativeInt16(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt16.AnyNegativeInt16(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt16.AnyNegativeInt16(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyNegativeInt16(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyNegativeInt16_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt16.AnyNegativeInt16(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt16.AnyNegativeInt16(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt16.AnyPositiveInt16(Testify.IAnonymousData)
+  name: AnyPositiveInt16(IAnonymousData)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyPositiveInt16_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt16.AnyPositiveInt16(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt16.AnyPositiveInt16(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt16.AnyPositiveInt16(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyPositiveInt16(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt16.html#Testify_AnonymousInt16_AnyPositiveInt16_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt16.AnyPositiveInt16(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt16.AnyPositiveInt16(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt32
+  name: AnonymousInt32
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32
+  commentId: T:Testify.AnonymousInt32
+  fullName: Testify.AnonymousInt32
+- uid: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData)
+  name: AnyInt32(IAnonymousData)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyInt32_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData,System.Int32,System.Int32)
+  name: AnyInt32(IAnonymousData, Int32, Int32)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyInt32_Testify_IAnonymousData_System_Int32_System_Int32_
+  commentId: M:Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData,System.Int32,System.Int32)
+  fullName: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData, System.Int32, System.Int32)
+- uid: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData,System.Int32,System.Int32,Testify.Distribution)
+  name: AnyInt32(IAnonymousData, Int32, Int32, Distribution)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyInt32_Testify_IAnonymousData_System_Int32_System_Int32_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData,System.Int32,System.Int32,Testify.Distribution)
+  fullName: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData, System.Int32, System.Int32, Testify.Distribution)
+- uid: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyInt32(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyInt32_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt32.AnyInt32(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt32.AnyNegativeInt32(Testify.IAnonymousData)
+  name: AnyNegativeInt32(IAnonymousData)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyNegativeInt32_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt32.AnyNegativeInt32(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt32.AnyNegativeInt32(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt32.AnyNegativeInt32(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyNegativeInt32(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyNegativeInt32_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt32.AnyNegativeInt32(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt32.AnyNegativeInt32(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt32.AnyPositiveInt32(Testify.IAnonymousData)
+  name: AnyPositiveInt32(IAnonymousData)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyPositiveInt32_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt32.AnyPositiveInt32(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt32.AnyPositiveInt32(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt32.AnyPositiveInt32(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyPositiveInt32(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt32.html#Testify_AnonymousInt32_AnyPositiveInt32_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt32.AnyPositiveInt32(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt32.AnyPositiveInt32(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt64
+  name: AnonymousInt64
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64
+  commentId: T:Testify.AnonymousInt64
+  fullName: Testify.AnonymousInt64
+- uid: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData)
+  name: AnyInt64(IAnonymousData)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyInt64_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData,System.Int64,System.Int64)
+  name: AnyInt64(IAnonymousData, Int64, Int64)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyInt64_Testify_IAnonymousData_System_Int64_System_Int64_
+  commentId: M:Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData,System.Int64,System.Int64)
+  fullName: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData, System.Int64, System.Int64)
+- uid: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData,System.Int64,System.Int64,Testify.Distribution)
+  name: AnyInt64(IAnonymousData, Int64, Int64, Distribution)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyInt64_Testify_IAnonymousData_System_Int64_System_Int64_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData,System.Int64,System.Int64,Testify.Distribution)
+  fullName: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData, System.Int64, System.Int64, Testify.Distribution)
+- uid: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyInt64(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyInt64_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt64.AnyInt64(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt64.AnyNegativeInt64(Testify.IAnonymousData)
+  name: AnyNegativeInt64(IAnonymousData)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyNegativeInt64_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt64.AnyNegativeInt64(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt64.AnyNegativeInt64(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt64.AnyNegativeInt64(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyNegativeInt64(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyNegativeInt64_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt64.AnyNegativeInt64(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt64.AnyNegativeInt64(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousInt64.AnyPositiveInt64(Testify.IAnonymousData)
+  name: AnyPositiveInt64(IAnonymousData)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyPositiveInt64_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousInt64.AnyPositiveInt64(Testify.IAnonymousData)
+  fullName: Testify.AnonymousInt64.AnyPositiveInt64(Testify.IAnonymousData)
+- uid: Testify.AnonymousInt64.AnyPositiveInt64(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyPositiveInt64(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousInt64.html#Testify_AnonymousInt64_AnyPositiveInt64_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousInt64.AnyPositiveInt64(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousInt64.AnyPositiveInt64(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousSingle
+  name: AnonymousSingle
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle
+  commentId: T:Testify.AnonymousSingle
+  fullName: Testify.AnonymousSingle
+- uid: Testify.AnonymousSingle.AnyNegativeSingle(Testify.IAnonymousData)
+  name: AnyNegativeSingle(IAnonymousData)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnyNegativeSingle_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousSingle.AnyNegativeSingle(Testify.IAnonymousData)
+  fullName: Testify.AnonymousSingle.AnyNegativeSingle(Testify.IAnonymousData)
+- uid: Testify.AnonymousSingle.AnyNegativeSingle(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyNegativeSingle(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnyNegativeSingle_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousSingle.AnyNegativeSingle(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousSingle.AnyNegativeSingle(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousSingle.AnyPositiveSingle(Testify.IAnonymousData)
+  name: AnyPositiveSingle(IAnonymousData)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnyPositiveSingle_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousSingle.AnyPositiveSingle(Testify.IAnonymousData)
+  fullName: Testify.AnonymousSingle.AnyPositiveSingle(Testify.IAnonymousData)
+- uid: Testify.AnonymousSingle.AnyPositiveSingle(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyPositiveSingle(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnyPositiveSingle_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousSingle.AnyPositiveSingle(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousSingle.AnyPositiveSingle(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData)
+  name: AnySingle(IAnonymousData)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnySingle_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData)
+  fullName: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData)
+- uid: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData,System.Single,System.Single)
+  name: AnySingle(IAnonymousData, Single, Single)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnySingle_Testify_IAnonymousData_System_Single_System_Single_
+  commentId: M:Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData,System.Single,System.Single)
+  fullName: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData, System.Single, System.Single)
+- uid: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData,System.Single,System.Single,Testify.Distribution)
+  name: AnySingle(IAnonymousData, Single, Single, Distribution)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnySingle_Testify_IAnonymousData_System_Single_System_Single_Testify_Distribution_
+  commentId: M:Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData,System.Single,System.Single,Testify.Distribution)
+  fullName: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData, System.Single, System.Single, Testify.Distribution)
+- uid: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData,Testify.Distribution)
+  name: AnySingle(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousSingle.html#Testify_AnonymousSingle_AnySingle_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousSingle.AnySingle(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousString
+  name: AnonymousString
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString
+  commentId: T:Testify.AnonymousString
+  fullName: Testify.AnonymousString
+- uid: Testify.AnonymousString.AnyFirstName(Testify.IAnonymousData)
+  name: AnyFirstName(IAnonymousData)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyFirstName_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousString.AnyFirstName(Testify.IAnonymousData)
+  fullName: Testify.AnonymousString.AnyFirstName(Testify.IAnonymousData)
+- uid: Testify.AnonymousString.AnyFirstName(Testify.IAnonymousData,System.Boolean)
+  name: AnyFirstName(IAnonymousData, Boolean)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyFirstName_Testify_IAnonymousData_System_Boolean_
+  commentId: M:Testify.AnonymousString.AnyFirstName(Testify.IAnonymousData,System.Boolean)
+  fullName: Testify.AnonymousString.AnyFirstName(Testify.IAnonymousData, System.Boolean)
+- uid: Testify.AnonymousString.AnyFullName(Testify.IAnonymousData)
+  name: AnyFullName(IAnonymousData)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyFullName_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousString.AnyFullName(Testify.IAnonymousData)
+  fullName: Testify.AnonymousString.AnyFullName(Testify.IAnonymousData)
+- uid: Testify.AnonymousString.AnyFullName(Testify.IAnonymousData,System.Boolean)
+  name: AnyFullName(IAnonymousData, Boolean)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyFullName_Testify_IAnonymousData_System_Boolean_
+  commentId: M:Testify.AnonymousString.AnyFullName(Testify.IAnonymousData,System.Boolean)
+  fullName: Testify.AnonymousString.AnyFullName(Testify.IAnonymousData, System.Boolean)
+- uid: Testify.AnonymousString.AnyString(Testify.IAnonymousData)
+  name: AnyString(IAnonymousData)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyString_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousString.AnyString(Testify.IAnonymousData)
+  fullName: Testify.AnonymousString.AnyString(Testify.IAnonymousData)
+- uid: Testify.AnonymousString.AnyString(Testify.IAnonymousData,System.Int32,System.Int32)
+  name: AnyString(IAnonymousData, Int32, Int32)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyString_Testify_IAnonymousData_System_Int32_System_Int32_
+  commentId: M:Testify.AnonymousString.AnyString(Testify.IAnonymousData,System.Int32,System.Int32)
+  fullName: Testify.AnonymousString.AnyString(Testify.IAnonymousData, System.Int32, System.Int32)
+- uid: Testify.AnonymousString.AnyString(Testify.IAnonymousData,System.Int32,System.Int32,Testify.Distribution)
+  name: AnyString(IAnonymousData, Int32, Int32, Distribution)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyString_Testify_IAnonymousData_System_Int32_System_Int32_Testify_Distribution_
+  commentId: M:Testify.AnonymousString.AnyString(Testify.IAnonymousData,System.Int32,System.Int32,Testify.Distribution)
+  fullName: Testify.AnonymousString.AnyString(Testify.IAnonymousData, System.Int32, System.Int32, Testify.Distribution)
+- uid: Testify.AnonymousString.AnyString(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyString(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnyString_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousString.AnyString(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousString.AnyString(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousString.AnySurname(Testify.IAnonymousData)
+  name: AnySurname(IAnonymousData)
+  href: api/Testify.AnonymousString.html#Testify_AnonymousString_AnySurname_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousString.AnySurname(Testify.IAnonymousData)
+  fullName: Testify.AnonymousString.AnySurname(Testify.IAnonymousData)
+- uid: Testify.AnonymousTimeSpan
+  name: AnonymousTimeSpan
+  href: api/Testify.AnonymousTimeSpan.html#Testify_AnonymousTimeSpan
+  commentId: T:Testify.AnonymousTimeSpan
+  fullName: Testify.AnonymousTimeSpan
+- uid: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData)
+  name: AnyTimeSpan(IAnonymousData)
+  href: api/Testify.AnonymousTimeSpan.html#Testify_AnonymousTimeSpan_AnyTimeSpan_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData)
+  fullName: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData)
+- uid: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData,System.TimeSpan,System.TimeSpan)
+  name: AnyTimeSpan(IAnonymousData, TimeSpan, TimeSpan)
+  href: api/Testify.AnonymousTimeSpan.html#Testify_AnonymousTimeSpan_AnyTimeSpan_Testify_IAnonymousData_System_TimeSpan_System_TimeSpan_
+  commentId: M:Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData,System.TimeSpan,System.TimeSpan)
+  fullName: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData, System.TimeSpan, System.TimeSpan)
+- uid: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData,System.TimeSpan,System.TimeSpan,Testify.Distribution)
+  name: AnyTimeSpan(IAnonymousData, TimeSpan, TimeSpan, Distribution)
+  href: api/Testify.AnonymousTimeSpan.html#Testify_AnonymousTimeSpan_AnyTimeSpan_Testify_IAnonymousData_System_TimeSpan_System_TimeSpan_Testify_Distribution_
+  commentId: M:Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData,System.TimeSpan,System.TimeSpan,Testify.Distribution)
+  fullName: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData, System.TimeSpan, System.TimeSpan, Testify.Distribution)
+- uid: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyTimeSpan(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousTimeSpan.html#Testify_AnonymousTimeSpan_AnyTimeSpan_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousTimeSpan.AnyTimeSpan(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AnonymousTimeZoneInfo
+  name: AnonymousTimeZoneInfo
+  href: api/Testify.AnonymousTimeZoneInfo.html#Testify_AnonymousTimeZoneInfo
+  commentId: T:Testify.AnonymousTimeZoneInfo
+  fullName: Testify.AnonymousTimeZoneInfo
+- uid: Testify.AnonymousTimeZoneInfo.AnyTimeZoneInfo(Testify.IAnonymousData)
+  name: AnyTimeZoneInfo(IAnonymousData)
+  href: api/Testify.AnonymousTimeZoneInfo.html#Testify_AnonymousTimeZoneInfo_AnyTimeZoneInfo_Testify_IAnonymousData_
+  commentId: M:Testify.AnonymousTimeZoneInfo.AnyTimeZoneInfo(Testify.IAnonymousData)
+  fullName: Testify.AnonymousTimeZoneInfo.AnyTimeZoneInfo(Testify.IAnonymousData)
+- uid: Testify.AnonymousTimeZoneInfo.AnyTimeZoneInfo(Testify.IAnonymousData,Testify.Distribution)
+  name: AnyTimeZoneInfo(IAnonymousData, Distribution)
+  href: api/Testify.AnonymousTimeZoneInfo.html#Testify_AnonymousTimeZoneInfo_AnyTimeZoneInfo_Testify_IAnonymousData_Testify_Distribution_
+  commentId: M:Testify.AnonymousTimeZoneInfo.AnyTimeZoneInfo(Testify.IAnonymousData,Testify.Distribution)
+  fullName: Testify.AnonymousTimeZoneInfo.AnyTimeZoneInfo(Testify.IAnonymousData, Testify.Distribution)
+- uid: Testify.AssertionException
+  name: AssertionException
+  href: api/Testify.AssertionException.html#Testify_AssertionException
+  commentId: T:Testify.AssertionException
+  fullName: Testify.AssertionException
+- uid: Testify.AssertionException.#ctor
+  name: AssertionException()
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor
+  commentId: M:Testify.AssertionException.#ctor
+  fullName: Testify.AssertionException.AssertionException()
+- uid: Testify.AssertionException.#ctor(System.Collections.Generic.IEnumerable{System.Exception})
+  name: AssertionException(IEnumerable<Exception>)
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_Collections_Generic_IEnumerable_System_Exception__
+  commentId: M:Testify.AssertionException.#ctor(System.Collections.Generic.IEnumerable{System.Exception})
+  name.vb: AssertionException(IEnumerable(Of Exception))
+  fullName: Testify.AssertionException.AssertionException(System.Collections.Generic.IEnumerable<System.Exception>)
+  fullName.vb: Testify.AssertionException.AssertionException(System.Collections.Generic.IEnumerable(Of System.Exception))
+- uid: Testify.AssertionException.#ctor(System.Exception[])
+  name: AssertionException(Exception[])
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_Exception___
+  commentId: M:Testify.AssertionException.#ctor(System.Exception[])
+  name.vb: AssertionException(Exception())
+  fullName: Testify.AssertionException.AssertionException(System.Exception[])
+  fullName.vb: Testify.AssertionException.AssertionException(System.Exception())
+- uid: Testify.AssertionException.#ctor(System.String)
+  name: AssertionException(String)
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_String_
+  commentId: M:Testify.AssertionException.#ctor(System.String)
+  fullName: Testify.AssertionException.AssertionException(System.String)
+- uid: Testify.AssertionException.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Exception})
+  name: AssertionException(String, IEnumerable<Exception>)
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_String_System_Collections_Generic_IEnumerable_System_Exception__
+  commentId: M:Testify.AssertionException.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Exception})
+  name.vb: AssertionException(String, IEnumerable(Of Exception))
+  fullName: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IEnumerable<System.Exception>)
+  fullName.vb: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IEnumerable(Of System.Exception))
+- uid: Testify.AssertionException.#ctor(System.String,System.Collections.Generic.IList{System.Exception})
+  name: AssertionException(String, IList<Exception>)
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_String_System_Collections_Generic_IList_System_Exception__
+  commentId: M:Testify.AssertionException.#ctor(System.String,System.Collections.Generic.IList{System.Exception})
+  name.vb: AssertionException(String, IList(Of Exception))
+  fullName: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IList<System.Exception>)
+  fullName.vb: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IList(Of System.Exception))
+- uid: Testify.AssertionException.#ctor(System.String,System.Exception)
+  name: AssertionException(String, Exception)
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_String_System_Exception_
+  commentId: M:Testify.AssertionException.#ctor(System.String,System.Exception)
+  fullName: Testify.AssertionException.AssertionException(System.String, System.Exception)
+- uid: Testify.AssertionException.#ctor(System.String,System.Exception[])
+  name: AssertionException(String, Exception[])
+  href: api/Testify.AssertionException.html#Testify_AssertionException__ctor_System_String_System_Exception___
+  commentId: M:Testify.AssertionException.#ctor(System.String,System.Exception[])
+  name.vb: AssertionException(String, Exception())
+  fullName: Testify.AssertionException.AssertionException(System.String, System.Exception[])
+  fullName.vb: Testify.AssertionException.AssertionException(System.String, System.Exception())
+- uid: Testify.Assertions
+  name: Assertions
+  href: api/Testify.Assertions.html#Testify_Assertions
+  commentId: T:Testify.Assertions
+  fullName: Testify.Assertions
+- uid: Testify.Assertions.Assert(System.Action)
+  name: Assert(Action)
+  href: api/Testify.Assertions.html#Testify_Assertions_Assert_System_Action_
+  commentId: M:Testify.Assertions.Assert(System.Action)
+  fullName: Testify.Assertions.Assert(System.Action)
+- uid: Testify.Assertions.Assert``1(``0)
+  name: Assert<T>(T)
+  href: api/Testify.Assertions.html#Testify_Assertions_Assert__1___0_
+  commentId: M:Testify.Assertions.Assert``1(``0)
+  name.vb: Assert(Of T)(T)
+  fullName: Testify.Assertions.Assert<T>(T)
+  fullName.vb: Testify.Assertions.Assert(Of T)(T)
+- uid: Testify.Assertions.AssertAll(System.String,System.Action[])
+  name: AssertAll(String, Action[])
+  href: api/Testify.Assertions.html#Testify_Assertions_AssertAll_System_String_System_Action___
+  commentId: M:Testify.Assertions.AssertAll(System.String,System.Action[])
+  name.vb: AssertAll(String, Action())
+  fullName: Testify.Assertions.AssertAll(System.String, System.Action[])
+  fullName.vb: Testify.Assertions.AssertAll(System.String, System.Action())
+- uid: Testify.Assertions.AssertAll(System.String,System.Collections.Generic.IEnumerable{System.Action})
+  name: AssertAll(String, IEnumerable<Action>)
+  href: api/Testify.Assertions.html#Testify_Assertions_AssertAll_System_String_System_Collections_Generic_IEnumerable_System_Action__
+  commentId: M:Testify.Assertions.AssertAll(System.String,System.Collections.Generic.IEnumerable{System.Action})
+  name.vb: AssertAll(String, IEnumerable(Of Action))
+  fullName: Testify.Assertions.AssertAll(System.String, System.Collections.Generic.IEnumerable<System.Action>)
+  fullName.vb: Testify.Assertions.AssertAll(System.String, System.Collections.Generic.IEnumerable(Of System.Action))
+- uid: Testify.Assertions.Combine``1(System.String,System.Action{``0}[])
+  name: Combine<T>(String, Action<T>[])
+  href: api/Testify.Assertions.html#Testify_Assertions_Combine__1_System_String_System_Action___0____
+  commentId: M:Testify.Assertions.Combine``1(System.String,System.Action{``0}[])
+  name.vb: Combine(Of T)(String, Action(Of T)())
+  fullName: Testify.Assertions.Combine<T>(System.String, System.Action<T>[])
+  fullName.vb: Testify.Assertions.Combine(Of T)(System.String, System.Action(Of T)())
+- uid: Testify.Assertions.Combine``1(System.String,System.Collections.Generic.IEnumerable{System.Action{``0}})
+  name: Combine<T>(String, IEnumerable<Action<T>>)
+  href: api/Testify.Assertions.html#Testify_Assertions_Combine__1_System_String_System_Collections_Generic_IEnumerable_System_Action___0___
+  commentId: M:Testify.Assertions.Combine``1(System.String,System.Collections.Generic.IEnumerable{System.Action{``0}})
+  name.vb: Combine(Of T)(String, IEnumerable(Of Action(Of T)))
+  fullName: Testify.Assertions.Combine<T>(System.String, System.Collections.Generic.IEnumerable<System.Action<T>>)
+  fullName.vb: Testify.Assertions.Combine(Of T)(System.String, System.Collections.Generic.IEnumerable(Of System.Action(Of T)))
+- uid: Testify.Assertions.Fail(System.String)
+  name: Fail(String)
+  href: api/Testify.Assertions.html#Testify_Assertions_Fail_System_String_
+  commentId: M:Testify.Assertions.Fail(System.String)
+  fullName: Testify.Assertions.Fail(System.String)
+- uid: Testify.Assertions.Fail(System.String,System.Object[])
+  name: Fail(String, Object[])
+  href: api/Testify.Assertions.html#Testify_Assertions_Fail_System_String_System_Object___
+  commentId: M:Testify.Assertions.Fail(System.String,System.Object[])
+  name.vb: Fail(String, Object())
+  fullName: Testify.Assertions.Fail(System.String, System.Object[])
+  fullName.vb: Testify.Assertions.Fail(System.String, System.Object())
+- uid: Testify.Assertions.ReplaceNullChars(System.String)
+  name: ReplaceNullChars(String)
+  href: api/Testify.Assertions.html#Testify_Assertions_ReplaceNullChars_System_String_
+  commentId: M:Testify.Assertions.ReplaceNullChars(System.String)
+  fullName: Testify.Assertions.ReplaceNullChars(System.String)
+- uid: Testify.Assertions.Throw(System.String,System.Collections.Generic.IEnumerable{System.Exception},System.String,System.String,System.Object[])
+  name: Throw(String, IEnumerable<Exception>, String, String, Object[])
+  href: api/Testify.Assertions.html#Testify_Assertions_Throw_System_String_System_Collections_Generic_IEnumerable_System_Exception__System_String_System_String_System_Object___
+  commentId: M:Testify.Assertions.Throw(System.String,System.Collections.Generic.IEnumerable{System.Exception},System.String,System.String,System.Object[])
+  name.vb: Throw(String, IEnumerable(Of Exception), String, String, Object())
+  fullName: Testify.Assertions.Throw(System.String, System.Collections.Generic.IEnumerable<System.Exception>, System.String, System.String, System.Object[])
+  fullName.vb: Testify.Assertions.Throw(System.String, System.Collections.Generic.IEnumerable(Of System.Exception), System.String, System.String, System.Object())
+- uid: Testify.Assertions.Throw(System.String,System.Exception,System.String,System.String,System.Object[])
+  name: Throw(String, Exception, String, String, Object[])
+  href: api/Testify.Assertions.html#Testify_Assertions_Throw_System_String_System_Exception_System_String_System_String_System_Object___
+  commentId: M:Testify.Assertions.Throw(System.String,System.Exception,System.String,System.String,System.Object[])
+  name.vb: Throw(String, Exception, String, String, Object())
+  fullName: Testify.Assertions.Throw(System.String, System.Exception, System.String, System.String, System.Object[])
+  fullName.vb: Testify.Assertions.Throw(System.String, System.Exception, System.String, System.String, System.Object())
+- uid: Testify.Assertions.Throw(System.String,System.String,System.String,System.Object[])
+  name: Throw(String, String, String, Object[])
+  href: api/Testify.Assertions.html#Testify_Assertions_Throw_System_String_System_String_System_String_System_Object___
+  commentId: M:Testify.Assertions.Throw(System.String,System.String,System.String,System.Object[])
+  name.vb: Throw(String, String, String, Object())
+  fullName: Testify.Assertions.Throw(System.String, System.String, System.String, System.Object[])
+  fullName.vb: Testify.Assertions.Throw(System.String, System.String, System.String, System.Object())
+- uid: Testify.Classifier`1
+  name: Classifier<TValue>
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1
+  commentId: T:Testify.Classifier`1
+  name.vb: Classifier(Of TValue)
+  fullName: Testify.Classifier<TValue>
+  fullName.vb: Testify.Classifier(Of TValue)
+- uid: Testify.Classifier`1.AddClassification(System.String,System.Predicate{`0})
+  name: AddClassification(String, Predicate<TValue>)
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1_AddClassification_System_String_System_Predicate__0__
+  commentId: M:Testify.Classifier`1.AddClassification(System.String,System.Predicate{`0})
+  name.vb: AddClassification(String, Predicate(Of TValue))
+  fullName: Testify.Classifier<TValue>.AddClassification(System.String, System.Predicate<TValue>)
+  fullName.vb: Testify.Classifier(Of TValue).AddClassification(System.String, System.Predicate(Of TValue))
+- uid: Testify.Classifier`1.Classify(`0)
+  name: Classify(TValue)
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1_Classify__0_
+  commentId: M:Testify.Classifier`1.Classify(`0)
+  fullName: Testify.Classifier<TValue>.Classify(TValue)
+  fullName.vb: Testify.Classifier(Of TValue).Classify(TValue)
+- uid: Testify.Classifier`1.Classify(System.Func{`0})
+  name: Classify(Func<TValue>)
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1_Classify_System_Func__0__
+  commentId: M:Testify.Classifier`1.Classify(System.Func{`0})
+  name.vb: Classify(Func(Of TValue))
+  fullName: Testify.Classifier<TValue>.Classify(System.Func<TValue>)
+  fullName.vb: Testify.Classifier(Of TValue).Classify(System.Func(Of TValue))
+- uid: Testify.Classifier`1.Classify(System.Int32,System.Func{`0})
+  name: Classify(Int32, Func<TValue>)
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1_Classify_System_Int32_System_Func__0__
+  commentId: M:Testify.Classifier`1.Classify(System.Int32,System.Func{`0})
+  name.vb: Classify(Int32, Func(Of TValue))
+  fullName: Testify.Classifier<TValue>.Classify(System.Int32, System.Func<TValue>)
+  fullName.vb: Testify.Classifier(Of TValue).Classify(System.Int32, System.Func(Of TValue))
+- uid: Testify.Classifier`1.Count
+  name: Count
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1_Count
+  commentId: P:Testify.Classifier`1.Count
+  fullName: Testify.Classifier<TValue>.Count
+  fullName.vb: Testify.Classifier(Of TValue).Count
+- uid: Testify.Classifier`1.Item(System.String)
+  name: Item[String]
+  href: api/Testify.Classifier-1.html#Testify_Classifier_1_Item_System_String_
+  commentId: P:Testify.Classifier`1.Item(System.String)
+  name.vb: Item(String)
+  fullName: Testify.Classifier<TValue>.Item[System.String]
+  fullName.vb: Testify.Classifier(Of TValue).Item(System.String)
+- uid: Testify.CollectionAssertions
+  name: CollectionAssertions
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions
+  commentId: T:Testify.CollectionAssertions
+  fullName: Testify.CollectionAssertions
+- uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type)
+  name: AllItemsAreInstancesOfType<T>(ActualValue<T>, Type)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreInstancesOfType__1_Testify_ActualValue___0__System_Type_
+  commentId: M:Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type)
+  name.vb: AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type)
+  fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>(Testify.ActualValue<T>, System.Type)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)(Testify.ActualValue(Of T), System.Type)
+- uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type,System.String)
+  name: AllItemsAreInstancesOfType<T>(ActualValue<T>, Type, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreInstancesOfType__1_Testify_ActualValue___0__System_Type_System_String_
+  commentId: M:Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type,System.String)
+  name.vb: AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type, String)
+  fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>(Testify.ActualValue<T>, System.Type, System.String)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String)
+- uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
+  name: AllItemsAreInstancesOfType<T>(ActualValue<T>, Type, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreInstancesOfType__1_Testify_ActualValue___0__System_Type_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
+  name.vb: AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type, String, Object())
+  fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>(Testify.ActualValue<T>, System.Type, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String, System.Object())
+- uid: Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0})
+  name: AllItemsAreNotNull<T>(ActualValue<T>)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreNotNull__1_Testify_ActualValue___0__
+  commentId: M:Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0})
+  name.vb: AllItemsAreNotNull(Of T)(ActualValue(Of T))
+  fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>(Testify.ActualValue<T>)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)(Testify.ActualValue(Of T))
+- uid: Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0},System.String)
+  name: AllItemsAreNotNull<T>(ActualValue<T>, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreNotNull__1_Testify_ActualValue___0__System_String_
+  commentId: M:Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0},System.String)
+  name.vb: AllItemsAreNotNull(Of T)(ActualValue(Of T), String)
+  fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>(Testify.ActualValue<T>, System.String)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)(Testify.ActualValue(Of T), System.String)
+- uid: Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name: AllItemsAreNotNull<T>(ActualValue<T>, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreNotNull__1_Testify_ActualValue___0__System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name.vb: AllItemsAreNotNull(Of T)(ActualValue(Of T), String, Object())
+  fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>(Testify.ActualValue<T>, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
+- uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0})
+  name: AllItemsAreUnique<T>(ActualValue<T>)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreUnique__1_Testify_ActualValue___0__
+  commentId: M:Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0})
+  name.vb: AllItemsAreUnique(Of T)(ActualValue(Of T))
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T))
+- uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer)
+  name: AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreUnique__1_Testify_ActualValue___0__System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer)
+  name.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer)
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer,System.String)
+  name: AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreUnique__1_Testify_ActualValue___0__System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer,System.String)
+  name.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreUnique__1_Testify_ActualValue___0__System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.String)
+  name: AllItemsAreUnique<T>(ActualValue<T>, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreUnique__1_Testify_ActualValue___0__System_String_
+  commentId: M:Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.String)
+  name.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), String)
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.String)
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.String)
+- uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name: AllItemsAreUnique<T>(ActualValue<T>, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_AllItemsAreUnique__1_Testify_ActualValue___0__System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), String, Object())
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
+- uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1)
+  name: Contains<T, TElement>(ActualValue<T>, TElement)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_Contains__2_Testify_ActualValue___0____1_
+  commentId: M:Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1)
+  name.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement)
+  fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement)
+  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement)
+- uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer)
+  name: Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_Contains__2_Testify_ActualValue___0____1_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer)
+  name.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String)
+  name: Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_Contains__2_Testify_ActualValue___0____1_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String)
+  name.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_Contains__2_Testify_ActualValue___0____1_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.String)
+  name: Contains<T, TElement>(ActualValue<T>, TElement, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_Contains__2_Testify_ActualValue___0____1_System_String_
+  commentId: M:Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.String)
+  name.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, String)
+  fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.String)
+  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String)
+- uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.String,System.Object[])
+  name: Contains<T, TElement>(ActualValue<T>, TElement, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_Contains__2_Testify_ActualValue___0____1_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.String,System.Object[])
+  name.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, String, Object())
+  fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String, System.Object())
+- uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1)
+  name: DoesNotContain<T, TElement>(ActualValue<T>, TElement)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_DoesNotContain__2_Testify_ActualValue___0____1_
+  commentId: M:Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1)
+  name.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement)
+  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement)
+  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement)
+- uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer)
+  name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_DoesNotContain__2_Testify_ActualValue___0____1_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer)
+  name.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String)
+  name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_DoesNotContain__2_Testify_ActualValue___0____1_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String)
+  name.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_DoesNotContain__2_Testify_ActualValue___0____1_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.String)
+  name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_DoesNotContain__2_Testify_ActualValue___0____1_System_String_
+  commentId: M:Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.String)
+  name.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, String)
+  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.String)
+  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String)
+- uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.String,System.Object[])
+  name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_DoesNotContain__2_Testify_ActualValue___0____1_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.String,System.Object[])
+  name.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, String, Object())
+  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_
+  commentId: M:Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable)
+  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
+  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
+- uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_
+  commentId: M:Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
+- uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_
+  commentId: M:Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable)
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
+  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
+- uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_
+  commentId: M:Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
+- uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotEquivalentTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_
+  commentId: M:Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable)
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
+  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
+- uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_
+  commentId: M:Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
+- uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_
+  commentId: M:Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable)
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
+  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
+- uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_
+  commentId: M:Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String)
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
+- uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsNotSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_
+  commentId: M:Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable)
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
+  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
+- uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_
+  commentId: M:Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
+- uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSequenceEqualTo__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name: IsSubsetOf<T>(ActualValue<T>, IEnumerable)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_
+  commentId: M:Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
+  name.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable)
+  fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
+  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
+- uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_
+  commentId: M:Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
+  name.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
+- uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_
+  commentId: M:Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
+  name.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
+- uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_Collections_IEqualityComparer_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
+  name.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
+- uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, String)
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_
+  commentId: M:Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
+  name.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String)
+  fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
+  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
+- uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, String, Object[])
+  href: api/Testify.CollectionAssertions.html#Testify_CollectionAssertions_IsSubsetOf__1_Testify_ActualValue___0__System_Collections_IEnumerable_System_String_System_Object___
+  commentId: M:Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
+  name.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
+  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
+- uid: Testify.ComparableVerifier`1
+  name: ComparableVerifier<T>
+  href: api/Testify.ComparableVerifier-1.html#Testify_ComparableVerifier_1
+  commentId: T:Testify.ComparableVerifier`1
+  name.vb: ComparableVerifier(Of T)
+  fullName: Testify.ComparableVerifier<T>
+  fullName.vb: Testify.ComparableVerifier(Of T)
+- uid: Testify.ComparableVerifier`1.GetMethods
+  name: GetMethods()
+  href: api/Testify.ComparableVerifier-1.html#Testify_ComparableVerifier_1_GetMethods
+  commentId: M:Testify.ComparableVerifier`1.GetMethods
+  fullName: Testify.ComparableVerifier<T>.GetMethods()
+  fullName.vb: Testify.ComparableVerifier(Of T).GetMethods()
+- uid: Testify.ComparableVerifier`1.GetTests
+  name: GetTests()
+  href: api/Testify.ComparableVerifier-1.html#Testify_ComparableVerifier_1_GetTests
+  commentId: M:Testify.ComparableVerifier`1.GetTests
+  fullName: Testify.ComparableVerifier<T>.GetTests()
+  fullName.vb: Testify.ComparableVerifier(Of T).GetTests()
+- uid: Testify.ComparableVerifier`1.ItemsFactoryPropertyName
+  name: ItemsFactoryPropertyName
+  href: api/Testify.ComparableVerifier-1.html#Testify_ComparableVerifier_1_ItemsFactoryPropertyName
+  commentId: P:Testify.ComparableVerifier`1.ItemsFactoryPropertyName
+  fullName: Testify.ComparableVerifier<T>.ItemsFactoryPropertyName
+  fullName.vb: Testify.ComparableVerifier(Of T).ItemsFactoryPropertyName
+- uid: Testify.ComparableVerifier`1.OrderedItemsFactory
+  name: OrderedItemsFactory
+  href: api/Testify.ComparableVerifier-1.html#Testify_ComparableVerifier_1_OrderedItemsFactory
+  commentId: P:Testify.ComparableVerifier`1.OrderedItemsFactory
+  fullName: Testify.ComparableVerifier<T>.OrderedItemsFactory
+  fullName.vb: Testify.ComparableVerifier(Of T).OrderedItemsFactory
+- uid: Testify.ComparisonVerifierBase`1
+  name: ComparisonVerifierBase<T>
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1
+  commentId: T:Testify.ComparisonVerifierBase`1
+  name.vb: ComparisonVerifierBase(Of T)
+  fullName: Testify.ComparisonVerifierBase<T>
+  fullName.vb: Testify.ComparisonVerifierBase(Of T)
+- uid: Testify.ComparisonVerifierBase`1.#ctor
+  name: ComparisonVerifierBase()
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1__ctor
+  commentId: M:Testify.ComparisonVerifierBase`1.#ctor
+  fullName: Testify.ComparisonVerifierBase<T>.ComparisonVerifierBase()
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).ComparisonVerifierBase()
+- uid: Testify.ComparisonVerifierBase`1.BaseItems
+  name: BaseItems
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_BaseItems
+  commentId: P:Testify.ComparisonVerifierBase`1.BaseItems
+  fullName: Testify.ComparisonVerifierBase<T>.BaseItems
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).BaseItems
+- uid: Testify.ComparisonVerifierBase`1.CompareItems(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0},System.Func{`0,`0,System.Boolean})
+  name: CompareItems(IEnumerable<T>, IEnumerable<T>, Func<T, T, Boolean>)
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_CompareItems_System_Collections_Generic_IEnumerable__0__System_Collections_Generic_IEnumerable__0__System_Func__0__0_System_Boolean__
+  commentId: M:Testify.ComparisonVerifierBase`1.CompareItems(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`0},System.Func{`0,`0,System.Boolean})
+  name.vb: CompareItems(IEnumerable(Of T), IEnumerable(Of T), Func(Of T, T, Boolean))
+  fullName: Testify.ComparisonVerifierBase<T>.CompareItems(System.Collections.Generic.IEnumerable<T>, System.Collections.Generic.IEnumerable<T>, System.Func<T, T, System.Boolean>)
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).CompareItems(System.Collections.Generic.IEnumerable(Of T), System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, T, System.Boolean))
+- uid: Testify.ComparisonVerifierBase`1.EqualItems
+  name: EqualItems
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_EqualItems
+  commentId: P:Testify.ComparisonVerifierBase`1.EqualItems
+  fullName: Testify.ComparisonVerifierBase<T>.EqualItems
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).EqualItems
+- uid: Testify.ComparisonVerifierBase`1.GetMethods
+  name: GetMethods()
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_GetMethods
+  commentId: M:Testify.ComparisonVerifierBase`1.GetMethods
+  fullName: Testify.ComparisonVerifierBase<T>.GetMethods()
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).GetMethods()
+- uid: Testify.ComparisonVerifierBase`1.GetTests
+  name: GetTests()
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_GetTests
+  commentId: M:Testify.ComparisonVerifierBase`1.GetTests
+  fullName: Testify.ComparisonVerifierBase<T>.GetTests()
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).GetTests()
+- uid: Testify.ComparisonVerifierBase`1.IsPrimitive
+  name: IsPrimitive
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_IsPrimitive
+  commentId: P:Testify.ComparisonVerifierBase`1.IsPrimitive
+  fullName: Testify.ComparisonVerifierBase<T>.IsPrimitive
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).IsPrimitive
+- uid: Testify.ComparisonVerifierBase`1.ItemsFactory
+  name: ItemsFactory
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_ItemsFactory
+  commentId: P:Testify.ComparisonVerifierBase`1.ItemsFactory
+  fullName: Testify.ComparisonVerifierBase<T>.ItemsFactory
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).ItemsFactory
+- uid: Testify.ComparisonVerifierBase`1.ItemsFactoryPropertyName
+  name: ItemsFactoryPropertyName
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_ItemsFactoryPropertyName
+  commentId: P:Testify.ComparisonVerifierBase`1.ItemsFactoryPropertyName
+  fullName: Testify.ComparisonVerifierBase<T>.ItemsFactoryPropertyName
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).ItemsFactoryPropertyName
+- uid: Testify.ComparisonVerifierBase`1.NotEqualItems
+  name: NotEqualItems
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_NotEqualItems
+  commentId: P:Testify.ComparisonVerifierBase`1.NotEqualItems
+  fullName: Testify.ComparisonVerifierBase<T>.NotEqualItems
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).NotEqualItems
+- uid: Testify.ComparisonVerifierBase`1.VerifyConfiguration
+  name: VerifyConfiguration()
+  href: api/Testify.ComparisonVerifierBase-1.html#Testify_ComparisonVerifierBase_1_VerifyConfiguration
+  commentId: M:Testify.ComparisonVerifierBase`1.VerifyConfiguration
+  fullName: Testify.ComparisonVerifierBase<T>.VerifyConfiguration()
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).VerifyConfiguration()
+- uid: Testify.ContractVerifier
+  name: ContractVerifier
+  href: api/Testify.ContractVerifier.html#Testify_ContractVerifier
+  commentId: T:Testify.ContractVerifier
+  fullName: Testify.ContractVerifier
+- uid: Testify.ContractVerifier.GetTests
+  name: GetTests()
+  href: api/Testify.ContractVerifier.html#Testify_ContractVerifier_GetTests
+  commentId: M:Testify.ContractVerifier.GetTests
+  fullName: Testify.ContractVerifier.GetTests()
+- uid: Testify.ContractVerifier.Verify
+  name: Verify()
+  href: api/Testify.ContractVerifier.html#Testify_ContractVerifier_Verify
+  commentId: M:Testify.ContractVerifier.Verify
+  fullName: Testify.ContractVerifier.Verify()
+- uid: Testify.ContractVerifier.VerifyConfiguration
+  name: VerifyConfiguration()
+  href: api/Testify.ContractVerifier.html#Testify_ContractVerifier_VerifyConfiguration
+  commentId: M:Testify.ContractVerifier.VerifyConfiguration
+  fullName: Testify.ContractVerifier.VerifyConfiguration()
+- uid: Testify.Distribution
+  name: Distribution
+  href: api/Testify.Distribution.html#Testify_Distribution
+  commentId: T:Testify.Distribution
+  fullName: Testify.Distribution
+- uid: Testify.Distribution.#ctor
+  name: Distribution()
+  href: api/Testify.Distribution.html#Testify_Distribution__ctor
+  commentId: M:Testify.Distribution.#ctor
+  fullName: Testify.Distribution.Distribution()
+- uid: Testify.Distribution.InvertedNormal
+  name: InvertedNormal
+  href: api/Testify.Distribution.html#Testify_Distribution_InvertedNormal
+  commentId: P:Testify.Distribution.InvertedNormal
+  fullName: Testify.Distribution.InvertedNormal
+- uid: Testify.Distribution.NegativeNormal
+  name: NegativeNormal
+  href: api/Testify.Distribution.html#Testify_Distribution_NegativeNormal
+  commentId: P:Testify.Distribution.NegativeNormal
+  fullName: Testify.Distribution.NegativeNormal
+- uid: Testify.Distribution.NextDouble(System.Random)
+  name: NextDouble(Random)
+  href: api/Testify.Distribution.html#Testify_Distribution_NextDouble_System_Random_
+  commentId: M:Testify.Distribution.NextDouble(System.Random)
+  fullName: Testify.Distribution.NextDouble(System.Random)
+- uid: Testify.Distribution.NextGausian(System.Random)
+  name: NextGausian(Random)
+  href: api/Testify.Distribution.html#Testify_Distribution_NextGausian_System_Random_
+  commentId: M:Testify.Distribution.NextGausian(System.Random)
+  fullName: Testify.Distribution.NextGausian(System.Random)
+- uid: Testify.Distribution.NextGausian(System.Random,System.Int32)
+  name: NextGausian(Random, Int32)
+  href: api/Testify.Distribution.html#Testify_Distribution_NextGausian_System_Random_System_Int32_
+  commentId: M:Testify.Distribution.NextGausian(System.Random,System.Int32)
+  fullName: Testify.Distribution.NextGausian(System.Random, System.Int32)
+- uid: Testify.Distribution.PositiveNormal
+  name: PositiveNormal
+  href: api/Testify.Distribution.html#Testify_Distribution_PositiveNormal
+  commentId: P:Testify.Distribution.PositiveNormal
+  fullName: Testify.Distribution.PositiveNormal
+- uid: Testify.Distribution.Uniform
+  name: Uniform
+  href: api/Testify.Distribution.html#Testify_Distribution_Uniform
+  commentId: P:Testify.Distribution.Uniform
+  fullName: Testify.Distribution.Uniform
+- uid: Testify.EquatableVerifier`1
+  name: EquatableVerifier<T>
+  href: api/Testify.EquatableVerifier-1.html#Testify_EquatableVerifier_1
+  commentId: T:Testify.EquatableVerifier`1
+  name.vb: EquatableVerifier(Of T)
+  fullName: Testify.EquatableVerifier<T>
+  fullName.vb: Testify.EquatableVerifier(Of T)
+- uid: Testify.EquatableVerifier`1.ItemsFactoryPropertyName
+  name: ItemsFactoryPropertyName
+  href: api/Testify.EquatableVerifier-1.html#Testify_EquatableVerifier_1_ItemsFactoryPropertyName
+  commentId: P:Testify.EquatableVerifier`1.ItemsFactoryPropertyName
+  fullName: Testify.EquatableVerifier<T>.ItemsFactoryPropertyName
+  fullName.vb: Testify.EquatableVerifier(Of T).ItemsFactoryPropertyName
+- uid: Testify.EquatableVerifier`1.UniqueItemsFactory
+  name: UniqueItemsFactory
+  href: api/Testify.EquatableVerifier-1.html#Testify_EquatableVerifier_1_UniqueItemsFactory
+  commentId: P:Testify.EquatableVerifier`1.UniqueItemsFactory
+  fullName: Testify.EquatableVerifier<T>.UniqueItemsFactory
+  fullName.vb: Testify.EquatableVerifier(Of T).UniqueItemsFactory
+- uid: Testify.ExceptionAssertions
+  name: ExceptionAssertions
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions
+  commentId: T:Testify.ExceptionAssertions
+  fullName: Testify.ExceptionAssertions
+- uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action})
+  name: Throws<T>(ActualValue<Action>)
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions_Throws__1_Testify_ActualValue_System_Action__
+  commentId: M:Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action})
+  name.vb: Throws(Of T)(ActualValue(Of Action))
+  fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>)
+  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action))
+- uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0})
+  name: Throws<T>(ActualValue<Action>, Action<T>)
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions_Throws__1_Testify_ActualValue_System_Action__System_Action___0__
+  commentId: M:Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0})
+  name.vb: Throws(Of T)(ActualValue(Of Action), Action(Of T))
+  fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.Action<T>)
+  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.Action(Of T))
+- uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0},System.String)
+  name: Throws<T>(ActualValue<Action>, Action<T>, String)
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions_Throws__1_Testify_ActualValue_System_Action__System_Action___0__System_String_
+  commentId: M:Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0},System.String)
+  name.vb: Throws(Of T)(ActualValue(Of Action), Action(Of T), String)
+  fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.Action<T>, System.String)
+  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.Action(Of T), System.String)
+- uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0},System.String,System.Object[])
+  name: Throws<T>(ActualValue<Action>, Action<T>, String, Object[])
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions_Throws__1_Testify_ActualValue_System_Action__System_Action___0__System_String_System_Object___
+  commentId: M:Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0},System.String,System.Object[])
+  name.vb: Throws(Of T)(ActualValue(Of Action), Action(Of T), String, Object())
+  fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.Action<T>, System.String, System.Object[])
+  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.Action(Of T), System.String, System.Object())
+- uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.String)
+  name: Throws<T>(ActualValue<Action>, String)
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions_Throws__1_Testify_ActualValue_System_Action__System_String_
+  commentId: M:Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.String)
+  name.vb: Throws(Of T)(ActualValue(Of Action), String)
+  fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.String)
+  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.String)
+- uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.String,System.Object[])
+  name: Throws<T>(ActualValue<Action>, String, Object[])
+  href: api/Testify.ExceptionAssertions.html#Testify_ExceptionAssertions_Throws__1_Testify_ActualValue_System_Action__System_String_System_Object___
+  commentId: M:Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.String,System.Object[])
+  name.vb: Throws(Of T)(ActualValue(Of Action), String, Object())
+  fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.String, System.Object[])
+  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.String, System.Object())
+- uid: Testify.IAnonymousData
+  name: IAnonymousData
+  href: api/Testify.IAnonymousData.html#Testify_IAnonymousData
+  commentId: T:Testify.IAnonymousData
+  fullName: Testify.IAnonymousData
+- uid: Testify.IAnonymousData.Any(System.Type,Testify.PopulateOption)
+  name: Any(Type, PopulateOption)
+  href: api/Testify.IAnonymousData.html#Testify_IAnonymousData_Any_System_Type_Testify_PopulateOption_
+  commentId: M:Testify.IAnonymousData.Any(System.Type,Testify.PopulateOption)
+  fullName: Testify.IAnonymousData.Any(System.Type, Testify.PopulateOption)
+- uid: Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)
+  name: AnyDouble(Double, Double, Distribution)
+  href: api/Testify.IAnonymousData.html#Testify_IAnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution_
+  commentId: M:Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)
+  fullName: Testify.IAnonymousData.AnyDouble(System.Double, System.Double, Testify.Distribution)
+- uid: Testify.IAnonymousData.Populate(System.Object,System.Boolean)
+  name: Populate(Object, Boolean)
+  href: api/Testify.IAnonymousData.html#Testify_IAnonymousData_Populate_System_Object_System_Boolean_
+  commentId: M:Testify.IAnonymousData.Populate(System.Object,System.Boolean)
+  fullName: Testify.IAnonymousData.Populate(System.Object, System.Boolean)
+- uid: Testify.IAnonymousDataContext
+  name: IAnonymousDataContext
+  href: api/Testify.IAnonymousDataContext.html#Testify_IAnonymousDataContext
+  commentId: T:Testify.IAnonymousDataContext
+  fullName: Testify.IAnonymousDataContext
+- uid: Testify.IAnonymousDataContext.CallNextCustomization(System.Object@)
+  name: CallNextCustomization(out Object)
+  href: api/Testify.IAnonymousDataContext.html#Testify_IAnonymousDataContext_CallNextCustomization_System_Object__
+  commentId: M:Testify.IAnonymousDataContext.CallNextCustomization(System.Object@)
+  name.vb: CallNextCustomization(ByRef Object)
+  fullName: Testify.IAnonymousDataContext.CallNextCustomization(out System.Object)
+  fullName.vb: Testify.IAnonymousDataContext.CallNextCustomization(ByRef System.Object)
+- uid: Testify.IAnonymousDataContext.ResultType
+  name: ResultType
+  href: api/Testify.IAnonymousDataContext.html#Testify_IAnonymousDataContext_ResultType
+  commentId: P:Testify.IAnonymousDataContext.ResultType
+  fullName: Testify.IAnonymousDataContext.ResultType
+- uid: Testify.IAnonymousDataCustomization
+  name: IAnonymousDataCustomization
+  href: api/Testify.IAnonymousDataCustomization.html#Testify_IAnonymousDataCustomization
+  commentId: T:Testify.IAnonymousDataCustomization
+  fullName: Testify.IAnonymousDataCustomization
+- uid: Testify.IAnonymousDataCustomization.Create(Testify.IAnonymousDataContext,System.Object@)
+  name: Create(IAnonymousDataContext, out Object)
+  href: api/Testify.IAnonymousDataCustomization.html#Testify_IAnonymousDataCustomization_Create_Testify_IAnonymousDataContext_System_Object__
+  commentId: M:Testify.IAnonymousDataCustomization.Create(Testify.IAnonymousDataContext,System.Object@)
+  name.vb: Create(IAnonymousDataContext, ByRef Object)
+  fullName: Testify.IAnonymousDataCustomization.Create(Testify.IAnonymousDataContext, out System.Object)
+  fullName.vb: Testify.IAnonymousDataCustomization.Create(Testify.IAnonymousDataContext, ByRef System.Object)
+- uid: Testify.IRegisterAnonymousData
+  name: IRegisterAnonymousData
+  href: api/Testify.IRegisterAnonymousData.html#Testify_IRegisterAnonymousData
+  commentId: T:Testify.IRegisterAnonymousData
+  fullName: Testify.IRegisterAnonymousData
+- uid: Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
+  name: Register(Type, Func<IAnonymousData, Object>)
+  href: api/Testify.IRegisterAnonymousData.html#Testify_IRegisterAnonymousData_Register_System_Type_System_Func_Testify_IAnonymousData_System_Object__
+  commentId: M:Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
+  name.vb: Register(Type, Func(Of IAnonymousData, Object))
+  fullName: Testify.IRegisterAnonymousData.Register(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
+  fullName.vb: Testify.IRegisterAnonymousData.Register(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
+- uid: Testify.PopulateOption
+  name: PopulateOption
+  href: api/Testify.PopulateOption.html#Testify_PopulateOption
+  commentId: T:Testify.PopulateOption
+  fullName: Testify.PopulateOption
+- uid: Testify.PopulateOption.Deep
+  name: Deep
+  href: api/Testify.PopulateOption.html#Testify_PopulateOption_Deep
+  commentId: F:Testify.PopulateOption.Deep
+  fullName: Testify.PopulateOption.Deep
+- uid: Testify.PopulateOption.None
+  name: None
+  href: api/Testify.PopulateOption.html#Testify_PopulateOption_None
+  commentId: F:Testify.PopulateOption.None
+  fullName: Testify.PopulateOption.None
+- uid: Testify.PopulateOption.Shallow
+  name: Shallow
+  href: api/Testify.PopulateOption.html#Testify_PopulateOption_Shallow
+  commentId: F:Testify.PopulateOption.Shallow
+  fullName: Testify.PopulateOption.Shallow
+- uid: Testify.StandardAssertions
+  name: StandardAssertions
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions
+  commentId: T:Testify.StandardAssertions
+  fullName: Testify.StandardAssertions
+- uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double)
+  name: IsEqualTo(ActualValue<Double>, Double, Double)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo_Testify_ActualValue_System_Double__System_Double_System_Double_
+  commentId: M:Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double)
+  name.vb: IsEqualTo(ActualValue(Of Double), Double, Double)
+  fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double)
+- uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String)
+  name: IsEqualTo(ActualValue<Double>, Double, Double, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo_Testify_ActualValue_System_Double__System_Double_System_Double_System_String_
+  commentId: M:Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String)
+  name.vb: IsEqualTo(ActualValue(Of Double), Double, Double, String)
+  fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String)
+- uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String,System.Object[])
+  name: IsEqualTo(ActualValue<Double>, Double, Double, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo_Testify_ActualValue_System_Double__System_Double_System_Double_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String,System.Object[])
+  name.vb: IsEqualTo(ActualValue(Of Double), Double, Double, String, Object())
+  fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single)
+  name: IsEqualTo(ActualValue<Single>, Single, Single)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo_Testify_ActualValue_System_Single__System_Single_System_Single_
+  commentId: M:Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single)
+  name.vb: IsEqualTo(ActualValue(Of Single), Single, Single)
+  fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single)
+- uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String)
+  name: IsEqualTo(ActualValue<Single>, Single, Single, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo_Testify_ActualValue_System_Single__System_Single_System_Single_System_String_
+  commentId: M:Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String)
+  name.vb: IsEqualTo(ActualValue(Of Single), Single, Single, String)
+  fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String)
+- uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String,System.Object[])
+  name: IsEqualTo(ActualValue<Single>, Single, Single, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo_Testify_ActualValue_System_Single__System_Single_System_Single_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String,System.Object[])
+  name.vb: IsEqualTo(ActualValue(Of Single), Single, Single, String, Object())
+  fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0)
+  name: IsEqualTo<T>(ActualValue<T>, T)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo__1_Testify_ActualValue___0____0_
+  commentId: M:Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0)
+  name.vb: IsEqualTo(Of T)(ActualValue(Of T), T)
+  fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, T)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), T)
+- uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0,System.String)
+  name: IsEqualTo<T>(ActualValue<T>, T, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo__1_Testify_ActualValue___0____0_System_String_
+  commentId: M:Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0,System.String)
+  name.vb: IsEqualTo(Of T)(ActualValue(Of T), T, String)
+  fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, T, System.String)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String)
+- uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name: IsEqualTo<T>(ActualValue<T>, T, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo__1_Testify_ActualValue___0____0_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name.vb: IsEqualTo(Of T)(ActualValue(Of T), T, String, Object())
+  fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object)
+  name: IsEqualTo<T>(ActualValue<T>, Object)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo__1_Testify_ActualValue___0__System_Object_
+  commentId: M:Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object)
+  name.vb: IsEqualTo(Of T)(ActualValue(Of T), Object)
+  fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, System.Object)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), System.Object)
+- uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object,System.String)
+  name: IsEqualTo<T>(ActualValue<T>, Object, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo__1_Testify_ActualValue___0__System_Object_System_String_
+  commentId: M:Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object,System.String)
+  name.vb: IsEqualTo(Of T)(ActualValue(Of T), Object, String)
+  fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String)
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String)
+- uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object,System.String,System.Object[])
+  name: IsEqualTo<T>(ActualValue<T>, Object, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsEqualTo__1_Testify_ActualValue___0__System_Object_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object,System.String,System.Object[])
+  name.vb: IsEqualTo(Of T)(ActualValue(Of T), Object, String, Object())
+  fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean})
+  name: IsFalse(ActualValue<Boolean>)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsFalse_Testify_ActualValue_System_Boolean__
+  commentId: M:Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean})
+  name.vb: IsFalse(ActualValue(Of Boolean))
+  fullName: Testify.StandardAssertions.IsFalse(Testify.ActualValue<System.Boolean>)
+  fullName.vb: Testify.StandardAssertions.IsFalse(Testify.ActualValue(Of System.Boolean))
+- uid: Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean},System.String)
+  name: IsFalse(ActualValue<Boolean>, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsFalse_Testify_ActualValue_System_Boolean__System_String_
+  commentId: M:Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean},System.String)
+  name.vb: IsFalse(ActualValue(Of Boolean), String)
+  fullName: Testify.StandardAssertions.IsFalse(Testify.ActualValue<System.Boolean>, System.String)
+  fullName.vb: Testify.StandardAssertions.IsFalse(Testify.ActualValue(Of System.Boolean), System.String)
+- uid: Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean},System.String,System.Object[])
+  name: IsFalse(ActualValue<Boolean>, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsFalse_Testify_ActualValue_System_Boolean__System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean},System.String,System.Object[])
+  name.vb: IsFalse(ActualValue(Of Boolean), String, Object())
+  fullName: Testify.StandardAssertions.IsFalse(Testify.ActualValue<System.Boolean>, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsFalse(Testify.ActualValue(Of System.Boolean), System.String, System.Object())
+- uid: Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type)
+  name: IsInstanceOfType<T>(ActualValue<T>, Type)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsInstanceOfType__1_Testify_ActualValue___0__System_Type_
+  commentId: M:Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type)
+  name.vb: IsInstanceOfType(Of T)(ActualValue(Of T), Type)
+  fullName: Testify.StandardAssertions.IsInstanceOfType<T>(Testify.ActualValue<T>, System.Type)
+  fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type)
+- uid: Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String)
+  name: IsInstanceOfType<T>(ActualValue<T>, Type, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsInstanceOfType__1_Testify_ActualValue___0__System_Type_System_String_
+  commentId: M:Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String)
+  name.vb: IsInstanceOfType(Of T)(ActualValue(Of T), Type, String)
+  fullName: Testify.StandardAssertions.IsInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String)
+  fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String)
+- uid: Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
+  name: IsInstanceOfType<T>(ActualValue<T>, Type, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsInstanceOfType__1_Testify_ActualValue___0__System_Type_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
+  name.vb: IsInstanceOfType(Of T)(ActualValue(Of T), Type, String, Object())
+  fullName: Testify.StandardAssertions.IsInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double)
+  name: IsNotEqualTo(ActualValue<Double>, Double, Double)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo_Testify_ActualValue_System_Double__System_Double_System_Double_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double)
+  name.vb: IsNotEqualTo(ActualValue(Of Double), Double, Double)
+  fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double)
+- uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String)
+  name: IsNotEqualTo(ActualValue<Double>, Double, Double, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo_Testify_ActualValue_System_Double__System_Double_System_Double_System_String_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String)
+  name.vb: IsNotEqualTo(ActualValue(Of Double), Double, Double, String)
+  fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String)
+- uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String,System.Object[])
+  name: IsNotEqualTo(ActualValue<Double>, Double, Double, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo_Testify_ActualValue_System_Double__System_Double_System_Double_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String,System.Object[])
+  name.vb: IsNotEqualTo(ActualValue(Of Double), Double, Double, String, Object())
+  fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single)
+  name: IsNotEqualTo(ActualValue<Single>, Single, Single)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo_Testify_ActualValue_System_Single__System_Single_System_Single_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single)
+  name.vb: IsNotEqualTo(ActualValue(Of Single), Single, Single)
+  fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single)
+- uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String)
+  name: IsNotEqualTo(ActualValue<Single>, Single, Single, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo_Testify_ActualValue_System_Single__System_Single_System_Single_System_String_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String)
+  name.vb: IsNotEqualTo(ActualValue(Of Single), Single, Single, String)
+  fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String)
+- uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String,System.Object[])
+  name: IsNotEqualTo(ActualValue<Single>, Single, Single, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo_Testify_ActualValue_System_Single__System_Single_System_Single_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String,System.Object[])
+  name.vb: IsNotEqualTo(ActualValue(Of Single), Single, Single, String, Object())
+  fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0)
+  name: IsNotEqualTo<T>(ActualValue<T>, T)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo__1_Testify_ActualValue___0____0_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0)
+  name.vb: IsNotEqualTo(Of T)(ActualValue(Of T), T)
+  fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, T)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), T)
+- uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0,System.String)
+  name: IsNotEqualTo<T>(ActualValue<T>, T, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo__1_Testify_ActualValue___0____0_System_String_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0,System.String)
+  name.vb: IsNotEqualTo(Of T)(ActualValue(Of T), T, String)
+  fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, T, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String)
+- uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name: IsNotEqualTo<T>(ActualValue<T>, T, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo__1_Testify_ActualValue___0____0_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name.vb: IsNotEqualTo(Of T)(ActualValue(Of T), T, String, Object())
+  fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object)
+  name: IsNotEqualTo<T>(ActualValue<T>, Object)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo__1_Testify_ActualValue___0__System_Object_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object)
+  name.vb: IsNotEqualTo(Of T)(ActualValue(Of T), Object)
+  fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, System.Object)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), System.Object)
+- uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object,System.String)
+  name: IsNotEqualTo<T>(ActualValue<T>, Object, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo__1_Testify_ActualValue___0__System_Object_System_String_
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object,System.String)
+  name.vb: IsNotEqualTo(Of T)(ActualValue(Of T), Object, String)
+  fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String)
+- uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object,System.String,System.Object[])
+  name: IsNotEqualTo<T>(ActualValue<T>, Object, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotEqualTo__1_Testify_ActualValue___0__System_Object_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object,System.String,System.Object[])
+  name.vb: IsNotEqualTo(Of T)(ActualValue(Of T), Object, String, Object())
+  fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type)
+  name: IsNotInstanceOfType<T>(ActualValue<T>, Type)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotInstanceOfType__1_Testify_ActualValue___0__System_Type_
+  commentId: M:Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type)
+  name.vb: IsNotInstanceOfType(Of T)(ActualValue(Of T), Type)
+  fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>(Testify.ActualValue<T>, System.Type)
+  fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type)
+- uid: Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String)
+  name: IsNotInstanceOfType<T>(ActualValue<T>, Type, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotInstanceOfType__1_Testify_ActualValue___0__System_Type_System_String_
+  commentId: M:Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String)
+  name.vb: IsNotInstanceOfType(Of T)(ActualValue(Of T), Type, String)
+  fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String)
+- uid: Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
+  name: IsNotInstanceOfType<T>(ActualValue<T>, Type, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotInstanceOfType__1_Testify_ActualValue___0__System_Type_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
+  name.vb: IsNotInstanceOfType(Of T)(ActualValue(Of T), Type, String, Object())
+  fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0})
+  name: IsNotNull<T>(ActualValue<T>)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotNull__1_Testify_ActualValue___0__
+  commentId: M:Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0})
+  name.vb: IsNotNull(Of T)(ActualValue(Of T))
+  fullName: Testify.StandardAssertions.IsNotNull<T>(Testify.ActualValue<T>)
+  fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)(Testify.ActualValue(Of T))
+- uid: Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0},System.String)
+  name: IsNotNull<T>(ActualValue<T>, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotNull__1_Testify_ActualValue___0__System_String_
+  commentId: M:Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0},System.String)
+  name.vb: IsNotNull(Of T)(ActualValue(Of T), String)
+  fullName: Testify.StandardAssertions.IsNotNull<T>(Testify.ActualValue<T>, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)(Testify.ActualValue(Of T), System.String)
+- uid: Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name: IsNotNull<T>(ActualValue<T>, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotNull__1_Testify_ActualValue___0__System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name.vb: IsNotNull(Of T)(ActualValue(Of T), String, Object())
+  fullName: Testify.StandardAssertions.IsNotNull<T>(Testify.ActualValue<T>, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0)
+  name: IsNotSameAs<T>(ActualValue<T>, T)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotSameAs__1_Testify_ActualValue___0____0_
+  commentId: M:Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0)
+  name.vb: IsNotSameAs(Of T)(ActualValue(Of T), T)
+  fullName: Testify.StandardAssertions.IsNotSameAs<T>(Testify.ActualValue<T>, T)
+  fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)(Testify.ActualValue(Of T), T)
+- uid: Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0,System.String)
+  name: IsNotSameAs<T>(ActualValue<T>, T, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotSameAs__1_Testify_ActualValue___0____0_System_String_
+  commentId: M:Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0,System.String)
+  name.vb: IsNotSameAs(Of T)(ActualValue(Of T), T, String)
+  fullName: Testify.StandardAssertions.IsNotSameAs<T>(Testify.ActualValue<T>, T, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)(Testify.ActualValue(Of T), T, System.String)
+- uid: Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name: IsNotSameAs<T>(ActualValue<T>, T, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNotSameAs__1_Testify_ActualValue___0____0_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name.vb: IsNotSameAs(Of T)(ActualValue(Of T), T, String, Object())
+  fullName: Testify.StandardAssertions.IsNotSameAs<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0})
+  name: IsNull<T>(ActualValue<T>)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNull__1_Testify_ActualValue___0__
+  commentId: M:Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0})
+  name.vb: IsNull(Of T)(ActualValue(Of T))
+  fullName: Testify.StandardAssertions.IsNull<T>(Testify.ActualValue<T>)
+  fullName.vb: Testify.StandardAssertions.IsNull(Of T)(Testify.ActualValue(Of T))
+- uid: Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0},System.String)
+  name: IsNull<T>(ActualValue<T>, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNull__1_Testify_ActualValue___0__System_String_
+  commentId: M:Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0},System.String)
+  name.vb: IsNull(Of T)(ActualValue(Of T), String)
+  fullName: Testify.StandardAssertions.IsNull<T>(Testify.ActualValue<T>, System.String)
+  fullName.vb: Testify.StandardAssertions.IsNull(Of T)(Testify.ActualValue(Of T), System.String)
+- uid: Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name: IsNull<T>(ActualValue<T>, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsNull__1_Testify_ActualValue___0__System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name.vb: IsNull(Of T)(ActualValue(Of T), String, Object())
+  fullName: Testify.StandardAssertions.IsNull<T>(Testify.ActualValue<T>, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsNull(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
+- uid: Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0)
+  name: IsSameAs<T>(ActualValue<T>, T)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsSameAs__1_Testify_ActualValue___0____0_
+  commentId: M:Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0)
+  name.vb: IsSameAs(Of T)(ActualValue(Of T), T)
+  fullName: Testify.StandardAssertions.IsSameAs<T>(Testify.ActualValue<T>, T)
+  fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)(Testify.ActualValue(Of T), T)
+- uid: Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0,System.String)
+  name: IsSameAs<T>(ActualValue<T>, T, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsSameAs__1_Testify_ActualValue___0____0_System_String_
+  commentId: M:Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0,System.String)
+  name.vb: IsSameAs(Of T)(ActualValue(Of T), T, String)
+  fullName: Testify.StandardAssertions.IsSameAs<T>(Testify.ActualValue<T>, T, System.String)
+  fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)(Testify.ActualValue(Of T), T, System.String)
+- uid: Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name: IsSameAs<T>(ActualValue<T>, T, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsSameAs__1_Testify_ActualValue___0____0_System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
+  name.vb: IsSameAs(Of T)(ActualValue(Of T), T, String, Object())
+  fullName: Testify.StandardAssertions.IsSameAs<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
+- uid: Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean})
+  name: IsTrue(ActualValue<Boolean>)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsTrue_Testify_ActualValue_System_Boolean__
+  commentId: M:Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean})
+  name.vb: IsTrue(ActualValue(Of Boolean))
+  fullName: Testify.StandardAssertions.IsTrue(Testify.ActualValue<System.Boolean>)
+  fullName.vb: Testify.StandardAssertions.IsTrue(Testify.ActualValue(Of System.Boolean))
+- uid: Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean},System.String)
+  name: IsTrue(ActualValue<Boolean>, String)
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsTrue_Testify_ActualValue_System_Boolean__System_String_
+  commentId: M:Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean},System.String)
+  name.vb: IsTrue(ActualValue(Of Boolean), String)
+  fullName: Testify.StandardAssertions.IsTrue(Testify.ActualValue<System.Boolean>, System.String)
+  fullName.vb: Testify.StandardAssertions.IsTrue(Testify.ActualValue(Of System.Boolean), System.String)
+- uid: Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean},System.String,System.Object[])
+  name: IsTrue(ActualValue<Boolean>, String, Object[])
+  href: api/Testify.StandardAssertions.html#Testify_StandardAssertions_IsTrue_Testify_ActualValue_System_Boolean__System_String_System_Object___
+  commentId: M:Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean},System.String,System.Object[])
+  name.vb: IsTrue(ActualValue(Of Boolean), String, Object())
+  fullName: Testify.StandardAssertions.IsTrue(Testify.ActualValue<System.Boolean>, System.String, System.Object[])
+  fullName.vb: Testify.StandardAssertions.IsTrue(Testify.ActualValue(Of System.Boolean), System.String, System.Object())
+- uid: Testify.StringAssertions
+  name: StringAssertions
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions
+  commentId: T:Testify.StringAssertions
+  fullName: Testify.StringAssertions
+- uid: Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String)
+  name: Contains(ActualValue<String>, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_Contains_Testify_ActualValue_System_String__System_String_
+  commentId: M:Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String)
+  name.vb: Contains(ActualValue(Of String), String)
+  fullName: Testify.StringAssertions.Contains(Testify.ActualValue<System.String>, System.String)
+  fullName.vb: Testify.StringAssertions.Contains(Testify.ActualValue(Of System.String), System.String)
+- uid: Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String,System.String)
+  name: Contains(ActualValue<String>, String, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_Contains_Testify_ActualValue_System_String__System_String_System_String_
+  commentId: M:Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String,System.String)
+  name.vb: Contains(ActualValue(Of String), String, String)
+  fullName: Testify.StringAssertions.Contains(Testify.ActualValue<System.String>, System.String, System.String)
+  fullName.vb: Testify.StringAssertions.Contains(Testify.ActualValue(Of System.String), System.String, System.String)
+- uid: Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
+  name: Contains(ActualValue<String>, String, String, Object[])
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_Contains_Testify_ActualValue_System_String__System_String_System_String_System_Object___
+  commentId: M:Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
+  name.vb: Contains(ActualValue(Of String), String, String, Object())
+  fullName: Testify.StringAssertions.Contains(Testify.ActualValue<System.String>, System.String, System.String, System.Object[])
+  fullName.vb: Testify.StringAssertions.Contains(Testify.ActualValue(Of System.String), System.String, System.String, System.Object())
+- uid: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex)
+  name: DoesNotMatch(ActualValue<String>, Regex)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_DoesNotMatch_Testify_ActualValue_System_String__System_Text_RegularExpressions_Regex_
+  commentId: M:Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex)
+  name.vb: DoesNotMatch(ActualValue(Of String), Regex)
+  fullName: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex)
+  fullName.vb: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex)
+- uid: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String)
+  name: DoesNotMatch(ActualValue<String>, Regex, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_DoesNotMatch_Testify_ActualValue_System_String__System_Text_RegularExpressions_Regex_System_String_
+  commentId: M:Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String)
+  name.vb: DoesNotMatch(ActualValue(Of String), Regex, String)
+  fullName: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String)
+  fullName.vb: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String)
+- uid: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String,System.Object[])
+  name: DoesNotMatch(ActualValue<String>, Regex, String, Object[])
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_DoesNotMatch_Testify_ActualValue_System_String__System_Text_RegularExpressions_Regex_System_String_System_Object___
+  commentId: M:Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String,System.Object[])
+  name.vb: DoesNotMatch(ActualValue(Of String), Regex, String, Object())
+  fullName: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String, System.Object[])
+  fullName.vb: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String, System.Object())
+- uid: Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String)
+  name: EndsWith(ActualValue<String>, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_EndsWith_Testify_ActualValue_System_String__System_String_
+  commentId: M:Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String)
+  name.vb: EndsWith(ActualValue(Of String), String)
+  fullName: Testify.StringAssertions.EndsWith(Testify.ActualValue<System.String>, System.String)
+  fullName.vb: Testify.StringAssertions.EndsWith(Testify.ActualValue(Of System.String), System.String)
+- uid: Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String,System.String)
+  name: EndsWith(ActualValue<String>, String, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_EndsWith_Testify_ActualValue_System_String__System_String_System_String_
+  commentId: M:Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String,System.String)
+  name.vb: EndsWith(ActualValue(Of String), String, String)
+  fullName: Testify.StringAssertions.EndsWith(Testify.ActualValue<System.String>, System.String, System.String)
+  fullName.vb: Testify.StringAssertions.EndsWith(Testify.ActualValue(Of System.String), System.String, System.String)
+- uid: Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
+  name: EndsWith(ActualValue<String>, String, String, Object[])
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_EndsWith_Testify_ActualValue_System_String__System_String_System_String_System_Object___
+  commentId: M:Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
+  name.vb: EndsWith(ActualValue(Of String), String, String, Object())
+  fullName: Testify.StringAssertions.EndsWith(Testify.ActualValue<System.String>, System.String, System.String, System.Object[])
+  fullName.vb: Testify.StringAssertions.EndsWith(Testify.ActualValue(Of System.String), System.String, System.String, System.Object())
+- uid: Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex)
+  name: Matches(ActualValue<String>, Regex)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_Matches_Testify_ActualValue_System_String__System_Text_RegularExpressions_Regex_
+  commentId: M:Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex)
+  name.vb: Matches(ActualValue(Of String), Regex)
+  fullName: Testify.StringAssertions.Matches(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex)
+  fullName.vb: Testify.StringAssertions.Matches(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex)
+- uid: Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String)
+  name: Matches(ActualValue<String>, Regex, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_Matches_Testify_ActualValue_System_String__System_Text_RegularExpressions_Regex_System_String_
+  commentId: M:Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String)
+  name.vb: Matches(ActualValue(Of String), Regex, String)
+  fullName: Testify.StringAssertions.Matches(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String)
+  fullName.vb: Testify.StringAssertions.Matches(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String)
+- uid: Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String,System.Object[])
+  name: Matches(ActualValue<String>, Regex, String, Object[])
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_Matches_Testify_ActualValue_System_String__System_Text_RegularExpressions_Regex_System_String_System_Object___
+  commentId: M:Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String,System.Object[])
+  name.vb: Matches(ActualValue(Of String), Regex, String, Object())
+  fullName: Testify.StringAssertions.Matches(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String, System.Object[])
+  fullName.vb: Testify.StringAssertions.Matches(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String, System.Object())
+- uid: Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String)
+  name: StartsWith(ActualValue<String>, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_StartsWith_Testify_ActualValue_System_String__System_String_
+  commentId: M:Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String)
+  name.vb: StartsWith(ActualValue(Of String), String)
+  fullName: Testify.StringAssertions.StartsWith(Testify.ActualValue<System.String>, System.String)
+  fullName.vb: Testify.StringAssertions.StartsWith(Testify.ActualValue(Of System.String), System.String)
+- uid: Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String,System.String)
+  name: StartsWith(ActualValue<String>, String, String)
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_StartsWith_Testify_ActualValue_System_String__System_String_System_String_
+  commentId: M:Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String,System.String)
+  name.vb: StartsWith(ActualValue(Of String), String, String)
+  fullName: Testify.StringAssertions.StartsWith(Testify.ActualValue<System.String>, System.String, System.String)
+  fullName.vb: Testify.StringAssertions.StartsWith(Testify.ActualValue(Of System.String), System.String, System.String)
+- uid: Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
+  name: StartsWith(ActualValue<String>, String, String, Object[])
+  href: api/Testify.StringAssertions.html#Testify_StringAssertions_StartsWith_Testify_ActualValue_System_String__System_String_System_String_System_Object___
+  commentId: M:Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
+  name.vb: StartsWith(ActualValue(Of String), String, String, Object())
+  fullName: Testify.StringAssertions.StartsWith(Testify.ActualValue<System.String>, System.String, System.String, System.Object[])
+  fullName.vb: Testify.StringAssertions.StartsWith(Testify.ActualValue(Of System.String), System.String, System.String, System.Object())
+- uid: Testify.TaskAssertions
+  name: TaskAssertions
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions
+  commentId: T:Testify.TaskAssertions
+  fullName: Testify.TaskAssertions
+- uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0})
+  name: Completes<T>(ActualValue<T>)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_Completes__1_Testify_ActualValue___0__
+  commentId: M:Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0})
+  name.vb: Completes(Of T)(ActualValue(Of T))
+  fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>)
+  fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T))
+- uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.Int32)
+  name: Completes<T>(ActualValue<T>, Int32)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_Completes__1_Testify_ActualValue___0__System_Int32_
+  commentId: M:Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.Int32)
+  name.vb: Completes(Of T)(ActualValue(Of T), Int32)
+  fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.Int32)
+  fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.Int32)
+- uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.Int32,System.String,System.Object[])
+  name: Completes<T>(ActualValue<T>, Int32, String, Object[])
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_Completes__1_Testify_ActualValue___0__System_Int32_System_String_System_Object___
+  commentId: M:Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.Int32,System.String,System.Object[])
+  name.vb: Completes(Of T)(ActualValue(Of T), Int32, String, Object())
+  fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.Int32, System.String, System.Object[])
+  fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.Int32, System.String, System.Object())
+- uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.String)
+  name: Completes<T>(ActualValue<T>, String)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_Completes__1_Testify_ActualValue___0__System_String_
+  commentId: M:Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.String)
+  name.vb: Completes(Of T)(ActualValue(Of T), String)
+  fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.String)
+  fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.String)
+- uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name: Completes<T>(ActualValue<T>, String, Object[])
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_Completes__1_Testify_ActualValue___0__System_String_System_Object___
+  commentId: M:Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name.vb: Completes(Of T)(ActualValue(Of T), String, Object())
+  fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.String, System.Object[])
+  fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
+- uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0})
+  name: IsBusy<T>(ActualValue<T>)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_IsBusy__1_Testify_ActualValue___0__
+  commentId: M:Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0})
+  name.vb: IsBusy(Of T)(ActualValue(Of T))
+  fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>)
+  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T))
+- uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32)
+  name: IsBusy<T>(ActualValue<T>, Int32)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_IsBusy__1_Testify_ActualValue___0__System_Int32_
+  commentId: M:Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32)
+  name.vb: IsBusy(Of T)(ActualValue(Of T), Int32)
+  fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.Int32)
+  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.Int32)
+- uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32,System.String)
+  name: IsBusy<T>(ActualValue<T>, Int32, String)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_IsBusy__1_Testify_ActualValue___0__System_Int32_System_String_
+  commentId: M:Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32,System.String)
+  name.vb: IsBusy(Of T)(ActualValue(Of T), Int32, String)
+  fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.Int32, System.String)
+  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.Int32, System.String)
+- uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32,System.String,System.Object[])
+  name: IsBusy<T>(ActualValue<T>, Int32, String, Object[])
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_IsBusy__1_Testify_ActualValue___0__System_Int32_System_String_System_Object___
+  commentId: M:Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32,System.String,System.Object[])
+  name.vb: IsBusy(Of T)(ActualValue(Of T), Int32, String, Object())
+  fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.Int32, System.String, System.Object[])
+  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.Int32, System.String, System.Object())
+- uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.String)
+  name: IsBusy<T>(ActualValue<T>, String)
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_IsBusy__1_Testify_ActualValue___0__System_String_
+  commentId: M:Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.String)
+  name.vb: IsBusy(Of T)(ActualValue(Of T), String)
+  fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.String)
+  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.String)
+- uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name: IsBusy<T>(ActualValue<T>, String, Object[])
+  href: api/Testify.TaskAssertions.html#Testify_TaskAssertions_IsBusy__1_Testify_ActualValue___0__System_String_System_Object___
+  commentId: M:Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.String,System.Object[])
+  name.vb: IsBusy(Of T)(ActualValue(Of T), String, Object())
+  fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.String, System.Object[])
+  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
+- uid: UsingAnonymousData
+  name: "\xD83D\xDD27 Using AnonymousData"
+  href: manual/UsingAnonymousData.html#UsingAnonymousData
+- uid: WhyUnitTest
+  name: Find Bugs
+  href: manual/WhyUnitTest.html#WhyUnitTest

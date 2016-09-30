@@ -1,21 +1,24 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
+  
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Testify | </title>
+    <title>Testify </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Testify | ">
+    <meta name="title" content="Testify ">
+    <meta name="generator" content="docfx 2.5.4.0">
     
-    <link rel="shortcut icon" href="images/gavel_icon-128x128.png" type="image/x-icon">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
     <link rel="stylesheet" href="styles/docfx.css">
     <link rel="stylesheet" href="styles/main.css">
     <meta property="docfx:navrel" content="toc.html">
     <meta property="docfx:tocrel" content="toc.html">
-  </head>  <body data-spy="scroll" data-target="#affix">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
     <div id="wrapper">
       <header>
         
@@ -28,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="">
+              <a class="navbar-brand" href="index.html">
                 <img id="logo" src="images/gavel_icon-64x64.png" height="46" width="46" alt="">
               </a>
             </div>
@@ -40,41 +43,40 @@
               </form>
             </div>
           </div>
-        </nav>        <div class="subnav navbar2 navbar-default2">
-          <div class="container" id="breadcrumb">
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
             <ul class="breadcrumb">
               <li></li>
             </ul>
           </div>
-        </div>      </header>
-      <div role="main" class="container body-content">
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="Home">
-              <a href="https://github.com/wekempf/testify/blob/develop/docs/index.md/#L1" class="btn btn-primary pull-right mobile-hide">Improve this Doc</a>
-              <h1 id="testify">Testify</h1>
+              <h1 id="testify" sourcefile="index.md" sourcestartlinenumber="5" sourceendlinenumber="5">Testify</h1>
               
-<p>Testify is a .NET unit testing helper framework providing fluent assertions, contract verifiers and an anonymous data factory.</p>
-<h2 id="quick-start-notes-">Quick Start Notes:</h2>
-<ol>
-<li><p>Create a unit test project using your favorite unit testing framework. Testify is framework agnostic and should work with any .NET unit testing framework.</p>
+<p sourcefile="index.md" sourcestartlinenumber="6" sourceendlinenumber="6">Testify is a .NET unit testing helper framework providing fluent assertions, contract verifiers and an anonymous data factory.</p>
+<h2 id="quick-start-notes" sourcefile="index.md" sourcestartlinenumber="8" sourceendlinenumber="8">Quick Start Notes:</h2>
+<ol sourcefile="index.md" sourcestartlinenumber="9" sourceendlinenumber="32">
+<li sourcefile="index.md" sourcestartlinenumber="9" sourceendlinenumber="9"><p sourcefile="index.md" sourcestartlinenumber="9" sourceendlinenumber="9">Create a unit test project using your favorite unit testing framework. Testify is framework agnostic and should work with any .NET unit testing framework.</p>
 </li>
-<li><p>Install the Testify NuGet package into this project.</p>
-<pre><code class="lang-PowerShell"> Install-Package Testify
-</code></pre>
-</li>
-<li><p>In a unit test source file add the following using statements.</p>
-<pre><code class="lang-csharp"> using Testify;
+<li sourcefile="index.md" sourcestartlinenumber="11" sourceendlinenumber="15"><p sourcefile="index.md" sourcestartlinenumber="11" sourceendlinenumber="11">Install the Testify NuGet package into this project.</p>
+<pre sourcefile="index.md" sourcestartlinenumber="13" sourceendlinenumber="15"><code class="lang-PowerShell"> Install-Package Testify
+</code></pre></li>
+<li sourcefile="index.md" sourcestartlinenumber="17" sourceendlinenumber="22"><p sourcefile="index.md" sourcestartlinenumber="17" sourceendlinenumber="17">In a unit test source file add the following using statements.</p>
+<pre sourcefile="index.md" sourcestartlinenumber="19" sourceendlinenumber="22"><code class="lang-csharp"> using Testify;
  using static Testify.Assertions;
-</code></pre>
+</code></pre></li>
+<li sourcefile="index.md" sourcestartlinenumber="24" sourceendlinenumber="28"><p sourcefile="index.md" sourcestartlinenumber="24" sourceendlinenumber="24">In a unit test use the fluent syntax for declaring assertions, nothing the rich IntelliSense support.</p>
+<pre sourcefile="index.md" sourcestartlinenumber="26" sourceendlinenumber="28"><code class="lang-csharp"> Assert(testResult).IsEqualTo(expectedValue);
+</code></pre></li>
+<li sourcefile="index.md" sourcestartlinenumber="30" sourceendlinenumber="30"><p sourcefile="index.md" sourcestartlinenumber="30" sourceendlinenumber="30">Read the <a class="xref" href="manual/intro.html#Intro">Introduction to Testify</a> and <a class="xref" href="api/index.html#Api">Api Documentation</a>.</p>
 </li>
-<li><p>In a unit test use the fluent syntax for declaring assertions, nothing the rich IntelliSense support.</p>
-<pre><code class="lang-csharp"> Assert(testResult).IsEqualTo(expectedValue);
-</code></pre>
-</li>
-<li><p>Read the <a class="xref" href="manual/intro.html#Intro">Introduction to Testify</a> and <a class="xref" href="api/index.html#Api">Api Documentation</a>.</p>
-</li>
-<li><p>See the project at <a href="https://github.com/wekempf/testify">GitHub</a></p>
+<li sourcefile="index.md" sourcestartlinenumber="32" sourceendlinenumber="32"><p sourcefile="index.md" sourcestartlinenumber="32" sourceendlinenumber="32">See the project at <a href="https://github.com/wekempf/testify" sourcefile="index.md" sourcestartlinenumber="32" sourceendlinenumber="32">GitHub</a></p>
 </li>
 </ol>
 
@@ -82,9 +84,18 @@
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
-            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-            </nav>
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/wekempf/testify/blob/develop/docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -96,14 +107,16 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            <span>Copyright &copy; 2016 William E. Kempf<br>Generated by <a href="http://dotnet.github.io/docfx/">DocFX</a>.</span>
+            
+            <span>Copyright © 2016 William E. Kempf<br>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
-      </footer>    </div>
+      </footer>
+    </div>
     
     <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script type="text/javascript" src="styles/docfx.js"></script>
     <script type="text/javascript" src="styles/main.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

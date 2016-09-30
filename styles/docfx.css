@@ -42,6 +42,15 @@ h1, h2, h3, h4, h5, h6, span.xref {
     word-break: break-all;
 }
 
+h1 mark,
+h2 mark,
+h3 mark,
+h4 mark,
+h5 mark,
+h6 mark {
+  padding: 0;
+}
+
 .inheritance .level0:before,
 .inheritance .level1:before,
 .inheritance .level2:before,
@@ -49,6 +58,7 @@ h1, h2, h3, h4, h5, h6, span.xref {
 .inheritance .level4:before,
 .inheritance .level5:before {
     content: '↳';
+    margin-right: 5px;
 }
 
 .inheritance .level0 {
@@ -173,7 +183,7 @@ header .navbar {
   min-height: 40px;
 }
 
-.inheritance h5{
+.inheritance h5, .inheritedMembers h5{
   padding-bottom: 5px;
   border-bottom: 1px solid #ccc;
 }
@@ -317,6 +327,56 @@ article section {
   border-top-left-radius: 5px;
   width: 200px;
   box-shadow: 0 0 10px #111;
+}
+#search {
+  display: none;
+}
+
+/* Search results display*/
+#search-results {
+  max-width: 960px !important;
+  margin-top: 120px;
+  margin-bottom: 115px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  display: none;
+}
+
+#search-results>.search-list {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+#search-results p {
+  text-align: center;
+}
+
+#search-results .sr-items {
+  font-size: 24px;
+}
+
+.sr-item {
+  margin-bottom: 25px;
+}
+
+.sr-item>.item-href {
+  font-size: 14px;
+  color: #093;
+}
+
+.sr-item>.item-brief {
+  font-size: 13px;
+}
+
+.pagination>li>a {
+  color: #47A7A0
+}
+
+.pagination>.active>a {
+  background-color: #47A7A0;
+  border-color: #47A7A0;
 }
 
 .fixed_header {
@@ -498,9 +558,6 @@ body .toc{
 .article.grid-right {
   margin-left: 280px;
 }
-.inheritance span {
-  margin-left: 5px;
-}
 
 .inheritance hr {
   margin-top: 5px;
@@ -509,23 +566,44 @@ body .toc{
 .article img {
   max-width: 100%;
 }
-.affix {
+.sideaffix {
+  margin-top: 50px;
   font-size: 12px;
   max-height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
   top: 100px;
   bottom: 10px;
+  position: fixed;
+}
+.affix {
+  position: relative;
+  height: 100%;
+}
+.sideaffix > div.contribution {
+  margin-bottom: 20px;
+}
+.sideaffix > div.contribution > ul > li > a.contribution-link {
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.sideaffix > div.contribution > ul > li > a.contribution-link:hover {
+  background-color: #ffffff;
+}
+.sideaffix ul.nav > li > a:focus {
+  background: none;
 }
 .affix h5 {
   font-weight: bold;
   text-transform: uppercase;
-  margin-top: 50px;
   padding-left: 10px;
   font-size: 12px;
 }
 .affix > ul.level1 {
-  overflow-x: hidden;
+  overflow: hidden;
   padding-bottom: 10px;
+  height: calc(100% - 100px);
+  margin-right: -20px;
 }
 .affix ul > li > a:before {
   color: #cccccc;
@@ -542,6 +620,9 @@ body .toc{
 .affix ul > li > a {
   padding: 5px 12px;
   color: #666666;
+}
+.affix > ul > li.active:last-child {
+  margin-bottom: 50px;
 }
 .affix > ul > li > a:before {
   content: "|";
@@ -604,6 +685,9 @@ body .toc{
 }
 .codewrapper:hover .tryspan {
   display: block;
+}
+.sample-response .response-content{
+  max-height: 200px;
 }
 footer {
   position: absolute;
@@ -687,7 +771,7 @@ footer {
   /*.expand-all {
     display: none;
   }*/
-  .affix {
+  .sideaffix {
     display: none;
   }
   .mobile-hide {
@@ -716,4 +800,9 @@ footer {
   .toc .level2 > li:after {
     display: none;
   }
+}
+
+/* For code snippet line highlight */
+pre > code .line-highlight {
+  background-color: #ffffcc;
 }
