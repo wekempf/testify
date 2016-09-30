@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Testify
 {
     /// <summary>
     /// Defines factory methods for creating <see langword="TimeZoneInfo"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousTimeZoneInfo
     {
         /// <summary>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Text;
 
 namespace Testify
@@ -7,7 +6,8 @@ namespace Testify
     /// <summary>
     /// Defines factory methods for creating <see langword="string"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousString
     {
         private static readonly string[] FemaleFirstNames = new[]

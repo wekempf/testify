@@ -1,13 +1,12 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Reflection;
 
 namespace Testify
 {
     /// <summary>
     /// Defines anon methods for creating <see langword="Enum"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousEnum
     {
         /// <summary>

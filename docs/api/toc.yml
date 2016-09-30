@@ -1,3 +1,4 @@
+### YamlMime:TableOfContent
 - uid: Testify
   name: Testify
   items:
@@ -72,7 +73,11 @@
     name: IAnonymousDataCustomization
   - uid: Testify.IRegisterAnonymousData
     name: IRegisterAnonymousData
+  - uid: Testify.PopulateOption
+    name: PopulateOption
   - uid: Testify.StandardAssertions
     name: StandardAssertions
   - uid: Testify.StringAssertions
     name: StringAssertions
+  - uid: Testify.TaskAssertions
+    name: TaskAssertions

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Testify
 {
     /// <summary>
     /// Defines anon methods for creating <see langword="int"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousByte
     {
         /// <summary>

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Testify
 {
     /// <summary>
     /// Defines factory methods for creating <see langword="TimeSpan"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousTimeSpan
     {
         /// <summary>

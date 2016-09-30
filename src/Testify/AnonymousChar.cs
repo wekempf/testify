@@ -1,12 +1,12 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Testify
 {
     /// <summary>
     /// Defines anon methods for creating anonymous <see langword="char"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousChar
     {
         private static readonly Range BasicLatinCharRange = new Range(0x20, 0x7f);

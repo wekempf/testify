@@ -1,12 +1,12 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Testify
 {
     /// <summary>
     /// Provides anon methods for creating anonymous <see cref="bool"/> values.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
+    // Temorary (hopefull) workaround for DocFX
+    // [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousBool
     {
         /// <summary>
