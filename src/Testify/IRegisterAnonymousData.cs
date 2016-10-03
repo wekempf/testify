@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace Testify
 {
@@ -13,5 +14,12 @@ namespace Testify
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
         void Register(Type type, Func<IAnonymousData, object> factory);
+
+        /// <summary>
+        /// Registers a factory method for the specified property.
+        /// </summary>
+        /// <param name="property">The property to populate.</param>
+        /// <param name="factory">The factory method.</param>
+        void Register(PropertyInfo property, Func<IAnonymousData, object> factory);
     }
 }

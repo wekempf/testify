@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnonymousDecimalTests.cs" />
     <Compile Include="AssertionExceptionExtensions.cs" />
     <Compile Include="AssertionExceptionTests.cs" />
     <Compile Include="AssertionsTests.cs" />

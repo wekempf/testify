@@ -24,8 +24,8 @@ namespace Testify
         /// to complete. If you need control over how long to wait before failing use one of the other overloads
         /// of this assertion.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -48,8 +48,8 @@ namespace Testify
         /// <para>If this assertion fails you may have a deadlock or the task simply is taking too long
         /// to complete.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -74,8 +74,8 @@ namespace Testify
         /// to complete. If you need control over how long to wait before failing use one of the other overloads
         /// of this assertion.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -101,8 +101,8 @@ namespace Testify
         /// to complete. If you need control over how long to wait before failing use one of the other overloads
         /// of this assertion.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -128,8 +128,8 @@ namespace Testify
         /// <para>If this assertion fails you may have a deadlock or the task simply is taking too long
         /// to complete.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -153,8 +153,8 @@ namespace Testify
         /// <remarks>
         /// <para>This assertion verifies that the task doesn't complete within a specified time.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -177,8 +177,8 @@ namespace Testify
         /// <remarks>
         /// <para>This assertion verifies that the task doesn't complete within a specified time.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -201,8 +201,8 @@ namespace Testify
         /// <remarks>
         /// <para>This assertion verifies that the task doesn't complete within a specified time.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -226,8 +226,8 @@ namespace Testify
         /// <remarks>
         /// <para>This assertion verifies that the task doesn't complete within a specified time.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -252,8 +252,8 @@ namespace Testify
         /// <remarks>
         /// <para>This assertion verifies that the task doesn't complete within a specified time.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
@@ -279,8 +279,8 @@ namespace Testify
         /// <remarks>
         /// <para>This assertion verifies that the task doesn't complete within a specified time.</para>
         /// <para>There are no overloads for working with <see cref="Task"/> collections, but you can easily
-        /// make assertions by using the <see cref="m:Task.WhenAny"/> or <see cref="m:Task.WhenAll"/>
-        /// methods. For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
+        /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
+        /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>

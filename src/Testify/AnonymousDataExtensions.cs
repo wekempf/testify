@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Testify
 {
@@ -88,14 +90,16 @@ namespace Testify
         /// <summary>
         /// Populates the specified instance by assigning all properties to anonymous values.
         /// </summary>
+        /// <typeparam name="TInstance">The type of the instance to populate.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="instance">The instance to populate.</param>
         /// <exception cref="ArgumentNullException"><paramref name="anon"/> is null.</exception>
-        public static void Populate(this IAnonymousData anon, object instance)
+        /// <returns>The populated instance.</returns>
+        public static TInstance Populate<TInstance>(this IAnonymousData anon, TInstance instance)
         {
             Argument.NotNull(anon, nameof(anon));
 
-            anon.Populate(instance, true);
+            return anon.Populate(instance, true);
         }
 
         /// <summary>
@@ -111,6 +115,58 @@ namespace Testify
             Argument.NotNull(factory, nameof(factory));
 
             anon.Register(typeof(T), f => factory(f));
+        }
+
+        /// <summary>
+        /// Registers a factory method for the specified property.
+        /// </summary>
+        /// <typeparam name="T">The type that declares the property.</typeparam>
+        /// <typeparam name="TProperty">The type of the property.</typeparam>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <param name="propertyExpression">An expression representing the property to populate.</param>
+        /// <param name="factory">The factory method.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="propertyExpression"/> or
+        /// <paramref name="factory"/> is <c>null</c>.</exception>
+        public static void Register<T, TProperty>(
+            this IRegisterAnonymousData anon,
+            Expression<Func<T, TProperty>> propertyExpression,
+            Func<IAnonymousData, TProperty> factory)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(propertyExpression, nameof(propertyExpression));
+            Argument.NotNull(factory, nameof(factory));
+
+            var member = GetMemberInfo(propertyExpression);
+            var property = member?.Member as PropertyInfo;
+            if (property == null)
+            {
+                throw new ArgumentException("Invalid property expression.");
+            }
+
+            anon.Register(property, f => factory(f));
+        }
+
+        private static MemberExpression GetMemberInfo(Expression method)
+        {
+            LambdaExpression lambda = method as LambdaExpression;
+            if (lambda == null)
+            {
+                return null;
+            }
+
+            MemberExpression memberExpr = null;
+
+            if (lambda.Body.NodeType == ExpressionType.Convert)
+            {
+                memberExpr =
+                    ((UnaryExpression)lambda.Body).Operand as MemberExpression;
+            }
+            else if (lambda.Body.NodeType == ExpressionType.MemberAccess)
+            {
+                memberExpr = lambda.Body as MemberExpression;
+            }
+
+            return memberExpr;
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Globalization;
-using Testify.Properties;
 using static Testify.Assertions;
 using static Testify.FrameworkMessages;
 

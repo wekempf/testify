@@ -242,6 +242,20 @@ namespace Testify
             Assert.Equal(result.Model.Value, "xyzzy");
         }
 
+        [Fact]
+        public void Any_PopulateDeepWithCollections_ShouldPopulateCollections()
+        {
+            var anon = new AnonymousData();
+
+            var result = anon.Any<DeepModelWithCollection>(PopulateOption.Deep);
+
+            Assert.NotNull(result);
+            Assert.NotEmpty(result.ReadOnlyNames);
+            Assert.NotEmpty(result.InitializedNames);
+            Assert.NotEmpty(result.UninitializedNames);
+            Assert.NotEmpty(result.Dictionary);
+        }
+
         [Flags]
         private enum FlagsEnum
         {
@@ -292,6 +306,17 @@ namespace Testify
         private class DeepModel
         {
             public Model Model { get; set; }
+        }
+
+        private class DeepModelWithCollection
+        {
+            public List<string> ReadOnlyNames { get; } = new List<string>();
+
+            public List<string> InitializedNames { get; set; } = new List<string>();
+
+            public List<string> UninitializedNames { get; set; }
+
+            public Dictionary<string, int> Dictionary { get; } = new Dictionary<string, int>();
         }
     }
 }

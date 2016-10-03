@@ -14,6 +14,7 @@ namespace Testify
     {
         private readonly List<IAnonymousDataCustomization> customizations = new List<IAnonymousDataCustomization>();
         private readonly Dictionary<Type, Factory> factories = new Dictionary<Type, Factory>();
+        private readonly Dictionary<PropertyInfo, Factory> propertyFactories = new Dictionary<PropertyInfo, Factory>();
         private readonly Random random;
 
         /// <summary>
@@ -55,14 +56,32 @@ namespace Testify
             Factory factory;
             if (this.factories.TryGetValue(type, out factory))
             {
-                return this.Populate(factory(this), populateOption);
+                object value;
+                try
+                {
+                    value = factory(this);
+                    this.Populate(value, populateOption);
+                }
+                catch (Exception e)
+                {
+                    throw new AnonymousDataException(type, e);
+                }
+
+                return value;
             }
 
             var context = new AnonymousDataContext(this, type);
             object result;
-            if (context.CallNextCustomization(out result))
+            try
             {
-                return this.Populate(result, populateOption);
+                if (context.CallNextCustomization(out result))
+                {
+                    return this.Populate(result, populateOption);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new AnonymousDataException(type, e);
             }
 
             throw new AnonymousDataException(type);
@@ -100,13 +119,15 @@ namespace Testify
         /// <summary>
         /// Populates the specified instance by assigning all properties to anonymous values.
         /// </summary>
+        /// <typeparam name="TInstance">The type of the instance to populate.</typeparam>
         /// <param name="instance">The instance to populate.</param>
         /// <param name="deep">If set to <see langword="true"/> then properties are assigned recursively, populating
         /// the entire object tree.</param>
-        public void Populate(object instance, bool deep)
+        /// <returns>The populated instance.</returns>
+        public TInstance Populate<TInstance>(TInstance instance, bool deep)
         {
             var queue = deep ? new Queue<object>() : null;
-            var current = instance;
+            object current = instance;
             while (true)
             {
                 if (current != null)
@@ -114,15 +135,71 @@ namespace Testify
                     var type = current.GetType();
                     var properties =
                         from prop in type.GetRuntimeProperties()
-                        where prop.CanWrite && prop.SetMethod.IsPublic
+                        where !prop.PropertyType.GetTypeInfo().IsPrimitive &&
+                            (prop.PropertyType.IsCollectionType() || (prop.CanWrite && prop.SetMethod.IsPublic)) &&
+                            !(prop.GetIndexParameters()?.Any() ?? false)
                         select prop;
                     foreach (var prop in properties)
                     {
-                        var value = this.Any(prop.PropertyType);
-                        prop.SetValue(current, value);
-                        if (deep)
+                        try
                         {
-                            queue.Enqueue(value);
+                            if (prop.PropertyType.IsCollectionType())
+                            {
+                                var collection = prop.GetValue(current);
+                                if (collection != null)
+                                {
+                                    var method = prop.PropertyType.GetAddMethod();
+                                    if (method != null)
+                                    {
+                                        foreach (var item in this.AnyEnumerable(method.GetParameters()[0].ParameterType))
+                                        {
+                                            method.Invoke(collection, new[] { item });
+                                            if (deep && !item.GetType().GetTypeInfo().IsPrimitive)
+                                            {
+                                                queue.Enqueue(item);
+                                            }
+                                        }
+                                    }
+                                }
+                                else if (prop.CanWrite)
+                                {
+                                    var value = this.Any(prop.PropertyType);
+                                    prop.SetValue(current, value);
+                                    if (deep)
+                                    {
+                                        foreach (var item in (IEnumerable)value)
+                                        {
+                                            if (!item.GetType().GetTypeInfo().IsPrimitive)
+                                            {
+                                                queue.Enqueue(item);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                object value;
+                                Factory factory;
+                                if (this.propertyFactories.TryGetValue(prop, out factory))
+                                {
+                                    value = factory(this);
+                                }
+                                else
+                                {
+                                    value = this.Any(prop.PropertyType);
+                                }
+
+                                prop.SetValue(current, value);
+                                if (deep && !prop.PropertyType.GetTypeInfo().IsPrimitive)
+                                {
+                                    queue.Enqueue(value);
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            throw new AnonymousDataException(prop, e);
                         }
                     }
                 }
@@ -134,6 +211,8 @@ namespace Testify
 
                 current = queue.Dequeue();
             }
+
+            return instance;
         }
 
         /// <summary>
@@ -148,6 +227,15 @@ namespace Testify
             Argument.NotNull(factory, nameof(factory));
 
             this.factories[type] = factory;
+        }
+
+        /// <inheritdoc/>
+        public void Register(PropertyInfo property, Factory factory)
+        {
+            Argument.NotNull(property, nameof(property));
+            Argument.NotNull(factory, nameof(factory));
+
+            this.propertyFactories[property] = factory;
         }
 
         private bool Any(Type type, out object result)
@@ -224,7 +312,7 @@ namespace Testify
             if (ctor != null)
             {
                 result = ctor.Invoke(new object[0]);
-                var method = type.GetMethods("Add").FirstOrDefault(m => m.GetParameters().Length == 1);
+                var method = type.GetAddMethod();
                 if (method != null)
                 {
                     foreach (var item in this.AnyEnumerable(method.GetParameters()[0].ParameterType))
@@ -272,6 +360,7 @@ namespace Testify
             this.Register(f => f.AnyInt32());
             this.Register(f => f.AnyInt64());
             this.Register(f => f.AnyInt16());
+            this.Register(f => f.AnyDecimal());
             this.Register(f => f.AnyString());
             this.Register(f => f.AnyTimeSpan());
             this.Register(f => f.AnyTimeZoneInfo());
@@ -332,12 +421,14 @@ namespace Testify
             /// <summary>
             /// Populates the specified instance by assigning all properties to anonymous values.
             /// </summary>
+            /// <typeparam name="TInstance">The type of the instance to populate.</typeparam>
             /// <param name="instance">The instance to populate.</param>
-            /// <param name="deep">If set to <see langword="true"/> then properties are assigned recursively, populating
+            /// <param name="deep">If set to <see langword="true" /> then properties are assigned recursively, populating
             /// the entire object tree.</param>
-            public void Populate(object instance, bool deep)
+            /// <returns>The populated instance.</returns>
+            public TInstance Populate<TInstance>(TInstance instance, bool deep)
             {
-                this.factory.Populate(instance, deep);
+                return this.factory.Populate(instance, deep);
             }
         }
     }

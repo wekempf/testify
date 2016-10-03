@@ -15,7 +15,8 @@
           ]
         }
       ],
-      "dest": "api"
+      "dest": "api",
+      "filter": "filterConfig.yml"
     }
   ],
   "build": {
@@ -66,7 +67,7 @@
     ],
     "dest": "_site",
     "template": [
-      "default", "template"
+      "testify_template"
     ]
   }
 }

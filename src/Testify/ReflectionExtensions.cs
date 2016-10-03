@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,6 +11,22 @@ namespace Testify
     /// </summary>
     internal static class ReflectionExtensions
     {
+        /// <summary>
+        /// Gets the add method.
+        /// </summary>
+        /// <param name="sourceType">Type of the source.</param>
+        /// <returns>The Add method.</returns>
+        internal static MethodInfo GetAddMethod(this Type sourceType)
+        {
+            Argument.NotNull(sourceType, nameof(sourceType));
+
+            return Enumerable.Repeat(sourceType, 1)
+                .Concat(sourceType.GetInterfaces().Where(t => t.Is(typeof(ICollection<>))))
+                .Concat(sourceType.GetInterfaces().Where(t => t.Is(typeof(ICollection))))
+                .Select(t => t.GetTypeInfo().DeclaredMethods.FirstOrDefault(m => m.Name == "Add" && m.GetParameters().Length == 1))
+                .FirstOrDefault(t => t != null);
+        }
+
         /// <summary>
         /// Gets the base type of the <paramref name="sourceType"/>.
         /// </summary>
@@ -171,6 +188,22 @@ namespace Testify
             }
 
             return sourceType == type;
+        }
+
+        /// <summary>
+        /// Determines whether this instance is a collection type.
+        /// </summary>
+        /// <param name="sourceType">Type of the source.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified source type is collection; otherwise, <c>false</c>.
+        /// </returns>
+        internal static bool IsCollectionType(this Type sourceType)
+        {
+            Argument.NotNull(sourceType, nameof(sourceType));
+
+            return sourceType.Is(typeof(ICollection<>)) ||
+                sourceType.Is(typeof(ICollection)) ||
+                sourceType.GetInterfaces().Any(t => t.IsCollectionType());
         }
 
         /// <summary>
