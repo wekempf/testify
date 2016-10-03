@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Testify
 {
@@ -33,6 +30,25 @@ namespace Testify
         {
             Argument.NotNull(type, nameof(type));
             this.AnonymousType = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnonymousDataException"/> class.
+        /// </summary>
+        /// <param name="property">The property that could not be populated.</param>
+        public AnonymousDataException(PropertyInfo property)
+            : this(property, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnonymousDataException"/> class.
+        /// </summary>
+        /// <param name="property">The property that could not be populated.</param>
+        /// <param name="innerException">The inner exception.</param>
+        public AnonymousDataException(PropertyInfo property, Exception innerException)
+            : base($"Unable to populate property {property.Name} on type {property.DeclaringType}.", innerException)
+        {
         }
 
         /// <summary>

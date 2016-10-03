@@ -51,6 +51,7 @@
     <Compile Include="AnonymousDataExtensions.cs" />
     <Compile Include="AnonymousDateTime.cs" />
     <Compile Include="AnonymousDateTimeOffset.cs" />
+    <Compile Include="AnonymousDecimal.cs" />
     <Compile Include="AnonymousDouble.cs" />
     <Compile Include="AnonymousEnum.cs" />
     <Compile Include="AnonymousEnumerable.cs" />

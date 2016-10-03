@@ -1,59 +1,59 @@
 ﻿using Xunit;
 
-namespace Testify
+namespace Testify.Tests
 {
-    public class DoubleFactoryTests
+    public class AnonymousDecimalTests
     {
         [Fact]
-        public void AnyDouble()
+        public void AnyDecimal()
         {
             var anon = new AnonymousData();
-            var classifier = new Classifier<double>();
+            var classifier = new Classifier<decimal>();
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble());
+            classifier.Classify(() => anon.AnyDecimal());
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);
         }
 
         [Fact]
-        public void AnyDouble_Distribution()
+        public void AnyDecimal_Distribution()
         {
             var anon = new AnonymousData();
-            var classifier = new Classifier<double>();
+            var classifier = new Classifier<decimal>();
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble(Distribution.Uniform));
+            classifier.Classify(() => anon.AnyDecimal(Distribution.Uniform));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);
         }
 
         [Fact]
-        public void AnyPositiveDouble()
+        public void AnyPositiveDecimal()
         {
             var anon = new AnonymousData();
 
-            var result = anon.AnyPositiveDouble();
+            var result = anon.AnyPositiveDecimal();
 
             Assert.True(result >= 0);
         }
 
         [Fact]
-        public void AnyPositiveDoubleDistribution()
+        public void AnyPositiveDecimalDistribution()
         {
             var anon = new AnonymousData();
 
-            var result = anon.AnyPositiveDouble(Distribution.Uniform);
+            var result = anon.AnyPositiveDecimal(Distribution.Uniform);
 
             Assert.True(result >= 0);
         }
 
         [Fact]
-        public void AnyNegativeDouble()
+        public void AnyNegativeDecimal()
         {
             var anon = new AnonymousData();
 
@@ -63,7 +63,7 @@ namespace Testify
         }
 
         [Fact]
-        public void AnyNegativeDoubleDistribution()
+        public void AnyNegativeDecimalDistribution()
         {
             var anon = new AnonymousData();
 
@@ -73,14 +73,14 @@ namespace Testify
         }
 
         [Fact]
-        public void AnyDouble_MinMax()
+        public void AnyDecimal_MinMax()
         {
             var anon = new AnonymousData();
-            var classifier = new Classifier<double>();
+            var classifier = new Classifier<decimal>();
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble(double.MinValue, double.MaxValue));
+            classifier.Classify(() => anon.AnyDecimal(decimal.MinValue, decimal.MaxValue));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);

@@ -35,9 +35,11 @@ namespace Testify
         /// <summary>
         /// Populates the specified instance by assigning all properties to anonymous values.
         /// </summary>
+        /// <typeparam name="TInstance">The type of the instance to populate.</typeparam>
         /// <param name="instance">The instance to populate.</param>
-        /// <param name="deep">If set to <see langword="true"/> then properties are assigned recursively, populating
+        /// <param name="deep">If set to <see langword="true" /> then properties are assigned recursively, populating
         /// the entire object tree.</param>
-        void Populate(object instance, bool deep);
+        /// <returns>The populated instance.</returns>
+        TInstance Populate<TInstance>(TInstance instance, bool deep);
     }
 }
