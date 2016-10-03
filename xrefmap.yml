@@ -60,11 +60,20 @@ references:
   href: api/Testify.AnonymousData.html#Testify_AnonymousData_Customize_Testify_IAnonymousDataCustomization_
   commentId: M:Testify.AnonymousData.Customize(Testify.IAnonymousDataCustomization)
   fullName: Testify.AnonymousData.Customize(Testify.IAnonymousDataCustomization)
-- uid: Testify.AnonymousData.Populate(System.Object,System.Boolean)
-  name: Populate(Object, Boolean)
-  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Populate_System_Object_System_Boolean_
-  commentId: M:Testify.AnonymousData.Populate(System.Object,System.Boolean)
-  fullName: Testify.AnonymousData.Populate(System.Object, System.Boolean)
+- uid: Testify.AnonymousData.Populate``1(``0,System.Boolean)
+  name: Populate<TInstance>(TInstance, Boolean)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Populate__1___0_System_Boolean_
+  commentId: M:Testify.AnonymousData.Populate``1(``0,System.Boolean)
+  name.vb: Populate(Of TInstance)(TInstance, Boolean)
+  fullName: Testify.AnonymousData.Populate<TInstance>(TInstance, System.Boolean)
+  fullName.vb: Testify.AnonymousData.Populate(Of TInstance)(TInstance, System.Boolean)
+- uid: Testify.AnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
+  name: Register(PropertyInfo, Func<IAnonymousData, Object>)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_Register_System_Reflection_PropertyInfo_System_Func_Testify_IAnonymousData_System_Object__
+  commentId: M:Testify.AnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
+  name.vb: Register(PropertyInfo, Func(Of IAnonymousData, Object))
+  fullName: Testify.AnonymousData.Register(System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, System.Object>)
+  fullName.vb: Testify.AnonymousData.Register(System.Reflection.PropertyInfo, System.Func(Of Testify.IAnonymousData, System.Object))
 - uid: Testify.AnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
   name: Register(Type, Func<IAnonymousData, Object>)
   href: api/Testify.AnonymousData.html#Testify_AnonymousData_Register_System_Type_System_Func_Testify_IAnonymousData_System_Object__
@@ -77,6 +86,16 @@ references:
   href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException
   commentId: T:Testify.AnonymousDataException
   fullName: Testify.AnonymousDataException
+- uid: Testify.AnonymousDataException.#ctor(System.Reflection.PropertyInfo)
+  name: AnonymousDataException(PropertyInfo)
+  href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException__ctor_System_Reflection_PropertyInfo_
+  commentId: M:Testify.AnonymousDataException.#ctor(System.Reflection.PropertyInfo)
+  fullName: Testify.AnonymousDataException.AnonymousDataException(System.Reflection.PropertyInfo)
+- uid: Testify.AnonymousDataException.#ctor(System.Reflection.PropertyInfo,System.Exception)
+  name: AnonymousDataException(PropertyInfo, Exception)
+  href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException__ctor_System_Reflection_PropertyInfo_System_Exception_
+  commentId: M:Testify.AnonymousDataException.#ctor(System.Reflection.PropertyInfo,System.Exception)
+  fullName: Testify.AnonymousDataException.AnonymousDataException(System.Reflection.PropertyInfo, System.Exception)
 - uid: Testify.AnonymousDataException.#ctor(System.Type)
   name: AnonymousDataException(Type)
   href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException__ctor_System_Type_
@@ -932,11 +951,13 @@ references:
   href: api/Testify.IAnonymousData.html#Testify_IAnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution_
   commentId: M:Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)
   fullName: Testify.IAnonymousData.AnyDouble(System.Double, System.Double, Testify.Distribution)
-- uid: Testify.IAnonymousData.Populate(System.Object,System.Boolean)
-  name: Populate(Object, Boolean)
-  href: api/Testify.IAnonymousData.html#Testify_IAnonymousData_Populate_System_Object_System_Boolean_
-  commentId: M:Testify.IAnonymousData.Populate(System.Object,System.Boolean)
-  fullName: Testify.IAnonymousData.Populate(System.Object, System.Boolean)
+- uid: Testify.IAnonymousData.Populate``1(``0,System.Boolean)
+  name: Populate<TInstance>(TInstance, Boolean)
+  href: api/Testify.IAnonymousData.html#Testify_IAnonymousData_Populate__1___0_System_Boolean_
+  commentId: M:Testify.IAnonymousData.Populate``1(``0,System.Boolean)
+  name.vb: Populate(Of TInstance)(TInstance, Boolean)
+  fullName: Testify.IAnonymousData.Populate<TInstance>(TInstance, System.Boolean)
+  fullName.vb: Testify.IAnonymousData.Populate(Of TInstance)(TInstance, System.Boolean)
 - uid: Testify.IAnonymousDataContext
   name: IAnonymousDataContext
   href: api/Testify.IAnonymousDataContext.html#Testify_IAnonymousDataContext
@@ -971,6 +992,13 @@ references:
   href: api/Testify.IRegisterAnonymousData.html#Testify_IRegisterAnonymousData
   commentId: T:Testify.IRegisterAnonymousData
   fullName: Testify.IRegisterAnonymousData
+- uid: Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
+  name: Register(PropertyInfo, Func<IAnonymousData, Object>)
+  href: api/Testify.IRegisterAnonymousData.html#Testify_IRegisterAnonymousData_Register_System_Reflection_PropertyInfo_System_Func_Testify_IAnonymousData_System_Object__
+  commentId: M:Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
+  name.vb: Register(PropertyInfo, Func(Of IAnonymousData, Object))
+  fullName: Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, System.Object>)
+  fullName.vb: Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo, System.Func(Of Testify.IAnonymousData, System.Object))
 - uid: Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
   name: Register(Type, Func<IAnonymousData, Object>)
   href: api/Testify.IRegisterAnonymousData.html#Testify_IRegisterAnonymousData_Register_System_Type_System_Func_Testify_IAnonymousData_System_Object__
