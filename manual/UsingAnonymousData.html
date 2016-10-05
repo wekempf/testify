@@ -5,12 +5,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>&#128295; Using AnonymousData </title>
+    <title>Using AnonymousData </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="&#128295; Using AnonymousData ">
+    <meta name="title" content="Using AnonymousData ">
     <meta name="generator" content="docfx 2.5.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
@@ -64,12 +65,100 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="UsingAnonymousData">
-              <h1 id="-using-anonymousdata" sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="5" sourceendlinenumber="6">🔧 Using AnonymousData</h1>
+              <h1 id="using-anonymousdata" sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="5" sourceendlinenumber="6">Using AnonymousData</h1>
               
-<blockquote sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="8" sourceendlinenumber="8"><p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="8" sourceendlinenumber="8"><strong>Note</strong></p>
-<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="10" sourceendlinenumber="10">This topic hasn&#39;t been written yet!</p>
-</blockquote>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="8" sourceendlinenumber="14">It&#39;s vital that unit tests be written to make what is being tested as completely comprehensible as possible.
+Extra &quot;noise&quot; in tests make it harder to understand the test &quot;at a glance&quot;. When code is modified that results
+in failing unit tests, any impediment to understanding what is being tested and why it failed is very detrimental
+to the development workflow. If a developer has to spend too much time figuring out how to fix their code or
+update a test to make it pass again they are likely to give up in frustration and make incorrect test changes
+or worse, disable the test. So, if unit tests are to be seen as beneficial instead of detrimental to developer
+productivity, tests have to be easily understood.</p>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="16" sourceendlinenumber="24">One of the biggest factors in making a unit test difficult to understand is lengthy and complex setup (arrange
+in AAA) code. It&#39;s not uncommon for a test to need to create lots of objects and set many properties before
+the test&#39;s Act phase. Often, most of this setup is just ceremony, and not really relevant to what&#39;s being
+tested. For example, to test a Search method on a custom collection you&#39;d have to first create the collection
+and populate it with items. Ensuring the collection contains a specific item to search for is relevant here,
+but the rest of the collection&#39;s items really aren&#39;t. They are necessary, but what items are added doesn&#39;t
+make any real difference to the outcome of the test. This is a very simple example, but you can imagine many
+other more complex scenarios where the majority of the test setup is necessary but not directly related to
+the behavior of the test.</p>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="26" sourceendlinenumber="31">This is where <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> comes in. <code>AnonymousData</code> is a general purpose object factory specfically
+designed to create &quot;random&quot; objects for unit testing. Random may sound like a bad thing. After all, you don&#39;t
+want random behavior in your tests. However, the random objects created here are very specifically for things
+that are needed to execute a test, but that won&#39;t effect the outcome of the test. This actually provides
+another benefit, by clearly stating in the test what portions of the setup are relevant and what portions are
+necessary but do not effect the outcome of the test.</p>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="33" sourceendlinenumber="33">Here&#39;s a typical usage example:</p>
+<pre sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="35" sourceendlinenumber="50"><code class="lang-csharp">public void IndexOf_Item_ShouldReturnIndex()
+{
+    var item = 10;
+    var anon = new AnonymousData();
+    var front = anon.AnyEnumerable&lt;int&gt;().Where(i =&gt; i != item).ToArray();
+    var back = anon.AnyEnumerable&lt;int&gt;().Where(i =&gt; i != item);
+    var list = new List&lt;int&gt;(front);
+    list.Add(item);
+    list.AddRange(back);
 
+    var result = list.IndexOf(item);
+
+    Assert(result).IsEqualTo(front.Length);
+}
+</code></pre><h2 id="registering-factories" sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="52" sourceendlinenumber="52">Registering Factories</h2>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="54" sourceendlinenumber="60"><code>AnonymousData</code> knows how to create random primitive values, as well as several other common data types such
+as <code>DateTime</code>. For types that it doesn&#39;t know about it will try and create a random instance by using the
+type&#39;s public constructor with the fewest parameters, and creating random values for those parameters.
+This means that most types can be randomly created by <code>AnonymousData</code> &quot;out of the box&quot;. However, some types
+may not be creatable using this simple strategy, or you may need more control over how the object is created.
+In these scenarios it&#39;s possible to register a factory callback with the <code>AnonymousData</code> instance that
+will be used any time you need an instance of that type.</p>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="62" sourceendlinenumber="62">Here&#39;s an example:</p>
+<pre sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="64" sourceendlinenumber="68"><code class="lang-csharp">var anon = new AnonymousData();
+anon.Register&lt;Person&gt;(a =&gt; new Person(a.AnyFirstName(), a.AnyLastName()));
+var person = anon.Any&lt;Person&gt;();
+</code></pre><p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="70" sourceendlinenumber="71">In addition to registering factories with a specific instance you may also register default factories to use
+with all instances of <code>AnonymousData</code>, by using the static <code>RegisterDefault</code> method.</p>
+<pre sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="73" sourceendlinenumber="75"><code class="lang-csharp">AnonymousData.RegisterDefault&lt;Person&gt;(a =&gt; new Person(a.AnyFirstName(), a.AnyLastName()));
+</code></pre><p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="77" sourceendlinenumber="84">It&#39;s also often useful to have multiple ways to create an anonymous object. For instance, there are ways
+to control the minimum and maximum values or random <code>Int32</code> instances created by calling the <code>AnyInt32</code>
+extension method. You can define your own extension methods for your specific types as well. It&#39;s always
+a good practice to register one of your extension methods as a factory callback as well. When creating
+an object that has no registered factory it&#39;s always done by using registered factories to create any
+data necessary during construction: extension methods won&#39;t be called unless they are registered. Only
+one such factory may be registered at one time, with the last callback registered being the only callback
+registered.</p>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="86" sourceendlinenumber="91">In general, if only one test needs it, register the factory callback on an <code>AnonymousData</code> instance
+created in that test. If multiple tests in a single test class will need it, either use a helper
+method to create the instance, or create a member instance using your test frameworks test class
+setup functionality, and register the factory there. If more than one test class will need to use
+the factory, register it in your test framework&#39;s test assembly setup, and use <code>RegisterDefault</code>
+to register it for all <code>AnonymousData</code> instances.</p>
+<h2 id="populating-instances" sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="93" sourceendlinenumber="93">Populating instances</h2>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="95" sourceendlinenumber="100">In some scenarios you may need to do more than just create random instances. You may need to populate
+all the public properties of those instances with random values as well. This can be done either
+shallowly (only the properties on the instance) or deeply (properties on the instance and properties
+those values, all the way down the property chain). There are overloads of <code>Any</code> that take a
+<code>PopulationOption</code> enumeration value to create and populate an instance in one call, as well as <code>Populate</code>
+overloads you can call to populate an existing object instance.</p>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="102" sourceendlinenumber="103">Sometimes you need control over how a type is populated, so there are <code>Register</code> and <code>RegisterDefault</code>
+methods that allow you to specify how a specific property is to be populated.</p>
+<div class="NOTE sourceFile=" manual/usinganonymousdata.md"="" sourcestartlinenumber="105" sourceendlinenumber="105" "=""><h5>Note</h5><p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="106" sourceendlinenumber="108">While most types can be created by <code>AnonymousData</code> out of the box, you will likely find that many
+cannot be successfully populated requiring more configuration to specify how specific properties
+need to be populated.</p>
+</div>
+<p sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="110" sourceendlinenumber="110">Here&#39;s an example of using <code>Populate</code>:</p>
+<pre sourcefile="manual/UsingAnonymousData.md" sourcestartlinenumber="112" sourceendlinenumber="124"><code class="lang-csharp">public void Map_EmployeeToEmployeeDto_CreatesEmployeeDto()
+{
+    var anon = new AnonymousData();
+    var employee = anon.Any&lt;Employee&gt;();
+    anon.Populate(employee);
+    var mapper = new Mapper();
+
+    var result = mapper.Map&lt;EmployeeDto&gt;(employee);
+
+    Assert(result).IsNotNull();
+}
+</code></pre>
             </article>
           </div>
           

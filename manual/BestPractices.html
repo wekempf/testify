@@ -5,12 +5,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>&#128295; Best Practices </title>
+    <title>Best Practices </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="&#128295; Best Practices ">
+    <meta name="title" content="Best Practices ">
     <meta name="generator" content="docfx 2.5.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
@@ -64,7 +65,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="BestPractices">
-              <h1 id="-best-practices" sourcefile="manual/BestPractices.md" sourcestartlinenumber="5" sourceendlinenumber="6">🔧 Best Practices</h1>
+              <h1 id="best-practices" sourcefile="manual/BestPractices.md" sourcestartlinenumber="5" sourceendlinenumber="6">Best Practices</h1>
               
 <ol sourcefile="manual/BestPractices.md" sourcestartlinenumber="8" sourceendlinenumber="18">
 <li sourcefile="manual/BestPractices.md" sourcestartlinenumber="8" sourceendlinenumber="8">Test Structure Should Follow Production Code</li>
@@ -80,63 +81,120 @@
 <li sourcefile="manual/BestPractices.md" sourcestartlinenumber="18" sourceendlinenumber="18">Use Attributes that Make a Unit Test Good</li>
 </ol>
 <h2 id="test-structure-should-follow-production-code" sourcefile="manual/BestPractices.md" sourcestartlinenumber="20" sourceendlinenumber="20">Test Structure Should Follow Production Code</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="22" sourceendlinenumber="22">It&#39;s important that you can easily navigate from production code to the related tests and from tests to the related production code. The best way to ensure this can be done is to structure the tests as a mirror of the production code. If you have a production assembly called <code>Util</code> you should have a unit test assembly called <code>Util.Tests</code>. If there&#39;s a class called <code>Util.StringUtilities</code> there should be a test class called <code>Util.StringUtilitiesTests</code>. The folder structures of the production project and the test project should match as well.</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="24" sourceendlinenumber="24"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="24" sourceendlinenumber="24"><strong>Note</strong></p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="26" sourceendlinenumber="26">The names given here are for example. It doesn&#39;t matter what naming scheme you use, so long as it&#39;s logical and consistent.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="22" sourceendlinenumber="26">It&#39;s important that you can easily navigate from production code to the related tests and from tests to the related
+production code. The best way to ensure this can be done is to structure the tests as a mirror of the production
+code. If you have a production assembly called <code>Util</code> you should have a unit test assembly called <code>Util.Tests</code>. If
+there&#39;s a class called <code>Util.StringUtilities</code> there should be a test class called <code>Util.StringUtilitiesTests</code>. The
+folder structures of the production project and the test project should match as well.</p>
+<div class="NOTE sourceFile=" manual/bestpractices.md"="" sourcestartlinenumber="28" sourceendlinenumber="28" "=""><h5>Note</h5><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="29" sourceendlinenumber="30">The names given here are for example. It doesn&#39;t matter what naming scheme you use, so long as it&#39;s logical and
+consistent.</p>
+</div>
+<h2 id="test-name-should-clearly-describe-test" sourcefile="manual/BestPractices.md" sourcestartlinenumber="32" sourceendlinenumber="32">Test Name Should Clearly Describe Test</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="34" sourceendlinenumber="34">Names are always important, and naming is always hard. There&#39;s the old joke:</p>
+<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="36" sourceendlinenumber="36"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="36" sourceendlinenumber="36">There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="38" sourceendlinenumber="38">- Phil Karlton</p>
 </blockquote>
-<h2 id="test-name-should-clearly-describe-test" sourcefile="manual/BestPractices.md" sourcestartlinenumber="28" sourceendlinenumber="28">Test Name Should Clearly Describe Test</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="30" sourceendlinenumber="30">Names are always important, and naming is always hard. There&#39;s the old joke:</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="32" sourceendlinenumber="32"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="32" sourceendlinenumber="32">There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="34" sourceendlinenumber="34">- Phil Karlton</p>
-</blockquote>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="36" sourceendlinenumber="36">Joke as much as you like, though, the fact is naming is really hard. It&#39;s always important to ensure your names are meaningful, but it&#39;s extra important for your unit test methods. When a refactoring in the production code leads to a broken test it is extremely important that the developer is able to figure out what the test is doing very quickly. Any friction here is likely to lead the developer to make inappropriate changes to make the test pass, or worse, to disable the test, just so they can &quot;get on with coding.&quot; If you&#39;re tests are going to be a benefit to your project, and not a source of frustration and pain, then the tests <strong>must be</strong> understandable. The first thing that will help achieve that goal is to have a meaningful name.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="38" sourceendlinenumber="38">There&#39;s another reason your test names have to be meaningful. The name and the test result are the only things that appear in test reports and logs. It&#39;s important that you can tell what&#39;s broken, at a high level at least, just by reading these reports. That&#39;s only possible if your names are meaningful.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="40" sourceendlinenumber="40">Test names should clearly indicate what&#39;s being tested, the conditions under which the test is being run, and the expected results of the test. There have been several suggested naming conventions proposed by various sources. One of the more popular of these follows <code>MethodName_StateUnderTest_ExpectedBehavior</code>. For example, <code>Withdraw_InvalidAccount_ExceptionThrown</code>. Note how this convention includes all the information just stated as needing to be clearly indicated?</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="42" sourceendlinenumber="42"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="42" sourceendlinenumber="42">It&#39;s not being suggested that this naming scheme is the best or even the one you should use. It&#39;s only important that you have a naming scheme that&#39;s consistent and clearly indicates what&#39;s being tested, the conditions under which the test is being run, and the expected results of the test.</p>
-</blockquote>
-<h2 id="follow-aaa-or-four-phase-test-structure" sourcefile="manual/BestPractices.md" sourcestartlinenumber="44" sourceendlinenumber="44">Follow AAA or Four Phase Test Structure</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="46" sourceendlinenumber="46">There&#39;s a well known pattern for structuring unit tests known as AAA, or triple-A. This stands for &quot;Arrange-Act-Assert&quot;, and describes the structure of the unit test. First you arrange everything necessary to perform the test, such as creating objects and data and configuring the environment. Then you act, performing the test operation. Finally you assert what the results of the test are expected to be.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="48" sourceendlinenumber="48">There&#39;s another well known pattern called Four Phase testing. This breaks a test into four &quot;phases&quot;: setup, exercise,  verify and tear down. These two patterns are nearly identical, except Four Phase includes a step for tear down. You should be familiar with both patterns, but in conversation most people only talk about AAA, as the name helps you to remember the steps involved and most unit tests don&#39;t require any tear down.</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="50" sourceendlinenumber="50"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="50" sourceendlinenumber="50"><strong>Note</strong></p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="52" sourceendlinenumber="52">It&#39;s far more likely for tear down to be necessary when doing integration testing than it is when doing unit testing. If you think a unit test requires a tear down step that&#39;s an indication that you might not have fully isolated the code to a single &quot;unit&quot; for testing.</p>
-</blockquote>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="54" sourceendlinenumber="54">These patterns lead to more consistent and easier to understand tests, as well as avoiding the common anti-pattern of interspersing assertions throughout the test.</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="56" sourceendlinenumber="56"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="56" sourceendlinenumber="56"><strong>Remember</strong></p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="58" sourceendlinenumber="58">Having easy to understand tests is the most important thing to achieve in order to ensure your tests are a benefit to your project and not a source of friction and pain.</p>
-</blockquote>
-<h2 id="reduce-coupling-to-non-relevant-production-code" sourcefile="manual/BestPractices.md" sourcestartlinenumber="60" sourceendlinenumber="60">Reduce Coupling to Non-Relevant Production Code</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="62" sourceendlinenumber="62">It can be very frustrating when modifying some production code leads to several unit tests failing. It&#39;s even more frustrating to realize many of those tests aren&#39;t even testing the code you modified. The frustration caused by having to fix all of these tests &quot;for no good reason&quot; can lead to a team avoiding or abandoning testing altogether. So, it&#39;s very important that you decouple your unit test from non-relevant production code as much as possible, in order to avoid changes leading to broken tests that aren&#39;t testing the code that was modified.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="64" sourceendlinenumber="64">This is the first best practice where <code>Testify</code> can be of great help. The <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> class can create objects, data and even mock objects for you, removing the coupling to any constructors in your production code. For more information on using this class, see <a class="xref" href="UsingAnonymousData.html#UsingAnonymousData">&#128295; Using AnonymousData</a>.</p>
-<h2 id="ensure-tests-intent-is-clearly-understandable" sourcefile="manual/BestPractices.md" sourcestartlinenumber="66" sourceendlinenumber="66">Ensure Test&#39;s Intent is Clearly Understandable</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="68" sourceendlinenumber="68">Like naming, it&#39;s always important that your code is understandable: after all, you read code far more often than you write it. Also like naming, this is doubly important for unit tests. When a unit test fails after modifying some production code it&#39;s very important that a developer is able to easily understand the test code in order to fix either the test or the production code quickly. If it&#39;s not easy to understand and fix the code quickly then, again, there&#39;s a tendency to just do anything to &quot;fix&quot; the test, including disabling it, rather than making the appropriate code change.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="70" sourceendlinenumber="70">Following AAA or Four Phase testing helps here. Keeping the Arrange phase short is obviously the most important thing here. This is another area where the <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> class can be of help. It&#39;s ability to create objects and data can often reduce several lines of arrange code to a single method call. Further, when using <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> you&#39;re clearly declaring what parts of the arrangement are actually relevant to the test and what parts are merely necessary to be able to Act. This can lead to much clearer test code, with the intent clearly visible. For more information on using the class, see <a class="xref" href="UsingAnonymousData.html#UsingAnonymousData">&#128295; Using AnonymousData</a>.</p>
-<h2 id="dont-hide-important-test-information" sourcefile="manual/BestPractices.md" sourcestartlinenumber="72" sourceendlinenumber="72">Don&#39;t &quot;Hide&quot; Important Test Information</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="74" sourceendlinenumber="74">Keeping your production code DRY (Don&#39;t Repeat Yourself) is very important. Many people will tell you that test code is not any different, but this is not entirely true. While keeping your test code DRY is often useful and important, you can take that too far and &quot;hide&quot; important information about the test in other methods or abstractions. This leads to the intent of the test becoming less understandable. If there&#39;s any information to be found in a bit of code that is important to understanding the test, no matter how many times you repeat this bit of code in other tests you should <strong>not</strong> follow DRY principals and factor it out into a method or other reusable abstraction. By all means, factor out non-relevant and repeated code, just don&#39;t factor out the relevant code.</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="76" sourceendlinenumber="76"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="76" sourceendlinenumber="76"><strong>Note</strong></p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="78" sourceendlinenumber="78"><a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> is a very useful abstraction for keeping your tests DRY. Just be sure you don&#39;t use it in ways that hide relevant information about what&#39;s being tested.</p>
-</blockquote>
-<h2 id="use-only-a-single-logical-assertion" sourcefile="manual/BestPractices.md" sourcestartlinenumber="80" sourceendlinenumber="80">Use Only a Single &quot;Logical&quot; Assertion</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="82" sourceendlinenumber="82">Many experts and books recommend that a unit test have only one assertion. There are a couple of reasons for this.</p>
-<ol sourcefile="manual/BestPractices.md" sourcestartlinenumber="84" sourceendlinenumber="85">
-<li sourcefile="manual/BestPractices.md" sourcestartlinenumber="84" sourceendlinenumber="84">Code after an assertion fails is not run, since the assertion throws an exception. This can lead to missing or misinformation.</li>
-<li sourcefile="manual/BestPractices.md" sourcestartlinenumber="85" sourceendlinenumber="85">It can make the tests more complicated. Multiple assertions usually mean you&#39;re actually performing multiple tests, which makes the test more complicated and potentially harder to understand.</li>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="40" sourceendlinenumber="46">Joke as much as you like, though, the fact is naming is really hard. It&#39;s always important to ensure your names
+are meaningful, but it&#39;s extra important for your unit test methods. When a refactoring in the production code
+leads to a broken test it is extremely important that the developer is able to figure out what the test is doing
+very quickly. Any friction here is likely to lead the developer to make inappropriate changes to make the test
+pass, or worse, to disable the test, just so they can &quot;get on with coding.&quot; If you&#39;re tests are going to be a
+benefit to your project, and not a source of frustration and pain, then the tests <strong>must be</strong> understandable.
+The first thing that will help achieve that goal is to have a meaningful name.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="48" sourceendlinenumber="50">There&#39;s another reason your test names have to be meaningful. The name and the test result are the only things
+that appear in test reports and logs. It&#39;s important that you can tell what&#39;s broken, at a high level at least,
+just by reading these reports. That&#39;s only possible if your names are meaningful.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="52" sourceendlinenumber="56">Test names should clearly indicate what&#39;s being tested, the conditions under which the test is being run, and
+the expected results of the test. There have been several suggested naming conventions proposed by various sources.
+One of the more popular of these follows <code>MethodName_StateUnderTest_ExpectedBehavior</code>. For example,
+<code>Withdraw_InvalidAccount_ExceptionThrown</code>. Note how this convention includes all the information just stated as
+needing to be clearly indicated?</p>
+<div class="NOTE sourceFile=" manual/bestpractices.md"="" sourcestartlinenumber="58" sourceendlinenumber="58" "=""><h5>Note</h5><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="59" sourceendlinenumber="61">It&#39;s not being suggested that this naming scheme is the best or even the one you should use. It&#39;s only important
+that you have a naming scheme that&#39;s consistent and clearly indicates what&#39;s being tested, the conditions under
+which the test is being run, and the expected results of the test.</p>
+</div>
+<h2 id="follow-aaa-or-four-phase-test-structure" sourcefile="manual/BestPractices.md" sourcestartlinenumber="63" sourceendlinenumber="63">Follow AAA or Four Phase Test Structure</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="65" sourceendlinenumber="68">There&#39;s a well known pattern for structuring unit tests known as AAA, or triple-A. This stands for
+&quot;Arrange-Act-Assert&quot;, and describes the structure of the unit test. First you arrange everything necessary to
+perform the test, such as creating objects and data and configuring the environment. Then you act, performing the
+test operation. Finally you assert what the results of the test are expected to be.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="70" sourceendlinenumber="73">There&#39;s another well known pattern called Four Phase testing. This breaks a test into four &quot;phases&quot;: setup, exercise,
+verify and tear down. These two patterns are nearly identical, except Four Phase includes a step for tear down. You
+should be familiar with both patterns, but in conversation most people only talk about AAA, as the name helps you to
+remember the steps involved and most unit tests don&#39;t require any tear down.</p>
+<div class="NOTE sourceFile=" manual/bestpractices.md"="" sourcestartlinenumber="75" sourceendlinenumber="75" "=""><h5>Note</h5><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="76" sourceendlinenumber="78">It&#39;s far more likely for tear down to be necessary when doing integration testing than it is when doing unit testing.
+If you think a unit test requires a tear down step that&#39;s an indication that you might not have fully isolated the
+code to a single &quot;unit&quot; for testing.</p>
+</div>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="80" sourceendlinenumber="81">These patterns lead to more consistent and easier to understand tests, as well as avoiding the common anti-pattern of
+interspersing assertions throughout the test.</p>
+<div class="IMPORTANT sourceFile=" manual/bestpractices.md"="" sourcestartlinenumber="83" sourceendlinenumber="83" "=""><h5>Important</h5><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="84" sourceendlinenumber="85">Having easy to understand tests is the most important thing to achieve in order to ensure your tests are a benefit to
+your project and not a source of friction and pain.</p>
+</div>
+<h2 id="reduce-coupling-to-non-relevant-production-code" sourcefile="manual/BestPractices.md" sourcestartlinenumber="87" sourceendlinenumber="87">Reduce Coupling to Non-Relevant Production Code</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="89" sourceendlinenumber="93">It can be very frustrating when modifying some production code leads to several unit tests failing. It&#39;s even more
+frustrating to realize many of those tests aren&#39;t even testing the code you modified. The frustration caused by having
+to fix all of these tests &quot;for no good reason&quot; can lead to a team avoiding or abandoning testing altogether. So, it&#39;s
+very important that you decouple your unit test from non-relevant production code as much as possible, in order to avoid
+changes leading to broken tests that aren&#39;t testing the code that was modified.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="95" sourceendlinenumber="97">This is the first best practice where <code>Testify</code> can be of great help. The <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> class can create objects,
+data and even mock objects for you, removing the coupling to any constructors in your production code. For more information
+on using this class, see <a class="xref" href="UsingAnonymousData.html#UsingAnonymousData">Using AnonymousData</a>.</p>
+<h2 id="ensure-tests-intent-is-clearly-understandable" sourcefile="manual/BestPractices.md" sourcestartlinenumber="99" sourceendlinenumber="99">Ensure Test&#39;s Intent is Clearly Understandable</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="101" sourceendlinenumber="105">Like naming, it&#39;s always important that your code is understandable: after all, you read code far more often than you write
+it. Also like naming, this is doubly important for unit tests. When a unit test fails after modifying some production code
+it&#39;s very important that a developer is able to easily understand the test code in order to fix either the test or the
+production code quickly. If it&#39;s not easy to understand and fix the code quickly then, again, there&#39;s a tendency to just do
+anything to &quot;fix&quot; the test, including disabling it, rather than making the appropriate code change.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="107" sourceendlinenumber="112">Following AAA or Four Phase testing helps here. Keeping the Arrange phase short is obviously the most important thing here.
+This is another area where the <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> class can be of help. It&#39;s ability to create objects and data can often
+reduce several lines of arrange code to a single method call. Further, when using <a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> you&#39;re clearly
+declaring what parts of the arrangement are actually relevant to the test and what parts are merely necessary to be able to
+Act. This can lead to much clearer test code, with the intent clearly visible. For more information on using the class, see
+<a class="xref" href="UsingAnonymousData.html#UsingAnonymousData">Using AnonymousData</a>.</p>
+<h2 id="dont-hide-important-test-information" sourcefile="manual/BestPractices.md" sourcestartlinenumber="114" sourceendlinenumber="114">Don&#39;t &quot;Hide&quot; Important Test Information</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="116" sourceendlinenumber="122">Keeping your production code DRY (Don&#39;t Repeat Yourself) is very important. Many people will tell you that test code is not
+any different, but this is not entirely true. While keeping your test code DRY is often useful and important, you can take
+that too far and &quot;hide&quot; important information about the test in other methods or abstractions. This leads to the intent of
+the test becoming less understandable. If there&#39;s any information to be found in a bit of code that is important to
+understanding the test, no matter how many times you repeat this bit of code in other tests you should <strong>not</strong> follow DRY
+principals and factor it out into a method or other reusable abstraction. By all means, factor out non-relevant and repeated
+code, just don&#39;t factor out the relevant code.</p>
+<div class="IMPORTANT sourceFile=" manual/bestpractices.md"="" sourcestartlinenumber="124" sourceendlinenumber="124" "=""><h5>Important</h5><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="125" sourceendlinenumber="126"><a class="xref" href="../api/Testify.AnonymousData.html#Testify_AnonymousData">AnonymousData</a> is a very useful abstraction for keeping your tests DRY. Just be sure you don&#39;t use it in ways that
+hide relevant information about what&#39;s being tested.</p>
+</div>
+<h2 id="use-only-a-single-logical-assertion" sourcefile="manual/BestPractices.md" sourcestartlinenumber="128" sourceendlinenumber="128">Use Only a Single &quot;Logical&quot; Assertion</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="130" sourceendlinenumber="130">Many experts and books recommend that a unit test have only one assertion. There are a couple of reasons for this.</p>
+<ol sourcefile="manual/BestPractices.md" sourcestartlinenumber="132" sourceendlinenumber="134">
+<li sourcefile="manual/BestPractices.md" sourcestartlinenumber="132" sourceendlinenumber="132">Code after an assertion fails is not run, since the assertion throws an exception. This can lead to missing or misinformation.</li>
+<li sourcefile="manual/BestPractices.md" sourcestartlinenumber="133" sourceendlinenumber="134">It can make the tests more complicated. Multiple assertions usually mean you&#39;re actually performing multiple tests, which
+makes the test more complicated and potentially harder to understand.</li>
 </ol>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="87" sourceendlinenumber="87">However, Roy Osherove has this to say.</p>
-<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="89" sourceendlinenumber="89"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="89" sourceendlinenumber="89">My guideline is usually that you test one logical <em>CONCEPT</em> per test. You can have multiple asserts on the same *object*. They will usually be the same concept being tested.</p>
-<ul sourcefile="manual/BestPractices.md" sourcestartlinenumber="91" sourceendlinenumber="91">
-<li sourcefile="manual/BestPractices.md" sourcestartlinenumber="91" sourceendlinenumber="91">Roy Osherove</li>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="136" sourceendlinenumber="136">However, Roy Osherove has this to say.</p>
+<blockquote sourcefile="manual/BestPractices.md" sourcestartlinenumber="138" sourceendlinenumber="139"><p sourcefile="manual/BestPractices.md" sourcestartlinenumber="138" sourceendlinenumber="139">My guideline is usually that you test one logical <em>CONCEPT</em> per test. You can have multiple asserts on the same *object*.
+They will usually be the same concept being tested.</p>
+<ul sourcefile="manual/BestPractices.md" sourcestartlinenumber="141" sourceendlinenumber="141">
+<li sourcefile="manual/BestPractices.md" sourcestartlinenumber="141" sourceendlinenumber="141">Roy Osherove</li>
 </ul>
 </blockquote>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="93" sourceendlinenumber="93">Testify considers this idea to be a &quot;logical&quot; assertion.</p>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="95" sourceendlinenumber="95">Let&#39;s think about this at a higher level. Let&#39;s consider unit testing the <code>Push</code> method on a <code>Stack</code> class. We want to have a unit test <code>Push_Value_AddsValueToStack</code>. This means there&#39;s one &quot;logical&quot; assertion of &quot;value was added.&quot; To actually assert this, though, we&#39;d need to assert several observable states: <code>stack.Count</code> is incremented by one and <code>stack.Contains(value)</code> is <code>true</code>. Testify includes support for &quot;compound assertions&quot; for these scenarios. For more information see <a class="xref" href="Assertions.html#Assertions">Assertions</a>.</p>
-<h2 id="ensure-the-assertion-message-is-clear" sourcefile="manual/BestPractices.md" sourcestartlinenumber="97" sourceendlinenumber="97">Ensure the Assertion Message is Clear</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="99" sourceendlinenumber="99">It&#39;s best practice to not rely on the default messages provided by your assertion framework. When a test fails it&#39;s not very useful to read a message along the lines of &quot;Expected: &#39;1&#39;. Actual: &#39;2&#39;.&quot; This tells you absolutely nothing about why the test fails. Most frameworks, Testify included, allow you to add a more meaningful message to assertion failures, such as &quot;Count was not incremented after adding a new value. Expected: &#39;1&#39;. Actual: &#39;2&#39;.&quot; It&#39;s best practice to always provide such messages with your assertions.</p>
-<h2 id="ensure-tests-are-quick" sourcefile="manual/BestPractices.md" sourcestartlinenumber="101" sourceendlinenumber="101">Ensure Tests are Quick</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="103" sourceendlinenumber="103">This can&#39;t be emphasized enough. Test suites tend to grow very large, and even moderately slow tests can cause the suite itself to take far too long to run. Remember, your unit tests are work best when run after every compilation, so you want the entire suite to run in seconds. If this takes too long developers will run the tests less frequently, if at all.</p>
-<h2 id="avoid-anti-patterns" sourcefile="manual/BestPractices.md" sourcestartlinenumber="105" sourceendlinenumber="105">Avoid Anti-Patterns</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="107" sourceendlinenumber="107">The last bit of advice that can be given is to avoid well known anti-patterns. For more information see <a class="xref" href="AntiPatterns.html#AntiPatterns">Anti-Patterns</a>.</p>
-<h2 id="use-attributes-that-make-a-unit-test-good" sourcefile="manual/BestPractices.md" sourcestartlinenumber="109" sourceendlinenumber="109">Use Attributes that Make a Unit Test Good</h2>
-<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="111" sourceendlinenumber="111">There are several attributes that make a unit test good that you can read about in <a class="xref" href="GoodUnitTests.html#GoodUnitTests">Good Unit Tests</a>.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="143" sourceendlinenumber="143">Testify considers this idea to be a &quot;logical&quot; assertion.</p>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="145" sourceendlinenumber="148">Let&#39;s think about this at a higher level. Let&#39;s consider unit testing the <code>Push</code> method on a <code>Stack</code> class. We want to have a
+unit test <code>Push_Value_AddsValueToStack</code>. This means there&#39;s one &quot;logical&quot; assertion of &quot;value was added.&quot; To actually assert this,
+though, we&#39;d need to assert several observable states: <code>stack.Count</code> is incremented by one and <code>stack.Contains(value)</code> is <code>true</code>.
+Testify includes support for &quot;compound assertions&quot; for these scenarios. For more information see <a class="xref" href="Assertions.html#Assertions">Assertions</a>.</p>
+<h2 id="ensure-the-assertion-message-is-clear" sourcefile="manual/BestPractices.md" sourcestartlinenumber="150" sourceendlinenumber="150">Ensure the Assertion Message is Clear</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="152" sourceendlinenumber="155">It&#39;s best practice to not rely on the default messages provided by your assertion framework. When a test fails it&#39;s not very useful
+to read a message along the lines of &quot;Expected: &#39;1&#39;. Actual: &#39;2&#39;.&quot; This tells you absolutely nothing about why the test fails. Most
+frameworks, Testify included, allow you to add a more meaningful message to assertion failures, such as &quot;Count was not incremented
+after adding a new value. Expected: &#39;1&#39;. Actual: &#39;2&#39;.&quot; It&#39;s best practice to always provide such messages with your assertions.</p>
+<h2 id="ensure-tests-are-quick" sourcefile="manual/BestPractices.md" sourcestartlinenumber="157" sourceendlinenumber="157">Ensure Tests are Quick</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="159" sourceendlinenumber="161">This can&#39;t be emphasized enough. Test suites tend to grow very large, and even moderately slow tests can cause the suite itself to
+take far too long to run. Remember, your unit tests are work best when run after every compilation, so you want the entire suite
+to run in seconds. If this takes too long developers will run the tests less frequently, if at all.</p>
+<h2 id="avoid-anti-patterns" sourcefile="manual/BestPractices.md" sourcestartlinenumber="163" sourceendlinenumber="163">Avoid Anti-Patterns</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="165" sourceendlinenumber="165">The last bit of advice that can be given is to avoid well known anti-patterns. For more information see <a class="xref" href="AntiPatterns.html#AntiPatterns">Anti-Patterns</a>.</p>
+<h2 id="use-attributes-that-make-a-unit-test-good" sourcefile="manual/BestPractices.md" sourcestartlinenumber="167" sourceendlinenumber="167">Use Attributes that Make a Unit Test Good</h2>
+<p sourcefile="manual/BestPractices.md" sourcestartlinenumber="169" sourceendlinenumber="169">There are several attributes that make a unit test good that you can read about in <a class="xref" href="GoodUnitTests.html#GoodUnitTests">Good Unit Tests</a>.</p>
 
             </article>
           </div>

@@ -11,7 +11,7 @@ references:
   name: Assertions
   href: manual/Assertions.html#Assertions
 - uid: BestPractices
-  name: "\xD83D\xDD27 Best Practices"
+  name: Best Practices
   href: manual/BestPractices.html#BestPractices
 - uid: ContractVerifiers
   name: Contract Verifiers
@@ -225,6 +225,34 @@ references:
   name.vb: Register(Type, Func(Of IAnonymousData, Object))
   fullName: Testify.AnonymousData.Register(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.AnonymousData.Register(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
+- uid: Testify.AnonymousData.RegisterDefault(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
+  name: RegisterDefault(PropertyInfo, Func<IAnonymousData, Object>)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_RegisterDefault_System_Reflection_PropertyInfo_System_Func_Testify_IAnonymousData_System_Object__
+  commentId: M:Testify.AnonymousData.RegisterDefault(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
+  name.vb: RegisterDefault(PropertyInfo, Func(Of IAnonymousData, Object))
+  fullName: Testify.AnonymousData.RegisterDefault(System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, System.Object>)
+  fullName.vb: Testify.AnonymousData.RegisterDefault(System.Reflection.PropertyInfo, System.Func(Of Testify.IAnonymousData, System.Object))
+- uid: Testify.AnonymousData.RegisterDefault(System.Type,System.Func{Testify.IAnonymousData,System.Object})
+  name: RegisterDefault(Type, Func<IAnonymousData, Object>)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_RegisterDefault_System_Type_System_Func_Testify_IAnonymousData_System_Object__
+  commentId: M:Testify.AnonymousData.RegisterDefault(System.Type,System.Func{Testify.IAnonymousData,System.Object})
+  name.vb: RegisterDefault(Type, Func(Of IAnonymousData, Object))
+  fullName: Testify.AnonymousData.RegisterDefault(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
+  fullName.vb: Testify.AnonymousData.RegisterDefault(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
+- uid: Testify.AnonymousData.RegisterDefault``1(System.Func{Testify.IAnonymousData,``0})
+  name: RegisterDefault<T>(Func<IAnonymousData, T>)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_RegisterDefault__1_System_Func_Testify_IAnonymousData___0__
+  commentId: M:Testify.AnonymousData.RegisterDefault``1(System.Func{Testify.IAnonymousData,``0})
+  name.vb: RegisterDefault(Of T)(Func(Of IAnonymousData, T))
+  fullName: Testify.AnonymousData.RegisterDefault<T>(System.Func<Testify.IAnonymousData, T>)
+  fullName.vb: Testify.AnonymousData.RegisterDefault(Of T)(System.Func(Of Testify.IAnonymousData, T))
+- uid: Testify.AnonymousData.RegisterDefault``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{Testify.IAnonymousData,``1})
+  name: RegisterDefault<T, TProperty>(Expression<Func<T, TProperty>>, Func<IAnonymousData, TProperty>)
+  href: api/Testify.AnonymousData.html#Testify_AnonymousData_RegisterDefault__2_System_Linq_Expressions_Expression_System_Func___0___1___System_Func_Testify_IAnonymousData___1__
+  commentId: M:Testify.AnonymousData.RegisterDefault``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{Testify.IAnonymousData,``1})
+  name.vb: RegisterDefault(Of T, TProperty)(Expression(Of Func(Of T, TProperty)), Func(Of IAnonymousData, TProperty))
+  fullName: Testify.AnonymousData.RegisterDefault<T, TProperty>(System.Linq.Expressions.Expression<System.Func<T, TProperty>>, System.Func<Testify.IAnonymousData, TProperty>)
+  fullName.vb: Testify.AnonymousData.RegisterDefault(Of T, TProperty)(System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Func(Of Testify.IAnonymousData, TProperty))
 - uid: Testify.AnonymousDataException
   name: AnonymousDataException
   href: api/Testify.AnonymousDataException.html#Testify_AnonymousDataException
@@ -2252,7 +2280,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
 - uid: UsingAnonymousData
-  name: "\xD83D\xDD27 Using AnonymousData"
+  name: Using AnonymousData
   href: manual/UsingAnonymousData.html#UsingAnonymousData
 - uid: WhyUnitTest
   name: Find Bugs
