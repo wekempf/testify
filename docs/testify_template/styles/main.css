@@ -20,3 +20,67 @@ body .toc {
     color: #fff;
     background-color: #143653;
 }
+.NOTE {
+  padding: 1em;
+  margin-top: 0.6em;
+  margin-bottom: 1.2em;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  font-size: 0.9em;
+  line-height: 1.6em;
+  background: #f5f5f5;
+
+  border-color: #4395cc;
+  color: #0070a7;
+}
+.NOTE h5 {
+  font-size: 1.5em;
+
+  color: #0070a7;
+}
+.NOTE h5:before {
+  content: "\f249";
+  font-family: "FontAwesome";
+  margin-right: 0.5em;
+}
+.NOTE>:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.NOTE>:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.IMPORTANT {
+  padding: 1em;
+  margin-top: 0.6em;
+  margin-bottom: 1.2em;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  font-size: 0.9em;
+  line-height: 1.6em;
+  background: #fcf8e3;
+
+  border-color: #8a6d3b;
+  color: #8a6d3b;
+}
+.IMPORTANT h5 {
+  font-size: 1.5em;
+
+  color: #8a6d3b;
+}
+.IMPORTANT h5:before {
+  content: "\f06a";
+  font-family: "FontAwesome";
+  margin-right: 0.5em;
+}
+.IMPORTANT>:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.IMPORTANT>:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}

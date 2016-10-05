@@ -136,7 +136,7 @@ namespace Testify
             Argument.NotNull(propertyExpression, nameof(propertyExpression));
             Argument.NotNull(factory, nameof(factory));
 
-            var member = GetMemberInfo(propertyExpression);
+            var member = ReflectionExtensions.GetMemberInfo(propertyExpression);
             var property = member?.Member as PropertyInfo;
             if (property == null)
             {
@@ -144,29 +144,6 @@ namespace Testify
             }
 
             anon.Register(property, f => factory(f));
-        }
-
-        private static MemberExpression GetMemberInfo(Expression method)
-        {
-            LambdaExpression lambda = method as LambdaExpression;
-            if (lambda == null)
-            {
-                return null;
-            }
-
-            MemberExpression memberExpr = null;
-
-            if (lambda.Body.NodeType == ExpressionType.Convert)
-            {
-                memberExpr =
-                    ((UnaryExpression)lambda.Body).Operand as MemberExpression;
-            }
-            else if (lambda.Body.NodeType == ExpressionType.MemberAccess)
-            {
-                memberExpr = lambda.Body as MemberExpression;
-            }
-
-            return memberExpr;
         }
     }
 }

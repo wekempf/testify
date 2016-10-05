@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace Testify
@@ -111,6 +112,34 @@ namespace Testify
         }
 
         /// <summary>
+        /// Gets the member information.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        /// <returns>The member information.</returns>
+        internal static MemberExpression GetMemberInfo(Expression method)
+        {
+            LambdaExpression lambda = method as LambdaExpression;
+            if (lambda == null)
+            {
+                return null;
+            }
+
+            MemberExpression memberExpr = null;
+
+            if (lambda.Body.NodeType == ExpressionType.Convert)
+            {
+                memberExpr =
+                    ((UnaryExpression)lambda.Body).Operand as MemberExpression;
+            }
+            else if (lambda.Body.NodeType == ExpressionType.MemberAccess)
+            {
+                memberExpr = lambda.Body as MemberExpression;
+            }
+
+            return memberExpr;
+        }
+
+        /// <summary>
         /// Gets the method function.
         /// </summary>
         /// <typeparam name="T">The parameters type.</typeparam>
@@ -191,22 +220,6 @@ namespace Testify
         }
 
         /// <summary>
-        /// Determines whether this instance is a collection type.
-        /// </summary>
-        /// <param name="sourceType">Type of the source.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified source type is collection; otherwise, <c>false</c>.
-        /// </returns>
-        internal static bool IsCollectionType(this Type sourceType)
-        {
-            Argument.NotNull(sourceType, nameof(sourceType));
-
-            return sourceType.Is(typeof(ICollection<>)) ||
-                sourceType.Is(typeof(ICollection)) ||
-                sourceType.GetInterfaces().Any(t => t.IsCollectionType());
-        }
-
-        /// <summary>
         /// Determines whether the specified source type is abstract.
         /// </summary>
         /// <param name="sourceType">Type of the source.</param>
@@ -260,6 +273,22 @@ namespace Testify
             Argument.NotNull(sourceType, nameof(sourceType));
 
             return IsAssignable(sourceType, typeof(TType));
+        }
+
+        /// <summary>
+        /// Determines whether this instance is a collection type.
+        /// </summary>
+        /// <param name="sourceType">Type of the source.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified source type is collection; otherwise, <c>false</c>.
+        /// </returns>
+        internal static bool IsCollectionType(this Type sourceType)
+        {
+            Argument.NotNull(sourceType, nameof(sourceType));
+
+            return sourceType.Is(typeof(ICollection<>)) ||
+                sourceType.Is(typeof(ICollection)) ||
+                sourceType.GetInterfaces().Any(t => t.IsCollectionType());
         }
 
         /// <summary>
