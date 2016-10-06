@@ -24,7 +24,7 @@ try {
     Write-Host $command
     Invoke-Expression $command
     if ($PublishResults) {
-        $command = "${coveralls} -opencover -i `"${coverageFile}`" -repoToken $env:CoverallsToken -commitId `"$env:APPVEYOR_REPO_COMMIT`" -commitBranch `"$env:APPVEYOR_REPO_BRANCH`" -commitAuthor `"$env:APPVEYOR_REPO_COMMIT_AUTHOR`" -commitEmail `"$env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL`" -commitMessage `"$env:APPVEYOR_REPO_COMMIT_MESSAGE`" -jobId `"$env:APPVEYOR_JOB_ID`""
+        $command = "${coveralls} --opencover -i `"${coverageFile}`" --repoToken $env:CoverallsToken --commitId `"$env:APPVEYOR_REPO_COMMIT`" --commitBranch `"$env:APPVEYOR_REPO_BRANCH`" --commitAuthor `"$env:APPVEYOR_REPO_COMMIT_AUTHOR`" --commitEmail `"$env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL`" --commitMessage `"$env:APPVEYOR_REPO_COMMIT_MESSAGE`" --jobId `"$env:APPVEYOR_JOB_ID`""
         Write-Host $command
         Invoke-Expression $command
     }
