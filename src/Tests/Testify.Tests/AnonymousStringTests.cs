@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Testify
 {
-    public class StringFactoryTests
+    public class AnonymousStringTests
     {
         [Fact]
         public void AnyString()

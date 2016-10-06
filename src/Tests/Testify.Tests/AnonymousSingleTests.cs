@@ -2,7 +2,7 @@
 
 namespace Testify
 {
-    public class SingleFactoryTests
+    public class AnonymousSingleTests
     {
         [Fact]
         public void AnySingle()
