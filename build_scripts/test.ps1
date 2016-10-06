@@ -20,7 +20,7 @@ try {
     Write-Host "Discovered OpenCover at ${openCover}"
     Write-Host "Discovered Xunit console runner at ${xunitRunner}"
     Write-Host "Discovered test assemblies $($testAssemblies -join ',')"
-    $command = "${openCover} -register:user -target:`"${xunitRunner}`" -targetargs:`"${testAssemblies} -appveyor -noshadow`" -filter:`"+[*]* -[*.Tests]* -[xunit.*]*`" -output:${coverageFile}"
+    $command = "${openCover} -register:user -target:`"${xunitRunner}`" -targetargs:`"${testAssemblies} -appveyor -noshadow`" -filter:`"+[*]* -[*]*.g.cs -[*.Tests]* -[xunit.*]*`" -output:${coverageFile}"
     Write-Host $command
     Invoke-Expression $command
     if ($PublishResults) {
