@@ -123,7 +123,7 @@ namespace Testify
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble(double.MinValue, double.MaxValue, Distribution.Uniform));
+            classifier.Classify(() => anon.AnyDouble(float.MinValue, float.MaxValue, Distribution.Uniform));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);
@@ -138,14 +138,7 @@ namespace Testify
             classifier.AddClassification("LT", d => d < 0);
 
             var rand = new Random();
-            classifier.Classify(() =>
-            {
-                var r = rand.NextDouble();
-                this.tracer.WriteLine($"NextDouble: {r}");
-                var result = anon.AnyDouble(double.MinValue, double.MaxValue, null);
-                this.tracer.WriteLine($"AnyDouble: {result}");
-                return result;
-            });
+            classifier.Classify(() => anon.AnyDouble(float.MinValue, float.MaxValue, null));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);

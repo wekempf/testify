@@ -80,7 +80,7 @@ namespace Testify
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble(double.MinValue, double.MaxValue));
+            classifier.Classify(() => anon.AnyDouble(float.MinValue, float.MaxValue));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);

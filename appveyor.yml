@@ -14,6 +14,8 @@ configuration: Release
 environment:
   GitHubPersonalAccessToken:
     secure: H9H2HNKz0vEz91m6b5aEoEeb3xhrI3rbsJKvmbkQFbwq0P+zqhoPdcx4EBqNbvYl
+  CoverallsToken:
+    secure: uCTsfs+WNEYvAjp8jZ8CLqfNe2JsKvOCDIXdIFsNovbvcrvHzt7J+yZdvi4w+h6y
 
 install:
   - ps: .\build_scripts\install.ps1 $env:APPVEYOR_BUILD_FOLDER
@@ -33,6 +35,9 @@ build:
 after_build:
   - ps: .\build_scripts\build_docs.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER"
 
+test_script:
+  - ps: .\build_scripts\test.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER" -PublishResults
+  
 after_test:
   - ps: Write-Host $env:APPVEYOR_REPO_BRANCH
   - ps: if ($env:APPVEYOR_REPO_BRANCH -eq 'develop') { .\build_scripts\push_pages.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER" -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken }

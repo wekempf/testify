@@ -19,7 +19,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyDouble(double.MinValue, double.MaxValue, Distribution.Uniform);
+            return anon.AnyDouble(float.MinValue, float.MaxValue, Distribution.Uniform);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyDouble(double.MinValue, double.MaxValue, distribution);
+            return anon.AnyDouble(float.MinValue, float.MaxValue, distribution);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyDouble(0, double.MaxValue, Distribution.Uniform);
+            return anon.AnyDouble(0, float.MaxValue, Distribution.Uniform);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyDouble(0, double.MaxValue, distribution);
+            return anon.AnyDouble(0, float.MaxValue, distribution);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyDouble(double.MinValue, 0, Distribution.Uniform);
+            return anon.AnyDouble(float.MinValue, 0, Distribution.Uniform);
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyDouble(double.MinValue, 0, distribution);
+            return anon.AnyDouble(float.MinValue, 0, distribution);
         }
     }
 }
