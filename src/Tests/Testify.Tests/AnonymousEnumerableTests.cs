@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
 namespace Testify
 {
-    public class EnumerableFactoryTests
+    public class AnonymousEnumerableTests
     {
         [Fact]
         public void TestAnyEnumerable_Type()

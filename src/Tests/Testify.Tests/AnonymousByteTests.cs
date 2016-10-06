@@ -2,7 +2,7 @@
 
 namespace Testify
 {
-    public class ByteFactoryTests
+    public class AnonymousByteTests
     {
         [Fact]
         public void AnyByte()

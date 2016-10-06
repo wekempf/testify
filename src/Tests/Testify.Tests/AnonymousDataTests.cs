@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Testify
 {
-    public class ObjectFactoryTests
+    public class AnonymousDataTests
     {
+        private readonly ITestOutputHelper tracer;
+
+        public AnonymousDataTests(ITestOutputHelper tracer)
+        {
+            this.tracer = tracer;
+        }
+
         [Fact]
         public void Any_ArrayOfType()
         {
@@ -115,7 +123,7 @@ namespace Testify
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble(double.MinValue, double.MaxValue, Distribution.Uniform));
+            classifier.Classify(() => anon.AnyDouble(float.MinValue, float.MaxValue, Distribution.Uniform));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);
@@ -129,7 +137,8 @@ namespace Testify
             classifier.AddClassification("GT", d => d > 0);
             classifier.AddClassification("LT", d => d < 0);
 
-            classifier.Classify(() => anon.AnyDouble(double.MinValue, double.MaxValue, null));
+            var rand = new Random();
+            classifier.Classify(() => anon.AnyDouble(float.MinValue, float.MaxValue, null));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);

@@ -186,8 +186,13 @@ namespace Testify
         public double AnyDouble(double minimum, double maximum, Distribution distribution)
         {
             Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            if (double.IsInfinity(maximum - minimum))
+            {
+                throw new ArgumentOutOfRangeException($"The range of {nameof(maximum)} - {nameof(minimum)} is Infinity.");
+            }
 
-            return ((distribution ?? Distribution.Uniform).NextDouble(this.random) * (maximum - minimum)) + minimum;
+            var next = (distribution ?? Distribution.Uniform).NextDouble(this.random);
+            return minimum + (next * (maximum - minimum));
         }
 
         /// <summary>

@@ -2,7 +2,7 @@
 
 namespace Testify
 {
-    public class CharFactoryTests
+    public class AnonymousCharTests
     {
         [Fact]
         public void AnyAlphaChar()

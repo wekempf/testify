@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Testify
 {
-    public class DateTimeOffsetFactoryTests
+    public class AnonymousDateTimeOffsetTests
     {
         [Fact]
         public void AnyDateTimeOffset()

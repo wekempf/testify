@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Testify
 {
-    public class EnumFactoryTests
+    public class AnonymousEnumTests
     {
         [Flags]
         private enum FlagsEnum
