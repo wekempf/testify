@@ -35,7 +35,6 @@ namespace Testify
             RegisterDefault(f => f.AnyDecimal());
             RegisterDefault(f => f.AnyString());
             RegisterDefault(f => f.AnyTimeSpan());
-            RegisterDefault(f => f.AnyTimeZoneInfo());
         }
 
         /// <summary>

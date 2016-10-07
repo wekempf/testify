@@ -6,7 +6,21 @@ using Xunit.Abstractions;
 
 namespace Testify
 {
-    public class AnonymousDataTests
+    public class AnonymousDataTestsFixture
+    {
+        public AnonymousDataTestsFixture()
+        {
+            AnonymousData.RegisterDefault<GloballyRegisteredModel>(f => new GloballyRegisteredModel { Value = "xyzzy" });
+            AnonymousData.RegisterDefault((GloballyRegisteredModel m) => m.Value, f => "xyzzy");
+        }
+
+        public class GloballyRegisteredModel
+        {
+            public string Value { get; set; }
+        }
+    }
+
+    public class AnonymousDataTests : IClassFixture<AnonymousDataTestsFixture>
     {
         private readonly ITestOutputHelper tracer;
 
@@ -219,11 +233,59 @@ namespace Testify
         public void Register()
         {
             var anon = new AnonymousData();
-            anon.Register<IModel>(f => new Model());
 
+            anon.Register<IModel>(f => new Model());
             var result = (IModel)anon.Any(typeof(IModel));
 
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void RegisterDefault()
+        {
+            var anon = new AnonymousData();
+
+            // Registration happens in the class fixture AnonymousDataTestsFixture.
+            var result = anon.Any<AnonymousDataTestsFixture.GloballyRegisteredModel>();
+
+            Assert.Equal("xyzzy", result.Value);
+        }
+
+        [Fact]
+        public void Register_PropertyExpression()
+        {
+            var anon = new AnonymousData();
+            var model = anon.Any<Model>();
+
+            anon.Register((DeepModel m) => m.Model, a => model);
+            var result = anon.Any<DeepModel>(PopulateOption.Deep);
+
+            Assert.Same(model, result.Model);
+        }
+
+        [Fact]
+        public void RegisterDefault_PropertyExpression()
+        {
+            var anon = new AnonymousData();
+            var model = new AnonymousDataTestsFixture.GloballyRegisteredModel();
+
+            // Registration happens in the class fixture AnonymousDataTestsFixture.
+            anon.Populate(model);
+
+            Assert.Equal("xyzzy", model.Value);
+        }
+
+        [Fact]
+        public void Any_Populate_ShouldPopulateFirstLevel()
+        {
+            var anon = new AnonymousData();
+
+            var result = anon.Any<DeepModel>();
+            anon.Populate(result);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Model);
+            Assert.Equal(result.Model.Value, nameof(Model));
         }
 
         [Fact]

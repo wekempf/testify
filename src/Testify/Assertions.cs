@@ -85,40 +85,6 @@ namespace Testify
         }
 
         /// <summary>
-        /// Combines the specified assertions actions into a single assertion action.
-        /// </summary>
-        /// <typeparam name="T">The type to assert on.</typeparam>
-        /// <param name="message">The message to display if any of the assertions fail.</param>
-        /// <param name="assertions">The assertion actions to invoke.</param>
-        /// <returns>An <see cref="Action{T}"/> that combines the assertions.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
-        public static Action<T> Combine<T>(string message, params Action<T>[] assertions)
-        {
-            Argument.NotNullOrEmpty(message, nameof(message));
-            Argument.NotNull(assertions, nameof(assertions));
-
-            return Combine(message, (IEnumerable<Action<T>>)assertions);
-        }
-
-        /// <summary>
-        /// Combines the specified assertions actions into a single assertion action.
-        /// </summary>
-        /// <typeparam name="T">The type to assert on.</typeparam>
-        /// <param name="message">The message to display if any of the assertions fail.</param>
-        /// <param name="assertions">The assertion actions to invoke.</param>
-        /// <returns>An <see cref="Action{T}"/> that combines the assertions.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
-        public static Action<T> Combine<T>(string message, IEnumerable<Action<T>> assertions)
-        {
-            Argument.NotNullOrEmpty(message, nameof(message));
-            Argument.NotNull(assertions, nameof(assertions));
-
-            return e => AssertAll(message, assertions.Select(a => new Action(() => a(e))).ToArray());
-        }
-
-        /// <summary>
         /// Fails with an <see cref="AssertionException"/> without checking any conditions. Displays
         /// a message.
         /// </summary>

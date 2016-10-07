@@ -99,7 +99,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.Populate(instance, true);
+            return anon.Populate(instance, false);
         }
 
         /// <summary>

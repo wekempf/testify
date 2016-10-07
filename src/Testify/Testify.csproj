@@ -61,7 +61,6 @@
     <Compile Include="AnonymousSingle.cs" />
     <Compile Include="AnonymousString.cs" />
     <Compile Include="AnonymousTimeSpan.cs" />
-    <Compile Include="AnonymousTimeZoneInfo.cs" />
     <Compile Include="Argument.cs" />
     <Compile Include="AssertionException.cs" />
     <Compile Include="Assertions.cs" />

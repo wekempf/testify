@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 using static Testify.Assertions;
 
@@ -141,7 +143,7 @@ namespace Testify
         [Fact]
         public void AllItemsAreUnique_UniqueItems_ShouldNotThrow()
         {
-            Assert(new[] { "foo", "bar", "baz" }).AllItemsAreUnique();
+            Assert(Enumerable.Range(0, 10)).AllItemsAreUnique();
         }
 
         [Fact]
@@ -1674,6 +1676,186 @@ namespace Testify
             }
 
             Fail("IsSequenceEqualTo did not throw.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_Subset_ShouldNotThrow()
+        {
+            var random = new Random(1337);
+            var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+            var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+            Assert(partial).IsSubsetOf(full);
+        }
+
+        [Fact]
+        public void IsSubsetOf_ComparerSubset_ShouldNotThrow()
+        {
+            var random = new Random(1337);
+            var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+            var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+            Assert(partial).IsSubsetOf(full, EqualityComparer<int>.Default);
+        }
+
+        [Fact]
+        public void IsSubsetOf_MessageSubset_ShouldNotThrow()
+        {
+            var random = new Random(1337);
+            var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+            var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+            Assert(partial).IsSubsetOf(full, "Some message.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_ComparerMessageSubset_ShouldNotThrow()
+        {
+            var random = new Random(1337);
+            var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+            var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+            Assert(partial).IsSubsetOf(full, EqualityComparer<int>.Default, "Some message.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_MessageParametersSubset_ShouldNotThrow()
+        {
+            var random = new Random(1337);
+            var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+            var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+            Assert(partial).IsSubsetOf(full, "Some {0}.", "message");
+        }
+
+        [Fact]
+        public void IsSubsetOf_ComparerMessageParametersSubset_ShouldNotThrow()
+        {
+            var random = new Random(1337);
+            var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+            var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+            Assert(partial).IsSubsetOf(full, EqualityComparer<int>.Default, "Some {0}.", "message");
+        }
+
+        [Fact]
+        public void IsSubsetOf_NonSubset_ShouldThrow()
+        {
+            try
+            {
+                var random = new Random(1337);
+                var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+                var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+                Assert(full).IsSubsetOf(partial);
+            }
+            catch (AssertionException e)
+            {
+                e.ExpectMessage("IsSubsetOf failed.");
+                return;
+            }
+
+            Fail("IsSubsetOf did not throw.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_ComparerNonSubset_ShouldThrow()
+        {
+            try
+            {
+                var random = new Random(1337);
+                var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+                var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+                Assert(full).IsSubsetOf(partial, EqualityComparer<int>.Default);
+            }
+            catch (AssertionException e)
+            {
+                e.ExpectMessage("IsSubsetOf failed.");
+                return;
+            }
+
+            Fail("IsSubsetOf did not throw.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_MessageNonSubset_ShouldThrow()
+        {
+            try
+            {
+                var random = new Random(1337);
+                var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+                var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+                Assert(full).IsSubsetOf(partial, "Some message.");
+            }
+            catch (AssertionException e)
+            {
+                e.ExpectMessage("Some message. IsSubsetOf failed.");
+                return;
+            }
+
+            Fail("IsSubsetOf did not throw.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_ComparerMessageNonSubset_ShouldThrow()
+        {
+            try
+            {
+                var random = new Random(1337);
+                var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+                var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+                Assert(full).IsSubsetOf(partial, EqualityComparer<int>.Default, "Some message.");
+            }
+            catch (AssertionException e)
+            {
+                e.ExpectMessage("Some message. IsSubsetOf failed.");
+                return;
+            }
+
+            Fail("IsSubsetOf did not throw.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_MessageParametersNonSubset_ShouldThrow()
+        {
+            try
+            {
+                var random = new Random(1337);
+                var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+                var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+                Assert(full).IsSubsetOf(partial, "Some {0}.", "message");
+            }
+            catch (AssertionException e)
+            {
+                e.ExpectMessage("Some message. IsSubsetOf failed.");
+                return;
+            }
+
+            Fail("IsSubsetOf did not throw.");
+        }
+
+        [Fact]
+        public void IsSubsetOf_ComparerMessageParametersNonSubset_ShouldThrow()
+        {
+            try
+            {
+                var random = new Random(1337);
+                var full = Enumerable.Range(0, 10).OrderBy(_ => random.Next()).ToArray();
+                var partial = full.Take(5).OrderBy(_ => random.Next()).ToArray();
+
+                Assert(full).IsSubsetOf(partial, EqualityComparer<int>.Default, "Some {0}.", "message");
+            }
+            catch (AssertionException e)
+            {
+                e.ExpectMessage("Some message. IsSubsetOf failed.");
+                return;
+            }
+
+            Fail("IsSubsetOf did not throw.");
         }
     }
 }

@@ -1310,7 +1310,7 @@ namespace Testify
             Argument.NotNull<IEnumerable>(collection.Value, "collection.Value");
             Argument.NotNull(superset, nameof(superset));
 
-            collection.IsSubsetOf(superset, EqualityComparer<T>.Default, null, null);
+            collection.IsSubsetOf(superset, EqualityComparer<object>.Default, null, null);
         }
 
         /// <summary>
@@ -1350,7 +1350,7 @@ namespace Testify
             Argument.NotNull<IEnumerable>(collection.Value, "collection.Value");
             Argument.NotNull(superset, nameof(superset));
 
-            collection.IsSubsetOf(superset, EqualityComparer<T>.Default, message, null);
+            collection.IsSubsetOf(superset, EqualityComparer<object>.Default, message, null);
         }
 
         /// <summary>
@@ -1394,7 +1394,7 @@ namespace Testify
             Argument.NotNull<IEnumerable>(collection.Value, "collection.Value");
             Argument.NotNull(superset, nameof(superset));
 
-            collection.IsSubsetOf(superset, EqualityComparer<T>.Default, message, parameters);
+            collection.IsSubsetOf(superset, EqualityComparer<object>.Default, message, parameters);
         }
 
         /// <summary>

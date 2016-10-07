@@ -47,8 +47,10 @@ namespace Testify
         /// <param name="property">The property that could not be populated.</param>
         /// <param name="innerException">The inner exception.</param>
         public AnonymousDataException(PropertyInfo property, Exception innerException)
-            : base($"Unable to populate property {property.Name} on type {property.DeclaringType}.", innerException)
+            : base($"Unable to populate property {property?.Name} on type {property?.DeclaringType}.", innerException)
         {
+            Argument.NotNull(property, nameof(property));
+            this.AnonymousType = property.DeclaringType;
         }
 
         /// <summary>

@@ -88,18 +88,6 @@ namespace Testify
         }
 
         /// <summary>
-        /// Gets the generic type arguments for the <paramref name="sourceType"/>.
-        /// </summary>
-        /// <param name="sourceType">The source type.</param>
-        /// <returns>The generic type arguments for the <paramref name="sourceType"/>.</returns>
-        internal static Type[] GetGenericTypeArguments(this Type sourceType)
-        {
-            Argument.NotNull(sourceType, nameof(sourceType));
-
-            return sourceType.GetTypeInfo().GenericTypeArguments;
-        }
-
-        /// <summary>
         /// Gets the interfaces implemented by the <paramref name="sourceType"/>.
         /// </summary>
         /// <param name="sourceType">The source type.</param>
@@ -155,20 +143,6 @@ namespace Testify
             var typeInfo = sourceType.GetTypeInfo();
             var method = typeInfo.DeclaredMethods.Single(m => m.Name == methodName);
             return (Func<T, TResult>)(object)method.CreateDelegate(typeof(Func<T, TResult>));
-        }
-
-        /// <summary>
-        /// Gets the methods.
-        /// </summary>
-        /// <param name="sourceType">Type of the source.</param>
-        /// <param name="methodName">The name.</param>
-        /// <returns>The methods.</returns>
-        internal static IEnumerable<MethodInfo> GetMethods(this Type sourceType, string methodName)
-        {
-            Argument.NotNull(sourceType, nameof(sourceType));
-            Argument.NotNullOrEmpty(methodName, nameof(methodName));
-
-            return sourceType.GetTypeInfo().DeclaredMethods.Where(m => m.Name == methodName);
         }
 
         /// <summary>
@@ -235,20 +209,6 @@ namespace Testify
         /// <summary>
         /// Determines whether or not the <paramref name="sourceType"/> is assignable from the specified type.
         /// </summary>
-        /// <typeparam name="TType">The type of the type.</typeparam>
-        /// <param name="sourceType">The source type.</param>
-        /// <returns><c>true</c> if the <paramref name="sourceType"/> is assignable to the
-        /// specified type; otherwise, <c>false</c>.</returns>
-        internal static bool IsAssignableFrom<TType>(this Type sourceType)
-        {
-            Argument.NotNull(sourceType, nameof(sourceType));
-
-            return IsAssignable(typeof(TType), sourceType);
-        }
-
-        /// <summary>
-        /// Determines whether or not the <paramref name="sourceType"/> is assignable from the specified type.
-        /// </summary>
         /// <param name="sourceType">The source type.</param>
         /// <param name="type">The type.</param>
         /// <returns><c>true</c> if the <paramref name="sourceType"/> is assignable to the
@@ -259,20 +219,6 @@ namespace Testify
             Argument.NotNull(type, nameof(type));
 
             return IsAssignable(type, sourceType);
-        }
-
-        /// <summary>
-        /// Determines whether or not the <paramref name="sourceType"/> is assignable to the specified type.
-        /// </summary>
-        /// <typeparam name="TType">The type of the type.</typeparam>
-        /// <param name="sourceType">The source type.</param>
-        /// <returns><c>true</c> if the <paramref name="sourceType"/> is assignable to the
-        /// specified type; otherwise, <c>false</c>.</returns>
-        internal static bool IsAssignableTo<TType>(this Type sourceType)
-        {
-            Argument.NotNull(sourceType, nameof(sourceType));
-
-            return IsAssignable(sourceType, typeof(TType));
         }
 
         /// <summary>
@@ -393,19 +339,6 @@ namespace Testify
             }
 
             return sourceType.GetTypeInfo().BaseType.IsType(type);
-        }
-
-        /// <summary>
-        /// Determines whether or not the <paramref name="sourceType"/> is a value type.
-        /// </summary>
-        /// <param name="sourceType">The source type.</param>
-        /// <returns><c>true</c> if the <paramref name="sourceType"/> is a value type;
-        /// otherwise, <c>false</c>.</returns>
-        internal static bool IsValueType(this Type sourceType)
-        {
-            Argument.NotNull(sourceType, nameof(sourceType));
-
-            return sourceType.GetTypeInfo().IsValueType;
         }
 
         private static bool IsAssignable(Type from, Type to)

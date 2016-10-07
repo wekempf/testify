@@ -57,7 +57,7 @@ namespace Testify.Tests
         {
             var anon = new AnonymousData();
 
-            var result = anon.AnyNegativeDouble();
+            var result = anon.AnyNegativeDecimal();
 
             Assert.True(result <= 0);
         }
@@ -67,7 +67,7 @@ namespace Testify.Tests
         {
             var anon = new AnonymousData();
 
-            var result = anon.AnyNegativeDouble(Distribution.Uniform);
+            var result = anon.AnyNegativeDecimal(Distribution.Uniform);
 
             Assert.True(result <= 0);
         }
