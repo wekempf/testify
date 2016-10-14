@@ -16,10 +16,8 @@ Testify is a .NET unit testing helper framework providing fluent assertions, con
 
 1. In a unit test source file add the following using statements.
 
-	```csharp
-	using Testify;
-	using static Testify.Assertions;
-	```
+	[!code-csharp[Inclusion](..\src\Examples\Testify.Examples\Inclusion.cs#L1-L2)]
+
 
 1. In a unit test use the fluent syntax for declaring assertions, nothing the rich IntelliSense support.
 

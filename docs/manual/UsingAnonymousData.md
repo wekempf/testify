@@ -32,22 +32,7 @@ necessary but do not effect the outcome of the test.
 
 Here's a typical usage example:
 
-```csharp
-public void IndexOf_Item_ShouldReturnIndex()
-{
-    var item = 10;
-    var anon = new AnonymousData();
-    var front = anon.AnyEnumerable<int>().Where(i => i != item).ToArray();
-    var back = anon.AnyEnumerable<int>().Where(i => i != item);
-    var list = new List<int>(front);
-    list.Add(item);
-    list.AddRange(back);
-
-    var result = list.IndexOf(item);
-
-    Assert(result).IsEqualTo(front.Length);
-}
-```
+[!code-csharp[Simple AnonymousData Example](..\..\src\Examples\Testify.Examples\UsingAnonymousData\SimpleExample.cs)]
 
 ## Registering Factories
 
@@ -61,18 +46,12 @@ will be used any time you need an instance of that type.
 
 Here's an example:
 
-```csharp
-var anon = new AnonymousData();
-anon.Register<Person>(a => new Person(a.AnyFirstName(), a.AnyLastName()));
-var person = anon.Any<Person>();
-```
+[!code-csharp[Register Example](..\..\src\Examples\Testify.Examples\UsingAnonymousData\RegisterExample.cs)]
 
 In addition to registering factories with a specific instance you may also register default factories to use
 with all instances of `AnonymousData`, by using the static `RegisterDefault` method.
 
-```csharp
-AnonymousData.RegisterDefault<Person>(a => new Person(a.AnyFirstName(), a.AnyLastName()));
-```
+[!code-csharp[Register Example](..\..\src\Examples\Testify.Examples\UsingAnonymousData\RegisterDefaultExample.cs)]
 
 It's also often useful to have multiple ways to create an anonymous object. For instance, there are ways
 to control the minimum and maximum values or random `Int32` instances created by calling the `AnyInt32`
@@ -82,6 +61,8 @@ an object that has no registered factory it's always done by using registered fa
 data necessary during construction: extension methods won't be called unless they are registered. Only
 one such factory may be registered at one time, with the last callback registered being the only callback
 registered.
+
+[!code-csharp[Register Example](..\..\src\Examples\Testify.Examples\UsingAnonymousData\AnonymousPerson.cs)]
 
 In general, if only one test needs it, register the factory callback on an `AnonymousData` instance
 created in that test. If multiple tests in a single test class will need it, either use a helper
@@ -109,16 +90,4 @@ methods that allow you to specify how a specific property is to be populated.
 
 Here's an example of using `Populate`:
 
-```csharp
-public void Map_EmployeeToEmployeeDto_CreatesEmployeeDto()
-{
-    var anon = new AnonymousData();
-    var employee = anon.Any<Employee>();
-    anon.Populate(employee);
-    var mapper = new Mapper();
-
-    var result = mapper.Map<EmployeeDto>(employee);
-
-    Assert(result).IsNotNull();
-}
-```
+[!code-csharp[Register Example](..\..\src\Examples\Testify.Examples\UsingAnonymousData\PopulateExample.cs)]

@@ -40,6 +40,17 @@ namespace Testify
         /// <summary>
         /// Initializes a new instance of the <see cref="AnonymousData"/> class.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// This constructor initializes the <see cref="AnonymousData"/> instance with a constant seed value.
+        /// </para>
+        /// <para>
+        /// <see cref="AnonymousData"/> generates random objects. While the intent is for only values that you intend
+        /// to not have any impact on your test it is still a best practice to create a new instance per test to
+        /// ensure consistent test runs. You can factor out the creation and configuration instead of sharing an
+        /// instance in order to use the same configuration in multiple tests.
+        /// </para>
+        /// </remarks>
         public AnonymousData()
             : this(0x07357FAC)
         {
@@ -49,6 +60,14 @@ namespace Testify
         /// Initializes a new instance of the <see cref="AnonymousData"/> class.
         /// </summary>
         /// <param name="seed">The seed to provide to the random number generator.</param>
+        /// <remarks>
+        /// <para>
+        /// <see cref="AnonymousData"/> generates random objects. While the intent is for only values that you intend
+        /// to not have any impact on your test it is still a best practice to create a new instance per test to
+        /// ensure consistent test runs. You can factor out the creation and configuration instead of sharing an
+        /// instance in order to use the same configuration in multiple tests.
+        /// </para>
+        /// </remarks>
         public AnonymousData(int seed)
         {
             this.random = new Random(seed);

@@ -11,6 +11,8 @@ IntelliSense, readable due to their fluent syntax and extensible using extension
 
 To use Testify assertions include the following using statements in your unit test file.
 
+[!code-csharp[Inclusion](..\..\src\Examples\Testify.Examples\Inclusion.cs#L1-L2)]
+
 ```csharp
 using Testify;
 using static Testify.Assertions;
@@ -45,19 +47,7 @@ using an ad hoc compound assertion.
 
 Here's an example of a compound assertion.
 
-```csharp
-public void Stack_Push_ShouldAddItem()
-{
-   var stack = new Stack();
-
-   stack.Push(10);
-
-   AssertAll(
-      "Item was not added to the stack properly.",
-      () => Assert(stack.Count).IsEqualTo(1, "Count was not incremented."),
-      () => Assert(stack.Peek()).IsEqualTo(10, "Top of the stack doesn't contain item that was pushed."));
-}
-```
+[!code-csharp[Compound Assertion](..\..\src\Examples\Testify.Examples\Assertions\CompoundExample.cs)]
 
 > [!NOTE]
 > It's always a good idea to include assertion messages, but it's even more important when composing compound logical
@@ -77,25 +67,7 @@ manner.
 
 Here's an example of a custom assertion.
 
-```csharp
-using System.Linq;
-using Testify;
-using static Testify.Assertions;
-
-public static class MyAssertions
-{
-   public static void IsLower(this ActualValue<string> actual, string message, params object[] args)
-   {
-      if (!actual.Value.All(c => char.IsLower(c)))
-      {
-         Throw(
-            nameof(IsLower),
-            $"{actual.Value} is not all lowercase.",
-            string.Format(message, args));
-      }
-   }
-}
-```
+[!code-csharp[Custom Assertion](..\..\src\Examples\Testify.Examples\Assertions\CustomAssertionExample.cs)]
 
 > [!NOTE]
 > Custom assertions, like the assertions provided by Testify, should include overloads with and without a user message
@@ -114,5 +86,6 @@ See the API documentation for the following classes.
 
 * @Testify.StandardAssertions
 * @Testify.CollectionAssertions
-* @Testify.StringAssertions
 * @Testify.ExceptionAssertions
+* @Testify.StringAssertions
+* @Testify.TaskAssertions
