@@ -237,4 +237,5 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
-opencoverCoverage.xml
+docs/site.zip
+tools/

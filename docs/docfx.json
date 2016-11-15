@@ -65,9 +65,6 @@
         ]
       }
     ],
-    "dest": "_site",
-    "template": [
-      "testify_template"
-    ]
+    "dest": "_site"
   }
 }

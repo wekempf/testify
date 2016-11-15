@@ -1,4 +1,34 @@
 ### YamlMime:TableOfContent
+- uid: Examples.Assertions
+  name: Examples.Assertions
+  items:
+  - uid: Examples.Assertions.CompoundExample
+    name: CompoundExample
+  - uid: Examples.Assertions.CustomAssertionExample
+    name: CustomAssertionExample
+  - uid: Examples.Assertions.CustomStringAssertion
+    name: CustomStringAssertion
+- uid: Examples.UsingAnonymousData
+  name: Examples.UsingAnonymousData
+  items:
+  - uid: Examples.UsingAnonymousData.AnonymousPerson
+    name: AnonymousPerson
+  - uid: Examples.UsingAnonymousData.Employee
+    name: Employee
+  - uid: Examples.UsingAnonymousData.EmployeeDto
+    name: EmployeeDto
+  - uid: Examples.UsingAnonymousData.Mapper
+    name: Mapper
+  - uid: Examples.UsingAnonymousData.Person
+    name: Person
+  - uid: Examples.UsingAnonymousData.PopulateExample
+    name: PopulateExample
+  - uid: Examples.UsingAnonymousData.RegisterDefaultExample
+    name: RegisterDefaultExample
+  - uid: Examples.UsingAnonymousData.RegisterExample
+    name: RegisterExample
+  - uid: Examples.UsingAnonymousData.SimpleExample
+    name: SimpleExample
 - uid: Testify
   name: Testify
   items:
@@ -41,8 +71,6 @@
     name: AnonymousString
   - uid: Testify.AnonymousTimeSpan
     name: AnonymousTimeSpan
-  - uid: Testify.AnonymousTimeZoneInfo
-    name: AnonymousTimeZoneInfo
   - uid: Testify.AssertionException
     name: AssertionException
   - uid: Testify.Assertions

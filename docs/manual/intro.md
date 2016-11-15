@@ -2,7 +2,7 @@
 uid: Intro
 ---
 
-# Introduction to Testify
+# Intro
 
 Testify is a .NET unit test assertions, test data creation and contract verification framework. It's not
 dependent on any specific unit testing framework, and can be used with the unit test framework of your choice.

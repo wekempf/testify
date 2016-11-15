@@ -1,3 +1,8 @@
+build_script:
+  - ps: .\build.ps1
+
+test: off
+
 branches:
   only:
     - develop
@@ -9,57 +14,15 @@ skip_tags: true
 
 clone_folder: c:\projects\testify
 
-configuration: Release
-
 environment:
   GitHubPersonalAccessToken:
     secure: H9H2HNKz0vEz91m6b5aEoEeb3xhrI3rbsJKvmbkQFbwq0P+zqhoPdcx4EBqNbvYl
   CoverallsToken:
     secure: uCTsfs+WNEYvAjp8jZ8CLqfNe2JsKvOCDIXdIFsNovbvcrvHzt7J+yZdvi4w+h6y
-
-install:
-  - ps: .\build_scripts\install.ps1 $env:APPVEYOR_BUILD_FOLDER
-
-assembly_info:
-  patch: false
-
-before_build:
-  - ps: nuget restore
-
-build:
-  project: Testify.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
-  include_nuget_references: true
-  
-after_build:
-  - ps: .\build_scripts\build_docs.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER"
-
-test_script:
-  - ps: .\build_scripts\test.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER" -PublishResults
-  
-after_test:
-  - ps: Write-Host $env:APPVEYOR_REPO_BRANCH
-  - ps: if ($env:APPVEYOR_REPO_BRANCH -eq 'master') { .\build_scripts\push_pages.ps1 -BuildFolder "$env:APPVEYOR_BUILD_FOLDER" -Username wekempf -Email wekempf@outlook.com -PersonalAccessToken $env:GitHubPersonalAccessToken }
+  NuGetApiKey:
+    secure: WCC9YoXjXGB6om2aN3jD0n5Jk63LKg42sViodxTK04T16/MQ0e4F8JU2XmoO+iY6
+  MyGetApiKey:
+    secure: 3bjCk3g3eDsa72b1jJR9QRWK+iivJLfcNVBV/fVJChIwtBdZxTKOrBZxhOHU5jR/
 
 artifacts:
   - path: 'docs\site.zip'
-
-deploy:
-- provider: NuGet
-  server: https://www.myget.org/F/wekempf/api/v2
-  api_key:
-    secure: 3bjCk3g3eDsa72b1jJR9QRWK+iivJLfcNVBV/fVJChIwtBdZxTKOrBZxhOHU5jR/
-  skip_symbols: true
-  artifacts: /src\\.*\.nupkg/
-  on:
-    branch:
-      - develop
-      - /release\/.*/
-- provider: NuGet
-  api_key:
-    secure: WCC9YoXjXGB6om2aN3jD0n5Jk63LKg42sViodxTK04T16/MQ0e4F8JU2XmoO+iY6
-  skip_symbols: false
-  artifacts: /src\\.*\.nupkg/
-  on:
-    branch: master

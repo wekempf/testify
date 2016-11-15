@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Resources;
 
 // General Information about an assembly is controlled through the following
@@ -13,3 +13,7 @@ using System.Resources;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
+
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyInformationalVersion("1.2.0-unstable.17+Branch.develop.Sha.b1d31a7d0cb2ddb31155f35777d35e2a214813b9")]
+[assembly: AssemblyFileVersion("1.2.0.0")]
