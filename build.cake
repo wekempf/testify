@@ -91,7 +91,11 @@ Task("Version")
             UpdateAssemblyInfo = updateAssemblyInfo,
         };
         version = GitVersion(settings);
-        Information("Version: {0}", version.AssemblySemVer);
+        if (isRunningOnBuildServer) {
+            settings.OutputType = GitVersionOutput.BuildServer;
+            GitVersion(settings);
+        }
+        Information("Version: {0}", version.NuGetVersion);
         if (updateAssemblyInfo) {
             Information("Updated assembly information.");
         }
