@@ -38,7 +38,7 @@
 #tool "nuget:?package=ReportGenerator"
 #tool "nuget:?package=GitVersion.CommandLine"
 #tool coveralls.net
-#tool "docfx.msbuild"
+#tool docfx.console
 
 #addin Cake.Coveralls
 #addin nuget:?package=Cake.Git
