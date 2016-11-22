@@ -14,7 +14,7 @@ namespace Examples.UsingAnonymousData
                 e =>
                 {
                     var emp = (EmployeeDto)e;
-                    return new Employee(emp.FirstName, emp.LastName);
+                    return new Employee(emp.FirstName, emp.LastName, emp.IsManager);
                 });
         }
 

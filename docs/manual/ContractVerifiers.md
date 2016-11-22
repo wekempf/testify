@@ -2,8 +2,7 @@
 uid: ContractVerifiers
 ---
 
-Contract Verifiers
-=====================
+# Contract Verifiers
 
 Contract verifiers can be thought of as test suites that can be run to verify that a type conforms to a logical contract. As an example, if your type is intended to be equality comparable you can use the @Testify.EquatableVerifier`1 to run a bunch of tests to ensure the type really conforms to that contract. This will test things like is `GetHashCode` overridden, are `==` and `!=` operators defined, etc?
 

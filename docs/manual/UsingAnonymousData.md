@@ -2,8 +2,7 @@
 uid: UsingAnonymousData
 ---
 
-Using AnonymousData
-===================
+# Using AnonymousData
 
 It's vital that unit tests be written to make what is being tested as completely comprehensible as possible.
 Extra "noise" in tests make it harder to understand the test "at a glance". When code is modified that results

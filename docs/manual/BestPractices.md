@@ -2,20 +2,19 @@
 uid: BestPractices
 ---
 
-Best Practices
-=================
+# Best Practices
 
 1. Test Structure Should Follow Production Code
-2. Test Name Should Clearly Describe Test
-3. Follow AAA or Four Phase Test Structure
-4. Reduce Coupling to Non-Relevant Production Code
-5. Ensure Test's Intent is Clearly Understandable
-6. Don't "Hide" Important Test Information
-7. Use Only a Single "Logical" Assertion
-8. Ensure the Assertion Message is Clear
-9. Ensure Tests are Quick
-10. Avoid Anti-Patterns
-11. Use Attributes that Make a Unit Test Good
+1. Test Name Should Clearly Describe Test
+1. Follow AAA or Four Phase Test Structure
+1. Reduce Coupling to Non-Relevant Production Code
+1. Ensure Test's Intent is Clearly Understandable
+1. Don't "Hide" Important Test Information
+1. Use Only a Single "Logical" Assertion
+1. Ensure the Assertion Message is Clear
+1. Ensure Tests are Quick
+1. Avoid Anti-Patterns
+1. Use Attributes that Make a Unit Test Good
 
 ## Test Structure Should Follow Production Code
 
@@ -34,7 +33,7 @@ folder structures of the production project and the test project should match as
 Names are always important, and naming is always hard. There's the old joke:
 
 > There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors.
-> 
+>
 > \- Phil Karlton
 
 Joke as much as you like, though, the fact is naming is really hard. It's always important to ensure your names
