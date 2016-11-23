@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Api Documentation </title>
+    <title>Why Unit Test? </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Api Documentation ">
+    <meta name="title" content="Why Unit Test? ">
     <meta name="generator" content="docfx 2.8.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -64,10 +64,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Api">
-              <h1 id="api-documentation">Api Documentation</h1>
+            <article class="content wrap" id="_content" data-uid="WhyUnitTest">
+              <h1 id="why-unit-test">Why Unit Test?</h1>
               
-<p>Testify is a .NET unit testing helper framework providing fluent assertions, contract verifiers and an anonymous data factory.</p>
+<ul>
+<li><del>Find Bugs</del></li>
+<li><del>Prove Code Correct</del></li>
+<li>Allow refactoring with confidence</li>
+<li>API design (TDD)</li>
+<li>Executable API documentation for developers</li>
+</ul>
+<h2 id="find-bugs"><del>Find Bugs</del></h2>
+<p>It&#39;s a common misconception that the reason to write unit tests is to find bugs. While it&#39;s true you can find bugs while writing unit tests this really isn&#39;t that common. It&#39;s said that unit tests don&#39;t find bugs, they find regressions.</p>
+<h2 id="prove-code-correct"><del>Prove Code Correct</del></h2>
+<p>It&#39;s actually a pretty simple thing to write code you know isn&#39;t correct and then intentionally create a lot of unit tests that pass despite the incorrectness. If you can do this intentionally, it should be obvious that it&#39;s also possible to do this unintentionally. This means unit tests can&#39;t really prove that code is correct.</p>
+<h2 id="allow-refactoring-with-confidence">Allow refactoring with confidence</h2>
+<p>If you have a thorough suite of unit tests you can have confidence when you refactor the production code you won&#39;t cause any regressions in the (tested) behavior. In fact, you really shouldn&#39;t refactor code unless it&#39;s covered by unit tests.</p>
+<h2 id="api-design-tdd">API Design (TDD)</h2>
+<p>Often it can be difficult to fully understand how an API functions until you&#39;ve used it. Unit tests can help you to flesh out an API because you have to actually use it in the tests. This is why the third D in TDD stands for design.</p>
+<h2 id="executable-api-documentation-for-developers">Executable API documentation for developers</h2>
+<p>Reading the unit tests is a great way to see how to use an unfamiliar API. Unlike other forms of documentation, unit tests are guaranteed to be compilable and you can even execute and debug the tests to learn more.</p>
 
             </article>
           </div>
@@ -77,7 +93,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/docs/api/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/wekempf/testify/blob/master/docs/manual/WhyUnitTest.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
