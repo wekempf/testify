@@ -1,4 +1,8 @@
 build_script:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubPersonalAccessToken):x-oauth-basic@github.com`n"
+  - git config --global user.email "wekempf@outlook.com"
+  - git config --global user.name "AppVeyor Build Service"
   - ps: .\build.ps1
 
 test: off
