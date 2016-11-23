@@ -58,7 +58,7 @@ var releaseNuGetSource = "https://www.nuget.org/api/v2/package";
 var releaseNuGetApiKey = EnvironmentVariable("NuGetApiKey");
 var unstableNuGetSource = "https://www.myget.org/F/wekempf/api/v2/package";
 var unstableNuGetApiKey = EnvironmentVariable("MyGetApiKey");
-var gitPagesRepo = "git@github.com:wekempf/testify.git";
+var gitPagesRepo = "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git";
 var gitPagesBranch = "gh-pages";
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
 Information("Branch: " + branch);
