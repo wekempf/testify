@@ -2,7 +2,7 @@
 
 namespace Testify
 {
-    public class Int16FactoryTests
+    public class AnonymousInt16Tests
     {
         [Fact]
         public void AnyInt16()

@@ -4,7 +4,7 @@ using static Testify.Assertions;
 
 namespace Testify
 {
-    public class TimeSpanFactoryTests
+    public class AnonymousTimeSpanTests
     {
         [Fact]
         public void AnyTimeSpan()

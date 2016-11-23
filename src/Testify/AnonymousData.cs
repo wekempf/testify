@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using Factory = System.Func<Testify.IAnonymousData, object>;
 
@@ -12,14 +13,44 @@ namespace Testify
     /// </summary>
     public sealed class AnonymousData : IAnonymousData, IRegisterAnonymousData
     {
+        private static readonly Dictionary<Type, Factory> GlobalFactories = new Dictionary<Type, Factory>();
+        private static readonly Dictionary<PropertyInfo, Factory> GlobalPropertyFactories = new Dictionary<PropertyInfo, Factory>();
         private readonly List<IAnonymousDataCustomization> customizations = new List<IAnonymousDataCustomization>();
         private readonly Dictionary<Type, Factory> factories = new Dictionary<Type, Factory>();
         private readonly Dictionary<PropertyInfo, Factory> propertyFactories = new Dictionary<PropertyInfo, Factory>();
         private readonly Random random;
 
+        static AnonymousData()
+        {
+            RegisterDefault(f => f.AnyBool());
+            RegisterDefault(f => f.AnyByte());
+            RegisterDefault(f => f.AnyChar());
+            RegisterDefault(f => f.AnyDateTime());
+            RegisterDefault(f => f.AnyDateTimeOffset());
+            RegisterDefault(f => f.AnyDouble());
+            RegisterDefault(f => f.AnySingle());
+            RegisterDefault(f => f.AnyInt32());
+            RegisterDefault(f => f.AnyInt64());
+            RegisterDefault(f => f.AnyInt16());
+            RegisterDefault(f => f.AnyDecimal());
+            RegisterDefault(f => f.AnyString());
+            RegisterDefault(f => f.AnyTimeSpan());
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="AnonymousData"/> class.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// This constructor initializes the <see cref="AnonymousData"/> instance with a constant seed value.
+        /// </para>
+        /// <para>
+        /// <see cref="AnonymousData"/> generates random objects. While the intent is for only values that you intend
+        /// to not have any impact on your test it is still a best practice to create a new instance per test to
+        /// ensure consistent test runs. You can factor out the creation and configuration instead of sharing an
+        /// instance in order to use the same configuration in multiple tests.
+        /// </para>
+        /// </remarks>
         public AnonymousData()
             : this(0x07357FAC)
         {
@@ -29,10 +60,85 @@ namespace Testify
         /// Initializes a new instance of the <see cref="AnonymousData"/> class.
         /// </summary>
         /// <param name="seed">The seed to provide to the random number generator.</param>
+        /// <remarks>
+        /// <para>
+        /// <see cref="AnonymousData"/> generates random objects. While the intent is for only values that you intend
+        /// to not have any impact on your test it is still a best practice to create a new instance per test to
+        /// ensure consistent test runs. You can factor out the creation and configuration instead of sharing an
+        /// instance in order to use the same configuration in multiple tests.
+        /// </para>
+        /// </remarks>
         public AnonymousData(int seed)
         {
             this.random = new Random(seed);
-            this.Register();
+        }
+
+        /// <summary>
+        /// Register a factory method for the specified type that will be used by all <see cref="AnonymousData"/>
+        /// instances.
+        /// </summary>
+        /// <param name="type">The type of object the factory method creates.</param>
+        /// <param name="factory">The factory method.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <c>null</c>.</exception>
+        public static void RegisterDefault(Type type, Factory factory)
+        {
+            Argument.NotNull(type, nameof(type));
+            Argument.NotNull(factory, nameof(factory));
+
+            GlobalFactories[type] = factory;
+        }
+
+        /// <summary>
+        /// Registers a factory method for the specified propertythat will be used by all <see cref="AnonymousData"/>
+        /// instances.
+        /// </summary>
+        /// <param name="property">The property to populate.</param>
+        /// <param name="factory">The factory method.</param>
+        public static void RegisterDefault(PropertyInfo property, Factory factory)
+        {
+            Argument.NotNull(property, nameof(property));
+            Argument.NotNull(factory, nameof(factory));
+
+            GlobalPropertyFactories[property] = factory;
+        }
+
+        /// <summary>
+        /// Register a factory method for the specified type.
+        /// </summary>
+        /// <typeparam name="T">The type of object the factory method creates.</typeparam>
+        /// <param name="factory">The factory method.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="factory"/> is <c>null</c>.</exception>
+        public static void RegisterDefault<T>(Func<IAnonymousData, T> factory)
+        {
+            Argument.NotNull(factory, nameof(factory));
+
+            RegisterDefault(typeof(T), f => factory(f));
+        }
+
+        /// <summary>
+        /// Registers a factory method for the specified property.
+        /// </summary>
+        /// <typeparam name="T">The type that declares the property.</typeparam>
+        /// <typeparam name="TProperty">The type of the property.</typeparam>
+        /// <param name="propertyExpression">An expression representing the property to populate.</param>
+        /// <param name="factory">The factory method.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyExpression"/> or
+        /// <paramref name="factory"/> is <c>null</c>.</exception>
+        public static void RegisterDefault<T, TProperty>(
+            Expression<Func<T, TProperty>> propertyExpression,
+            Func<IAnonymousData, TProperty> factory)
+        {
+            Argument.NotNull(propertyExpression, nameof(propertyExpression));
+            Argument.NotNull(factory, nameof(factory));
+
+            var member = ReflectionExtensions.GetMemberInfo(propertyExpression);
+            var property = member?.Member as PropertyInfo;
+            if (property == null)
+            {
+                throw new ArgumentException("Invalid property expression.");
+            }
+
+            RegisterDefault(property, f => factory(f));
         }
 
         /// <summary>
@@ -54,7 +160,7 @@ namespace Testify
             }
 
             Factory factory;
-            if (this.factories.TryGetValue(type, out factory))
+            if (this.factories.TryGetValue(type, out factory) || GlobalFactories.TryGetValue(type, out factory))
             {
                 object value;
                 try
@@ -98,8 +204,13 @@ namespace Testify
         public double AnyDouble(double minimum, double maximum, Distribution distribution)
         {
             Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            if (double.IsInfinity(maximum - minimum))
+            {
+                throw new ArgumentOutOfRangeException($"The range of {nameof(maximum)} - {nameof(minimum)} is Infinity.");
+            }
 
-            return ((distribution ?? Distribution.Uniform).NextDouble(this.random) * (maximum - minimum)) + minimum;
+            var next = (distribution ?? Distribution.Uniform).NextDouble(this.random);
+            return minimum + (next * (maximum - minimum));
         }
 
         /// <summary>
@@ -181,7 +292,8 @@ namespace Testify
                             {
                                 object value;
                                 Factory factory;
-                                if (this.propertyFactories.TryGetValue(prop, out factory))
+                                if (this.propertyFactories.TryGetValue(prop, out factory) ||
+                                    GlobalPropertyFactories.TryGetValue(prop, out factory))
                                 {
                                     value = factory(this);
                                 }
@@ -229,7 +341,11 @@ namespace Testify
             this.factories[type] = factory;
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Registers a factory method for the specified property.
+        /// </summary>
+        /// <param name="property">The property to populate.</param>
+        /// <param name="factory">The factory method.</param>
         public void Register(PropertyInfo property, Factory factory)
         {
             Argument.NotNull(property, nameof(property));
@@ -346,24 +462,6 @@ namespace Testify
             }
 
             return instance;
-        }
-
-        private void Register()
-        {
-            this.Register(f => f.AnyBool());
-            this.Register(f => f.AnyByte());
-            this.Register(f => f.AnyChar());
-            this.Register(f => f.AnyDateTime());
-            this.Register(f => f.AnyDateTimeOffset());
-            this.Register(f => f.AnyDouble());
-            this.Register(f => f.AnySingle());
-            this.Register(f => f.AnyInt32());
-            this.Register(f => f.AnyInt64());
-            this.Register(f => f.AnyInt16());
-            this.Register(f => f.AnyDecimal());
-            this.Register(f => f.AnyString());
-            this.Register(f => f.AnyTimeSpan());
-            this.Register(f => f.AnyTimeZoneInfo());
         }
 
         private class AnonymousDataContext : IAnonymousDataContext

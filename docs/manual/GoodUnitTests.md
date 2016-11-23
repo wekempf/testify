@@ -2,9 +2,10 @@
 uid: GoodUnitTests
 ---
 
-Good Unit Tests
-===============
+# Good Unit Tests
+
 A basic unit test:
+
 * is automated
 * is repeatable
 * does not depend on the environment
@@ -13,12 +14,14 @@ A basic unit test:
 * does not have side effects
 
 A good unit test:
+
 * asserts the results of your code
 * tests a single unit of work
 * covers all the paths of the code you want to test
 * cleans up after itself
 
 A better unit test:
+
 * tests and asserts edge cases and different ranges of data
 * runs fast
 * is well-factored
@@ -73,7 +76,7 @@ In other words, you have high code coverage. However, it should be noted that th
 
 If the test makes any changes that could be observable from other tests, or from another run of this test, then those changes should be rolled back before the test finishes.
 
- ## A Better Unit Test
+## A Better Unit Test
 
 Really good unit tests go even further and exhibit the following traits.
 

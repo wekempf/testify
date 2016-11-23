@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using static Testify.Assertions;
 
 namespace Testify
@@ -105,6 +106,21 @@ namespace Testify
             var result = ReplaceNullChars(text);
 
             Assert(result).Equals("xxx\\0xxx");
+        }
+
+        [Fact]
+        public void Throw_ThrowsException()
+        {
+            var inner = new[] { new Exception("first"), new Exception("second") };
+            Assert(() => Throw("xyzzy", inner, "Assertion message.", "Some {0}.", "message"))
+                .Throws<AssertionException>(
+                    e =>
+                    {
+                        AssertAll(
+                            "Unexpected exception state.",
+                            () => Assert(e.Message).IsEqualTo("Some message. xyzzy failed. Assertion message."),
+                            () => Assert(e.InnerExceptions).IsSequenceEqualTo(inner));
+                    });
         }
     }
 }

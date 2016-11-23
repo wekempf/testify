@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Testify
 {
@@ -9,6 +10,26 @@ namespace Testify
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousDateTimeOffset
     {
+        private static readonly TimeSpan[] Offsets =
+            Enumerable.Range(-12, 27).Select(h => TimeSpan.FromHours(h))
+            .Concat(new[]
+            {
+                new TimeSpan(-9, 30, 0),
+                new TimeSpan(-3, 30, 0),
+                new TimeSpan(3, 30, 0),
+                new TimeSpan(4, 30, 0),
+                new TimeSpan(5, 30, 0),
+                new TimeSpan(5, 45, 0),
+                new TimeSpan(6, 30, 0),
+                new TimeSpan(8, 30, 0),
+                new TimeSpan(8, 45, 0),
+                new TimeSpan(9, 30, 0),
+                new TimeSpan(10, 30, 0),
+                new TimeSpan(12, 45, 0)
+            })
+            .OrderBy(d => d)
+            .ToArray();
+
         /// <summary>
         /// Creates a random <see langword="DateTimeOffset"/> value using a uniform distribution algorithm.
         /// </summary>
@@ -70,9 +91,9 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
             Argument.InRange(maximum, minimum, DateTimeOffset.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
 
-            var timeZone = anon.AnyTimeZoneInfo(distribution);
             var ticks = anon.AnyInt64(minimum.Ticks, maximum.Ticks, distribution);
-            return new DateTimeOffset(ticks, timeZone.BaseUtcOffset);
+            var offset = Offsets[anon.AnyInt32(0, Offsets.Length)];
+            return new DateTimeOffset(ticks, offset);
         }
     }
 }

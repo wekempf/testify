@@ -2,10 +2,45 @@
 - uid: Testify
   name: Testify
   items:
+  - uid: Testify.ActualValue`1
+    name: ActualValue<T>
+    name.vb: ActualValue(Of T)
+  - uid: Testify.AnonymousBool
+    name: AnonymousBool
+  - uid: Testify.AnonymousByte
+    name: AnonymousByte
+  - uid: Testify.AnonymousChar
+    name: AnonymousChar
   - uid: Testify.AnonymousData
     name: AnonymousData
   - uid: Testify.AnonymousDataException
     name: AnonymousDataException
+  - uid: Testify.AnonymousDataExtensions
+    name: AnonymousDataExtensions
+  - uid: Testify.AnonymousDateTime
+    name: AnonymousDateTime
+  - uid: Testify.AnonymousDateTimeOffset
+    name: AnonymousDateTimeOffset
+  - uid: Testify.AnonymousDecimal
+    name: AnonymousDecimal
+  - uid: Testify.AnonymousDouble
+    name: AnonymousDouble
+  - uid: Testify.AnonymousEnum
+    name: AnonymousEnum
+  - uid: Testify.AnonymousEnumerable
+    name: AnonymousEnumerable
+  - uid: Testify.AnonymousInt16
+    name: AnonymousInt16
+  - uid: Testify.AnonymousInt32
+    name: AnonymousInt32
+  - uid: Testify.AnonymousInt64
+    name: AnonymousInt64
+  - uid: Testify.AnonymousSingle
+    name: AnonymousSingle
+  - uid: Testify.AnonymousString
+    name: AnonymousString
+  - uid: Testify.AnonymousTimeSpan
+    name: AnonymousTimeSpan
   - uid: Testify.AssertionException
     name: AssertionException
   - uid: Testify.Assertions
@@ -40,5 +75,9 @@
     name: IRegisterAnonymousData
   - uid: Testify.PopulateOption
     name: PopulateOption
+  - uid: Testify.StandardAssertions
+    name: StandardAssertions
+  - uid: Testify.StringAssertions
+    name: StringAssertions
   - uid: Testify.TaskAssertions
     name: TaskAssertions

@@ -61,7 +61,6 @@
     <Compile Include="AnonymousSingle.cs" />
     <Compile Include="AnonymousString.cs" />
     <Compile Include="AnonymousTimeSpan.cs" />
-    <Compile Include="AnonymousTimeZoneInfo.cs" />
     <Compile Include="Argument.cs" />
     <Compile Include="AssertionException.cs" />
     <Compile Include="Assertions.cs" />
@@ -103,8 +102,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\packages\SonarLint.1.9.0\analyzers\SonarLint.CSharp.dll" />
-    <Analyzer Include="..\..\packages\SonarLint.1.9.0\analyzers\SonarLint.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.0\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.0\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.0\analyzers\SonarAnalyzer.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
@@ -113,13 +113,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\packages\GitVersionTask.3.4.1\build\portable-net+sl+win+wpa+wp\GitVersionTask.targets" Condition="Exists('..\..\packages\GitVersionTask.3.4.1\build\portable-net+sl+win+wpa+wp\GitVersionTask.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\GitVersionTask.3.4.1\build\portable-net+sl+win+wpa+wp\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\GitVersionTask.3.4.1\build\portable-net+sl+win+wpa+wp\GitVersionTask.targets'))" />
-  </Target>
   <Import Project="$(MSBuildProjectDirectory)\..\..\.build\MSBuild.Community.Tasks.targets" />
   <PropertyGroup>
     <NuGetExe>$(MSBuildProjectDirectory)\..\..\.build\nuget.exe</NuGetExe>

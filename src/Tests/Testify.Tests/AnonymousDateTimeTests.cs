@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Testify
 {
-    public class DateTimeFactoryTests
+    public class AnonymousDateTimeTests
     {
         [Fact]
         public void AnyDateTime()

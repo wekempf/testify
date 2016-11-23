@@ -2,7 +2,7 @@
 
 namespace Testify
 {
-    public class Int64FactoryTests
+    public class AnonymousInt64Tests
     {
         [Fact]
         public void AnyInt64()

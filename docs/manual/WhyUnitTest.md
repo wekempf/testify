@@ -2,6 +2,8 @@
 uid: WhyUnitTest
 ---
 
+# Why Unit Test?
+
 * ~~Find Bugs~~
 * ~~Prove Code Correct~~
 * Allow refactoring with confidence

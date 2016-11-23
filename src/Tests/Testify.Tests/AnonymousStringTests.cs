@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Testify
 {
-    public class StringFactoryTests
+    public class AnonymousStringTests
     {
         [Fact]
         public void AnyString()
@@ -56,9 +56,13 @@ namespace Testify
         {
             var anon = new AnonymousData();
 
-            var name = anon.AnyFirstName();
+            // Do this a few times to cover all branches.
+            for (int i = 0; i < 50; ++i)
+            {
+                var name = anon.AnyFirstName();
 
-            Assert.NotNull(name);
+                Assert.NotNull(name);
+            }
         }
 
         [Fact]
@@ -76,9 +80,13 @@ namespace Testify
         {
             var anon = new AnonymousData();
 
-            var name = anon.AnyFullName();
+            // Do this a few times to cover all branches.
+            for (int i = 0; i < 50; ++i)
+            {
+                var name = anon.AnyFullName();
 
-            Assert.NotNull(name);
+                Assert.NotNull(name);
+            }
         }
     }
 }
