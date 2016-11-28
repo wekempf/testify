@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assertions </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assertions ">
+    <meta name="generator" content="docfx 2.8.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" src="../images/gavel_icon-64x64.png" height="46" width="46" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Assertions">
+              <h1 id="assertions">Assertions</h1>
+              
+<p>Assertions are a corner stone of any unit test framework. Testify provides a framework of assertions that can replace
+the assertions provided by your unit test framework. These assertions are discoverable through IntelliSense and are
+readable due to their fluent syntax and extensible using extension methods.</p>
+<p>To use Testify assertions include the following using statements in your unit test file.</p>
+<pre><code class="lang-csharp" name="Inclusion">using Testify;
+using static Testify.Assertions;
+</code></pre><pre><code class="lang-csharp">using Testify;
+using static Testify.Assertions;
+</code></pre><div class="IMPORTANT"><h5>Important</h5><p>The static using for <code>Testify.Assertions</code> allows you to use the static methods on the <code>Testify.Assertions</code> class
+without having to include the class name on every call. If you&#39;re using C# 5 or older or prefer to not use static
+usings you can either fully specify the call, or add an <code>Assert</code> helper method to your unit test class, possibly through
+a base class.</p>
+</div>
+<div class="NOTE"><h5>Note</h5><p><code>Testify.Assertions</code> and other types exposed by Testify use a <code>EditorBrowsableAttribute</code> that hides
+the type from IntelliSense. <code>Testify.Assertions</code> is an advanced type that normally is not used directly (it&#39;s
+used indirectly using the static using), so it&#39;s hidden to improve IntelliSense usability.</p>
+</div>
+<p>With the using statements in place you can add <code>Assert(result).</code> to any unit test, at which point IntelliSense will provide
+you with a list of valid assertions based on the type of <code>result</code>. For instance, if <code>result</code> is a <code>List&lt;int&gt;</code> the assertions
+you&#39;d have within IntelliSense would include <code>AllItemsAreUnique</code>. Another common assertion for collections,
+<code>AllItemsAreNotNull</code>, would not be in IntelliSense because <code>int</code> is a value type and can&#39;t be <code>null</code>. This strong
+typing and IntelliSense support is one of the key benefits to Testify over the built-in assertions of your unit test
+framework of choice.</p>
+<h2 id="compound-assertions">Compound Assertions</h2>
+<p>Testify also supports the concept of a compound assertion. A compound assertion is an assertion composed of other
+assertions. All the assertions that fail in a compound assertion get reported, ensuring that no relevant information about
+a test failure is lost. Compound assertions compose ad hoc &quot;logical assertions&quot;. In other words, the
+intent is to make a single logical assertion by making multiple assertions. If you have a logical assertion that is likely
+to be made frequently it is probably better that you write an extension to add that assertion to the framework rather than
+using an ad hoc compound assertion.</p>
+<p>Here&#39;s an example of a compound assertion.</p>
+<pre><code class="lang-csharp" name="Compound Assertion">using System.Collections.Generic;
+using Testify;
+using Xunit;
+using static Testify.Assertions;
+
+namespace Examples.Assertions
+{
+    public class CompoundExample
+    {
+        [Fact]
+        public void Stack_Push_ShouldAddItem()
+        {
+            var stack = new Stack&lt;int&gt;();
+
+            stack.Push(10);
+
+            AssertAll(
+                &quot;Item was not added to the stack properly.&quot;,
+                () =&gt; Assert(stack.Count)
+                    .IsEqualTo(1, &quot;Count was not incremented.&quot;),
+                () =&gt; Assert(stack.Peek())
+                    .IsEqualTo(10, &quot;Top of the stack doesn&#39;t contain item.&quot;));
+        }
+    }
+}
+</code></pre><div class="NOTE"><h5>Note</h5><p>It&#39;s always a good idea to include assertion messages, but it&#39;s even more important when composing compound logical
+assertions using <code>AssertAll</code>. Failing to do so is very likely to result in test failure messages that are difficult
+to understand.</p>
+</div>
+<h2 id="custom-assertions">Custom Assertions</h2>
+<p>It&#39;s easy to add assertions when using Testify. <code>Assertions.Assert</code> returns an <code>ActualValue&lt;T&gt;</code> which can be used in
+extension methods to add custom assertions. By using strong typing for <code>T</code> or using generic constraints you can expose
+assertions that are valid and present in IntelliSense only for specific types. Inside your custom assertion method you
+can use <code>Assertions.Throw</code> to report failures, which helps to ensure the exception message is formatted in a consistent
+manner.</p>
+<div class="NOTE"><h5>Note</h5><p>Both <code>Assertions</code> and <code>Assertions.Throw</code> use <code>EditorBrowsableAttribute</code> to hide them from IntelliSense.</p>
+</div>
+<p>Here&#39;s an example of a custom assertion.</p>
+<pre><code class="lang-csharp" name="Custom Assertion">using System.Linq;
+using Testify;
+using Xunit;
+using static Testify.Assertions;
+
+namespace Examples.Assertions
+{
+    public static class CustomStringAssertion
+    {
+        public static void IsLower(this ActualValue&lt;string&gt; actual)
+        {
+            actual.IsLower(null, null);
+        }
+
+        public static void IsLower(this ActualValue&lt;string&gt; actual, string message)
+        {
+            actual.IsLower(message, null);
+        }
+
+        public static void IsLower(
+            this ActualValue&lt;string&gt; actual,
+            string message,
+            params object[] args)
+        {
+            if (!actual.Value.All(c =&gt; !char.IsLetter(c) || char.IsLower(c)))
+            {
+                Throw(
+                   nameof(IsLower),
+                   $&quot;{actual.Value} is not all lowercase.&quot;,
+                   message,
+                   args);
+            }
+        }
+    }
+
+    public class CustomAssertionExample
+    {
+        [Fact]
+        public void String_ToLower_ShouldReturnLowercaseString()
+        {
+            var original = &quot;The Quick Brown Fox&quot;;
+
+            var result = original.ToLower();
+
+            Assert(result).IsLower();
+        }
+    }
+}
+</code></pre><div class="NOTE"><h5>Note</h5><p>Custom assertions, like the assertions provided by Testify, should include overloads with and without a user message
+and user arguments. The example above shows the full overload and not the simpler overloads that should exist
+as well.</p>
+</div>
+<h2 id="assertionexception">AssertionException</h2>
+<p>Testify assertions all throw an <code>AssertionException</code> on failure. This type is derived from <code>AggregateException</code>
+allowing for multiple inner exceptions. This is how compound assertions are able to report multiple failures. This
+is also how contract verifiers can run multiple tests and report all of the failures.</p>
+<h2 id="provided-assertions">Provided Assertions</h2>
+<p>See the API documentation for the following classes.</p>
+<ul>
+<li><a class="xref" href="../api/Testify.StandardAssertions.html">StandardAssertions</a></li>
+<li><a class="xref" href="../api/Testify.CollectionAssertions.html">CollectionAssertions</a></li>
+<li><a class="xref" href="../api/Testify.ExceptionAssertions.html">ExceptionAssertions</a></li>
+<li><a class="xref" href="../api/Testify.StringAssertions.html">StringAssertions</a></li>
+<li><a class="xref" href="../api/Testify.TaskAssertions.html">TaskAssertions</a></li>
+</ul>
+
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/Assertions.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2016 William E. Kempf<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Why Unit Test? </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Why Unit Test? ">
+    <meta name="generator" content="docfx 2.8.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" src="../images/gavel_icon-64x64.png" height="46" width="46" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WhyUnitTest">
+              <h1 id="why-unit-test">Why Unit Test?</h1>
+              
+<ul>
+<li><del>Find Bugs</del></li>
+<li><del>Prove Code Correct</del></li>
+<li>Allow refactoring with confidence</li>
+<li>API design (TDD)</li>
+<li>Executable API documentation for developers</li>
+</ul>
+<h2 id="find-bugs"><del>Find Bugs</del></h2>
+<p>It&#39;s a common misconception that the reason to write unit tests is to find bugs. While it&#39;s true you can find bugs while writing unit tests this really isn&#39;t that common. It&#39;s said that unit tests don&#39;t find bugs, they find regressions.</p>
+<h2 id="prove-code-correct"><del>Prove Code Correct</del></h2>
+<p>It&#39;s actually a pretty simple thing to write code you know isn&#39;t correct and then intentionally create a lot of unit tests that pass despite the incorrectness. If you can do this intentionally, it should be obvious that it&#39;s also possible to do this unintentionally. This means unit tests can&#39;t really prove that code is correct.</p>
+<h2 id="allow-refactoring-with-confidence">Allow refactoring with confidence</h2>
+<p>If you have a thorough suite of unit tests you can have confidence when you refactor the production code you won&#39;t cause any regressions in the (tested) behavior. In fact, you really shouldn&#39;t refactor code unless it&#39;s covered by unit tests.</p>
+<h2 id="api-design-tdd">API Design (TDD)</h2>
+<p>Often it can be difficult to fully understand how an API functions until you&#39;ve used it. Unit tests can help you to flesh out an API because you have to actually use it in the tests. This is why the third D in TDD stands for design.</p>
+<h2 id="executable-api-documentation-for-developers">Executable API documentation for developers</h2>
+<p>Reading the unit tests is a great way to see how to use an unfamiliar API. Unlike other forms of documentation, unit tests are guaranteed to be compilable and you can even execute and debug the tests to learn more.</p>
+
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/WhyUnitTest.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2016 William E. Kempf<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
