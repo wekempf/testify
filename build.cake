@@ -229,7 +229,7 @@ Task("Docs")
                 DeleteDirectories(dirs, true);
                 var files = GetFiles("./pages/*");
                 DeleteFiles(files);
-                CopyFiles("./docs/_site/**/*", "./pages");
+                CopyFiles("./docs/_site/**/*", "./pages", true);
                 if (GitCommitPages() != 0) {
                     throw new Exception("Unable to commit Pages.");
                 }
