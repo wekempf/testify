@@ -84,7 +84,18 @@ namespace Testify
         {
             var anon = new AnonymousData();
 
-            var result = (SimpleEnum)anon.AnyEnumValue(typeof(SimpleEnum), Distribution.Uniform);
+            var classifier = new Classifier<SimpleEnum>();
+            classifier.AddClassification(nameof(SimpleEnum.One), v => v == SimpleEnum.One);
+            classifier.AddClassification(nameof(SimpleEnum.Two), v => v == SimpleEnum.Two);
+            classifier.AddClassification(nameof(SimpleEnum.Three), v => v == SimpleEnum.Three);
+            classifier.AddClassification("None", v => v != SimpleEnum.One && v != SimpleEnum.Two && v != SimpleEnum.Three);
+
+            classifier.Classify(1000000, () => (SimpleEnum)anon.AnyEnumValue(typeof(SimpleEnum), Distribution.Uniform));
+
+            Assert.True(classifier[nameof(SimpleEnum.One)] > 0.25, nameof(SimpleEnum.One));
+            Assert.True(classifier[nameof(SimpleEnum.Two)] > 0.25, nameof(SimpleEnum.Two));
+            Assert.True(classifier[nameof(SimpleEnum.Three)] > 0.25, nameof(SimpleEnum.Three));
+            Assert.True(classifier["None"] == 0.0);
         }
 
         [Fact]

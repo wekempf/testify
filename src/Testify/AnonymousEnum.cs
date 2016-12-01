@@ -43,7 +43,7 @@ namespace Testify
             Argument.IsEnumType(enumType, nameof(enumType));
 
             var values = Enum.GetValues(enumType);
-            var index = anon.AnyInt32(0, values.Length - 1, distribution);
+            var index = anon.AnyInt32(0, values.Length, distribution);
             return values.GetValue(index);
         }
 
