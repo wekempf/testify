@@ -246,8 +246,7 @@ namespace Testify
                     var type = current.GetType();
                     var properties =
                         from prop in type.GetRuntimeProperties()
-                        where !prop.PropertyType.GetTypeInfo().IsPrimitive &&
-                            (prop.PropertyType.IsCollectionType() || (prop.CanWrite && prop.SetMethod.IsPublic && IsDefaultValue(current, prop))) &&
+                        where (prop.PropertyType.IsCollectionType() || (prop.CanWrite && prop.SetMethod.IsPublic && IsDefaultValue(current, prop))) &&
                             !(prop.GetIndexParameters()?.Any() ?? false)
                         select prop;
                     foreach (var prop in properties)
