@@ -255,16 +255,38 @@ namespace Testify
                         {
                             if (prop.PropertyType.IsCollectionType())
                             {
-                                var collection = prop.GetValue(current);
+                                var collection = (IEnumerable)prop.GetValue(current);
                                 if (collection != null)
                                 {
-                                    var method = prop.PropertyType.GetAddMethod();
-                                    if (method != null)
+                                    var items = collection.Cast<object>();
+                                    if (!items.Any())
                                     {
-                                        foreach (var item in this.AnyEnumerable(method.GetParameters()[0].ParameterType))
+                                        var method = prop.PropertyType.GetAddMethod();
+                                        if (method != null)
                                         {
-                                            method.Invoke(collection, new[] { item });
-                                            if (deep && !item.GetType().GetTypeInfo().IsPrimitive)
+                                            foreach (var item in this.AnyEnumerable(method.GetParameters()[0].ParameterType))
+                                            {
+                                                try
+                                                {
+                                                    method.Invoke(collection, new[] { item });
+                                                }
+                                                catch (Exception)
+                                                {
+                                                    break;
+                                                }
+
+                                                if (deep && !item.GetType().GetTypeInfo().IsPrimitive)
+                                                {
+                                                    queue.Enqueue(item);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else if (deep)
+                                    {
+                                        foreach (var item in items)
+                                        {
+                                            if (item != null && !item.GetType().GetTypeInfo().IsPrimitive)
                                             {
                                                 queue.Enqueue(item);
                                             }
@@ -279,7 +301,7 @@ namespace Testify
                                     {
                                         foreach (var item in (IEnumerable)value)
                                         {
-                                            if (!item.GetType().GetTypeInfo().IsPrimitive)
+                                            if (item != null && !item.GetType().GetTypeInfo().IsPrimitive)
                                             {
                                                 queue.Enqueue(item);
                                             }

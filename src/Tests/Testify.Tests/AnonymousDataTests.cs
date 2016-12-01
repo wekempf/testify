@@ -409,6 +409,10 @@ namespace Testify
 
             public List<string> UninitializedNames { get; set; }
 
+            public Model[] InitializedArray { get; set; } = new Model[2];
+
+            public Model[] UninitializedArray { get; set; }
+
             public Dictionary<string, int> Dictionary { get; } = new Dictionary<string, int>();
         }
     }
