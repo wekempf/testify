@@ -247,7 +247,7 @@ namespace Testify
                     var properties =
                         from prop in type.GetRuntimeProperties()
                         where !prop.PropertyType.GetTypeInfo().IsPrimitive &&
-                            (prop.PropertyType.IsCollectionType() || (prop.CanWrite && prop.SetMethod.IsPublic)) &&
+                            (prop.PropertyType.IsCollectionType() || (prop.CanWrite && prop.SetMethod.IsPublic && IsDefaultValue(current, prop))) &&
                             !(prop.GetIndexParameters()?.Any() ?? false)
                         select prop;
                     foreach (var prop in properties)
@@ -352,6 +352,14 @@ namespace Testify
             Argument.NotNull(factory, nameof(factory));
 
             this.propertyFactories[property] = factory;
+        }
+
+        private static bool IsDefaultValue<TInstance>(TInstance instance, PropertyInfo prop)
+        {
+            var defaultValue = prop.PropertyType.GetTypeInfo().IsValueType
+                ? Activator.CreateInstance(prop.PropertyType)
+                : null;
+            return object.Equals(defaultValue, prop.GetValue(instance));
         }
 
         private bool Any(Type type, out object result)

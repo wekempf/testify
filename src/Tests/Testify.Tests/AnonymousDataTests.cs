@@ -310,7 +310,8 @@ namespace Testify
 
             Assert.NotNull(result);
             Assert.NotNull(result.Model);
-            Assert.Equal(result.Model.Value, "xyzzy");
+            Assert.Equal("Model", result.Model.Value);
+            Assert.Equal("xyzzy", result.Model.Unset);
         }
 
         [Fact]
@@ -368,6 +369,8 @@ namespace Testify
         private class Model : IModel
         {
             public string Value { get; set; } = nameof(Model);
+
+            public string Unset { get; set; }
         }
 
         private class ModelList : List<Model>

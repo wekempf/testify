@@ -71,9 +71,14 @@ Task("Clean")
         CleanDirectories("**/obj");
         CleanDirectory("packages");
         CleanDirectory("TestResults");
+        CleanDirectory("./docs/_site");
         if (FileExists("./docs/site.zip")) {
             DeleteFile("./docs/site.zip");
         }
+        var files = GetFiles("./docs/api/*")
+            .Except(GetFiles("./docs/api/index.md"), FilePathComparer.Default)
+            .Except(GetFiles("./docs/api/toc.yml"), FilePathComparer.Default);
+        DeleteFiles(files);
     });
 
 Task("NuGetRestore")
@@ -229,7 +234,7 @@ Task("Docs")
                 DeleteDirectories(dirs, true);
                 var files = GetFiles("./pages/*");
                 DeleteFiles(files);
-                CopyFiles("./docs/_site/**/*", "./pages");
+                CopyFiles("./docs/_site/**/*", "./pages", true);
                 if (GitCommitPages() != 0) {
                     throw new Exception("Unable to commit Pages.");
                 }
