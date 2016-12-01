@@ -89,9 +89,21 @@ namespace Testify
         public static T AnyItem<T>(this IAnonymousData anon, IEnumerable<T> collection)
         {
             var items = collection as IList<T> ?? collection.ToList();
-            var index = anon.AnyInt32(0, items.Count - 1);
+            var index = anon.AnyInt32(0, items.Count);
             return items[index];
         }
+
+        /////// <summary>
+        /////// Returns a random item from the specified <see cref="Array"/>.
+        /////// </summary>
+        /////// <param name="anon">The anonymous data provider to use.</param>
+        /////// <param name="array">The <see cref="Array"/>.</param>
+        /////// <returns>A random item from the collection.</returns>
+        ////public static object AnyItem(this IAnonymousData anon, Array array)
+        ////{
+        ////    var index = anon.AnyInt32(0, array.Length);
+        ////    return array.GetValue(index);
+        ////}
 
         private static IEnumerable AnyEnumerable(IAnonymousData anon, Type type, int length)
         {
