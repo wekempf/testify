@@ -312,6 +312,7 @@ namespace Testify
             Assert.NotNull(result.Model);
             Assert.Equal("Model", result.Model.Value);
             Assert.Equal("xyzzy", result.Model.Unset);
+            Assert.True(result.Model.PrimitiveWasSet);
         }
 
         [Fact]
@@ -368,9 +369,27 @@ namespace Testify
 
         private class Model : IModel
         {
+            private int primitive;
+
             public string Value { get; set; } = nameof(Model);
 
             public string Unset { get; set; }
+
+            public int Primitive
+            {
+                get
+                {
+                    return this.primitive;
+                }
+
+                set
+                {
+                    this.primitive = value;
+                    this.PrimitiveWasSet = true;
+                }
+            }
+
+            public bool PrimitiveWasSet { get; private set; }
         }
 
         private class ModelList : List<Model>
