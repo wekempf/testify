@@ -38,17 +38,17 @@ namespace Testify
             "Delores", "Melinda", "Pearl", "Arlene", "Maureen", "Colleen", "Allison", "Tamara", "Joy", "Georgia",
             "Constance", "Lillie", "Claudia", "Jackie", "Marcia", "Tanya", "Nellie", "Minnie", "Marlene", "Heidi",
             "Glenda", "Lydia", "Viola", "Courtney", "Marian", "Stella", "Caroline", "Dora", "Jo", "Vickie",
-            "Mattie", "Terry", "Maxine", "Irma", "Mabel", "Marsha", "Myrtle", "Lena", "Christy"
+            "Mattie", "Terry", "Maxine", "Irma", "Mabel", "Marsha", "Myrtle", "Lena", "Christy",
         };
 
         private static readonly string[] FemalPrefixes = new[]
                 {
-            "Mrs.", "Ms.", "Miss", "Dr."
+            "Mrs.", "Ms.", "Miss", "Dr.",
         };
 
         private static readonly string[] GenerationalSuffixes = new[]
         {
-            "Jr.", "Sr.", "I", "II", "III"
+            "Jr.", "Sr.", "I", "II", "III",
         };
 
         private static readonly string[] MaleFirstNames = new[]
@@ -82,17 +82,17 @@ namespace Testify
             "Ian", "Wallace", "Ken", "Bob", "Jaime", "Casey", "Alfredo", "Alberto", "Dave", "Ivan", "Johnnie",
             "Sidney", "Byron", "Julian", "Isaac", "Morris", "Clifton", "Willard", "Daryl", "Ross", "Virgil",
             "Andy", "Marshall", "Salvador", "Perry", "Kirk", "Sergio", "Marion", "Tracy", "Seth", "Kent",
-            "Terrance", "Rene", "Eduardo", "Terrence", "Enrique", "Freddie", "Wade"
+            "Terrance", "Rene", "Eduardo", "Terrence", "Enrique", "Freddie", "Wade",
         };
 
         private static readonly string[] MalePrefixes = new[]
                         {
-            "Mr.", "Dr."
+            "Mr.", "Dr.",
         };
 
         private static readonly string[] Suffixes = new[]
         {
-            "MD", "DDS", "PhD", "DVM"
+            "MD", "DDS", "PhD", "DVM",
         };
 
         private static readonly string[] Surnames = new[]
@@ -124,7 +124,7 @@ namespace Testify
             "Obrien", "Lawson", "Franklin", "Lynch", "Bishop", "Carr", "Salazar", "Austin", "Mendez", "Gilbert",
             "Jensen", "Williamson", "Montgomery", "Harvey", "Oliver", "Howell", "Dean", "Hanson", "Weber",
             "Garrett", "Sims", "Burton", "Fuller", "Soto", "McCoy", "Welch", "Chen", "Schultz", "Walters",
-            "Reid", "Fields", "Walsh", "Little", "Fowler", "Bowman", "Davidson", "May", "Day", "Schneider"
+            "Reid", "Fields", "Walsh", "Little", "Fowler", "Bowman", "Davidson", "May", "Day", "Schneider",
         };
 
         /// <summary>

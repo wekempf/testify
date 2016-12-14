@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Examples", "src\Examples\Testify.Examples\Testify.Examples.csproj", "{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Moq", "src\Testify.Moq\Testify.Moq.csproj", "{74142B25-C8F7-4911-BE0E-74BD17DCC396}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Moq.Tests", "src\tests\Testify.Moq.Tests\Testify.Moq.Tests.csproj", "{C3E68AC7-C9D2-48B8-8998-91C104477373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,14 @@ Global
 		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +65,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FFAC94BB-C0D8-410B-8987-67077FAE24ED} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
 		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01} = {7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}
+		{C3E68AC7-C9D2-48B8-8998-91C104477373} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
 	EndGlobalSection
 EndGlobal

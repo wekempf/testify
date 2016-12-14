@@ -181,6 +181,36 @@ Task("NuGetPack")
             OutputDirectory = outputDirectory
         };
         NuGetPack(settings);
+
+        outputDirectory = MakeAbsolute(Directory("./src/Testify.Moq/bin/" + configuration));
+        settings = new NuGetPackSettings
+        {
+            Id = "Testify.Moq",
+            Version = version.NuGetVersion,
+            Title = "Testify.Moq",
+            Authors = new[] { "William E. Kempf" },
+            Owners = new[] { "William E. Kempf" }, 
+            Description = "Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework.",
+            Summary = "Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework. This extension adds auto mocking support using Moq.",
+            ProjectUrl = new Uri("http://wekempf.github.io/testify/"),
+            IconUrl = new Uri("https://raw.githubusercontent.com/wekempf/testify/develop/docs/images/gavel_icon-64x64.png"),
+            LicenseUrl = new Uri("https://raw.githubusercontent.com/wekempf/testify/master/LICENSE"),
+            Copyright = "Copyright " + DateTime.Now.Year.ToString(),
+            Tags = new [] { "test", "unit", "testing", "TDD", "AAA", "assert", "assertion", "factory", "verifier" },
+            RequireLicenseAcceptance = false,
+            Symbols = false,
+            Files = new [] {
+                new NuSpecContent { Source = "Testify.Moq.dll", Target = "lib/portable45-net45+win8+wpa81" },
+                new NuSpecContent { Source = "Testify.Moq.xml", Target = "lib/portable45-net45+win8+wpa81" }
+            },
+            Dependencies = new[] {
+                new NuSpecDependency { Id = "Testify", Version = version.NuGetVersion },
+                new NuSpecDependency { Id = "Moq", Version = "4.5" }
+            },
+            BasePath = outputDirectory,
+            OutputDirectory = outputDirectory
+        };
+        NuGetPack(settings);
     });
 
 Task("NuGetPush")

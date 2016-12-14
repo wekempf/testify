@@ -35,6 +35,8 @@
     name: AnonymousInt32
   - uid: Testify.AnonymousInt64
     name: AnonymousInt64
+  - uid: Testify.AnonymousMoq
+    name: AnonymousMoq
   - uid: Testify.AnonymousSingle
     name: AnonymousSingle
   - uid: Testify.AnonymousString
@@ -73,6 +75,8 @@
     name: IAnonymousDataCustomization
   - uid: Testify.IRegisterAnonymousData
     name: IRegisterAnonymousData
+  - uid: Testify.MoqCustomization
+    name: MoqCustomization
   - uid: Testify.PopulateOption
     name: PopulateOption
   - uid: Testify.StandardAssertions
