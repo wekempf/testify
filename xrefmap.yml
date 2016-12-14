@@ -51,10 +51,8 @@ references:
   name: ActualValue
   href: api/Testify.ActualValue-1.html
   commentId: Overload:Testify.ActualValue`1.#ctor
-  fullName: Testify.ActualValue<T>.ActualValue
-  fullName.vb: Testify.ActualValue(Of T).ActualValue
-  nameWithType: ActualValue<T>.ActualValue
-  nameWithType.vb: ActualValue(Of T).ActualValue
+  fullName: Testify.ActualValue.ActualValue
+  nameWithType: ActualValue.ActualValue
 - uid: Testify.ActualValue`1.Value
   name: Value
   href: api/Testify.ActualValue-1.html
@@ -1099,6 +1097,66 @@ references:
   commentId: Overload:Testify.AnonymousInt64.AnyPositiveInt64
   fullName: Testify.AnonymousInt64.AnyPositiveInt64
   nameWithType: AnonymousInt64.AnyPositiveInt64
+- uid: Testify.AnonymousMoq
+  name: AnonymousMoq
+  href: api/Testify.AnonymousMoq.html
+  commentId: T:Testify.AnonymousMoq
+  fullName: Testify.AnonymousMoq
+  nameWithType: AnonymousMoq
+- uid: Testify.AnonymousMoq.FreezeMock*
+  name: FreezeMock<T>
+  href: api/Testify.AnonymousMoq.html
+  commentId: Overload:Testify.AnonymousMoq.FreezeMock
+  name.vb: FreezeMock(Of T)
+  fullName: Testify.AnonymousMoq.FreezeMock<T>
+  fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)
+  nameWithType: AnonymousMoq.FreezeMock<T>
+  nameWithType.vb: AnonymousMoq.FreezeMock(Of T)
+- uid: Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData)
+  name: FreezeMock<T>(IRegisterAnonymousData)
+  href: api/Testify.AnonymousMoq.html
+  commentId: M:Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData)
+  name.vb: FreezeMock(Of T)(IRegisterAnonymousData)
+  fullName: Testify.AnonymousMoq.FreezeMock<T>(Testify.IRegisterAnonymousData)
+  fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)(Testify.IRegisterAnonymousData)
+  nameWithType: AnonymousMoq.FreezeMock<T>(IRegisterAnonymousData)
+  nameWithType.vb: FreezeMock(Of T)(IRegisterAnonymousData)
+- uid: Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData,Moq.Mock{``0})
+  name: FreezeMock<T>(IRegisterAnonymousData, Mock<T>)
+  href: api/Testify.AnonymousMoq.html
+  commentId: M:Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData,Moq.Mock{``0})
+  name.vb: FreezeMock(Of T)(IRegisterAnonymousData, Mock(Of T))
+  fullName: Testify.AnonymousMoq.FreezeMock<T>(Testify.IRegisterAnonymousData, Moq.Mock<T>)
+  fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)(Testify.IRegisterAnonymousData, Moq.Mock(Of T))
+  nameWithType: AnonymousMoq.FreezeMock<T>(IRegisterAnonymousData, Mock<T>)
+  nameWithType.vb: FreezeMock(Of T)(IRegisterAnonymousData, Mock(Of T))
+- uid: Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData,System.Action{Moq.Mock{``0}})
+  name: FreezeMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
+  href: api/Testify.AnonymousMoq.html
+  commentId: M:Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData,System.Action{Moq.Mock{``0}})
+  name.vb: FreezeMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
+  fullName: Testify.AnonymousMoq.FreezeMock<T>(Testify.IRegisterAnonymousData, System.Action<Moq.Mock<T>>)
+  fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)(Testify.IRegisterAnonymousData, System.Action(Of Moq.Mock(Of T)))
+  nameWithType: AnonymousMoq.FreezeMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
+  nameWithType.vb: FreezeMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
+- uid: Testify.AnonymousMoq.RegisterMock*
+  name: RegisterMock<T>
+  href: api/Testify.AnonymousMoq.html
+  commentId: Overload:Testify.AnonymousMoq.RegisterMock
+  name.vb: RegisterMock(Of T)
+  fullName: Testify.AnonymousMoq.RegisterMock<T>
+  fullName.vb: Testify.AnonymousMoq.RegisterMock(Of T)
+  nameWithType: AnonymousMoq.RegisterMock<T>
+  nameWithType.vb: AnonymousMoq.RegisterMock(Of T)
+- uid: Testify.AnonymousMoq.RegisterMock``1(Testify.IRegisterAnonymousData,System.Action{Moq.Mock{``0}})
+  name: RegisterMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
+  href: api/Testify.AnonymousMoq.html
+  commentId: M:Testify.AnonymousMoq.RegisterMock``1(Testify.IRegisterAnonymousData,System.Action{Moq.Mock{``0}})
+  name.vb: RegisterMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
+  fullName: Testify.AnonymousMoq.RegisterMock<T>(Testify.IRegisterAnonymousData, System.Action<Moq.Mock<T>>)
+  fullName.vb: Testify.AnonymousMoq.RegisterMock(Of T)(Testify.IRegisterAnonymousData, System.Action(Of Moq.Mock(Of T)))
+  nameWithType: AnonymousMoq.RegisterMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
+  nameWithType.vb: RegisterMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
 - uid: Testify.AnonymousSingle
   name: AnonymousSingle
   href: api/Testify.AnonymousSingle.html
@@ -1508,10 +1566,8 @@ references:
   name: AddClassification
   href: api/Testify.Classifier-1.html
   commentId: Overload:Testify.Classifier`1.AddClassification
-  fullName: Testify.Classifier<TValue>.AddClassification
-  fullName.vb: Testify.Classifier(Of TValue).AddClassification
-  nameWithType: Classifier<TValue>.AddClassification
-  nameWithType.vb: Classifier(Of TValue).AddClassification
+  fullName: Testify.Classifier.AddClassification
+  nameWithType: Classifier.AddClassification
 - uid: Testify.Classifier`1.Classify(`0)
   name: Classify(TValue)
   href: api/Testify.Classifier-1.html
@@ -1541,10 +1597,8 @@ references:
   name: Classify
   href: api/Testify.Classifier-1.html
   commentId: Overload:Testify.Classifier`1.Classify
-  fullName: Testify.Classifier<TValue>.Classify
-  fullName.vb: Testify.Classifier(Of TValue).Classify
-  nameWithType: Classifier<TValue>.Classify
-  nameWithType.vb: Classifier(Of TValue).Classify
+  fullName: Testify.Classifier.Classify
+  nameWithType: Classifier.Classify
 - uid: Testify.Classifier`1.Count
   name: Count
   href: api/Testify.Classifier-1.html
@@ -2242,10 +2296,8 @@ references:
   name: GetMethods
   href: api/Testify.ComparableVerifier-1.html
   commentId: Overload:Testify.ComparableVerifier`1.GetMethods
-  fullName: Testify.ComparableVerifier<T>.GetMethods
-  fullName.vb: Testify.ComparableVerifier(Of T).GetMethods
-  nameWithType: ComparableVerifier<T>.GetMethods
-  nameWithType.vb: ComparableVerifier(Of T).GetMethods
+  fullName: Testify.ComparableVerifier.GetMethods
+  nameWithType: ComparableVerifier.GetMethods
 - uid: Testify.ComparableVerifier`1.GetTests
   name: GetTests()
   href: api/Testify.ComparableVerifier-1.html
@@ -2257,10 +2309,8 @@ references:
   name: GetTests
   href: api/Testify.ComparableVerifier-1.html
   commentId: Overload:Testify.ComparableVerifier`1.GetTests
-  fullName: Testify.ComparableVerifier<T>.GetTests
-  fullName.vb: Testify.ComparableVerifier(Of T).GetTests
-  nameWithType: ComparableVerifier<T>.GetTests
-  nameWithType.vb: ComparableVerifier(Of T).GetTests
+  fullName: Testify.ComparableVerifier.GetTests
+  nameWithType: ComparableVerifier.GetTests
 - uid: Testify.ComparableVerifier`1.ItemsFactoryPropertyName
   name: ItemsFactoryPropertyName
   href: api/Testify.ComparableVerifier-1.html
@@ -2311,10 +2361,8 @@ references:
   name: ComparisonVerifierBase
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.#ctor
-  fullName: Testify.ComparisonVerifierBase<T>.ComparisonVerifierBase
-  fullName.vb: Testify.ComparisonVerifierBase(Of T).ComparisonVerifierBase
-  nameWithType: ComparisonVerifierBase<T>.ComparisonVerifierBase
-  nameWithType.vb: ComparisonVerifierBase(Of T).ComparisonVerifierBase
+  fullName: Testify.ComparisonVerifierBase.ComparisonVerifierBase
+  nameWithType: ComparisonVerifierBase.ComparisonVerifierBase
 - uid: Testify.ComparisonVerifierBase`1.BaseItems
   name: BaseItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2343,10 +2391,8 @@ references:
   name: CompareItems
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.CompareItems
-  fullName: Testify.ComparisonVerifierBase<T>.CompareItems
-  fullName.vb: Testify.ComparisonVerifierBase(Of T).CompareItems
-  nameWithType: ComparisonVerifierBase<T>.CompareItems
-  nameWithType.vb: ComparisonVerifierBase(Of T).CompareItems
+  fullName: Testify.ComparisonVerifierBase.CompareItems
+  nameWithType: ComparisonVerifierBase.CompareItems
 - uid: Testify.ComparisonVerifierBase`1.EqualItems
   name: EqualItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2373,10 +2419,8 @@ references:
   name: GetMethods
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.GetMethods
-  fullName: Testify.ComparisonVerifierBase<T>.GetMethods
-  fullName.vb: Testify.ComparisonVerifierBase(Of T).GetMethods
-  nameWithType: ComparisonVerifierBase<T>.GetMethods
-  nameWithType.vb: ComparisonVerifierBase(Of T).GetMethods
+  fullName: Testify.ComparisonVerifierBase.GetMethods
+  nameWithType: ComparisonVerifierBase.GetMethods
 - uid: Testify.ComparisonVerifierBase`1.GetTests
   name: GetTests()
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2388,10 +2432,8 @@ references:
   name: GetTests
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.GetTests
-  fullName: Testify.ComparisonVerifierBase<T>.GetTests
-  fullName.vb: Testify.ComparisonVerifierBase(Of T).GetTests
-  nameWithType: ComparisonVerifierBase<T>.GetTests
-  nameWithType.vb: ComparisonVerifierBase(Of T).GetTests
+  fullName: Testify.ComparisonVerifierBase.GetTests
+  nameWithType: ComparisonVerifierBase.GetTests
 - uid: Testify.ComparisonVerifierBase`1.IsPrimitive
   name: IsPrimitive
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2463,10 +2505,8 @@ references:
   name: VerifyConfiguration
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.VerifyConfiguration
-  fullName: Testify.ComparisonVerifierBase<T>.VerifyConfiguration
-  fullName.vb: Testify.ComparisonVerifierBase(Of T).VerifyConfiguration
-  nameWithType: ComparisonVerifierBase<T>.VerifyConfiguration
-  nameWithType.vb: ComparisonVerifierBase(Of T).VerifyConfiguration
+  fullName: Testify.ComparisonVerifierBase.VerifyConfiguration
+  nameWithType: ComparisonVerifierBase.VerifyConfiguration
 - uid: Testify.ContractVerifier
   name: ContractVerifier
   href: api/Testify.ContractVerifier.html
@@ -2845,6 +2885,27 @@ references:
   commentId: Overload:Testify.IRegisterAnonymousData.Register
   fullName: Testify.IRegisterAnonymousData.Register
   nameWithType: IRegisterAnonymousData.Register
+- uid: Testify.MoqCustomization
+  name: MoqCustomization
+  href: api/Testify.MoqCustomization.html
+  commentId: T:Testify.MoqCustomization
+  fullName: Testify.MoqCustomization
+  nameWithType: MoqCustomization
+- uid: Testify.MoqCustomization.Create(Testify.IAnonymousDataContext,System.Object@)
+  name: Create(IAnonymousDataContext, out Object)
+  href: api/Testify.MoqCustomization.html
+  commentId: M:Testify.MoqCustomization.Create(Testify.IAnonymousDataContext,System.Object@)
+  name.vb: Create(IAnonymousDataContext, ByRef Object)
+  fullName: Testify.MoqCustomization.Create(Testify.IAnonymousDataContext, out System.Object)
+  fullName.vb: Testify.MoqCustomization.Create(Testify.IAnonymousDataContext, ByRef System.Object)
+  nameWithType: MoqCustomization.Create(IAnonymousDataContext, out Object)
+  nameWithType.vb: Create(IAnonymousDataContext, ByRef Object)
+- uid: Testify.MoqCustomization.Create*
+  name: Create
+  href: api/Testify.MoqCustomization.html
+  commentId: Overload:Testify.MoqCustomization.Create
+  fullName: Testify.MoqCustomization.Create
+  nameWithType: MoqCustomization.Create
 - uid: Testify.PopulateOption
   name: PopulateOption
   href: api/Testify.PopulateOption.html
