@@ -38,7 +38,7 @@ namespace Testify
         /// <exception cref="ArgumentException">The <paramref name="value"/> is not assignable to the <paramref name="type"/>.</exception>
         internal static void IsAssignableTo(object value, Type type, string argName)
         {
-            if (!type.IsAssignableFrom(value.GetType()))
+            if (!type.IsInstanceOfType(value))
             {
                 throw new ArgumentException($"Value must be of type {type}", argName);
             }

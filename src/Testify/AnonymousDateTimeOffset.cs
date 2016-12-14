@@ -25,7 +25,7 @@ namespace Testify
                 new TimeSpan(8, 45, 0),
                 new TimeSpan(9, 30, 0),
                 new TimeSpan(10, 30, 0),
-                new TimeSpan(12, 45, 0)
+                new TimeSpan(12, 45, 0),
             })
             .OrderBy(d => d)
             .ToArray();
