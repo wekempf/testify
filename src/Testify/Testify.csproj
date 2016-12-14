@@ -92,7 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Testify.nuspec" />
     <None Include="Testify.ruleset" />
   </ItemGroup>
   <ItemGroup>
@@ -102,12 +101,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.0\analyzers\Google.Protobuf.dll" />
-    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.0\analyzers\SonarAnalyzer.CSharp.dll" />
-    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.0\analyzers\SonarAnalyzer.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.1.0-beta001\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

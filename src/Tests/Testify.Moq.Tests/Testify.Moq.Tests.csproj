@@ -5,12 +5,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FFAC94BB-C0D8-410B-8987-67077FAE24ED}</ProjectGuid>
+    <ProjectGuid>{C3E68AC7-C9D2-48B8-8998-91C104477373}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Testify.Tests</RootNamespace>
-    <AssemblyName>Testify.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AssemblyName>Testify.Moq.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.5.29.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Moq.4.5.29\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,37 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnonymousDataExceptionTests.cs" />
-    <Compile Include="AnonymousDecimalTests.cs" />
-    <Compile Include="AssertionExceptionExtensions.cs" />
-    <Compile Include="AssertionExceptionTests.cs" />
-    <Compile Include="AssertionsTests.cs" />
-    <Compile Include="AnonymousBoolTests.cs" />
-    <Compile Include="AnonymousByteTests.cs" />
-    <Compile Include="AnonymousCharTests.cs" />
-    <Compile Include="CollectionAssertionsTests.cs" />
-    <Compile Include="ComparableVerifierTests.cs" />
-    <Compile Include="AnonymousDateTimeTests.cs" />
-    <Compile Include="AnonymousDateTimeOffsetTests.cs" />
-    <Compile Include="DistributionTests.cs" />
-    <Compile Include="AnonymousDoubleTests.cs" />
-    <Compile Include="AnonymousEnumerableTests.cs" />
-    <Compile Include="AnonymousEnumTests.cs" />
-    <Compile Include="EquatableVerifierTests.cs" />
-    <Compile Include="ExceptionAssertionsTests.cs" />
-    <Compile Include="AnonymousInt16Tests.cs" />
-    <Compile Include="AnonymousInt32Tests.cs" />
-    <Compile Include="AnonymousInt64Tests.cs" />
-    <Compile Include="AnonymousDataTests.cs" />
+    <Compile Include="AnonymousMoqTests.cs" />
+    <Compile Include="ITestInterface.cs" />
+    <Compile Include="MoqCustomizationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AnonymousSingleTests.cs" />
-    <Compile Include="StandardAssertionsTests.cs" />
-    <Compile Include="StringAssertionsTests.cs" />
-    <Compile Include="AnonymousStringTests.cs" />
-    <Compile Include="AnonymousTimeSpanTests.cs" />
-    <Compile Include="TaskAssertionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Testify.Moq\Testify.Moq.csproj">
+      <Project>{74142b25-c8f7-4911-be0e-74bd17dcc396}</Project>
+      <Name>Testify.Moq</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Testify\Testify.csproj">
       <Project>{11f9cdd0-e36f-496b-a2c3-849a33e5c4d0}</Project>
       <Name>Testify</Name>
@@ -97,9 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
