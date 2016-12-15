@@ -1,6 +1,11 @@
 {
   "metadata": [
     {
+      "globalMetadata": {
+        "_gitContribute": {
+          "branch": "develop"
+        }
+      },
       "src": [
         {
           "cwd": "..",
