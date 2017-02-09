@@ -379,13 +379,13 @@ namespace Testify
             {
                 get
                 {
-                    return this.primitive;
+                    return primitive;
                 }
 
                 set
                 {
-                    this.primitive = value;
-                    this.PrimitiveWasSet = true;
+                    primitive = value;
+                    PrimitiveWasSet = true;
                 }
             }
 

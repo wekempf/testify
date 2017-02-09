@@ -21,7 +21,7 @@ namespace Testify
         /// <param name="value">The actual value.</param>
         public ActualValue(T value)
         {
-            this.Value = value;
+            Value = value;
         }
 
         /// <summary>

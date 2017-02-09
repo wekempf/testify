@@ -200,8 +200,8 @@ Task("NuGetPack")
             RequireLicenseAcceptance = false,
             Symbols = false,
             Files = new [] {
-                new NuSpecContent { Source = "Testify.Moq.dll", Target = "lib/portable45-net45+win8+wpa81" },
-                new NuSpecContent { Source = "Testify.Moq.xml", Target = "lib/portable45-net45+win8+wpa81" }
+                new NuSpecContent { Source = "Testify.Moq.dll", Target = "lib/net45" },
+                new NuSpecContent { Source = "Testify.Moq.xml", Target = "lib/net45" }
             },
             Dependencies = new[] {
                 new NuSpecDependency { Id = "Testify", Version = version.NuGetVersion },

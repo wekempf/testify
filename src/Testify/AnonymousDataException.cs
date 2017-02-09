@@ -29,7 +29,7 @@ namespace Testify
             : base($"Unable to create instance of specified type {type}.", innerException)
         {
             Argument.NotNull(type, nameof(type));
-            this.AnonymousType = type;
+            AnonymousType = type;
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Testify
             : base($"Unable to populate property {property?.Name} on type {property?.DeclaringType}.", innerException)
         {
             Argument.NotNull(property, nameof(property));
-            this.AnonymousType = property.DeclaringType;
+            AnonymousType = property.DeclaringType;
         }
 
         /// <summary>

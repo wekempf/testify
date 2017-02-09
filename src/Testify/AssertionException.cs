@@ -99,6 +99,6 @@ namespace Testify
         }
 
         [SuppressMessage("SonarLint", "S1144", Justification = "This is used by DebuggerDisplay.")]
-        private int InnerExceptionCount => this.InnerExceptions.Count;
+        private int InnerExceptionCount => InnerExceptions.Count;
     }
 }

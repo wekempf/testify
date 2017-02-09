@@ -18,14 +18,14 @@ namespace Testify
         {
             Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
 
-            this.Minimum = minimum;
-            this.Maximum = maximum;
+            Minimum = minimum;
+            Maximum = maximum;
         }
 
         /// <summary>
         /// Gets the length of the range.
         /// </summary>
-        public long Length => this.Maximum - this.Minimum;
+        public long Length => Maximum - Minimum;
 
         /// <summary>
         /// Gets the maximum value;

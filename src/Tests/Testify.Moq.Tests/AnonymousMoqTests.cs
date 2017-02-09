@@ -8,16 +8,16 @@ namespace Testify.Tests
 
         public AnonymousMoqTests()
         {
-            this.anon = new AnonymousData();
-            this.anon.Customize(new MoqCustomization());
+            anon = new AnonymousData();
+            anon.Customize(new MoqCustomization());
         }
 
         [Fact]
         public void RegisterMock_Configure_ConfiguresMock()
         {
             bool called = false;
-            this.anon.RegisterMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => called = true));
-            var test = this.anon.Any<ITestInterface>();
+            anon.RegisterMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => called = true));
+            var test = anon.Any<ITestInterface>();
 
             test.SayHello();
 
@@ -28,8 +28,8 @@ namespace Testify.Tests
         public void FreezeMock_Configure_ConfiguresMock()
         {
             bool called = false;
-            this.anon.FreezeMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => called = true));
-            var test = this.anon.Any<ITestInterface>();
+            anon.FreezeMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => called = true));
+            var test = anon.Any<ITestInterface>();
 
             test.SayHello();
 
@@ -39,10 +39,10 @@ namespace Testify.Tests
         [Fact]
         public void RegisterMock_Any_CreatesNewInstances()
         {
-            this.anon.RegisterMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => { }));
+            anon.RegisterMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => { }));
 
-            var first = this.anon.Any<ITestInterface>();
-            var second = this.anon.Any<ITestInterface>();
+            var first = anon.Any<ITestInterface>();
+            var second = anon.Any<ITestInterface>();
 
             Assert.NotSame(first, second);
         }
@@ -50,10 +50,10 @@ namespace Testify.Tests
         [Fact]
         public void FreezeMock_Any_ReturnsSameInstance()
         {
-            this.anon.FreezeMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => { }));
+            anon.FreezeMock<ITestInterface>(mock => mock.Setup(t => t.SayHello()).Callback(() => { }));
 
-            var first = this.anon.Any<ITestInterface>();
-            var second = this.anon.Any<ITestInterface>();
+            var first = anon.Any<ITestInterface>();
+            var second = anon.Any<ITestInterface>();
 
             Assert.Same(first, second);
         }

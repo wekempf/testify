@@ -53,7 +53,7 @@ namespace Testify
         /// </summary>
         /// <param name="random">The random number generator to use.</param>
         /// <returns>The next double in the Gaussian distribution.</returns>
-        protected double NextGausian(Random random) => this.NextGausian(random, NSIGMA);
+        protected double NextGausian(Random random) => NextGausian(random, NSIGMA);
 
         /// <summary>
         /// Get the next double in the Gaussian distribution.
@@ -79,19 +79,19 @@ namespace Testify
             {
                 Argument.NotNull(random, nameof(random));
 
-                double next = this.NextGausian(random, NSIGMA * 2);
+                double next = NextGausian(random, NSIGMA * 2);
                 return (next < 0) ? 1 + next : next;
             }
         }
 
         private sealed class NegativeNormalDistribution : Distribution
         {
-            public override double NextDouble(Random random) => Math.Abs(-1 + Math.Abs(this.NextGausian(random)));
+            public override double NextDouble(Random random) => Math.Abs(-1 + Math.Abs(NextGausian(random)));
         }
 
         private sealed class PositiveNormalDistribution : Distribution
         {
-            public override double NextDouble(Random random) => Math.Abs(this.NextGausian(random));
+            public override double NextDouble(Random random) => Math.Abs(NextGausian(random));
         }
 
         private sealed class UniformDistribution : Distribution

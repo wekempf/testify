@@ -1570,9 +1570,9 @@ namespace Testify
 
             public static Comparer From(IEqualityComparer comparer) => new Comparer(comparer);
 
-            public new bool Equals(object x, object y) => this.comparer.Equals(x, y);
+            public new bool Equals(object x, object y) => comparer.Equals(x, y);
 
-            public int GetHashCode(object obj) => this.comparer.GetHashCode(obj);
+            public int GetHashCode(object obj) => comparer.GetHashCode(obj);
         }
     }
 }
