@@ -47,12 +47,15 @@ references:
   fullName: Testify.ActualValue<T>.ActualValue(T)
   fullName.vb: Testify.ActualValue(Of T).ActualValue(T)
   nameWithType: ActualValue<T>.ActualValue(T)
+  nameWithType.vb: ActualValue(Of T).ActualValue(T)
 - uid: Testify.ActualValue`1.#ctor*
   name: ActualValue
   href: api/Testify.ActualValue-1.html
   commentId: Overload:Testify.ActualValue`1.#ctor
-  fullName: Testify.ActualValue.ActualValue
-  nameWithType: ActualValue.ActualValue
+  fullName: Testify.ActualValue<T>.ActualValue
+  fullName.vb: Testify.ActualValue(Of T).ActualValue
+  nameWithType: ActualValue<T>.ActualValue
+  nameWithType.vb: ActualValue(Of T).ActualValue
 - uid: Testify.ActualValue`1.Value
   name: Value
   href: api/Testify.ActualValue-1.html
@@ -60,6 +63,7 @@ references:
   fullName: Testify.ActualValue<T>.Value
   fullName.vb: Testify.ActualValue(Of T).Value
   nameWithType: ActualValue<T>.Value
+  nameWithType.vb: ActualValue(Of T).Value
 - uid: Testify.ActualValue`1.Value*
   name: Value
   href: api/Testify.ActualValue-1.html
@@ -333,14 +337,11 @@ references:
   fullName: Testify.AnonymousData.Customize
   nameWithType: AnonymousData.Customize
 - uid: Testify.AnonymousData.Populate*
-  name: Populate<TInstance>
+  name: Populate
   href: api/Testify.AnonymousData.html
   commentId: Overload:Testify.AnonymousData.Populate
-  name.vb: Populate(Of TInstance)
-  fullName: Testify.AnonymousData.Populate<TInstance>
-  fullName.vb: Testify.AnonymousData.Populate(Of TInstance)
-  nameWithType: AnonymousData.Populate<TInstance>
-  nameWithType.vb: AnonymousData.Populate(Of TInstance)
+  fullName: Testify.AnonymousData.Populate
+  nameWithType: AnonymousData.Populate
 - uid: Testify.AnonymousData.Populate``1(``0,System.Boolean)
   name: Populate<TInstance>(TInstance, Boolean)
   href: api/Testify.AnonymousData.html
@@ -349,7 +350,7 @@ references:
   fullName: Testify.AnonymousData.Populate<TInstance>(TInstance, System.Boolean)
   fullName.vb: Testify.AnonymousData.Populate(Of TInstance)(TInstance, System.Boolean)
   nameWithType: AnonymousData.Populate<TInstance>(TInstance, Boolean)
-  nameWithType.vb: Populate(Of TInstance)(TInstance, Boolean)
+  nameWithType.vb: AnonymousData.Populate(Of TInstance)(TInstance, Boolean)
 - uid: Testify.AnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})
   name: Register(PropertyInfo, Func<IAnonymousData, Object>)
   href: api/Testify.AnonymousData.html
@@ -358,7 +359,7 @@ references:
   fullName: Testify.AnonymousData.Register(System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.AnonymousData.Register(System.Reflection.PropertyInfo, System.Func(Of Testify.IAnonymousData, System.Object))
   nameWithType: AnonymousData.Register(PropertyInfo, Func<IAnonymousData, Object>)
-  nameWithType.vb: Register(PropertyInfo, Func(Of IAnonymousData, Object))
+  nameWithType.vb: AnonymousData.Register(PropertyInfo, Func(Of IAnonymousData, Object))
 - uid: Testify.AnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
   name: Register(Type, Func<IAnonymousData, Object>)
   href: api/Testify.AnonymousData.html
@@ -367,7 +368,7 @@ references:
   fullName: Testify.AnonymousData.Register(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.AnonymousData.Register(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
   nameWithType: AnonymousData.Register(Type, Func<IAnonymousData, Object>)
-  nameWithType.vb: Register(Type, Func(Of IAnonymousData, Object))
+  nameWithType.vb: AnonymousData.Register(Type, Func(Of IAnonymousData, Object))
 - uid: Testify.AnonymousData.Register*
   name: Register
   href: api/Testify.AnonymousData.html
@@ -382,7 +383,7 @@ references:
   fullName: Testify.AnonymousData.RegisterDefault(System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.AnonymousData.RegisterDefault(System.Reflection.PropertyInfo, System.Func(Of Testify.IAnonymousData, System.Object))
   nameWithType: AnonymousData.RegisterDefault(PropertyInfo, Func<IAnonymousData, Object>)
-  nameWithType.vb: RegisterDefault(PropertyInfo, Func(Of IAnonymousData, Object))
+  nameWithType.vb: AnonymousData.RegisterDefault(PropertyInfo, Func(Of IAnonymousData, Object))
 - uid: Testify.AnonymousData.RegisterDefault(System.Type,System.Func{Testify.IAnonymousData,System.Object})
   name: RegisterDefault(Type, Func<IAnonymousData, Object>)
   href: api/Testify.AnonymousData.html
@@ -391,7 +392,7 @@ references:
   fullName: Testify.AnonymousData.RegisterDefault(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.AnonymousData.RegisterDefault(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
   nameWithType: AnonymousData.RegisterDefault(Type, Func<IAnonymousData, Object>)
-  nameWithType.vb: RegisterDefault(Type, Func(Of IAnonymousData, Object))
+  nameWithType.vb: AnonymousData.RegisterDefault(Type, Func(Of IAnonymousData, Object))
 - uid: Testify.AnonymousData.RegisterDefault*
   name: RegisterDefault
   href: api/Testify.AnonymousData.html
@@ -406,7 +407,7 @@ references:
   fullName: Testify.AnonymousData.RegisterDefault<T>(System.Func<Testify.IAnonymousData, T>)
   fullName.vb: Testify.AnonymousData.RegisterDefault(Of T)(System.Func(Of Testify.IAnonymousData, T))
   nameWithType: AnonymousData.RegisterDefault<T>(Func<IAnonymousData, T>)
-  nameWithType.vb: RegisterDefault(Of T)(Func(Of IAnonymousData, T))
+  nameWithType.vb: AnonymousData.RegisterDefault(Of T)(Func(Of IAnonymousData, T))
 - uid: Testify.AnonymousData.RegisterDefault``2(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{Testify.IAnonymousData,``1})
   name: RegisterDefault<T, TProperty>(Expression<Func<T, TProperty>>, Func<IAnonymousData, TProperty>)
   href: api/Testify.AnonymousData.html
@@ -415,7 +416,7 @@ references:
   fullName: Testify.AnonymousData.RegisterDefault<T, TProperty>(System.Linq.Expressions.Expression<System.Func<T, TProperty>>, System.Func<Testify.IAnonymousData, TProperty>)
   fullName.vb: Testify.AnonymousData.RegisterDefault(Of T, TProperty)(System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Func(Of Testify.IAnonymousData, TProperty))
   nameWithType: AnonymousData.RegisterDefault<T, TProperty>(Expression<Func<T, TProperty>>, Func<IAnonymousData, TProperty>)
-  nameWithType.vb: RegisterDefault(Of T, TProperty)(Expression(Of Func(Of T, TProperty)), Func(Of IAnonymousData, TProperty))
+  nameWithType.vb: AnonymousData.RegisterDefault(Of T, TProperty)(Expression(Of Func(Of T, TProperty)), Func(Of IAnonymousData, TProperty))
 - uid: Testify.AnonymousDataException
   name: AnonymousDataException
   href: api/Testify.AnonymousDataException.html
@@ -477,14 +478,11 @@ references:
   fullName: Testify.AnonymousDataExtensions.Any(Testify.IAnonymousData, System.Type)
   nameWithType: AnonymousDataExtensions.Any(IAnonymousData, Type)
 - uid: Testify.AnonymousDataExtensions.Any*
-  name: Any<T>
+  name: Any
   href: api/Testify.AnonymousDataExtensions.html
   commentId: Overload:Testify.AnonymousDataExtensions.Any
-  name.vb: Any(Of T)
-  fullName: Testify.AnonymousDataExtensions.Any<T>
-  fullName.vb: Testify.AnonymousDataExtensions.Any(Of T)
-  nameWithType: AnonymousDataExtensions.Any<T>
-  nameWithType.vb: AnonymousDataExtensions.Any(Of T)
+  fullName: Testify.AnonymousDataExtensions.Any
+  nameWithType: AnonymousDataExtensions.Any
 - uid: Testify.AnonymousDataExtensions.Any``1(Testify.IAnonymousData)
   name: Any<T>(IAnonymousData)
   href: api/Testify.AnonymousDataExtensions.html
@@ -493,7 +491,7 @@ references:
   fullName: Testify.AnonymousDataExtensions.Any<T>(Testify.IAnonymousData)
   fullName.vb: Testify.AnonymousDataExtensions.Any(Of T)(Testify.IAnonymousData)
   nameWithType: AnonymousDataExtensions.Any<T>(IAnonymousData)
-  nameWithType.vb: Any(Of T)(IAnonymousData)
+  nameWithType.vb: AnonymousDataExtensions.Any(Of T)(IAnonymousData)
 - uid: Testify.AnonymousDataExtensions.Any``1(Testify.IAnonymousData,Testify.PopulateOption)
   name: Any<T>(IAnonymousData, PopulateOption)
   href: api/Testify.AnonymousDataExtensions.html
@@ -502,7 +500,7 @@ references:
   fullName: Testify.AnonymousDataExtensions.Any<T>(Testify.IAnonymousData, Testify.PopulateOption)
   fullName.vb: Testify.AnonymousDataExtensions.Any(Of T)(Testify.IAnonymousData, Testify.PopulateOption)
   nameWithType: AnonymousDataExtensions.Any<T>(IAnonymousData, PopulateOption)
-  nameWithType.vb: Any(Of T)(IAnonymousData, PopulateOption)
+  nameWithType.vb: AnonymousDataExtensions.Any(Of T)(IAnonymousData, PopulateOption)
 - uid: Testify.AnonymousDataExtensions.Freeze(Testify.IRegisterAnonymousData,System.Type,System.Object)
   name: Freeze(IRegisterAnonymousData, Type, Object)
   href: api/Testify.AnonymousDataExtensions.html
@@ -523,16 +521,13 @@ references:
   fullName: Testify.AnonymousDataExtensions.Freeze<T>(Testify.IRegisterAnonymousData, T)
   fullName.vb: Testify.AnonymousDataExtensions.Freeze(Of T)(Testify.IRegisterAnonymousData, T)
   nameWithType: AnonymousDataExtensions.Freeze<T>(IRegisterAnonymousData, T)
-  nameWithType.vb: Freeze(Of T)(IRegisterAnonymousData, T)
+  nameWithType.vb: AnonymousDataExtensions.Freeze(Of T)(IRegisterAnonymousData, T)
 - uid: Testify.AnonymousDataExtensions.Populate*
-  name: Populate<TInstance>
+  name: Populate
   href: api/Testify.AnonymousDataExtensions.html
   commentId: Overload:Testify.AnonymousDataExtensions.Populate
-  name.vb: Populate(Of TInstance)
-  fullName: Testify.AnonymousDataExtensions.Populate<TInstance>
-  fullName.vb: Testify.AnonymousDataExtensions.Populate(Of TInstance)
-  nameWithType: AnonymousDataExtensions.Populate<TInstance>
-  nameWithType.vb: AnonymousDataExtensions.Populate(Of TInstance)
+  fullName: Testify.AnonymousDataExtensions.Populate
+  nameWithType: AnonymousDataExtensions.Populate
 - uid: Testify.AnonymousDataExtensions.Populate``1(Testify.IAnonymousData,``0)
   name: Populate<TInstance>(IAnonymousData, TInstance)
   href: api/Testify.AnonymousDataExtensions.html
@@ -541,16 +536,13 @@ references:
   fullName: Testify.AnonymousDataExtensions.Populate<TInstance>(Testify.IAnonymousData, TInstance)
   fullName.vb: Testify.AnonymousDataExtensions.Populate(Of TInstance)(Testify.IAnonymousData, TInstance)
   nameWithType: AnonymousDataExtensions.Populate<TInstance>(IAnonymousData, TInstance)
-  nameWithType.vb: Populate(Of TInstance)(IAnonymousData, TInstance)
+  nameWithType.vb: AnonymousDataExtensions.Populate(Of TInstance)(IAnonymousData, TInstance)
 - uid: Testify.AnonymousDataExtensions.Register*
-  name: Register<T>
+  name: Register
   href: api/Testify.AnonymousDataExtensions.html
   commentId: Overload:Testify.AnonymousDataExtensions.Register
-  name.vb: Register(Of T)
-  fullName: Testify.AnonymousDataExtensions.Register<T>
-  fullName.vb: Testify.AnonymousDataExtensions.Register(Of T)
-  nameWithType: AnonymousDataExtensions.Register<T>
-  nameWithType.vb: AnonymousDataExtensions.Register(Of T)
+  fullName: Testify.AnonymousDataExtensions.Register
+  nameWithType: AnonymousDataExtensions.Register
 - uid: Testify.AnonymousDataExtensions.Register``1(Testify.IRegisterAnonymousData,System.Func{Testify.IAnonymousData,``0})
   name: Register<T>(IRegisterAnonymousData, Func<IAnonymousData, T>)
   href: api/Testify.AnonymousDataExtensions.html
@@ -559,7 +551,7 @@ references:
   fullName: Testify.AnonymousDataExtensions.Register<T>(Testify.IRegisterAnonymousData, System.Func<Testify.IAnonymousData, T>)
   fullName.vb: Testify.AnonymousDataExtensions.Register(Of T)(Testify.IRegisterAnonymousData, System.Func(Of Testify.IAnonymousData, T))
   nameWithType: AnonymousDataExtensions.Register<T>(IRegisterAnonymousData, Func<IAnonymousData, T>)
-  nameWithType.vb: Register(Of T)(IRegisterAnonymousData, Func(Of IAnonymousData, T))
+  nameWithType.vb: AnonymousDataExtensions.Register(Of T)(IRegisterAnonymousData, Func(Of IAnonymousData, T))
 - uid: Testify.AnonymousDataExtensions.Register``2(Testify.IRegisterAnonymousData,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Func{Testify.IAnonymousData,``1})
   name: Register<T, TProperty>(IRegisterAnonymousData, Expression<Func<T, TProperty>>, Func<IAnonymousData, TProperty>)
   href: api/Testify.AnonymousDataExtensions.html
@@ -568,7 +560,7 @@ references:
   fullName: Testify.AnonymousDataExtensions.Register<T, TProperty>(Testify.IRegisterAnonymousData, System.Linq.Expressions.Expression<System.Func<T, TProperty>>, System.Func<Testify.IAnonymousData, TProperty>)
   fullName.vb: Testify.AnonymousDataExtensions.Register(Of T, TProperty)(Testify.IRegisterAnonymousData, System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Func(Of Testify.IAnonymousData, TProperty))
   nameWithType: AnonymousDataExtensions.Register<T, TProperty>(IRegisterAnonymousData, Expression<Func<T, TProperty>>, Func<IAnonymousData, TProperty>)
-  nameWithType.vb: Register(Of T, TProperty)(IRegisterAnonymousData, Expression(Of Func(Of T, TProperty)), Func(Of IAnonymousData, TProperty))
+  nameWithType.vb: AnonymousDataExtensions.Register(Of T, TProperty)(IRegisterAnonymousData, Expression(Of Func(Of T, TProperty)), Func(Of IAnonymousData, TProperty))
 - uid: Testify.AnonymousDateTime
   name: AnonymousDateTime
   href: api/Testify.AnonymousDateTime.html
@@ -811,7 +803,7 @@ references:
   fullName: Testify.AnonymousEnum.AnyEnumValue<T>(Testify.IAnonymousData)
   fullName.vb: Testify.AnonymousEnum.AnyEnumValue(Of T)(Testify.IAnonymousData)
   nameWithType: AnonymousEnum.AnyEnumValue<T>(IAnonymousData)
-  nameWithType.vb: AnyEnumValue(Of T)(IAnonymousData)
+  nameWithType.vb: AnonymousEnum.AnyEnumValue(Of T)(IAnonymousData)
 - uid: Testify.AnonymousEnum.AnyEnumValue``1(Testify.IAnonymousData,Testify.Distribution)
   name: AnyEnumValue<T>(IAnonymousData, Distribution)
   href: api/Testify.AnonymousEnum.html
@@ -820,7 +812,7 @@ references:
   fullName: Testify.AnonymousEnum.AnyEnumValue<T>(Testify.IAnonymousData, Testify.Distribution)
   fullName.vb: Testify.AnonymousEnum.AnyEnumValue(Of T)(Testify.IAnonymousData, Testify.Distribution)
   nameWithType: AnonymousEnum.AnyEnumValue<T>(IAnonymousData, Distribution)
-  nameWithType.vb: AnyEnumValue(Of T)(IAnonymousData, Distribution)
+  nameWithType.vb: AnonymousEnum.AnyEnumValue(Of T)(IAnonymousData, Distribution)
 - uid: Testify.AnonymousEnumerable
   name: AnonymousEnumerable
   href: api/Testify.AnonymousEnumerable.html
@@ -853,7 +845,7 @@ references:
   fullName: Testify.AnonymousEnumerable.AnyEnumerable<T>(Testify.IAnonymousData)
   fullName.vb: Testify.AnonymousEnumerable.AnyEnumerable(Of T)(Testify.IAnonymousData)
   nameWithType: AnonymousEnumerable.AnyEnumerable<T>(IAnonymousData)
-  nameWithType.vb: AnyEnumerable(Of T)(IAnonymousData)
+  nameWithType.vb: AnonymousEnumerable.AnyEnumerable(Of T)(IAnonymousData)
 - uid: Testify.AnonymousEnumerable.AnyEnumerable``1(Testify.IAnonymousData,System.Int32,System.Int32)
   name: AnyEnumerable<T>(IAnonymousData, Int32, Int32)
   href: api/Testify.AnonymousEnumerable.html
@@ -862,16 +854,13 @@ references:
   fullName: Testify.AnonymousEnumerable.AnyEnumerable<T>(Testify.IAnonymousData, System.Int32, System.Int32)
   fullName.vb: Testify.AnonymousEnumerable.AnyEnumerable(Of T)(Testify.IAnonymousData, System.Int32, System.Int32)
   nameWithType: AnonymousEnumerable.AnyEnumerable<T>(IAnonymousData, Int32, Int32)
-  nameWithType.vb: AnyEnumerable(Of T)(IAnonymousData, Int32, Int32)
+  nameWithType.vb: AnonymousEnumerable.AnyEnumerable(Of T)(IAnonymousData, Int32, Int32)
 - uid: Testify.AnonymousEnumerable.AnyItem*
-  name: AnyItem<T>
+  name: AnyItem
   href: api/Testify.AnonymousEnumerable.html
   commentId: Overload:Testify.AnonymousEnumerable.AnyItem
-  name.vb: AnyItem(Of T)
-  fullName: Testify.AnonymousEnumerable.AnyItem<T>
-  fullName.vb: Testify.AnonymousEnumerable.AnyItem(Of T)
-  nameWithType: AnonymousEnumerable.AnyItem<T>
-  nameWithType.vb: AnonymousEnumerable.AnyItem(Of T)
+  fullName: Testify.AnonymousEnumerable.AnyItem
+  nameWithType: AnonymousEnumerable.AnyItem
 - uid: Testify.AnonymousEnumerable.AnyItem``1(Testify.IAnonymousData,System.Collections.Generic.IEnumerable{``0})
   name: AnyItem<T>(IAnonymousData, IEnumerable<T>)
   href: api/Testify.AnonymousEnumerable.html
@@ -880,7 +869,7 @@ references:
   fullName: Testify.AnonymousEnumerable.AnyItem<T>(Testify.IAnonymousData, System.Collections.Generic.IEnumerable<T>)
   fullName.vb: Testify.AnonymousEnumerable.AnyItem(Of T)(Testify.IAnonymousData, System.Collections.Generic.IEnumerable(Of T))
   nameWithType: AnonymousEnumerable.AnyItem<T>(IAnonymousData, IEnumerable<T>)
-  nameWithType.vb: AnyItem(Of T)(IAnonymousData, IEnumerable(Of T))
+  nameWithType.vb: AnonymousEnumerable.AnyItem(Of T)(IAnonymousData, IEnumerable(Of T))
 - uid: Testify.AnonymousInt16
   name: AnonymousInt16
   href: api/Testify.AnonymousInt16.html
@@ -1104,14 +1093,11 @@ references:
   fullName: Testify.AnonymousMoq
   nameWithType: AnonymousMoq
 - uid: Testify.AnonymousMoq.FreezeMock*
-  name: FreezeMock<T>
+  name: FreezeMock
   href: api/Testify.AnonymousMoq.html
   commentId: Overload:Testify.AnonymousMoq.FreezeMock
-  name.vb: FreezeMock(Of T)
-  fullName: Testify.AnonymousMoq.FreezeMock<T>
-  fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)
-  nameWithType: AnonymousMoq.FreezeMock<T>
-  nameWithType.vb: AnonymousMoq.FreezeMock(Of T)
+  fullName: Testify.AnonymousMoq.FreezeMock
+  nameWithType: AnonymousMoq.FreezeMock
 - uid: Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData)
   name: FreezeMock<T>(IRegisterAnonymousData)
   href: api/Testify.AnonymousMoq.html
@@ -1120,7 +1106,7 @@ references:
   fullName: Testify.AnonymousMoq.FreezeMock<T>(Testify.IRegisterAnonymousData)
   fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)(Testify.IRegisterAnonymousData)
   nameWithType: AnonymousMoq.FreezeMock<T>(IRegisterAnonymousData)
-  nameWithType.vb: FreezeMock(Of T)(IRegisterAnonymousData)
+  nameWithType.vb: AnonymousMoq.FreezeMock(Of T)(IRegisterAnonymousData)
 - uid: Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData,Moq.Mock{``0})
   name: FreezeMock<T>(IRegisterAnonymousData, Mock<T>)
   href: api/Testify.AnonymousMoq.html
@@ -1129,7 +1115,7 @@ references:
   fullName: Testify.AnonymousMoq.FreezeMock<T>(Testify.IRegisterAnonymousData, Moq.Mock<T>)
   fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)(Testify.IRegisterAnonymousData, Moq.Mock(Of T))
   nameWithType: AnonymousMoq.FreezeMock<T>(IRegisterAnonymousData, Mock<T>)
-  nameWithType.vb: FreezeMock(Of T)(IRegisterAnonymousData, Mock(Of T))
+  nameWithType.vb: AnonymousMoq.FreezeMock(Of T)(IRegisterAnonymousData, Mock(Of T))
 - uid: Testify.AnonymousMoq.FreezeMock``1(Testify.IRegisterAnonymousData,System.Action{Moq.Mock{``0}})
   name: FreezeMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
   href: api/Testify.AnonymousMoq.html
@@ -1138,16 +1124,13 @@ references:
   fullName: Testify.AnonymousMoq.FreezeMock<T>(Testify.IRegisterAnonymousData, System.Action<Moq.Mock<T>>)
   fullName.vb: Testify.AnonymousMoq.FreezeMock(Of T)(Testify.IRegisterAnonymousData, System.Action(Of Moq.Mock(Of T)))
   nameWithType: AnonymousMoq.FreezeMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
-  nameWithType.vb: FreezeMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
+  nameWithType.vb: AnonymousMoq.FreezeMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
 - uid: Testify.AnonymousMoq.RegisterMock*
-  name: RegisterMock<T>
+  name: RegisterMock
   href: api/Testify.AnonymousMoq.html
   commentId: Overload:Testify.AnonymousMoq.RegisterMock
-  name.vb: RegisterMock(Of T)
-  fullName: Testify.AnonymousMoq.RegisterMock<T>
-  fullName.vb: Testify.AnonymousMoq.RegisterMock(Of T)
-  nameWithType: AnonymousMoq.RegisterMock<T>
-  nameWithType.vb: AnonymousMoq.RegisterMock(Of T)
+  fullName: Testify.AnonymousMoq.RegisterMock
+  nameWithType: AnonymousMoq.RegisterMock
 - uid: Testify.AnonymousMoq.RegisterMock``1(Testify.IRegisterAnonymousData,System.Action{Moq.Mock{``0}})
   name: RegisterMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
   href: api/Testify.AnonymousMoq.html
@@ -1156,7 +1139,7 @@ references:
   fullName: Testify.AnonymousMoq.RegisterMock<T>(Testify.IRegisterAnonymousData, System.Action<Moq.Mock<T>>)
   fullName.vb: Testify.AnonymousMoq.RegisterMock(Of T)(Testify.IRegisterAnonymousData, System.Action(Of Moq.Mock(Of T)))
   nameWithType: AnonymousMoq.RegisterMock<T>(IRegisterAnonymousData, Action<Mock<T>>)
-  nameWithType.vb: RegisterMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
+  nameWithType.vb: AnonymousMoq.RegisterMock(Of T)(IRegisterAnonymousData, Action(Of Mock(Of T)))
 - uid: Testify.AnonymousSingle
   name: AnonymousSingle
   href: api/Testify.AnonymousSingle.html
@@ -1369,7 +1352,7 @@ references:
   fullName: Testify.AssertionException.AssertionException(System.Collections.Generic.IEnumerable<System.Exception>)
   fullName.vb: Testify.AssertionException.AssertionException(System.Collections.Generic.IEnumerable(Of System.Exception))
   nameWithType: AssertionException.AssertionException(IEnumerable<Exception>)
-  nameWithType.vb: AssertionException(IEnumerable(Of Exception))
+  nameWithType.vb: AssertionException.AssertionException(IEnumerable(Of Exception))
 - uid: Testify.AssertionException.#ctor(System.Exception[])
   name: AssertionException(Exception[])
   href: api/Testify.AssertionException.html
@@ -1378,7 +1361,7 @@ references:
   fullName: Testify.AssertionException.AssertionException(System.Exception[])
   fullName.vb: Testify.AssertionException.AssertionException(System.Exception())
   nameWithType: AssertionException.AssertionException(Exception[])
-  nameWithType.vb: AssertionException(Exception())
+  nameWithType.vb: AssertionException.AssertionException(Exception())
 - uid: Testify.AssertionException.#ctor(System.String)
   name: AssertionException(String)
   href: api/Testify.AssertionException.html
@@ -1393,7 +1376,7 @@ references:
   fullName: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IEnumerable<System.Exception>)
   fullName.vb: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IEnumerable(Of System.Exception))
   nameWithType: AssertionException.AssertionException(String, IEnumerable<Exception>)
-  nameWithType.vb: AssertionException(String, IEnumerable(Of Exception))
+  nameWithType.vb: AssertionException.AssertionException(String, IEnumerable(Of Exception))
 - uid: Testify.AssertionException.#ctor(System.String,System.Collections.Generic.IList{System.Exception})
   name: AssertionException(String, IList<Exception>)
   href: api/Testify.AssertionException.html
@@ -1402,7 +1385,7 @@ references:
   fullName: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IList<System.Exception>)
   fullName.vb: Testify.AssertionException.AssertionException(System.String, System.Collections.Generic.IList(Of System.Exception))
   nameWithType: AssertionException.AssertionException(String, IList<Exception>)
-  nameWithType.vb: AssertionException(String, IList(Of Exception))
+  nameWithType.vb: AssertionException.AssertionException(String, IList(Of Exception))
 - uid: Testify.AssertionException.#ctor(System.String,System.Exception)
   name: AssertionException(String, Exception)
   href: api/Testify.AssertionException.html
@@ -1417,7 +1400,7 @@ references:
   fullName: Testify.AssertionException.AssertionException(System.String, System.Exception[])
   fullName.vb: Testify.AssertionException.AssertionException(System.String, System.Exception())
   nameWithType: AssertionException.AssertionException(String, Exception[])
-  nameWithType.vb: AssertionException(String, Exception())
+  nameWithType.vb: AssertionException.AssertionException(String, Exception())
 - uid: Testify.AssertionException.#ctor*
   name: AssertionException
   href: api/Testify.AssertionException.html
@@ -1437,14 +1420,11 @@ references:
   fullName: Testify.Assertions.Assert(System.Action)
   nameWithType: Assertions.Assert(Action)
 - uid: Testify.Assertions.Assert*
-  name: Assert<T>
+  name: Assert
   href: api/Testify.Assertions.html
   commentId: Overload:Testify.Assertions.Assert
-  name.vb: Assert(Of T)
-  fullName: Testify.Assertions.Assert<T>
-  fullName.vb: Testify.Assertions.Assert(Of T)
-  nameWithType: Assertions.Assert<T>
-  nameWithType.vb: Assertions.Assert(Of T)
+  fullName: Testify.Assertions.Assert
+  nameWithType: Assertions.Assert
 - uid: Testify.Assertions.Assert``1(``0)
   name: Assert<T>(T)
   href: api/Testify.Assertions.html
@@ -1453,7 +1433,7 @@ references:
   fullName: Testify.Assertions.Assert<T>(T)
   fullName.vb: Testify.Assertions.Assert(Of T)(T)
   nameWithType: Assertions.Assert<T>(T)
-  nameWithType.vb: Assert(Of T)(T)
+  nameWithType.vb: Assertions.Assert(Of T)(T)
 - uid: Testify.Assertions.AssertAll(System.String,System.Action[])
   name: AssertAll(String, Action[])
   href: api/Testify.Assertions.html
@@ -1462,7 +1442,7 @@ references:
   fullName: Testify.Assertions.AssertAll(System.String, System.Action[])
   fullName.vb: Testify.Assertions.AssertAll(System.String, System.Action())
   nameWithType: Assertions.AssertAll(String, Action[])
-  nameWithType.vb: AssertAll(String, Action())
+  nameWithType.vb: Assertions.AssertAll(String, Action())
 - uid: Testify.Assertions.AssertAll(System.String,System.Collections.Generic.IEnumerable{System.Action})
   name: AssertAll(String, IEnumerable<Action>)
   href: api/Testify.Assertions.html
@@ -1471,7 +1451,7 @@ references:
   fullName: Testify.Assertions.AssertAll(System.String, System.Collections.Generic.IEnumerable<System.Action>)
   fullName.vb: Testify.Assertions.AssertAll(System.String, System.Collections.Generic.IEnumerable(Of System.Action))
   nameWithType: Assertions.AssertAll(String, IEnumerable<Action>)
-  nameWithType.vb: AssertAll(String, IEnumerable(Of Action))
+  nameWithType.vb: Assertions.AssertAll(String, IEnumerable(Of Action))
 - uid: Testify.Assertions.AssertAll*
   name: AssertAll
   href: api/Testify.Assertions.html
@@ -1492,7 +1472,7 @@ references:
   fullName: Testify.Assertions.Fail(System.String, System.Object[])
   fullName.vb: Testify.Assertions.Fail(System.String, System.Object())
   nameWithType: Assertions.Fail(String, Object[])
-  nameWithType.vb: Fail(String, Object())
+  nameWithType.vb: Assertions.Fail(String, Object())
 - uid: Testify.Assertions.Fail*
   name: Fail
   href: api/Testify.Assertions.html
@@ -1519,7 +1499,7 @@ references:
   fullName: Testify.Assertions.Throw(System.String, System.Collections.Generic.IEnumerable<System.Exception>, System.String, System.String, System.Object[])
   fullName.vb: Testify.Assertions.Throw(System.String, System.Collections.Generic.IEnumerable(Of System.Exception), System.String, System.String, System.Object())
   nameWithType: Assertions.Throw(String, IEnumerable<Exception>, String, String, Object[])
-  nameWithType.vb: Throw(String, IEnumerable(Of Exception), String, String, Object())
+  nameWithType.vb: Assertions.Throw(String, IEnumerable(Of Exception), String, String, Object())
 - uid: Testify.Assertions.Throw(System.String,System.Exception,System.String,System.String,System.Object[])
   name: Throw(String, Exception, String, String, Object[])
   href: api/Testify.Assertions.html
@@ -1528,7 +1508,7 @@ references:
   fullName: Testify.Assertions.Throw(System.String, System.Exception, System.String, System.String, System.Object[])
   fullName.vb: Testify.Assertions.Throw(System.String, System.Exception, System.String, System.String, System.Object())
   nameWithType: Assertions.Throw(String, Exception, String, String, Object[])
-  nameWithType.vb: Throw(String, Exception, String, String, Object())
+  nameWithType.vb: Assertions.Throw(String, Exception, String, String, Object())
 - uid: Testify.Assertions.Throw(System.String,System.String,System.String,System.Object[])
   name: Throw(String, String, String, Object[])
   href: api/Testify.Assertions.html
@@ -1537,7 +1517,7 @@ references:
   fullName: Testify.Assertions.Throw(System.String, System.String, System.String, System.Object[])
   fullName.vb: Testify.Assertions.Throw(System.String, System.String, System.String, System.Object())
   nameWithType: Assertions.Throw(String, String, String, Object[])
-  nameWithType.vb: Throw(String, String, String, Object())
+  nameWithType.vb: Assertions.Throw(String, String, String, Object())
 - uid: Testify.Assertions.Throw*
   name: Throw
   href: api/Testify.Assertions.html
@@ -1561,13 +1541,15 @@ references:
   fullName: Testify.Classifier<TValue>.AddClassification(System.String, System.Predicate<TValue>)
   fullName.vb: Testify.Classifier(Of TValue).AddClassification(System.String, System.Predicate(Of TValue))
   nameWithType: Classifier<TValue>.AddClassification(String, Predicate<TValue>)
-  nameWithType.vb: AddClassification(String, Predicate(Of TValue))
+  nameWithType.vb: Classifier(Of TValue).AddClassification(String, Predicate(Of TValue))
 - uid: Testify.Classifier`1.AddClassification*
   name: AddClassification
   href: api/Testify.Classifier-1.html
   commentId: Overload:Testify.Classifier`1.AddClassification
-  fullName: Testify.Classifier.AddClassification
-  nameWithType: Classifier.AddClassification
+  fullName: Testify.Classifier<TValue>.AddClassification
+  fullName.vb: Testify.Classifier(Of TValue).AddClassification
+  nameWithType: Classifier<TValue>.AddClassification
+  nameWithType.vb: Classifier(Of TValue).AddClassification
 - uid: Testify.Classifier`1.Classify(`0)
   name: Classify(TValue)
   href: api/Testify.Classifier-1.html
@@ -1575,6 +1557,7 @@ references:
   fullName: Testify.Classifier<TValue>.Classify(TValue)
   fullName.vb: Testify.Classifier(Of TValue).Classify(TValue)
   nameWithType: Classifier<TValue>.Classify(TValue)
+  nameWithType.vb: Classifier(Of TValue).Classify(TValue)
 - uid: Testify.Classifier`1.Classify(System.Func{`0})
   name: Classify(Func<TValue>)
   href: api/Testify.Classifier-1.html
@@ -1583,7 +1566,7 @@ references:
   fullName: Testify.Classifier<TValue>.Classify(System.Func<TValue>)
   fullName.vb: Testify.Classifier(Of TValue).Classify(System.Func(Of TValue))
   nameWithType: Classifier<TValue>.Classify(Func<TValue>)
-  nameWithType.vb: Classify(Func(Of TValue))
+  nameWithType.vb: Classifier(Of TValue).Classify(Func(Of TValue))
 - uid: Testify.Classifier`1.Classify(System.Int32,System.Func{`0})
   name: Classify(Int32, Func<TValue>)
   href: api/Testify.Classifier-1.html
@@ -1592,13 +1575,15 @@ references:
   fullName: Testify.Classifier<TValue>.Classify(System.Int32, System.Func<TValue>)
   fullName.vb: Testify.Classifier(Of TValue).Classify(System.Int32, System.Func(Of TValue))
   nameWithType: Classifier<TValue>.Classify(Int32, Func<TValue>)
-  nameWithType.vb: Classify(Int32, Func(Of TValue))
+  nameWithType.vb: Classifier(Of TValue).Classify(Int32, Func(Of TValue))
 - uid: Testify.Classifier`1.Classify*
   name: Classify
   href: api/Testify.Classifier-1.html
   commentId: Overload:Testify.Classifier`1.Classify
-  fullName: Testify.Classifier.Classify
-  nameWithType: Classifier.Classify
+  fullName: Testify.Classifier<TValue>.Classify
+  fullName.vb: Testify.Classifier(Of TValue).Classify
+  nameWithType: Classifier<TValue>.Classify
+  nameWithType.vb: Classifier(Of TValue).Classify
 - uid: Testify.Classifier`1.Count
   name: Count
   href: api/Testify.Classifier-1.html
@@ -1606,6 +1591,7 @@ references:
   fullName: Testify.Classifier<TValue>.Count
   fullName.vb: Testify.Classifier(Of TValue).Count
   nameWithType: Classifier<TValue>.Count
+  nameWithType.vb: Classifier(Of TValue).Count
 - uid: Testify.Classifier`1.Count*
   name: Count
   href: api/Testify.Classifier-1.html
@@ -1622,7 +1608,7 @@ references:
   fullName: Testify.Classifier<TValue>.Item[System.String]
   fullName.vb: Testify.Classifier(Of TValue).Item(System.String)
   nameWithType: Classifier<TValue>.Item[String]
-  nameWithType.vb: Item(String)
+  nameWithType.vb: Classifier(Of TValue).Item(String)
 - uid: Testify.Classifier`1.Item*
   name: Item
   href: api/Testify.Classifier-1.html
@@ -1638,14 +1624,11 @@ references:
   fullName: Testify.CollectionAssertions
   nameWithType: CollectionAssertions
 - uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType*
-  name: AllItemsAreInstancesOfType<T>
+  name: AllItemsAreInstancesOfType
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.AllItemsAreInstancesOfType
-  name.vb: AllItemsAreInstancesOfType(Of T)
-  fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>
-  fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)
-  nameWithType: CollectionAssertions.AllItemsAreInstancesOfType<T>
-  nameWithType.vb: CollectionAssertions.AllItemsAreInstancesOfType(Of T)
+  fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType
+  nameWithType: CollectionAssertions.AllItemsAreInstancesOfType
 - uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type)
   name: AllItemsAreInstancesOfType<T>(ActualValue<T>, Type)
   href: api/Testify.CollectionAssertions.html
@@ -1654,7 +1637,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>(Testify.ActualValue<T>, System.Type)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)(Testify.ActualValue(Of T), System.Type)
   nameWithType: CollectionAssertions.AllItemsAreInstancesOfType<T>(ActualValue<T>, Type)
-  nameWithType.vb: AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type)
+  nameWithType.vb: CollectionAssertions.AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type)
 - uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type,System.String)
   name: AllItemsAreInstancesOfType<T>(ActualValue<T>, Type, String)
   href: api/Testify.CollectionAssertions.html
@@ -1663,7 +1646,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>(Testify.ActualValue<T>, System.Type, System.String)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String)
   nameWithType: CollectionAssertions.AllItemsAreInstancesOfType<T>(ActualValue<T>, Type, String)
-  nameWithType.vb: AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type, String)
+  nameWithType.vb: CollectionAssertions.AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type, String)
 - uid: Testify.CollectionAssertions.AllItemsAreInstancesOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
   name: AllItemsAreInstancesOfType<T>(ActualValue<T>, Type, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1672,16 +1655,13 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreInstancesOfType<T>(Testify.ActualValue<T>, System.Type, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.AllItemsAreInstancesOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String, System.Object())
   nameWithType: CollectionAssertions.AllItemsAreInstancesOfType<T>(ActualValue<T>, Type, String, Object[])
-  nameWithType.vb: AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type, String, Object())
+  nameWithType.vb: CollectionAssertions.AllItemsAreInstancesOfType(Of T)(ActualValue(Of T), Type, String, Object())
 - uid: Testify.CollectionAssertions.AllItemsAreNotNull*
-  name: AllItemsAreNotNull<T>
+  name: AllItemsAreNotNull
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.AllItemsAreNotNull
-  name.vb: AllItemsAreNotNull(Of T)
-  fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>
-  fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)
-  nameWithType: CollectionAssertions.AllItemsAreNotNull<T>
-  nameWithType.vb: CollectionAssertions.AllItemsAreNotNull(Of T)
+  fullName: Testify.CollectionAssertions.AllItemsAreNotNull
+  nameWithType: CollectionAssertions.AllItemsAreNotNull
 - uid: Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0})
   name: AllItemsAreNotNull<T>(ActualValue<T>)
   href: api/Testify.CollectionAssertions.html
@@ -1690,7 +1670,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>(Testify.ActualValue<T>)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)(Testify.ActualValue(Of T))
   nameWithType: CollectionAssertions.AllItemsAreNotNull<T>(ActualValue<T>)
-  nameWithType.vb: AllItemsAreNotNull(Of T)(ActualValue(Of T))
+  nameWithType.vb: CollectionAssertions.AllItemsAreNotNull(Of T)(ActualValue(Of T))
 - uid: Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0},System.String)
   name: AllItemsAreNotNull<T>(ActualValue<T>, String)
   href: api/Testify.CollectionAssertions.html
@@ -1699,7 +1679,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>(Testify.ActualValue<T>, System.String)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)(Testify.ActualValue(Of T), System.String)
   nameWithType: CollectionAssertions.AllItemsAreNotNull<T>(ActualValue<T>, String)
-  nameWithType.vb: AllItemsAreNotNull(Of T)(ActualValue(Of T), String)
+  nameWithType.vb: CollectionAssertions.AllItemsAreNotNull(Of T)(ActualValue(Of T), String)
 - uid: Testify.CollectionAssertions.AllItemsAreNotNull``1(Testify.ActualValue{``0},System.String,System.Object[])
   name: AllItemsAreNotNull<T>(ActualValue<T>, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1708,16 +1688,13 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreNotNull<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.AllItemsAreNotNull(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: CollectionAssertions.AllItemsAreNotNull<T>(ActualValue<T>, String, Object[])
-  nameWithType.vb: AllItemsAreNotNull(Of T)(ActualValue(Of T), String, Object())
+  nameWithType.vb: CollectionAssertions.AllItemsAreNotNull(Of T)(ActualValue(Of T), String, Object())
 - uid: Testify.CollectionAssertions.AllItemsAreUnique*
-  name: AllItemsAreUnique<T>
+  name: AllItemsAreUnique
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.AllItemsAreUnique
-  name.vb: AllItemsAreUnique(Of T)
-  fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>
-  fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)
-  nameWithType: CollectionAssertions.AllItemsAreUnique<T>
-  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)
+  fullName: Testify.CollectionAssertions.AllItemsAreUnique
+  nameWithType: CollectionAssertions.AllItemsAreUnique
 - uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0})
   name: AllItemsAreUnique<T>(ActualValue<T>)
   href: api/Testify.CollectionAssertions.html
@@ -1726,7 +1703,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T))
   nameWithType: CollectionAssertions.AllItemsAreUnique<T>(ActualValue<T>)
-  nameWithType.vb: AllItemsAreUnique(Of T)(ActualValue(Of T))
+  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)(ActualValue(Of T))
 - uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer)
   name: AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -1735,7 +1712,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer)
-  nameWithType.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer)
 - uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer,System.String)
   name: AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -1744,7 +1721,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer, String)
-  nameWithType.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.Collections.IEqualityComparer,System.String,System.Object[])
   name: AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1753,7 +1730,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.AllItemsAreUnique<T>(ActualValue<T>, IEqualityComparer, String, Object[])
-  nameWithType.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)(ActualValue(Of T), IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.String)
   name: AllItemsAreUnique<T>(ActualValue<T>, String)
   href: api/Testify.CollectionAssertions.html
@@ -1762,7 +1739,7 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.String)
   fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.String)
   nameWithType: CollectionAssertions.AllItemsAreUnique<T>(ActualValue<T>, String)
-  nameWithType.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), String)
+  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)(ActualValue(Of T), String)
 - uid: Testify.CollectionAssertions.AllItemsAreUnique``1(Testify.ActualValue{``0},System.String,System.Object[])
   name: AllItemsAreUnique<T>(ActualValue<T>, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1771,16 +1748,13 @@ references:
   fullName: Testify.CollectionAssertions.AllItemsAreUnique<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.AllItemsAreUnique(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: CollectionAssertions.AllItemsAreUnique<T>(ActualValue<T>, String, Object[])
-  nameWithType.vb: AllItemsAreUnique(Of T)(ActualValue(Of T), String, Object())
+  nameWithType.vb: CollectionAssertions.AllItemsAreUnique(Of T)(ActualValue(Of T), String, Object())
 - uid: Testify.CollectionAssertions.Contains*
-  name: Contains<T, TElement>
+  name: Contains
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.Contains
-  name.vb: Contains(Of T, TElement)
-  fullName: Testify.CollectionAssertions.Contains<T, TElement>
-  fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)
-  nameWithType: CollectionAssertions.Contains<T, TElement>
-  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)
+  fullName: Testify.CollectionAssertions.Contains
+  nameWithType: CollectionAssertions.Contains
 - uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1)
   name: Contains<T, TElement>(ActualValue<T>, TElement)
   href: api/Testify.CollectionAssertions.html
@@ -1789,7 +1763,7 @@ references:
   fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement)
   fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement)
   nameWithType: CollectionAssertions.Contains<T, TElement>(ActualValue<T>, TElement)
-  nameWithType.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement)
+  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)(ActualValue(Of T), TElement)
 - uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer)
   name: Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -1798,7 +1772,7 @@ references:
   fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer)
-  nameWithType.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer)
 - uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String)
   name: Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -1807,7 +1781,7 @@ references:
   fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String)
-  nameWithType.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1816,7 +1790,7 @@ references:
   fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.Contains<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String, Object[])
-  nameWithType.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.String)
   name: Contains<T, TElement>(ActualValue<T>, TElement, String)
   href: api/Testify.CollectionAssertions.html
@@ -1825,7 +1799,7 @@ references:
   fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.String)
   fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String)
   nameWithType: CollectionAssertions.Contains<T, TElement>(ActualValue<T>, TElement, String)
-  nameWithType.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, String)
+  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)(ActualValue(Of T), TElement, String)
 - uid: Testify.CollectionAssertions.Contains``2(Testify.ActualValue{``0},``1,System.String,System.Object[])
   name: Contains<T, TElement>(ActualValue<T>, TElement, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1834,16 +1808,13 @@ references:
   fullName: Testify.CollectionAssertions.Contains<T, TElement>(Testify.ActualValue<T>, TElement, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.Contains(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String, System.Object())
   nameWithType: CollectionAssertions.Contains<T, TElement>(ActualValue<T>, TElement, String, Object[])
-  nameWithType.vb: Contains(Of T, TElement)(ActualValue(Of T), TElement, String, Object())
+  nameWithType.vb: CollectionAssertions.Contains(Of T, TElement)(ActualValue(Of T), TElement, String, Object())
 - uid: Testify.CollectionAssertions.DoesNotContain*
-  name: DoesNotContain<T, TElement>
+  name: DoesNotContain
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.DoesNotContain
-  name.vb: DoesNotContain(Of T, TElement)
-  fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>
-  fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)
-  nameWithType: CollectionAssertions.DoesNotContain<T, TElement>
-  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)
+  fullName: Testify.CollectionAssertions.DoesNotContain
+  nameWithType: CollectionAssertions.DoesNotContain
 - uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1)
   name: DoesNotContain<T, TElement>(ActualValue<T>, TElement)
   href: api/Testify.CollectionAssertions.html
@@ -1852,7 +1823,7 @@ references:
   fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement)
   fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement)
   nameWithType: CollectionAssertions.DoesNotContain<T, TElement>(ActualValue<T>, TElement)
-  nameWithType.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement)
+  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement)
 - uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer)
   name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -1861,7 +1832,7 @@ references:
   fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer)
-  nameWithType.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer)
 - uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String)
   name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -1870,7 +1841,7 @@ references:
   fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String)
-  nameWithType.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1879,7 +1850,7 @@ references:
   fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.DoesNotContain<T, TElement>(ActualValue<T>, TElement, IEqualityComparer, String, Object[])
-  nameWithType.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.String)
   name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, String)
   href: api/Testify.CollectionAssertions.html
@@ -1888,7 +1859,7 @@ references:
   fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.String)
   fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String)
   nameWithType: CollectionAssertions.DoesNotContain<T, TElement>(ActualValue<T>, TElement, String)
-  nameWithType.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, String)
+  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, String)
 - uid: Testify.CollectionAssertions.DoesNotContain``2(Testify.ActualValue{``0},``1,System.String,System.Object[])
   name: DoesNotContain<T, TElement>(ActualValue<T>, TElement, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1897,16 +1868,13 @@ references:
   fullName: Testify.CollectionAssertions.DoesNotContain<T, TElement>(Testify.ActualValue<T>, TElement, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.DoesNotContain(Of T, TElement)(Testify.ActualValue(Of T), TElement, System.String, System.Object())
   nameWithType: CollectionAssertions.DoesNotContain<T, TElement>(ActualValue<T>, TElement, String, Object[])
-  nameWithType.vb: DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, String, Object())
+  nameWithType.vb: CollectionAssertions.DoesNotContain(Of T, TElement)(ActualValue(Of T), TElement, String, Object())
 - uid: Testify.CollectionAssertions.IsEquivalentTo*
-  name: IsEquivalentTo<T>
+  name: IsEquivalentTo
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.IsEquivalentTo
-  name.vb: IsEquivalentTo(Of T)
-  fullName: Testify.CollectionAssertions.IsEquivalentTo<T>
-  fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)
-  nameWithType: CollectionAssertions.IsEquivalentTo<T>
-  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)
+  fullName: Testify.CollectionAssertions.IsEquivalentTo
+  nameWithType: CollectionAssertions.IsEquivalentTo
 - uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
   name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable)
   href: api/Testify.CollectionAssertions.html
@@ -1915,7 +1883,7 @@ references:
   fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
   fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
   nameWithType: CollectionAssertions.IsEquivalentTo<T>(ActualValue<T>, IEnumerable)
-  nameWithType.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable)
+  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable)
 - uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
   name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -1924,7 +1892,7 @@ references:
   fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
-  nameWithType.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
 - uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
   name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -1933,7 +1901,7 @@ references:
   fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
-  nameWithType.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1942,7 +1910,7 @@ references:
   fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.IsEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
-  nameWithType.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
   name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, String)
   href: api/Testify.CollectionAssertions.html
@@ -1951,7 +1919,7 @@ references:
   fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
   fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
   nameWithType: CollectionAssertions.IsEquivalentTo<T>(ActualValue<T>, IEnumerable, String)
-  nameWithType.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String)
 - uid: Testify.CollectionAssertions.IsEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
   name: IsEquivalentTo<T>(ActualValue<T>, IEnumerable, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -1960,16 +1928,13 @@ references:
   fullName: Testify.CollectionAssertions.IsEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
   nameWithType: CollectionAssertions.IsEquivalentTo<T>(ActualValue<T>, IEnumerable, String, Object[])
-  nameWithType.vb: IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  nameWithType.vb: CollectionAssertions.IsEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo*
-  name: IsNotEquivalentTo<T>
+  name: IsNotEquivalentTo
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.IsNotEquivalentTo
-  name.vb: IsNotEquivalentTo(Of T)
-  fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>
-  fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)
-  nameWithType: CollectionAssertions.IsNotEquivalentTo<T>
-  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)
+  fullName: Testify.CollectionAssertions.IsNotEquivalentTo
+  nameWithType: CollectionAssertions.IsNotEquivalentTo
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
   name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable)
   href: api/Testify.CollectionAssertions.html
@@ -1978,7 +1943,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
   fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
   nameWithType: CollectionAssertions.IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable)
-  nameWithType.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable)
+  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable)
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
   name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -1987,7 +1952,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
-  nameWithType.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
   name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -1996,7 +1961,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
-  nameWithType.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2005,7 +1970,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
-  nameWithType.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
   name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, String)
   href: api/Testify.CollectionAssertions.html
@@ -2014,7 +1979,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
   fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
   nameWithType: CollectionAssertions.IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, String)
-  nameWithType.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String)
 - uid: Testify.CollectionAssertions.IsNotEquivalentTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
   name: IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2023,16 +1988,13 @@ references:
   fullName: Testify.CollectionAssertions.IsNotEquivalentTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsNotEquivalentTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
   nameWithType: CollectionAssertions.IsNotEquivalentTo<T>(ActualValue<T>, IEnumerable, String, Object[])
-  nameWithType.vb: IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  nameWithType.vb: CollectionAssertions.IsNotEquivalentTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo*
-  name: IsNotSequenceEqualTo<T>
+  name: IsNotSequenceEqualTo
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.IsNotSequenceEqualTo
-  name.vb: IsNotSequenceEqualTo(Of T)
-  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>
-  fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)
-  nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>
-  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)
+  fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo
+  nameWithType: CollectionAssertions.IsNotSequenceEqualTo
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
   name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable)
   href: api/Testify.CollectionAssertions.html
@@ -2041,7 +2003,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
   fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
   nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable)
-  nameWithType.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable)
+  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable)
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
   name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -2050,7 +2012,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
-  nameWithType.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
   name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -2059,7 +2021,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
-  nameWithType.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2068,7 +2030,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
-  nameWithType.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
   name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String)
   href: api/Testify.CollectionAssertions.html
@@ -2077,7 +2039,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
   fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
   nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String)
-  nameWithType.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String)
 - uid: Testify.CollectionAssertions.IsNotSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
   name: IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2086,16 +2048,13 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsNotSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
   nameWithType: CollectionAssertions.IsNotSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String, Object[])
-  nameWithType.vb: IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  nameWithType.vb: CollectionAssertions.IsNotSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
 - uid: Testify.CollectionAssertions.IsNotSubsetOf*
-  name: IsNotSubsetOf<T>
+  name: IsNotSubsetOf
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.IsNotSubsetOf
-  name.vb: IsNotSubsetOf(Of T)
-  fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>
-  fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)
-  nameWithType: CollectionAssertions.IsNotSubsetOf<T>
-  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)
+  fullName: Testify.CollectionAssertions.IsNotSubsetOf
+  nameWithType: CollectionAssertions.IsNotSubsetOf
 - uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
   name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable)
   href: api/Testify.CollectionAssertions.html
@@ -2104,7 +2063,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
   fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
   nameWithType: CollectionAssertions.IsNotSubsetOf<T>(ActualValue<T>, IEnumerable)
-  nameWithType.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable)
+  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable)
 - uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
   name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -2113,7 +2072,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
-  nameWithType.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
 - uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
   name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -2122,7 +2081,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
-  nameWithType.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2131,7 +2090,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
-  nameWithType.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
   name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, String)
   href: api/Testify.CollectionAssertions.html
@@ -2140,7 +2099,7 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
   fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
   nameWithType: CollectionAssertions.IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, String)
-  nameWithType.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String)
+  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String)
 - uid: Testify.CollectionAssertions.IsNotSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
   name: IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2149,16 +2108,13 @@ references:
   fullName: Testify.CollectionAssertions.IsNotSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsNotSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
   nameWithType: CollectionAssertions.IsNotSubsetOf<T>(ActualValue<T>, IEnumerable, String, Object[])
-  nameWithType.vb: IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  nameWithType.vb: CollectionAssertions.IsNotSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String, Object())
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo*
-  name: IsSequenceEqualTo<T>
+  name: IsSequenceEqualTo
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.IsSequenceEqualTo
-  name.vb: IsSequenceEqualTo(Of T)
-  fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>
-  fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)
-  nameWithType: CollectionAssertions.IsSequenceEqualTo<T>
-  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)
+  fullName: Testify.CollectionAssertions.IsSequenceEqualTo
+  nameWithType: CollectionAssertions.IsSequenceEqualTo
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
   name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable)
   href: api/Testify.CollectionAssertions.html
@@ -2167,7 +2123,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
   fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
   nameWithType: CollectionAssertions.IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable)
-  nameWithType.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable)
+  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable)
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
   name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -2176,7 +2132,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
-  nameWithType.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
   name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -2185,7 +2141,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
-  nameWithType.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2194,7 +2150,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
-  nameWithType.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
   name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String)
   href: api/Testify.CollectionAssertions.html
@@ -2203,7 +2159,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
   fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
   nameWithType: CollectionAssertions.IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String)
-  nameWithType.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String)
+  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String)
 - uid: Testify.CollectionAssertions.IsSequenceEqualTo``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
   name: IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2212,16 +2168,13 @@ references:
   fullName: Testify.CollectionAssertions.IsSequenceEqualTo<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsSequenceEqualTo(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
   nameWithType: CollectionAssertions.IsSequenceEqualTo<T>(ActualValue<T>, IEnumerable, String, Object[])
-  nameWithType.vb: IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  nameWithType.vb: CollectionAssertions.IsSequenceEqualTo(Of T)(ActualValue(Of T), IEnumerable, String, Object())
 - uid: Testify.CollectionAssertions.IsSubsetOf*
-  name: IsSubsetOf<T>
+  name: IsSubsetOf
   href: api/Testify.CollectionAssertions.html
   commentId: Overload:Testify.CollectionAssertions.IsSubsetOf
-  name.vb: IsSubsetOf(Of T)
-  fullName: Testify.CollectionAssertions.IsSubsetOf<T>
-  fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)
-  nameWithType: CollectionAssertions.IsSubsetOf<T>
-  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)
+  fullName: Testify.CollectionAssertions.IsSubsetOf
+  nameWithType: CollectionAssertions.IsSubsetOf
 - uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable)
   name: IsSubsetOf<T>(ActualValue<T>, IEnumerable)
   href: api/Testify.CollectionAssertions.html
@@ -2230,7 +2183,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable)
   fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable)
   nameWithType: CollectionAssertions.IsSubsetOf<T>(ActualValue<T>, IEnumerable)
-  nameWithType.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable)
+  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable)
 - uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer)
   name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
   href: api/Testify.CollectionAssertions.html
@@ -2239,7 +2192,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer)
   nameWithType: CollectionAssertions.IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer)
-  nameWithType.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
+  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer)
 - uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String)
   name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
   href: api/Testify.CollectionAssertions.html
@@ -2248,7 +2201,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String)
   nameWithType: CollectionAssertions.IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String)
-  nameWithType.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
+  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String)
 - uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.Collections.IEqualityComparer,System.String,System.Object[])
   name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2257,7 +2210,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.Collections.IEqualityComparer, System.String, System.Object())
   nameWithType: CollectionAssertions.IsSubsetOf<T>(ActualValue<T>, IEnumerable, IEqualityComparer, String, Object[])
-  nameWithType.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
+  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, IEqualityComparer, String, Object())
 - uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String)
   name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, String)
   href: api/Testify.CollectionAssertions.html
@@ -2266,7 +2219,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String)
   fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String)
   nameWithType: CollectionAssertions.IsSubsetOf<T>(ActualValue<T>, IEnumerable, String)
-  nameWithType.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String)
+  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String)
 - uid: Testify.CollectionAssertions.IsSubsetOf``1(Testify.ActualValue{``0},System.Collections.IEnumerable,System.String,System.Object[])
   name: IsSubsetOf<T>(ActualValue<T>, IEnumerable, String, Object[])
   href: api/Testify.CollectionAssertions.html
@@ -2275,7 +2228,7 @@ references:
   fullName: Testify.CollectionAssertions.IsSubsetOf<T>(Testify.ActualValue<T>, System.Collections.IEnumerable, System.String, System.Object[])
   fullName.vb: Testify.CollectionAssertions.IsSubsetOf(Of T)(Testify.ActualValue(Of T), System.Collections.IEnumerable, System.String, System.Object())
   nameWithType: CollectionAssertions.IsSubsetOf<T>(ActualValue<T>, IEnumerable, String, Object[])
-  nameWithType.vb: IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String, Object())
+  nameWithType.vb: CollectionAssertions.IsSubsetOf(Of T)(ActualValue(Of T), IEnumerable, String, Object())
 - uid: Testify.ComparableVerifier`1
   name: ComparableVerifier<T>
   href: api/Testify.ComparableVerifier-1.html
@@ -2292,12 +2245,15 @@ references:
   fullName: Testify.ComparableVerifier<T>.GetMethods()
   fullName.vb: Testify.ComparableVerifier(Of T).GetMethods()
   nameWithType: ComparableVerifier<T>.GetMethods()
+  nameWithType.vb: ComparableVerifier(Of T).GetMethods()
 - uid: Testify.ComparableVerifier`1.GetMethods*
   name: GetMethods
   href: api/Testify.ComparableVerifier-1.html
   commentId: Overload:Testify.ComparableVerifier`1.GetMethods
-  fullName: Testify.ComparableVerifier.GetMethods
-  nameWithType: ComparableVerifier.GetMethods
+  fullName: Testify.ComparableVerifier<T>.GetMethods
+  fullName.vb: Testify.ComparableVerifier(Of T).GetMethods
+  nameWithType: ComparableVerifier<T>.GetMethods
+  nameWithType.vb: ComparableVerifier(Of T).GetMethods
 - uid: Testify.ComparableVerifier`1.GetTests
   name: GetTests()
   href: api/Testify.ComparableVerifier-1.html
@@ -2305,12 +2261,15 @@ references:
   fullName: Testify.ComparableVerifier<T>.GetTests()
   fullName.vb: Testify.ComparableVerifier(Of T).GetTests()
   nameWithType: ComparableVerifier<T>.GetTests()
+  nameWithType.vb: ComparableVerifier(Of T).GetTests()
 - uid: Testify.ComparableVerifier`1.GetTests*
   name: GetTests
   href: api/Testify.ComparableVerifier-1.html
   commentId: Overload:Testify.ComparableVerifier`1.GetTests
-  fullName: Testify.ComparableVerifier.GetTests
-  nameWithType: ComparableVerifier.GetTests
+  fullName: Testify.ComparableVerifier<T>.GetTests
+  fullName.vb: Testify.ComparableVerifier(Of T).GetTests
+  nameWithType: ComparableVerifier<T>.GetTests
+  nameWithType.vb: ComparableVerifier(Of T).GetTests
 - uid: Testify.ComparableVerifier`1.ItemsFactoryPropertyName
   name: ItemsFactoryPropertyName
   href: api/Testify.ComparableVerifier-1.html
@@ -2318,6 +2277,7 @@ references:
   fullName: Testify.ComparableVerifier<T>.ItemsFactoryPropertyName
   fullName.vb: Testify.ComparableVerifier(Of T).ItemsFactoryPropertyName
   nameWithType: ComparableVerifier<T>.ItemsFactoryPropertyName
+  nameWithType.vb: ComparableVerifier(Of T).ItemsFactoryPropertyName
 - uid: Testify.ComparableVerifier`1.ItemsFactoryPropertyName*
   name: ItemsFactoryPropertyName
   href: api/Testify.ComparableVerifier-1.html
@@ -2333,6 +2293,7 @@ references:
   fullName: Testify.ComparableVerifier<T>.OrderedItemsFactory
   fullName.vb: Testify.ComparableVerifier(Of T).OrderedItemsFactory
   nameWithType: ComparableVerifier<T>.OrderedItemsFactory
+  nameWithType.vb: ComparableVerifier(Of T).OrderedItemsFactory
 - uid: Testify.ComparableVerifier`1.OrderedItemsFactory*
   name: OrderedItemsFactory
   href: api/Testify.ComparableVerifier-1.html
@@ -2357,12 +2318,15 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.ComparisonVerifierBase()
   fullName.vb: Testify.ComparisonVerifierBase(Of T).ComparisonVerifierBase()
   nameWithType: ComparisonVerifierBase<T>.ComparisonVerifierBase()
+  nameWithType.vb: ComparisonVerifierBase(Of T).ComparisonVerifierBase()
 - uid: Testify.ComparisonVerifierBase`1.#ctor*
   name: ComparisonVerifierBase
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.#ctor
-  fullName: Testify.ComparisonVerifierBase.ComparisonVerifierBase
-  nameWithType: ComparisonVerifierBase.ComparisonVerifierBase
+  fullName: Testify.ComparisonVerifierBase<T>.ComparisonVerifierBase
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).ComparisonVerifierBase
+  nameWithType: ComparisonVerifierBase<T>.ComparisonVerifierBase
+  nameWithType.vb: ComparisonVerifierBase(Of T).ComparisonVerifierBase
 - uid: Testify.ComparisonVerifierBase`1.BaseItems
   name: BaseItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2370,6 +2334,7 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.BaseItems
   fullName.vb: Testify.ComparisonVerifierBase(Of T).BaseItems
   nameWithType: ComparisonVerifierBase<T>.BaseItems
+  nameWithType.vb: ComparisonVerifierBase(Of T).BaseItems
 - uid: Testify.ComparisonVerifierBase`1.BaseItems*
   name: BaseItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2386,13 +2351,15 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.CompareItems(System.Collections.Generic.IEnumerable<T>, System.Collections.Generic.IEnumerable<T>, System.Func<T, T, System.Boolean>)
   fullName.vb: Testify.ComparisonVerifierBase(Of T).CompareItems(System.Collections.Generic.IEnumerable(Of T), System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, T, System.Boolean))
   nameWithType: ComparisonVerifierBase<T>.CompareItems(IEnumerable<T>, IEnumerable<T>, Func<T, T, Boolean>)
-  nameWithType.vb: CompareItems(IEnumerable(Of T), IEnumerable(Of T), Func(Of T, T, Boolean))
+  nameWithType.vb: ComparisonVerifierBase(Of T).CompareItems(IEnumerable(Of T), IEnumerable(Of T), Func(Of T, T, Boolean))
 - uid: Testify.ComparisonVerifierBase`1.CompareItems*
   name: CompareItems
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.CompareItems
-  fullName: Testify.ComparisonVerifierBase.CompareItems
-  nameWithType: ComparisonVerifierBase.CompareItems
+  fullName: Testify.ComparisonVerifierBase<T>.CompareItems
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).CompareItems
+  nameWithType: ComparisonVerifierBase<T>.CompareItems
+  nameWithType.vb: ComparisonVerifierBase(Of T).CompareItems
 - uid: Testify.ComparisonVerifierBase`1.EqualItems
   name: EqualItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2400,6 +2367,7 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.EqualItems
   fullName.vb: Testify.ComparisonVerifierBase(Of T).EqualItems
   nameWithType: ComparisonVerifierBase<T>.EqualItems
+  nameWithType.vb: ComparisonVerifierBase(Of T).EqualItems
 - uid: Testify.ComparisonVerifierBase`1.EqualItems*
   name: EqualItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2415,12 +2383,15 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.GetMethods()
   fullName.vb: Testify.ComparisonVerifierBase(Of T).GetMethods()
   nameWithType: ComparisonVerifierBase<T>.GetMethods()
+  nameWithType.vb: ComparisonVerifierBase(Of T).GetMethods()
 - uid: Testify.ComparisonVerifierBase`1.GetMethods*
   name: GetMethods
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.GetMethods
-  fullName: Testify.ComparisonVerifierBase.GetMethods
-  nameWithType: ComparisonVerifierBase.GetMethods
+  fullName: Testify.ComparisonVerifierBase<T>.GetMethods
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).GetMethods
+  nameWithType: ComparisonVerifierBase<T>.GetMethods
+  nameWithType.vb: ComparisonVerifierBase(Of T).GetMethods
 - uid: Testify.ComparisonVerifierBase`1.GetTests
   name: GetTests()
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2428,12 +2399,15 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.GetTests()
   fullName.vb: Testify.ComparisonVerifierBase(Of T).GetTests()
   nameWithType: ComparisonVerifierBase<T>.GetTests()
+  nameWithType.vb: ComparisonVerifierBase(Of T).GetTests()
 - uid: Testify.ComparisonVerifierBase`1.GetTests*
   name: GetTests
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.GetTests
-  fullName: Testify.ComparisonVerifierBase.GetTests
-  nameWithType: ComparisonVerifierBase.GetTests
+  fullName: Testify.ComparisonVerifierBase<T>.GetTests
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).GetTests
+  nameWithType: ComparisonVerifierBase<T>.GetTests
+  nameWithType.vb: ComparisonVerifierBase(Of T).GetTests
 - uid: Testify.ComparisonVerifierBase`1.IsPrimitive
   name: IsPrimitive
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2441,6 +2415,7 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.IsPrimitive
   fullName.vb: Testify.ComparisonVerifierBase(Of T).IsPrimitive
   nameWithType: ComparisonVerifierBase<T>.IsPrimitive
+  nameWithType.vb: ComparisonVerifierBase(Of T).IsPrimitive
 - uid: Testify.ComparisonVerifierBase`1.IsPrimitive*
   name: IsPrimitive
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2456,6 +2431,7 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.ItemsFactory
   fullName.vb: Testify.ComparisonVerifierBase(Of T).ItemsFactory
   nameWithType: ComparisonVerifierBase<T>.ItemsFactory
+  nameWithType.vb: ComparisonVerifierBase(Of T).ItemsFactory
 - uid: Testify.ComparisonVerifierBase`1.ItemsFactory*
   name: ItemsFactory
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2471,6 +2447,7 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.ItemsFactoryPropertyName
   fullName.vb: Testify.ComparisonVerifierBase(Of T).ItemsFactoryPropertyName
   nameWithType: ComparisonVerifierBase<T>.ItemsFactoryPropertyName
+  nameWithType.vb: ComparisonVerifierBase(Of T).ItemsFactoryPropertyName
 - uid: Testify.ComparisonVerifierBase`1.ItemsFactoryPropertyName*
   name: ItemsFactoryPropertyName
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2486,6 +2463,7 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.NotEqualItems
   fullName.vb: Testify.ComparisonVerifierBase(Of T).NotEqualItems
   nameWithType: ComparisonVerifierBase<T>.NotEqualItems
+  nameWithType.vb: ComparisonVerifierBase(Of T).NotEqualItems
 - uid: Testify.ComparisonVerifierBase`1.NotEqualItems*
   name: NotEqualItems
   href: api/Testify.ComparisonVerifierBase-1.html
@@ -2501,12 +2479,15 @@ references:
   fullName: Testify.ComparisonVerifierBase<T>.VerifyConfiguration()
   fullName.vb: Testify.ComparisonVerifierBase(Of T).VerifyConfiguration()
   nameWithType: ComparisonVerifierBase<T>.VerifyConfiguration()
+  nameWithType.vb: ComparisonVerifierBase(Of T).VerifyConfiguration()
 - uid: Testify.ComparisonVerifierBase`1.VerifyConfiguration*
   name: VerifyConfiguration
   href: api/Testify.ComparisonVerifierBase-1.html
   commentId: Overload:Testify.ComparisonVerifierBase`1.VerifyConfiguration
-  fullName: Testify.ComparisonVerifierBase.VerifyConfiguration
-  nameWithType: ComparisonVerifierBase.VerifyConfiguration
+  fullName: Testify.ComparisonVerifierBase<T>.VerifyConfiguration
+  fullName.vb: Testify.ComparisonVerifierBase(Of T).VerifyConfiguration
+  nameWithType: ComparisonVerifierBase<T>.VerifyConfiguration
+  nameWithType.vb: ComparisonVerifierBase(Of T).VerifyConfiguration
 - uid: Testify.ContractVerifier
   name: ContractVerifier
   href: api/Testify.ContractVerifier.html
@@ -2661,6 +2642,7 @@ references:
   fullName: Testify.EquatableVerifier<T>.ItemsFactoryPropertyName
   fullName.vb: Testify.EquatableVerifier(Of T).ItemsFactoryPropertyName
   nameWithType: EquatableVerifier<T>.ItemsFactoryPropertyName
+  nameWithType.vb: EquatableVerifier(Of T).ItemsFactoryPropertyName
 - uid: Testify.EquatableVerifier`1.ItemsFactoryPropertyName*
   name: ItemsFactoryPropertyName
   href: api/Testify.EquatableVerifier-1.html
@@ -2676,6 +2658,7 @@ references:
   fullName: Testify.EquatableVerifier<T>.UniqueItemsFactory
   fullName.vb: Testify.EquatableVerifier(Of T).UniqueItemsFactory
   nameWithType: EquatableVerifier<T>.UniqueItemsFactory
+  nameWithType.vb: EquatableVerifier(Of T).UniqueItemsFactory
 - uid: Testify.EquatableVerifier`1.UniqueItemsFactory*
   name: UniqueItemsFactory
   href: api/Testify.EquatableVerifier-1.html
@@ -2691,14 +2674,11 @@ references:
   fullName: Testify.ExceptionAssertions
   nameWithType: ExceptionAssertions
 - uid: Testify.ExceptionAssertions.Throws*
-  name: Throws<T>
+  name: Throws
   href: api/Testify.ExceptionAssertions.html
   commentId: Overload:Testify.ExceptionAssertions.Throws
-  name.vb: Throws(Of T)
-  fullName: Testify.ExceptionAssertions.Throws<T>
-  fullName.vb: Testify.ExceptionAssertions.Throws(Of T)
-  nameWithType: ExceptionAssertions.Throws<T>
-  nameWithType.vb: ExceptionAssertions.Throws(Of T)
+  fullName: Testify.ExceptionAssertions.Throws
+  nameWithType: ExceptionAssertions.Throws
 - uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action})
   name: Throws<T>(ActualValue<Action>)
   href: api/Testify.ExceptionAssertions.html
@@ -2707,7 +2687,7 @@ references:
   fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>)
   fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action))
   nameWithType: ExceptionAssertions.Throws<T>(ActualValue<Action>)
-  nameWithType.vb: Throws(Of T)(ActualValue(Of Action))
+  nameWithType.vb: ExceptionAssertions.Throws(Of T)(ActualValue(Of Action))
 - uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0})
   name: Throws<T>(ActualValue<Action>, Action<T>)
   href: api/Testify.ExceptionAssertions.html
@@ -2716,7 +2696,7 @@ references:
   fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.Action<T>)
   fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.Action(Of T))
   nameWithType: ExceptionAssertions.Throws<T>(ActualValue<Action>, Action<T>)
-  nameWithType.vb: Throws(Of T)(ActualValue(Of Action), Action(Of T))
+  nameWithType.vb: ExceptionAssertions.Throws(Of T)(ActualValue(Of Action), Action(Of T))
 - uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0},System.String)
   name: Throws<T>(ActualValue<Action>, Action<T>, String)
   href: api/Testify.ExceptionAssertions.html
@@ -2725,7 +2705,7 @@ references:
   fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.Action<T>, System.String)
   fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.Action(Of T), System.String)
   nameWithType: ExceptionAssertions.Throws<T>(ActualValue<Action>, Action<T>, String)
-  nameWithType.vb: Throws(Of T)(ActualValue(Of Action), Action(Of T), String)
+  nameWithType.vb: ExceptionAssertions.Throws(Of T)(ActualValue(Of Action), Action(Of T), String)
 - uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.Action{``0},System.String,System.Object[])
   name: Throws<T>(ActualValue<Action>, Action<T>, String, Object[])
   href: api/Testify.ExceptionAssertions.html
@@ -2734,7 +2714,7 @@ references:
   fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.Action<T>, System.String, System.Object[])
   fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.Action(Of T), System.String, System.Object())
   nameWithType: ExceptionAssertions.Throws<T>(ActualValue<Action>, Action<T>, String, Object[])
-  nameWithType.vb: Throws(Of T)(ActualValue(Of Action), Action(Of T), String, Object())
+  nameWithType.vb: ExceptionAssertions.Throws(Of T)(ActualValue(Of Action), Action(Of T), String, Object())
 - uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.String)
   name: Throws<T>(ActualValue<Action>, String)
   href: api/Testify.ExceptionAssertions.html
@@ -2743,7 +2723,7 @@ references:
   fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.String)
   fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.String)
   nameWithType: ExceptionAssertions.Throws<T>(ActualValue<Action>, String)
-  nameWithType.vb: Throws(Of T)(ActualValue(Of Action), String)
+  nameWithType.vb: ExceptionAssertions.Throws(Of T)(ActualValue(Of Action), String)
 - uid: Testify.ExceptionAssertions.Throws``1(Testify.ActualValue{System.Action},System.String,System.Object[])
   name: Throws<T>(ActualValue<Action>, String, Object[])
   href: api/Testify.ExceptionAssertions.html
@@ -2752,7 +2732,7 @@ references:
   fullName: Testify.ExceptionAssertions.Throws<T>(Testify.ActualValue<System.Action>, System.String, System.Object[])
   fullName.vb: Testify.ExceptionAssertions.Throws(Of T)(Testify.ActualValue(Of System.Action), System.String, System.Object())
   nameWithType: ExceptionAssertions.Throws<T>(ActualValue<Action>, String, Object[])
-  nameWithType.vb: Throws(Of T)(ActualValue(Of Action), String, Object())
+  nameWithType.vb: ExceptionAssertions.Throws(Of T)(ActualValue(Of Action), String, Object())
 - uid: Testify.IAnonymousData
   name: IAnonymousData
   href: api/Testify.IAnonymousData.html
@@ -2784,14 +2764,11 @@ references:
   fullName: Testify.IAnonymousData.AnyDouble
   nameWithType: IAnonymousData.AnyDouble
 - uid: Testify.IAnonymousData.Populate*
-  name: Populate<TInstance>
+  name: Populate
   href: api/Testify.IAnonymousData.html
   commentId: Overload:Testify.IAnonymousData.Populate
-  name.vb: Populate(Of TInstance)
-  fullName: Testify.IAnonymousData.Populate<TInstance>
-  fullName.vb: Testify.IAnonymousData.Populate(Of TInstance)
-  nameWithType: IAnonymousData.Populate<TInstance>
-  nameWithType.vb: IAnonymousData.Populate(Of TInstance)
+  fullName: Testify.IAnonymousData.Populate
+  nameWithType: IAnonymousData.Populate
 - uid: Testify.IAnonymousData.Populate``1(``0,System.Boolean)
   name: Populate<TInstance>(TInstance, Boolean)
   href: api/Testify.IAnonymousData.html
@@ -2800,7 +2777,7 @@ references:
   fullName: Testify.IAnonymousData.Populate<TInstance>(TInstance, System.Boolean)
   fullName.vb: Testify.IAnonymousData.Populate(Of TInstance)(TInstance, System.Boolean)
   nameWithType: IAnonymousData.Populate<TInstance>(TInstance, Boolean)
-  nameWithType.vb: Populate(Of TInstance)(TInstance, Boolean)
+  nameWithType.vb: IAnonymousData.Populate(Of TInstance)(TInstance, Boolean)
 - uid: Testify.IAnonymousDataContext
   name: IAnonymousDataContext
   href: api/Testify.IAnonymousDataContext.html
@@ -2815,7 +2792,7 @@ references:
   fullName: Testify.IAnonymousDataContext.CallNextCustomization(out System.Object)
   fullName.vb: Testify.IAnonymousDataContext.CallNextCustomization(ByRef System.Object)
   nameWithType: IAnonymousDataContext.CallNextCustomization(out Object)
-  nameWithType.vb: CallNextCustomization(ByRef Object)
+  nameWithType.vb: IAnonymousDataContext.CallNextCustomization(ByRef Object)
 - uid: Testify.IAnonymousDataContext.CallNextCustomization*
   name: CallNextCustomization
   href: api/Testify.IAnonymousDataContext.html
@@ -2848,7 +2825,7 @@ references:
   fullName: Testify.IAnonymousDataCustomization.Create(Testify.IAnonymousDataContext, out System.Object)
   fullName.vb: Testify.IAnonymousDataCustomization.Create(Testify.IAnonymousDataContext, ByRef System.Object)
   nameWithType: IAnonymousDataCustomization.Create(IAnonymousDataContext, out Object)
-  nameWithType.vb: Create(IAnonymousDataContext, ByRef Object)
+  nameWithType.vb: IAnonymousDataCustomization.Create(IAnonymousDataContext, ByRef Object)
 - uid: Testify.IAnonymousDataCustomization.Create*
   name: Create
   href: api/Testify.IAnonymousDataCustomization.html
@@ -2869,7 +2846,7 @@ references:
   fullName: Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo, System.Func(Of Testify.IAnonymousData, System.Object))
   nameWithType: IRegisterAnonymousData.Register(PropertyInfo, Func<IAnonymousData, Object>)
-  nameWithType.vb: Register(PropertyInfo, Func(Of IAnonymousData, Object))
+  nameWithType.vb: IRegisterAnonymousData.Register(PropertyInfo, Func(Of IAnonymousData, Object))
 - uid: Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})
   name: Register(Type, Func<IAnonymousData, Object>)
   href: api/Testify.IRegisterAnonymousData.html
@@ -2878,7 +2855,7 @@ references:
   fullName: Testify.IRegisterAnonymousData.Register(System.Type, System.Func<Testify.IAnonymousData, System.Object>)
   fullName.vb: Testify.IRegisterAnonymousData.Register(System.Type, System.Func(Of Testify.IAnonymousData, System.Object))
   nameWithType: IRegisterAnonymousData.Register(Type, Func<IAnonymousData, Object>)
-  nameWithType.vb: Register(Type, Func(Of IAnonymousData, Object))
+  nameWithType.vb: IRegisterAnonymousData.Register(Type, Func(Of IAnonymousData, Object))
 - uid: Testify.IRegisterAnonymousData.Register*
   name: Register
   href: api/Testify.IRegisterAnonymousData.html
@@ -2899,7 +2876,7 @@ references:
   fullName: Testify.MoqCustomization.Create(Testify.IAnonymousDataContext, out System.Object)
   fullName.vb: Testify.MoqCustomization.Create(Testify.IAnonymousDataContext, ByRef System.Object)
   nameWithType: MoqCustomization.Create(IAnonymousDataContext, out Object)
-  nameWithType.vb: Create(IAnonymousDataContext, ByRef Object)
+  nameWithType.vb: MoqCustomization.Create(IAnonymousDataContext, ByRef Object)
 - uid: Testify.MoqCustomization.Create*
   name: Create
   href: api/Testify.MoqCustomization.html
@@ -2944,7 +2921,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double)
   nameWithType: StandardAssertions.IsEqualTo(ActualValue<Double>, Double, Double)
-  nameWithType.vb: IsEqualTo(ActualValue(Of Double), Double, Double)
+  nameWithType.vb: StandardAssertions.IsEqualTo(ActualValue(Of Double), Double, Double)
 - uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String)
   name: IsEqualTo(ActualValue<Double>, Double, Double, String)
   href: api/Testify.StandardAssertions.html
@@ -2953,7 +2930,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String)
   nameWithType: StandardAssertions.IsEqualTo(ActualValue<Double>, Double, Double, String)
-  nameWithType.vb: IsEqualTo(ActualValue(Of Double), Double, Double, String)
+  nameWithType.vb: StandardAssertions.IsEqualTo(ActualValue(Of Double), Double, Double, String)
 - uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String,System.Object[])
   name: IsEqualTo(ActualValue<Double>, Double, Double, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -2962,7 +2939,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String, System.Object())
   nameWithType: StandardAssertions.IsEqualTo(ActualValue<Double>, Double, Double, String, Object[])
-  nameWithType.vb: IsEqualTo(ActualValue(Of Double), Double, Double, String, Object())
+  nameWithType.vb: StandardAssertions.IsEqualTo(ActualValue(Of Double), Double, Double, String, Object())
 - uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single)
   name: IsEqualTo(ActualValue<Single>, Single, Single)
   href: api/Testify.StandardAssertions.html
@@ -2971,7 +2948,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single)
   nameWithType: StandardAssertions.IsEqualTo(ActualValue<Single>, Single, Single)
-  nameWithType.vb: IsEqualTo(ActualValue(Of Single), Single, Single)
+  nameWithType.vb: StandardAssertions.IsEqualTo(ActualValue(Of Single), Single, Single)
 - uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String)
   name: IsEqualTo(ActualValue<Single>, Single, Single, String)
   href: api/Testify.StandardAssertions.html
@@ -2980,7 +2957,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String)
   nameWithType: StandardAssertions.IsEqualTo(ActualValue<Single>, Single, Single, String)
-  nameWithType.vb: IsEqualTo(ActualValue(Of Single), Single, Single, String)
+  nameWithType.vb: StandardAssertions.IsEqualTo(ActualValue(Of Single), Single, Single, String)
 - uid: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String,System.Object[])
   name: IsEqualTo(ActualValue<Single>, Single, Single, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -2989,7 +2966,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String, System.Object())
   nameWithType: StandardAssertions.IsEqualTo(ActualValue<Single>, Single, Single, String, Object[])
-  nameWithType.vb: IsEqualTo(ActualValue(Of Single), Single, Single, String, Object())
+  nameWithType.vb: StandardAssertions.IsEqualTo(ActualValue(Of Single), Single, Single, String, Object())
 - uid: Testify.StandardAssertions.IsEqualTo*
   name: IsEqualTo
   href: api/Testify.StandardAssertions.html
@@ -3004,7 +2981,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, T)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), T)
   nameWithType: StandardAssertions.IsEqualTo<T>(ActualValue<T>, T)
-  nameWithType.vb: IsEqualTo(Of T)(ActualValue(Of T), T)
+  nameWithType.vb: StandardAssertions.IsEqualTo(Of T)(ActualValue(Of T), T)
 - uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0,System.String)
   name: IsEqualTo<T>(ActualValue<T>, T, String)
   href: api/Testify.StandardAssertions.html
@@ -3013,7 +2990,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, T, System.String)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String)
   nameWithType: StandardAssertions.IsEqualTo<T>(ActualValue<T>, T, String)
-  nameWithType.vb: IsEqualTo(Of T)(ActualValue(Of T), T, String)
+  nameWithType.vb: StandardAssertions.IsEqualTo(Of T)(ActualValue(Of T), T, String)
 - uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
   name: IsEqualTo<T>(ActualValue<T>, T, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3022,7 +2999,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
   nameWithType: StandardAssertions.IsEqualTo<T>(ActualValue<T>, T, String, Object[])
-  nameWithType.vb: IsEqualTo(Of T)(ActualValue(Of T), T, String, Object())
+  nameWithType.vb: StandardAssertions.IsEqualTo(Of T)(ActualValue(Of T), T, String, Object())
 - uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object)
   name: IsEqualTo<T>(ActualValue<T>, Object)
   href: api/Testify.StandardAssertions.html
@@ -3031,7 +3008,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, System.Object)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), System.Object)
   nameWithType: StandardAssertions.IsEqualTo<T>(ActualValue<T>, Object)
-  nameWithType.vb: IsEqualTo(Of T)(ActualValue(Of T), Object)
+  nameWithType.vb: StandardAssertions.IsEqualTo(Of T)(ActualValue(Of T), Object)
 - uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object,System.String)
   name: IsEqualTo<T>(ActualValue<T>, Object, String)
   href: api/Testify.StandardAssertions.html
@@ -3040,7 +3017,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String)
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String)
   nameWithType: StandardAssertions.IsEqualTo<T>(ActualValue<T>, Object, String)
-  nameWithType.vb: IsEqualTo(Of T)(ActualValue(Of T), Object, String)
+  nameWithType.vb: StandardAssertions.IsEqualTo(Of T)(ActualValue(Of T), Object, String)
 - uid: Testify.StandardAssertions.IsEqualTo``1(Testify.ActualValue{``0},System.Object,System.String,System.Object[])
   name: IsEqualTo<T>(ActualValue<T>, Object, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3049,7 +3026,7 @@ references:
   fullName: Testify.StandardAssertions.IsEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String, System.Object())
   nameWithType: StandardAssertions.IsEqualTo<T>(ActualValue<T>, Object, String, Object[])
-  nameWithType.vb: IsEqualTo(Of T)(ActualValue(Of T), Object, String, Object())
+  nameWithType.vb: StandardAssertions.IsEqualTo(Of T)(ActualValue(Of T), Object, String, Object())
 - uid: Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean})
   name: IsFalse(ActualValue<Boolean>)
   href: api/Testify.StandardAssertions.html
@@ -3058,7 +3035,7 @@ references:
   fullName: Testify.StandardAssertions.IsFalse(Testify.ActualValue<System.Boolean>)
   fullName.vb: Testify.StandardAssertions.IsFalse(Testify.ActualValue(Of System.Boolean))
   nameWithType: StandardAssertions.IsFalse(ActualValue<Boolean>)
-  nameWithType.vb: IsFalse(ActualValue(Of Boolean))
+  nameWithType.vb: StandardAssertions.IsFalse(ActualValue(Of Boolean))
 - uid: Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean},System.String)
   name: IsFalse(ActualValue<Boolean>, String)
   href: api/Testify.StandardAssertions.html
@@ -3067,7 +3044,7 @@ references:
   fullName: Testify.StandardAssertions.IsFalse(Testify.ActualValue<System.Boolean>, System.String)
   fullName.vb: Testify.StandardAssertions.IsFalse(Testify.ActualValue(Of System.Boolean), System.String)
   nameWithType: StandardAssertions.IsFalse(ActualValue<Boolean>, String)
-  nameWithType.vb: IsFalse(ActualValue(Of Boolean), String)
+  nameWithType.vb: StandardAssertions.IsFalse(ActualValue(Of Boolean), String)
 - uid: Testify.StandardAssertions.IsFalse(Testify.ActualValue{System.Boolean},System.String,System.Object[])
   name: IsFalse(ActualValue<Boolean>, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3076,7 +3053,7 @@ references:
   fullName: Testify.StandardAssertions.IsFalse(Testify.ActualValue<System.Boolean>, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsFalse(Testify.ActualValue(Of System.Boolean), System.String, System.Object())
   nameWithType: StandardAssertions.IsFalse(ActualValue<Boolean>, String, Object[])
-  nameWithType.vb: IsFalse(ActualValue(Of Boolean), String, Object())
+  nameWithType.vb: StandardAssertions.IsFalse(ActualValue(Of Boolean), String, Object())
 - uid: Testify.StandardAssertions.IsFalse*
   name: IsFalse
   href: api/Testify.StandardAssertions.html
@@ -3084,14 +3061,11 @@ references:
   fullName: Testify.StandardAssertions.IsFalse
   nameWithType: StandardAssertions.IsFalse
 - uid: Testify.StandardAssertions.IsInstanceOfType*
-  name: IsInstanceOfType<T>
+  name: IsInstanceOfType
   href: api/Testify.StandardAssertions.html
   commentId: Overload:Testify.StandardAssertions.IsInstanceOfType
-  name.vb: IsInstanceOfType(Of T)
-  fullName: Testify.StandardAssertions.IsInstanceOfType<T>
-  fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)
-  nameWithType: StandardAssertions.IsInstanceOfType<T>
-  nameWithType.vb: StandardAssertions.IsInstanceOfType(Of T)
+  fullName: Testify.StandardAssertions.IsInstanceOfType
+  nameWithType: StandardAssertions.IsInstanceOfType
 - uid: Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type)
   name: IsInstanceOfType<T>(ActualValue<T>, Type)
   href: api/Testify.StandardAssertions.html
@@ -3100,7 +3074,7 @@ references:
   fullName: Testify.StandardAssertions.IsInstanceOfType<T>(Testify.ActualValue<T>, System.Type)
   fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type)
   nameWithType: StandardAssertions.IsInstanceOfType<T>(ActualValue<T>, Type)
-  nameWithType.vb: IsInstanceOfType(Of T)(ActualValue(Of T), Type)
+  nameWithType.vb: StandardAssertions.IsInstanceOfType(Of T)(ActualValue(Of T), Type)
 - uid: Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String)
   name: IsInstanceOfType<T>(ActualValue<T>, Type, String)
   href: api/Testify.StandardAssertions.html
@@ -3109,7 +3083,7 @@ references:
   fullName: Testify.StandardAssertions.IsInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String)
   fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String)
   nameWithType: StandardAssertions.IsInstanceOfType<T>(ActualValue<T>, Type, String)
-  nameWithType.vb: IsInstanceOfType(Of T)(ActualValue(Of T), Type, String)
+  nameWithType.vb: StandardAssertions.IsInstanceOfType(Of T)(ActualValue(Of T), Type, String)
 - uid: Testify.StandardAssertions.IsInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
   name: IsInstanceOfType<T>(ActualValue<T>, Type, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3118,7 +3092,7 @@ references:
   fullName: Testify.StandardAssertions.IsInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String, System.Object())
   nameWithType: StandardAssertions.IsInstanceOfType<T>(ActualValue<T>, Type, String, Object[])
-  nameWithType.vb: IsInstanceOfType(Of T)(ActualValue(Of T), Type, String, Object())
+  nameWithType.vb: StandardAssertions.IsInstanceOfType(Of T)(ActualValue(Of T), Type, String, Object())
 - uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double)
   name: IsNotEqualTo(ActualValue<Double>, Double, Double)
   href: api/Testify.StandardAssertions.html
@@ -3127,7 +3101,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double)
   nameWithType: StandardAssertions.IsNotEqualTo(ActualValue<Double>, Double, Double)
-  nameWithType.vb: IsNotEqualTo(ActualValue(Of Double), Double, Double)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(ActualValue(Of Double), Double, Double)
 - uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String)
   name: IsNotEqualTo(ActualValue<Double>, Double, Double, String)
   href: api/Testify.StandardAssertions.html
@@ -3136,7 +3110,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String)
   nameWithType: StandardAssertions.IsNotEqualTo(ActualValue<Double>, Double, Double, String)
-  nameWithType.vb: IsNotEqualTo(ActualValue(Of Double), Double, Double, String)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(ActualValue(Of Double), Double, Double, String)
 - uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Double},System.Double,System.Double,System.String,System.Object[])
   name: IsNotEqualTo(ActualValue<Double>, Double, Double, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3145,7 +3119,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Double>, System.Double, System.Double, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Double), System.Double, System.Double, System.String, System.Object())
   nameWithType: StandardAssertions.IsNotEqualTo(ActualValue<Double>, Double, Double, String, Object[])
-  nameWithType.vb: IsNotEqualTo(ActualValue(Of Double), Double, Double, String, Object())
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(ActualValue(Of Double), Double, Double, String, Object())
 - uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single)
   name: IsNotEqualTo(ActualValue<Single>, Single, Single)
   href: api/Testify.StandardAssertions.html
@@ -3154,7 +3128,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single)
   nameWithType: StandardAssertions.IsNotEqualTo(ActualValue<Single>, Single, Single)
-  nameWithType.vb: IsNotEqualTo(ActualValue(Of Single), Single, Single)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(ActualValue(Of Single), Single, Single)
 - uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String)
   name: IsNotEqualTo(ActualValue<Single>, Single, Single, String)
   href: api/Testify.StandardAssertions.html
@@ -3163,7 +3137,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String)
   nameWithType: StandardAssertions.IsNotEqualTo(ActualValue<Single>, Single, Single, String)
-  nameWithType.vb: IsNotEqualTo(ActualValue(Of Single), Single, Single, String)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(ActualValue(Of Single), Single, Single, String)
 - uid: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue{System.Single},System.Single,System.Single,System.String,System.Object[])
   name: IsNotEqualTo(ActualValue<Single>, Single, Single, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3172,7 +3146,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue<System.Single>, System.Single, System.Single, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Testify.ActualValue(Of System.Single), System.Single, System.Single, System.String, System.Object())
   nameWithType: StandardAssertions.IsNotEqualTo(ActualValue<Single>, Single, Single, String, Object[])
-  nameWithType.vb: IsNotEqualTo(ActualValue(Of Single), Single, Single, String, Object())
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(ActualValue(Of Single), Single, Single, String, Object())
 - uid: Testify.StandardAssertions.IsNotEqualTo*
   name: IsNotEqualTo
   href: api/Testify.StandardAssertions.html
@@ -3187,7 +3161,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, T)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), T)
   nameWithType: StandardAssertions.IsNotEqualTo<T>(ActualValue<T>, T)
-  nameWithType.vb: IsNotEqualTo(Of T)(ActualValue(Of T), T)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(Of T)(ActualValue(Of T), T)
 - uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0,System.String)
   name: IsNotEqualTo<T>(ActualValue<T>, T, String)
   href: api/Testify.StandardAssertions.html
@@ -3196,7 +3170,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, T, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String)
   nameWithType: StandardAssertions.IsNotEqualTo<T>(ActualValue<T>, T, String)
-  nameWithType.vb: IsNotEqualTo(Of T)(ActualValue(Of T), T, String)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(Of T)(ActualValue(Of T), T, String)
 - uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
   name: IsNotEqualTo<T>(ActualValue<T>, T, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3205,7 +3179,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
   nameWithType: StandardAssertions.IsNotEqualTo<T>(ActualValue<T>, T, String, Object[])
-  nameWithType.vb: IsNotEqualTo(Of T)(ActualValue(Of T), T, String, Object())
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(Of T)(ActualValue(Of T), T, String, Object())
 - uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object)
   name: IsNotEqualTo<T>(ActualValue<T>, Object)
   href: api/Testify.StandardAssertions.html
@@ -3214,7 +3188,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, System.Object)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), System.Object)
   nameWithType: StandardAssertions.IsNotEqualTo<T>(ActualValue<T>, Object)
-  nameWithType.vb: IsNotEqualTo(Of T)(ActualValue(Of T), Object)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(Of T)(ActualValue(Of T), Object)
 - uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object,System.String)
   name: IsNotEqualTo<T>(ActualValue<T>, Object, String)
   href: api/Testify.StandardAssertions.html
@@ -3223,7 +3197,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String)
   nameWithType: StandardAssertions.IsNotEqualTo<T>(ActualValue<T>, Object, String)
-  nameWithType.vb: IsNotEqualTo(Of T)(ActualValue(Of T), Object, String)
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(Of T)(ActualValue(Of T), Object, String)
 - uid: Testify.StandardAssertions.IsNotEqualTo``1(Testify.ActualValue{``0},System.Object,System.String,System.Object[])
   name: IsNotEqualTo<T>(ActualValue<T>, Object, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3232,16 +3206,13 @@ references:
   fullName: Testify.StandardAssertions.IsNotEqualTo<T>(Testify.ActualValue<T>, System.Object, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotEqualTo(Of T)(Testify.ActualValue(Of T), System.Object, System.String, System.Object())
   nameWithType: StandardAssertions.IsNotEqualTo<T>(ActualValue<T>, Object, String, Object[])
-  nameWithType.vb: IsNotEqualTo(Of T)(ActualValue(Of T), Object, String, Object())
+  nameWithType.vb: StandardAssertions.IsNotEqualTo(Of T)(ActualValue(Of T), Object, String, Object())
 - uid: Testify.StandardAssertions.IsNotInstanceOfType*
-  name: IsNotInstanceOfType<T>
+  name: IsNotInstanceOfType
   href: api/Testify.StandardAssertions.html
   commentId: Overload:Testify.StandardAssertions.IsNotInstanceOfType
-  name.vb: IsNotInstanceOfType(Of T)
-  fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>
-  fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)
-  nameWithType: StandardAssertions.IsNotInstanceOfType<T>
-  nameWithType.vb: StandardAssertions.IsNotInstanceOfType(Of T)
+  fullName: Testify.StandardAssertions.IsNotInstanceOfType
+  nameWithType: StandardAssertions.IsNotInstanceOfType
 - uid: Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type)
   name: IsNotInstanceOfType<T>(ActualValue<T>, Type)
   href: api/Testify.StandardAssertions.html
@@ -3250,7 +3221,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>(Testify.ActualValue<T>, System.Type)
   fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type)
   nameWithType: StandardAssertions.IsNotInstanceOfType<T>(ActualValue<T>, Type)
-  nameWithType.vb: IsNotInstanceOfType(Of T)(ActualValue(Of T), Type)
+  nameWithType.vb: StandardAssertions.IsNotInstanceOfType(Of T)(ActualValue(Of T), Type)
 - uid: Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String)
   name: IsNotInstanceOfType<T>(ActualValue<T>, Type, String)
   href: api/Testify.StandardAssertions.html
@@ -3259,7 +3230,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String)
   nameWithType: StandardAssertions.IsNotInstanceOfType<T>(ActualValue<T>, Type, String)
-  nameWithType.vb: IsNotInstanceOfType(Of T)(ActualValue(Of T), Type, String)
+  nameWithType.vb: StandardAssertions.IsNotInstanceOfType(Of T)(ActualValue(Of T), Type, String)
 - uid: Testify.StandardAssertions.IsNotInstanceOfType``1(Testify.ActualValue{``0},System.Type,System.String,System.Object[])
   name: IsNotInstanceOfType<T>(ActualValue<T>, Type, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3268,16 +3239,13 @@ references:
   fullName: Testify.StandardAssertions.IsNotInstanceOfType<T>(Testify.ActualValue<T>, System.Type, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotInstanceOfType(Of T)(Testify.ActualValue(Of T), System.Type, System.String, System.Object())
   nameWithType: StandardAssertions.IsNotInstanceOfType<T>(ActualValue<T>, Type, String, Object[])
-  nameWithType.vb: IsNotInstanceOfType(Of T)(ActualValue(Of T), Type, String, Object())
+  nameWithType.vb: StandardAssertions.IsNotInstanceOfType(Of T)(ActualValue(Of T), Type, String, Object())
 - uid: Testify.StandardAssertions.IsNotNull*
-  name: IsNotNull<T>
+  name: IsNotNull
   href: api/Testify.StandardAssertions.html
   commentId: Overload:Testify.StandardAssertions.IsNotNull
-  name.vb: IsNotNull(Of T)
-  fullName: Testify.StandardAssertions.IsNotNull<T>
-  fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)
-  nameWithType: StandardAssertions.IsNotNull<T>
-  nameWithType.vb: StandardAssertions.IsNotNull(Of T)
+  fullName: Testify.StandardAssertions.IsNotNull
+  nameWithType: StandardAssertions.IsNotNull
 - uid: Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0})
   name: IsNotNull<T>(ActualValue<T>)
   href: api/Testify.StandardAssertions.html
@@ -3286,7 +3254,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotNull<T>(Testify.ActualValue<T>)
   fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)(Testify.ActualValue(Of T))
   nameWithType: StandardAssertions.IsNotNull<T>(ActualValue<T>)
-  nameWithType.vb: IsNotNull(Of T)(ActualValue(Of T))
+  nameWithType.vb: StandardAssertions.IsNotNull(Of T)(ActualValue(Of T))
 - uid: Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0},System.String)
   name: IsNotNull<T>(ActualValue<T>, String)
   href: api/Testify.StandardAssertions.html
@@ -3295,7 +3263,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotNull<T>(Testify.ActualValue<T>, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)(Testify.ActualValue(Of T), System.String)
   nameWithType: StandardAssertions.IsNotNull<T>(ActualValue<T>, String)
-  nameWithType.vb: IsNotNull(Of T)(ActualValue(Of T), String)
+  nameWithType.vb: StandardAssertions.IsNotNull(Of T)(ActualValue(Of T), String)
 - uid: Testify.StandardAssertions.IsNotNull``1(Testify.ActualValue{``0},System.String,System.Object[])
   name: IsNotNull<T>(ActualValue<T>, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3304,16 +3272,13 @@ references:
   fullName: Testify.StandardAssertions.IsNotNull<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotNull(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: StandardAssertions.IsNotNull<T>(ActualValue<T>, String, Object[])
-  nameWithType.vb: IsNotNull(Of T)(ActualValue(Of T), String, Object())
+  nameWithType.vb: StandardAssertions.IsNotNull(Of T)(ActualValue(Of T), String, Object())
 - uid: Testify.StandardAssertions.IsNotSameAs*
-  name: IsNotSameAs<T>
+  name: IsNotSameAs
   href: api/Testify.StandardAssertions.html
   commentId: Overload:Testify.StandardAssertions.IsNotSameAs
-  name.vb: IsNotSameAs(Of T)
-  fullName: Testify.StandardAssertions.IsNotSameAs<T>
-  fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)
-  nameWithType: StandardAssertions.IsNotSameAs<T>
-  nameWithType.vb: StandardAssertions.IsNotSameAs(Of T)
+  fullName: Testify.StandardAssertions.IsNotSameAs
+  nameWithType: StandardAssertions.IsNotSameAs
 - uid: Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0)
   name: IsNotSameAs<T>(ActualValue<T>, T)
   href: api/Testify.StandardAssertions.html
@@ -3322,7 +3287,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotSameAs<T>(Testify.ActualValue<T>, T)
   fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)(Testify.ActualValue(Of T), T)
   nameWithType: StandardAssertions.IsNotSameAs<T>(ActualValue<T>, T)
-  nameWithType.vb: IsNotSameAs(Of T)(ActualValue(Of T), T)
+  nameWithType.vb: StandardAssertions.IsNotSameAs(Of T)(ActualValue(Of T), T)
 - uid: Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0,System.String)
   name: IsNotSameAs<T>(ActualValue<T>, T, String)
   href: api/Testify.StandardAssertions.html
@@ -3331,7 +3296,7 @@ references:
   fullName: Testify.StandardAssertions.IsNotSameAs<T>(Testify.ActualValue<T>, T, System.String)
   fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)(Testify.ActualValue(Of T), T, System.String)
   nameWithType: StandardAssertions.IsNotSameAs<T>(ActualValue<T>, T, String)
-  nameWithType.vb: IsNotSameAs(Of T)(ActualValue(Of T), T, String)
+  nameWithType.vb: StandardAssertions.IsNotSameAs(Of T)(ActualValue(Of T), T, String)
 - uid: Testify.StandardAssertions.IsNotSameAs``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
   name: IsNotSameAs<T>(ActualValue<T>, T, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3340,16 +3305,13 @@ references:
   fullName: Testify.StandardAssertions.IsNotSameAs<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNotSameAs(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
   nameWithType: StandardAssertions.IsNotSameAs<T>(ActualValue<T>, T, String, Object[])
-  nameWithType.vb: IsNotSameAs(Of T)(ActualValue(Of T), T, String, Object())
+  nameWithType.vb: StandardAssertions.IsNotSameAs(Of T)(ActualValue(Of T), T, String, Object())
 - uid: Testify.StandardAssertions.IsNull*
-  name: IsNull<T>
+  name: IsNull
   href: api/Testify.StandardAssertions.html
   commentId: Overload:Testify.StandardAssertions.IsNull
-  name.vb: IsNull(Of T)
-  fullName: Testify.StandardAssertions.IsNull<T>
-  fullName.vb: Testify.StandardAssertions.IsNull(Of T)
-  nameWithType: StandardAssertions.IsNull<T>
-  nameWithType.vb: StandardAssertions.IsNull(Of T)
+  fullName: Testify.StandardAssertions.IsNull
+  nameWithType: StandardAssertions.IsNull
 - uid: Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0})
   name: IsNull<T>(ActualValue<T>)
   href: api/Testify.StandardAssertions.html
@@ -3358,7 +3320,7 @@ references:
   fullName: Testify.StandardAssertions.IsNull<T>(Testify.ActualValue<T>)
   fullName.vb: Testify.StandardAssertions.IsNull(Of T)(Testify.ActualValue(Of T))
   nameWithType: StandardAssertions.IsNull<T>(ActualValue<T>)
-  nameWithType.vb: IsNull(Of T)(ActualValue(Of T))
+  nameWithType.vb: StandardAssertions.IsNull(Of T)(ActualValue(Of T))
 - uid: Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0},System.String)
   name: IsNull<T>(ActualValue<T>, String)
   href: api/Testify.StandardAssertions.html
@@ -3367,7 +3329,7 @@ references:
   fullName: Testify.StandardAssertions.IsNull<T>(Testify.ActualValue<T>, System.String)
   fullName.vb: Testify.StandardAssertions.IsNull(Of T)(Testify.ActualValue(Of T), System.String)
   nameWithType: StandardAssertions.IsNull<T>(ActualValue<T>, String)
-  nameWithType.vb: IsNull(Of T)(ActualValue(Of T), String)
+  nameWithType.vb: StandardAssertions.IsNull(Of T)(ActualValue(Of T), String)
 - uid: Testify.StandardAssertions.IsNull``1(Testify.ActualValue{``0},System.String,System.Object[])
   name: IsNull<T>(ActualValue<T>, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3376,16 +3338,13 @@ references:
   fullName: Testify.StandardAssertions.IsNull<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsNull(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: StandardAssertions.IsNull<T>(ActualValue<T>, String, Object[])
-  nameWithType.vb: IsNull(Of T)(ActualValue(Of T), String, Object())
+  nameWithType.vb: StandardAssertions.IsNull(Of T)(ActualValue(Of T), String, Object())
 - uid: Testify.StandardAssertions.IsSameAs*
-  name: IsSameAs<T>
+  name: IsSameAs
   href: api/Testify.StandardAssertions.html
   commentId: Overload:Testify.StandardAssertions.IsSameAs
-  name.vb: IsSameAs(Of T)
-  fullName: Testify.StandardAssertions.IsSameAs<T>
-  fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)
-  nameWithType: StandardAssertions.IsSameAs<T>
-  nameWithType.vb: StandardAssertions.IsSameAs(Of T)
+  fullName: Testify.StandardAssertions.IsSameAs
+  nameWithType: StandardAssertions.IsSameAs
 - uid: Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0)
   name: IsSameAs<T>(ActualValue<T>, T)
   href: api/Testify.StandardAssertions.html
@@ -3394,7 +3353,7 @@ references:
   fullName: Testify.StandardAssertions.IsSameAs<T>(Testify.ActualValue<T>, T)
   fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)(Testify.ActualValue(Of T), T)
   nameWithType: StandardAssertions.IsSameAs<T>(ActualValue<T>, T)
-  nameWithType.vb: IsSameAs(Of T)(ActualValue(Of T), T)
+  nameWithType.vb: StandardAssertions.IsSameAs(Of T)(ActualValue(Of T), T)
 - uid: Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0,System.String)
   name: IsSameAs<T>(ActualValue<T>, T, String)
   href: api/Testify.StandardAssertions.html
@@ -3403,7 +3362,7 @@ references:
   fullName: Testify.StandardAssertions.IsSameAs<T>(Testify.ActualValue<T>, T, System.String)
   fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)(Testify.ActualValue(Of T), T, System.String)
   nameWithType: StandardAssertions.IsSameAs<T>(ActualValue<T>, T, String)
-  nameWithType.vb: IsSameAs(Of T)(ActualValue(Of T), T, String)
+  nameWithType.vb: StandardAssertions.IsSameAs(Of T)(ActualValue(Of T), T, String)
 - uid: Testify.StandardAssertions.IsSameAs``1(Testify.ActualValue{``0},``0,System.String,System.Object[])
   name: IsSameAs<T>(ActualValue<T>, T, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3412,7 +3371,7 @@ references:
   fullName: Testify.StandardAssertions.IsSameAs<T>(Testify.ActualValue<T>, T, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsSameAs(Of T)(Testify.ActualValue(Of T), T, System.String, System.Object())
   nameWithType: StandardAssertions.IsSameAs<T>(ActualValue<T>, T, String, Object[])
-  nameWithType.vb: IsSameAs(Of T)(ActualValue(Of T), T, String, Object())
+  nameWithType.vb: StandardAssertions.IsSameAs(Of T)(ActualValue(Of T), T, String, Object())
 - uid: Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean})
   name: IsTrue(ActualValue<Boolean>)
   href: api/Testify.StandardAssertions.html
@@ -3421,7 +3380,7 @@ references:
   fullName: Testify.StandardAssertions.IsTrue(Testify.ActualValue<System.Boolean>)
   fullName.vb: Testify.StandardAssertions.IsTrue(Testify.ActualValue(Of System.Boolean))
   nameWithType: StandardAssertions.IsTrue(ActualValue<Boolean>)
-  nameWithType.vb: IsTrue(ActualValue(Of Boolean))
+  nameWithType.vb: StandardAssertions.IsTrue(ActualValue(Of Boolean))
 - uid: Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean},System.String)
   name: IsTrue(ActualValue<Boolean>, String)
   href: api/Testify.StandardAssertions.html
@@ -3430,7 +3389,7 @@ references:
   fullName: Testify.StandardAssertions.IsTrue(Testify.ActualValue<System.Boolean>, System.String)
   fullName.vb: Testify.StandardAssertions.IsTrue(Testify.ActualValue(Of System.Boolean), System.String)
   nameWithType: StandardAssertions.IsTrue(ActualValue<Boolean>, String)
-  nameWithType.vb: IsTrue(ActualValue(Of Boolean), String)
+  nameWithType.vb: StandardAssertions.IsTrue(ActualValue(Of Boolean), String)
 - uid: Testify.StandardAssertions.IsTrue(Testify.ActualValue{System.Boolean},System.String,System.Object[])
   name: IsTrue(ActualValue<Boolean>, String, Object[])
   href: api/Testify.StandardAssertions.html
@@ -3439,7 +3398,7 @@ references:
   fullName: Testify.StandardAssertions.IsTrue(Testify.ActualValue<System.Boolean>, System.String, System.Object[])
   fullName.vb: Testify.StandardAssertions.IsTrue(Testify.ActualValue(Of System.Boolean), System.String, System.Object())
   nameWithType: StandardAssertions.IsTrue(ActualValue<Boolean>, String, Object[])
-  nameWithType.vb: IsTrue(ActualValue(Of Boolean), String, Object())
+  nameWithType.vb: StandardAssertions.IsTrue(ActualValue(Of Boolean), String, Object())
 - uid: Testify.StandardAssertions.IsTrue*
   name: IsTrue
   href: api/Testify.StandardAssertions.html
@@ -3460,7 +3419,7 @@ references:
   fullName: Testify.StringAssertions.Contains(Testify.ActualValue<System.String>, System.String)
   fullName.vb: Testify.StringAssertions.Contains(Testify.ActualValue(Of System.String), System.String)
   nameWithType: StringAssertions.Contains(ActualValue<String>, String)
-  nameWithType.vb: Contains(ActualValue(Of String), String)
+  nameWithType.vb: StringAssertions.Contains(ActualValue(Of String), String)
 - uid: Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String,System.String)
   name: Contains(ActualValue<String>, String, String)
   href: api/Testify.StringAssertions.html
@@ -3469,7 +3428,7 @@ references:
   fullName: Testify.StringAssertions.Contains(Testify.ActualValue<System.String>, System.String, System.String)
   fullName.vb: Testify.StringAssertions.Contains(Testify.ActualValue(Of System.String), System.String, System.String)
   nameWithType: StringAssertions.Contains(ActualValue<String>, String, String)
-  nameWithType.vb: Contains(ActualValue(Of String), String, String)
+  nameWithType.vb: StringAssertions.Contains(ActualValue(Of String), String, String)
 - uid: Testify.StringAssertions.Contains(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
   name: Contains(ActualValue<String>, String, String, Object[])
   href: api/Testify.StringAssertions.html
@@ -3478,7 +3437,7 @@ references:
   fullName: Testify.StringAssertions.Contains(Testify.ActualValue<System.String>, System.String, System.String, System.Object[])
   fullName.vb: Testify.StringAssertions.Contains(Testify.ActualValue(Of System.String), System.String, System.String, System.Object())
   nameWithType: StringAssertions.Contains(ActualValue<String>, String, String, Object[])
-  nameWithType.vb: Contains(ActualValue(Of String), String, String, Object())
+  nameWithType.vb: StringAssertions.Contains(ActualValue(Of String), String, String, Object())
 - uid: Testify.StringAssertions.Contains*
   name: Contains
   href: api/Testify.StringAssertions.html
@@ -3493,7 +3452,7 @@ references:
   fullName: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex)
   fullName.vb: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex)
   nameWithType: StringAssertions.DoesNotMatch(ActualValue<String>, Regex)
-  nameWithType.vb: DoesNotMatch(ActualValue(Of String), Regex)
+  nameWithType.vb: StringAssertions.DoesNotMatch(ActualValue(Of String), Regex)
 - uid: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String)
   name: DoesNotMatch(ActualValue<String>, Regex, String)
   href: api/Testify.StringAssertions.html
@@ -3502,7 +3461,7 @@ references:
   fullName: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String)
   fullName.vb: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String)
   nameWithType: StringAssertions.DoesNotMatch(ActualValue<String>, Regex, String)
-  nameWithType.vb: DoesNotMatch(ActualValue(Of String), Regex, String)
+  nameWithType.vb: StringAssertions.DoesNotMatch(ActualValue(Of String), Regex, String)
 - uid: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String,System.Object[])
   name: DoesNotMatch(ActualValue<String>, Regex, String, Object[])
   href: api/Testify.StringAssertions.html
@@ -3511,7 +3470,7 @@ references:
   fullName: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String, System.Object[])
   fullName.vb: Testify.StringAssertions.DoesNotMatch(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String, System.Object())
   nameWithType: StringAssertions.DoesNotMatch(ActualValue<String>, Regex, String, Object[])
-  nameWithType.vb: DoesNotMatch(ActualValue(Of String), Regex, String, Object())
+  nameWithType.vb: StringAssertions.DoesNotMatch(ActualValue(Of String), Regex, String, Object())
 - uid: Testify.StringAssertions.DoesNotMatch*
   name: DoesNotMatch
   href: api/Testify.StringAssertions.html
@@ -3526,7 +3485,7 @@ references:
   fullName: Testify.StringAssertions.EndsWith(Testify.ActualValue<System.String>, System.String)
   fullName.vb: Testify.StringAssertions.EndsWith(Testify.ActualValue(Of System.String), System.String)
   nameWithType: StringAssertions.EndsWith(ActualValue<String>, String)
-  nameWithType.vb: EndsWith(ActualValue(Of String), String)
+  nameWithType.vb: StringAssertions.EndsWith(ActualValue(Of String), String)
 - uid: Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String,System.String)
   name: EndsWith(ActualValue<String>, String, String)
   href: api/Testify.StringAssertions.html
@@ -3535,7 +3494,7 @@ references:
   fullName: Testify.StringAssertions.EndsWith(Testify.ActualValue<System.String>, System.String, System.String)
   fullName.vb: Testify.StringAssertions.EndsWith(Testify.ActualValue(Of System.String), System.String, System.String)
   nameWithType: StringAssertions.EndsWith(ActualValue<String>, String, String)
-  nameWithType.vb: EndsWith(ActualValue(Of String), String, String)
+  nameWithType.vb: StringAssertions.EndsWith(ActualValue(Of String), String, String)
 - uid: Testify.StringAssertions.EndsWith(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
   name: EndsWith(ActualValue<String>, String, String, Object[])
   href: api/Testify.StringAssertions.html
@@ -3544,7 +3503,7 @@ references:
   fullName: Testify.StringAssertions.EndsWith(Testify.ActualValue<System.String>, System.String, System.String, System.Object[])
   fullName.vb: Testify.StringAssertions.EndsWith(Testify.ActualValue(Of System.String), System.String, System.String, System.Object())
   nameWithType: StringAssertions.EndsWith(ActualValue<String>, String, String, Object[])
-  nameWithType.vb: EndsWith(ActualValue(Of String), String, String, Object())
+  nameWithType.vb: StringAssertions.EndsWith(ActualValue(Of String), String, String, Object())
 - uid: Testify.StringAssertions.EndsWith*
   name: EndsWith
   href: api/Testify.StringAssertions.html
@@ -3559,7 +3518,7 @@ references:
   fullName: Testify.StringAssertions.Matches(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex)
   fullName.vb: Testify.StringAssertions.Matches(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex)
   nameWithType: StringAssertions.Matches(ActualValue<String>, Regex)
-  nameWithType.vb: Matches(ActualValue(Of String), Regex)
+  nameWithType.vb: StringAssertions.Matches(ActualValue(Of String), Regex)
 - uid: Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String)
   name: Matches(ActualValue<String>, Regex, String)
   href: api/Testify.StringAssertions.html
@@ -3568,7 +3527,7 @@ references:
   fullName: Testify.StringAssertions.Matches(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String)
   fullName.vb: Testify.StringAssertions.Matches(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String)
   nameWithType: StringAssertions.Matches(ActualValue<String>, Regex, String)
-  nameWithType.vb: Matches(ActualValue(Of String), Regex, String)
+  nameWithType.vb: StringAssertions.Matches(ActualValue(Of String), Regex, String)
 - uid: Testify.StringAssertions.Matches(Testify.ActualValue{System.String},System.Text.RegularExpressions.Regex,System.String,System.Object[])
   name: Matches(ActualValue<String>, Regex, String, Object[])
   href: api/Testify.StringAssertions.html
@@ -3577,7 +3536,7 @@ references:
   fullName: Testify.StringAssertions.Matches(Testify.ActualValue<System.String>, System.Text.RegularExpressions.Regex, System.String, System.Object[])
   fullName.vb: Testify.StringAssertions.Matches(Testify.ActualValue(Of System.String), System.Text.RegularExpressions.Regex, System.String, System.Object())
   nameWithType: StringAssertions.Matches(ActualValue<String>, Regex, String, Object[])
-  nameWithType.vb: Matches(ActualValue(Of String), Regex, String, Object())
+  nameWithType.vb: StringAssertions.Matches(ActualValue(Of String), Regex, String, Object())
 - uid: Testify.StringAssertions.Matches*
   name: Matches
   href: api/Testify.StringAssertions.html
@@ -3592,7 +3551,7 @@ references:
   fullName: Testify.StringAssertions.StartsWith(Testify.ActualValue<System.String>, System.String)
   fullName.vb: Testify.StringAssertions.StartsWith(Testify.ActualValue(Of System.String), System.String)
   nameWithType: StringAssertions.StartsWith(ActualValue<String>, String)
-  nameWithType.vb: StartsWith(ActualValue(Of String), String)
+  nameWithType.vb: StringAssertions.StartsWith(ActualValue(Of String), String)
 - uid: Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String,System.String)
   name: StartsWith(ActualValue<String>, String, String)
   href: api/Testify.StringAssertions.html
@@ -3601,7 +3560,7 @@ references:
   fullName: Testify.StringAssertions.StartsWith(Testify.ActualValue<System.String>, System.String, System.String)
   fullName.vb: Testify.StringAssertions.StartsWith(Testify.ActualValue(Of System.String), System.String, System.String)
   nameWithType: StringAssertions.StartsWith(ActualValue<String>, String, String)
-  nameWithType.vb: StartsWith(ActualValue(Of String), String, String)
+  nameWithType.vb: StringAssertions.StartsWith(ActualValue(Of String), String, String)
 - uid: Testify.StringAssertions.StartsWith(Testify.ActualValue{System.String},System.String,System.String,System.Object[])
   name: StartsWith(ActualValue<String>, String, String, Object[])
   href: api/Testify.StringAssertions.html
@@ -3610,7 +3569,7 @@ references:
   fullName: Testify.StringAssertions.StartsWith(Testify.ActualValue<System.String>, System.String, System.String, System.Object[])
   fullName.vb: Testify.StringAssertions.StartsWith(Testify.ActualValue(Of System.String), System.String, System.String, System.Object())
   nameWithType: StringAssertions.StartsWith(ActualValue<String>, String, String, Object[])
-  nameWithType.vb: StartsWith(ActualValue(Of String), String, String, Object())
+  nameWithType.vb: StringAssertions.StartsWith(ActualValue(Of String), String, String, Object())
 - uid: Testify.StringAssertions.StartsWith*
   name: StartsWith
   href: api/Testify.StringAssertions.html
@@ -3624,14 +3583,11 @@ references:
   fullName: Testify.TaskAssertions
   nameWithType: TaskAssertions
 - uid: Testify.TaskAssertions.Completes*
-  name: Completes<T>
+  name: Completes
   href: api/Testify.TaskAssertions.html
   commentId: Overload:Testify.TaskAssertions.Completes
-  name.vb: Completes(Of T)
-  fullName: Testify.TaskAssertions.Completes<T>
-  fullName.vb: Testify.TaskAssertions.Completes(Of T)
-  nameWithType: TaskAssertions.Completes<T>
-  nameWithType.vb: TaskAssertions.Completes(Of T)
+  fullName: Testify.TaskAssertions.Completes
+  nameWithType: TaskAssertions.Completes
 - uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0})
   name: Completes<T>(ActualValue<T>)
   href: api/Testify.TaskAssertions.html
@@ -3640,7 +3596,7 @@ references:
   fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>)
   fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T))
   nameWithType: TaskAssertions.Completes<T>(ActualValue<T>)
-  nameWithType.vb: Completes(Of T)(ActualValue(Of T))
+  nameWithType.vb: TaskAssertions.Completes(Of T)(ActualValue(Of T))
 - uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.Int32)
   name: Completes<T>(ActualValue<T>, Int32)
   href: api/Testify.TaskAssertions.html
@@ -3649,7 +3605,7 @@ references:
   fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.Int32)
   fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.Int32)
   nameWithType: TaskAssertions.Completes<T>(ActualValue<T>, Int32)
-  nameWithType.vb: Completes(Of T)(ActualValue(Of T), Int32)
+  nameWithType.vb: TaskAssertions.Completes(Of T)(ActualValue(Of T), Int32)
 - uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.Int32,System.String,System.Object[])
   name: Completes<T>(ActualValue<T>, Int32, String, Object[])
   href: api/Testify.TaskAssertions.html
@@ -3658,7 +3614,7 @@ references:
   fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.Int32, System.String, System.Object[])
   fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.Int32, System.String, System.Object())
   nameWithType: TaskAssertions.Completes<T>(ActualValue<T>, Int32, String, Object[])
-  nameWithType.vb: Completes(Of T)(ActualValue(Of T), Int32, String, Object())
+  nameWithType.vb: TaskAssertions.Completes(Of T)(ActualValue(Of T), Int32, String, Object())
 - uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.String)
   name: Completes<T>(ActualValue<T>, String)
   href: api/Testify.TaskAssertions.html
@@ -3667,7 +3623,7 @@ references:
   fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.String)
   fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.String)
   nameWithType: TaskAssertions.Completes<T>(ActualValue<T>, String)
-  nameWithType.vb: Completes(Of T)(ActualValue(Of T), String)
+  nameWithType.vb: TaskAssertions.Completes(Of T)(ActualValue(Of T), String)
 - uid: Testify.TaskAssertions.Completes``1(Testify.ActualValue{``0},System.String,System.Object[])
   name: Completes<T>(ActualValue<T>, String, Object[])
   href: api/Testify.TaskAssertions.html
@@ -3676,16 +3632,13 @@ references:
   fullName: Testify.TaskAssertions.Completes<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.TaskAssertions.Completes(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: TaskAssertions.Completes<T>(ActualValue<T>, String, Object[])
-  nameWithType.vb: Completes(Of T)(ActualValue(Of T), String, Object())
+  nameWithType.vb: TaskAssertions.Completes(Of T)(ActualValue(Of T), String, Object())
 - uid: Testify.TaskAssertions.IsBusy*
-  name: IsBusy<T>
+  name: IsBusy
   href: api/Testify.TaskAssertions.html
   commentId: Overload:Testify.TaskAssertions.IsBusy
-  name.vb: IsBusy(Of T)
-  fullName: Testify.TaskAssertions.IsBusy<T>
-  fullName.vb: Testify.TaskAssertions.IsBusy(Of T)
-  nameWithType: TaskAssertions.IsBusy<T>
-  nameWithType.vb: TaskAssertions.IsBusy(Of T)
+  fullName: Testify.TaskAssertions.IsBusy
+  nameWithType: TaskAssertions.IsBusy
 - uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0})
   name: IsBusy<T>(ActualValue<T>)
   href: api/Testify.TaskAssertions.html
@@ -3694,7 +3647,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>)
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T))
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>)
-  nameWithType.vb: IsBusy(Of T)(ActualValue(Of T))
+  nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T))
 - uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32)
   name: IsBusy<T>(ActualValue<T>, Int32)
   href: api/Testify.TaskAssertions.html
@@ -3703,7 +3656,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.Int32)
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.Int32)
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>, Int32)
-  nameWithType.vb: IsBusy(Of T)(ActualValue(Of T), Int32)
+  nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T), Int32)
 - uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32,System.String)
   name: IsBusy<T>(ActualValue<T>, Int32, String)
   href: api/Testify.TaskAssertions.html
@@ -3712,7 +3665,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.Int32, System.String)
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.Int32, System.String)
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>, Int32, String)
-  nameWithType.vb: IsBusy(Of T)(ActualValue(Of T), Int32, String)
+  nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T), Int32, String)
 - uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.Int32,System.String,System.Object[])
   name: IsBusy<T>(ActualValue<T>, Int32, String, Object[])
   href: api/Testify.TaskAssertions.html
@@ -3721,7 +3674,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.Int32, System.String, System.Object[])
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.Int32, System.String, System.Object())
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>, Int32, String, Object[])
-  nameWithType.vb: IsBusy(Of T)(ActualValue(Of T), Int32, String, Object())
+  nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T), Int32, String, Object())
 - uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.String)
   name: IsBusy<T>(ActualValue<T>, String)
   href: api/Testify.TaskAssertions.html
@@ -3730,7 +3683,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.String)
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.String)
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>, String)
-  nameWithType.vb: IsBusy(Of T)(ActualValue(Of T), String)
+  nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T), String)
 - uid: Testify.TaskAssertions.IsBusy``1(Testify.ActualValue{``0},System.String,System.Object[])
   name: IsBusy<T>(ActualValue<T>, String, Object[])
   href: api/Testify.TaskAssertions.html
@@ -3739,7 +3692,7 @@ references:
   fullName: Testify.TaskAssertions.IsBusy<T>(Testify.ActualValue<T>, System.String, System.Object[])
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>, String, Object[])
-  nameWithType.vb: IsBusy(Of T)(ActualValue(Of T), String, Object())
+  nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T), String, Object())
 - uid: UsingAnonymousData
   name: Using AnonymousData
   href: manual/UsingAnonymousData.html
