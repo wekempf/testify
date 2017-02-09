@@ -9,7 +9,7 @@ namespace Examples.UsingAnonymousData
 
         public Mapper()
         {
-            this.mappers.Add(
+            mappers.Add(
                 Tuple.Create(typeof(EmployeeDto), typeof(Employee)),
                 e =>
                 {
@@ -22,7 +22,7 @@ namespace Examples.UsingAnonymousData
         {
             var key = Tuple.Create(source.GetType(), typeof(TDestination));
             Func<object, object> mapper;
-            if (this.mappers.TryGetValue(key, out mapper))
+            if (mappers.TryGetValue(key, out mapper))
             {
                 return (TDestination)mapper.Invoke(source);
             }

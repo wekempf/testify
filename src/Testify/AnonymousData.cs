@@ -70,7 +70,7 @@ namespace Testify
         /// </remarks>
         public AnonymousData(int seed)
         {
-            this.random = new Random(seed);
+            random = new Random(seed);
         }
 
         /// <summary>
@@ -160,13 +160,13 @@ namespace Testify
             }
 
             Factory factory;
-            if (this.factories.TryGetValue(type, out factory) || GlobalFactories.TryGetValue(type, out factory))
+            if (factories.TryGetValue(type, out factory) || GlobalFactories.TryGetValue(type, out factory))
             {
                 object value;
                 try
                 {
                     value = factory(this);
-                    this.Populate(value, populateOption);
+                    Populate(value, populateOption);
                 }
                 catch (Exception e)
                 {
@@ -182,7 +182,7 @@ namespace Testify
             {
                 if (context.CallNextCustomization(out result))
                 {
-                    return this.Populate(result, populateOption);
+                    return Populate(result, populateOption);
                 }
             }
             catch (Exception e)
@@ -209,7 +209,7 @@ namespace Testify
                 throw new ArgumentOutOfRangeException($"The range of {nameof(maximum)} - {nameof(minimum)} is Infinity.");
             }
 
-            var next = (distribution ?? Distribution.Uniform).NextDouble(this.random);
+            var next = (distribution ?? Distribution.Uniform).NextDouble(random);
             return minimum + (next * (maximum - minimum));
         }
 
@@ -223,7 +223,7 @@ namespace Testify
         {
             Argument.NotNull(customization, nameof(customization));
 
-            this.customizations.Add(customization);
+            customizations.Add(customization);
             return this;
         }
 
@@ -313,7 +313,7 @@ namespace Testify
                             {
                                 object value;
                                 Factory factory;
-                                if (this.propertyFactories.TryGetValue(prop, out factory) ||
+                                if (propertyFactories.TryGetValue(prop, out factory) ||
                                     GlobalPropertyFactories.TryGetValue(prop, out factory))
                                 {
                                     value = factory(this);
@@ -359,7 +359,7 @@ namespace Testify
             Argument.NotNull(type, nameof(type));
             Argument.NotNull(factory, nameof(factory));
 
-            this.factories[type] = factory;
+            factories[type] = factory;
         }
 
         /// <summary>
@@ -372,7 +372,7 @@ namespace Testify
             Argument.NotNull(property, nameof(property));
             Argument.NotNull(factory, nameof(factory));
 
-            this.propertyFactories[property] = factory;
+            propertyFactories[property] = factory;
         }
 
         private static bool IsDefaultValue<TInstance>(TInstance instance, PropertyInfo prop)
@@ -434,14 +434,14 @@ namespace Testify
             if (type.IsArray)
             {
                 var itemType = type.GetElementType();
-                result = this.BuildArray(itemType);
+                result = BuildArray(itemType);
                 return true;
             }
 
             if (type.Is(typeof(IEnumerable<>)))
             {
                 var itemType = type.GetGenericTypeArgument(0);
-                result = this.BuildEnumerable(itemType);
+                result = BuildEnumerable(itemType);
                 return true;
             }
 
@@ -487,7 +487,7 @@ namespace Testify
         {
             if (populateOption != PopulateOption.None)
             {
-                this.Populate(instance, populateOption == PopulateOption.Deep);
+                Populate(instance, populateOption == PopulateOption.Deep);
             }
 
             return instance;
@@ -504,8 +504,8 @@ namespace Testify
                 Argument.NotNull(resultType, nameof(resultType));
 
                 this.factory = factory;
-                this.ResultType = resultType;
-                this.current = this.factory.customizations.Count;
+                ResultType = resultType;
+                current = this.factory.customizations.Count;
             }
 
             public Type ResultType { get; }
@@ -514,35 +514,35 @@ namespace Testify
             {
                 Argument.NotNull(type, nameof(type));
 
-                return this.factory.Any(type, populateOption);
+                return factory.Any(type, populateOption);
             }
 
             public double AnyDouble(double minimum, double maximum, Distribution distribution)
             {
                 Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
 
-                return this.factory.AnyDouble(minimum, maximum, distribution);
+                return factory.AnyDouble(minimum, maximum, distribution);
             }
 
             public bool CallNextCustomization(out object result)
             {
-                if (this.current != 0)
+                if (current != 0)
                 {
-                    return this.factory.customizations[--this.current].Create(this, out result);
+                    return factory.customizations[--current].Create(this, out result);
                 }
 
-                if (this.ResultType.IsType(typeof(IEnumerable)))
+                if (ResultType.IsType(typeof(IEnumerable)))
                 {
-                    return this.factory.BuildCollection(this.ResultType, out result);
+                    return factory.BuildCollection(ResultType, out result);
                 }
 
-                if (this.ResultType.IsInterface() || this.ResultType.IsAbstract())
+                if (ResultType.IsInterface() || ResultType.IsAbstract())
                 {
                     result = null;
                     return false;
                 }
 
-                return this.factory.Any(this.ResultType, out result);
+                return factory.Any(ResultType, out result);
             }
 
             /// <summary>
@@ -555,7 +555,7 @@ namespace Testify
             /// <returns>The populated instance.</returns>
             public TInstance Populate<TInstance>(TInstance instance, bool deep)
             {
-                return this.factory.Populate(instance, deep);
+                return factory.Populate(instance, deep);
             }
         }
     }

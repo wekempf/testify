@@ -441,18 +441,18 @@ namespace Testify
         {
             public Correct(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.Equals(obj as Correct);
+            public override bool Equals(object obj) => Equals(obj as Correct);
 
-            public bool Equals(Correct other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(Correct other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(Correct other)
             {
@@ -461,7 +461,7 @@ namespace Testify
                     return 1;
                 }
 
-                return this.Value.CompareTo(other.Value);
+                return Value.CompareTo(other.Value);
             }
 
             public int CompareTo(object obj)
@@ -477,7 +477,7 @@ namespace Testify
                     throw new ArgumentException("Object is not a Correct");
                 }
 
-                return this.CompareTo(other);
+                return CompareTo(other);
             }
 
             public static bool operator ==(Correct left, Correct right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
@@ -497,16 +497,16 @@ namespace Testify
         {
             public NoObjectEqualsOverride(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public bool Equals(NoObjectEqualsOverride other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(NoObjectEqualsOverride other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(NoObjectEqualsOverride other)
             {
@@ -527,16 +527,16 @@ namespace Testify
         {
             public NoGetHashCodeOverride(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override bool Equals(object obj) => this.Equals(obj as NoGetHashCodeOverride);
+            public override bool Equals(object obj) => Equals(obj as NoGetHashCodeOverride);
 
-            public bool Equals(NoGetHashCodeOverride other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(NoGetHashCodeOverride other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(NoGetHashCodeOverride other)
             {
@@ -557,18 +557,18 @@ namespace Testify
         {
             public NoEqualityOperators(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.Equals(obj as NoEqualityOperators);
+            public override bool Equals(object obj) => Equals(obj as NoEqualityOperators);
 
-            public bool Equals(NoEqualityOperators other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(NoEqualityOperators other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(NoEqualityOperators other)
             {
@@ -585,18 +585,18 @@ namespace Testify
         {
             public NoComparisonOperators(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.Equals(obj as NoComparisonOperators);
+            public override bool Equals(object obj) => Equals(obj as NoComparisonOperators);
 
-            public bool Equals(NoComparisonOperators other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(NoComparisonOperators other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(NoComparisonOperators other)
             {
@@ -619,18 +619,18 @@ namespace Testify
 
             public UnstableGetHashCode(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.hasCode++;
+            public override int GetHashCode() => hasCode++;
 
-            public override bool Equals(object obj) => this.Equals(obj as UnstableGetHashCode);
+            public override bool Equals(object obj) => Equals(obj as UnstableGetHashCode);
 
-            public bool Equals(UnstableGetHashCode other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(UnstableGetHashCode other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(UnstableGetHashCode other)
             {
@@ -653,19 +653,19 @@ namespace Testify
 
             public BrokenObjectEquals(int value, bool result = false)
             {
-                this.Value = value;
+                Value = value;
                 this.result = result;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.result;
+            public override bool Equals(object obj) => result;
 
-            public bool Equals(BrokenObjectEquals other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(BrokenObjectEquals other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(BrokenObjectEquals other)
             {
@@ -688,23 +688,23 @@ namespace Testify
 
             public BrokenEquals(int value, bool result = false)
             {
-                this.Value = value;
+                Value = value;
                 this.result = result;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
             public override bool Equals(object obj)
             {
                 var other = obj as BrokenEquals;
-                return !object.ReferenceEquals(other, null) && this.Value == other.Value;
+                return !object.ReferenceEquals(other, null) && Value == other.Value;
             }
 
-            public bool Equals(BrokenEquals other) => this.result;
+            public bool Equals(BrokenEquals other) => result;
 
             public int CompareTo(BrokenEquals other)
             {
@@ -727,19 +727,19 @@ namespace Testify
 
             public BrokenOpEquality(int value, bool result = false)
             {
-                this.Value = value;
+                Value = value;
                 this.result = result;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.Equals(obj as BrokenOpEquality);
+            public override bool Equals(object obj) => Equals(obj as BrokenOpEquality);
 
-            public bool Equals(BrokenOpEquality other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(BrokenOpEquality other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(BrokenOpEquality other)
             {
@@ -762,19 +762,19 @@ namespace Testify
 
             public BrokenOpInequality(int value, bool result = false)
             {
-                this.Value = value;
+                Value = value;
                 this.result = result;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.Equals(obj as BrokenOpInequality);
+            public override bool Equals(object obj) => Equals(obj as BrokenOpInequality);
 
-            public bool Equals(BrokenOpInequality other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(BrokenOpInequality other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(BrokenOpInequality other)
             {
@@ -795,18 +795,18 @@ namespace Testify
         {
             public BrokenOpGreaterThan(int value)
             {
-                this.Value = value;
+                Value = value;
             }
 
             public int Value { get; }
 
-            public override string ToString() => this.Value.ToString();
+            public override string ToString() => Value.ToString();
 
-            public override int GetHashCode() => this.Value.GetHashCode();
+            public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj) => this.Equals(obj as BrokenOpGreaterThan);
+            public override bool Equals(object obj) => Equals(obj as BrokenOpGreaterThan);
 
-            public bool Equals(BrokenOpGreaterThan other) => !object.ReferenceEquals(other, null) && this.Value == other.Value;
+            public bool Equals(BrokenOpGreaterThan other) => !object.ReferenceEquals(other, null) && Value == other.Value;
 
             public int CompareTo(BrokenOpGreaterThan other)
             {
@@ -815,7 +815,7 @@ namespace Testify
                     return 1;
                 }
 
-                return this.Value.CompareTo(other.Value);
+                return Value.CompareTo(other.Value);
             }
 
             public int CompareTo(object obj)
@@ -831,7 +831,7 @@ namespace Testify
                     throw new ArgumentException("Object is not a BrokenOpGreaterThan");
                 }
 
-                return this.CompareTo(other);
+                return CompareTo(other);
             }
 
             public static bool operator ==(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);

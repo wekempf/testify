@@ -8,14 +8,14 @@ namespace Testify.Tests
 
         public MoqCustomizationTests()
         {
-            this.anon = new AnonymousData();
-            this.anon.Customize(new MoqCustomization());
+            anon = new AnonymousData();
+            anon.Customize(new MoqCustomization());
         }
 
         [Fact]
         public void Any_ITestInterface_ShouldCreateMock()
         {
-            var result = this.anon.Any<ITestInterface>();
+            var result = anon.Any<ITestInterface>();
 
             Assert.NotNull(result);
         }

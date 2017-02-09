@@ -28,8 +28,8 @@ namespace Testify
         /// </value>
         public Func<T[]> OrderedItemsFactory
         {
-            get { return this.ItemsFactory; }
-            set { this.ItemsFactory = value; }
+            get { return ItemsFactory; }
+            set { ItemsFactory = value; }
         }
 
         /// <inheritdoc/>
@@ -40,14 +40,14 @@ namespace Testify
         {
             base.GetMethods();
             var type = typeof(T);
-            this.opGreaterThanMethod = type.GetRuntimeMethod("op_GreaterThan", new[] { typeof(T), typeof(T) });
-            this.opGreaterThan = (Func<T, T, bool>)this.opGreaterThanMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            opGreaterThanMethod = type.GetRuntimeMethod("op_GreaterThan", new[] { typeof(T), typeof(T) });
+            opGreaterThan = (Func<T, T, bool>)opGreaterThanMethod?.CreateDelegate(typeof(Func<T, T, bool>));
             var opLessThanMethod = type.GetRuntimeMethod("op_LessThan", new[] { typeof(T), typeof(T) });
-            this.opLessThan = (Func<T, T, bool>)opLessThanMethod?.CreateDelegate(typeof(Func<T, T, bool>));
-            this.opGreaterThanOrEqualMethod = type.GetRuntimeMethod("op_GreaterThanOrEqual", new[] { typeof(T), typeof(T) });
-            this.opGreaterThanOrEqual = (Func<T, T, bool>)this.opGreaterThanOrEqualMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            opLessThan = (Func<T, T, bool>)opLessThanMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            opGreaterThanOrEqualMethod = type.GetRuntimeMethod("op_GreaterThanOrEqual", new[] { typeof(T), typeof(T) });
+            opGreaterThanOrEqual = (Func<T, T, bool>)opGreaterThanOrEqualMethod?.CreateDelegate(typeof(Func<T, T, bool>));
             var opLessThanOrEqualMethod = type.GetRuntimeMethod("op_LessThanOrEqual", new[] { typeof(T), typeof(T) });
-            this.opLessThanOrEqual = (Func<T, T, bool>)opLessThanOrEqualMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            opLessThanOrEqual = (Func<T, T, bool>)opLessThanOrEqualMethod?.CreateDelegate(typeof(Func<T, T, bool>));
         }
 
         /// <inheritdoc/>
@@ -58,25 +58,25 @@ namespace Testify
                 yield return test;
             }
 
-            yield return this.VerifyComparisonOperatorsDefined;
-            yield return this.VerifyCompareToObjWithLesserItems;
-            yield return this.VerifyCompareToObjWithEqualItems;
-            yield return this.VerifyCompareToObjWithGreaterItems;
-            yield return this.VerifyCompareToOtherWithLesserItems;
-            yield return this.VerifyCompareToOtherWithEqualItems;
-            yield return this.VerifyCompareToOtherWithGreaterItems;
-            yield return this.VerifyOpGreaterThanWithLesserItems;
-            yield return this.VerifyOpGreaterThanWithEqualItems;
-            yield return this.VerifyOpGreaterThanWithGreaterItems;
-            yield return this.VerifyOpGreaterThanOrEqualWithLesserItems;
-            yield return this.VerifyOpGreaterThanOrEqualWithEqualItems;
-            yield return this.VerifyOpGreaterThanOrEqualWithGreaterItems;
-            yield return this.VerifyOpLessThanWithLesserItems;
-            yield return this.VerifyOpLessThanWithEqualItems;
-            yield return this.VerifyOpLessThanWithGreaterItems;
-            yield return this.VerifyOpLessThanOrEqualWithLesserItems;
-            yield return this.VerifyOpLessThanOrEqualWithEqualItems;
-            yield return this.VerifyOpLessThanOrEqualWithGreaterItems;
+            yield return VerifyComparisonOperatorsDefined;
+            yield return VerifyCompareToObjWithLesserItems;
+            yield return VerifyCompareToObjWithEqualItems;
+            yield return VerifyCompareToObjWithGreaterItems;
+            yield return VerifyCompareToOtherWithLesserItems;
+            yield return VerifyCompareToOtherWithEqualItems;
+            yield return VerifyCompareToOtherWithGreaterItems;
+            yield return VerifyOpGreaterThanWithLesserItems;
+            yield return VerifyOpGreaterThanWithEqualItems;
+            yield return VerifyOpGreaterThanWithGreaterItems;
+            yield return VerifyOpGreaterThanOrEqualWithLesserItems;
+            yield return VerifyOpGreaterThanOrEqualWithEqualItems;
+            yield return VerifyOpGreaterThanOrEqualWithGreaterItems;
+            yield return VerifyOpLessThanWithLesserItems;
+            yield return VerifyOpLessThanWithEqualItems;
+            yield return VerifyOpLessThanWithGreaterItems;
+            yield return VerifyOpLessThanOrEqualWithLesserItems;
+            yield return VerifyOpLessThanOrEqualWithEqualItems;
+            yield return VerifyOpLessThanOrEqualWithGreaterItems;
         }
 
         private static void SwapLast(T[] first, T[] second)
@@ -91,15 +91,15 @@ namespace Testify
 
         private void VerifyCompareToObjWithLesserItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(greaterItems, equalItems, (x, y) => ((IComparable)x).CompareTo(y) > 0);
+            var failure = CompareItems(greaterItems, equalItems, (x, y) => ((IComparable)x).CompareTo(y) > 0);
             if (failure != null)
             {
                 Fail($"IComparable.CompareTo  failed with values expected to be lesser at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -108,7 +108,7 @@ namespace Testify
 
         private void VerifyCompareToObjWithEqualItems()
         {
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => ((IComparable)x).CompareTo(y) == 0);
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => ((IComparable)x).CompareTo(y) == 0);
             if (failure != null)
             {
                 Fail($"IComparable.CompareTo failed with values expected to be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -117,15 +117,15 @@ namespace Testify
 
         private void VerifyCompareToObjWithGreaterItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(equalItems, greaterItems, (x, y) => ((IComparable)x).CompareTo(y) < 0);
+            var failure = CompareItems(equalItems, greaterItems, (x, y) => ((IComparable)x).CompareTo(y) < 0);
             if (failure != null)
             {
                 Fail($"IComparable.CompareTo failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -134,15 +134,15 @@ namespace Testify
 
         private void VerifyCompareToOtherWithLesserItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(greaterItems, equalItems, (x, y) => ((IComparable<T>)x).CompareTo(y) > 0);
+            var failure = CompareItems(greaterItems, equalItems, (x, y) => ((IComparable<T>)x).CompareTo(y) > 0);
             if (failure != null)
             {
                 Fail($"IComparable<T>.CompareTo  failed with values expected to be lesser at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -151,7 +151,7 @@ namespace Testify
 
         private void VerifyCompareToOtherWithEqualItems()
         {
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => ((IComparable<T>)x).CompareTo(y) == 0);
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => ((IComparable<T>)x).CompareTo(y) == 0);
             if (failure != null)
             {
                 Fail($"IComparable<T>.CompareTo failed with values expected to be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -160,15 +160,15 @@ namespace Testify
 
         private void VerifyCompareToOtherWithGreaterItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(equalItems, greaterItems, (x, y) => ((IComparable<T>)x).CompareTo(y) < 0);
+            var failure = CompareItems(equalItems, greaterItems, (x, y) => ((IComparable<T>)x).CompareTo(y) < 0);
             if (failure != null)
             {
                 Fail($"IComparable<T>.CompareTo failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -177,12 +177,12 @@ namespace Testify
 
         private void VerifyComparisonOperatorsDefined()
         {
-            if (this.IsPrimitive || typeof(T) == typeof(string))
+            if (IsPrimitive || typeof(T) == typeof(string))
             {
                 return;
             }
 
-            if (this.opGreaterThanMethod == null || this.opGreaterThanOrEqualMethod == null)
+            if (opGreaterThanMethod == null || opGreaterThanOrEqualMethod == null)
             {
                 Fail("Comparison operators must be defined.");
             }
@@ -190,15 +190,15 @@ namespace Testify
 
         private void VerifyOpGreaterThanWithLesserItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(greaterItems, equalItems, (x, y) => this.opGreaterThan(x, y));
+            var failure = CompareItems(greaterItems, equalItems, (x, y) => opGreaterThan(x, y));
             if (failure != null)
             {
                 Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -207,12 +207,12 @@ namespace Testify
 
         private void VerifyOpGreaterThanWithEqualItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => !this.opGreaterThan(x, y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => !opGreaterThan(x, y));
             if (failure != null)
             {
                 Fail($"op_GreaterThan failed with values expected to not be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -221,15 +221,15 @@ namespace Testify
 
         private void VerifyOpGreaterThanWithGreaterItems()
         {
-            if (this.opGreaterThan == null)
+            if (opGreaterThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(equalItems, greaterItems, (x, y) => !this.opGreaterThan(x, y));
+            var failure = CompareItems(equalItems, greaterItems, (x, y) => !opGreaterThan(x, y));
             if (failure != null)
             {
                 Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -238,15 +238,15 @@ namespace Testify
 
         private void VerifyOpGreaterThanOrEqualWithLesserItems()
         {
-            if (this.opGreaterThanOrEqual == null)
+            if (opGreaterThanOrEqual == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(greaterItems, equalItems, (x, y) => this.opGreaterThanOrEqual(x, y));
+            var failure = CompareItems(greaterItems, equalItems, (x, y) => opGreaterThanOrEqual(x, y));
             if (failure != null)
             {
                 Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -255,12 +255,12 @@ namespace Testify
 
         private void VerifyOpGreaterThanOrEqualWithEqualItems()
         {
-            if (this.opGreaterThanOrEqual == null)
+            if (opGreaterThanOrEqual == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => this.opGreaterThanOrEqual(x, y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => opGreaterThanOrEqual(x, y));
             if (failure != null)
             {
                 Fail($"op_GreaterThanOrEqual failed with values expected to not be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -269,15 +269,15 @@ namespace Testify
 
         private void VerifyOpGreaterThanOrEqualWithGreaterItems()
         {
-            if (this.opGreaterThanOrEqual == null)
+            if (opGreaterThanOrEqual == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(equalItems, greaterItems, (x, y) => !this.opGreaterThanOrEqual(x, y));
+            var failure = CompareItems(equalItems, greaterItems, (x, y) => !opGreaterThanOrEqual(x, y));
             if (failure != null)
             {
                 Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -286,15 +286,15 @@ namespace Testify
 
         private void VerifyOpLessThanWithLesserItems()
         {
-            if (this.opLessThan == null)
+            if (opLessThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(greaterItems, equalItems, (x, y) => !this.opLessThan(x, y));
+            var failure = CompareItems(greaterItems, equalItems, (x, y) => !opLessThan(x, y));
             if (failure != null)
             {
                 Fail($"op_LessThan failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -303,12 +303,12 @@ namespace Testify
 
         private void VerifyOpLessThanWithEqualItems()
         {
-            if (this.opLessThan == null)
+            if (opLessThan == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => !this.opLessThan(x, y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => !opLessThan(x, y));
             if (failure != null)
             {
                 Fail($"op_LessThan failed with values expected to not be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -317,15 +317,15 @@ namespace Testify
 
         private void VerifyOpLessThanWithGreaterItems()
         {
-            if (this.opLessThan == null)
+            if (opLessThan == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(equalItems, greaterItems, (x, y) => this.opLessThan(x, y));
+            var failure = CompareItems(equalItems, greaterItems, (x, y) => opLessThan(x, y));
             if (failure != null)
             {
                 Fail($"op_LessThan failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -334,15 +334,15 @@ namespace Testify
 
         private void VerifyOpLessThanOrEqualWithLesserItems()
         {
-            if (this.opLessThanOrEqual == null)
+            if (opLessThanOrEqual == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(greaterItems, equalItems, (x, y) => !this.opLessThanOrEqual(x, y));
+            var failure = CompareItems(greaterItems, equalItems, (x, y) => !opLessThanOrEqual(x, y));
             if (failure != null)
             {
                 Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -351,12 +351,12 @@ namespace Testify
 
         private void VerifyOpLessThanOrEqualWithEqualItems()
         {
-            if (this.opLessThanOrEqual == null)
+            if (opLessThanOrEqual == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => this.opLessThanOrEqual(x, y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => opLessThanOrEqual(x, y));
             if (failure != null)
             {
                 Fail($"op_LessThanOrEqual failed with values expected to not be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -365,15 +365,15 @@ namespace Testify
 
         private void VerifyOpLessThanOrEqualWithGreaterItems()
         {
-            if (this.opLessThanOrEqual == null)
+            if (opLessThanOrEqual == null)
             {
                 return;
             }
 
-            var equalItems = this.EqualItems.ToArray();
-            var greaterItems = this.NotEqualItems.ToArray();
+            var equalItems = EqualItems.ToArray();
+            var greaterItems = NotEqualItems.ToArray();
             SwapLast(equalItems, greaterItems);
-            var failure = this.CompareItems(equalItems, greaterItems, (x, y) => this.opLessThanOrEqual(x, y));
+            var failure = CompareItems(equalItems, greaterItems, (x, y) => opLessThanOrEqual(x, y));
             if (failure != null)
             {
                 Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");

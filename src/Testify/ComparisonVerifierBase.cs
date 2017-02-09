@@ -94,18 +94,18 @@ namespace Testify
         /// <returns>The test actions.</returns>
         protected override IEnumerable<Action> GetTests()
         {
-            yield return this.VerifyObjectEqualsIsOverridden;
-            yield return this.VerifyGetHashCodeIsOverridden;
-            yield return this.VerifyEqualityOperatorsDefined;
-            yield return this.VerifyGetHashCodeIsStable;
-            yield return this.VerifyObjectEqualsWithEqualItems;
-            yield return this.VerifyObjectEqualsWithNotEqualItems;
-            yield return this.VerifyEqualsWithEqualItems;
-            yield return this.VerifyEqualsWithNotEqualItems;
-            yield return this.VerifyOpEqualityWithEqualItems;
-            yield return this.VerifyOpEqualityWithNotEqualItems;
-            yield return this.VerifyOpInequalityWithEqualItems;
-            yield return this.VerifyOpInequalityWithNotEqualItems;
+            yield return VerifyObjectEqualsIsOverridden;
+            yield return VerifyGetHashCodeIsOverridden;
+            yield return VerifyEqualityOperatorsDefined;
+            yield return VerifyGetHashCodeIsStable;
+            yield return VerifyObjectEqualsWithEqualItems;
+            yield return VerifyObjectEqualsWithNotEqualItems;
+            yield return VerifyEqualsWithEqualItems;
+            yield return VerifyEqualsWithNotEqualItems;
+            yield return VerifyOpEqualityWithEqualItems;
+            yield return VerifyOpEqualityWithNotEqualItems;
+            yield return VerifyOpInequalityWithEqualItems;
+            yield return VerifyOpInequalityWithNotEqualItems;
         }
 
         /// <summary>
@@ -114,12 +114,12 @@ namespace Testify
         protected virtual void GetMethods()
         {
             var type = typeof(T);
-            this.objectEqualsMethod = type.GetRuntimeMethod("Equals", new[] { typeof(object) });
-            this.getHashCodeMethod = type.GetRuntimeMethod("GetHashCode", new Type[0]);
-            this.opEqualityMethod = type.GetRuntimeMethod("op_Equality", new[] { typeof(T), typeof(T) });
-            this.opEquality = (Func<T, T, bool>)this.opEqualityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            objectEqualsMethod = type.GetRuntimeMethod("Equals", new[] { typeof(object) });
+            getHashCodeMethod = type.GetRuntimeMethod("GetHashCode", new Type[0]);
+            opEqualityMethod = type.GetRuntimeMethod("op_Equality", new[] { typeof(T), typeof(T) });
+            opEquality = (Func<T, T, bool>)opEqualityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
             var opInequalityMethod = type.GetRuntimeMethod("op_Inequality", new[] { typeof(T), typeof(T) });
-            this.opInequality = (Func<T, T, bool>)opInequalityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            opInequality = (Func<T, T, bool>)opInequalityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
         }
 
         /// <inheritdoc/>
@@ -127,35 +127,35 @@ namespace Testify
         {
             base.VerifyConfiguration();
 
-            this.IsPrimitive = typeof(T).GetTypeInfo().IsPrimitive;
+            IsPrimitive = typeof(T).GetTypeInfo().IsPrimitive;
 
-            Assert(this.ItemsFactory).IsNotNull($"{this.ItemsFactoryPropertyName} is not set.");
+            Assert(ItemsFactory).IsNotNull($"{ItemsFactoryPropertyName} is not set.");
 
-            this.BaseItems = this.ItemsFactory();
-            Assert(this.BaseItems).IsNotNull($"{this.ItemsFactoryPropertyName} did not produce any items.");
-            Assert(this.BaseItems.Length >= 3).IsTrue($"{this.ItemsFactoryPropertyName} did not produce 3 or more items.");
-            Assert(this.BaseItems).AllItemsAreNotNull($"{this.ItemsFactoryPropertyName} should not produce null values.");
+            BaseItems = ItemsFactory();
+            Assert(BaseItems).IsNotNull($"{ItemsFactoryPropertyName} did not produce any items.");
+            Assert(BaseItems.Length >= 3).IsTrue($"{ItemsFactoryPropertyName} did not produce 3 or more items.");
+            Assert(BaseItems).AllItemsAreNotNull($"{ItemsFactoryPropertyName} should not produce null values.");
 
-            this.EqualItems = this.ItemsFactory();
-            Assert(this.EqualItems.Length).IsEqualTo(this.BaseItems.Length, $"{this.ItemsFactoryPropertyName} is not stable.");
-            Assert(this.EqualItems).AllItemsAreNotNull($"{this.ItemsFactoryPropertyName} should not produce null values.");
+            EqualItems = ItemsFactory();
+            Assert(EqualItems.Length).IsEqualTo(BaseItems.Length, $"{ItemsFactoryPropertyName} is not stable.");
+            Assert(EqualItems).AllItemsAreNotNull($"{ItemsFactoryPropertyName} should not produce null values.");
 
-            this.NotEqualItems = new T[this.BaseItems.Length];
-            Array.Copy(this.BaseItems, 1, this.NotEqualItems, 0, this.BaseItems.Length - 1);
-            this.NotEqualItems[this.NotEqualItems.Length - 1] = this.BaseItems[0];
+            NotEqualItems = new T[BaseItems.Length];
+            Array.Copy(BaseItems, 1, NotEqualItems, 0, BaseItems.Length - 1);
+            NotEqualItems[NotEqualItems.Length - 1] = BaseItems[0];
 
-            this.GetMethods();
+            GetMethods();
         }
 
         private void VerifyEqualityOperatorsDefined()
         {
-            if (this.IsPrimitive)
+            if (IsPrimitive)
             {
                 return;
             }
 
             // Note: This ensures both == and != because defining one without the other results in a CS0216 error.
-            if (this.opEqualityMethod == null)
+            if (opEqualityMethod == null)
             {
                 Fail("Equality operators must be defined.");
             }
@@ -163,7 +163,7 @@ namespace Testify
 
         private void VerifyEqualsWithEqualItems()
         {
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => x.Equals(y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => x.Equals(y));
             if (failure != null)
             {
                 Fail($"Equals failed with values expected to be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -172,7 +172,7 @@ namespace Testify
 
         private void VerifyEqualsWithNotEqualItems()
         {
-            var failure = this.CompareItems(this.BaseItems, this.NotEqualItems, (x, y) => !x.Equals(y));
+            var failure = CompareItems(BaseItems, NotEqualItems, (x, y) => !x.Equals(y));
             if (failure != null)
             {
                 Fail($"Equals failed with values expected to not be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -181,7 +181,7 @@ namespace Testify
 
         private void VerifyGetHashCodeIsOverridden()
         {
-            if (this.getHashCodeMethod.DeclaringType != typeof(T))
+            if (getHashCodeMethod.DeclaringType != typeof(T))
             {
                 Fail("Object.GetHashCode must be overridden.");
             }
@@ -189,7 +189,7 @@ namespace Testify
 
         private void VerifyGetHashCodeIsStable()
         {
-            var hashCodes = this.BaseItems.Select(i => i.GetHashCode());
+            var hashCodes = BaseItems.Select(i => i.GetHashCode());
             if (!hashCodes.SequenceEqual(hashCodes))
             {
                 Fail("GetHashCode is not stable.");
@@ -198,7 +198,7 @@ namespace Testify
 
         private void VerifyObjectEqualsIsOverridden()
         {
-            if (this.objectEqualsMethod.DeclaringType != typeof(T))
+            if (objectEqualsMethod.DeclaringType != typeof(T))
             {
                 Fail("Object.Equals must be overridden.");
             }
@@ -206,7 +206,7 @@ namespace Testify
 
         private void VerifyObjectEqualsWithEqualItems()
         {
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => ((object)x).Equals(y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => ((object)x).Equals(y));
             if (failure != null)
             {
                 Fail($"Object.Equals failed with values expected to be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -215,7 +215,7 @@ namespace Testify
 
         private void VerifyObjectEqualsWithNotEqualItems()
         {
-            var failure = this.CompareItems(this.BaseItems, this.NotEqualItems, (x, y) => !((object)x).Equals(y));
+            var failure = CompareItems(BaseItems, NotEqualItems, (x, y) => !((object)x).Equals(y));
             if (failure != null)
             {
                 Fail($"Object.Equals failed with values expected to not be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -224,12 +224,12 @@ namespace Testify
 
         private void VerifyOpEqualityWithEqualItems()
         {
-            if (this.opEquality == null)
+            if (opEquality == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, this.opEquality);
+            var failure = CompareItems(BaseItems, EqualItems, opEquality);
             if (failure != null)
             {
                 Fail($"op_Equality failed with values expected to be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -238,12 +238,12 @@ namespace Testify
 
         private void VerifyOpEqualityWithNotEqualItems()
         {
-            if (this.opEquality == null)
+            if (opEquality == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.NotEqualItems, (x, y) => !this.opEquality(x, y));
+            var failure = CompareItems(BaseItems, NotEqualItems, (x, y) => !opEquality(x, y));
             if (failure != null)
             {
                 Fail($"op_Equality failed with values expected to not be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -252,12 +252,12 @@ namespace Testify
 
         private void VerifyOpInequalityWithEqualItems()
         {
-            if (this.opInequality == null)
+            if (opInequality == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.EqualItems, (x, y) => !this.opInequality(x, y));
+            var failure = CompareItems(BaseItems, EqualItems, (x, y) => !opInequality(x, y));
             if (failure != null)
             {
                 Fail($"op_Inequality failed with values expected to be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");
@@ -266,12 +266,12 @@ namespace Testify
 
         private void VerifyOpInequalityWithNotEqualItems()
         {
-            if (this.opInequality == null)
+            if (opInequality == null)
             {
                 return;
             }
 
-            var failure = this.CompareItems(this.BaseItems, this.NotEqualItems, this.opInequality);
+            var failure = CompareItems(BaseItems, NotEqualItems, opInequality);
             if (failure != null)
             {
                 Fail($"op_Inequality failed with values expected to not be equal at index {failure.Item1}. Expected: <{failure.Item3}>. Actual: <{failure.Item2}>.");

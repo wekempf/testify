@@ -97,12 +97,12 @@ namespace Testify
 
             public void Add(int item)
             {
-                this.items.Add(item);
+                items.Add(item);
             }
 
-            public IEnumerator<int> GetEnumerator() => this.items.GetEnumerator();
+            public IEnumerator<int> GetEnumerator() => items.GetEnumerator();
 
-            IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+            IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
     }
 }

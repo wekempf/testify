@@ -4,14 +4,14 @@
     {
         public Person(string firstName, string lastName)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            FirstName = firstName;
+            LastName = lastName;
         }
 
         public string FirstName { get; }
 
         public string LastName { get; }
 
-        public string FullName => $"{this.LastName}, {this.FirstName}";
+        public string FullName => $"{LastName}, {FirstName}";
     }
 }

@@ -18,7 +18,7 @@ namespace Testify
         /// </summary>
         public void Verify()
         {
-            var verifierName = this.GetType().Name;
+            var verifierName = GetType().Name;
             var index = verifierName.IndexOf("`", StringComparison.Ordinal);
             if (index >= 0)
             {
@@ -27,14 +27,14 @@ namespace Testify
 
             try
             {
-                this.VerifyConfiguration();
+                VerifyConfiguration();
             }
             catch (Exception e)
             {
                 Throw(verifierName, e.Message, null);
             }
 
-            var tests = this.GetTests();
+            var tests = GetTests();
             AssertAll($"{verifierName} failed.", tests.ToArray());
         }
 

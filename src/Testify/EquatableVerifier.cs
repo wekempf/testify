@@ -22,8 +22,8 @@ namespace Testify
         /// </value>
         public Func<T[]> UniqueItemsFactory
         {
-            get { return this.ItemsFactory; }
-            set { this.ItemsFactory = value; }
+            get { return ItemsFactory; }
+            set { ItemsFactory = value; }
         }
 
         /// <inheritdoc/>

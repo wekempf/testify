@@ -27,7 +27,7 @@ namespace Testify
         /// <exception cref="ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
         /// <exception cref="KeyNotFoundException">The key does not exist in the collection.</exception>
         public double this[string key] =>
-            this.Count == 0 ? 0 : (double)this.classifications[key].Count / (double)this.Count;
+            Count == 0 ? 0 : (double)classifications[key].Count / (double)Count;
 
         /// <summary>
         /// Adds a classification category.
@@ -46,12 +46,12 @@ namespace Testify
             Argument.NotNullOrEmpty(name, nameof(name));
             Argument.NotNull(predicate, nameof(predicate));
 
-            if (this.Count > 0)
+            if (Count > 0)
             {
                 throw new InvalidOperationException("Cannot add classifications after classifying any values.");
             }
 
-            this.classifications.Add(name, new Classification(predicate));
+            classifications.Add(name, new Classification(predicate));
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Testify
         /// <param name="value">The value to classify.</param>
         public void Classify(TValue value)
         {
-            foreach (var classification in this.classifications.Values)
+            foreach (var classification in classifications.Values)
             {
                 if (classification.Predicate(value))
                 {
@@ -68,7 +68,7 @@ namespace Testify
                 }
             }
 
-            this.Count++;
+            Count++;
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Testify
         {
             Argument.NotNull(producer, nameof(producer));
 
-            this.Classify(1000, producer);
+            Classify(1000, producer);
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Testify
 
             for (int i = 0; i < runs; ++i)
             {
-                this.Classify(producer());
+                Classify(producer());
             }
         }
 
@@ -107,7 +107,7 @@ namespace Testify
             {
                 Argument.NotNull(predicate, nameof(predicate));
 
-                this.Predicate = predicate;
+                Predicate = predicate;
             }
 
             public int Count { get; set; }
