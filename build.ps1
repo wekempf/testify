@@ -40,7 +40,8 @@ http://cakebuild.net
 
 [CmdletBinding()]
 Param(
-    [string]$Script = "build.cake",
+    [string]$Script = "testify.cake",
+    [ValidateSet("Clean", "NuGetRestore", "Version", "Build", "Test", "NuGetPack", "NuGetPush", "Docs", "Default")]
     [string]$Target = "Default",
     [ValidateSet("Release", "Debug")]
     [string]$Configuration = "Release",
