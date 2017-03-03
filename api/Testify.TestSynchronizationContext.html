@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class AnonymousBool
+    <title>Class TestSynchronizationContext
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class AnonymousBool
+    <meta name="title" content="Class TestSynchronizationContext
    ">
     <meta name="generator" content="docfx 2.12.1.0">
     
@@ -69,18 +69,37 @@
             <article class="content wrap" id="_content">
               
               
-              <h1 id="" data-uid="Testify.AnonymousBool">Class AnonymousBool
+              <h1 id="" data-uid="Testify.TestSynchronizationContext">Class TestSynchronizationContext
               </h1>
-              <div class="markdown level0 summary"><p>Provides factory methods for creating anonymous <span class="xref">System.Boolean</span> values.</p>
+              <div class="markdown level0 summary"><p>Provides a SynchronizationContext that can be used within a synchronous test method.</p>
 </div>
               <div class="markdown level0 conceptual"></div>
               <div class="inheritance">
                 <h5>Inheritance</h5>
                   <div class="level0"><span class="xref">System.Object</span></div>
-                  <div class="level1"><span class="xref">AnonymousBool</span></div>
+                  <div class="level1"><span class="xref">System.Threading.SynchronizationContext</span></div>
+                  <div class="level2"><span class="xref">TestSynchronizationContext</span></div>
               </div>
               <div class="inheritedMembers">
                 <h5>Inherited Members</h5>
+                <div>
+                  <span class="xref">System.Threading.SynchronizationContext.CreateCopy()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Threading.SynchronizationContext.OperationCompleted()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Threading.SynchronizationContext.OperationStarted()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Threading.SynchronizationContext.Send(System.Threading.SendOrPostCallback, System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Threading.SynchronizationContext.SetSynchronizationContext(System.Threading.SynchronizationContext)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Threading.SynchronizationContext.Current</span>
+                </div>
                 <div>
                   <span class="xref">System.Object.Equals(System.Object)</span>
                 </div>
@@ -107,51 +126,21 @@
               <h6><strong>Assembly</strong>:Testify.dll</h6>
               <h5 id="_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public static class AnonymousBool</code></pre>
+                <pre><code class="lang-csharp hljs">public class TestSynchronizationContext : SynchronizationContext</code></pre>
               </div>
-              <h5 id="_examples"><strong>Examples</strong></h5>
-              <pre><code class="lang-csharp" name="title">using Testify;
-using Xunit;
-using static Testify.Assertions;
-
-namespace Examples.UsingAnonymousData
-{
-    public class RegisterDefaultExample
-    {
-        // Use whatever the appropriate &quot;assembly initialize&quot; logic your
-        // unit test framework uses.
-        static RegisterDefaultExample()
-        {
-            AnonymousData.RegisterDefault&lt;Employee&gt;(
-                anon =&gt; new Employee(anon.AnyFirstName(), anon.AnySurname(), anon.AnyBool()));
-        }
-
-        [Fact]
-        public void FullName_ShouldBeCalculated()
-        {
-            var anon = new AnonymousData();
-            var employee = anon.Any&lt;Employee&gt;();
-
-            var fullName = employee.FullName;
-
-            Assert(fullName).IsEqualTo($&quot;{employee.LastName}, {employee.FirstName}&quot;);
-        }
-    }
-}
-</code></pre>
               <h3 id="methods">Methods
               </h3>
               
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/AnonymousBool.cs/#L18">View Source</a>
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestSynchronizationContext.cs/#L54">View Source</a>
               </span>
-              <h4 id="methods" data-uid="Testify.AnonymousBool.AnyBool(Testify.IAnonymousData)">AnyBool(IAnonymousData)</h4>
-              <div class="markdown level1 summary"><p>Creates an anonymous <span class="xref">System.Boolean</span> value using a uniform distribution algorithm.</p>
+              <h4 id="methods" data-uid="Testify.TestSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">Post(SendOrPostCallback, Object)</h4>
+              <div class="markdown level1 summary"><p>When overridden in a derived class, dispatches an asynchronous message to a synchronization context.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
               <h5 class="decalaration">Declaration</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public static bool AnyBool(this IAnonymousData anon)</code></pre>
+                <pre><code class="lang-csharp hljs">public override void Post(SendOrPostCallback d, object state)</code></pre>
               </div>
               <h5 class="parameters">Parameters</h5>
               <table class="table table-bordered table-striped table-condensed">
@@ -164,56 +153,32 @@ namespace Examples.UsingAnonymousData
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a class="xref" href="Testify.IAnonymousData.html">IAnonymousData</a></td>
-                    <td><em>anon</em></td>
-                    <td><p>The anonymous data provider to use.</p>
+                    <td><span class="xref">System.Threading.SendOrPostCallback</span></td>
+                    <td><em>d</em></td>
+                    <td><p>The <span class="xref">System.Threading.SendOrPostCallback</span> delegate to call.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>state</em></td>
+                    <td><p>The object passed to the delegate.</p>
 </td>
                   </tr>
                 </tbody>
               </table>
-              <h5 class="returns">Returns</h5>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="xref">System.Boolean</span></td>
-                    <td><p>A random <span class="xref">System.Boolean</span> value.</p>
-</td>
-                  </tr>
-                </tbody>
-              </table>
-              <h5 class="exceptions">Exceptions</h5>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Condition</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="xref">System.ArgumentNullException</span></td>
-                    <td><p><span class="paramref">anon</span> is <span class="xref">null</span>.</p>
-</td>
-                  </tr>
-                </tbody>
-              </table>
+              <h5 class="overrides">Overrides</h5>
+              <div><span class="xref">System.Threading.SynchronizationContext.Post(System.Threading.SendOrPostCallback, System.Object)</span></div>
               
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/AnonymousBool.cs/#L32">View Source</a>
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestSynchronizationContext.cs/#L26">View Source</a>
               </span>
-              <h4 id="methods" data-uid="Testify.AnonymousBool.AnyBool(Testify.IAnonymousData,Testify.Distribution)">AnyBool(IAnonymousData, Distribution)</h4>
-              <div class="markdown level1 summary"><p>Creates an anonymous <span class="xref">System.Boolean</span> value using the specified distribution algorithm.</p>
+              <h4 id="methods" data-uid="Testify.TestSynchronizationContext.Run(System.Func{System.Threading.Tasks.Task})">Run(Func&lt;Task&gt;)</h4>
+              <div class="markdown level1 summary"><p>Runs the specified function.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
               <h5 class="decalaration">Declaration</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public static bool AnyBool(this IAnonymousData anon, Distribution distribution)</code></pre>
+                <pre><code class="lang-csharp hljs">public static void Run(Func&lt;Task&gt; func)</code></pre>
               </div>
               <h5 class="parameters">Parameters</h5>
               <table class="table table-bordered table-striped table-condensed">
@@ -226,51 +191,17 @@ namespace Examples.UsingAnonymousData
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a class="xref" href="Testify.IAnonymousData.html">IAnonymousData</a></td>
-                    <td><em>anon</em></td>
-                    <td><p>The anonymous data provider to use.</p>
-</td>
-                  </tr>
-                  <tr>
-                    <td><a class="xref" href="Testify.Distribution.html">Distribution</a></td>
-                    <td><em>distribution</em></td>
-                    <td><p>The distribution algorithm to use.</p>
+                    <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+                    <td><em>func</em></td>
+                    <td><p>The function.</p>
 </td>
                   </tr>
                 </tbody>
               </table>
-              <h5 class="returns">Returns</h5>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="xref">System.Boolean</span></td>
-                    <td><p>A random <span class="xref">System.Boolean</span> value.</p>
-</td>
-                  </tr>
-                </tbody>
-              </table>
-              <h5 class="exceptions">Exceptions</h5>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Condition</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="xref">System.ArgumentNullException</span></td>
-                    <td><p><span class="paramref">anon</span> is <span class="xref">null</span>.</p>
-</td>
-                  </tr>
-                </tbody>
-              </table>
+              <h3 id="seealso">See Also</h3>
+              <div class="seealso">
+                  <div><span class="xref">System.Threading.SynchronizationContext</span></div>
+              </div>
             </article>
           </div>
           
@@ -279,10 +210,7 @@ namespace Examples.UsingAnonymousData
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/docs/apidoc/AnonymousBool.md/#L2" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/src/Testify/AnonymousBool.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestSynchronizationContext.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

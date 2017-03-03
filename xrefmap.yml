@@ -336,6 +336,18 @@ references:
   commentId: Overload:Testify.AnonymousData.Customize
   fullName: Testify.AnonymousData.Customize
   nameWithType: AnonymousData.Customize
+- uid: Testify.AnonymousData.GetValue(System.String)
+  name: GetValue(String)
+  href: api/Testify.AnonymousData.html
+  commentId: M:Testify.AnonymousData.GetValue(System.String)
+  fullName: Testify.AnonymousData.GetValue(System.String)
+  nameWithType: AnonymousData.GetValue(String)
+- uid: Testify.AnonymousData.GetValue*
+  name: GetValue
+  href: api/Testify.AnonymousData.html
+  commentId: Overload:Testify.AnonymousData.GetValue
+  fullName: Testify.AnonymousData.GetValue
+  nameWithType: AnonymousData.GetValue
 - uid: Testify.AnonymousData.Populate*
   name: Populate
   href: api/Testify.AnonymousData.html
@@ -417,6 +429,18 @@ references:
   fullName.vb: Testify.AnonymousData.RegisterDefault(Of T, TProperty)(System.Linq.Expressions.Expression(Of System.Func(Of T, TProperty)), System.Func(Of Testify.IAnonymousData, TProperty))
   nameWithType: AnonymousData.RegisterDefault<T, TProperty>(Expression<Func<T, TProperty>>, Func<IAnonymousData, TProperty>)
   nameWithType.vb: AnonymousData.RegisterDefault(Of T, TProperty)(Expression(Of Func(Of T, TProperty)), Func(Of IAnonymousData, TProperty))
+- uid: Testify.AnonymousData.SetValue(System.String,System.Object)
+  name: SetValue(String, Object)
+  href: api/Testify.AnonymousData.html
+  commentId: M:Testify.AnonymousData.SetValue(System.String,System.Object)
+  fullName: Testify.AnonymousData.SetValue(System.String, System.Object)
+  nameWithType: AnonymousData.SetValue(String, Object)
+- uid: Testify.AnonymousData.SetValue*
+  name: SetValue
+  href: api/Testify.AnonymousData.html
+  commentId: Overload:Testify.AnonymousData.SetValue
+  fullName: Testify.AnonymousData.SetValue
+  nameWithType: AnonymousData.SetValue
 - uid: Testify.AnonymousDataException
   name: AnonymousDataException
   href: api/Testify.AnonymousDataException.html
@@ -870,6 +894,30 @@ references:
   fullName.vb: Testify.AnonymousEnumerable.AnyItem(Of T)(Testify.IAnonymousData, System.Collections.Generic.IEnumerable(Of T))
   nameWithType: AnonymousEnumerable.AnyItem<T>(IAnonymousData, IEnumerable<T>)
   nameWithType.vb: AnonymousEnumerable.AnyItem(Of T)(IAnonymousData, IEnumerable(Of T))
+- uid: Testify.AnonymousEnumerable.SetMaximumItemCount(Testify.IRegisterAnonymousData,System.Int32)
+  name: SetMaximumItemCount(IRegisterAnonymousData, Int32)
+  href: api/Testify.AnonymousEnumerable.html
+  commentId: M:Testify.AnonymousEnumerable.SetMaximumItemCount(Testify.IRegisterAnonymousData,System.Int32)
+  fullName: Testify.AnonymousEnumerable.SetMaximumItemCount(Testify.IRegisterAnonymousData, System.Int32)
+  nameWithType: AnonymousEnumerable.SetMaximumItemCount(IRegisterAnonymousData, Int32)
+- uid: Testify.AnonymousEnumerable.SetMaximumItemCount*
+  name: SetMaximumItemCount
+  href: api/Testify.AnonymousEnumerable.html
+  commentId: Overload:Testify.AnonymousEnumerable.SetMaximumItemCount
+  fullName: Testify.AnonymousEnumerable.SetMaximumItemCount
+  nameWithType: AnonymousEnumerable.SetMaximumItemCount
+- uid: Testify.AnonymousEnumerable.SetMinimumItemCount(Testify.IRegisterAnonymousData,System.Int32)
+  name: SetMinimumItemCount(IRegisterAnonymousData, Int32)
+  href: api/Testify.AnonymousEnumerable.html
+  commentId: M:Testify.AnonymousEnumerable.SetMinimumItemCount(Testify.IRegisterAnonymousData,System.Int32)
+  fullName: Testify.AnonymousEnumerable.SetMinimumItemCount(Testify.IRegisterAnonymousData, System.Int32)
+  nameWithType: AnonymousEnumerable.SetMinimumItemCount(IRegisterAnonymousData, Int32)
+- uid: Testify.AnonymousEnumerable.SetMinimumItemCount*
+  name: SetMinimumItemCount
+  href: api/Testify.AnonymousEnumerable.html
+  commentId: Overload:Testify.AnonymousEnumerable.SetMinimumItemCount
+  fullName: Testify.AnonymousEnumerable.SetMinimumItemCount
+  nameWithType: AnonymousEnumerable.SetMinimumItemCount
 - uid: Testify.AnonymousInt16
   name: AnonymousInt16
   href: api/Testify.AnonymousInt16.html
@@ -2763,6 +2811,18 @@ references:
   commentId: Overload:Testify.IAnonymousData.AnyDouble
   fullName: Testify.IAnonymousData.AnyDouble
   nameWithType: IAnonymousData.AnyDouble
+- uid: Testify.IAnonymousData.GetValue(System.String)
+  name: GetValue(String)
+  href: api/Testify.IAnonymousData.html
+  commentId: M:Testify.IAnonymousData.GetValue(System.String)
+  fullName: Testify.IAnonymousData.GetValue(System.String)
+  nameWithType: IAnonymousData.GetValue(String)
+- uid: Testify.IAnonymousData.GetValue*
+  name: GetValue
+  href: api/Testify.IAnonymousData.html
+  commentId: Overload:Testify.IAnonymousData.GetValue
+  fullName: Testify.IAnonymousData.GetValue
+  nameWithType: IAnonymousData.GetValue
 - uid: Testify.IAnonymousData.Populate*
   name: Populate
   href: api/Testify.IAnonymousData.html
@@ -2862,6 +2922,18 @@ references:
   commentId: Overload:Testify.IRegisterAnonymousData.Register
   fullName: Testify.IRegisterAnonymousData.Register
   nameWithType: IRegisterAnonymousData.Register
+- uid: Testify.IRegisterAnonymousData.SetValue(System.String,System.Object)
+  name: SetValue(String, Object)
+  href: api/Testify.IRegisterAnonymousData.html
+  commentId: M:Testify.IRegisterAnonymousData.SetValue(System.String,System.Object)
+  fullName: Testify.IRegisterAnonymousData.SetValue(System.String, System.Object)
+  nameWithType: IRegisterAnonymousData.SetValue(String, Object)
+- uid: Testify.IRegisterAnonymousData.SetValue*
+  name: SetValue
+  href: api/Testify.IRegisterAnonymousData.html
+  commentId: Overload:Testify.IRegisterAnonymousData.SetValue
+  fullName: Testify.IRegisterAnonymousData.SetValue
+  nameWithType: IRegisterAnonymousData.SetValue
 - uid: Testify.MoqCustomization
   name: MoqCustomization
   href: api/Testify.MoqCustomization.html
@@ -3693,6 +3765,109 @@ references:
   fullName.vb: Testify.TaskAssertions.IsBusy(Of T)(Testify.ActualValue(Of T), System.String, System.Object())
   nameWithType: TaskAssertions.IsBusy<T>(ActualValue<T>, String, Object[])
   nameWithType.vb: TaskAssertions.IsBusy(Of T)(ActualValue(Of T), String, Object())
+- uid: Testify.TestCollection
+  name: TestCollection
+  href: api/Testify.TestCollection.html
+  commentId: T:Testify.TestCollection
+  fullName: Testify.TestCollection
+  nameWithType: TestCollection
+- uid: Testify.TestCollection.AddTest(System.String,System.Action)
+  name: AddTest(String, Action)
+  href: api/Testify.TestCollection.html
+  commentId: M:Testify.TestCollection.AddTest(System.String,System.Action)
+  fullName: Testify.TestCollection.AddTest(System.String, System.Action)
+  nameWithType: TestCollection.AddTest(String, Action)
+- uid: Testify.TestCollection.AddTest(System.String,System.Func{System.Threading.Tasks.Task})
+  name: AddTest(String, Func<Task>)
+  href: api/Testify.TestCollection.html
+  commentId: M:Testify.TestCollection.AddTest(System.String,System.Func{System.Threading.Tasks.Task})
+  name.vb: AddTest(String, Func(Of Task))
+  fullName: Testify.TestCollection.AddTest(System.String, System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Testify.TestCollection.AddTest(System.String, System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: TestCollection.AddTest(String, Func<Task>)
+  nameWithType.vb: TestCollection.AddTest(String, Func(Of Task))
+- uid: Testify.TestCollection.AddTest*
+  name: AddTest
+  href: api/Testify.TestCollection.html
+  commentId: Overload:Testify.TestCollection.AddTest
+  fullName: Testify.TestCollection.AddTest
+  nameWithType: TestCollection.AddTest
+- uid: Testify.TestCollection.GetEnumerator
+  name: GetEnumerator()
+  href: api/Testify.TestCollection.html
+  commentId: M:Testify.TestCollection.GetEnumerator
+  fullName: Testify.TestCollection.GetEnumerator()
+  nameWithType: TestCollection.GetEnumerator()
+- uid: Testify.TestCollection.GetEnumerator*
+  name: GetEnumerator
+  href: api/Testify.TestCollection.html
+  commentId: Overload:Testify.TestCollection.GetEnumerator
+  fullName: Testify.TestCollection.GetEnumerator
+  nameWithType: TestCollection.GetEnumerator
+- uid: Testify.TestCollection.RunTests(System.String,System.Object[])
+  name: RunTests(String, Object[])
+  href: api/Testify.TestCollection.html
+  commentId: M:Testify.TestCollection.RunTests(System.String,System.Object[])
+  name.vb: RunTests(String, Object())
+  fullName: Testify.TestCollection.RunTests(System.String, System.Object[])
+  fullName.vb: Testify.TestCollection.RunTests(System.String, System.Object())
+  nameWithType: TestCollection.RunTests(String, Object[])
+  nameWithType.vb: TestCollection.RunTests(String, Object())
+- uid: Testify.TestCollection.RunTests*
+  name: RunTests
+  href: api/Testify.TestCollection.html
+  commentId: Overload:Testify.TestCollection.RunTests
+  fullName: Testify.TestCollection.RunTests
+  nameWithType: TestCollection.RunTests
+- uid: Testify.TestCollection.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/Testify.TestCollection.html
+  commentId: M:Testify.TestCollection.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: Testify.TestCollection.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: TestCollection.IEnumerable.GetEnumerator()
+  nameWithType.vb: TestCollection.System.Collections.IEnumerable.GetEnumerator()
+- uid: Testify.TestCollection.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/Testify.TestCollection.html
+  commentId: Overload:Testify.TestCollection.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: Testify.TestCollection.System.Collections.IEnumerable.GetEnumerator
+  nameWithType: TestCollection.IEnumerable.GetEnumerator
+  nameWithType.vb: TestCollection.System.Collections.IEnumerable.GetEnumerator
+- uid: Testify.TestSynchronizationContext
+  name: TestSynchronizationContext
+  href: api/Testify.TestSynchronizationContext.html
+  commentId: T:Testify.TestSynchronizationContext
+  fullName: Testify.TestSynchronizationContext
+  nameWithType: TestSynchronizationContext
+- uid: Testify.TestSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)
+  name: Post(SendOrPostCallback, Object)
+  href: api/Testify.TestSynchronizationContext.html
+  commentId: M:Testify.TestSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)
+  fullName: Testify.TestSynchronizationContext.Post(System.Threading.SendOrPostCallback, System.Object)
+  nameWithType: TestSynchronizationContext.Post(SendOrPostCallback, Object)
+- uid: Testify.TestSynchronizationContext.Post*
+  name: Post
+  href: api/Testify.TestSynchronizationContext.html
+  commentId: Overload:Testify.TestSynchronizationContext.Post
+  fullName: Testify.TestSynchronizationContext.Post
+  nameWithType: TestSynchronizationContext.Post
+- uid: Testify.TestSynchronizationContext.Run(System.Func{System.Threading.Tasks.Task})
+  name: Run(Func<Task>)
+  href: api/Testify.TestSynchronizationContext.html
+  commentId: M:Testify.TestSynchronizationContext.Run(System.Func{System.Threading.Tasks.Task})
+  name.vb: Run(Func(Of Task))
+  fullName: Testify.TestSynchronizationContext.Run(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: Testify.TestSynchronizationContext.Run(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: TestSynchronizationContext.Run(Func<Task>)
+  nameWithType.vb: TestSynchronizationContext.Run(Func(Of Task))
+- uid: Testify.TestSynchronizationContext.Run*
+  name: Run
+  href: api/Testify.TestSynchronizationContext.html
+  commentId: Overload:Testify.TestSynchronizationContext.Run
+  fullName: Testify.TestSynchronizationContext.Run
+  nameWithType: TestSynchronizationContext.Run
 - uid: UsingAnonymousData
   name: Using AnonymousData
   href: manual/UsingAnonymousData.html

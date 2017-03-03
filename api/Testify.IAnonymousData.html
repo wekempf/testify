@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IAnonymousData
    ">
-    <meta name="generator" content="docfx 2.11.3.0">
+    <meta name="generator" content="docfx 2.12.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
@@ -69,14 +69,14 @@
             <article class="content wrap" id="_content">
               
               
-              <h1 id="Testify_IAnonymousData" data-uid="Testify.IAnonymousData">Interface IAnonymousData
+              <h1 id="" data-uid="Testify.IAnonymousData">Interface IAnonymousData
               </h1>
               <div class="markdown level0 summary"><p>Defines an interface for a factory object that can be used to create other objects.</p>
 </div>
               <div class="markdown level0 conceptual"></div>
               <h6><strong>Namespace</strong>:Testify</h6>
               <h6><strong>Assembly</strong>:Testify.dll</h6>
-              <h5 id="Testify_IAnonymousData_syntax">Syntax</h5>
+              <h5 id="_syntax">Syntax</h5>
               <div class="codewrapper">
                 <pre><code class="lang-csharp hljs">public interface IAnonymousData</code></pre>
               </div>
@@ -86,7 +86,7 @@
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L19">View Source</a>
               </span>
-              <h4 id="Testify_IAnonymousData_Any_System_Type_Testify_PopulateOption_" data-uid="Testify.IAnonymousData.Any(System.Type,Testify.PopulateOption)">Any(Type, PopulateOption)</h4>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.Any(System.Type,Testify.PopulateOption)">Any(Type, PopulateOption)</h4>
               <div class="markdown level1 summary"><p>Creates an object of the specified type.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -154,7 +154,7 @@
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L33">View Source</a>
               </span>
-              <h4 id="Testify_IAnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution_" data-uid="Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)">AnyDouble(Double, Double, Distribution)</h4>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)">AnyDouble(Double, Double, Distribution)</h4>
               <div class="markdown level1 summary"><p>Creates a random <span class="xref">langword_csharp_double</span> value within the specified range using the specified
 distribution algorithm.</p>
 </div>
@@ -209,15 +209,61 @@ distribution algorithm.</p>
                   </tr>
                 </tbody>
               </table>
-              <h5 id="Testify_IAnonymousData_AnyDouble_System_Double_System_Double_Testify_Distribution__remarks">Remarks</h5>
+              <h5 id="methods_remarks">Remarks</h5>
               <div class="markdown level1 remarks"><p>Overrides should treat <code>null</code> values for <span class="paramref">distribution</span> as
 <span class="xref">Distribution.Uniform</span>.</p>
 </div>
               
               <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L50">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.GetValue(System.String)">GetValue(String)</h4>
+              <div class="markdown level1 summary"><p>Gets the value with the registered key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">object GetValue(string key)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>key</em></td>
+                    <td><p>The key.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><p>The value with the registered key.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
                 <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L43">View Source</a>
               </span>
-              <h4 id="Testify_IAnonymousData_Populate__1___0_System_Boolean_" data-uid="Testify.IAnonymousData.Populate``1(``0,System.Boolean)">Populate&lt;TInstance&gt;(TInstance, Boolean)</h4>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.Populate``1(``0,System.Boolean)">Populate&lt;TInstance&gt;(TInstance, Boolean)</h4>
               <div class="markdown level1 summary"><p>Populates the specified instance by assigning all properties to anonymous values.</p>
 </div>
               <div class="markdown level1 conceptual"></div>

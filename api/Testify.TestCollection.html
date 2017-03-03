@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class AnonymousBool
+    <title>Class TestCollection
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class AnonymousBool
+    <meta name="title" content="Class TestCollection
    ">
     <meta name="generator" content="docfx 2.12.1.0">
     
@@ -69,15 +69,15 @@
             <article class="content wrap" id="_content">
               
               
-              <h1 id="" data-uid="Testify.AnonymousBool">Class AnonymousBool
+              <h1 id="" data-uid="Testify.TestCollection">Class TestCollection
               </h1>
-              <div class="markdown level0 summary"><p>Provides factory methods for creating anonymous <span class="xref">System.Boolean</span> values.</p>
+              <div class="markdown level0 summary"><p>Provides a collection of tests that can be run as one.</p>
 </div>
               <div class="markdown level0 conceptual"></div>
               <div class="inheritance">
                 <h5>Inheritance</h5>
                   <div class="level0"><span class="xref">System.Object</span></div>
-                  <div class="level1"><span class="xref">AnonymousBool</span></div>
+                  <div class="level1"><span class="xref">TestCollection</span></div>
               </div>
               <div class="inheritedMembers">
                 <h5>Inherited Members</h5>
@@ -107,51 +107,21 @@
               <h6><strong>Assembly</strong>:Testify.dll</h6>
               <h5 id="_syntax">Syntax</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public static class AnonymousBool</code></pre>
+                <pre><code class="lang-csharp hljs">public class TestCollection : IEnumerable&lt;Action&gt;, IEnumerable</code></pre>
               </div>
-              <h5 id="_examples"><strong>Examples</strong></h5>
-              <pre><code class="lang-csharp" name="title">using Testify;
-using Xunit;
-using static Testify.Assertions;
-
-namespace Examples.UsingAnonymousData
-{
-    public class RegisterDefaultExample
-    {
-        // Use whatever the appropriate &quot;assembly initialize&quot; logic your
-        // unit test framework uses.
-        static RegisterDefaultExample()
-        {
-            AnonymousData.RegisterDefault&lt;Employee&gt;(
-                anon =&gt; new Employee(anon.AnyFirstName(), anon.AnySurname(), anon.AnyBool()));
-        }
-
-        [Fact]
-        public void FullName_ShouldBeCalculated()
-        {
-            var anon = new AnonymousData();
-            var employee = anon.Any&lt;Employee&gt;();
-
-            var fullName = employee.FullName;
-
-            Assert(fullName).IsEqualTo($&quot;{employee.LastName}, {employee.FirstName}&quot;);
-        }
-    }
-}
-</code></pre>
               <h3 id="methods">Methods
               </h3>
               
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/AnonymousBool.cs/#L18">View Source</a>
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestCollection.cs/#L22">View Source</a>
               </span>
-              <h4 id="methods" data-uid="Testify.AnonymousBool.AnyBool(Testify.IAnonymousData)">AnyBool(IAnonymousData)</h4>
-              <div class="markdown level1 summary"><p>Creates an anonymous <span class="xref">System.Boolean</span> value using a uniform distribution algorithm.</p>
+              <h4 id="methods" data-uid="Testify.TestCollection.AddTest(System.String,System.Action)">AddTest(String, Action)</h4>
+              <div class="markdown level1 summary"><p>Adds the test.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
               <h5 class="decalaration">Declaration</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public static bool AnyBool(this IAnonymousData anon)</code></pre>
+                <pre><code class="lang-csharp hljs">public void AddTest(string name, Action test)</code></pre>
               </div>
               <h5 class="parameters">Parameters</h5>
               <table class="table table-bordered table-striped table-condensed">
@@ -164,56 +134,30 @@ namespace Examples.UsingAnonymousData
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a class="xref" href="Testify.IAnonymousData.html">IAnonymousData</a></td>
-                    <td><em>anon</em></td>
-                    <td><p>The anonymous data provider to use.</p>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td><p>The name.</p>
 </td>
                   </tr>
-                </tbody>
-              </table>
-              <h5 class="returns">Returns</h5>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
                   <tr>
-                    <th>Type</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="xref">System.Boolean</span></td>
-                    <td><p>A random <span class="xref">System.Boolean</span> value.</p>
-</td>
-                  </tr>
-                </tbody>
-              </table>
-              <h5 class="exceptions">Exceptions</h5>
-              <table class="table table-bordered table-striped table-condensed">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Condition</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="xref">System.ArgumentNullException</span></td>
-                    <td><p><span class="paramref">anon</span> is <span class="xref">null</span>.</p>
+                    <td><span class="xref">System.Action</span></td>
+                    <td><em>test</em></td>
+                    <td><p>The test.</p>
 </td>
                   </tr>
                 </tbody>
               </table>
               
               <span class="small pull-right mobile-hide">
-                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/AnonymousBool.cs/#L32">View Source</a>
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestCollection.cs/#L35">View Source</a>
               </span>
-              <h4 id="methods" data-uid="Testify.AnonymousBool.AnyBool(Testify.IAnonymousData,Testify.Distribution)">AnyBool(IAnonymousData, Distribution)</h4>
-              <div class="markdown level1 summary"><p>Creates an anonymous <span class="xref">System.Boolean</span> value using the specified distribution algorithm.</p>
+              <h4 id="methods" data-uid="Testify.TestCollection.AddTest(System.String,System.Func{System.Threading.Tasks.Task})">AddTest(String, Func&lt;Task&gt;)</h4>
+              <div class="markdown level1 summary"><p>Adds the test.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
               <h5 class="decalaration">Declaration</h5>
               <div class="codewrapper">
-                <pre><code class="lang-csharp hljs">public static bool AnyBool(this IAnonymousData anon, Distribution distribution)</code></pre>
+                <pre><code class="lang-csharp hljs">public void AddTest(string name, Func&lt;Task&gt; test)</code></pre>
               </div>
               <h5 class="parameters">Parameters</h5>
               <table class="table table-bordered table-striped table-condensed">
@@ -226,19 +170,31 @@ namespace Examples.UsingAnonymousData
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a class="xref" href="Testify.IAnonymousData.html">IAnonymousData</a></td>
-                    <td><em>anon</em></td>
-                    <td><p>The anonymous data provider to use.</p>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td><p>The name.</p>
 </td>
                   </tr>
                   <tr>
-                    <td><a class="xref" href="Testify.Distribution.html">Distribution</a></td>
-                    <td><em>distribution</em></td>
-                    <td><p>The distribution algorithm to use.</p>
+                    <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+                    <td><em>test</em></td>
+                    <td><p>The test.</p>
 </td>
                   </tr>
                 </tbody>
               </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestCollection.cs/#L49">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.TestCollection.GetEnumerator">GetEnumerator()</h4>
+              <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public IEnumerator&lt;Action&gt; GetEnumerator()</code></pre>
+              </div>
               <h5 class="returns">Returns</h5>
               <table class="table table-bordered table-striped table-condensed">
                 <thead>
@@ -249,8 +205,46 @@ namespace Examples.UsingAnonymousData
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">System.Boolean</span></td>
-                    <td><p>A random <span class="xref">System.Boolean</span> value.</p>
+                    <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Action</span>&gt;</td>
+                    <td><p>A <span class="xref">System.Collections.Generic.IEnumerator&lt;T&gt;</span> that can be used to iterate through the collection.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><span class="xref">System.Collections.Generic.IEnumerable&lt;System.Action&gt;.GetEnumerator()</span></div>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestCollection.cs/#L65">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.TestCollection.RunTests(System.String,System.Object[])">RunTests(String, Object[])</h4>
+              <div class="markdown level1 summary"><p>Runs the tests.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void RunTests(string message, params object[] args)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>message</em></td>
+                    <td><p>The message.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span>[]</td>
+                    <td><em>args</em></td>
+                    <td><p>The arguments.</p>
 </td>
                   </tr>
                 </tbody>
@@ -265,12 +259,48 @@ namespace Examples.UsingAnonymousData
                 </thead>
                 <tbody>
                   <tr>
-                    <td><span class="xref">System.ArgumentNullException</span></td>
-                    <td><p><span class="paramref">anon</span> is <span class="xref">null</span>.</p>
+                    <td><a class="xref" href="Testify.AssertionException.html">AssertionException</a></td>
+                    <td><p>One or more tests failed.</p>
 </td>
                   </tr>
                 </tbody>
               </table>
+              <h3 id="eii">Explicit Interface Implementations
+              </h3>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestCollection.cs/#L57">View Source</a>
+              </span>
+              <h4 id="eii" data-uid="Testify.TestCollection.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+              <div class="markdown level1 summary"><p>Returns an enumerator that iterates through a collection.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Collections.IEnumerator</span></td>
+                    <td><p>An <span class="xref">System.Collections.IEnumerator</span> object that can be used to iterate through the collection.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><span class="xref">System.Collections.IEnumerable.GetEnumerator()</span></div>
+              <h3 id="seealso">See Also</h3>
+              <div class="seealso">
+                  <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</div>
+              </div>
             </article>
           </div>
           
@@ -279,10 +309,7 @@ namespace Examples.UsingAnonymousData
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/docs/apidoc/AnonymousBool.md/#L2" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/src/Testify/AnonymousBool.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/wekempf/testify/blob/master/src/Testify/TestCollection.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

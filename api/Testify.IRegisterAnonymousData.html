@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IRegisterAnonymousData
    ">
-    <meta name="generator" content="docfx 2.11.3.0">
+    <meta name="generator" content="docfx 2.12.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
@@ -69,14 +69,14 @@
             <article class="content wrap" id="_content">
               
               
-              <h1 id="Testify_IRegisterAnonymousData" data-uid="Testify.IRegisterAnonymousData">Interface IRegisterAnonymousData
+              <h1 id="" data-uid="Testify.IRegisterAnonymousData">Interface IRegisterAnonymousData
               </h1>
               <div class="markdown level0 summary"><p>Defines the interface used to register factory methods on an <a class="xref" href="Testify.AnonymousData.html">AnonymousData</a>.</p>
 </div>
               <div class="markdown level0 conceptual"></div>
               <h6><strong>Namespace</strong>:Testify</h6>
               <h6><strong>Assembly</strong>:Testify.dll</h6>
-              <h5 id="Testify_IRegisterAnonymousData_syntax">Syntax</h5>
+              <h5 id="_syntax">Syntax</h5>
               <div class="codewrapper">
                 <pre><code class="lang-csharp hljs">public interface IRegisterAnonymousData</code></pre>
               </div>
@@ -86,7 +86,7 @@
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L23">View Source</a>
               </span>
-              <h4 id="Testify_IRegisterAnonymousData_Register_System_Reflection_PropertyInfo_System_Func_Testify_IAnonymousData_System_Object__" data-uid="Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})">Register(PropertyInfo, Func&lt;IAnonymousData, Object&gt;)</h4>
+              <h4 id="methods" data-uid="Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})">Register(PropertyInfo, Func&lt;IAnonymousData, Object&gt;)</h4>
               <div class="markdown level1 summary"><p>Registers a factory method for the specified property.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -122,7 +122,7 @@
               <span class="small pull-right mobile-hide">
                 <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L16">View Source</a>
               </span>
-              <h4 id="Testify_IRegisterAnonymousData_Register_System_Type_System_Func_Testify_IAnonymousData_System_Object__" data-uid="Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})">Register(Type, Func&lt;IAnonymousData, Object&gt;)</h4>
+              <h4 id="methods" data-uid="Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})">Register(Type, Func&lt;IAnonymousData, Object&gt;)</h4>
               <div class="markdown level1 summary"><p>Register a factory method for the specified type.</p>
 </div>
               <div class="markdown level1 conceptual"></div>
@@ -154,6 +154,42 @@
                   </tr>
                 </tbody>
               </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L30">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IRegisterAnonymousData.SetValue(System.String,System.Object)">SetValue(String, Object)</h4>
+              <div class="markdown level1 summary"><p>Sets the value with the registered key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">void SetValue(string key, object value)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>key</em></td>
+                    <td><p>The key.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>value</em></td>
+                    <td><p>The value.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
               <h3 id="extensionmethods">Extension Methods</h3>
               <div>
                   <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Freeze(Type, Object)</a>
@@ -166,6 +202,12 @@
               </div>
               <div>
                   <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Register&lt;T, TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt;, Func&lt;IAnonymousData, TProperty&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.SetMaximumItemCount(Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.SetMinimumItemCount(Int32)</a>
               </div>
               <div>
                   <a class="xref" href="Testify.AnonymousMoq.html">AnonymousMoq.RegisterMock&lt;T&gt;(Action&lt;Mock&lt;T&gt;&gt;)</a>
