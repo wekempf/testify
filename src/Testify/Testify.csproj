@@ -89,9 +89,12 @@
     <Compile Include="StandardAssertions.cs" />
     <Compile Include="StringAssertions.cs" />
     <Compile Include="TaskAssertions.cs" />
+    <Compile Include="TestCollection.cs" />
+    <Compile Include="TestSynchronizationContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="stylecop.json" />
     <None Include="Testify.ruleset" />
   </ItemGroup>
   <ItemGroup>

@@ -21,5 +21,12 @@ namespace Testify
         /// <param name="property">The property to populate.</param>
         /// <param name="factory">The factory method.</param>
         void Register(PropertyInfo property, Func<IAnonymousData, object> factory);
+
+        /// <summary>
+        /// Sets the value with the registered key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
+        void SetValue(string key, object value);
     }
 }

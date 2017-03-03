@@ -41,5 +41,12 @@ namespace Testify
         /// the entire object tree.</param>
         /// <returns>The populated instance.</returns>
         TInstance Populate<TInstance>(TInstance instance, bool deep);
+
+        /// <summary>
+        /// Gets the value with the registered key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>The value with the registered key.</returns>
+        object GetValue(string key);
     }
 }

@@ -53,30 +53,27 @@ namespace Testify
         /// <inheritdoc/>
         protected override IEnumerable<Action> GetTests()
         {
-            foreach (var test in base.GetTests())
-            {
-                yield return test;
-            }
-
-            yield return VerifyComparisonOperatorsDefined;
-            yield return VerifyCompareToObjWithLesserItems;
-            yield return VerifyCompareToObjWithEqualItems;
-            yield return VerifyCompareToObjWithGreaterItems;
-            yield return VerifyCompareToOtherWithLesserItems;
-            yield return VerifyCompareToOtherWithEqualItems;
-            yield return VerifyCompareToOtherWithGreaterItems;
-            yield return VerifyOpGreaterThanWithLesserItems;
-            yield return VerifyOpGreaterThanWithEqualItems;
-            yield return VerifyOpGreaterThanWithGreaterItems;
-            yield return VerifyOpGreaterThanOrEqualWithLesserItems;
-            yield return VerifyOpGreaterThanOrEqualWithEqualItems;
-            yield return VerifyOpGreaterThanOrEqualWithGreaterItems;
-            yield return VerifyOpLessThanWithLesserItems;
-            yield return VerifyOpLessThanWithEqualItems;
-            yield return VerifyOpLessThanWithGreaterItems;
-            yield return VerifyOpLessThanOrEqualWithLesserItems;
-            yield return VerifyOpLessThanOrEqualWithEqualItems;
-            yield return VerifyOpLessThanOrEqualWithGreaterItems;
+            var tests = base.GetTests() as TestCollection;
+            tests.AddTest(nameof(VerifyComparisonOperatorsDefined), () => VerifyComparisonOperatorsDefined());
+            tests.AddTest(nameof(VerifyCompareToObjWithLesserItems), () => VerifyCompareToObjWithLesserItems());
+            tests.AddTest(nameof(VerifyCompareToObjWithEqualItems), () => VerifyCompareToObjWithEqualItems());
+            tests.AddTest(nameof(VerifyCompareToObjWithGreaterItems), () => VerifyCompareToObjWithGreaterItems());
+            tests.AddTest(nameof(VerifyCompareToOtherWithLesserItems), () => VerifyCompareToOtherWithLesserItems());
+            tests.AddTest(nameof(VerifyCompareToOtherWithEqualItems), () => VerifyCompareToOtherWithEqualItems());
+            tests.AddTest(nameof(VerifyCompareToOtherWithGreaterItems), () => VerifyCompareToOtherWithGreaterItems());
+            tests.AddTest(nameof(VerifyOpGreaterThanWithLesserItems), () => VerifyOpGreaterThanWithLesserItems());
+            tests.AddTest(nameof(VerifyOpGreaterThanWithEqualItems), () => VerifyOpGreaterThanWithEqualItems());
+            tests.AddTest(nameof(VerifyOpGreaterThanWithGreaterItems), () => VerifyOpGreaterThanWithGreaterItems());
+            tests.AddTest(nameof(VerifyOpGreaterThanOrEqualWithLesserItems), () => VerifyOpGreaterThanOrEqualWithLesserItems());
+            tests.AddTest(nameof(VerifyOpGreaterThanOrEqualWithEqualItems), () => VerifyOpGreaterThanOrEqualWithEqualItems());
+            tests.AddTest(nameof(VerifyOpGreaterThanOrEqualWithGreaterItems), () => VerifyOpGreaterThanOrEqualWithGreaterItems());
+            tests.AddTest(nameof(VerifyOpLessThanWithLesserItems), () => VerifyOpLessThanWithLesserItems());
+            tests.AddTest(nameof(VerifyOpLessThanWithEqualItems), () => VerifyOpLessThanWithEqualItems());
+            tests.AddTest(nameof(VerifyOpLessThanWithGreaterItems), () => VerifyOpLessThanWithGreaterItems());
+            tests.AddTest(nameof(VerifyOpLessThanOrEqualWithLesserItems), () => VerifyOpLessThanOrEqualWithLesserItems());
+            tests.AddTest(nameof(VerifyOpLessThanOrEqualWithEqualItems), () => VerifyOpLessThanOrEqualWithEqualItems());
+            tests.AddTest(nameof(VerifyOpLessThanOrEqualWithGreaterItems), () => VerifyOpLessThanOrEqualWithGreaterItems());
+            return tests;
         }
 
         private static void SwapLast(T[] first, T[] second)

@@ -62,6 +62,18 @@ namespace Testify
         }
 
         [Fact]
+        public void SetMinMaxItemsConstrainsSize()
+        {
+            var anon = new AnonymousData();
+            anon.SetMinimumItemCount(2);
+            anon.SetMaximumItemCount(2);
+
+            var result = anon.Any<List<int>>();
+
+            Assert.Equal(2, result.Count);
+        }
+
+        [Fact]
         public void AnyListCreatesItems()
         {
             var anon = new AnonymousData();

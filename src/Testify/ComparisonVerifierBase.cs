@@ -94,18 +94,20 @@ namespace Testify
         /// <returns>The test actions.</returns>
         protected override IEnumerable<Action> GetTests()
         {
-            yield return VerifyObjectEqualsIsOverridden;
-            yield return VerifyGetHashCodeIsOverridden;
-            yield return VerifyEqualityOperatorsDefined;
-            yield return VerifyGetHashCodeIsStable;
-            yield return VerifyObjectEqualsWithEqualItems;
-            yield return VerifyObjectEqualsWithNotEqualItems;
-            yield return VerifyEqualsWithEqualItems;
-            yield return VerifyEqualsWithNotEqualItems;
-            yield return VerifyOpEqualityWithEqualItems;
-            yield return VerifyOpEqualityWithNotEqualItems;
-            yield return VerifyOpInequalityWithEqualItems;
-            yield return VerifyOpInequalityWithNotEqualItems;
+            var tests = new TestCollection();
+            tests.AddTest(nameof(VerifyObjectEqualsIsOverridden), () => VerifyObjectEqualsIsOverridden());
+            tests.AddTest(nameof(VerifyGetHashCodeIsOverridden), () => VerifyGetHashCodeIsOverridden());
+            tests.AddTest(nameof(VerifyEqualityOperatorsDefined), () => VerifyEqualityOperatorsDefined());
+            tests.AddTest(nameof(VerifyGetHashCodeIsStable), () => VerifyGetHashCodeIsStable());
+            tests.AddTest(nameof(VerifyObjectEqualsWithEqualItems), () => VerifyObjectEqualsWithEqualItems());
+            tests.AddTest(nameof(VerifyObjectEqualsWithNotEqualItems), () => VerifyObjectEqualsWithNotEqualItems());
+            tests.AddTest(nameof(VerifyEqualsWithEqualItems), () => VerifyEqualsWithEqualItems());
+            tests.AddTest(nameof(VerifyEqualsWithNotEqualItems), () => VerifyEqualsWithNotEqualItems());
+            tests.AddTest(nameof(VerifyOpEqualityWithEqualItems), () => VerifyOpEqualityWithEqualItems());
+            tests.AddTest(nameof(VerifyOpEqualityWithNotEqualItems), () => VerifyOpEqualityWithNotEqualItems());
+            tests.AddTest(nameof(VerifyOpInequalityWithEqualItems), () => VerifyOpInequalityWithEqualItems());
+            tests.AddTest(nameof(VerifyOpInequalityWithNotEqualItems), () => VerifyOpInequalityWithNotEqualItems());
+            return tests;
         }
 
         /// <summary>

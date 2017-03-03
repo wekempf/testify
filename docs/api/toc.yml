@@ -85,3 +85,7 @@
     name: StringAssertions
   - uid: Testify.TaskAssertions
     name: TaskAssertions
+  - uid: Testify.TestCollection
+    name: TestCollection
+  - uid: Testify.TestSynchronizationContext
+    name: TestSynchronizationContext

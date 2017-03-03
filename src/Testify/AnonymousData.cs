@@ -19,6 +19,7 @@ namespace Testify
         private readonly Dictionary<Type, Factory> factories = new Dictionary<Type, Factory>();
         private readonly Dictionary<PropertyInfo, Factory> propertyFactories = new Dictionary<PropertyInfo, Factory>();
         private readonly Random random;
+        private readonly Dictionary<string, object> registeredValues = new Dictionary<string, object>();
 
         static AnonymousData()
         {
@@ -228,6 +229,24 @@ namespace Testify
         }
 
         /// <summary>
+        /// Gets the value with the registered key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>The value with the registered key.</returns>
+        public object GetValue(string key)
+        {
+            Argument.NotNull(key, nameof(key));
+
+            object value;
+            if (this.registeredValues.TryGetValue(key, out value))
+            {
+                return value;
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Populates the specified instance by assigning all properties to anonymous values.
         /// </summary>
         /// <typeparam name="TInstance">The type of the instance to populate.</typeparam>
@@ -373,6 +392,16 @@ namespace Testify
             Argument.NotNull(factory, nameof(factory));
 
             propertyFactories[property] = factory;
+        }
+
+        /// <summary>
+        /// Sets the value with the registered key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
+        public void SetValue(string key, object value)
+        {
+            this.registeredValues[key] = value;
         }
 
         private static bool IsDefaultValue<TInstance>(TInstance instance, PropertyInfo prop)
@@ -543,6 +572,16 @@ namespace Testify
                 }
 
                 return factory.Any(ResultType, out result);
+            }
+
+            /// <summary>
+            /// Gets the value with the registered key.
+            /// </summary>
+            /// <param name="key">The key.</param>
+            /// <returns>The value with the registered key.</returns>
+            public object GetValue(string key)
+            {
+                return factory.GetValue(key);
             }
 
             /// <summary>
