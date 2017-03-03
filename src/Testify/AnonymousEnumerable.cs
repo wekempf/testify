@@ -12,6 +12,9 @@ namespace Testify
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousEnumerable
     {
+        private const string MaxItemCountKey = "5dc2e85e3711418bab84a36a564c620c";
+        private const string MinItemCountKey = "62b7024d0fdd4ad7b636e4bdbb4716b9";
+
         /// <summary>
         /// Creates a random <see langword="IEnumerable"/> sequence of 0 to 20 objects of the specified type.
         /// </summary>
@@ -24,7 +27,7 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
             Argument.NotNull(type, nameof(type));
 
-            return anon.AnyEnumerable(type, 0, 20);
+            return anon.AnyEnumerable(type, anon.GetMinimumItemCount(), anon.GetMaximumItemCount());
         }
 
         /// <summary>
@@ -58,7 +61,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            return anon.AnyEnumerable(typeof(T), 0, 20).Cast<T>();
+            return anon.AnyEnumerable(typeof(T), anon.GetMinimumItemCount(), anon.GetMaximumItemCount()).Cast<T>();
         }
 
         /// <summary>
@@ -93,17 +96,31 @@ namespace Testify
             return items[index];
         }
 
-        /////// <summary>
-        /////// Returns a random item from the specified <see cref="Array"/>.
-        /////// </summary>
-        /////// <param name="anon">The anonymous data provider to use.</param>
-        /////// <param name="array">The <see cref="Array"/>.</param>
-        /////// <returns>A random item from the collection.</returns>
-        ////public static object AnyItem(this IAnonymousData anon, Array array)
-        ////{
-        ////    var index = anon.AnyInt32(0, array.Length);
-        ////    return array.GetValue(index);
-        ////}
+        /// <summary>
+        /// Sets the maximum item count used when creating collections.
+        /// </summary>
+        /// <param name="anon">The anon.</param>
+        /// <param name="value">The value.</param>
+        public static void SetMaximumItemCount(this IRegisterAnonymousData anon, int value)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.InRange(value, 0, int.MaxValue, nameof(value));
+
+            anon.SetValue(MaxItemCountKey, value);
+        }
+
+        /// <summary>
+        /// Sets the minimum item count used when creating collections.
+        /// </summary>
+        /// <param name="anon">The anon.</param>
+        /// <param name="value">The value.</param>
+        public static void SetMinimumItemCount(this IRegisterAnonymousData anon, int value)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.InRange(value, 0, int.MaxValue, nameof(value));
+
+            anon.SetValue(MinItemCountKey, value);
+        }
 
         private static IEnumerable AnyEnumerable(IAnonymousData anon, Type type, int length)
         {
@@ -111,6 +128,22 @@ namespace Testify
             {
                 yield return anon.Any(type);
             }
+        }
+
+        private static int GetMaximumItemCount(this IAnonymousData anon)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            var value = anon.GetValue(MaxItemCountKey);
+            return value == null ? 20 : (int)value;
+        }
+
+        private static int GetMinimumItemCount(this IAnonymousData anon)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            var value = anon.GetValue(MinItemCountKey);
+            return value == null ? 1 : (int)value;
         }
     }
 }

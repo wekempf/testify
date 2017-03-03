@@ -35,7 +35,7 @@ namespace Testify
             }
 
             var tests = GetTests();
-            AssertAll($"{verifierName} failed.", tests.ToArray());
+            AssertAll($"{verifierName} failed.", tests);
         }
 
         /// <summary>

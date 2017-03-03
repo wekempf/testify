@@ -88,6 +88,7 @@
     <Compile Include="AnonymousStringTests.cs" />
     <Compile Include="AnonymousTimeSpanTests.cs" />
     <Compile Include="TaskAssertionsTests.cs" />
+    <Compile Include="TestCollectionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Testify\Testify.csproj">

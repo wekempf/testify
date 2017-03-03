@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using static Testify.Assertions;
 
@@ -26,10 +27,27 @@ namespace Testify
                 throw new ArgumentNullException(nameof(exception));
             }
 
-            if (!exception.InnerExceptions.OfType<AssertionException>().Any(e => e.Message == message))
+            var stack = new Stack<AssertionException>();
+            stack.Push(exception);
+            while (stack.Any())
             {
-                Fail("Inner assertion not found. Message: {0}", message);
+                var current = stack.Pop();
+                foreach (var inner in current.InnerExceptions)
+                {
+                    if (inner.Message == message)
+                    {
+                        return;
+                    }
+
+                    var toAdd = inner as AssertionException;
+                    if (toAdd != null)
+                    {
+                        stack.Push(toAdd);
+                    }
+                }
             }
+
+            Fail("Inner assertion not found. Message: {0}", message);
         }
     }
 }
