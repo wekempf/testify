@@ -267,7 +267,7 @@ Task("Docs")
                 sourceCommit.Committer.Email,
                 string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
             Information("Publishing all changes...");
-            GitPush("./page");
+            GitPush("./pages");
        //}
     }
 });
@@ -279,31 +279,3 @@ Task("Default")
     .IsDependentOn("NuGetPush");
 
 RunTarget(target);
-
-int GitClonePages() {
-    return StartProcess("git", new ProcessSettings {
-        Arguments = "clone " + gitPagesRepo + " -b " + gitPagesBranch + " pages" 
-    });
-}
-
-int GitCommitPages() {
-    var result = StartProcess("git", new ProcessSettings {
-        Arguments = "add .",
-        WorkingDirectory = "./pages"
-    });
-    if (result != 0) {
-        return result;
-    }
-    result = StartProcess("git", new ProcessSettings {
-        Arguments = "commit -m \"Publishing pages " + version.AssemblySemVer + "\"",
-        WorkingDirectory = "./pages"
-    });
-    return result;
-}
-
-int GitPushPages() {
-    return StartProcess("git", new ProcessSettings {
-        Arguments = "push",
-        WorkingDirectory = "./pages"
-    });
-}
