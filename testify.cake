@@ -245,33 +245,36 @@ Task("NuGetPush")
 Task("Docs")
     .Does(() =>
 {
+    Information("Generating docs.")
     var settings = new DocFxSettings {
         WorkingDirectory = "./docs"
     };
     DocFx(settings);
+    Information("Archiving docs.");
     Zip("./docs/_site", "./docs/site.zip");
     if (isRunningOnBuildServer) {
-        //if (branch == "master") {
+        if (branch == "master") {
+            Information("Publishing docs.");
+            Information("Cloning GitHub Pages repository.");
             GitClone(gitPagesRepo, "./pages", new GitCloneSettings { BranchName = gitPagesBranch });
-            Information("Sync output files...");
+            Information("Syncing documentation files.");
             Kudu.Sync("./docs/_site", "./pages", new KuduSyncSettings {
                 ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
             });
-            Information("Stage all changes...");
+            Information("Staging changes.");
             GitAddAll("./pages");
-            Information("Commit all changes...");
+            Information("Committing changes.");
             var sourceCommit = GitLogTip("./");
             GitCommit(
                 "./pages",
                 sourceCommit.Committer.Name,
                 sourceCommit.Committer.Email,
                 string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
-            Information("Publishing all changes...");
+            Information("Pushing changes.");
             GitPush("./pages");
-       //}
+       }
     }
 });
-
 
 Task("Default")
     .IsDependentOn("Test")
