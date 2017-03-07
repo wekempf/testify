@@ -37,6 +37,7 @@
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
 #tool "nuget:?package=GitVersion.CommandLine"
+#tool "nuget:?package=KuduSync.NET"
 #tool coveralls.net
 #tool docfx.console
 
