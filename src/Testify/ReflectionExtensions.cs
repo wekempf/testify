@@ -106,7 +106,7 @@ namespace Testify
         /// <returns>The member information.</returns>
         internal static MemberExpression GetMemberInfo(Expression method)
         {
-            LambdaExpression lambda = method as LambdaExpression;
+            var lambda = method as LambdaExpression;
             if (lambda == null)
             {
                 return null;

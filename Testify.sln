@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify", "src\Testify\Testify.csproj", "{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{469F900E-5D25-4CD0-A0CC-A255131F2D8F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Tests", "src\Tests\Testify.Tests\Testify.Tests.csproj", "{FFAC94BB-C0D8-410B-8987-67077FAE24ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB7AA38D-B41B-449B-9431-AB1BE2EB3EE3}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,11 +24,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{9DF27E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Examples", "src\Examples\Testify.Examples\Testify.Examples.csproj", "{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify", "src\Testify\Testify.csproj", "{C83C1AC0-9E8D-41D7-BC01-06C8570DEC70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Moq", "src\Testify.Moq\Testify.Moq.csproj", "{74142B25-C8F7-4911-BE0E-74BD17DCC396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Tests", "src\Tests\Testify.Tests\Testify.Tests.csproj", "{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.Moq.Tests", "src\tests\Testify.Moq.Tests\Testify.Moq.Tests.csproj", "{C3E68AC7-C9D2-48B8-8998-91C104477373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Moq", "src\Testify.Moq\Testify.Moq.csproj", "{F8642C61-E372-421D-9AD0-C0BA0EEB5D16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Moq.Tests", "src\Tests\Testify.Moq.Tests\Testify.Moq.Tests.csproj", "{64174681-1570-45E3-9965-18433F644EEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Examples", "src\Examples\Testify.Examples\Testify.Examples.csproj", "{D0F601A2-DB9F-4BFE-88FE-8035D5130980}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,33 +40,33 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11F9CDD0-E36F-496B-A2C3-849A33E5C4D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFAC94BB-C0D8-410B-8987-67077FAE24ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74142B25-C8F7-4911-BE0E-74BD17DCC396}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3E68AC7-C9D2-48B8-8998-91C104477373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C83C1AC0-9E8D-41D7-BC01-06C8570DEC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83C1AC0-9E8D-41D7-BC01-06C8570DEC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83C1AC0-9E8D-41D7-BC01-06C8570DEC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83C1AC0-9E8D-41D7-BC01-06C8570DEC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8642C61-E372-421D-9AD0-C0BA0EEB5D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8642C61-E372-421D-9AD0-C0BA0EEB5D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8642C61-E372-421D-9AD0-C0BA0EEB5D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8642C61-E372-421D-9AD0-C0BA0EEB5D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64174681-1570-45E3-9965-18433F644EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64174681-1570-45E3-9965-18433F644EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64174681-1570-45E3-9965-18433F644EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64174681-1570-45E3-9965-18433F644EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FFAC94BB-C0D8-410B-8987-67077FAE24ED} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
-		{0FE03A9D-3C61-43D4-AB47-90A896DBDA01} = {7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}
-		{C3E68AC7-C9D2-48B8-8998-91C104477373} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
+		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
+		{64174681-1570-45E3-9965-18433F644EEC} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
+		{D0F601A2-DB9F-4BFE-88FE-8035D5130980} = {7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}
 	EndGlobalSection
 EndGlobal

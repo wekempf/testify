@@ -24,23 +24,17 @@ namespace Testify
         }
 
         [Fact]
-        public void Throws_AdditionalPassingAssertion_ShouldNotThrow()
-        {
+        public void Throws_AdditionalPassingAssertion_ShouldNotThrow() =>
             Assert(ThrowExceptionWithMessageFoo)
                 .Throws<Exception>(e => Assert(e.Message).IsEqualTo("foo"));
-        }
 
         [Fact]
-        public void Throws_ExpectedBaseException_ShouldNotThrow()
-        {
+        public void Throws_ExpectedBaseException_ShouldNotThrow() =>
             Assert(Throw<ArgumentNullException>).Throws<ArgumentException>();
-        }
 
         [Fact]
-        public void Throws_ExpectedException_ShouldNotThrow()
-        {
+        public void Throws_ExpectedException_ShouldNotThrow() =>
             Assert(Throw<Exception>).Throws<Exception>();
-        }
 
         [Fact]
         public void Throws_MessageAdditionalFailingAssertion_ShouldDisplayMessage()
@@ -60,23 +54,17 @@ namespace Testify
         }
 
         [Fact]
-        public void Throws_MessageAdditionalPassingAssertion_ShouldNotThrow()
-        {
+        public void Throws_MessageAdditionalPassingAssertion_ShouldNotThrow() =>
             Assert(ThrowExceptionWithMessageFoo)
                 .Throws<Exception>(e => Assert(e.Message).IsEqualTo("foo"), "Some message.");
-        }
 
         [Fact]
-        public void Throws_MessageExpectedBaseException_ShouldNotThrow()
-        {
+        public void Throws_MessageExpectedBaseException_ShouldNotThrow() =>
             Assert(Throw<ArgumentNullException>).Throws<ArgumentException>("Some message.");
-        }
 
         [Fact]
-        public void Throws_MessageExpectedException_ShouldNotThrow()
-        {
+        public void Throws_MessageExpectedException_ShouldNotThrow() =>
             Assert(Throw<Exception>).Throws<Exception>("Some message.");
-        }
 
         [Fact]
         public void Throws_MessageNoThrow_ShouldDisplayMessage()
@@ -112,23 +100,17 @@ namespace Testify
         }
 
         [Fact]
-        public void Throws_MessageParametersAdditionalPassingAssertion_ShouldNotThrow()
-        {
+        public void Throws_MessageParametersAdditionalPassingAssertion_ShouldNotThrow() =>
             Assert(ThrowExceptionWithMessageFoo)
                 .Throws<Exception>(e => Assert(e.Message).IsEqualTo("foo"), "Some {0}.", "message");
-        }
 
         [Fact]
-        public void Throws_MessageParametersExpectedBaseException_ShouldNotThrow()
-        {
+        public void Throws_MessageParametersExpectedBaseException_ShouldNotThrow() =>
             Assert(Throw<ArgumentNullException>).Throws<ArgumentException>("Some {0}.", "message");
-        }
 
         [Fact]
-        public void Throws_MessageParametersExpectedException_ShouldNotThrow()
-        {
+        public void Throws_MessageParametersExpectedException_ShouldNotThrow() =>
             Assert(Throw<Exception>).Throws<Exception>("Some {0}.", "message");
-        }
 
         [Fact]
         public void Throws_MessageParametersNoThrow_ShouldDisplayFormattedMessage()
@@ -214,15 +196,8 @@ namespace Testify
         {
         }
 
-        private void Throw<T>()
-            where T : Exception, new()
-        {
-            throw new T();
-        }
+        private void Throw<T>() where T : Exception, new() => throw new T();
 
-        private void ThrowExceptionWithMessageFoo()
-        {
-            throw new Exception("foo");
-        }
+        private void ThrowExceptionWithMessageFoo() => throw new Exception("foo");
     }
 }

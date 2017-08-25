@@ -13,7 +13,7 @@ namespace Testify
 
             var result = new AssertionException(inner);
 
-            Assert.Equal("An assertion failed.", result.Message);
+            Assert.Equal("An assertion failed. (Value cannot be null.)", result.Message);
             Assert.Equal(inner, result.InnerException);
             Assert.Equal(new[] { inner }, result.InnerExceptions);
         }
@@ -26,7 +26,7 @@ namespace Testify
 
             var result = new AssertionException(inner1, inner2);
 
-            Assert.Equal("An assertion failed.", result.Message);
+            Assert.Equal("An assertion failed. (Value cannot be null.) (Value cannot be null.)", result.Message);
             Assert.Equal(inner1, result.InnerException);
             Assert.Equal(new[] { inner1, inner2 }, result.InnerExceptions);
         }
@@ -38,7 +38,7 @@ namespace Testify
 
             var result = new AssertionException(inner.ToList());
 
-            Assert.Equal("An assertion failed.", result.Message);
+            Assert.Equal("An assertion failed. (Value cannot be null.) (Value cannot be null.)", result.Message);
             Assert.Equal(inner[0], result.InnerException);
             Assert.Equal(inner, result.InnerExceptions);
         }
@@ -50,7 +50,7 @@ namespace Testify
 
             var result = new AssertionException("Some message.", inner);
 
-            Assert.Equal("Some message.", result.Message);
+            Assert.Equal("Some message. (Value cannot be null.)", result.Message);
             Assert.Equal(inner, result.InnerException);
             Assert.Equal(new[] { inner }, result.InnerExceptions);
         }
@@ -62,7 +62,7 @@ namespace Testify
 
             var result = new AssertionException("Some message.", inner);
 
-            Assert.Equal("Some message.", result.Message);
+            Assert.Equal("Some message. (Value cannot be null.) (Value cannot be null.)", result.Message);
             Assert.Equal(inner[0], result.InnerException);
             Assert.Equal(inner, result.InnerExceptions);
         }
@@ -74,7 +74,7 @@ namespace Testify
 
             var result = new AssertionException("Some message.", inner.ToList());
 
-            Assert.Equal("Some message.", result.Message);
+            Assert.Equal("Some message. (Value cannot be null.) (Value cannot be null.)", result.Message);
             Assert.Equal(inner[0], result.InnerException);
             Assert.Equal(inner, result.InnerExceptions);
         }

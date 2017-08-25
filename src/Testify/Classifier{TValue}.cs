@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Testify
 {
@@ -95,7 +93,7 @@ namespace Testify
             Argument.InRange(runs, 0, int.MaxValue, nameof(runs));
             Argument.NotNull(producer, nameof(producer));
 
-            for (int i = 0; i < runs; ++i)
+            for (var i = 0; i < runs; ++i)
             {
                 Classify(producer());
             }

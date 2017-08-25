@@ -8,11 +8,9 @@ namespace Examples.UsingAnonymousData
     {
         // Use whatever the appropriate "assembly initialize" logic your
         // unit test framework uses.
-        static RegisterDefaultExample()
-        {
+        static RegisterDefaultExample() =>
             AnonymousData.RegisterDefault<Employee>(
                 anon => new Employee(anon.AnyFirstName(), anon.AnySurname(), anon.AnyBool()));
-        }
 
         [Fact]
         public void FullName_ShouldBeCalculated()

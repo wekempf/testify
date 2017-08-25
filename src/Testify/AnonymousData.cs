@@ -14,7 +14,8 @@ namespace Testify
     public sealed class AnonymousData : IAnonymousData, IRegisterAnonymousData
     {
         private static readonly Dictionary<Type, Factory> GlobalFactories = new Dictionary<Type, Factory>();
-        private static readonly Dictionary<PropertyInfo, Factory> GlobalPropertyFactories = new Dictionary<PropertyInfo, Factory>();
+        private static readonly Dictionary<PropertyInfo, Factory> GlobalPropertyFactories =
+            new Dictionary<PropertyInfo, Factory>();
         private readonly List<IAnonymousDataCustomization> customizations = new List<IAnonymousDataCustomization>();
         private readonly Dictionary<Type, Factory> factories = new Dictionary<Type, Factory>();
         private readonly Dictionary<PropertyInfo, Factory> propertyFactories = new Dictionary<PropertyInfo, Factory>();
@@ -69,10 +70,7 @@ namespace Testify
         /// instance in order to use the same configuration in multiple tests.
         /// </para>
         /// </remarks>
-        public AnonymousData(int seed)
-        {
-            random = new Random(seed);
-        }
+        public AnonymousData(int seed) => random = new Random(seed);
 
         /// <summary>
         /// Register a factory method for the specified type that will be used by all <see cref="AnonymousData"/>
@@ -80,7 +78,8 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is
+        /// <c>null</c>.</exception>
         public static void RegisterDefault(Type type, Factory factory)
         {
             Argument.NotNull(type, nameof(type));
@@ -160,8 +159,7 @@ namespace Testify
                 return this;
             }
 
-            Factory factory;
-            if (factories.TryGetValue(type, out factory) || GlobalFactories.TryGetValue(type, out factory))
+            if (factories.TryGetValue(type, out Factory factory) || GlobalFactories.TryGetValue(type, out factory))
             {
                 object value;
                 try
@@ -178,10 +176,9 @@ namespace Testify
             }
 
             var context = new AnonymousDataContext(this, type);
-            object result;
             try
             {
-                if (context.CallNextCustomization(out result))
+                if (context.CallNextCustomization(out object result))
                 {
                     return Populate(result, populateOption);
                 }
@@ -201,13 +198,20 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random double value.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than
+        /// <paramref name="minimum"/>.</exception>
         public double AnyDouble(double minimum, double maximum, Distribution distribution)
         {
-            Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                double.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
             if (double.IsInfinity(maximum - minimum))
             {
-                throw new ArgumentOutOfRangeException($"The range of {nameof(maximum)} - {nameof(minimum)} is Infinity.");
+                throw new ArgumentOutOfRangeException(
+                    $"The range of {nameof(maximum)} - {nameof(minimum)} is Infinity.");
             }
 
             var next = (distribution ?? Distribution.Uniform).NextDouble(random);
@@ -237,8 +241,7 @@ namespace Testify
         {
             Argument.NotNull(key, nameof(key));
 
-            object value;
-            if (this.registeredValues.TryGetValue(key, out value))
+            if (registeredValues.TryGetValue(key, out object value))
             {
                 return value;
             }
@@ -265,8 +268,9 @@ namespace Testify
                     var type = current.GetType();
                     var properties =
                         from prop in type.GetRuntimeProperties()
-                        where (prop.PropertyType.IsCollectionType() || (prop.CanWrite && prop.SetMethod.IsPublic && IsDefaultValue(current, prop))) &&
-                            !(prop.GetIndexParameters()?.Any() ?? false)
+                        where (prop.PropertyType.IsCollectionType()
+                            || (prop.CanWrite && prop.SetMethod.IsPublic && IsDefaultValue(current, prop)))
+                            && !(prop.GetIndexParameters()?.Any() ?? false)
                         select prop;
                     foreach (var prop in properties)
                     {
@@ -283,7 +287,9 @@ namespace Testify
                                         var method = prop.PropertyType.GetAddMethod();
                                         if (method != null)
                                         {
-                                            foreach (var item in this.AnyEnumerable(method.GetParameters()[0].ParameterType))
+                                            var valueType = method.GetParameters().First().ParameterType;
+                                            var values = (this).AnyEnumerable(valueType);
+                                            foreach (var item in values)
                                             {
                                                 try
                                                 {
@@ -331,9 +337,8 @@ namespace Testify
                             else
                             {
                                 object value;
-                                Factory factory;
-                                if (propertyFactories.TryGetValue(prop, out factory) ||
-                                    GlobalPropertyFactories.TryGetValue(prop, out factory))
+                                if (propertyFactories.TryGetValue(prop, out Factory factory)
+                                    || GlobalPropertyFactories.TryGetValue(prop, out factory))
                                 {
                                     value = factory(this);
                                 }
@@ -372,7 +377,8 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is
+        /// <c>null</c>.</exception>
         public void Register(Type type, Factory factory)
         {
             Argument.NotNull(type, nameof(type));
@@ -399,10 +405,7 @@ namespace Testify
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
-        public void SetValue(string key, object value)
-        {
-            this.registeredValues[key] = value;
-        }
+        public void SetValue(string key, object value) => registeredValues[key] = value;
 
         private static bool IsDefaultValue<TInstance>(TInstance instance, PropertyInfo prop)
         {
@@ -548,7 +551,12 @@ namespace Testify
 
             public double AnyDouble(double minimum, double maximum, Distribution distribution)
             {
-                Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+                Argument.InRange(
+                    maximum,
+                    minimum,
+                    double.MaxValue,
+                    nameof(maximum),
+                    "The maximum value must be greater than the minimum value.");
 
                 return factory.AnyDouble(minimum, maximum, distribution);
             }
@@ -579,23 +587,17 @@ namespace Testify
             /// </summary>
             /// <param name="key">The key.</param>
             /// <returns>The value with the registered key.</returns>
-            public object GetValue(string key)
-            {
-                return factory.GetValue(key);
-            }
+            public object GetValue(string key) => factory.GetValue(key);
 
             /// <summary>
             /// Populates the specified instance by assigning all properties to anonymous values.
             /// </summary>
             /// <typeparam name="TInstance">The type of the instance to populate.</typeparam>
             /// <param name="instance">The instance to populate.</param>
-            /// <param name="deep">If set to <see langword="true" /> then properties are assigned recursively, populating
-            /// the entire object tree.</param>
+            /// <param name="deep">If set to <see langword="true" /> then properties are assigned recursively,
+            /// populating the entire object tree.</param>
             /// <returns>The populated instance.</returns>
-            public TInstance Populate<TInstance>(TInstance instance, bool deep)
-            {
-                return factory.Populate(instance, deep);
-            }
+            public TInstance Populate<TInstance>(TInstance instance, bool deep) => factory.Populate(instance, deep);
         }
     }
 }

@@ -60,8 +60,7 @@ namespace Testify
 
         private void RunOnCurrentThread()
         {
-            KeyValuePair<SendOrPostCallback, object> workItem;
-            while (queue.TryTake(out workItem, Timeout.Infinite))
+            while (queue.TryTake(out var workItem, Timeout.Infinite))
             {
                 workItem.Key.Invoke(workItem.Value);
             }

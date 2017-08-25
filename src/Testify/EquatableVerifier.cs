@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using static Testify.Assertions;
 
 namespace Testify
 {
@@ -22,8 +18,8 @@ namespace Testify
         /// </value>
         public Func<T[]> UniqueItemsFactory
         {
-            get { return ItemsFactory; }
-            set { ItemsFactory = value; }
+            get => ItemsFactory;
+            set => ItemsFactory = value;
         }
 
         /// <inheritdoc/>

@@ -299,9 +299,7 @@ namespace Testify
         private static WaitHandle GetWaitHandle(this Task task) =>
             ((IAsyncResult)task).AsyncWaitHandle;
 
-        private static bool WaitForCompletion(this Task task, int millisecondsTimeout)
-        {
-            return task.GetWaitHandle().WaitOne(millisecondsTimeout);
-        }
+        private static bool WaitForCompletion(this Task task, int millisecondsTimeout) =>
+            task.GetWaitHandle().WaitOne(millisecondsTimeout);
     }
 }

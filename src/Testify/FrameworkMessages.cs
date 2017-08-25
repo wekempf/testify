@@ -257,6 +257,13 @@ namespace Testify
                 substring);
 
         /// <summary>
+        /// Formats a message for Task not completing failures.
+        /// </summary>
+        /// <returns>The message.</returns>
+        internal static string TaskDidNotComplete() =>
+            Resources.FrameworkMessage_TaskDidNotComplete;
+
+        /// <summary>
         /// Unexpecteds the exception.
         /// </summary>
         /// <param name="expectedExceptionType">Expected type of the exception.</param>
@@ -281,13 +288,6 @@ namespace Testify
                 index,
                 expectedType,
                 actualType);
-
-        /// <summary>
-        /// Formats a message for Task not completing failures.
-        /// </summary>
-        /// <returns>The message.</returns>
-        internal static string TaskDidNotComplete() =>
-            Resources.FrameworkMessage_TaskDidNotComplete;
 
         private static string Format(string format, params object[] args) =>
             string.Format(CultureInfo.CurrentCulture, format, args).Trim();

@@ -107,10 +107,7 @@ namespace Testify
         {
             private readonly List<int> items = new List<int>();
 
-            public void Add(int item)
-            {
-                items.Add(item);
-            }
+            public void Add(int item) => items.Add(item);
 
             public IEnumerator<int> GetEnumerator() => items.GetEnumerator();
 

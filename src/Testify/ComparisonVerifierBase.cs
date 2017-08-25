@@ -89,6 +89,20 @@ namespace Testify
                 .FirstOrDefault();
 
         /// <summary>
+        /// Gets the methods.
+        /// </summary>
+        protected virtual void GetMethods()
+        {
+            var type = typeof(T);
+            objectEqualsMethod = type.GetRuntimeMethod("Equals", new[] { typeof(object) });
+            getHashCodeMethod = type.GetRuntimeMethod("GetHashCode", new Type[0]);
+            opEqualityMethod = type.GetRuntimeMethod("op_Equality", new[] { typeof(T), typeof(T) });
+            opEquality = (Func<T, T, bool>)opEqualityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+            var opInequalityMethod = type.GetRuntimeMethod("op_Inequality", new[] { typeof(T), typeof(T) });
+            opInequality = (Func<T, T, bool>)opInequalityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
+        }
+
+        /// <summary>
         /// Gets the test actions to run.
         /// </summary>
         /// <returns>The test actions.</returns>
@@ -108,20 +122,6 @@ namespace Testify
             tests.AddTest(nameof(VerifyOpInequalityWithEqualItems), () => VerifyOpInequalityWithEqualItems());
             tests.AddTest(nameof(VerifyOpInequalityWithNotEqualItems), () => VerifyOpInequalityWithNotEqualItems());
             return tests;
-        }
-
-        /// <summary>
-        /// Gets the methods.
-        /// </summary>
-        protected virtual void GetMethods()
-        {
-            var type = typeof(T);
-            objectEqualsMethod = type.GetRuntimeMethod("Equals", new[] { typeof(object) });
-            getHashCodeMethod = type.GetRuntimeMethod("GetHashCode", new Type[0]);
-            opEqualityMethod = type.GetRuntimeMethod("op_Equality", new[] { typeof(T), typeof(T) });
-            opEquality = (Func<T, T, bool>)opEqualityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
-            var opInequalityMethod = type.GetRuntimeMethod("op_Inequality", new[] { typeof(T), typeof(T) });
-            opInequality = (Func<T, T, bool>)opInequalityMethod?.CreateDelegate(typeof(Func<T, T, bool>));
         }
 
         /// <inheritdoc/>
