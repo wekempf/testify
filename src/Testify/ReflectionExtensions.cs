@@ -145,6 +145,29 @@ namespace Testify
             return (Func<T, TResult>)(object)method.CreateDelegate(typeof(Func<T, TResult>));
         }
 
+        internal static MethodInfo GetMethod(this Type sourceType, string methodName)
+        {
+            Argument.NotNull(sourceType, nameof(sourceType));
+            Argument.NotNull(methodName, nameof(methodName));
+
+            var typeInfo = sourceType.GetTypeInfo();
+            return typeInfo.DeclaredMethods.SingleOrDefault(m => m.Name == methodName);
+        }
+
+        internal static Func<TSource, TResult> CreateFunc<TSource, TResult>(this MethodInfo methodInfo)
+        {
+            Argument.NotNull(methodInfo, nameof(methodInfo));
+
+            return (Func<TSource, TResult>)methodInfo.CreateDelegate(typeof(Func<TSource, TResult>));
+        }
+
+        internal static Func<TSource, T1, TResult> CreateFunc<TSource, T1, TResult>(this MethodInfo methodInfo)
+        {
+            Argument.NotNull(methodInfo, nameof(methodInfo));
+
+            return (Func<TSource, T1, TResult>)methodInfo.CreateDelegate(typeof(Func<TSource, T1, TResult>));
+        }
+
         /// <summary>
         /// Gets the parameter.
         /// </summary>

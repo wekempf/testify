@@ -26,7 +26,7 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("EquatableVerifier failed.");
-                e.ExpectInnerAssertion("Equals failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
+                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
                 return;
             }
 
@@ -53,7 +53,7 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("EquatableVerifier failed.");
-                e.ExpectInnerAssertion("Equals failed with values expected to not be equal at index 0. Expected: <2>. Actual: <1>.");
+                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to not be equal at index 0. Expected: <2>. Actual: <1>.");
                 return;
             }
 

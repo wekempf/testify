@@ -326,6 +326,17 @@ namespace Testify
             Assert.NotEmpty(result.Dictionary);
         }
 
+        [Fact]
+        public void Any_Predicate_ShouldEnsurePredicate()
+        {
+            var anon = new AnonymousData();
+            Predicate<int> predicate = i => (i % 2) == 0;
+
+            var result = anon.Any<int>(predicate);
+
+            Assert.True(predicate(result));
+        }
+
         [Flags]
         private enum FlagsEnum
         {
