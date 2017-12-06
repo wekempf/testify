@@ -56,7 +56,9 @@ var releaseNuGetSource = "https://www.nuget.org/api/v2/package";
 var releaseNuGetApiKey = EnvironmentVariable("NuGetApiKey");
 var unstableNuGetSource = "https://www.myget.org/F/wekempf/api/v2/package";
 var unstableNuGetApiKey = EnvironmentVariable("MyGetApiKey");
-var gitPagesRepo = "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git";
+var gitPagesRepo = isRunningOnBuildServer
+    ? "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git"
+    : "https://github.com/wekempf/testify.git";
 var gitPagesBranch = "gh-pages";
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
 
@@ -199,22 +201,28 @@ Task("Docs")
     Zip("./docs/_site", "./docs/site.zip");
     if (isRunningOnBuildServer) {
         //if (branch == "master") {
-            GitClone(gitPagesRepo, "./pages", new GitCloneSettings { BranchName = gitPagesBranch });
-            Information("Sync output files...");
-            Kudu.Sync("./docs/_site", "./pages", new KuduSyncSettings {
-                ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
-            });
-            Information("Stage all changes...");
-            GitAddAll("./pages");
-            Information("Commit all changes...");
-            var sourceCommit = GitLogTip("./");
-            GitCommit(
-                "./pages",
-                sourceCommit.Committer.Name,
-                sourceCommit.Committer.Email,
-                string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
-            Information("Publishing all changes...");
-            GitPush("./page");
+            var pagesDirectory = "./pages";
+            GitClone(gitPagesRepo, pagesDirectory, new GitCloneSettings { BranchName = gitPagesBranch });
+            try {
+                Information("Sync output files...");
+                Kudu.Sync("./docs/_site", pagesDirectory, new KuduSyncSettings {
+                    ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
+                });
+                Information("Stage all changes...");
+                GitAddAll(pagesDirectory);
+                Information("Commit all changes...");
+                var sourceCommit = GitLogTip("./");
+                GitCommit(
+                    pagesDirectory,
+                    sourceCommit.Committer.Name,
+                    sourceCommit.Committer.Email,
+                    string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
+                Information("Publishing all changes...");
+                GitPush(pagesDirectory);
+            } finally {
+                Information("Cleaning up pages clone...");
+                DeleteDirectory(pagesDirectory, new DeleteDirectorySettings { Recursive = true, Force = true });
+            }
        //}
     }
 });
