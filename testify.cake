@@ -38,11 +38,12 @@
 #tool coveralls.net
 #tool docfx.console
 #tool "nuget:?package=GitReleaseNotes"
+#tool "KuduSync.NET"
 
 #addin Cake.Coveralls
 #addin nuget:?package=Cake.Git
 #addin Cake.DocFx
-#addin nuget:?package=Cake.Kudu
+#addin Cake.Kudu
 
 var forceDocPublish = HasArgument("forceDocPublish");
 var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
