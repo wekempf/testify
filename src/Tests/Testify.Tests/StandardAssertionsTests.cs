@@ -46,16 +46,12 @@ namespace Testify
         }
 
         [Fact]
-        public void IsEqualTo_Double_GivenValuesThatDifferByDelta_ShouldNotThrow()
-        {
+        public void IsEqualTo_Double_GivenValuesThatDifferByDelta_ShouldNotThrow() =>
             Assert(2.0d).IsEqualTo(1.0d, 1.0d);
-        }
 
         [Fact]
-        public void IsEqualTo_Double_GivenValuesThatDifferByLessThanDelta_ShouldNotThrow()
-        {
+        public void IsEqualTo_Double_GivenValuesThatDifferByLessThanDelta_ShouldNotThrow() =>
             Assert(2.0d).IsEqualTo(1.0d, 1.5d);
-        }
 
         [Fact]
         public void IsEqualTo_Double_GivenValuesThatDifferByMoreThanDelta_ShouldThrow()
@@ -230,16 +226,12 @@ namespace Testify
         }
 
         [Fact]
-        public void IsEqualTo_Single_GivenValuesThatDifferByDelta_ShouldNotThrow()
-        {
+        public void IsEqualTo_Single_GivenValuesThatDifferByDelta_ShouldNotThrow() =>
             Assert(2.0f).IsEqualTo(1.0f, 1.0f);
-        }
 
         [Fact]
-        public void IsEqualTo_Single_GivenValuesThatDifferByLessThanDelta_ShouldNotThrow()
-        {
+        public void IsEqualTo_Single_GivenValuesThatDifferByLessThanDelta_ShouldNotThrow() =>
             Assert(2.0f).IsEqualTo(1.0f, 1.5f);
-        }
 
         [Fact]
         public void IsEqualTo_Single_GivenValuesThatDifferByMoreThanDelta_ShouldThrow()
@@ -274,10 +266,7 @@ namespace Testify
         }
 
         [Fact]
-        public void IsFalse_GivenFalse_ShouldNotThrow()
-        {
-            Assert(false).IsFalse();
-        }
+        public void IsFalse_GivenFalse_ShouldNotThrow() => Assert(false).IsFalse();
 
         [Fact]
         public void IsFalse_GivenMessage_ShouldDisplayMessage()
@@ -328,10 +317,8 @@ namespace Testify
         }
 
         [Fact]
-        public void IsInstanceOfType_GivenCorrectType_ShouldNotThrow()
-        {
+        public void IsInstanceOfType_GivenCorrectType_ShouldNotThrow() =>
             Assert("foo").IsInstanceOfType(typeof(string));
-        }
 
         [Fact]
         public void IsInstanceOfType_GivenIncorrectType_ShouldThrow()
@@ -453,10 +440,8 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotEqualTo_Double_GivenValuesThatDifferByMoreThanDelta_ShouldNotThrow()
-        {
+        public void IsNotEqualTo_Double_GivenValuesThatDifferByMoreThanDelta_ShouldNotThrow() =>
             Assert(2.0d).IsNotEqualTo(1.0d, 0.5d);
-        }
 
         [Fact]
         public void IsNotEqualTo_GivenDifferentTypes_ShouldNotThrow()
@@ -598,10 +583,8 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotEqualTo_Single_GivenValuesThatDifferByMoreThanDelta_ShouldNotThrow()
-        {
+        public void IsNotEqualTo_Single_GivenValuesThatDifferByMoreThanDelta_ShouldNotThrow() =>
             Assert(2.0f).IsNotEqualTo(1.0f, 0.5f);
-        }
 
         [Fact]
         public void IsNotInstanceOfType_GivenCorrectType_ShouldThrow()
@@ -620,10 +603,8 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotInstanceOfType_GivenIncorrectType_ShouldNotThrow()
-        {
+        public void IsNotInstanceOfType_GivenIncorrectType_ShouldNotThrow() =>
             Assert("foo").IsNotInstanceOfType(typeof(Exception));
-        }
 
         [Fact]
         public void IsNotInstanceOfType_GivenMessage_ShouldDisplayMessage()
@@ -706,16 +687,11 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotNull_GivenReference_ShouldNotThrow()
-        {
-            Assert(new object()).IsNotNull();
-        }
+        public void IsNotNull_GivenReference_ShouldNotThrow() => Assert(new object()).IsNotNull();
 
         [Fact]
-        public void IsNotSameAs_GivenDifferentInstances_ShouldNotThrow()
-        {
+        public void IsNotSameAs_GivenDifferentInstances_ShouldNotThrow() =>
             Assert(new object()).IsNotSameAs(new object());
-        }
 
         [Fact]
         public void IsNotSameAs_GivenMessage_ShouldDisplayMessage()
@@ -801,10 +777,7 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNull_GivenNull_ShouldNotThrow()
-        {
-            Assert<object>(null).IsNull();
-        }
+        public void IsNull_GivenNull_ShouldNotThrow() => Assert<object>(null).IsNull();
 
         [Fact]
         public void IsNull_GivenReference_ShouldThrow()
@@ -926,9 +899,6 @@ namespace Testify
         }
 
         [Fact]
-        public void IsTrue_GivenTrue_ShouldNotThrow()
-        {
-            Assert(true).IsTrue();
-        }
+        public void IsTrue_GivenTrue_ShouldNotThrow() => Assert(true).IsTrue();
     }
 }

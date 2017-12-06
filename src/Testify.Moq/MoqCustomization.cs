@@ -21,7 +21,7 @@ namespace Testify
                 return true;
             }
 
-            if (context.ResultType.IsInterface || context.ResultType.IsAbstract)
+            if (context.ResultType.IsInterface() || context.ResultType.IsAbstract())
             {
                 var mock = (Mock)context.Any(typeof(Mock<>).MakeGenericType(context.ResultType));
                 result = mock.Object;

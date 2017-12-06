@@ -24,10 +24,7 @@ namespace Testify
     {
         private readonly ITestOutputHelper tracer;
 
-        public AnonymousDataTests(ITestOutputHelper tracer)
-        {
-            this.tracer = tracer;
-        }
+        public AnonymousDataTests(ITestOutputHelper tracer) => this.tracer = tracer;
 
         [Fact]
         public void Any_ArrayOfType()
@@ -329,6 +326,17 @@ namespace Testify
             Assert.NotEmpty(result.Dictionary);
         }
 
+        [Fact]
+        public void Any_Predicate_ShouldEnsurePredicate()
+        {
+            var anon = new AnonymousData();
+            Predicate<int> predicate = i => (i % 2) == 0;
+
+            var result = anon.Any<int>(predicate);
+
+            Assert.True(predicate(result));
+        }
+
         [Flags]
         private enum FlagsEnum
         {
@@ -356,9 +364,13 @@ namespace Testify
             {
                 if (context.ResultType == typeof(IModel))
                 {
-                    var model = new Model();
-                    model.Value = context.AnyDouble(0, 1, Distribution.Uniform).ToString()
-                        + context.Any(typeof(string));
+                    var model = new Model()
+                    {
+                        Value = context
+                            .AnyDouble(0, 1, Distribution.Uniform)
+                            .ToString()
+                            + context.Any(typeof(string))
+                    };
                     result = model;
                     return true;
                 }
@@ -377,10 +389,7 @@ namespace Testify
 
             public int Primitive
             {
-                get
-                {
-                    return primitive;
-                }
+                get => primitive;
 
                 set
                 {

@@ -40,6 +40,190 @@ namespace Testify
         }
 
         /// <summary>
+        /// Anies the specified type.
+        /// </summary>
+        /// <param name="anon">The anon.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        public static object Any(
+            this IAnonymousData anon,
+            Type type,
+            Predicate<object> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(type, nameof(type));
+            Argument.NotNull(predicate, nameof(predicate));
+
+            return anon.Any(type, PopulateOption.None, 20, predicate);
+        }
+
+        /// <summary>
+        /// Anies the specified type.
+        /// </summary>
+        /// <param name="anon">The anon.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="retryAttempts">The retry attempts.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        public static object Any(
+            this IAnonymousData anon,
+            Type type,
+            int retryAttempts,
+            Predicate<object> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(type, nameof(type));
+            Argument.NotNull(predicate, nameof(predicate));
+            Argument.InRange(retryAttempts, 0, int.MaxValue, nameof(retryAttempts));
+
+            return anon.Any(type, PopulateOption.None, retryAttempts, predicate);
+        }
+
+        /// <summary>
+        /// Anies the specified type.
+        /// </summary>
+        /// <param name="anon">The anon.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="populateOption">The populate option.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        public static object Any(
+            this IAnonymousData anon,
+            Type type,
+            PopulateOption populateOption,
+            Predicate<object> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(type, nameof(type));
+            Argument.NotNull(predicate, nameof(predicate));
+
+            return anon.Any(type, populateOption, 20, predicate);
+        }
+
+        /// <summary>
+        /// Anies the specified type.
+        /// </summary>
+        /// <param name="anon">The anon.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="populateOption">The populate option.</param>
+        /// <param name="retryAttempts">The retry attempts.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        /// <exception cref="AnonymousDataException"></exception>
+        public static object Any(
+            this IAnonymousData anon,
+            Type type,
+            PopulateOption populateOption,
+            int retryAttempts,
+            Predicate<object> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(type, nameof(type));
+            Argument.NotNull(predicate, nameof(predicate));
+            Argument.InRange(retryAttempts, 0, int.MaxValue, nameof(retryAttempts));
+
+            for (int i = 0; i < retryAttempts; ++i)
+            {
+                var result = anon.Any(type, populateOption);
+                if (predicate.Invoke(result))
+                {
+                    return result;
+                }
+            }
+
+            throw new AnonymousDataException(type, $"Predicate failed {retryAttempts} times.");
+        }
+
+        /// <summary>
+        /// Anies the specified predicate.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="anon">The anon.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        public static T Any<T>(
+            this IAnonymousData anon,
+            Predicate<T> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(predicate, nameof(predicate));
+
+            return anon.Any<T>(PopulateOption.None, 20, predicate);
+        }
+
+        /// <summary>
+        /// Anies the specified retry attempts.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="anon">The anon.</param>
+        /// <param name="retryAttempts">The retry attempts.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        public static T Any<T>(
+            this IAnonymousData anon,
+            int retryAttempts,
+            Predicate<T> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(predicate, nameof(predicate));
+            Argument.InRange(retryAttempts, 0, int.MaxValue, nameof(retryAttempts));
+
+            return anon.Any<T>(PopulateOption.None, retryAttempts, predicate);
+        }
+
+        /// <summary>
+        /// Anies the specified populate option.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="anon">The anon.</param>
+        /// <param name="populateOption">The populate option.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        public static T Any<T>(
+            this IAnonymousData anon,
+            PopulateOption populateOption,
+            Predicate<T> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(predicate, nameof(predicate));
+
+            return anon.Any<T>(populateOption, 20, predicate);
+        }
+
+        /// <summary>
+        /// Anies the specified populate option.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="anon">The anon.</param>
+        /// <param name="populateOption">The populate option.</param>
+        /// <param name="retryAttempts">The retry attempts.</param>
+        /// <param name="predicate">The predicate.</param>
+        /// <returns>An instance of the specified type.</returns>
+        /// <exception cref="AnonymousDataException"></exception>
+        public static T Any<T>(
+            this IAnonymousData anon,
+            PopulateOption populateOption,
+            int retryAttempts,
+            Predicate<T> predicate)
+        {
+            Argument.NotNull(anon, nameof(anon));
+            Argument.NotNull(predicate, nameof(predicate));
+            Argument.InRange(retryAttempts, 0, int.MaxValue, nameof(retryAttempts));
+
+            for (int i = 0; i < retryAttempts; ++i)
+            {
+                var result = anon.Any<T>(populateOption);
+                if (predicate.Invoke(result))
+                {
+                    return result;
+                }
+            }
+
+            throw new AnonymousDataException(typeof(T), $"Predicate failed {retryAttempts} times.");
+        }
+
+        /// <summary>
         /// Anies the specified populate option.
         /// </summary>
         /// <typeparam name="T">The type of the object to create.</typeparam>

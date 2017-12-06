@@ -9,22 +9,16 @@ namespace Testify
     public class CollectionAssertionsTests
     {
         [Fact]
-        public void AllItemsAreInstancesOfType_AllType_ShouldNotThrow()
-        {
+        public void AllItemsAreInstancesOfType_AllType_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).AllItemsAreInstancesOfType(typeof(int));
-        }
 
         [Fact]
-        public void AllItemsAreInstancesOfType_MessageAllType_ShouldNotThrow()
-        {
+        public void AllItemsAreInstancesOfType_MessageAllType_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).AllItemsAreInstancesOfType(typeof(int), "Some message.");
-        }
 
         [Fact]
-        public void AllItemsAreInstancesOfType_MessageParametersAllType_ShouldNotThrow()
-        {
+        public void AllItemsAreInstancesOfType_MessageParametersAllType_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).AllItemsAreInstancesOfType(typeof(int), "Some {0}.", "message");
-        }
 
         [Fact]
         public void AllItemsAreInstancesOfType_NotAllType_ShouldThrow()
@@ -75,22 +69,15 @@ namespace Testify
         }
 
         [Fact]
-        public void AllItemsAreNotNull_NoNull_ShouldNotThrow()
-        {
-            Assert(new[] { 1, 2, 3 }).AllItemsAreNotNull();
-        }
+        public void AllItemsAreNotNull_NoNull_ShouldNotThrow() => Assert(new[] { 1, 2, 3 }).AllItemsAreNotNull();
 
         [Fact]
-        public void AllItemsAreNotNull_MessageNoNull_ShouldNotThrow()
-        {
+        public void AllItemsAreNotNull_MessageNoNull_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).AllItemsAreNotNull("Some message.");
-        }
 
         [Fact]
-        public void AllItemsAreNotNull_MessageParametersNoNull_ShouldNotThrow()
-        {
+        public void AllItemsAreNotNull_MessageParametersNoNull_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).AllItemsAreNotNull("Some {0}.", "message");
-        }
 
         [Fact]
         public void AllItemsAreNotNull_Null_ShouldThrow()
@@ -141,22 +128,16 @@ namespace Testify
         }
 
         [Fact]
-        public void AllItemsAreUnique_UniqueItems_ShouldNotThrow()
-        {
+        public void AllItemsAreUnique_UniqueItems_ShouldNotThrow() =>
             Assert(Enumerable.Range(0, 10)).AllItemsAreUnique();
-        }
 
         [Fact]
-        public void AllItemsAreUnique_MessageUniqueItems_ShouldNotThrow()
-        {
+        public void AllItemsAreUnique_MessageUniqueItems_ShouldNotThrow() =>
             Assert(new[] { "foo", "bar", "baz" }).AllItemsAreUnique("Some message.");
-        }
 
         [Fact]
-        public void AllItemsAreUnique_MessageParametersUniqueItems_ShouldNotThrow()
-        {
+        public void AllItemsAreUnique_MessageParametersUniqueItems_ShouldNotThrow() =>
             Assert(new[] { "foo", "bar", "baz" }).AllItemsAreUnique("Some {0}.", "message");
-        }
 
         [Fact]
         public void AllItemsAreUnique_DuplicateNull_ShouldThrow()
@@ -351,22 +332,15 @@ namespace Testify
         }
 
         [Fact]
-        public void Contains_ContainedElement_ShouldNotThrow()
-        {
-            Assert(new[] { 1, 2, 3 }).Contains(2);
-        }
+        public void Contains_ContainedElement_ShouldNotThrow() => Assert(new[] { 1, 2, 3 }).Contains(2);
 
         [Fact]
-        public void Contains_MessageContainedElement_ShouldNotThrow()
-        {
+        public void Contains_MessageContainedElement_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).Contains(2, "Some message.");
-        }
 
         [Fact]
-        public void Contains_MessageParametersContainedElement_ShouldNotThrow()
-        {
+        public void Contains_MessageParametersContainedElement_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).Contains(2, "Some {0}.", "message");
-        }
 
         [Fact]
         public void Contains_ItemNotFound_ShouldThrow()
@@ -417,22 +391,16 @@ namespace Testify
         }
 
         [Fact]
-        public void Contains_ComparerItemFound_ShouldNotThrow()
-        {
+        public void Contains_ComparerItemFound_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).Contains("bar", StringComparer.OrdinalIgnoreCase);
-        }
 
         [Fact]
-        public void Contains_MessageComparerItemFound_ShouldNotThrow()
-        {
+        public void Contains_MessageComparerItemFound_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).Contains("bar", StringComparer.OrdinalIgnoreCase, "Some message.");
-        }
 
         [Fact]
-        public void Contains_MessageParametersComparerItemFound_ShouldNotThrow()
-        {
+        public void Contains_MessageParametersComparerItemFound_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).Contains("bar", StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
-        }
 
         [Fact]
         public void Contains_ComparerItemNotFound_ShouldThrow()
@@ -483,22 +451,15 @@ namespace Testify
         }
 
         [Fact]
-        public void DoesNotContain_ItemNotFound_ShouldNotThrow()
-        {
-            Assert(new[] { 1, 2, 3 }).DoesNotContain(4);
-        }
+        public void DoesNotContain_ItemNotFound_ShouldNotThrow() => Assert(new[] { 1, 2, 3 }).DoesNotContain(4);
 
         [Fact]
-        public void DoesNotContain_MessageItemNotFound_ShouldNotThrow()
-        {
+        public void DoesNotContain_MessageItemNotFound_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).DoesNotContain(4, "Some message.");
-        }
 
         [Fact]
-        public void DoesNotContain_MessageParametersItemNotFound_ShouldNotThrow()
-        {
+        public void DoesNotContain_MessageParametersItemNotFound_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).DoesNotContain(4, "Some {0}.", "message");
-        }
 
         [Fact]
         public void DoesNotContain_ItemFound_ShouldThrow()
@@ -597,22 +558,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsEquivalentTo_Equivalent_ShouldNotThrow()
-        {
+        public void IsEquivalentTo_Equivalent_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsEquivalentTo(new[] { 3, 2, 1 });
-        }
 
         [Fact]
-        public void IsEquivalentTo_MessageEquivalent_ShouldNotThrow()
-        {
+        public void IsEquivalentTo_MessageEquivalent_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsEquivalentTo(new[] { 3, 2, 1 }, "Some message.");
-        }
 
         [Fact]
-        public void IsEquivalentTo_MessageParametersEquivalent_ShouldNotThrow()
-        {
+        public void IsEquivalentTo_MessageParametersEquivalent_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsEquivalentTo(new[] { 3, 2, 1 }, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsEquivalentTo_SameReference_ShouldNotThrow()
@@ -732,22 +687,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsEquivalentTo_ComparerEquivalent_ShouldNotThrow()
-        {
+        public void IsEquivalentTo_ComparerEquivalent_ShouldNotThrow() =>
             Assert(new[] { "foo", "bar" }).IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase);
-        }
 
         [Fact]
-        public void IsEquivalentTo_ComparerMessageEquivalent_ShouldNotThrow()
-        {
+        public void IsEquivalentTo_ComparerMessageEquivalent_ShouldNotThrow() =>
             Assert(new[] { "foo", "bar" }).IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
-        }
 
         [Fact]
-        public void IsEquivalentTo_ComparerMessageParametersEquivalent_ShouldNotThrow()
-        {
+        public void IsEquivalentTo_ComparerMessageParametersEquivalent_ShouldNotThrow() =>
             Assert(new[] { "foo", "bar" }).IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsEquivalentTo_ComparerSameReference_ShouldNotThrow()
@@ -867,22 +816,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotEquivalentTo_MismatchedItems_ShouldNotThrow()
-        {
+        public void IsNotEquivalentTo_MismatchedItems_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotEquivalentTo(new[] { 1, 2, 3, 4 });
-        }
 
         [Fact]
-        public void IsNotEquivalentTo_MessageMismatchedItems_ShouldNotThrow()
-        {
+        public void IsNotEquivalentTo_MessageMismatchedItems_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotEquivalentTo(new[] { 1, 2, 3, 4 }, "Some message.");
-        }
 
         [Fact]
-        public void IsNotEquivalentTo_MessageParametersMismatchedItems_ShouldNotThrow()
-        {
+        public void IsNotEquivalentTo_MessageParametersMismatchedItems_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotEquivalentTo(new[] { 1, 2, 3, 4 }, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsNotEquivalentTo_SameReference_ShouldThrow()
@@ -984,22 +927,23 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotEquivalentTo_ComparerMismatchedItems_ShouldNotThrow()
-        {
-            Assert(new[] { "foo", "Bar" }).IsNotEquivalentTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase);
-        }
+        public void IsNotEquivalentTo_ComparerMismatchedItems_ShouldNotThrow() =>
+            Assert(new[] { "foo", "Bar" })
+                .IsNotEquivalentTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase);
 
         [Fact]
-        public void IsNotEquivalentTo_MessageComparerMismatchedItems_ShouldNotThrow()
-        {
-            Assert(new[] { "foo", "Bar" }).IsNotEquivalentTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
-        }
+        public void IsNotEquivalentTo_MessageComparerMismatchedItems_ShouldNotThrow() =>
+            Assert(new[] { "foo", "Bar" })
+                .IsNotEquivalentTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
 
         [Fact]
-        public void IsNotEquivalentTo_MessageParametersComparerMismatchedItems_ShouldNotThrow()
-        {
-            Assert(new[] { "foo", "Bar" }).IsNotEquivalentTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
-        }
+        public void IsNotEquivalentTo_MessageParametersComparerMismatchedItems_ShouldNotThrow() =>
+            Assert(new[] { "foo", "Bar" })
+                .IsNotEquivalentTo(
+                    new[] { "foo", "bar", "baz" },
+                    StringComparer.OrdinalIgnoreCase,
+                    "Some {0}.",
+                    "message");
 
         [Fact]
         public void IsNotEquivalentTo_ComparerSameReference_ShouldThrow()
@@ -1101,22 +1045,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotSequenceEqualTo_NotEqual_ShouldNotThrow()
-        {
+        public void IsNotSequenceEqualTo_NotEqual_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotSequenceEqualTo(new[] { 1, 3, 2 });
-        }
 
         [Fact]
-        public void IsNotSequenceEqualTo_MessageNotEqual_ShouldNotThrow()
-        {
+        public void IsNotSequenceEqualTo_MessageNotEqual_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotSequenceEqualTo(new[] { 1, 3, 2 }, "Some message.");
-        }
 
         [Fact]
-        public void IsNotSequenceEqualTo_MessageParametersNotEqual_ShouldNotThrow()
-        {
+        public void IsNotSequenceEqualTo_MessageParametersNotEqual_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotSequenceEqualTo(new[] { 1, 3, 2 }, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsNotSequenceEqualTo_Equal_ShouldThrow()
@@ -1218,22 +1156,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotSequenceEqualTo_ComparerNotEqual_ShouldNotThrow()
-        {
+        public void IsNotSequenceEqualTo_ComparerNotEqual_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" });
-        }
 
         [Fact]
-        public void IsNotSequenceEqualTo_MessageComparerNotEqual_ShouldNotThrow()
-        {
+        public void IsNotSequenceEqualTo_MessageComparerNotEqual_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
-        }
 
         [Fact]
-        public void IsNotSequenceEqualTo_MessageParametersComparerNotEqual_ShouldNotThrow()
-        {
+        public void IsNotSequenceEqualTo_MessageParametersComparerNotEqual_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsNotSequenceEqualTo_ComparerEqual_ShouldThrow()
@@ -1335,22 +1267,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotSubsetOf_NotSubset_ShouldNotThrow()
-        {
+        public void IsNotSubsetOf_NotSubset_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotSubsetOf(new[] { 1, 2 });
-        }
 
         [Fact]
-        public void IsNotSubsetOf_MessageNotSubset_ShouldNotThrow()
-        {
+        public void IsNotSubsetOf_MessageNotSubset_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotSubsetOf(new[] { 1, 2 }, "Some message.");
-        }
 
         [Fact]
-        public void IsNotSubsetOf_MessageParametersNotSubset_ShouldNotThrow()
-        {
+        public void IsNotSubsetOf_MessageParametersNotSubset_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsNotSubsetOf(new[] { 1, 2 }, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsNotSubsetOf_Subset_ShouldThrow()
@@ -1401,22 +1327,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsNotSubsetOf_ComparerNotSubset_ShouldNotThrow()
-        {
+        public void IsNotSubsetOf_ComparerNotSubset_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar", "Baz" }).IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase);
-        }
 
         [Fact]
-        public void IsNotSubsetOf_MessageComparerNotSubset_ShouldNotThrow()
-        {
+        public void IsNotSubsetOf_MessageComparerNotSubset_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar", "Baz" }).IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
-        }
 
         [Fact]
-        public void IsNotSubsetOf_MessageParametersComparerNotSubset_ShouldNotThrow()
-        {
+        public void IsNotSubsetOf_MessageParametersComparerNotSubset_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar", "Baz" }).IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsNotSubsetOf_ComparerSubset_ShouldThrow()
@@ -1467,22 +1387,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsSequenceEqualTo_Equal_ShouldNotThrow()
-        {
+        public void IsSequenceEqualTo_Equal_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsSequenceEqualTo(new[] { 1, 2, 3 });
-        }
 
         [Fact]
-        public void IsSequenceEqualTo_MessageEqual_ShouldNotThrow()
-        {
+        public void IsSequenceEqualTo_MessageEqual_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsSequenceEqualTo(new[] { 1, 2, 3 }, "Some message.");
-        }
 
         [Fact]
-        public void IsSequenceEqualTo_MessageParametersEqual_ShouldNotThrow()
-        {
+        public void IsSequenceEqualTo_MessageParametersEqual_ShouldNotThrow() =>
             Assert(new[] { 1, 2, 3 }).IsSequenceEqualTo(new[] { 1, 2, 3 }, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsSequenceEqualTo_DifferentLengths_ShouldThrow()
@@ -1565,22 +1479,16 @@ namespace Testify
         }
 
         [Fact]
-        public void IsSequenceEqualTo_ComparerEqual_ShouldNotThrow()
-        {
+        public void IsSequenceEqualTo_ComparerEqual_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase);
-        }
 
         [Fact]
-        public void IsSequenceEqualTo_MessageComparerEqual_ShouldNotThrow()
-        {
+        public void IsSequenceEqualTo_MessageComparerEqual_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
-        }
 
         [Fact]
-        public void IsSequenceEqualTo_MessageParametersComparerEqual_ShouldNotThrow()
-        {
+        public void IsSequenceEqualTo_MessageParametersComparerEqual_ShouldNotThrow() =>
             Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
-        }
 
         [Fact]
         public void IsSequenceEqualTo_ComparerDifferentLengths_ShouldThrow()

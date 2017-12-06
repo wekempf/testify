@@ -7,40 +7,26 @@ namespace Testify.Tests
     public class TaskAssertionsTests
     {
         [Fact]
-        public void Completes_Completed_ShouldNotThrow()
-        {
-            Assert(Task.FromResult(1)).Completes();
-        }
+        public void Completes_Completed_ShouldNotThrow() => Assert(Task.FromResult(1)).Completes();
 
         [Fact]
-        public void Completes_MessageCompleted_ShouldNotThrow()
-        {
+        public void Completes_MessageCompleted_ShouldNotThrow() =>
             Assert(Task.FromResult(1)).Completes("Some message.");
-        }
 
         [Fact]
-        public void Completes_MessageParametersCompleted_ShouldNotThrow()
-        {
+        public void Completes_MessageParametersCompleted_ShouldNotThrow() =>
             Assert(Task.FromResult(1)).Completes("Some {0}.", "message");
-        }
 
         [Fact]
-        public void Completes_InTime_ShouldNotThrow()
-        {
+        public void Completes_InTime_ShouldNotThrow() =>
             Assert(Task.Delay(100)).Completes();
-        }
 
         [Fact]
-        public void Completes_MessageInTime_ShouldNotThrow()
-        {
-            Assert(Task.Delay(100)).Completes("Some message.");
-        }
+        public void Completes_MessageInTime_ShouldNotThrow() => Assert(Task.Delay(100)).Completes("Some message.");
 
         [Fact]
-        public void Completes_MessageParametersInTime_ShouldNotThrow()
-        {
+        public void Completes_MessageParametersInTime_ShouldNotThrow() =>
             Assert(Task.Delay(100)).Completes("Some {0}.", "message");
-        }
 
         [Fact]
         public void Completes_Uncompleted_Throws()
@@ -97,40 +83,26 @@ namespace Testify.Tests
         }
 
         [Fact]
-        public void Completes_TimeoutCompleted_ShouldNotThrow()
-        {
-            Assert(Task.FromResult(1)).Completes(1);
-        }
+        public void Completes_TimeoutCompleted_ShouldNotThrow() => Assert(Task.FromResult(1)).Completes(1);
 
         [Fact]
-        public void Completes_TimeoutMessageCompleted_ShouldNotThrow()
-        {
+        public void Completes_TimeoutMessageCompleted_ShouldNotThrow() =>
             Assert(Task.FromResult(1)).Completes(1, "Some message.");
-        }
 
         [Fact]
-        public void Completes_TimeoutMessageParametersCompleted_ShouldNotThrow()
-        {
+        public void Completes_TimeoutMessageParametersCompleted_ShouldNotThrow() =>
             Assert(Task.FromResult(1)).Completes(1, "Some {0}.", "message");
-        }
 
         [Fact]
-        public void Completes_TimeoutInTime_ShouldNotThrow()
-        {
-            Assert(Task.Delay(100)).Completes(200);
-        }
+        public void Completes_TimeoutInTime_ShouldNotThrow() => Assert(Task.Delay(100)).Completes(200);
 
         [Fact]
-        public void Completes_TimeoutMessageInTime_ShouldNotThrow()
-        {
-            Assert(Task.Delay(100)).Completes(200, "Some message.");
-        }
+        public void Completes_TimeoutMessageInTime_ShouldNotThrow() =>
+            Assert(Task.Delay(100)).Completes(1000, "Some message.");
 
         [Fact]
-        public void Completes_TimeoutMessageParametersInTime_ShouldNotThrow()
-        {
-            Assert(Task.Delay(100)).Completes(200, "Some {0}.", "message");
-        }
+        public void Completes_TimeoutMessageParametersInTime_ShouldNotThrow() =>
+            Assert(Task.Delay(100)).Completes(1000, "Some {0}.", "message");
 
         [Fact]
         public void Completes_TimeoutUncompleted_Throws()

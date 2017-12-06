@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Testify.Assertions;
 
 namespace Testify
@@ -39,16 +35,16 @@ namespace Testify
         }
 
         /// <summary>
+        /// Gets the collection of test methods to run when verifying the contract.
+        /// </summary>
+        /// <returns>A collection of test methods to run.</returns>
+        protected abstract IEnumerable<Action> GetTests();
+
+        /// <summary>
         /// Verifies the configuration of this <see cref="ContractVerifier"/>.
         /// </summary>
         protected virtual void VerifyConfiguration()
         {
         }
-
-        /// <summary>
-        /// Gets the collection of test methods to run when verifying the contract.
-        /// </summary>
-        /// <returns>A collection of test methods to run.</returns>
-        protected abstract IEnumerable<Action> GetTests();
     }
 }

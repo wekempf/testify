@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using static Testify.Assertions;
 
 namespace Testify
 {
@@ -10,9 +7,11 @@ namespace Testify
     /// Verifies the specified type conforms to the <see cref="IEquatable{T}"/> contract.
     /// </summary>
     /// <typeparam name="T">The type to verify.</typeparam>
-    public class EquatableVerifier<T> : ComparisonVerifierBase<T>
+    public class EquatableVerifier<T> : ContractVerifier
         where T : IEquatable<T>
     {
+        public bool SkipOperatorTests { get; set; }
+
         /// <summary>
         /// Gets or sets the factory method used to create unique items used to verify
         /// the contract.
@@ -20,13 +19,22 @@ namespace Testify
         /// <value>
         /// The unique items factory.
         /// </value>
-        public Func<T[]> UniqueItemsFactory
+        public Func<T[]> UniqueItemsFactory { get; set; }
+
+        private EqualityTests<T> EqualityTests { get; set; }
+
+        protected override IEnumerable<Action> GetTests()
         {
-            get { return ItemsFactory; }
-            set { ItemsFactory = value; }
+            return EqualityTests.GetTests();
         }
 
-        /// <inheritdoc/>
-        protected override string ItemsFactoryPropertyName => nameof(EquatableVerifier<T>.UniqueItemsFactory);
+        protected override void VerifyConfiguration()
+        {
+            EqualityTests = new EqualityTests<T>(UniqueItemsFactory)
+            {
+                SkipOperatorTests = SkipOperatorTests
+            };
+            EqualityTests.VerifyConfiguration(nameof(UniqueItemsFactory));
+        }
     }
 }

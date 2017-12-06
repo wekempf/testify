@@ -30,21 +30,6 @@ namespace Testify
         }
 
         /// <summary>
-        /// Ensures the argument is assignable to the specified type.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <param name="type">The type <paramref name="value"/> should be assignable to.</param>
-        /// <param name="argName">The name of the argument.</param>
-        /// <exception cref="ArgumentException">The <paramref name="value"/> is not assignable to the <paramref name="type"/>.</exception>
-        internal static void IsAssignableTo(object value, Type type, string argName)
-        {
-            if (!type.IsInstanceOfType(value))
-            {
-                throw new ArgumentException($"Value must be of type {type}", argName);
-            }
-        }
-
-        /// <summary>
         /// Ensures the argument is in the specified range.
         /// </summary>
         /// <typeparam name="T">The value type.</typeparam>
@@ -62,6 +47,37 @@ namespace Testify
             if (comparer.Compare(value, minimum) < 0 || comparer.Compare(value, maximum) > 0)
             {
                 throw new ArgumentOutOfRangeException(argName, message);
+            }
+        }
+
+        /// <summary>
+        /// Ensures the argument is assignable to the specified type.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="type">The type <paramref name="value"/> should be assignable to.</param>
+        /// <param name="argName">The name of the argument.</param>
+        /// <exception cref="ArgumentException">The <paramref name="value"/> is not assignable to the <paramref name="type"/>.</exception>
+        internal static void IsAssignableTo(object value, Type type, string argName)
+        {
+            if (!type.IsInstanceOfType(value))
+            {
+                throw new ArgumentException($"Value must be of type {type}", argName);
+            }
+        }
+
+        /// <summary>
+        /// Ensures the argument is an <see cref="Enum"/> type.
+        /// </summary>
+        /// <param name="value">The argument value.</param>
+        /// <param name="paramName">The argument name.</param>
+        /// <exception cref="ArgumentException">The <paramref name="value"/> was not an <see cref="Enum"/>
+        /// type.</exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static void IsEnumType(Type value, string paramName)
+        {
+            if (!value.IsEnum())
+            {
+                throw new ArgumentException(paramName, "Type must be an Enum type.");
             }
         }
 
@@ -100,22 +116,6 @@ namespace Testify
             if (string.IsNullOrEmpty(value))
             {
                 throw new ArgumentException("The string may not be empty.", argName);
-            }
-        }
-
-        /// <summary>
-        /// Ensures the argument is an <see cref="Enum"/> type.
-        /// </summary>
-        /// <param name="value">The argument value.</param>
-        /// <param name="paramName">The argument name.</param>
-        /// <exception cref="ArgumentException">The <paramref name="value"/> was not an <see cref="Enum"/>
-        /// type.</exception>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static void IsEnumType(Type value, string paramName)
-        {
-            if (!value.IsEnum())
-            {
-                throw new ArgumentException(paramName, "Type must be an Enum type.");
             }
         }
     }

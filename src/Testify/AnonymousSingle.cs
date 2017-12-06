@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Testify
 {
@@ -9,6 +8,68 @@ namespace Testify
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class AnonymousSingle
     {
+        /// <summary>
+        /// Creates a random positive <see langword="float"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <returns>A random positive <see langword="float"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        public static float AnyNegativeSingle(this IAnonymousData anon)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnySingle(float.MinValue, 0, Distribution.Uniform);
+        }
+
+        /// <summary>
+        /// Creates a random positive <see langword="float"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <param name="distribution">The distribution algorithm to use.</param>
+        /// <returns>A random positive <see langword="float"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        public static float AnyNegativeSingle(this IAnonymousData anon, Distribution distribution)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnySingle(float.MinValue, 0, distribution);
+        }
+
+        /// <summary>
+        /// Creates a random positive <see langword="float"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <returns>A random positive <see langword="float"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <remarks>
+        /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
+        /// perspective, but the term "positive" is used because this is what many would expect.
+        /// </remarks>
+        public static float AnyPositiveSingle(this IAnonymousData anon)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnySingle(0, float.MaxValue, Distribution.Uniform);
+        }
+
+        /// <summary>
+        /// Creates a random positive <see langword="float"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <param name="distribution">The distribution algorithm to use.</param>
+        /// <returns>A random positive <see langword="float"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <remarks>
+        /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
+        /// perspective, but the term "positive" is used because this is what many would expect.
+        /// </remarks>
+        public static float AnyPositiveSingle(this IAnonymousData anon, Distribution distribution)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnySingle(0, float.MaxValue, distribution);
+        }
+
         /// <summary>
         /// Creates a random <see langword="float"/> value using a uniform distribution algorithm.
         /// </summary>
@@ -71,68 +132,6 @@ namespace Testify
             Argument.InRange(maximum, minimum, float.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
 
             return (float)anon.AnyDouble(minimum, maximum, distribution);
-        }
-
-        /// <summary>
-        /// Creates a random positive <see langword="float"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <remarks>
-        /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
-        /// perspective, but the term "positive" is used because this is what many would expect.
-        /// </remarks>
-        public static float AnyPositiveSingle(this IAnonymousData anon)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnySingle(0, float.MaxValue, Distribution.Uniform);
-        }
-
-        /// <summary>
-        /// Creates a random positive <see langword="float"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="distribution">The distribution algorithm to use.</param>
-        /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <remarks>
-        /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
-        /// perspective, but the term "positive" is used because this is what many would expect.
-        /// </remarks>
-        public static float AnyPositiveSingle(this IAnonymousData anon, Distribution distribution)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnySingle(0, float.MaxValue, distribution);
-        }
-
-        /// <summary>
-        /// Creates a random positive <see langword="float"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        public static float AnyNegativeSingle(this IAnonymousData anon)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnySingle(float.MinValue, 0, Distribution.Uniform);
-        }
-
-        /// <summary>
-        /// Creates a random positive <see langword="float"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="distribution">The distribution algorithm to use.</param>
-        /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        public static float AnyNegativeSingle(this IAnonymousData anon, Distribution distribution)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnySingle(float.MinValue, 0, distribution);
         }
     }
 }

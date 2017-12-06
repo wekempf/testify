@@ -118,7 +118,7 @@ namespace Testify
                     {
                         AssertAll(
                             "Unexpected exception state.",
-                            () => Assert(e.Message).IsEqualTo("Some message. xyzzy failed. Assertion message."),
+                            () => Assert(e.Message).IsEqualTo("Some message. xyzzy failed. Assertion message. (first) (second)"),
                             () => Assert(e.InnerExceptions).IsSequenceEqualTo(inner));
                     });
         }
