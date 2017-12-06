@@ -393,7 +393,7 @@ namespace Testify
             foreach (var property in typeInfo.DeclaredProperties.Where(p => p.CanRead && p.CanWrite))
             {
                 var curValue = property.GetValue(right);
-                var newValue = anon.Any(property.PropertyType, v => !curValue.Equals(v));
+                var newValue = anon.Any(property.PropertyType, v => curValue == null ? v != null : !curValue.Equals(v));
                 property.SetValue(right, newValue);
                 if (!left.Equals(right))
                 {
