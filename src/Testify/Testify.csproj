@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
     <AssemblyName>Testify</AssemblyName>
     <RootNamespace>Testify</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Testify.Standard</PackageId>
+    <PackageId>Testify</PackageId>
     <Authors>William E. Kempf</Authors>
     <Description>Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework.</Description>
     <PackageLicenseUrl>https://raw.githubusercontent.com/wekempf/testify/master/LICENSE</PackageLicenseUrl>
