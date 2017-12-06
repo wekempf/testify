@@ -216,11 +216,16 @@ Task("Docs")
                 GitAddAll(pagesDirectory);
                 Information("Commit all changes...");
                 var sourceCommit = GitLogTip("./");
-                GitCommit(
-                    pagesDirectory,
-                    sourceCommit.Committer.Name,
-                    sourceCommit.Committer.Email,
-                    string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
+                try {
+                    GitCommit(
+                        pagesDirectory,
+                        sourceCommit.Committer.Name,
+                        sourceCommit.Committer.Email,
+                        string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
+                }
+                catch (LibGit2Sharp.EmptyCommitException e) {
+                }
+
                 Information("Publishing all changes...");
                 GitPush(pagesDirectory);
             } finally {
