@@ -44,11 +44,13 @@
 #addin Cake.DocFx
 #addin nuget:?package=Cake.Kudu
 
+var forceDocPublish = HasArgument("forceDocPublish");
+var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+
 var solution = File("Testify.sln");
 var isRunningOnBuildServer = AppVeyor.IsRunningOnAppVeyor;
-var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
 var solutions = GetFiles("**/*.sln") - GetFiles("**/packages/**/*.sln") - GetFiles("**/tools/**/*.sln");
 var testResultsDir = Directory("./TestResults");
 var coverageFile = testResultsDir + File("coverage.xml");
@@ -199,9 +201,10 @@ Task("Docs")
     };
     DocFxBuild(settings);
     Zip("./docs/_site", "./docs/site.zip");
-    if (isRunningOnBuildServer) {
+    if (isRunningOnBuildServer || forceDocPublish) {
         //if (branch == "master") {
             var pagesDirectory = "./pages";
+            Information("Cloning pages branch...");
             GitClone(gitPagesRepo, pagesDirectory, new GitCloneSettings { BranchName = gitPagesBranch });
             try {
                 Information("Sync output files...");
@@ -225,7 +228,10 @@ Task("Docs")
             }
        //}
     }
-});
+})
+.ReportError(exception =>
+    Information(exception)
+);
 
 Task("Default")
     .IsDependentOn("Push")
