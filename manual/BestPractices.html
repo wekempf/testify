@@ -8,7 +8,7 @@
     <title>Best Practices </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Best Practices ">
-    <meta name="generator" content="docfx 2.13.1.0">
+    <meta name="generator" content="docfx 2.28.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
@@ -137,7 +137,7 @@ frustrating to realize many of those tests aren&#39;t even testing the code you 
 to fix all of these tests &quot;for no good reason&quot; can lead to a team avoiding or abandoning testing altogether. So, it&#39;s
 very important that you decouple your unit test from non-relevant production code as much as possible, in order to avoid
 changes leading to broken tests that aren&#39;t testing the code that was modified.</p>
-<p>This is the first best practice where <code>Testify</code> can be of great help. The <a class="xref" href="../api/Testify.AnonymousData.html">AnonymousData</a> class can create objects,
+<p>This is the first best practice where <code>Testify</code> can be of great help. The @Testify.AnonymousData class can create objects,
 data and even mock objects for you, removing the coupling to any constructors in your production code. For more information
 on using this class, see <a class="xref" href="UsingAnonymousData.html">Using AnonymousData</a>.</p>
 <h2 id="ensure-tests-intent-is-clearly-understandable">Ensure Test&#39;s Intent is Clearly Understandable</h2>
@@ -147,8 +147,8 @@ it&#39;s very important that a developer is able to easily understand the test c
 production code quickly. If it&#39;s not easy to understand and fix the code quickly then, again, there&#39;s a tendency to just do
 anything to &quot;fix&quot; the test, including disabling it, rather than making the appropriate code change.</p>
 <p>Following AAA or Four Phase testing helps here. Keeping the Arrange phase short is obviously the most important thing here.
-This is another area where the <a class="xref" href="../api/Testify.AnonymousData.html">AnonymousData</a> class can be of help. It&#39;s ability to create objects and data can often
-reduce several lines of arrange code to a single method call. Further, when using <a class="xref" href="../api/Testify.AnonymousData.html">AnonymousData</a> you&#39;re clearly
+This is another area where the @Testify.AnonymousData class can be of help. It&#39;s ability to create objects and data can often
+reduce several lines of arrange code to a single method call. Further, when using @Testify.AnonymousData you&#39;re clearly
 declaring what parts of the arrangement are actually relevant to the test and what parts are merely necessary to be able to
 Act. This can lead to much clearer test code, with the intent clearly visible. For more information on using the class, see
 <a class="xref" href="UsingAnonymousData.html">Using AnonymousData</a>.</p>
@@ -160,7 +160,7 @@ the test becoming less understandable. If there&#39;s any information to be foun
 understanding the test, no matter how many times you repeat this bit of code in other tests you should <strong>not</strong> follow DRY
 principals and factor it out into a method or other reusable abstraction. By all means, factor out non-relevant and repeated
 code, just don&#39;t factor out the relevant code.</p>
-<div class="IMPORTANT"><h5>Important</h5><p><a class="xref" href="../api/Testify.AnonymousData.html">AnonymousData</a> is a very useful abstraction for keeping your tests DRY. Just be sure you don&#39;t use it in ways that
+<div class="IMPORTANT"><h5>Important</h5><p>@Testify.AnonymousData is a very useful abstraction for keeping your tests DRY. Just be sure you don&#39;t use it in ways that
 hide relevant information about what&#39;s being tested.</p>
 </div>
 <h2 id="use-only-a-single-logical-assertion">Use Only a Single &quot;Logical&quot; Assertion</h2>
@@ -204,7 +204,7 @@ to run in seconds. If this takes too long developers will run the tests less fre
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/docs/manual/BestPractices.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/wekempf/testify/blob/release/1.7.0/docs/manual/BestPractices.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -1,1 +1,224 @@
-{"homepages":[],"source_base_path":"C:/projects/testify/docs","xrefmap":"xrefmap.yml","files":[{"type":"ManagedReference","source_relative_path":"api/Testify.PopulateOption.yml","output":{".html":{"relative_path":"api/Testify.PopulateOption.html","hash":"b6zRM8mXPjLk+BFeIlI6KQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.StandardAssertions.yml","output":{".html":{"relative_path":"api/Testify.StandardAssertions.html","hash":"yrg05Kr6cD+RseKlKF17dw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.TestCollection.yml","output":{".html":{"relative_path":"api/Testify.TestCollection.html","hash":"61j/arcMm/5fFKNk4CBiYQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.TestSynchronizationContext.yml","output":{".html":{"relative_path":"api/Testify.TestSynchronizationContext.html","hash":"6IBADWZPACxKnTij8fe5Sw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousBool.yml","output":{".html":{"relative_path":"api/Testify.AnonymousBool.html","hash":"f+EiC8tkzXaFNBpNfrpPDQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousChar.yml","output":{".html":{"relative_path":"api/Testify.AnonymousChar.html","hash":"Ke4gGDWyWzvuliqBhxOHVA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousDataException.yml","output":{".html":{"relative_path":"api/Testify.AnonymousDataException.html","hash":"34BY0CVibulMnpE+AY5VZg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousDateTime.yml","output":{".html":{"relative_path":"api/Testify.AnonymousDateTime.html","hash":"8Z0qhF+wGuw47fd19kLfDw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousDecimal.yml","output":{".html":{"relative_path":"api/Testify.AnonymousDecimal.html","hash":"sGJc/kRzkykb09QvyY275g=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousEnum.yml","output":{".html":{"relative_path":"api/Testify.AnonymousEnum.html","hash":"CD0wPCWHbHYD6OhE7fOGwQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousInt16.yml","output":{".html":{"relative_path":"api/Testify.AnonymousInt16.html","hash":"d0Mdf139NGFZOpMVfsojqg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousInt64.yml","output":{".html":{"relative_path":"api/Testify.AnonymousInt64.html","hash":"d4LcnYSsJl/7AMO/2wZtpQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousMoq.yml","output":{".html":{"relative_path":"api/Testify.AnonymousMoq.html","hash":"GI8CFE71G7oXC2vRNdITWA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousTimeSpan.yml","output":{".html":{"relative_path":"api/Testify.AnonymousTimeSpan.html","hash":"pCer/Ka/AoRE8Nc4lCOO2w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AssertionException.yml","output":{".html":{"relative_path":"api/Testify.AssertionException.html","hash":"L3+w4lNOAuQHvuo+En01iw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.CollectionAssertions.yml","output":{".html":{"relative_path":"api/Testify.CollectionAssertions.html","hash":"Yw8NyANYCJv5thl8fT6Kvg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.ComparableVerifier-1.yml","output":{".html":{"relative_path":"api/Testify.ComparableVerifier-1.html","hash":"+d9DeJqMpOesoW7EiZzjkg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.ComparisonVerifierBase-1.yml","output":{".html":{"relative_path":"api/Testify.ComparisonVerifierBase-1.html","hash":"yTUf9rtmGKg86CQK6TMqUw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.ContractVerifier.yml","output":{".html":{"relative_path":"api/Testify.ContractVerifier.html","hash":"kqto2H13K09rzDx4IT5k/A=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.ExceptionAssertions.yml","output":{".html":{"relative_path":"api/Testify.ExceptionAssertions.html","hash":"75/ldjH4lvfolGXPGlk5FQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.IAnonymousData.yml","output":{".html":{"relative_path":"api/Testify.IAnonymousData.html","hash":"XJa/N2kH4GpIEBjCM+swiQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.IRegisterAnonymousData.yml","output":{".html":{"relative_path":"api/Testify.IRegisterAnonymousData.html","hash":"7dxEZP0uy3mH/UD5zVV9tA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.MoqCustomization.yml","output":{".html":{"relative_path":"api/Testify.MoqCustomization.html","hash":"9uL7Jmzt3Ezh+DyHurQnTQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.StringAssertions.yml","output":{".html":{"relative_path":"api/Testify.StringAssertions.html","hash":"AehuDelZATf+9Fe3ZEP6YA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.TaskAssertions.yml","output":{".html":{"relative_path":"api/Testify.TaskAssertions.html","hash":"Piq1dSEgi5yLD0tpqVIxWA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.yml","output":{".html":{"relative_path":"api/Testify.html","hash":"YTsk44u/K4nICor2asCD3Q=="}},"is_incremental":false,"version":""},{"type":"Resource","source_relative_path":"images/gavel_icon-64x64.png","output":{"resource":{"relative_path":"images/gavel_icon-64x64.png"}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.IAnonymousDataCustomization.yml","output":{".html":{"relative_path":"api/Testify.IAnonymousDataCustomization.html","hash":"wkMuqdlSiFVwTz6Nffrabw=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"api/index.md","output":{".html":{"relative_path":"api/index.html","hash":"9cQ78H5KtElBe/SU5LJ6kg=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"index.md","output":{".html":{"relative_path":"index.html","hash":"6bJyExIAtIH+L6Wj0BpxwA=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/AntiPatterns.md","output":{".html":{"relative_path":"manual/AntiPatterns.html","hash":"2F0tr4OQtb/VCyRnvmCpjg=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/Assertions.md","output":{".html":{"relative_path":"manual/Assertions.html","hash":"sYE2WFA2zJzUyAW+r988IQ=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/BestPractices.md","output":{".html":{"relative_path":"manual/BestPractices.html","hash":"GaLUmOKZX+NGrkoLNHZmCg=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/ContractVerifiers.md","output":{".html":{"relative_path":"manual/ContractVerifiers.html","hash":"TzcO9GCk2FCrfcjAUucurg=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/GoodUnitTests.md","output":{".html":{"relative_path":"manual/GoodUnitTests.html","hash":"xlY7CElN6agaK/qjRiCdFw=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/intro.md","output":{".html":{"relative_path":"manual/intro.html","hash":"rXXB/HCWVksPFWlxl6dUeQ=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/UsingAnonymousData.md","output":{".html":{"relative_path":"manual/UsingAnonymousData.html","hash":"NifQy1LLxzWbxoGDuR8CaQ=="}},"is_incremental":false,"version":""},{"type":"Conceptual","source_relative_path":"manual/WhyUnitTest.md","output":{".html":{"relative_path":"manual/WhyUnitTest.html","hash":"hCsOGlWK55DNnr2bQGBEhA=="}},"is_incremental":false,"version":""},{"type":"Toc","source_relative_path":"api/toc.yml","output":{".html":{"relative_path":"api/toc.html","hash":"Fq21ejXNOPudcn6c57qVfA=="}},"is_incremental":false,"version":""},{"type":"Toc","source_relative_path":"toc.yml","output":{".html":{"relative_path":"toc.html","hash":"i4aR+FXZ4ULZMhXa9oe5dQ=="}},"is_incremental":false,"version":""},{"type":"Toc","source_relative_path":"manual/toc.yml","output":{".html":{"relative_path":"manual/toc.html","hash":"M6gMy9k+/68crczCxDrmPA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.ActualValue-1.yml","output":{".html":{"relative_path":"api/Testify.ActualValue-1.html","hash":"ZfJNkWMcmXn1UjXhx32R2Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousByte.yml","output":{".html":{"relative_path":"api/Testify.AnonymousByte.html","hash":"L5moZuAtMeE20z7XqTHqXw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousData.yml","output":{".html":{"relative_path":"api/Testify.AnonymousData.html","hash":"hqAxAqqgl6Ygr0q/RfgvqA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousDataExtensions.yml","output":{".html":{"relative_path":"api/Testify.AnonymousDataExtensions.html","hash":"new5+kDf3S6xs3V0xF3AXw=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousDateTimeOffset.yml","output":{".html":{"relative_path":"api/Testify.AnonymousDateTimeOffset.html","hash":"Xtj4iyE5zu/Af+YhYmT18g=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousDouble.yml","output":{".html":{"relative_path":"api/Testify.AnonymousDouble.html","hash":"UkW4Cb7G1iBa5dM1t6x4Jg=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousEnumerable.yml","output":{".html":{"relative_path":"api/Testify.AnonymousEnumerable.html","hash":"RtfR9i5QwJAgsywxvjj8kQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousInt32.yml","output":{".html":{"relative_path":"api/Testify.AnonymousInt32.html","hash":"SpWijVK7RzCdxmndC25NJQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousSingle.yml","output":{".html":{"relative_path":"api/Testify.AnonymousSingle.html","hash":"OjvJHh7008qPRXf3gyjo8Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.AnonymousString.yml","output":{".html":{"relative_path":"api/Testify.AnonymousString.html","hash":"QgfVyms+03jisH2eNniV7w=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.Assertions.yml","output":{".html":{"relative_path":"api/Testify.Assertions.html","hash":"godL/IgKEST3ky+a/HNijQ=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.Classifier-1.yml","output":{".html":{"relative_path":"api/Testify.Classifier-1.html","hash":"IxPWZudkxIlsTCB0K9D9yA=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.Distribution.yml","output":{".html":{"relative_path":"api/Testify.Distribution.html","hash":"3TLjWyh0GL5zzdGsICC52A=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.EquatableVerifier-1.yml","output":{".html":{"relative_path":"api/Testify.EquatableVerifier-1.html","hash":"aqsQAAcTK/M2eg3BlzO33Q=="}},"is_incremental":false,"version":""},{"type":"ManagedReference","source_relative_path":"api/Testify.IAnonymousDataContext.yml","output":{".html":{"relative_path":"api/Testify.IAnonymousDataContext.html","hash":"MRxzYq71pE5ED6+RNBlxog=="}},"is_incremental":false,"version":""},{"type":"Resource","source_relative_path":"images/gavel_icon-300x300.png","output":{"resource":{"relative_path":"images/gavel_icon-300x300.png"}},"is_incremental":false,"version":""}],"version_info":{}}
+{
+  "homepages": [],
+  "source_base_path": "C:/projects/testify/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "+j4t4Q2w01F4AECo/R0h1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "VllyK96vNHFJ2KkfMLGH5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/gavel_icon-300x300.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/gavel_icon-300x300.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/gavel_icon-64x64.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/gavel_icon-64x64.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "sYpPFjkLYYg2Pw5JSEF65g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/AntiPatterns.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/AntiPatterns.html",
+          "hash": "yMogKod4CRCXrwvfPAX8Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Assertions.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Assertions.html",
+          "hash": "YF+8MeOhUwlNnYicMaaMqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/BestPractices.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/BestPractices.html",
+          "hash": "YY9CY6dCP4Bp7JM9/q2PyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/ContractVerifiers.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/ContractVerifiers.html",
+          "hash": "i4xfLja3Pv9Qtt/W7QApMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/GoodUnitTests.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/GoodUnitTests.html",
+          "hash": "RTcoZUK0PGv+myp2utIvtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/UsingAnonymousData.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/UsingAnonymousData.html",
+          "hash": "eofkRaKzR4C36Qbeq3cnyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/WhyUnitTest.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/WhyUnitTest.html",
+          "hash": "jbdDvux2ipcH3iSSAA6/hQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/intro.html",
+          "hash": "rRV1jyD9+o6gzzVlPnO0sQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "BimEfESwm1JVm/OVbW1VNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "jNNVBTZat4XaaxFMTLM70w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
