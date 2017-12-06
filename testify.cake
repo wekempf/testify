@@ -31,7 +31,6 @@
  *    Performs a complete build of everything. 
  */
 
-#tool nuget:?package=vswhere
 #tool nuget:?package=xunit.runner.console
 #tool nuget:?package=OpenCover
 #tool nuget:?package=ReportGenerator
@@ -39,17 +38,20 @@
 #tool coveralls.net
 #tool docfx.console
 #tool "nuget:?package=GitReleaseNotes"
+#tool "KuduSync.NET"
 
 #addin Cake.Coveralls
 #addin nuget:?package=Cake.Git
 #addin Cake.DocFx
-#addin nuget:?package=Cake.Kudu
+#addin Cake.Kudu
 
+var forceDocPublish = HasArgument("forceDocPublish");
+var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+
 var solution = File("Testify.sln");
 var isRunningOnBuildServer = AppVeyor.IsRunningOnAppVeyor;
-var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
 var solutions = GetFiles("**/*.sln") - GetFiles("**/packages/**/*.sln") - GetFiles("**/tools/**/*.sln");
 var testResultsDir = Directory("./TestResults");
 var coverageFile = testResultsDir + File("coverage.xml");
@@ -57,14 +59,14 @@ var releaseNuGetSource = "https://www.nuget.org/api/v2/package";
 var releaseNuGetApiKey = EnvironmentVariable("NuGetApiKey");
 var unstableNuGetSource = "https://www.myget.org/F/wekempf/api/v2/package";
 var unstableNuGetApiKey = EnvironmentVariable("MyGetApiKey");
-var gitPagesRepo = "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git";
+var gitPagesRepo = isRunningOnBuildServer
+    ? "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git"
+    : "https://github.com/wekempf/testify.git";
 var gitPagesBranch = "gh-pages";
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
-var vsLatest = VSWhereLatest();
-var msBuildPath = GetFiles(vsLatest + "/**/bin/msbuild.exe").First().FullPath;
+
 Information("Branch: " + branch);
-Information("Visual Studio: " + vsLatest);
-Information("MSBuild: " + msBuildPath);
+
 GitVersion version = null;
 
 Task("Clean")
@@ -86,7 +88,6 @@ Task("Restore")
     .Does(() =>
 {
     var settings = GetMSBuildSettings();
-    Information(settings.ToolPath);
     settings.Targets.Add("Restore");
     foreach (var sln in solutions) {
         MSBuild(sln, settings);
@@ -201,27 +202,42 @@ Task("Docs")
     };
     DocFxBuild(settings);
     Zip("./docs/_site", "./docs/site.zip");
-    if (isRunningOnBuildServer) {
+    if (isRunningOnBuildServer || forceDocPublish) {
         //if (branch == "master") {
-            GitClone(gitPagesRepo, "./pages", new GitCloneSettings { BranchName = gitPagesBranch });
-            Information("Sync output files...");
-            Kudu.Sync("./docs/_site", "./pages", new KuduSyncSettings {
-                ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
-            });
-            Information("Stage all changes...");
-            GitAddAll("./pages");
-            Information("Commit all changes...");
-            var sourceCommit = GitLogTip("./");
-            GitCommit(
-                "./pages",
-                sourceCommit.Committer.Name,
-                sourceCommit.Committer.Email,
-                string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
-            Information("Publishing all changes...");
-            GitPush("./page");
+            var pagesDirectory = "./pages";
+            Information("Cloning pages branch...");
+            GitClone(gitPagesRepo, pagesDirectory, new GitCloneSettings { BranchName = gitPagesBranch });
+            try {
+                Information("Sync output files...");
+                Kudu.Sync("./docs/_site", pagesDirectory, new KuduSyncSettings {
+                    ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
+                });
+                Information("Stage all changes...");
+                GitAddAll(pagesDirectory);
+                Information("Commit all changes...");
+                var sourceCommit = GitLogTip("./");
+                try {
+                    GitCommit(
+                        pagesDirectory,
+                        sourceCommit.Committer.Name,
+                        sourceCommit.Committer.Email,
+                        string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
+                }
+                catch (LibGit2Sharp.EmptyCommitException e) {
+                }
+
+                Information("Publishing all changes...");
+                GitPush(pagesDirectory);
+            } finally {
+                Information("Cleaning up pages clone...");
+                DeleteDirectory(pagesDirectory, new DeleteDirectorySettings { Recursive = true, Force = true });
+            }
        //}
     }
-});
+})
+.ReportError(exception =>
+    Information(exception)
+);
 
 Task("Default")
     .IsDependentOn("Push")
@@ -232,12 +248,8 @@ RunTarget(target);
 MSBuildSettings GetMSBuildSettings() {
     var settings = new MSBuildSettings
     {
-        ToolPath = msBuildPath,
         Configuration = configuration,
     };
-    if (settings.Properties == null) {
-        Information("Null properties.");
-    }
     if (version != null) {
         settings.Properties.Add("AssemblyVersion", new[] { version.AssemblySemVer });
         settings.Properties.Add("FileVersion", new[] { version.MajorMinorPatch + ".0" });
