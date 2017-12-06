@@ -31,7 +31,6 @@
  *    Performs a complete build of everything. 
  */
 
-#tool nuget:?package=vswhere
 #tool nuget:?package=xunit.runner.console
 #tool nuget:?package=OpenCover
 #tool nuget:?package=ReportGenerator
@@ -60,11 +59,9 @@ var unstableNuGetApiKey = EnvironmentVariable("MyGetApiKey");
 var gitPagesRepo = "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git";
 var gitPagesBranch = "gh-pages";
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
-var vsLatest = VSWhereLatest();
-var msBuildPath = GetFiles(vsLatest + "/**/bin/msbuild.exe").First().FullPath;
+
 Information("Branch: " + branch);
-Information("Visual Studio: " + vsLatest);
-Information("MSBuild: " + msBuildPath);
+
 GitVersion version = null;
 
 Task("Clean")
@@ -86,7 +83,6 @@ Task("Restore")
     .Does(() =>
 {
     var settings = GetMSBuildSettings();
-    Information(settings.ToolPath);
     settings.Targets.Add("Restore");
     foreach (var sln in solutions) {
         MSBuild(sln, settings);
@@ -232,12 +228,8 @@ RunTarget(target);
 MSBuildSettings GetMSBuildSettings() {
     var settings = new MSBuildSettings
     {
-        ToolPath = msBuildPath,
         Configuration = configuration,
     };
-    if (settings.Properties == null) {
-        Information("Null properties.");
-    }
     if (version != null) {
         settings.Properties.Add("AssemblyVersion", new[] { version.AssemblySemVer });
         settings.Properties.Add("FileVersion", new[] { version.MajorMinorPatch + ".0" });
