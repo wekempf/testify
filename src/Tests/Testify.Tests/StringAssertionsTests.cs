@@ -55,10 +55,7 @@ namespace Testify
         }
 
         [Fact]
-        public void Contains_Substring_ShouldNotThrow()
-        {
-            Assert("foobar").Contains("foo");
-        }
+        public void Contains_Substring_ShouldNotThrow() => Assert("foobar").Contains("foo");
 
         [Fact]
         public void DoesNotMatch_GivenMessage_ShouldDisplayMessage()
@@ -109,10 +106,7 @@ namespace Testify
         }
 
         [Fact]
-        public void DoesNotMatch_Mismatch_ShouldNotThrow()
-        {
-            Assert("foo").DoesNotMatch(new Regex("bar"));
-        }
+        public void DoesNotMatch_Mismatch_ShouldNotThrow() => Assert("foo").DoesNotMatch(new Regex("bar"));
 
         [Fact]
         public void EndsWith_GivenMessage_ShouldDisplayMessage()
@@ -163,10 +157,7 @@ namespace Testify
         }
 
         [Fact]
-        public void EndsWith_Suffix_ShouldNotThrow()
-        {
-            Assert("foo").EndsWith("o");
-        }
+        public void EndsWith_Suffix_ShouldNotThrow() => Assert("foo").EndsWith("o");
 
         [Fact]
         public void Matches_GivenMessage_ShouldDisplayMessage()
@@ -201,10 +192,7 @@ namespace Testify
         }
 
         [Fact]
-        public void Matches_Match_ShouldNotThrow()
-        {
-            Assert("foo").Matches(new Regex("foo"));
-        }
+        public void Matches_Match_ShouldNotThrow() => Assert("foo").Matches(new Regex("foo"));
 
         [Fact]
         public void Matches_Mismatch_ShouldThrow()
@@ -271,9 +259,6 @@ namespace Testify
         }
 
         [Fact]
-        public void StartsWith_Prefix_ShouldNotThrow()
-        {
-            Assert("foo").StartsWith("f");
-        }
+        public void StartsWith_Prefix_ShouldNotThrow() => Assert("foo").StartsWith("f");
     }
 }

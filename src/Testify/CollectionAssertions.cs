@@ -21,8 +21,10 @@ namespace Testify
         /// <param name="collection">The collection to verify.</param>
         /// <param name="expectedType">The type expected to be found in the inheritance hierarchy of every
         /// element in.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <c>null</c>.</exception>
-        /// <exception cref="AssertionException">Not all items in the collection were of the specified type.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="expectedType"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException">Not all items in the collection were of the specified
+        /// type.</exception>
         public static void AllItemsAreInstancesOfType<T>(this ActualValue<T> collection, Type expectedType)
             where T : IEnumerable
         {
@@ -43,9 +45,14 @@ namespace Testify
         /// element in.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <c>null</c>.</exception>
-        /// <exception cref="AssertionException">Not all items in the collection were of the specified type.</exception>
-        public static void AllItemsAreInstancesOfType<T>(this ActualValue<T> collection, Type expectedType, string message)
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="expectedType"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException">Not all items in the collection were of the specified
+        /// type.</exception>
+        public static void AllItemsAreInstancesOfType<T>(
+            this ActualValue<T> collection,
+            Type expectedType,
+            string message)
             where T : IEnumerable
         {
             Argument.NotNull(collection, nameof(collection));
@@ -66,16 +73,22 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expectedType"/> is <c>null</c>.</exception>
-        /// <exception cref="AssertionException">Not all items in the collection were of the specified type.</exception>
-        public static void AllItemsAreInstancesOfType<T>(this ActualValue<T> collection, Type expectedType, string message, params object[] parameters)
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="expectedType"/> is <c>null</c>.</exception>
+        /// <exception cref="AssertionException">Not all items in the collection were of the specified
+        /// type.</exception>
+        public static void AllItemsAreInstancesOfType<T>(
+            this ActualValue<T> collection,
+            Type expectedType,
+            string message,
+            params object[] parameters)
             where T : IEnumerable
         {
             Argument.NotNull(collection, nameof(collection));
             Argument.NotNull((object)collection.Value, nameof(collection));
             Argument.NotNull(expectedType, nameof(expectedType));
 
-            int index = 0;
+            var index = 0;
             foreach (var item in collection.Value)
             {
                 if (!expectedType.IsInstanceOfType(item))
@@ -97,7 +110,8 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection in which to search for elements that are <c>null</c>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is
+        /// <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were <c>null</c>.</exception>
         public static void AllItemsAreNotNull<T>(this ActualValue<T> collection)
             where T : IEnumerable
@@ -116,7 +130,8 @@ namespace Testify
         /// <param name="collection">The collection in which to search for elements that are <c>null</c>.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is
+        /// <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were <c>null</c>.</exception>
         public static void AllItemsAreNotNull<T>(this ActualValue<T> collection, string message)
             where T : IEnumerable
@@ -136,9 +151,13 @@ namespace Testify
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is
+        /// <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were <c>null</c>.</exception>
-        public static void AllItemsAreNotNull<T>(this ActualValue<T> collection, string message, params object[] parameters)
+        public static void AllItemsAreNotNull<T>(
+            this ActualValue<T> collection,
+            string message,
+            params object[] parameters)
             where T : IEnumerable
         {
             Argument.NotNull(collection, nameof(collection));
@@ -163,7 +182,8 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection in which to search for duplicate elements.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is
+        /// <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection)
             where T : IEnumerable
@@ -181,7 +201,8 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection in which to search for duplicate elements.</param>
         /// <param name="comparer">The comparer.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="comparer"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, IEqualityComparer comparer)
             where T : IEnumerable
@@ -201,7 +222,8 @@ namespace Testify
         /// <param name="collection">The collection in which to search for duplicate elements.</param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) is
+        /// <c>null</c>.</exception>
         /// <exception cref="AssertionException">One or more items in the collection were not unique.</exception>
         public static void AllItemsAreUnique<T>(this ActualValue<T> collection, string message)
             where T : IEnumerable
@@ -272,7 +294,7 @@ namespace Testify
             Argument.NotNull((object)collection.Value, nameof(collection));
             Argument.NotNull(comparer, nameof(comparer));
 
-            bool nullFound = false;
+            var nullFound = false;
             var found = new HashSet<object>(Comparer.From(comparer));
             foreach (var item in collection.Value)
             {
@@ -730,15 +752,16 @@ namespace Testify
                 Throw(nameof(IsEquivalentTo), null, message, parameters);
             }
 
-            int expectedCount;
-            int actualCount;
-            object mismatchedElement;
-            if (expectedCollection.Count == 0 || !CollectionAssertions.FindMismatchedElement(comparer, expectedCollection, actualCollection, out expectedCount, out actualCount, out mismatchedElement))
+            if (expectedCollection.Count == 0)
             {
                 return;
             }
 
-            Throw(nameof(IsEquivalentTo), null, message, parameters);
+            var result = FindMismatchedElement(comparer, expectedCollection, actualCollection);
+            if (result.found)
+            {
+                Throw(nameof(IsEquivalentTo), null, message, parameters);
+            }
         }
 
         /// <summary>
@@ -750,7 +773,8 @@ namespace Testify
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
         /// <remarks>Two collections are equivalent if they have the same elements in the same quantity, but in any
         /// order.</remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collections are equivalent.</exception>
         public static void IsNotEquivalentTo<T>(this ActualValue<T> collection, IEnumerable expected)
             where T : IEnumerable
@@ -892,10 +916,8 @@ namespace Testify
                 return;
             }
 
-            int expectedCount;
-            int actualCount;
-            object mismatchedElement;
-            if (CollectionAssertions.FindMismatchedElement(comparer, expectedCollection, actualCollection, out expectedCount, out actualCount, out mismatchedElement))
+            var result = FindMismatchedElement(comparer, expectedCollection, actualCollection);
+            if (result.found)
             {
                 return;
             }
@@ -910,7 +932,8 @@ namespace Testify
         /// <typeparam name="T">The type of the collection.</typeparam>
         /// <param name="collection">The collection to compare. This is the collection the unit test produced.</param>
         /// <param name="expected">The collection to compare to. This is the collection the unit test expects.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or
+        /// <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsNotSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected)
             where T : IEnumerable
@@ -1191,10 +1214,8 @@ namespace Testify
         /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected)
-            where T : IEnumerable
-        {
+            where T : IEnumerable =>
             collection.IsSequenceEqualTo(expected, EqualityComparer<object>.Default, null, null);
-        }
 
         /// <summary>
         /// Verifies that two specified collections are equal, using the specified method to compare the values
@@ -1207,10 +1228,8 @@ namespace Testify
         /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer)
-            where T : IEnumerable
-        {
+            where T : IEnumerable =>
             collection.IsSequenceEqualTo(expected, comparer, null, null);
-        }
 
         /// <summary>
         /// Verifies that two specified collections are equal, using the specified method to compare the values
@@ -1224,10 +1243,8 @@ namespace Testify
         /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, string message)
-            where T : IEnumerable
-        {
+            where T : IEnumerable =>
             collection.IsSequenceEqualTo(expected, EqualityComparer<object>.Default, message, null);
-        }
 
         /// <summary>
         /// Verifies that two specified collections are equal, using the specified method to compare the values
@@ -1242,10 +1259,8 @@ namespace Testify
         /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value), <paramref name="expected"/> or <paramref name="comparer"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, IEqualityComparer comparer, string message)
-            where T : IEnumerable
-        {
+            where T : IEnumerable =>
             collection.IsSequenceEqualTo(expected, comparer, message, null);
-        }
 
         /// <summary>
         /// Verifies that two specified collections are equal, using the specified method to compare the values
@@ -1260,10 +1275,8 @@ namespace Testify
         /// <exception cref="ArgumentNullException"><paramref name="collection"/> (or it's value) or <paramref name="expected"/> is <c>null</c>.</exception>
         /// <exception cref="AssertionException">The collection sequences are equal.</exception>
         public static void IsSequenceEqualTo<T>(this ActualValue<T> collection, IEnumerable expected, string message, params object[] parameters)
-            where T : IEnumerable
-        {
+            where T : IEnumerable =>
             collection.IsSequenceEqualTo(expected, EqualityComparer<object>.Default, message, parameters);
-        }
 
         /// <summary>
         /// Verifies that two specified collections are equal, using the specified method to compare the values
@@ -1440,7 +1453,7 @@ namespace Testify
 
                 var expectedEnum = expected.GetEnumerator();
                 var actualEnum = actual.GetEnumerator();
-                int index = 0;
+                var index = 0;
                 while (expectedEnum.MoveNext() && actualEnum.MoveNext())
                 {
                     if (!comparer.Equals(expectedEnum.Current, actualEnum.Current))
@@ -1460,39 +1473,30 @@ namespace Testify
             return true;
         }
 
-        private static bool FindMismatchedElement(IEqualityComparer comparer, ICollection expected, ICollection actual, out int expectedCount, out int actualCount, out object mismatchedElement)
+        private static (bool found, int expectedCount, int actualCount, object mismatchedElement) FindMismatchedElement(IEqualityComparer comparer, ICollection expected, ICollection actual)
         {
             Argument.NotNull(comparer, nameof(comparer));
             Argument.NotNull(expected, nameof(expected));
             Argument.NotNull(actual, nameof(actual));
 
-            int nullCount1;
-            var elementCounts1 = CollectionAssertions.GetElementCounts(expected, comparer, out nullCount1);
-            int nullCount2;
-            var elementCounts2 = CollectionAssertions.GetElementCounts(actual, comparer, out nullCount2);
+            var elementCounts1 = GetElementCounts(expected, comparer, out var nullCount1);
+            var elementCounts2 = GetElementCounts(actual, comparer, out var nullCount2);
             if (nullCount2 != nullCount1)
             {
-                expectedCount = nullCount1;
-                actualCount = nullCount2;
-                mismatchedElement = null;
-                return true;
+                return (true, nullCount1, nullCount2, null);
             }
 
-            foreach (object key in elementCounts1.Keys)
+            foreach (var key in elementCounts1.Keys)
             {
-                elementCounts1.TryGetValue(key, out expectedCount);
-                elementCounts2.TryGetValue(key, out actualCount);
+                elementCounts1.TryGetValue(key, out var expectedCount);
+                elementCounts2.TryGetValue(key, out var actualCount);
                 if (expectedCount != actualCount)
                 {
-                    mismatchedElement = key;
-                    return true;
+                    return (true, expectedCount, actualCount, key);
                 }
             }
 
-            expectedCount = 0;
-            actualCount = 0;
-            mismatchedElement = null;
-            return false;
+            return (false, 0, 0, null);
         }
 
         private static ICollection GetCollection(IEnumerable collection)
@@ -1509,7 +1513,7 @@ namespace Testify
 
             var dictionary = new Dictionary<object, int>(Comparer.From(comparer));
             nullCount = 0;
-            foreach (object key in collection)
+            foreach (var key in collection)
             {
                 if (key == null)
                 {
@@ -1517,8 +1521,7 @@ namespace Testify
                 }
                 else
                 {
-                    int num;
-                    dictionary.TryGetValue(key, out num);
+                    dictionary.TryGetValue(key, out int num);
                     ++num;
                     dictionary[key] = num;
                 }
@@ -1533,21 +1536,17 @@ namespace Testify
             Argument.NotNull(subset, nameof(subset));
             Argument.NotNull(superset, nameof(superset));
 
-            int nullCount1;
-            Dictionary<object, int> elementCounts1 = CollectionAssertions.GetElementCounts(subset, comparer, out nullCount1);
-            int nullCount2;
-            Dictionary<object, int> elementCounts2 = CollectionAssertions.GetElementCounts(superset, comparer, out nullCount2);
+            var elementCounts1 = CollectionAssertions.GetElementCounts(subset, comparer, out int nullCount1);
+            var elementCounts2 = CollectionAssertions.GetElementCounts(superset, comparer, out int nullCount2);
             if (nullCount1 > nullCount2)
             {
                 return false;
             }
 
-            foreach (object key in elementCounts1.Keys)
+            foreach (var key in elementCounts1.Keys)
             {
-                int num1;
-                elementCounts1.TryGetValue(key, out num1);
-                int num2;
-                elementCounts2.TryGetValue(key, out num2);
+                elementCounts1.TryGetValue(key, out int num1);
+                elementCounts2.TryGetValue(key, out int num2);
                 if (num1 > num2)
                 {
                     return false;

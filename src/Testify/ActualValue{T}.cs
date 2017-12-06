@@ -19,10 +19,7 @@ namespace Testify
         /// Initializes a new instance of the <see cref="ActualValue{T}"/> class.
         /// </summary>
         /// <param name="value">The actual value.</param>
-        public ActualValue(T value)
-        {
-            Value = value;
-        }
+        public ActualValue(T value) => Value = value;
 
         /// <summary>
         /// Gets the actual value.

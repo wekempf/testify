@@ -57,7 +57,7 @@ namespace Testify
             var anon = new AnonymousData();
 
             // Do this a few times to cover all branches.
-            for (int i = 0; i < 50; ++i)
+            for (var i = 0; i < 50; ++i)
             {
                 var name = anon.AnyFirstName();
 
@@ -81,7 +81,7 @@ namespace Testify
             var anon = new AnonymousData();
 
             // Do this a few times to cover all branches.
-            for (int i = 0; i < 50; ++i)
+            for (var i = 0; i < 50; ++i)
             {
                 var name = anon.AnyFullName();
 

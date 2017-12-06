@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Testify
 {
@@ -70,6 +69,33 @@ namespace Testify
         }
 
         /// <summary>
+        /// Creates a random negative <see langword="double"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <returns>A random negative <see langword="double"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        public static decimal AnyNegativeDecimal(this IAnonymousData anon)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnyDecimal(decimal.MinValue, 0, Distribution.Uniform);
+        }
+
+        /// <summary>
+        /// Creates a random negative <see langword="double"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <param name="distribution">The distribution algorithm to use.</param>
+        /// <returns>A random negative <see langword="double"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        public static decimal AnyNegativeDecimal(this IAnonymousData anon, Distribution distribution)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnyDecimal(decimal.MinValue, 0, distribution);
+        }
+
+        /// <summary>
         /// Creates a random positive <see langword="double"/> value.
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
@@ -102,33 +128,6 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
 
             return anon.AnyDecimal(0, decimal.MaxValue, distribution);
-        }
-
-        /// <summary>
-        /// Creates a random negative <see langword="double"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <returns>A random negative <see langword="double"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        public static decimal AnyNegativeDecimal(this IAnonymousData anon)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnyDecimal(decimal.MinValue, 0, Distribution.Uniform);
-        }
-
-        /// <summary>
-        /// Creates a random negative <see langword="double"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="distribution">The distribution algorithm to use.</param>
-        /// <returns>A random negative <see langword="double"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        public static decimal AnyNegativeDecimal(this IAnonymousData anon, Distribution distribution)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnyDecimal(decimal.MinValue, 0, distribution);
         }
     }
 }

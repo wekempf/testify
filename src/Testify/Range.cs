@@ -56,9 +56,9 @@ namespace Testify
             }
 
             VerifyRanges(ranges);
-            long length = ranges.Sum(r => r.Length);
-            long index = factory.AnyInt64(0, length - 1, distribution);
-            for (int i = 0; i < ranges.Length; ++i)
+            var length = ranges.Sum(r => r.Length);
+            var index = factory.AnyInt64(0, length - 1, distribution);
+            for (var i = 0; i < ranges.Length; ++i)
             {
                 if (index < ranges[i].Length)
                 {
@@ -80,7 +80,7 @@ namespace Testify
         [Conditional("Debug")]
         private static void VerifyRanges(Range[] ranges)
         {
-            for (int i = 0; i < ranges.Length - 1; ++i)
+            for (var i = 0; i < ranges.Length - 1; ++i)
             {
                 if (ranges[i].Maximum > ranges[i + 1].Minimum)
                 {

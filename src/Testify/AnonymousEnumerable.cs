@@ -46,7 +46,7 @@ namespace Testify
             Argument.NotNull(type, nameof(type));
             Argument.InRange(maximumLength, minimumLength, int.MaxValue, nameof(maximumLength), "The maximum length must be greater than the minimum length.");
 
-            int length = anon.AnyInt32(minimumLength, maximumLength);
+            var length = anon.AnyInt32(minimumLength, maximumLength);
             return AnyEnumerable(anon, type, length);
         }
 
@@ -124,7 +124,7 @@ namespace Testify
 
         private static IEnumerable AnyEnumerable(IAnonymousData anon, Type type, int length)
         {
-            for (int i = 0; i < length; ++i)
+            for (var i = 0; i < length; ++i)
             {
                 yield return anon.Any(type);
             }

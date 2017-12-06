@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Testify
 {
@@ -78,6 +77,33 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random positive <see langword="int"/> value.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        public static int AnyNegativeInt32(this IAnonymousData anon)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnyInt32(int.MinValue, -1, Distribution.Uniform);
+        }
+
+        /// <summary>
+        /// Creates a random positive <see langword="int"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <param name="distribution">The distribution algorithm to use.</param>
+        /// <returns>A random positive <see langword="int"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        public static int AnyNegativeInt32(this IAnonymousData anon, Distribution distribution)
+        {
+            Argument.NotNull(anon, nameof(anon));
+
+            return anon.AnyInt32(int.MinValue, -1, distribution);
+        }
+
+        /// <summary>
+        /// Creates a random positive <see langword="int"/> value.
+        /// </summary>
+        /// <param name="anon">The anonymous data provider to use.</param>
+        /// <returns>A random positive <see langword="int"/> value.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
         /// <remarks>
         /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
         /// perspective, but the term "positive" is used because this is what many would expect.
@@ -105,33 +131,6 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
 
             return anon.AnyInt32(0, int.MaxValue, distribution);
-        }
-
-        /// <summary>
-        /// Creates a random positive <see langword="int"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <returns>A random positive <see langword="int"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        public static int AnyNegativeInt32(this IAnonymousData anon)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnyInt32(int.MinValue, -1, Distribution.Uniform);
-        }
-
-        /// <summary>
-        /// Creates a random positive <see langword="int"/> value.
-        /// </summary>
-        /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="distribution">The distribution algorithm to use.</param>
-        /// <returns>A random positive <see langword="int"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        public static int AnyNegativeInt32(this IAnonymousData anon, Distribution distribution)
-        {
-            Argument.NotNull(anon, nameof(anon));
-
-            return anon.AnyInt32(int.MinValue, -1, distribution);
         }
     }
 }

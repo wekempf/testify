@@ -70,7 +70,7 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
             Argument.InRange(maximum, minimum, TimeSpan.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
 
-            long ticks = anon.AnyInt64(minimum.Ticks, maximum.Ticks, distribution);
+            var ticks = anon.AnyInt64(minimum.Ticks, maximum.Ticks, distribution);
             return new TimeSpan(ticks);
         }
     }

@@ -1,15 +1,15 @@
 /*
- *  Tasks: Clean, NuGetRestore, Version, Build, Test, NuGetPack, NuGetPush, Docs, Default
+ *  Tasks: Clean, Restore, Version, Build, Test, NuGetPack, NuGetPush, Docs, Default
  *
  *  Clean
  *    Cleans the directory structure of all build artifacts (including NuGet packages).
  *    Not configuration dependent.
- *  NuGetRestore
+ *  Restore
  *    Restores NuGet packages for all solutions.
  *  Version
  *    Obtains the version to use from GitVersion and updates AssemblyInfo.cs files if running
  *    on the build server.
- *  Build - Clean, NuGetRestore, Version
+ *  Build - Clean, Restore, Version
  *    Builds all solutions. The 'configuration' argument determines what configuration to build:
  *    if not supplied 'Release' is assumed.
  *  Test - Build
@@ -17,9 +17,7 @@
  *    a local report in the TestResults directory or if running on the build server is a report
  *    sent to Coveralls. On the build server this requires a CoverallsToken environment variable
  *    to be set with the security token to use when publishing.
- *  NuGetPack - Build
- *    Creates nupkg packages.
- *  NuGetPush - NuGetPack
+ *  Push - Test
  *    Pushes NuGet packages to a NuGet server. This target does nothing when not run on the
  *    build server. Builds on the master branch push to the official NuGet.org server while
  *    all other branches push to a MyGet server. This requires either a NuGetApiKey
@@ -33,115 +31,127 @@
  *    Performs a complete build of everything. 
  */
 
-#tool "nuget:?package=xunit.runner.console"
-#tool "nuget:?package=OpenCover"
-#tool "nuget:?package=ReportGenerator"
-#tool "nuget:?package=GitVersion.CommandLine"
+#tool nuget:?package=xunit.runner.console
+#tool nuget:?package=OpenCover
+#tool nuget:?package=ReportGenerator
+#tool nuget:?package=GitVersion.CommandLine
 #tool coveralls.net
 #tool docfx.console
+#tool "nuget:?package=GitReleaseNotes"
+#tool "KuduSync.NET"
 
 #addin Cake.Coveralls
 #addin nuget:?package=Cake.Git
-#addin "Cake.DocFx"
+#addin Cake.DocFx
+#addin Cake.Kudu
 
+var forceDocPublish = HasArgument("forceDocPublish");
+var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+
 var solution = File("Testify.sln");
 var isRunningOnBuildServer = AppVeyor.IsRunningOnAppVeyor;
-var updateAssemblyInfo = HasArgument("updateassemblyinfo") || isRunningOnBuildServer;
-var solutions = GetFiles("**/*.sln")
-    .Except(GetFiles("**/packages/**/*.sln"), FilePathComparer.Default)
-    .Except(GetFiles("**/tools/**/*.sln"), FilePathComparer.Default);
+var solutions = GetFiles("**/*.sln") - GetFiles("**/packages/**/*.sln") - GetFiles("**/tools/**/*.sln");
 var testResultsDir = Directory("./TestResults");
 var coverageFile = testResultsDir + File("coverage.xml");
 var releaseNuGetSource = "https://www.nuget.org/api/v2/package";
 var releaseNuGetApiKey = EnvironmentVariable("NuGetApiKey");
 var unstableNuGetSource = "https://www.myget.org/F/wekempf/api/v2/package";
 var unstableNuGetApiKey = EnvironmentVariable("MyGetApiKey");
-var gitPagesRepo = "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git";
+var gitPagesRepo = isRunningOnBuildServer
+    ? "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git"
+    : "https://github.com/wekempf/testify.git";
 var gitPagesBranch = "gh-pages";
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
+
 Information("Branch: " + branch);
+
 GitVersion version = null;
 
 Task("Clean")
     .Does(() =>
-    {
-        CleanDirectories("**/bin");
-        CleanDirectories("**/obj");
-        CleanDirectory("packages");
-        CleanDirectory("TestResults");
-        CleanDirectory("./docs/_site");
-        if (FileExists("./docs/site.zip")) {
-            DeleteFile("./docs/site.zip");
-        }
-        var files = GetFiles("./docs/api/*")
-            .Except(GetFiles("./docs/api/index.md"), FilePathComparer.Default)
-            .Except(GetFiles("./docs/api/toc.yml"), FilePathComparer.Default);
-        DeleteFiles(files);
-    });
+{
+    CleanDirectories("**/bin");
+    CleanDirectories("**/obj");
+    CleanDirectory("packages");
+    CleanDirectory("TestResults");
+    CleanDirectory("./docs/_site");
+    if (FileExists("./docs/site.zip")) {
+        DeleteFile("./docs/site.zip");
+    }
+    var files = GetFiles("./docs/api/*") - GetFiles("./docs/api/index.md") - GetFiles("./docs/api/toc.yml");
+    DeleteFiles(files);
+});
 
-Task("NuGetRestore")
+Task("Restore")
     .Does(() =>
-    {
-        foreach (var sln in solutions) {
-            NuGetRestore(sln);
-        }
-    });
+{
+    var settings = GetMSBuildSettings();
+    settings.Targets.Add("Restore");
+    foreach (var sln in solutions) {
+        MSBuild(sln, settings);
+    }
+});
 
 Task("Version")
     .Does(() =>
+{
+    var settings = new GitVersionSettings
     {
-        var settings = new GitVersionSettings
-        {
-            UpdateAssemblyInfo = updateAssemblyInfo,
-        };
-        version = GitVersion(settings);
-        if (isRunningOnBuildServer) {
-            settings.OutputType = GitVersionOutput.BuildServer;
-            GitVersion(settings);
-        }
-        Information("Version: {0}", version.NuGetVersion);
-        if (updateAssemblyInfo) {
-            Information("Updated assembly information.");
-        }
-    });
+        UpdateAssemblyInfo = updateAssemblyInfo,
+    };
+    version = GitVersion(settings);
+    if (isRunningOnBuildServer) {
+        settings.OutputType = GitVersionOutput.BuildServer;
+        GitVersion(settings);
+    }
+    Information("Version: {0}", version.NuGetVersion);
+    if (updateAssemblyInfo) {
+        Information("Updated assembly information.");
+    }
+});
 
 Task("Build")
     .IsDependentOn("Clean")
-    .IsDependentOn("NuGetRestore")
+    .IsDependentOn("Restore")
     .IsDependentOn("Version")
     .Does(() =>
-    {
-        var settings = new MSBuildSettings
-        {
-            Configuration = configuration
-        };
-        foreach (var sln in solutions) {
-            MSBuild(sln, settings);
-        }
-    });
+{
+    var settings = GetMSBuildSettings();
+    foreach (var sln in solutions) {
+        MSBuild(sln, settings);
+    }
+});
 
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
+{
+    EnsureDirectoryExists(testResultsDir);
+    var projects = GetFiles("src/**/*.Tests.csproj");
+    foreach (var project in projects)
     {
-        var testAssemblies = GetFiles("**/bin/**/*.Tests.dll");
-        EnsureDirectoryExists(testResultsDir);
-
-        var settings = new XUnit2Settings
+        var settings = new DotNetCoreTestSettings
         {
-            ShadowCopy = false
+            Configuration = configuration,
+            NoBuild = true
         };
-
         OpenCover(
-            tool => tool.XUnit2(testAssemblies, settings),
+            tool => tool.DotNetCoreTest(project.FullPath, settings),
             coverageFile,
-            new OpenCoverSettings()
-                .WithFilter("+[*]*")
-                .WithFilter("-[*.Tests]*")
-                .WithFilter("-[xunit.*]*"));
-
+            new OpenCoverSettings
+            {
+                ReturnTargetCodeOffset = 0,
+                OldStyle = true,
+                Register = "user",
+                MergeOutput = FileExists(coverageFile)
+            }
+            .WithFilter("+[*]*")
+            .WithFilter("-[*.Tests]*")
+            .WithFilter("-[xunit.*]*"));
+    }
+    if (FileExists(coverageFile)) {
         if (isRunningOnBuildServer) {
             var coverallsSettings = new CoverallsNetSettings {
                 RepoToken = EnvironmentVariable("CoverallsToken")
@@ -150,200 +160,100 @@ Task("Test")
         } else {
             ReportGenerator(coverageFile, testResultsDir);
         }
-    });
+    }
+});
 
-Task("NuGetPack")
-    .IsDependentOn("Build")
+Task("Push")
+    .IsDependentOn("Test")
     .Does(() =>
-    {
-        var outputDirectory = MakeAbsolute(Directory("./src/Testify/bin/" + configuration));
-        var settings = new NuGetPackSettings
-        {
-            Id = "Testify",
-            Version = version.NuGetVersion,
-            Title = "Testify",
-            Authors = new[] { "William E. Kempf" },
-            Owners = new[] { "William E. Kempf" }, 
-            Description = "Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework.",
-            Summary = "Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework.",
-            ProjectUrl = new Uri("http://wekempf.github.io/testify/"),
-            IconUrl = new Uri("https://raw.githubusercontent.com/wekempf/testify/develop/docs/images/gavel_icon-64x64.png"),
-            LicenseUrl = new Uri("https://raw.githubusercontent.com/wekempf/testify/master/LICENSE"),
-            Copyright = "Copyright " + DateTime.Now.Year.ToString(),
-            Tags = new [] { "test", "unit", "testing", "TDD", "AAA", "assert", "assertion", "factory", "verifier" },
-            RequireLicenseAcceptance = false,
-            Symbols = false,
-            Files = new [] {
-                new NuSpecContent { Source = "Testify.dll", Target = "lib/portable45-net45+win8+wpa81" },
-                new NuSpecContent { Source = "Testify.xml", Target = "lib/portable45-net45+win8+wpa81" }
-            },
-            BasePath = outputDirectory,
-            OutputDirectory = outputDirectory
+{
+    if (!isRunningOnBuildServer) {
+        Warning("Not running on build server. Skipping");
+        return;
+    }
+
+    NuGetPushSettings settings = null;
+    if (branch == "master") {
+        Information("Pushing release package.");
+        settings = new NuGetPushSettings {
+            Source = releaseNuGetSource,
+            ApiKey = releaseNuGetApiKey
         };
-        NuGetPack(settings);
-
-        outputDirectory = MakeAbsolute(Directory("./src/Testify.Moq/bin/" + configuration));
-        settings = new NuGetPackSettings
-        {
-            Id = "Testify.Moq",
-            Version = version.NuGetVersion,
-            Title = "Testify.Moq",
-            Authors = new[] { "William E. Kempf" },
-            Owners = new[] { "William E. Kempf" }, 
-            Description = "Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework.",
-            Summary = "Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework. This extension adds auto mocking support using Moq.",
-            ProjectUrl = new Uri("http://wekempf.github.io/testify/"),
-            IconUrl = new Uri("https://raw.githubusercontent.com/wekempf/testify/develop/docs/images/gavel_icon-64x64.png"),
-            LicenseUrl = new Uri("https://raw.githubusercontent.com/wekempf/testify/master/LICENSE"),
-            Copyright = "Copyright " + DateTime.Now.Year.ToString(),
-            Tags = new [] { "test", "unit", "testing", "TDD", "AAA", "assert", "assertion", "factory", "verifier" },
-            RequireLicenseAcceptance = false,
-            Symbols = false,
-            Files = new [] {
-                new NuSpecContent { Source = "Testify.Moq.dll", Target = "lib/net45" },
-                new NuSpecContent { Source = "Testify.Moq.xml", Target = "lib/net45" }
-            },
-            Dependencies = new[] {
-                new NuSpecDependency { Id = "Testify", Version = version.NuGetVersion },
-                new NuSpecDependency { Id = "Moq", Version = "4.5" }
-            },
-            BasePath = outputDirectory,
-            OutputDirectory = outputDirectory
+    } else {
+        Information("Pushing unstable package.");
+        settings = new NuGetPushSettings {
+            Source = unstableNuGetSource,
+            ApiKey = unstableNuGetApiKey
         };
-        NuGetPack(settings);
-    });
-
-Task("NuGetPush")
-    .IsDependentOn("NuGetPack")
-    .Does(() =>
-    {
-        if (!isRunningOnBuildServer) {
-            Warning("Not running on build server. Skipping");
-            return;
-        }
-
-        NuGetPushSettings settings = null;
-        if (branch == "master") {
-            Information("Pushing release package.");
-            settings = new NuGetPushSettings {
-                Source = releaseNuGetSource,
-                ApiKey = releaseNuGetApiKey
-            };
-        } else {
-            Information("Pushing unstable package.");
-            settings = new NuGetPushSettings {
-                Source = unstableNuGetSource,
-                ApiKey = unstableNuGetApiKey
-            };
-        }
-        Information("Pushing to " + settings.Source + ".");
-        var packages = GetFiles("**/*.nupkg")
-            .Except(GetFiles("**/packages/**/*.nupkg"), FilePathComparer.Default)
-            .Except(GetFiles("./tools/**/*.nupkg"), FilePathComparer.Default);
-        foreach (var package in packages) {
-            Information("Pushing package " + package.FullPath + ".");
-        }
-        NuGetPush(packages, settings);
-    });
+    }
+    Information("Pushing to " + settings.Source + ".");
+    var packages = GetFiles("src/**/*.nupkg");
+    foreach (var package in packages) {
+        Information("Pushing package " + package.FullPath + ".");
+    }
+    NuGetPush(packages, settings);
+});
 
 Task("Docs")
     .Does(() =>
-    {
-        var settings = new DocFxSettings {
-            WorkingDirectory = "./docs"
-        };
-        DocFx(settings);
-        Zip("./docs/_site", "./docs/site.zip");
-        if (isRunningOnBuildServer) {
-            if (branch == "master") {
-                if (GitClonePages() != 0) {
-                    throw new Exception("Unable to clone Pages.");
+{
+    var settings = new DocFxBuildSettings {
+        WorkingDirectory = "./docs"
+    };
+    DocFxBuild(settings);
+    Zip("./docs/_site", "./docs/site.zip");
+    if (isRunningOnBuildServer || forceDocPublish) {
+        //if (branch == "master") {
+            var pagesDirectory = "./pages";
+            Information("Cloning pages branch...");
+            GitClone(gitPagesRepo, pagesDirectory, new GitCloneSettings { BranchName = gitPagesBranch });
+            try {
+                Information("Sync output files...");
+                Kudu.Sync("./docs/_site", pagesDirectory, new KuduSyncSettings {
+                    ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
+                });
+                Information("Stage all changes...");
+                GitAddAll(pagesDirectory);
+                Information("Commit all changes...");
+                var sourceCommit = GitLogTip("./");
+                try {
+                    GitCommit(
+                        pagesDirectory,
+                        sourceCommit.Committer.Name,
+                        sourceCommit.Committer.Email,
+                        string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
                 }
-                var dirs = GetDirectories("./pages/*")
-                    .Except(GetDirectories("./pages/.git"), DirectoryPathComparer.Default);
-                DeleteDirectories(dirs, true);
-                var files = GetFiles("./pages/*");
-                DeleteFiles(files);
-                CopyFiles("./docs/_site/**/*", "./pages", true);
-                if (GitCommitPages() != 0) {
-                    throw new Exception("Unable to commit Pages.");
+                catch (LibGit2Sharp.EmptyCommitException e) {
                 }
-                if (GitPushPages() != 0) {
-                    throw new Exception("Unable to publish Pages.");
-                }
+
+                Information("Publishing all changes...");
+                GitPush(pagesDirectory);
+            } finally {
+                Information("Cleaning up pages clone...");
+                DeleteDirectory(pagesDirectory, new DeleteDirectorySettings { Recursive = true, Force = true });
             }
-        }
-    });
+       //}
+    }
+})
+.ReportError(exception =>
+    Information(exception)
+);
 
 Task("Default")
-    .IsDependentOn("Test")
-    .IsDependentOn("Docs")
-    .IsDependentOn("NuGetPush");
+    .IsDependentOn("Push")
+    .IsDependentOn("Docs");
 
 RunTarget(target);
 
-int GitClonePages() {
-    return StartProcess("git", new ProcessSettings {
-        Arguments = "clone " + gitPagesRepo + " -b " + gitPagesBranch + " pages" 
-    });
-}
-
-int GitCommitPages() {
-    var result = StartProcess("git", new ProcessSettings {
-        Arguments = "add .",
-        WorkingDirectory = "./pages"
-    });
-    if (result != 0) {
-        return result;
-    }
-    result = StartProcess("git", new ProcessSettings {
-        Arguments = "commit -m \"Publishing pages " + version.AssemblySemVer + "\"",
-        WorkingDirectory = "./pages"
-    });
-    return result;
-}
-
-int GitPushPages() {
-    return StartProcess("git", new ProcessSettings {
-        Arguments = "push",
-        WorkingDirectory = "./pages"
-    });
-}
-
-public class FilePathComparer : IEqualityComparer<FilePath>
-{
-    public bool Equals(FilePath x, FilePath y)
+MSBuildSettings GetMSBuildSettings() {
+    var settings = new MSBuildSettings
     {
-        return string.Equals(x.FullPath, y.FullPath, StringComparison.OrdinalIgnoreCase);
+        Configuration = configuration,
+    };
+    if (version != null) {
+        settings.Properties.Add("AssemblyVersion", new[] { version.AssemblySemVer });
+        settings.Properties.Add("FileVersion", new[] { version.MajorMinorPatch + ".0" });
+        settings.Properties.Add("Version", new[] { version.NuGetVersion });
     }
-
-    public int GetHashCode(FilePath x)
-    {
-        return x.FullPath.GetHashCode();
-    }
-
-    private static FilePathComparer instance = new FilePathComparer();
-    public static FilePathComparer Default
-    {
-        get { return instance; }
-    }
-}
-
-public class DirectoryPathComparer : IEqualityComparer<DirectoryPath>
-{
-    public bool Equals(DirectoryPath x, DirectoryPath y)
-    {
-        return string.Equals(x.FullPath, y.FullPath, StringComparison.OrdinalIgnoreCase);
-    }
-
-    public int GetHashCode(DirectoryPath x)
-    {
-        return x.FullPath.GetHashCode();
-    }
-
-    private static DirectoryPathComparer instance = new DirectoryPathComparer();
-    public static DirectoryPathComparer Default
-    {
-        get { return instance; }
-    }
+    return settings;
 }

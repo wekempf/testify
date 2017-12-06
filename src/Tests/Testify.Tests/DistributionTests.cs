@@ -48,13 +48,13 @@ namespace Testify
 
         private Classifier<double> Classify(Distribution distribution)
         {
-            Classifier<double> classifier = new Classifier<double>();
+            var classifier = new Classifier<double>();
             classifier.AddClassification(LT015, d => d < 0.15);
             classifier.AddClassification(GT085, d => d > 0.85);
             classifier.AddClassification(LT0, d => d < 0);
 
-            Random random = new Random(0xBFAC);
-            for (int i = 0; i < RUNS; ++i)
+            var random = new Random(0xBFAC);
+            for (var i = 0; i < RUNS; ++i)
             {
                 classifier.Classify(distribution.NextDouble(random));
             }

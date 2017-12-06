@@ -14,7 +14,7 @@ namespace Testify
                 throw new ArgumentNullException(nameof(exception));
             }
 
-            if (exception.Message != message)
+            if (!exception.Message.StartsWith(message))
             {
                 Fail("Unexpected message: '{0}'. Expected message: '{1}'.", exception.Message, message);
             }
@@ -34,13 +34,12 @@ namespace Testify
                 var current = stack.Pop();
                 foreach (var inner in current.InnerExceptions)
                 {
-                    if (inner.Message == message)
+                    if (inner.Message.StartsWith(message))
                     {
                         return;
                     }
 
-                    var toAdd = inner as AssertionException;
-                    if (toAdd != null)
+                    if (inner is AssertionException toAdd)
                     {
                         stack.Push(toAdd);
                     }

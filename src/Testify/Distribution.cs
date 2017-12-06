@@ -66,10 +66,10 @@ namespace Testify
         {
             Argument.NotNull(random, nameof(random));
 
-            double u1 = random.NextDouble();
-            double u2 = random.NextDouble();
-            double stdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
-            double gausian = MEAN + (STDDEV * stdNormal);
+            var u1 = random.NextDouble();
+            var u2 = random.NextDouble();
+            var stdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2);
+            var gausian = MEAN + (STDDEV * stdNormal);
             return (gausian % sigma) / sigma;
         }
 
@@ -79,7 +79,7 @@ namespace Testify
             {
                 Argument.NotNull(random, nameof(random));
 
-                double next = NextGausian(random, NSIGMA * 2);
+                var next = NextGausian(random, NSIGMA * 2);
                 return (next < 0) ? 1 + next : next;
             }
         }

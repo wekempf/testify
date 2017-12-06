@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Text;
 
 namespace Testify
@@ -261,8 +260,8 @@ namespace Testify
             Argument.NotNull(anon, nameof(anon));
             Argument.InRange(maximumLength, minimumLength, int.MaxValue, nameof(maximumLength), "The maximum length must be greater than the minimum length.");
 
-            int length = anon.AnyInt32(minimumLength, maximumLength);
-            StringBuilder builder = new StringBuilder(length);
+            var length = anon.AnyInt32(minimumLength, maximumLength);
+            var builder = new StringBuilder(length);
             while (builder.Length < length)
             {
                 builder.Append(anon.AnyAlphaChar(distribution));

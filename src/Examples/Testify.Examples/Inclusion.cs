@@ -5,9 +5,6 @@ namespace Examples
 {
     internal class Inclusion
     {
-        private void Dummy()
-        {
-            Assert("foo").IsEqualTo("foo");
-        }
+        private void Dummy() => Assert("foo").IsEqualTo("foo");
     }
 }

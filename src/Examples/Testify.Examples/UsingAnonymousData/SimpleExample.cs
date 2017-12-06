@@ -15,8 +15,10 @@ namespace Examples.UsingAnonymousData
             var anon = new AnonymousData();
             var front = anon.AnyEnumerable<int>().ToArray();
             var back = anon.AnyEnumerable<int>().ToArray();
-            var list = new List<int>(front);
-            list.Add(item);
+            var list = new List<int>(front)
+            {
+                item
+            };
             list.AddRange(back);
 
             var index = list.IndexOf(item);
