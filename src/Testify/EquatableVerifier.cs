@@ -12,6 +12,8 @@ namespace Testify
     {
         public bool SkipOperatorTests { get; set; }
 
+        public bool SkipImmutabilityTests { get; set; }
+
         /// <summary>
         /// Gets or sets the factory method used to create unique items used to verify
         /// the contract.
@@ -32,6 +34,7 @@ namespace Testify
         {
             EqualityTests = new EqualityTests<T>(UniqueItemsFactory)
             {
+                SkipImmutabilityTests = SkipImmutabilityTests,
                 SkipOperatorTests = SkipOperatorTests
             };
             EqualityTests.VerifyConfiguration(nameof(UniqueItemsFactory));

@@ -21,6 +21,8 @@ namespace Testify
         /// </value>
         public Func<T[]> OrderedItemsFactory { get; set; }
 
+        public bool SkipImmutabilityTests { get; set; }
+
         public bool SkipOperatorTests { get; set; }
 
         private CompareTests<T> CompareTests { get; set; }
@@ -36,6 +38,7 @@ namespace Testify
         {
             CompareTests = new CompareTests<T>(OrderedItemsFactory)
             {
+                SkipImmutabilityTests = SkipImmutabilityTests,
                 SkipOperatorTests = SkipOperatorTests
             };
             CompareTests.VerifyConfiguration(nameof(OrderedItemsFactory));
