@@ -94,7 +94,7 @@ namespace Testify.Tests
             Assert(Task.FromResult(1)).Completes(1, "Some {0}.", "message");
 
         [Fact]
-        public void Completes_TimeoutInTime_ShouldNotThrow() => Assert(Task.Delay(100)).Completes(200);
+        public void Completes_TimeoutInTime_ShouldNotThrow() => Assert(Task.Delay(100)).Completes(2000);
 
         [Fact]
         public void Completes_TimeoutMessageInTime_ShouldNotThrow() =>
