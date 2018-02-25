@@ -4,507 +4,15 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.ActualValue-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.ActualValue-1.html",
-          "hash": "QkeOOJLt6bHQWaDcs7BwFQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousBool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousBool.html",
-          "hash": "RyMM8AfV+jg4Hykvsf/99g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousByte.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousByte.html",
-          "hash": "pgrE5+H7MEPVoIIH8Af6Lw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousChar.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousChar.html",
-          "hash": "LuEaqL7T7QI3KSNhP0Uxww=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousData.html",
-          "hash": "D+O4bbMykoCXJn9jPH2Heg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousDataException.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousDataException.html",
-          "hash": "v1+L4RTpZMaPNWXninFRUw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousDataExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousDataExtensions.html",
-          "hash": "Zt8wGjZ4BHZ+0d+kJwnZlw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousDateTime.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousDateTime.html",
-          "hash": "CrCgId9QyCYd1NdTjg46gg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousDateTimeOffset.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousDateTimeOffset.html",
-          "hash": "ML8GBRVqWex4tyFhQVWSXw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousDecimal.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousDecimal.html",
-          "hash": "YOvNPzcTakQCcGwlmRz8og=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousDouble.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousDouble.html",
-          "hash": "olHIWZWySkfLGdHvRCSUUg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousEnum.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousEnum.html",
-          "hash": "NX73a2AjQO07C5OtKq6C3A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousEnumerable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousEnumerable.html",
-          "hash": "5g65LEdKgQiTDjEw0J9grA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousInt16.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousInt16.html",
-          "hash": "yrtUDFovLL8dscOqbrJAvg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousInt32.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousInt32.html",
-          "hash": "v4wqFQrkLC8/w2juKKfs2g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousInt64.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousInt64.html",
-          "hash": "n1U0aJUrjbI0/mXaOy7DjA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousMoq.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousMoq.html",
-          "hash": "N3Bj/LLtq4suY+HnOgz71Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousSingle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousSingle.html",
-          "hash": "/H2QLDYaxxmBG8OMYYB7Tg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousString.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousString.html",
-          "hash": "cAXF/XTWdgRRsAa8YWyUbQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AnonymousTimeSpan.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AnonymousTimeSpan.html",
-          "hash": "kb0MBDO3LtbtTZafT/bQDA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.AssertionException.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.AssertionException.html",
-          "hash": "KFnMc65x7q5yscfBom2pSQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.Assertions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.Assertions.html",
-          "hash": "fnyV8PrOOyIybwwoDDG8uw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.Classifier-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.Classifier-1.html",
-          "hash": "r/n+FThA7ug5w+GkPqfzZg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.CollectionAssertions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.CollectionAssertions.html",
-          "hash": "a9UeMc2JSsqQ934qNI+ZCw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.ComparableVerifier-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.ComparableVerifier-1.html",
-          "hash": "CjGyaV6lRno55J8Fydu/JA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.ContractVerifier.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.ContractVerifier.html",
-          "hash": "1HV32G7Qtdw7kqphNHNCYQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.Distribution.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.Distribution.html",
-          "hash": "jKa847F3Xk1WzdkWAvif6A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.EquatableVerifier-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.EquatableVerifier-1.html",
-          "hash": "6q9XcosEDpQNUrGRrUs2sw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.ExceptionAssertions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.ExceptionAssertions.html",
-          "hash": "wA++owz6/QO92GfjCLXrSQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.IAnonymousData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.IAnonymousData.html",
-          "hash": "BNiqKTBPQi5uXTmv8AIn7w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.IAnonymousDataContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.IAnonymousDataContext.html",
-          "hash": "V7p6hHMwM7PQMUFaM9xykg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.IAnonymousDataCustomization.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.IAnonymousDataCustomization.html",
-          "hash": "VZMxqEua6MQi3kpYqzwn8Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.IRegisterAnonymousData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.IRegisterAnonymousData.html",
-          "hash": "tpFC0cnScgVxVXXEXlxTeg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.MoqCustomization.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.MoqCustomization.html",
-          "hash": "VLAaDNJ5d2ywn+j5LdDtWw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.PopulateOption.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.PopulateOption.html",
-          "hash": "pLsN13fz/GMdXC4AtEpjgA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.StandardAssertions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.StandardAssertions.html",
-          "hash": "92VWCkl0E9kF0xvqqDEI5w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.StringAssertions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.StringAssertions.html",
-          "hash": "LbjXL0+EE99BsbwJyiZQ+Q=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.TaskAssertions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.TaskAssertions.html",
-          "hash": "8Ry805YQnZRHH7wEBpkV5g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.TestCollection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.TestCollection.html",
-          "hash": "n2TQIgWPYA4QYRcxLgUwMQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.TestSynchronizationContext.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.TestSynchronizationContext.html",
-          "hash": "xWBUn/tsZnovsKFtUcYOwg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Testify.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Testify.html",
-          "hash": "mQ2jZxNPv5z93uONhpNKEg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "zU1jPCNyyQrAysjL4LCzlA=="
+          "hash": "IZQEgp0rzRgtA2PBPKUjgA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -513,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "VPQiF1VH3+5uA2kW5a7viQ=="
+          "hash": "NS4yHgLHaaksoPOd5dLoTA=="
         }
       },
       "is_incremental": false,
@@ -547,10 +55,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "4Z0MKRs5GqfK1dvaf0IXSQ=="
+          "hash": "ROTKSo+pWRwwe0wVXXcoAA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -559,10 +67,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/AntiPatterns.html",
-          "hash": "+tse7IeXlmG4iVQgBuzG1g=="
+          "hash": "5sbS1iHPucPwqRWKhCrlxA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -571,10 +79,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/Assertions.html",
-          "hash": "ylTImmw8eG3/mIAbPpnWpw=="
+          "hash": "eJEZ+lHRD8j0LvQCm/455Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -583,10 +91,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/BestPractices.html",
-          "hash": "qAnghKKiENs2o8zJFW9Qxw=="
+          "hash": "D0c+46m/MtJRtLMuIs7L8Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -595,10 +103,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/ContractVerifiers.html",
-          "hash": "0A2SuKR/IqWVtMjP0GN7zQ=="
+          "hash": "lILlr/vzUWZ5/v0nDCrltQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -607,10 +115,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/GoodUnitTests.html",
-          "hash": "2PU+xcWOzUZ4dhKx6IOV9w=="
+          "hash": "sfaX9VIQKat2FWLJvV06Mw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -619,10 +127,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/UsingAnonymousData.html",
-          "hash": "Y4ztSz+gJYVQCdq5D8gbrQ=="
+          "hash": "Q3cMsSJ6s9a7Wip0BsysHA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -631,10 +139,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/WhyUnitTest.html",
-          "hash": "rbdXIocMbnwMleNvWCL/CQ=="
+          "hash": "xcY+i8F9cxaX4pKz9+JplA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -643,10 +151,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/intro.html",
-          "hash": "7/EcVASaHRLXWC9wTz8iTw=="
+          "hash": "aMSnKOdu1efDAQYcldTE1g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -655,7 +163,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "1RXw8I+Lvjjw19bSenOnvQ=="
+          "hash": "xNi5I2XxmCPAvxn3mWRcWQ=="
         }
       },
       "is_incremental": false,
@@ -667,7 +175,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "qmQDMVpIHrfkPohpFgmXeg=="
+          "hash": "Qtz/7T8fhGWCtYxK8PsHAQ=="
         }
       },
       "is_incremental": false,
@@ -677,7 +185,8 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build"
       },
       "processors": {
@@ -686,12 +195,8 @@
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {
@@ -703,8 +208,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}

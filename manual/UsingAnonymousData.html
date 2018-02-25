@@ -8,7 +8,7 @@
     <title>Using AnonymousData </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Using AnonymousData ">
-    <meta name="generator" content="docfx 2.28.1.0">
+    <meta name="generator" content="docfx 2.31.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
@@ -83,7 +83,7 @@ but the rest of the collection&#39;s items really aren&#39;t. They are necessary
 make any real difference to the outcome of the test. This is a very simple example, but you can imagine many
 other more complex scenarios where the majority of the test setup is necessary but not directly related to
 the behavior of the test.</p>
-<p>This is where <a class="xref" href="../api/Testify.AnonymousData.html">AnonymousData</a> comes in. <code>AnonymousData</code> is a general purpose object factory specfically
+<p>This is where @Testify.AnonymousData comes in. <code>AnonymousData</code> is a general purpose object factory specfically
 designed to create &quot;random&quot; objects for unit testing. Random may sound like a bad thing. After all, you don&#39;t
 want random behavior in your tests. However, the random objects created here are very specifically for things
 that are needed to execute a test, but that won&#39;t effect the outcome of the test. This actually provides
@@ -103,13 +103,13 @@ namespace Examples.UsingAnonymousData
         [Fact]
         public void IndexOf_ItemInList_ShouldReturnIndex()
         {
-            const int item = 10;
+            var item = 10;
             var anon = new AnonymousData();
             var front = anon.AnyEnumerable&lt;int&gt;().ToArray();
             var back = anon.AnyEnumerable&lt;int&gt;().ToArray();
             var list = new List&lt;int&gt;(front)
             {
-                item,
+                item
             };
             list.AddRange(back);
 
@@ -196,30 +196,21 @@ namespace Examples.UsingAnonymousData
     {
         public static Person AnyFemalePerson(this AnonymousData anon)
         {
-            if (anon == null)
-            {
-                throw new ArgumentNullException(nameof(anon));
-            }
+            if (anon == null) throw new ArgumentNullException(nameof(anon));
 
             return new Person(anon.AnyFirstName(false), anon.AnySurname());
         }
 
         public static Person AnyMalePerson(this AnonymousData anon)
         {
-            if (anon == null)
-            {
-                throw new ArgumentNullException(nameof(anon));
-            }
+            if (anon == null) throw new ArgumentNullException(nameof(anon));
 
             return new Person(anon.AnyFirstName(true), anon.AnySurname());
         }
 
         public static Person AnyPerson(this AnonymousData anon)
         {
-            if (anon == null)
-            {
-                throw new ArgumentNullException(nameof(anon));
-            }
+            if (anon == null) throw new ArgumentNullException(nameof(anon));
 
             return new Person(anon.AnyFirstName(), anon.AnySurname());
         }
@@ -276,7 +267,7 @@ namespace Examples.UsingAnonymousData
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/master/docs/manual/UsingAnonymousData.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/UsingAnonymousData.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
