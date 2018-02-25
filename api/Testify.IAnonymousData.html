@@ -1,0 +1,704 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IAnonymousData
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IAnonymousData
+   ">
+    <meta name="generator" content="docfx 2.28.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" src="../images/gavel_icon-64x64.png" height="46" width="46" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <h1 id="" data-uid="Testify.IAnonymousData">Interface IAnonymousData
+              </h1>
+              <div class="markdown level0 summary"><p>Defines an interface for a factory object that can be used to create other objects.</p>
+</div>
+              <div class="markdown level0 conceptual"></div>
+              <h6><strong>Namespace</strong>:Testify</h6>
+              <h6><strong>Assembly</strong>:Testify.dll</h6>
+              <h5 id="_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public interface IAnonymousData</code></pre>
+              </div>
+              <h3 id="methods">Methods
+              </h3>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L19">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.Any(System.Type,Testify.PopulateOption)">Any(Type, PopulateOption)</h4>
+              <div class="markdown level1 summary"><p>Creates an object of the specified type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">object Any(Type type, PopulateOption populateOption)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Type</span></td>
+                    <td><em>type</em></td>
+                    <td><p>The type of object to create.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="Testify.PopulateOption.html">PopulateOption</a></td>
+                    <td><em>populateOption</em></td>
+                    <td><p>The populate option.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><p>An instance of the specified type.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="exceptions">Exceptions</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Condition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Testify.AnonymousDataException.html">AnonymousDataException</a></td>
+                    <td><p>The specified type could not be created.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L33">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.AnyDouble(System.Double,System.Double,Testify.Distribution)">AnyDouble(Double, Double, Distribution)</h4>
+              <div class="markdown level1 summary"><p>Creates a random <span class="xref">langword_csharp_double</span> value within the specified range using the specified
+distribution algorithm.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">double AnyDouble(double minimum, double maximum, Distribution distribution)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Double</span></td>
+                    <td><em>minimum</em></td>
+                    <td><p>The minimum value.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Double</span></td>
+                    <td><em>maximum</em></td>
+                    <td><p>The maximum value.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="Testify.Distribution.html">Distribution</a></td>
+                    <td><em>distribution</em></td>
+                    <td><p>The distribution algorithm to use.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Double</span></td>
+                    <td><p>A random <span class="xref">langword_csharp_int</span> value.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 id="methods_remarks">Remarks</h5>
+              <div class="markdown level1 remarks"><p>Overrides should treat <span class="xref">null</span> values for <code data-dev-comment-type="paramref" class="paramref">distribution</code> as
+<span class="xref">Distribution.Uniform</span>.</p>
+</div>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L40">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.GetValue(System.String)">GetValue(String)</h4>
+              <div class="markdown level1 summary"><p>Gets the value with the registered key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">object GetValue(string key)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>key</em></td>
+                    <td><p>The key.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><p>The value with the registered key.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L50">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IAnonymousData.Populate``1(``0,System.Boolean)">Populate&lt;TInstance&gt;(TInstance, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Populates the specified instance by assigning all properties to anonymous values.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">TInstance Populate&lt;TInstance&gt;(TInstance instance, bool deep)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">TInstance</span></td>
+                    <td><em>instance</em></td>
+                    <td><p>The instance to populate.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><em>deep</em></td>
+                    <td><p>If set to <span class="xref">true</span> then properties are assigned recursively, populating
+the entire object tree.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">TInstance</span></td>
+                    <td><p>The populated instance.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><em>TInstance</em></td>
+                    <td><p>The type of the instance to populate.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="extensionmethods">Extension Methods</h3>
+              <div>
+                  <a class="xref" href="Testify.AnonymousBool.html">AnonymousBool.AnyBool()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousBool.html">AnonymousBool.AnyBool(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousByte.html">AnonymousByte.AnyByte()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousByte.html">AnonymousByte.AnyByte(Byte, Byte)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousByte.html">AnonymousByte.AnyByte(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousByte.html">AnonymousByte.AnyByte(Byte, Byte, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyAlphaChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyAlphaChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyAlphaNumericChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyAlphaNumericChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyBasicLatinChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyBasicLatinChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyChar(Char, Char)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyChar(Char, Char, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyLatinSupplementChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyLatinSupplementChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyNumericChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyNumericChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyPrintableChar()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousChar.html">AnonymousChar.AnyPrintableChar(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any&lt;T&gt;()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any(Type)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any(Type, Predicate&lt;Object&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any(Type, Int32, Predicate&lt;Object&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any(Type, PopulateOption, Predicate&lt;Object&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any(Type, PopulateOption, Int32, Predicate&lt;Object&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any&lt;T&gt;(Predicate&lt;T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any&lt;T&gt;(Int32, Predicate&lt;T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any&lt;T&gt;(PopulateOption, Predicate&lt;T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any&lt;T&gt;(PopulateOption, Int32, Predicate&lt;T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Any&lt;T&gt;(PopulateOption)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Populate&lt;TInstance&gt;(TInstance)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTime.html">AnonymousDateTime.AnyDateTime()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTime.html">AnonymousDateTime.AnyDateTime(DateTime, DateTime)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTime.html">AnonymousDateTime.AnyDateTime(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTime.html">AnonymousDateTime.AnyDateTime(DateTime, DateTime, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTimeOffset.html">AnonymousDateTimeOffset.AnyDateTimeOffset()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTimeOffset.html">AnonymousDateTimeOffset.AnyDateTimeOffset(DateTimeOffset, DateTimeOffset)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTimeOffset.html">AnonymousDateTimeOffset.AnyDateTimeOffset(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDateTimeOffset.html">AnonymousDateTimeOffset.AnyDateTimeOffset(DateTimeOffset, DateTimeOffset, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyDecimal()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyDecimal(Decimal, Decimal)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyDecimal(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyDecimal(Decimal, Decimal, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyNegativeDecimal()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyNegativeDecimal(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyPositiveDecimal()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDecimal.html">AnonymousDecimal.AnyPositiveDecimal(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyDouble()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyDouble(Double, Double)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyDouble(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyNegativeDouble()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyNegativeDouble(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyPositiveDouble()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDouble.html">AnonymousDouble.AnyPositiveDouble(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnum.html">AnonymousEnum.AnyEnumValue(Type)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnum.html">AnonymousEnum.AnyEnumValue(Type, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnum.html">AnonymousEnum.AnyEnumValue&lt;T&gt;()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnum.html">AnonymousEnum.AnyEnumValue&lt;T&gt;(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.AnyEnumerable(Type)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.AnyEnumerable(Type, Int32, Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.AnyEnumerable&lt;T&gt;()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.AnyEnumerable&lt;T&gt;(Int32, Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.AnyItem&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyInt16()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyInt16(Int16, Int16)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyInt16(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyInt16(Int16, Int16, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyNegativeInt16()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyNegativeInt16(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyPositiveInt16()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt16.html">AnonymousInt16.AnyPositiveInt16(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyInt32()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyInt32(Int32, Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyInt32(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyInt32(Int32, Int32, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyNegativeInt32()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyNegativeInt32(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyPositiveInt32()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt32.html">AnonymousInt32.AnyPositiveInt32(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyInt64()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyInt64(Int64, Int64)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyInt64(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyInt64(Int64, Int64, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyNegativeInt64()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyNegativeInt64(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyPositiveInt64()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousInt64.html">AnonymousInt64.AnyPositiveInt64(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnyNegativeSingle()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnyNegativeSingle(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnyPositiveSingle()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnyPositiveSingle(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnySingle()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnySingle(Single, Single)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnySingle(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousSingle.html">AnonymousSingle.AnySingle(Single, Single, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyFirstName()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyFirstName(Boolean)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyFullName()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyFullName(Boolean)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyString()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyString(Int32, Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyString(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnyString(Int32, Int32, Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousString.html">AnonymousString.AnySurname()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousTimeSpan.html">AnonymousTimeSpan.AnyTimeSpan()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousTimeSpan.html">AnonymousTimeSpan.AnyTimeSpan(TimeSpan, TimeSpan)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousTimeSpan.html">AnonymousTimeSpan.AnyTimeSpan(Distribution)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousTimeSpan.html">AnonymousTimeSpan.AnyTimeSpan(TimeSpan, TimeSpan, Distribution)</a>
+              </div>
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IAnonymousData.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2016 William E. Kempf<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

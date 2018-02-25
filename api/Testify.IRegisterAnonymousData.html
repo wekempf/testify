@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IRegisterAnonymousData
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IRegisterAnonymousData
+   ">
+    <meta name="generator" content="docfx 2.28.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" src="../images/gavel_icon-64x64.png" height="46" width="46" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <h1 id="" data-uid="Testify.IRegisterAnonymousData">Interface IRegisterAnonymousData
+              </h1>
+              <div class="markdown level0 summary"><p>Defines the interface used to register factory methods on an <a class="xref" href="Testify.AnonymousData.html">AnonymousData</a>.</p>
+</div>
+              <div class="markdown level0 conceptual"></div>
+              <h6><strong>Namespace</strong>:Testify</h6>
+              <h6><strong>Assembly</strong>:Testify.dll</h6>
+              <h5 id="_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public interface IRegisterAnonymousData</code></pre>
+              </div>
+              <h3 id="methods">Methods
+              </h3>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L23">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IRegisterAnonymousData.Register(System.Reflection.PropertyInfo,System.Func{Testify.IAnonymousData,System.Object})">Register(PropertyInfo, Func&lt;IAnonymousData, Object&gt;)</h4>
+              <div class="markdown level1 summary"><p>Registers a factory method for the specified property.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">void Register(PropertyInfo propertyInfo, Func&lt;IAnonymousData, object&gt; factory)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Reflection.PropertyInfo</span></td>
+                    <td><em>propertyInfo</em></td>
+                    <td><p>The property to populate.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Testify.IAnonymousData.html">IAnonymousData</a>, <span class="xref">System.Object</span>&gt;</td>
+                    <td><em>factory</em></td>
+                    <td><p>The factory method.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L16">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IRegisterAnonymousData.Register(System.Type,System.Func{Testify.IAnonymousData,System.Object})">Register(Type, Func&lt;IAnonymousData, Object&gt;)</h4>
+              <div class="markdown level1 summary"><p>Register a factory method for the specified type.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">void Register(Type type, Func&lt;IAnonymousData, object&gt; factory)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Type</span></td>
+                    <td><em>type</em></td>
+                    <td><p>The type of object the factory method creates.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Testify.IAnonymousData.html">IAnonymousData</a>, <span class="xref">System.Object</span>&gt;</td>
+                    <td><em>factory</em></td>
+                    <td><p>The factory method.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <span class="small pull-right mobile-hide">
+                <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L30">View Source</a>
+              </span>
+              <h4 id="methods" data-uid="Testify.IRegisterAnonymousData.SetValue(System.String,System.Object)">SetValue(String, Object)</h4>
+              <div class="markdown level1 summary"><p>Sets the value with the registered key.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">void SetValue(string key, object value)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>key</em></td>
+                    <td><p>The key.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Object</span></td>
+                    <td><em>value</em></td>
+                    <td><p>The value.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="extensionmethods">Extension Methods</h3>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Freeze(Type, Object)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Freeze&lt;T&gt;(T)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Register&lt;T&gt;(Func&lt;IAnonymousData, T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousDataExtensions.html">AnonymousDataExtensions.Register&lt;T, TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt;, Func&lt;IAnonymousData, TProperty&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.SetMaximumItemCount(Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousEnumerable.html">AnonymousEnumerable.SetMinimumItemCount(Int32)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousMoq.html">AnonymousMoq.FreezeMock&lt;T&gt;(Action&lt;Mock&lt;T&gt;&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousMoq.html">AnonymousMoq.FreezeMock&lt;T&gt;(Mock&lt;T&gt;)</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousMoq.html">AnonymousMoq.FreezeMock&lt;T&gt;()</a>
+              </div>
+              <div>
+                  <a class="xref" href="Testify.AnonymousMoq.html">AnonymousMoq.RegisterMock&lt;T&gt;(Action&lt;Mock&lt;T&gt;&gt;)</a>
+              </div>
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/wekempf/testify/blob/master/src/Testify/IRegisterAnonymousData.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2016 William E. Kempf<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

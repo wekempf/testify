@@ -148,13 +148,21 @@ namespace Examples.Assertions
     {
         public static void IsLower(this ActualValue&lt;string&gt; actual)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             actual.IsLower(null, null);
         }
 
         public static void IsLower(this ActualValue&lt;string&gt; actual, string message)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             actual.IsLower(message, null);
         }
 
@@ -163,7 +171,11 @@ namespace Examples.Assertions
             string message,
             params object[] args)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             if (!actual.Value.All(c =&gt; !char.IsLetter(c) || char.IsLower(c)))
             {
                 Throw(
@@ -180,7 +192,7 @@ namespace Examples.Assertions
         [Fact]
         public void String_ToLower_ShouldReturnLowercaseString()
         {
-            var original = &quot;The Quick Brown Fox&quot;;
+            const string original = &quot;The Quick Brown Fox&quot;;
 
             var result = original.ToLower();
 
@@ -199,11 +211,11 @@ is also how contract verifiers can run multiple tests and report all of the fail
 <h2 id="provided-assertions">Provided Assertions</h2>
 <p>See the API documentation for the following classes.</p>
 <ul>
-<li>@Testify.StandardAssertions</li>
-<li>@Testify.CollectionAssertions</li>
-<li>@Testify.ExceptionAssertions</li>
-<li>@Testify.StringAssertions</li>
-<li>@Testify.TaskAssertions</li>
+<li><a class="xref" href="../api/Testify.StandardAssertions.html">StandardAssertions</a></li>
+<li><a class="xref" href="../api/Testify.CollectionAssertions.html">CollectionAssertions</a></li>
+<li><a class="xref" href="../api/Testify.ExceptionAssertions.html">ExceptionAssertions</a></li>
+<li><a class="xref" href="../api/Testify.StringAssertions.html">StringAssertions</a></li>
+<li><a class="xref" href="../api/Testify.TaskAssertions.html">TaskAssertions</a></li>
 </ul>
 
             </article>
