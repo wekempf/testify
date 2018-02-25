@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Testify" ToolsVersion="11.0">
+  <Include Path="allrules.ruleset" Action="Default" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1032" Action="None" />
+    <Rule Id="CA1063" Action="None" />
+    <Rule Id="CA1200" Action="None" />
+    <Rule Id="CA1810" Action="None" />
+    <Rule Id="CA1824" Action="None" />
+    <Rule Id="CA1825" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA0001" Action="None" />
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1200" Action="None" />
+    <Rule Id="SA1633" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Roslynator.Analyzers" RuleNamespace="Roslynator.Analyzers">
+    <Rule Id="RCS1163" Action="Error" />
+    <Rule Id="RCS1194" Action="None" />
+  </Rules>
+</RuleSet>

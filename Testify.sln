@@ -1,18 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{469F900E-5D25-4CD0-A0CC-A255131F2D8F}"
+	ProjectSection(SolutionItems) = preProject
+		src\Tests\Directory.build.props = src\Tests\Directory.build.props
+		src\Tests\Testify.Tests.ruleset = src\Tests\Testify.Tests.ruleset
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB7AA38D-B41B-449B-9431-AB1BE2EB3EE3}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		CodeCoverage.runsettings = CodeCoverage.runsettings
+		src\Directory.build.props = src\Directory.build.props
 		LICENSE = LICENSE
 		README.md = README.md
 		testify.cake = testify.cake
+		src\Testify.ruleset = src\Testify.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{9DF27E5E-395B-45E6-995A-891542BC0F41}"
@@ -23,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{9DF27E
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Examples\Directory.build.props = src\Examples\Directory.build.props
+		src\Examples\Testify.Examples.ruleset = src\Examples\Testify.Examples.ruleset
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify", "src\Testify\Testify.csproj", "{C83C1AC0-9E8D-41D7-BC01-06C8570DEC70}"
 EndProject
@@ -68,5 +78,8 @@ Global
 		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
 		{64174681-1570-45E3-9965-18433F644EEC} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
 		{D0F601A2-DB9F-4BFE-88FE-8035D5130980} = {7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {796564D4-DAEC-4717-ADD8-43C0947B2BBE}
 	EndGlobalSection
 EndGlobal

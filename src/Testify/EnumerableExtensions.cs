@@ -4,9 +4,18 @@ using System.Text;
 
 namespace Testify
 {
+    /// <summary>
+    /// Enumerable extensions.
+    /// </summary>
     internal static class EnumerableExtensions
     {
-        public static T OnlyOrDefault<T>(this IEnumerable<T> source)
+        /// <summary>
+        /// Returns the only item in the collection or the default value if there's no items or more than one item.
+        /// </summary>
+        /// <typeparam name="T">The item type.</typeparam>
+        /// <param name="source">The source.</param>
+        /// <returns>The only item or default(T) if there's no items or more than one item.</returns>
+        internal static T OnlyOrDefault<T>(this IEnumerable<T> source)
         {
             Argument.NotNull(source, nameof(source));
 

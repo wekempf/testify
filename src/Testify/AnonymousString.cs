@@ -131,7 +131,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random first name.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnyFirstName(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -143,10 +143,10 @@ namespace Testify
         /// Creates a random <see langword="string"/> value representing a first name.
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="male">If set to <c>true</c> a male first name is created; otherwise, a female
+        /// <param name="male">If set to <see langword="true"/> a male first name is created; otherwise, a female
         /// first name is created.</param>
         /// <returns>A random first name.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnyFirstName(this IAnonymousData anon, bool male)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -160,7 +160,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random full name.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnyFullName(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -172,10 +172,10 @@ namespace Testify
         /// Creates a random <see langword="string"/> value representing a full name.
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
-        /// <param name="male">If set to <c>true</c> a male full name is created; otherwise, a female
+        /// <param name="male">If set to <see langword="true"/> a male full name is created; otherwise, a female
         /// full name is created.</param>
         /// <returns>A random full name.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnyFullName(this IAnonymousData anon, bool male)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -203,7 +203,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="string"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnyString(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -219,8 +219,8 @@ namespace Testify
         /// <param name="minimumLength">The minimum length.</param>
         /// <param name="maximumLength">The maximum length.</param>
         /// <returns>A random <see langword="string"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
         public static string AnyString(this IAnonymousData anon, int minimumLength, int maximumLength)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -236,7 +236,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="string"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnyString(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -253,8 +253,8 @@ namespace Testify
         /// <param name="maximumLength">The maximum length.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="string"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
         public static string AnyString(this IAnonymousData anon, int minimumLength, int maximumLength, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -275,7 +275,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random first name.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static string AnySurname(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));

@@ -21,7 +21,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="type">The type of objects to create.</param>
         /// <returns>A random <see langword="IEnumerable"/> sequence of the specified type of objects.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
         public static IEnumerable AnyEnumerable(this IAnonymousData anon, Type type)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -38,7 +38,7 @@ namespace Testify
         /// <param name="minimumLength">The minimum length of the sequence.</param>
         /// <param name="maximumLength">The maximum length of the sequence.</param>
         /// <returns>A random <see langword="IEnumerable"/> sequence of the specified type of objects.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
         public static IEnumerable AnyEnumerable(this IAnonymousData anon, Type type, int minimumLength, int maximumLength)
         {
@@ -56,7 +56,7 @@ namespace Testify
         /// <typeparam name="T">The type of objects to create.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="IEnumerable{T}"/> sequence of the specified type of objects.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static IEnumerable<T> AnyEnumerable<T>(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -72,7 +72,7 @@ namespace Testify
         /// <param name="minimumLength">The minimum length of the sequence.</param>
         /// <param name="maximumLength">The maximum length of the sequence.</param>
         /// <returns>A random <see langword="IEnumerable{T}"/> sequence of the specified type of objects.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
         public static IEnumerable<T> AnyEnumerable<T>(this IAnonymousData anon, int minimumLength, int maximumLength)
         {

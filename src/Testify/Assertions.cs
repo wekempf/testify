@@ -30,7 +30,7 @@ namespace Testify
         /// <param name="action">The action.</param>
         /// <returns>An <see cref="ActualValue{T}"/> instance that can be used to declare
         /// fluent assertions.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="action"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="action"/> is <see langword="null"/>.</exception>
         public static ActualValue<Action> Assert(Action action)
         {
             Argument.NotNull(action, nameof(action));
@@ -43,7 +43,7 @@ namespace Testify
         /// </summary>
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">A list of actions to be invoked to make assertions.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static void AssertAll(string message, params Action[] assertions)
         {
@@ -58,7 +58,7 @@ namespace Testify
         /// </summary>
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">A list of actions to be invoked to make assertions.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static void AssertAll(string message, IEnumerable<Action> assertions)
         {
@@ -80,7 +80,7 @@ namespace Testify
 
             if (errors.IsValueCreated)
             {
-                throw new AssertionException(message, errors.Value);
+                throw new AssertionException(message, errors.Value.ToArray());
             }
         }
 
@@ -189,7 +189,7 @@ namespace Testify
             Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
 
             var message = AssertionFailed(assertionName, assertionMessage, userMessage, userArgs);
-            throw new AssertionException(message, innerExceptions);
+            throw new AssertionException(message, innerExceptions.ToArray());
         }
 
         /// <summary>

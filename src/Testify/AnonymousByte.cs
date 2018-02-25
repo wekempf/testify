@@ -13,7 +13,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="byte"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static byte AnyByte(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -29,8 +29,8 @@ namespace Testify
         /// <param name="minimum">The minimum value.</param>
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="byte"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
         public static byte AnyByte(this IAnonymousData anon, byte minimum, byte maximum)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -45,7 +45,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="byte"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static byte AnyByte(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -62,8 +62,8 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="byte"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
         public static byte AnyByte(this IAnonymousData anon, byte minimum, byte maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));

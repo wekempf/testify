@@ -6,8 +6,12 @@ using static Testify.Assertions;
 
 namespace Testify
 {
+    /// <summary>
+    /// Equality tests.
+    /// </summary>
+    /// <typeparam name="T">The type to test.</typeparam>
     internal class EqualityTests<T>
-        where T : IEquatable<T>
+            where T : IEquatable<T>
     {
         private static readonly Func<T, int> GetHashCodeFunc;
         private static readonly Func<T, object, bool> ObjectEqualsFunc;
@@ -49,7 +53,11 @@ namespace Testify
             }
         }
 
-        public EqualityTests(Func<T[]> itemsFactory)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EqualityTests{T}"/> class.
+        /// </summary>
+        /// <param name="itemsFactory">The items factory.</param>
+        internal EqualityTests(Func<T[]> itemsFactory)
         {
             ItemsFactory = itemsFactory;
             if (ItemsFactory != null)
@@ -65,19 +73,59 @@ namespace Testify
             }
         }
 
-        public bool SkipImmutabilityTests { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether immutability tests should be skipped.
+        /// </summary>
+        /// <value>
+        ///   <see langword="true"/> if immutability tests should be skipped; otherwise, <see langword="false"/>.
+        /// </value>
+        internal bool SkipImmutabilityTests { get; set; }
 
-        public bool SkipOperatorTests { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether operator tests should be skipped.
+        /// </summary>
+        /// <value>
+        ///   <see langword="true"/> if operator tests should be skipped; otherwise, <see langword="false"/>.
+        /// </value>
+        internal bool SkipOperatorTests { get; set; }
 
-        protected T[] BaseItems { get; }
+        /// <summary>
+        /// Gets the base items.
+        /// </summary>
+        /// <value>
+        /// The base items.
+        /// </value>
+        protected internal T[] BaseItems { get; }
 
-        protected T[] Items { get; }
+        /// <summary>
+        /// Gets the items.
+        /// </summary>
+        /// <value>
+        /// The items.
+        /// </value>
+        protected internal T[] Items { get; }
 
-        protected Func<T[]> ItemsFactory { get; set; }
+        /// <summary>
+        /// Gets or sets the items factory.
+        /// </summary>
+        /// <value>
+        /// The items factory.
+        /// </value>
+        protected internal Func<T[]> ItemsFactory { get; set; }
 
-        protected T[] ShiftedItems { get; }
+        /// <summary>
+        /// Gets the shifted items.
+        /// </summary>
+        /// <value>
+        /// The shifted items.
+        /// </value>
+        protected internal T[] ShiftedItems { get; }
 
-        public virtual TestCollection GetTests()
+        /// <summary>
+        /// Gets the tests.
+        /// </summary>
+        /// <returns>The tests.</returns>
+        internal virtual TestCollection GetTests()
         {
             var isValueType = typeof(T).GetTypeInfo().IsValueType;
             var tests = new TestCollection();
@@ -94,6 +142,7 @@ namespace Testify
             {
                 tests.AddTest(nameof(VerifyEqualsWithNull), () => VerifyEqualsWithNull());
             }
+
             if (!SkipOperatorTests)
             {
                 tests.AddTest(nameof(VerifyEqualityOperatorsDefined), () => VerifyEqualityOperatorsDefined());
@@ -111,14 +160,20 @@ namespace Testify
                     tests.AddTest(nameof(VerifyOpInequalityWithRightAndLeftNull), () => VerifyOpInequalityWithRightAndLeftNull());
                 }
             }
+
             if (!SkipImmutabilityTests)
             {
                 tests.AddTest(nameof(VerifyImmutability), () => VerifyImmutability());
             }
+
             return tests;
         }
 
-        public void VerifyConfiguration(string factoryName)
+        /// <summary>
+        /// Verifies the configuration.
+        /// </summary>
+        /// <param name="factoryName">Name of the factory.</param>
+        internal void VerifyConfiguration(string factoryName)
         {
             Assert(ItemsFactory).IsNotNull($"{factoryName} is not set.");
             Assert(BaseItems).IsNotNull($"{factoryName} did not produce any items.");
@@ -127,14 +182,24 @@ namespace Testify
             Assert(Items.Length).IsEqualTo(BaseItems.Length, $"{factoryName} is not stable.");
         }
 
-        protected (int Index, T Left, T Right)? CompareItems(IEnumerable<T> first, IEnumerable<T> second, Func<T, T, bool> comparer) =>
-            first.Zip(second, (f, s) => new { f, s })
-                .Select((i, n) => new { n, i.f, i.s })
-                .Where(x => !comparer(x.f, x.s))
-                .Select(x => (x.n, x.f, x.s).AsNullable())
-                .FirstOrDefault();
+        /// <summary>
+        /// Compares the items.
+        /// </summary>
+        /// <param name="first">The first.</param>
+        /// <param name="second">The second.</param>
+        /// <param name="comparer">The comparer.</param>
+        /// <returns>The result.</returns>
+        protected internal static (int Index, T Left, T Right)? CompareItems(
+                    IEnumerable<T> first,
+                    IEnumerable<T> second,
+                    Func<T, T, bool> comparer) =>
+                    first.Zip(second, (f, s) => new { f, s })
+                        .Select((i, n) => new { n, i.f, i.s })
+                        .Where(x => !comparer(x.f, x.s))
+                        .Select(x => (x.n, x.f, x.s).AsNullable())
+                        .FirstOrDefault();
 
-        private void VerifyEqualityOperatorsDefined()
+        private static void VerifyEqualityOperatorsDefined()
         {
             var typeInfo = typeof(T).GetTypeInfo();
             if (typeInfo.IsPrimitive)
@@ -145,6 +210,58 @@ namespace Testify
             if (OpEqualityFunc == null || OpInequalityFunc == null)
             {
                 Fail("Equality operators must be defined.");
+            }
+        }
+
+        private static void VerifyGetHashCodeIsOverridden()
+        {
+            if (typeof(T).GetTypeInfo().IsPrimitive)
+            {
+                return;
+            }
+
+            if (GetHashCodeFunc == null)
+            {
+                Fail("Object.GetHashCode must be overridden.");
+            }
+        }
+
+        private static void VerifyObjectEqualsIsOverridden()
+        {
+            if (typeof(T).GetTypeInfo().IsPrimitive)
+            {
+                return;
+            }
+
+            if (ObjectEqualsFunc == null)
+            {
+                Fail("Object.Equals must be overridden.");
+            }
+        }
+
+        private static void VerifyOpEqualityWithRightAndLeftNull()
+        {
+            if (OpEqualityFunc == null)
+            {
+                return;
+            }
+
+            if (!OpEqualityFunc(default(T), default(T)))
+            {
+                Fail($"op_Equality failed when both right hand side and left hand side are null.");
+            }
+        }
+
+        private static void VerifyOpInequalityWithRightAndLeftNull()
+        {
+            if (OpInequalityFunc == null)
+            {
+                return;
+            }
+
+            if (OpInequalityFunc(default(T), default(T)))
+            {
+                Fail($"op_Inequality failed when both right hand side and left hand side are null.");
             }
         }
 
@@ -168,23 +285,10 @@ namespace Testify
 
         private void VerifyEqualsWithNull()
         {
-            var result = CompareItems(BaseItems, BaseItems, (x, y) => !x.Equals(default(T)));
+            var result = CompareItems(BaseItems, BaseItems, (x, _) => !x.Equals(default(T)));
             if (result != null)
             {
                 Fail($"IEquatable<{typeof(T).Name}>.Equals failed with null at index {result.Value.Index}.");
-            }
-        }
-
-        private void VerifyGetHashCodeIsOverridden()
-        {
-            if (typeof(T).GetTypeInfo().IsPrimitive)
-            {
-                return;
-            }
-
-            if (GetHashCodeFunc == null)
-            {
-                Fail("Object.GetHashCode must be overridden.");
             }
         }
 
@@ -206,16 +310,26 @@ namespace Testify
             }
         }
 
-        private void VerifyObjectEqualsIsOverridden()
+        private void VerifyImmutability()
         {
-            if (typeof(T).GetTypeInfo().IsPrimitive)
+            var anon = new AnonymousData();
+            var left = BaseItems.First();
+            var right = ItemsFactory.Invoke().First();
+            var typeInfo = typeof(T).GetTypeInfo();
+            foreach (var property in typeInfo.DeclaredProperties.Where(p => p.CanRead && p.CanWrite))
             {
-                return;
-            }
+                var curValue = property.GetValue(right);
+                var newValue = anon.Any(property.PropertyType, v => curValue == null ? v != null : !curValue.Equals(v));
+                property.SetValue(right, newValue);
+                if (!left.Equals(right))
+                {
+                    Fail($"Failed immutability check. Modifying {property.Name} changed equality.");
+                }
 
-            if (ObjectEqualsFunc == null)
-            {
-                Fail("Object.Equals must be overridden.");
+                if (left.GetHashCode() != right.GetHashCode())
+                {
+                    Fail($"Failed immutability check. Modifying {property.Name} changed the hash code.");
+                }
             }
         }
 
@@ -239,7 +353,7 @@ namespace Testify
 
         private void VerifyObjectEqualsWithNull()
         {
-            var result = CompareItems(BaseItems, BaseItems, (x, y) => !((object)x).Equals(null));
+            var result = CompareItems(BaseItems, BaseItems, (x, _) => !((object)x).Equals(null));
             if (result != null)
             {
                 Fail($"Object.Equals failed with null at index {result.Value.Index}.");
@@ -267,7 +381,7 @@ namespace Testify
                 return;
             }
 
-            var result = CompareItems(BaseItems, BaseItems, (x, y) => !OpEqualityFunc(default(T), x));
+            var result = CompareItems(BaseItems, BaseItems, (x, _) => !OpEqualityFunc(default(T), x));
             if (result != null)
             {
                 Fail($"op_Equality failed when left hand side is null at index {result.Value.Index}.");
@@ -288,19 +402,6 @@ namespace Testify
             }
         }
 
-        private void VerifyOpEqualityWithRightAndLeftNull()
-        {
-            if (OpEqualityFunc == null)
-            {
-                return;
-            }
-
-            if (!OpEqualityFunc(default(T), default(T)))
-            {
-                Fail($"op_Equality failed when both right hand side and left hand side are null.");
-            }
-        }
-
         private void VerifyOpEqualityWithRightNull()
         {
             if (OpEqualityFunc == null)
@@ -308,7 +409,7 @@ namespace Testify
                 return;
             }
 
-            var result = CompareItems(BaseItems, BaseItems, (x, y) => !OpEqualityFunc(x, default(T)));
+            var result = CompareItems(BaseItems, BaseItems, (x, _) => !OpEqualityFunc(x, default(T)));
             if (result != null)
             {
                 Fail($"op_Equality failed when right hand side is null at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
@@ -336,7 +437,7 @@ namespace Testify
                 return;
             }
 
-            var result = CompareItems(BaseItems, BaseItems, (x, y) => OpInequalityFunc(default(T), x));
+            var result = CompareItems(BaseItems, BaseItems, (x, _) => OpInequalityFunc(default(T), x));
             if (result != null)
             {
                 Fail($"op_Inequality failed when left hand side is null at index {result.Value.Index}.");
@@ -357,19 +458,6 @@ namespace Testify
             }
         }
 
-        private void VerifyOpInequalityWithRightAndLeftNull()
-        {
-            if (OpInequalityFunc == null)
-            {
-                return;
-            }
-
-            if (OpInequalityFunc(default(T), default(T)))
-            {
-                Fail($"op_Inequality failed when both right hand side and left hand side are null.");
-            }
-        }
-
         private void VerifyOpInequalityWithRightNull()
         {
             if (OpInequalityFunc == null)
@@ -377,33 +465,10 @@ namespace Testify
                 return;
             }
 
-            var result = CompareItems(BaseItems, BaseItems, (x, y) => OpInequalityFunc(x, default(T)));
+            var result = CompareItems(BaseItems, BaseItems, (x, _) => OpInequalityFunc(x, default(T)));
             if (result != null)
             {
                 Fail($"op_Inequality failed when right hand side is null at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
-            }
-        }
-
-        private void VerifyImmutability()
-        {
-            var anon = new AnonymousData();
-            var left = BaseItems.First();
-            var right = ItemsFactory.Invoke().First();
-            var typeInfo = typeof(T).GetTypeInfo();
-            foreach (var property in typeInfo.DeclaredProperties.Where(p => p.CanRead && p.CanWrite))
-            {
-                var curValue = property.GetValue(right);
-                var newValue = anon.Any(property.PropertyType, v => curValue == null ? v != null : !curValue.Equals(v));
-                property.SetValue(right, newValue);
-                if (!left.Equals(right))
-                {
-                    Fail($"Failed immutability check. Modifying {property.Name} changed equality.");
-                }
-
-                if (left.GetHashCode() != right.GetHashCode())
-                {
-                    Fail($"Failed immutability check. Modifying {property.Name} changed the hash code.");
-                }
             }
         }
     }

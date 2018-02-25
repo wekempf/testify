@@ -10,7 +10,7 @@ namespace Testify
     /// Provides a SynchronizationContext that can be used within a synchronous test method.
     /// </summary>
     /// <seealso cref="System.Threading.SynchronizationContext" />
-    public class TestSynchronizationContext : SynchronizationContext
+    public sealed class TestSynchronizationContext : SynchronizationContext, IDisposable
     {
         private readonly BlockingCollection<KeyValuePair<SendOrPostCallback, object>> queue
             = new BlockingCollection<KeyValuePair<SendOrPostCallback, object>>();
@@ -44,6 +44,12 @@ namespace Testify
             {
                 SynchronizationContext.SetSynchronizationContext(previousContext);
             }
+        }
+
+        /// <inheritdoc/>
+        void IDisposable.Dispose()
+        {
+            queue.Dispose();
         }
 
         /// <summary>

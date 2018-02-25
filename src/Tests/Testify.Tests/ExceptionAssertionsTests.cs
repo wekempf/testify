@@ -196,7 +196,9 @@ namespace Testify
         {
         }
 
-        private void Throw<T>() where T : Exception, new() => throw new T();
+        private void Throw<T>()
+            where T : Exception, new()
+            => throw new T();
 
         private void ThrowExceptionWithMessageFoo() => throw new Exception("foo");
     }

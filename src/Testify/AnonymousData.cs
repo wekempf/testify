@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using Factory = System.Func<Testify.IAnonymousData, object>;
+using PropertyFactories = System.Collections.Generic.Dictionary<System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, object>>;
 
 namespace Testify
 {
@@ -13,12 +14,14 @@ namespace Testify
     /// </summary>
     public sealed class AnonymousData : IAnonymousData, IRegisterAnonymousData
     {
+        private static readonly object[] EmptyArgs = new object[0];
+
         private static readonly Dictionary<Type, Factory> GlobalFactories = new Dictionary<Type, Factory>();
-        private static readonly Dictionary<PropertyInfo, Factory> GlobalPropertyFactories =
-            new Dictionary<PropertyInfo, Factory>();
+        private static readonly PropertyFactories GlobalPropertyFactories = new PropertyFactories();
+
         private readonly List<IAnonymousDataCustomization> customizations = new List<IAnonymousDataCustomization>();
         private readonly Dictionary<Type, Factory> factories = new Dictionary<Type, Factory>();
-        private readonly Dictionary<PropertyInfo, Factory> propertyFactories = new Dictionary<PropertyInfo, Factory>();
+        private readonly PropertyFactories propertyFactories = new PropertyFactories();
         private readonly Random random;
         private readonly Dictionary<string, object> registeredValues = new Dictionary<string, object>();
 
@@ -79,7 +82,7 @@ namespace Testify
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public static void RegisterDefault(Type type, Factory factory)
         {
             Argument.NotNull(type, nameof(type));
@@ -107,7 +110,7 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The type of object the factory method creates.</typeparam>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="factory"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="factory"/> is <see langword="null"/>.</exception>
         public static void RegisterDefault<T>(Func<IAnonymousData, T> factory)
         {
             Argument.NotNull(factory, nameof(factory));
@@ -123,7 +126,7 @@ namespace Testify
         /// <param name="propertyExpression">An expression representing the property to populate.</param>
         /// <param name="factory">The factory method.</param>
         /// <exception cref="ArgumentNullException"><paramref name="propertyExpression"/> or
-        /// <paramref name="factory"/> is <c>null</c>.</exception>
+        /// <paramref name="factory"/> is <see langword="null"/>.</exception>
         public static void RegisterDefault<T, TProperty>(
             Expression<Func<T, TProperty>> propertyExpression,
             Func<IAnonymousData, TProperty> factory)
@@ -223,7 +226,7 @@ namespace Testify
         /// </summary>
         /// <param name="customization">The customization to apply.</param>
         /// <returns>The current <see cref="AnonymousData"/> to allow for method call chaining.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="customization"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="customization"/> is <see langword="null"/>.</exception>
         public AnonymousData Customize(IAnonymousDataCustomization customization)
         {
             Argument.NotNull(customization, nameof(customization));
@@ -288,8 +291,7 @@ namespace Testify
                                         if (method != null)
                                         {
                                             var valueType = method.GetParameters().First().ParameterType;
-                                            var values = (this).AnyEnumerable(valueType);
-                                            foreach (var item in values)
+                                            foreach (var item in this.AnyEnumerable(valueType))
                                             {
                                                 try
                                                 {
@@ -378,7 +380,7 @@ namespace Testify
         /// <param name="type">The type of object the factory method creates.</param>
         /// <param name="factory">The factory method.</param>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> or <paramref name="factory"/> is
-        /// <c>null</c>.</exception>
+        /// <see langword="null"/>.</exception>
         public void Register(Type type, Factory factory)
         {
             Argument.NotNull(type, nameof(type));
@@ -390,14 +392,14 @@ namespace Testify
         /// <summary>
         /// Registers a factory method for the specified property.
         /// </summary>
-        /// <param name="property">The property to populate.</param>
+        /// <param name="propertyInfo">The property to populate.</param>
         /// <param name="factory">The factory method.</param>
-        public void Register(PropertyInfo property, Factory factory)
+        public void Register(PropertyInfo propertyInfo, Factory factory)
         {
-            Argument.NotNull(property, nameof(property));
+            Argument.NotNull(propertyInfo, nameof(propertyInfo));
             Argument.NotNull(factory, nameof(factory));
 
-            propertyFactories[property] = factory;
+            propertyFactories[propertyInfo] = factory;
         }
 
         /// <summary>
@@ -488,7 +490,7 @@ namespace Testify
             ctor = type.GetConstructor();
             if (ctor != null)
             {
-                result = ctor.Invoke(new object[0]);
+                result = ctor.Invoke(EmptyArgs);
                 var method = type.GetAddMethod();
                 if (method != null)
                 {
@@ -598,6 +600,17 @@ namespace Testify
             /// populating the entire object tree.</param>
             /// <returns>The populated instance.</returns>
             public TInstance Populate<TInstance>(TInstance instance, bool deep) => factory.Populate(instance, deep);
+        }
+
+        private class PropertyComparer : IEqualityComparer<PropertyInfo>
+        {
+            public static PropertyComparer Default { get; } = new PropertyComparer();
+
+            public bool Equals(PropertyInfo x, PropertyInfo y) => GetData(x).Equals(GetData(y));
+
+            public int GetHashCode(PropertyInfo obj) => GetData(obj).GetHashCode();
+
+            private static (Type, string) GetData(PropertyInfo info) => (info.ReflectedType, info.Name);
         }
     }
 }

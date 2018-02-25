@@ -13,7 +13,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see cref="bool"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static bool AnyBool(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -27,7 +27,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see cref="bool"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static bool AnyBool(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));

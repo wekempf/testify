@@ -11,14 +11,14 @@ namespace Testify
             None = 0x0,
             First = 0x1,
             Second = 0x2,
-            Third = 0x4
+            Third = 0x4,
         }
 
         private enum SimpleEnum
         {
             One,
             Two,
-            Three
+            Three,
         }
 
         [Fact]

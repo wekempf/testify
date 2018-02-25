@@ -110,7 +110,7 @@ namespace Testify
         /// <param name="retryAttempts">The retry attempts.</param>
         /// <param name="predicate">The predicate.</param>
         /// <returns>An instance of the specified type.</returns>
-        /// <exception cref="AnonymousDataException"></exception>
+        /// <exception cref="AnonymousDataException">The anonymous data could not be created.</exception>
         public static object Any(
             this IAnonymousData anon,
             Type type,
@@ -138,7 +138,7 @@ namespace Testify
         /// <summary>
         /// Anies the specified predicate.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type to create.</typeparam>
         /// <param name="anon">The anon.</param>
         /// <param name="predicate">The predicate.</param>
         /// <returns>An instance of the specified type.</returns>
@@ -155,7 +155,7 @@ namespace Testify
         /// <summary>
         /// Anies the specified retry attempts.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type to create.</typeparam>
         /// <param name="anon">The anon.</param>
         /// <param name="retryAttempts">The retry attempts.</param>
         /// <param name="predicate">The predicate.</param>
@@ -175,7 +175,7 @@ namespace Testify
         /// <summary>
         /// Anies the specified populate option.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type to create.</typeparam>
         /// <param name="anon">The anon.</param>
         /// <param name="populateOption">The populate option.</param>
         /// <param name="predicate">The predicate.</param>
@@ -194,13 +194,13 @@ namespace Testify
         /// <summary>
         /// Anies the specified populate option.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type to create.</typeparam>
         /// <param name="anon">The anon.</param>
         /// <param name="populateOption">The populate option.</param>
         /// <param name="retryAttempts">The retry attempts.</param>
         /// <param name="predicate">The predicate.</param>
         /// <returns>An instance of the specified type.</returns>
-        /// <exception cref="AnonymousDataException"></exception>
+        /// <exception cref="AnonymousDataException">The anonymous data was unable to be created.</exception>
         public static T Any<T>(
             this IAnonymousData anon,
             PopulateOption populateOption,
@@ -239,13 +239,13 @@ namespace Testify
         }
 
         /// <summary>
-        /// Freezes the specified value as the result for any further calls to <see cref="Any"/>
+        /// Freezes the specified value as the result for any further calls to <see cref="o:Any"/>
         /// for the specified type.
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="type">The type to freeze.</param>
         /// <param name="value">The instance to freeze.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
         /// <exception cref="ArgumentException"><paramref name="value"/> is not assignable to <paramref name="type"/>.</exception>
         public static void Freeze(this IRegisterAnonymousData anon, Type type, object value)
         {
@@ -253,17 +253,17 @@ namespace Testify
             Argument.NotNull(type, nameof(type));
             Argument.IsAssignableTo(value, type, nameof(value));
 
-            anon.Register(type, f => value);
+            anon.Register(type, _ => value);
         }
 
         /// <summary>
-        /// Freezes the specified value as the result for any further calls to <see cref="Any"/>
+        /// Freezes the specified value as the result for any further calls to <see cref="o:Any"/>
         /// for the specified type.
         /// </summary>
         /// <typeparam name="T">The type to freeze.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="value">The instance to freeze.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static void Freeze<T>(this IRegisterAnonymousData anon, T value)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -292,7 +292,7 @@ namespace Testify
         /// <typeparam name="T">The type of object the factory method creates.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="factory"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="factory"/> is <see langword="null"/>.</exception>
         public static void Register<T>(this IRegisterAnonymousData anon, Func<IAnonymousData, T> factory)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -310,7 +310,7 @@ namespace Testify
         /// <param name="propertyExpression">An expression representing the property to populate.</param>
         /// <param name="factory">The factory method.</param>
         /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="propertyExpression"/> or
-        /// <paramref name="factory"/> is <c>null</c>.</exception>
+        /// <paramref name="factory"/> is <see langword="null"/>.</exception>
         public static void Register<T, TProperty>(
             this IRegisterAnonymousData anon,
             Expression<Func<T, TProperty>> propertyExpression,
@@ -327,6 +327,8 @@ namespace Testify
                 throw new ArgumentException("Invalid property expression.");
             }
 
+            // Make sure the ReflectedType is for the correct expression type
+            property = member.Expression.Type.GetProperty(property.Name);
             anon.Register(property, f => factory(f));
         }
     }

@@ -1,20 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <AssemblyName>Testify</AssemblyName>
     <RootNamespace>Testify</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Testify</PackageId>
-    <Authors>William E. Kempf</Authors>
     <Description>Testify is a unit test assertions, test data creation and contract verification framework. It's not dependent on any specific unit testing framework.</Description>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/wekempf/testify/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>http://wekempf.github.io/testify/</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/wekempf/testify/develop/docs/images/gavel_icon-64x64.png</PackageIconUrl>
-    <RepositoryUrl>git@github.com:wekempf/testify.git</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
-    <PackageTags>test, unit, testing, TDD, AAA, assert, assertion, factory, verifier</PackageTags>
-    <Copyright>Copyright © William E. Kempf</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -25,6 +17,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0</DefineConstants>
+    <DocumentationFile>bin\Debug\netstandard2.0\Testify.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\Testify.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

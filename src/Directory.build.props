@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <Authors>William E. Kempf</Authors>
+    <Company>William E. Kempf</Company>
+    <Copyright>Copyright © William E. Kempf</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/wekempf/testify/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>http://wekempf.github.io/testify/</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/wekempf/testify/develop/docs/images/gavel_icon-64x64.png</PackageIconUrl>
+    <RepositoryUrl>git@github.com:wekempf/testify.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>test, unit, testing, TDD, AAA, assert, assertion, factory, verifier</PackageTags>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Testify.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta006" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.0" PrivateAssets="all" />
+    <PackageReference Include="Roslynator.Analyzers" Version="1.7.0" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

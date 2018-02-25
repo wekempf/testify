@@ -16,7 +16,7 @@ namespace Testify
         /// Calls the next customization in the chain.
         /// </summary>
         /// <param name="result">The result.</param>
-        /// <returns><c>true</c> if an object was created, otherwise <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if an object was created, otherwise <see langword="false"/>.</returns>
         bool CallNextCustomization(out object result);
     }
 }

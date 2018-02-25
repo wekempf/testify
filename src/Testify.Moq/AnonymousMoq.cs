@@ -17,7 +17,7 @@ namespace Testify
         /// <typeparam name="T">The type to freeze.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="config">The delegate invoked to configure the mock behavior.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static void FreezeMock<T>(this IRegisterAnonymousData anon, Action<Mock<T>> config)
             where T : class
         {
@@ -33,7 +33,7 @@ namespace Testify
         /// <typeparam name="T">The type to freeze.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="instance">The mock instance to freeze.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static void FreezeMock<T>(this IRegisterAnonymousData anon, Mock<T> instance)
             where T : class =>
             anon.Freeze(instance);
@@ -44,7 +44,7 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The type to freeze.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static void FreezeMock<T>(this IRegisterAnonymousData anon)
             where T : class =>
             anon.FreezeMock(new Mock<T>());
@@ -60,7 +60,7 @@ namespace Testify
         {
             Argument.NotNull(anon, nameof(anon));
 
-            anon.Register<Mock<T>>(a =>
+            anon.Register<Mock<T>>(_ =>
             {
                 var mock = new Mock<T>();
                 config?.Invoke(mock);

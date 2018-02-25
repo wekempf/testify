@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="context">The current context.</param>
         /// <param name="result">The result.</param>
-        /// <returns><c>true</c> if an object was created, otherwise <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if an object was created, otherwise <see langword="false"/>.</returns>
         bool Create(IAnonymousDataContext context, out object result);
     }
 }

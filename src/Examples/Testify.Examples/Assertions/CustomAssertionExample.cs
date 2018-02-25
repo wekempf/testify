@@ -10,13 +10,21 @@ namespace Examples.Assertions
     {
         public static void IsLower(this ActualValue<string> actual)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             actual.IsLower(null, null);
         }
 
         public static void IsLower(this ActualValue<string> actual, string message)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             actual.IsLower(message, null);
         }
 
@@ -25,7 +33,11 @@ namespace Examples.Assertions
             string message,
             params object[] args)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             if (!actual.Value.All(c => !char.IsLetter(c) || char.IsLower(c)))
             {
                 Throw(
@@ -42,7 +54,7 @@ namespace Examples.Assertions
         [Fact]
         public void String_ToLower_ShouldReturnLowercaseString()
         {
-            var original = "The Quick Brown Fox";
+            const string original = "The Quick Brown Fox";
 
             var result = original.ToLower();
 

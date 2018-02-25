@@ -29,7 +29,7 @@ namespace Testify
 
             var stack = new Stack<AssertionException>();
             stack.Push(exception);
-            while (stack.Any())
+            while (stack.Count > 0)
             {
                 var current = stack.Pop();
                 foreach (var inner in current.InnerExceptions)

@@ -16,7 +16,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<int>
             {
-                OrderedItemsFactory = () => new[] { 1, 2, 3, 4 }
+                OrderedItemsFactory = () => new[] { 1, 2, 3, 4, },
             };
 
             verifier.Verify();
@@ -27,7 +27,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<string>
             {
-                OrderedItemsFactory = () => new[] { "bar", "baz", "foo" }
+                OrderedItemsFactory = () => new[] { "bar", "baz", "foo", },
             };
 
             verifier.Verify();
@@ -38,7 +38,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<Correct>
             {
-                OrderedItemsFactory = () => new[] { new Correct(1), new Correct(2), new Correct(3) }
+                OrderedItemsFactory = () => new[] { new Correct(1), new Correct(2), new Correct(3), },
             };
 
             verifier.Verify();
@@ -67,7 +67,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<int>
             {
-                OrderedItemsFactory = () => null
+                OrderedItemsFactory = () => null,
             };
 
             try
@@ -88,7 +88,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<int>
             {
-                OrderedItemsFactory = () => new[] { 1, 2 }
+                OrderedItemsFactory = () => new[] { 1, 2, },
             };
 
             try
@@ -109,7 +109,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<string>
             {
-                OrderedItemsFactory = () => new[] { "foo", null, "bar" }
+                OrderedItemsFactory = () => new[] { "foo", null, "bar", },
             };
 
             try
@@ -135,7 +135,7 @@ namespace Testify
                 {
                     items = items.Concat(new[] { 1 }).ToArray();
                     return items;
-                }
+                },
             };
 
             try
@@ -160,8 +160,8 @@ namespace Testify
                 {
                     new NoObjectEqualsOverride(1),
                     new NoObjectEqualsOverride(2),
-                    new NoObjectEqualsOverride(3)
-                }
+                    new NoObjectEqualsOverride(3),
+                },
             };
 
             try
@@ -187,8 +187,8 @@ namespace Testify
                 {
                     new NoGetHashCodeOverride(1),
                     new NoGetHashCodeOverride(2),
-                    new NoGetHashCodeOverride(3)
-                }
+                    new NoGetHashCodeOverride(3),
+                },
             };
 
             try
@@ -214,8 +214,8 @@ namespace Testify
                 {
                     new NoEqualityOperators(1),
                     new NoEqualityOperators(2),
-                    new NoEqualityOperators(3)
-                }
+                    new NoEqualityOperators(3),
+                },
             };
 
             try
@@ -241,8 +241,8 @@ namespace Testify
                 {
                     new NoComparisonOperators(1),
                     new NoComparisonOperators(2),
-                    new NoComparisonOperators(3)
-                }
+                    new NoComparisonOperators(3),
+                },
             };
 
             try
@@ -268,8 +268,8 @@ namespace Testify
                 {
                     new UnstableGetHashCode(1),
                     new UnstableGetHashCode(2),
-                    new UnstableGetHashCode(3)
-                }
+                    new UnstableGetHashCode(3),
+                },
             };
 
             try
@@ -295,8 +295,8 @@ namespace Testify
                 {
                     new BrokenObjectEquals(1),
                     new BrokenObjectEquals(2),
-                    new BrokenObjectEquals(3)
-                }
+                    new BrokenObjectEquals(3),
+                },
             };
 
             try
@@ -322,8 +322,8 @@ namespace Testify
                 {
                     new BrokenObjectEquals(1, true),
                     new BrokenObjectEquals(2, true),
-                    new BrokenObjectEquals(3, true)
-                }
+                    new BrokenObjectEquals(3, true),
+                },
             };
 
             try
@@ -345,7 +345,7 @@ namespace Testify
         {
             var verifier = new ComparableVerifier<BrokenEquals>()
             {
-                OrderedItemsFactory = () => new[] { new BrokenEquals(1), new BrokenEquals(2), new BrokenEquals(3) }
+                OrderedItemsFactory = () => new[] { new BrokenEquals(1), new BrokenEquals(2), new BrokenEquals(3), },
             };
 
             try
@@ -371,8 +371,8 @@ namespace Testify
                 {
                     new BrokenEquals(1, true),
                     new BrokenEquals(2, true),
-                    new BrokenEquals(3, true)
-                }
+                    new BrokenEquals(3, true),
+                },
             };
 
             try
@@ -398,8 +398,8 @@ namespace Testify
                 {
                     new BrokenOpEquality(1),
                     new BrokenOpEquality(2),
-                    new BrokenOpEquality(3)
-                }
+                    new BrokenOpEquality(3),
+                },
             };
 
             try
@@ -425,8 +425,8 @@ namespace Testify
                 {
                     new BrokenOpEquality(1, true),
                     new BrokenOpEquality(2, true),
-                    new BrokenOpEquality(3, true)
-                }
+                    new BrokenOpEquality(3, true),
+                },
             };
 
             try
@@ -452,8 +452,8 @@ namespace Testify
                 {
                     new BrokenOpInequality(1),
                     new BrokenOpInequality(2),
-                    new BrokenOpInequality(3)
-                }
+                    new BrokenOpInequality(3),
+                },
             };
 
             try
@@ -479,8 +479,8 @@ namespace Testify
                 {
                     new BrokenOpInequality(1, true),
                     new BrokenOpInequality(2, true),
-                    new BrokenOpInequality(3, true)
-                }
+                    new BrokenOpInequality(3, true),
+                },
             };
 
             try
@@ -758,7 +758,9 @@ namespace Testify
 
             public int CompareTo(object obj) => throw new NotImplementedException();
 
+#pragma warning disable RCS1163 // Unused parameter.
             public static bool operator ==(BrokenOpEquality left, BrokenOpEquality right) => left.result;
+#pragma warning restore RCS1163 // Unused parameter.
 
             public static bool operator !=(BrokenOpEquality left, BrokenOpEquality right) => !(object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right));
         }
@@ -787,9 +789,11 @@ namespace Testify
 
             public int CompareTo(object obj) => throw new NotImplementedException();
 
+#pragma warning disable RCS1163 // Unused parameter.
             public static bool operator ==(BrokenOpInequality left, BrokenOpInequality right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
 
             public static bool operator !=(BrokenOpInequality left, BrokenOpInequality right) => left.result;
+#pragma warning restore RCS1163 // Unused parameter.
         }
 
         private class BrokenOpGreaterThan : IEquatable<BrokenOpGreaterThan>, IComparable<BrokenOpGreaterThan>, IComparable
@@ -836,7 +840,9 @@ namespace Testify
 
             public static bool operator !=(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => !(left == right);
 
+#pragma warning disable RCS1163 // Unused parameter.
             public static bool operator >(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => false;
+#pragma warning restore RCS1163 // Unused parameter.
 
             public static bool operator <(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => object.ReferenceEquals(left, null) ? !object.ReferenceEquals(right, null) : left.CompareTo(right) < 0;
 

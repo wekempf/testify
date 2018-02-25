@@ -13,7 +13,7 @@ namespace Testify
         /// Initializes a new instance of the <see cref="AnonymousDataException"/> class.
         /// </summary>
         /// <param name="type">The type that could not be created.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <see langword="null"/>.</exception>
         public AnonymousDataException(Type type)
             : this(type, null, null)
         {
@@ -24,7 +24,7 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type that could not be created.</param>
         /// <param name="innerException">The inner exception.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <see langword="null"/>.</exception>
         public AnonymousDataException(Type type, Exception innerException)
             : this(type, null, innerException)
         {
@@ -35,7 +35,7 @@ namespace Testify
         /// </summary>
         /// <param name="type">The type that could not be created.</param>
         /// <param name="message">The extra message to include in the <see cref="Exception.Message"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <see langword="null"/>.</exception>
         public AnonymousDataException(Type type, string message)
             : this(type, message, null)
         {
@@ -47,7 +47,7 @@ namespace Testify
         /// <param name="type">The type that could not be created.</param>
         /// <param name="message">The extra message to include in the <see cref="Exception.Message"/>.</param>
         /// <param name="innerException">The inner exception.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is <see langword="null"/>.</exception>
         public AnonymousDataException(Type type, string message, Exception innerException)
             : base(GetMessage(type, message), innerException)
         {

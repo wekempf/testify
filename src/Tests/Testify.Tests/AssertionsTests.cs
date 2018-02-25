@@ -101,7 +101,7 @@ namespace Testify
         [Fact]
         public void ReplaceNullChars_StringWithNulls_ShouldReplaceNulls()
         {
-            var text = "xxx\0xxx";
+            const string text = "xxx\0xxx";
 
             var result = ReplaceNullChars(text);
 

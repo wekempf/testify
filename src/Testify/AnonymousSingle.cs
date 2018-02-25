@@ -13,7 +13,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static float AnyNegativeSingle(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -27,7 +27,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static float AnyNegativeSingle(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -40,7 +40,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         /// <remarks>
         /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
         /// perspective, but the term "positive" is used because this is what many would expect.
@@ -58,7 +58,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random positive <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         /// <remarks>
         /// This method may return a zero value, which strictly makes this "any non-negative" from a mathematical
         /// perspective, but the term "positive" is used because this is what many would expect.
@@ -75,7 +75,7 @@ namespace Testify
         /// </summary>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <returns>A random <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static float AnySingle(this IAnonymousData anon)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -91,8 +91,8 @@ namespace Testify
         /// <param name="minimum">The minimum value.</param>
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
         public static float AnySingle(this IAnonymousData anon, float minimum, float maximum)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -107,7 +107,7 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
         public static float AnySingle(this IAnonymousData anon, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -124,8 +124,8 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="float"/> value.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
         public static float AnySingle(this IAnonymousData anon, float minimum, float maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));

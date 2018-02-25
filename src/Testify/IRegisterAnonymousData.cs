@@ -18,9 +18,9 @@ namespace Testify
         /// <summary>
         /// Registers a factory method for the specified property.
         /// </summary>
-        /// <param name="property">The property to populate.</param>
+        /// <param name="propertyInfo">The property to populate.</param>
         /// <param name="factory">The factory method.</param>
-        void Register(PropertyInfo property, Func<IAnonymousData, object> factory);
+        void Register(PropertyInfo propertyInfo, Func<IAnonymousData, object> factory);
 
         /// <summary>
         /// Sets the value with the registered key.

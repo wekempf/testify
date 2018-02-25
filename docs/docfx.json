@@ -8,21 +8,23 @@
       },
       "src": [
         {
-          "cwd": "..",
+          "src": "../src",
           "files": [
-            "src/**.csproj"
+            "**.csproj"
           ],
           "exclude": [
             "**/bin/**",
             "**/obj/**",
-            "_site/**",
             "**/Tests/**",
             "**/Examples/**"
           ]
         }
       ],
       "dest": "api",
-      "filter": "filterConfig.yml"
+      "filter": "filterConfig.yml",
+      "properties": {
+        "TargetFramework": "netstandard2.0"
+      }
     }
   ],
   "build": {

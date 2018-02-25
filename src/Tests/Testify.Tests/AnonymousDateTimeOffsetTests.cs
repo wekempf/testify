@@ -69,7 +69,10 @@ namespace Testify
             classifier.AddClassification("GT", d => d.Ticks > (DateTimeOffset.MaxValue.Ticks / 2));
             classifier.AddClassification("LT", d => d.Ticks < (DateTimeOffset.MaxValue.Ticks / 2));
 
-            classifier.Classify(() => anon.AnyDateTimeOffset(DateTimeOffset.MinValue, DateTimeOffset.MaxValue, Distribution.Uniform));
+            classifier.Classify(() => anon.AnyDateTimeOffset(
+                DateTimeOffset.MinValue,
+                DateTimeOffset.MaxValue,
+                Distribution.Uniform));
 
             Assert.True(classifier["GT"] > 0.4);
             Assert.True(classifier["LT"] > 0.4);

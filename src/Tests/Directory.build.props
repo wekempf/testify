@@ -1,0 +1,11 @@
+<Project>
+  <Import Project="..\Directory.build.props" />
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Testify.Tests.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.analyzers" Version="0.8.0" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

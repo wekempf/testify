@@ -19,8 +19,10 @@ namespace Testify
 
             AssertAll(
                 "Distribution of values was not uniform.",
-                () => Assert(classifier["GT"] > 0.4).IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
-                () => Assert(classifier["LT"] > 0.4).IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
+                () => Assert(classifier["GT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
+                () => Assert(classifier["LT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
         }
 
         [Fact]
@@ -36,8 +38,10 @@ namespace Testify
 
             AssertAll(
                 "Distribution of values was not uniform.",
-                () => Assert(classifier["GT"] > 0.4).IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
-                () => Assert(classifier["LT"] > 0.4).IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
+                () => Assert(classifier["GT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
+                () => Assert(classifier["LT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
         }
 
         [Fact]
@@ -53,8 +57,10 @@ namespace Testify
 
             AssertAll(
                 "Distribution of values was not uniform.",
-                () => Assert(classifier["GT"] > 0.4).IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
-                () => Assert(classifier["LT"] > 0.4).IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
+                () => Assert(classifier["GT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
+                () => Assert(classifier["LT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
         }
 
         [Fact]
@@ -70,8 +76,10 @@ namespace Testify
 
             AssertAll(
                 "Distribution of values was not uniform.",
-                () => Assert(classifier["GT"] > 0.4).IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
-                () => Assert(classifier["LT"] > 0.4).IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
+                () => Assert(classifier["GT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
+                () => Assert(classifier["LT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
         }
 
         [Fact]
@@ -87,8 +95,10 @@ namespace Testify
 
             AssertAll(
                 "Distribution of values was not uniform.",
-                () => Assert(classifier["GT"] > 0.4).IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
-                () => Assert(classifier["LT"] > 0.4).IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
+                () => Assert(classifier["GT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be greater than {mid}. Actual: {classifier["GT"]}."),
+                () => Assert(classifier["LT"] > 0.4)
+                    .IsTrue($"Roughly half the generated values should be less than {mid}. Actual: {classifier["LT"]}."));
         }
     }
 }

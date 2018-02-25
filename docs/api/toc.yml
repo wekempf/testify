@@ -55,9 +55,6 @@
   - uid: Testify.ComparableVerifier`1
     name: ComparableVerifier<T>
     name.vb: ComparableVerifier(Of T)
-  - uid: Testify.ComparisonVerifierBase`1
-    name: ComparisonVerifierBase<T>
-    name.vb: ComparisonVerifierBase(Of T)
   - uid: Testify.ContractVerifier
     name: ContractVerifier
   - uid: Testify.Distribution

@@ -5,7 +5,8 @@ namespace Examples.UsingAnonymousData
 {
     public class Mapper
     {
-        private Dictionary<(Type, Type), Func<object, object>> mappers = new Dictionary<(Type, Type), Func<object, object>>();
+        private readonly Dictionary<(Type, Type), Func<object, object>> mappers
+            = new Dictionary<(Type, Type), Func<object, object>>();
 
         public Mapper() =>
             mappers.Add(
@@ -18,7 +19,7 @@ namespace Examples.UsingAnonymousData
 
         public TDestination Map<TDestination>(object source)
         {
-            if (mappers.TryGetValue((source.GetType(), typeof(TDestination)), out Func<object, object> mapper))
+            if (mappers.TryGetValue((source.GetType(), typeof(TDestination)), out var mapper))
             {
                 return (TDestination)mapper.Invoke(source);
             }

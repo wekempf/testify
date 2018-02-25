@@ -59,9 +59,8 @@ var releaseNuGetSource = "https://www.nuget.org/api/v2/package";
 var releaseNuGetApiKey = EnvironmentVariable("NuGetApiKey");
 var unstableNuGetSource = "https://www.myget.org/F/wekempf/api/v2/package";
 var unstableNuGetApiKey = EnvironmentVariable("MyGetApiKey");
-var gitPagesRepo = isRunningOnBuildServer
-    ? "https://wekempf:" + EnvironmentVariable("GitHubPersonalAccessToken") + "@github.com/wekempf/testify.git"
-    : "https://github.com/wekempf/testify.git";
+var personalAccessToken = Argument("personalAccessToken", EnvironmentVariable("GitHubPersonalAccessToken"));
+var gitPagesRepo = $"https://wekempf:{personalAccessToken}@github.com/wekempf/testify.git";
 var gitPagesBranch = "gh-pages";
 var branch = EnvironmentVariable("APPVEYOR_REPO_BRANCH") ?? GitBranchCurrent(".").FriendlyName;
 
@@ -201,42 +200,42 @@ Task("Docs")
         WorkingDirectory = "./docs"
     };
     DocFxBuild(settings);
-    Zip("./docs/_site", "./docs/site.zip");
-    if (isRunningOnBuildServer || forceDocPublish) {
-        //if (branch == "master") {
-            var pagesDirectory = "./pages";
-            Information("Cloning pages branch...");
-            GitClone(gitPagesRepo, pagesDirectory, new GitCloneSettings { BranchName = gitPagesBranch });
+    if (!isRunningOnBuildServer && !forceDocPublish) {
+        Zip("./docs/_site", "./docs/site.zip");
+    }
+    if ((isRunningOnBuildServer && branch == "master") || forceDocPublish) {
+        var pagesDirectory = "./pages";
+        Information($"Cloning {gitPagesRepo} pages branch to '{pagesDirectory}'...");
+        GitClone(gitPagesRepo, pagesDirectory, new GitCloneSettings { BranchName = gitPagesBranch });
+        try {
+            Information("Sync output files...");
+            Kudu.Sync("./docs/_site", pagesDirectory, new KuduSyncSettings {
+                ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
+            });
+            Information("Stage all changes...");
+            GitAddAll(pagesDirectory);
+            Information("Commit all changes...");
+            var sourceCommit = GitLogTip("./");
             try {
-                Information("Sync output files...");
-                Kudu.Sync("./docs/_site", pagesDirectory, new KuduSyncSettings {
-                    ArgumentCustomization = args => args.Append("--ignore").AppendQuoted(".git;CNAME")
-                });
-                Information("Stage all changes...");
-                GitAddAll(pagesDirectory);
-                Information("Commit all changes...");
-                var sourceCommit = GitLogTip("./");
-                try {
-                    GitCommit(
-                        pagesDirectory,
-                        sourceCommit.Committer.Name,
-                        sourceCommit.Committer.Email,
-                        string.Format("AppVeyor Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
-                }
-                catch (LibGit2Sharp.EmptyCommitException e) {
-                }
-
-                Information("Publishing all changes...");
-                GitPush(pagesDirectory);
-            } finally {
-                Information("Cleaning up pages clone...");
-                DeleteDirectory(pagesDirectory, new DeleteDirectorySettings { Recursive = true, Force = true });
+                GitCommit(
+                    pagesDirectory,
+                    sourceCommit.Committer.Name,
+                    sourceCommit.Committer.Email,
+                    string.Format("CI Build Publish: {0}\r\n{1}", sourceCommit.Sha, sourceCommit.Message));
             }
-       //}
+            catch (LibGit2Sharp.EmptyCommitException) {
+            }
+
+            Information("Publishing all changes...");
+            GitPush(pagesDirectory);
+        } finally {
+            Information("Cleaning up pages clone...");
+            DeleteDirectory(pagesDirectory, new DeleteDirectorySettings { Recursive = true, Force = true });
+        }
     }
 })
 .ReportError(exception =>
-    Information(exception)
+    Warning(exception)
 );
 
 Task("Default")

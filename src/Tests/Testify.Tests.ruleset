@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Testify.Tests" ToolsVersion="11.0">
+  <Include Path="../Testify.ruleset" Action="Default" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1067" Action="None" />
+    <Rule Id="CA1305" Action="None" />
+    <Rule Id="CA1307" Action="None" />
+    <Rule Id="CA1707" Action="None" />
+    <Rule Id="CA1801" Action="None" />
+    <Rule Id="CA1812" Action="None" />
+    <Rule Id="CA1822" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1201" Action="None" />
+    <Rule Id="SA1600" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Xunit.Analyzers" RuleNamespace="Xunit.Analyzers">
+  </Rules>
+</RuleSet>

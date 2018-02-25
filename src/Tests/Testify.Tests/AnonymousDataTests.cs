@@ -2,29 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Testify
 {
-    public class AnonymousDataTestsFixture
+    public class AnonymousDataTests
     {
-        public AnonymousDataTestsFixture()
+        static AnonymousDataTests()
         {
-            AnonymousData.RegisterDefault<GloballyRegisteredModel>(f => new GloballyRegisteredModel { Value = "xyzzy" });
-            AnonymousData.RegisterDefault((GloballyRegisteredModel m) => m.Value, f => "xyzzy");
+            AnonymousData.RegisterDefault(_ => new GloballyRegisteredModel { Value = "xyzzy" });
+            AnonymousData.RegisterDefault((GloballyRegisteredModel m) => m.Value, _ => "xyzzy");
         }
 
-        public class GloballyRegisteredModel
+        [Flags]
+        private enum FlagsEnum
         {
-            public string Value { get; set; }
+            None = 0x0,
+            First = 0x1,
+            Second = 0x2,
+            Third = 0x4,
         }
-    }
 
-    public class AnonymousDataTests : IClassFixture<AnonymousDataTestsFixture>
-    {
-        private readonly ITestOutputHelper tracer;
+        private enum SimpleEnum
+        {
+            One,
+            Two,
+            Three,
+        }
 
-        public AnonymousDataTests(ITestOutputHelper tracer) => this.tracer = tracer;
+        private interface IModel
+        {
+            string Value { get; set; }
+        }
 
         [Fact]
         public void Any_ArrayOfType()
@@ -96,6 +104,71 @@ namespace Testify
             var result = (ModelList)anon.Any(typeof(ModelList));
 
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void Any_Populate_ShouldPopulateFirstLevel()
+        {
+            var anon = new AnonymousData();
+
+            var result = anon.Any<DeepModel>();
+            anon.Populate(result);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Model);
+            Assert.Equal(nameof(Model), result.Model.Value);
+        }
+
+        [Fact]
+        public void Any_PopulateDeep_ShouldPopulateAllLevels()
+        {
+            var anon = new AnonymousData();
+            anon.Freeze("xyzzy");
+
+            var result = anon.Any<DeepModel>(PopulateOption.Deep);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Model);
+            Assert.Equal("Model", result.Model.Value);
+            Assert.Equal("xyzzy", result.Model.Unset);
+            Assert.True(result.Model.PrimitiveWasSet);
+        }
+
+        [Fact]
+        public void Any_PopulateDeepWithCollections_ShouldPopulateCollections()
+        {
+            var anon = new AnonymousData();
+
+            var result = anon.Any<DeepModelWithCollection>(PopulateOption.Deep);
+
+            Assert.NotNull(result);
+            Assert.NotEmpty(result.ReadOnlyNames);
+            Assert.NotEmpty(result.InitializedNames);
+            Assert.NotEmpty(result.UninitializedNames);
+            Assert.NotEmpty(result.Dictionary);
+        }
+
+        [Fact]
+        public void Any_PopulateShallow_ShouldPopulateFirstLevel()
+        {
+            var anon = new AnonymousData();
+
+            var result = anon.Any<DeepModel>(PopulateOption.Shallow);
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Model);
+            Assert.Equal(nameof(Model), result.Model.Value);
+        }
+
+        [Fact]
+        public void Any_Predicate_ShouldEnsurePredicate()
+        {
+            var anon = new AnonymousData();
+            bool Predicate(int i) => (i % 2) == 0;
+
+            var result = anon.Any<int>(Predicate);
+
+            Assert.True(Predicate(result));
         }
 
         [Fact]
@@ -194,6 +267,17 @@ namespace Testify
         }
 
         [Fact]
+        public void Customize()
+        {
+            var anon = new AnonymousData();
+            anon.Customize(new Customization());
+
+            var result = (IModel)anon.Any(typeof(IModel));
+
+            Assert.NotNull(result);
+        }
+
+        [Fact]
         public void FreezeTypeValue()
         {
             var anon = new AnonymousData();
@@ -216,36 +300,38 @@ namespace Testify
         }
 
         [Fact]
-        public void Customize()
-        {
-            var anon = new AnonymousData();
-            anon.Customize(new Customization());
-
-            var result = (IModel)anon.Any(typeof(IModel));
-
-            Assert.NotNull(result);
-        }
-
-        [Fact]
         public void Register()
         {
             var anon = new AnonymousData();
 
-            anon.Register<IModel>(f => new Model());
+            anon.Register<IModel>(_ => new Model());
             var result = (IModel)anon.Any(typeof(IModel));
 
             Assert.NotNull(result);
         }
 
         [Fact]
-        public void RegisterDefault()
+        public void Register_BasePropertyExpression()
         {
             var anon = new AnonymousData();
+            var value = anon.Any<string>();
 
-            // Registration happens in the class fixture AnonymousDataTestsFixture.
-            var result = anon.Any<AnonymousDataTestsFixture.GloballyRegisteredModel>();
+            anon.Register((Model m) => m.Unset, _ => value);
+            var result = anon.Any<DerivedModel>(PopulateOption.Deep);
 
-            Assert.Equal("xyzzy", result.Value);
+            Assert.NotSame(value, result.Unset);
+        }
+
+        [Fact]
+        public void Register_DerivedPropertyExpression()
+        {
+            var anon = new AnonymousData();
+            var value = anon.Any<string>();
+
+            anon.Register((DerivedModel m) => m.Unset, _ => value);
+            var result = anon.Any<DerivedModel>(PopulateOption.Deep);
+
+            Assert.Same(value, result.Unset);
         }
 
         [Fact]
@@ -254,108 +340,33 @@ namespace Testify
             var anon = new AnonymousData();
             var model = anon.Any<Model>();
 
-            anon.Register((DeepModel m) => m.Model, a => model);
+            anon.Register((DeepModel m) => m.Model, _ => model);
             var result = anon.Any<DeepModel>(PopulateOption.Deep);
 
             Assert.Same(model, result.Model);
         }
 
         [Fact]
+        public void RegisterDefault()
+        {
+            var anon = new AnonymousData();
+
+            // Registration happens in the class fixture AnonymousDataTestsFixture.
+            var result = anon.Any<GloballyRegisteredModel>();
+
+            Assert.Equal("xyzzy", result.Value);
+        }
+
+        [Fact]
         public void RegisterDefault_PropertyExpression()
         {
             var anon = new AnonymousData();
-            var model = new AnonymousDataTestsFixture.GloballyRegisteredModel();
+            var model = new GloballyRegisteredModel();
 
             // Registration happens in the class fixture AnonymousDataTestsFixture.
             anon.Populate(model);
 
             Assert.Equal("xyzzy", model.Value);
-        }
-
-        [Fact]
-        public void Any_Populate_ShouldPopulateFirstLevel()
-        {
-            var anon = new AnonymousData();
-
-            var result = anon.Any<DeepModel>();
-            anon.Populate(result);
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Model);
-            Assert.Equal(result.Model.Value, nameof(Model));
-        }
-
-        [Fact]
-        public void Any_PopulateShallow_ShouldPopulateFirstLevel()
-        {
-            var anon = new AnonymousData();
-
-            var result = anon.Any<DeepModel>(PopulateOption.Shallow);
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Model);
-            Assert.Equal(result.Model.Value, nameof(Model));
-        }
-
-        [Fact]
-        public void Any_PopulateDeep_ShouldPopulateAllLevels()
-        {
-            var anon = new AnonymousData();
-            anon.Freeze("xyzzy");
-
-            var result = anon.Any<DeepModel>(PopulateOption.Deep);
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Model);
-            Assert.Equal("Model", result.Model.Value);
-            Assert.Equal("xyzzy", result.Model.Unset);
-            Assert.True(result.Model.PrimitiveWasSet);
-        }
-
-        [Fact]
-        public void Any_PopulateDeepWithCollections_ShouldPopulateCollections()
-        {
-            var anon = new AnonymousData();
-
-            var result = anon.Any<DeepModelWithCollection>(PopulateOption.Deep);
-
-            Assert.NotNull(result);
-            Assert.NotEmpty(result.ReadOnlyNames);
-            Assert.NotEmpty(result.InitializedNames);
-            Assert.NotEmpty(result.UninitializedNames);
-            Assert.NotEmpty(result.Dictionary);
-        }
-
-        [Fact]
-        public void Any_Predicate_ShouldEnsurePredicate()
-        {
-            var anon = new AnonymousData();
-            Predicate<int> predicate = i => (i % 2) == 0;
-
-            var result = anon.Any<int>(predicate);
-
-            Assert.True(predicate(result));
-        }
-
-        [Flags]
-        private enum FlagsEnum
-        {
-            None = 0x0,
-            First = 0x1,
-            Second = 0x2,
-            Third = 0x4
-        }
-
-        private enum SimpleEnum
-        {
-            One,
-            Two,
-            Three
-        }
-
-        private interface IModel
-        {
-            string Value { get; set; }
         }
 
         private class Customization : IAnonymousDataCustomization
@@ -364,14 +375,13 @@ namespace Testify
             {
                 if (context.ResultType == typeof(IModel))
                 {
-                    var model = new Model()
+                    result = new Model()
                     {
                         Value = context
                             .AnyDouble(0, 1, Distribution.Uniform)
                             .ToString()
-                            + context.Any(typeof(string))
+                            + context.Any(typeof(string)),
                     };
-                    result = model;
                     return true;
                 }
 
@@ -379,13 +389,39 @@ namespace Testify
             }
         }
 
+        private class DeepModel
+        {
+            public Model Model { get; set; }
+        }
+
+        private class DeepModelWithCollection
+        {
+            public Dictionary<string, int> Dictionary { get; } = new Dictionary<string, int>();
+
+            public Model[] InitializedArray { get; set; } = new Model[2];
+
+            public List<string> InitializedNames { get; set; } = new List<string>();
+
+            public List<string> ReadOnlyNames { get; } = new List<string>();
+
+            public Model[] UninitializedArray { get; set; }
+
+            public List<string> UninitializedNames { get; set; }
+        }
+
+        private class DerivedModel : Model
+        {
+            public string DerivedValue { get; set; }
+        }
+
+        private class GloballyRegisteredModel
+        {
+            public string Value { get; set; }
+        }
+
         private class Model : IModel
         {
             private int primitive;
-
-            public string Value { get; set; } = nameof(Model);
-
-            public string Unset { get; set; }
 
             public int Primitive
             {
@@ -399,30 +435,14 @@ namespace Testify
             }
 
             public bool PrimitiveWasSet { get; private set; }
+
+            public string Unset { get; set; }
+
+            public string Value { get; set; } = nameof(Model);
         }
 
         private class ModelList : List<Model>
         {
-        }
-
-        private class DeepModel
-        {
-            public Model Model { get; set; }
-        }
-
-        private class DeepModelWithCollection
-        {
-            public List<string> ReadOnlyNames { get; } = new List<string>();
-
-            public List<string> InitializedNames { get; set; } = new List<string>();
-
-            public List<string> UninitializedNames { get; set; }
-
-            public Model[] InitializedArray { get; set; } = new Model[2];
-
-            public Model[] UninitializedArray { get; set; }
-
-            public Dictionary<string, int> Dictionary { get; } = new Dictionary<string, int>();
         }
     }
 }

@@ -18,6 +18,6 @@
         /// <summary>
         /// Deeply populate the properties when creating anonymous data.
         /// </summary>
-        Deep
+        Deep,
     }
 }

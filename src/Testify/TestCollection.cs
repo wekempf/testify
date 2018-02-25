@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 
 namespace Testify
@@ -65,7 +66,7 @@ namespace Testify
         {
             Argument.NotNull(message, nameof(message));
 
-            Assertions.AssertAll(string.Format(message, args), tests);
+            Assertions.AssertAll(string.Format(CultureInfo.CurrentCulture, message, args), tests);
         }
 
         private static void InvokeTest(string name, Action test)

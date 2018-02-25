@@ -16,7 +16,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<BrokenEquals>()
             {
-                UniqueItemsFactory = () => new[] { new BrokenEquals(1), new BrokenEquals(2), new BrokenEquals(3) }
+                UniqueItemsFactory = () => new[] { new BrokenEquals(1), new BrokenEquals(2), new BrokenEquals(3), },
             };
 
             try
@@ -42,8 +42,8 @@ namespace Testify
                 {
                     new BrokenEquals(1, true),
                     new BrokenEquals(2, true),
-                    new BrokenEquals(3, true)
-                }
+                    new BrokenEquals(3, true),
+                },
             };
 
             try
@@ -69,8 +69,8 @@ namespace Testify
                 {
                     new BrokenObjectEquals(1),
                     new BrokenObjectEquals(2),
-                    new BrokenObjectEquals(3)
-                }
+                    new BrokenObjectEquals(3),
+                },
             };
 
             try
@@ -96,8 +96,8 @@ namespace Testify
                 {
                     new BrokenObjectEquals(1, true),
                     new BrokenObjectEquals(2, true),
-                    new BrokenObjectEquals(3, true)
-                }
+                    new BrokenObjectEquals(3, true),
+                },
             };
 
             try
@@ -123,8 +123,8 @@ namespace Testify
                 {
                     new BrokenOpEquality(1),
                     new BrokenOpEquality(2),
-                    new BrokenOpEquality(3)
-                }
+                    new BrokenOpEquality(3),
+                },
             };
 
             try
@@ -150,8 +150,8 @@ namespace Testify
                 {
                     new BrokenOpEquality(1, true),
                     new BrokenOpEquality(2, true),
-                    new BrokenOpEquality(3, true)
-                }
+                    new BrokenOpEquality(3, true),
+                },
             };
 
             try
@@ -177,8 +177,8 @@ namespace Testify
                 {
                     new BrokenOpInequality(1),
                     new BrokenOpInequality(2),
-                    new BrokenOpInequality(3)
-                }
+                    new BrokenOpInequality(3),
+                },
             };
 
             try
@@ -204,8 +204,8 @@ namespace Testify
                 {
                     new BrokenOpInequality(1, true),
                     new BrokenOpInequality(2, true),
-                    new BrokenOpInequality(3, true)
-                }
+                    new BrokenOpInequality(3, true),
+                },
             };
 
             try
@@ -227,7 +227,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<Correct>
             {
-                UniqueItemsFactory = () => new[] { new Correct(1), new Correct(2), new Correct(3) }
+                UniqueItemsFactory = () => new[] { new Correct(1), new Correct(2), new Correct(3), },
             };
 
             verifier.Verify();
@@ -238,7 +238,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<int>
             {
-                UniqueItemsFactory = () => new[] { 1, 2 }
+                UniqueItemsFactory = () => new[] { 1, 2, },
             };
 
             try
@@ -259,7 +259,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<int>
             {
-                UniqueItemsFactory = () => new[] { 1, 2, 3, 4 }
+                UniqueItemsFactory = () => new[] { 1, 2, 3, 4, },
             };
 
             verifier.Verify();
@@ -274,8 +274,8 @@ namespace Testify
                 {
                     new NoEqualityOperators(1),
                     new NoEqualityOperators(2),
-                    new NoEqualityOperators(3)
-                }
+                    new NoEqualityOperators(3),
+                },
             };
 
             try
@@ -301,8 +301,8 @@ namespace Testify
                 {
                     new NoGetHashCodeOverride(1),
                     new NoGetHashCodeOverride(2),
-                    new NoGetHashCodeOverride(3)
-                }
+                    new NoGetHashCodeOverride(3),
+                },
             };
 
             try
@@ -328,8 +328,8 @@ namespace Testify
                 {
                     new NoObjectEqualsOverride(1),
                     new NoObjectEqualsOverride(2),
-                    new NoObjectEqualsOverride(3)
-                }
+                    new NoObjectEqualsOverride(3),
+                },
             };
 
             try
@@ -369,7 +369,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<string>
             {
-                UniqueItemsFactory = () => new[] { "foo", null, "bar" }
+                UniqueItemsFactory = () => new[] { "foo", null, "bar", },
             };
 
             try
@@ -390,7 +390,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<int>
             {
-                UniqueItemsFactory = () => null
+                UniqueItemsFactory = () => null,
             };
 
             try
@@ -411,7 +411,7 @@ namespace Testify
         {
             var verifier = new EquatableVerifier<string>
             {
-                UniqueItemsFactory = () => new[] { "foo", "bar", "baz" }
+                UniqueItemsFactory = () => new[] { "foo", "bar", "baz", },
             };
 
             verifier.Verify();
@@ -426,8 +426,8 @@ namespace Testify
                 {
                     new UnstableGetHashCode(1),
                     new UnstableGetHashCode(2),
-                    new UnstableGetHashCode(3)
-                }
+                    new UnstableGetHashCode(3),
+                },
             };
 
             try
@@ -454,7 +454,7 @@ namespace Testify
                 {
                     items = items.Concat(new[] { 1 }).ToArray();
                     return items;
-                }
+                },
             };
 
             try
@@ -544,7 +544,9 @@ namespace Testify
             public static bool operator !=(BrokenOpEquality left, BrokenOpEquality right) =>
                 !(object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right));
 
+#pragma warning disable RCS1163 // Unused parameter.
             public static bool operator ==(BrokenOpEquality left, BrokenOpEquality right) => left.result;
+#pragma warning restore RCS1163 // Unused parameter.
 
             public override bool Equals(object obj) => Equals(obj as BrokenOpEquality);
 
@@ -567,7 +569,9 @@ namespace Testify
 
             public int Value { get; }
 
+#pragma warning disable RCS1163 // Unused parameter.
             public static bool operator !=(BrokenOpInequality left, BrokenOpInequality right) => left.result;
+#pragma warning restore RCS1163 // Unused parameter.
 
             public static bool operator ==(BrokenOpInequality left, BrokenOpInequality right) =>
                 object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);

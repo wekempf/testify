@@ -29,7 +29,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
+                e.ExpectMessage("AllItemsAreInstancesOfType failed. "
+                    + "Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
                 return;
             }
 
@@ -45,7 +46,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
+                e.ExpectMessage("Some message. AllItemsAreInstancesOfType failed. "
+                    + "Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
                 return;
             }
 
@@ -61,7 +63,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. AllItemsAreInstancesOfType failed. Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
+                e.ExpectMessage("Some message. AllItemsAreInstancesOfType failed. "
+                    + "Element at index 0 is not of expected type: <System.String>. Actual type: <System.Int32>.");
                 return;
             }
 
@@ -692,11 +695,13 @@ namespace Testify
 
         [Fact]
         public void IsEquivalentTo_ComparerMessageEquivalent_ShouldNotThrow() =>
-            Assert(new[] { "foo", "bar" }).IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+            Assert(new[] { "foo", "bar" })
+                .IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
 
         [Fact]
         public void IsEquivalentTo_ComparerMessageParametersEquivalent_ShouldNotThrow() =>
-            Assert(new[] { "foo", "bar" }).IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+            Assert(new[] { "foo", "bar" })
+                .IsEquivalentTo(new[] { "foo", "Bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
 
         [Fact]
         public void IsEquivalentTo_ComparerSameReference_ShouldNotThrow()
@@ -740,7 +745,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "bar", "baz" }).IsEquivalentTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "bar", "baz" })
+                    .IsEquivalentTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
@@ -756,7 +762,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "bar", "baz" }).IsEquivalentTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "bar", "baz" })
+                    .IsEquivalentTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
@@ -772,7 +779,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "bar", "baz" }).IsEquivalentTo(new[] { "foo", "bar", "buz" }, StringComparer.OrdinalIgnoreCase);
+                Assert(new[] { "foo", "bar", "baz" })
+                    .IsEquivalentTo(new[] { "foo", "bar", "buz" }, StringComparer.OrdinalIgnoreCase);
             }
             catch (AssertionException e)
             {
@@ -788,7 +796,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "bar", "baz" }).IsEquivalentTo(new[] { "foo", "bar", "buz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "bar", "baz" })
+                    .IsEquivalentTo(new[] { "foo", "bar", "buz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
@@ -804,7 +813,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "bar", "baz" }).IsEquivalentTo(new[] { "foo", "bar", "buz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "bar", "baz" })
+                    .IsEquivalentTo(new[] { "foo", "bar", "buz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
@@ -1017,7 +1027,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsNotEquivalentTo(new[] { "bar", "foo" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "Bar" })
+                    .IsNotEquivalentTo(new[] { "bar", "foo" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
@@ -1033,7 +1044,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsNotEquivalentTo(new[] { "bar", "foo" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "Bar" })
+                    .IsNotEquivalentTo(new[] { "bar", "foo" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
@@ -1161,11 +1173,13 @@ namespace Testify
 
         [Fact]
         public void IsNotSequenceEqualTo_MessageComparerNotEqual_ShouldNotThrow() =>
-            Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+            Assert(new[] { "foo", "Bar" })
+                .IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
 
         [Fact]
         public void IsNotSequenceEqualTo_MessageParametersComparerNotEqual_ShouldNotThrow() =>
-            Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+            Assert(new[] { "foo", "Bar" })
+                .IsNotSequenceEqualTo(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
 
         [Fact]
         public void IsNotSequenceEqualTo_ComparerEqual_ShouldThrow()
@@ -1188,7 +1202,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "Bar" })
+                    .IsNotSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
@@ -1204,7 +1219,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsNotSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "Bar" })
+                    .IsNotSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
@@ -1332,11 +1348,13 @@ namespace Testify
 
         [Fact]
         public void IsNotSubsetOf_MessageComparerNotSubset_ShouldNotThrow() =>
-            Assert(new[] { "foo", "Bar", "Baz" }).IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+            Assert(new[] { "foo", "Bar", "Baz" })
+                .IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
 
         [Fact]
         public void IsNotSubsetOf_MessageParametersComparerNotSubset_ShouldNotThrow() =>
-            Assert(new[] { "foo", "Bar", "Baz" }).IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+            Assert(new[] { "foo", "Bar", "Baz" })
+                .IsNotSubsetOf(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
 
         [Fact]
         public void IsNotSubsetOf_ComparerSubset_ShouldThrow()
@@ -1359,7 +1377,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsNotSubsetOf(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "Bar" })
+                    .IsNotSubsetOf(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
@@ -1375,7 +1394,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsNotSubsetOf(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "Bar" })
+                    .IsNotSubsetOf(new[] { "foo", "bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
@@ -1439,7 +1459,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
+                e.ExpectMessage("IsSequenceEqualTo failed. "
+                    + "(Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
                 return;
             }
 
@@ -1455,7 +1476,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. "
+                    + "(Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
                 return;
             }
 
@@ -1471,7 +1493,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. "
+                    + "(Elements at index 1 do not match. Expected element: <3>. Actual element: <2>.)");
                 return;
             }
 
@@ -1484,11 +1507,13 @@ namespace Testify
 
         [Fact]
         public void IsSequenceEqualTo_MessageComparerEqual_ShouldNotThrow() =>
-            Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+            Assert(new[] { "foo", "Bar" })
+                .IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some message.");
 
         [Fact]
         public void IsSequenceEqualTo_MessageParametersComparerEqual_ShouldNotThrow() =>
-            Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+            Assert(new[] { "foo", "Bar" })
+                .IsSequenceEqualTo(new[] { "foo", "bar" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
 
         [Fact]
         public void IsSequenceEqualTo_ComparerDifferentLengths_ShouldThrow()
@@ -1511,7 +1536,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "Bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "Bar" })
+                    .IsSequenceEqualTo(new[] { "foo", "Bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
@@ -1527,7 +1553,8 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "Bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "Bar" })
+                    .IsSequenceEqualTo(new[] { "foo", "Bar", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
@@ -1547,7 +1574,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
+                e.ExpectMessage("IsSequenceEqualTo failed. "
+                    + "(Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
                 return;
             }
 
@@ -1559,11 +1587,13 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
+                Assert(new[] { "foo", "Bar" })
+                    .IsSequenceEqualTo(new[] { "foo", "baz" }, StringComparer.OrdinalIgnoreCase, "Some message.");
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. "
+                    + "(Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
                 return;
             }
 
@@ -1575,11 +1605,13 @@ namespace Testify
         {
             try
             {
-                Assert(new[] { "foo", "Bar" }).IsSequenceEqualTo(new[] { "foo", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
+                Assert(new[] { "foo", "Bar" })
+                    .IsSequenceEqualTo(new[] { "foo", "baz" }, StringComparer.OrdinalIgnoreCase, "Some {0}.", "message");
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsSequenceEqualTo failed. (Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
+                e.ExpectMessage("Some message. IsSequenceEqualTo failed. "
+                    + "(Elements at index 1 do not match. Expected element: <baz>. Actual element: <Bar>.)");
                 return;
             }
 

@@ -5,6 +5,11 @@ using static Testify.Assertions;
 
 namespace Testify
 {
+    /// <summary>
+    /// Compare tests.
+    /// </summary>
+    /// <typeparam name="T">Type to compare.</typeparam>
+    /// <seealso cref="Testify.EqualityTests{T}" />
     internal class CompareTests<T> : EqualityTests<T>
         where T : IEquatable<T>, IComparable<T>
     {
@@ -48,12 +53,17 @@ namespace Testify
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompareTests{T}"/> class.
+        /// </summary>
+        /// <param name="itemsFactory">The items factory.</param>
         public CompareTests(Func<T[]> itemsFactory)
             : base(itemsFactory)
         {
         }
 
-        public override TestCollection GetTests()
+        /// <inheritdoc/>
+        internal override TestCollection GetTests()
         {
             var isValueType = typeof(T).GetTypeInfo().IsValueType;
             var tests = base.GetTests();
@@ -68,6 +78,7 @@ namespace Testify
             {
                 tests.AddTest(nameof(VerifyCompareToOtherWithNull), () => VerifyCompareToOtherWithNull());
             }
+
             if (!SkipOperatorTests)
             {
                 tests.AddTest(nameof(VerifyComparisonOperatorsDefined), () => VerifyComparisonOperatorsDefined());
@@ -99,6 +110,7 @@ namespace Testify
                     tests.AddTest(nameof(VerifyOpLessThanOrEqualWithRightAndLeftNull), () => VerifyOpLessThanOrEqualWithRightAndLeftNull());
                 }
             }
+
             return tests;
         }
 
@@ -112,12 +124,29 @@ namespace Testify
             second[second.Length - 1] = temp;
         }
 
-        private void VerifyCompareToObjWithNull()
+        private static void VerifyComparisonOperatorsDefined()
         {
-            var failure = CompareItems(Items, Items, (x, y) => ((IComparable)x).CompareTo(null) > 0);
-            if (failure != null)
+            var type = typeof(T);
+            if (type.GetTypeInfo().IsPrimitive || type == typeof(string))
             {
-                Fail($"IComparable.CompareTo failed with null value at index {failure.Value.Index}.");
+                return;
+            }
+
+            if (OpGreaterThanFunc == null
+                || OpGreaterThanOrEqualFunc == null
+                || OpLessThanFunc == null
+                || OpLessThanOrEqualFunc == null)
+            {
+                Fail("Comparison operators must be defined.");
+            }
+        }
+
+        private void VerifyCompareToObjWithEqualItems()
+        {
+            var result = CompareItems(BaseItems, Items, (x, y) => ((IComparable)x).CompareTo(y) == 0);
+            if (result != null)
+            {
+                Fail($"IComparable.CompareTo failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -133,15 +162,6 @@ namespace Testify
             }
         }
 
-        private void VerifyCompareToObjWithEqualItems()
-        {
-            var result = CompareItems(BaseItems, Items, (x, y) => ((IComparable)x).CompareTo(y) == 0);
-            if (result != null)
-            {
-                Fail($"IComparable.CompareTo failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
-            }
-        }
-
         private void VerifyCompareToObjWithLesserItems()
         {
             var equalItems = Items.ToArray();
@@ -154,9 +174,9 @@ namespace Testify
             }
         }
 
-        private void VerifyCompareToOtherWithNull()
+        private void VerifyCompareToObjWithNull()
         {
-            var failure = CompareItems(Items, Items, (x, y) => x.CompareTo(default(T)) > 0);
+            var failure = CompareItems(Items, Items, (x, _) => ((IComparable)x).CompareTo(null) > 0);
             if (failure != null)
             {
                 Fail($"IComparable.CompareTo failed with null value at index {failure.Value.Index}.");
@@ -196,20 +216,12 @@ namespace Testify
             }
         }
 
-        private void VerifyComparisonOperatorsDefined()
+        private void VerifyCompareToOtherWithNull()
         {
-            var type = typeof(T);
-            if (type.GetTypeInfo().IsPrimitive || type == typeof(string))
+            var failure = CompareItems(Items, Items, (x, _) => x.CompareTo(default(T)) > 0);
+            if (failure != null)
             {
-                return;
-            }
-
-            if (OpGreaterThanFunc == null
-                || OpGreaterThanOrEqualFunc == null
-                || OpLessThanFunc == null
-                || OpLessThanOrEqualFunc == null)
-            {
-                Fail("Comparison operators must be defined.");
+                Fail($"IComparable.CompareTo failed with null value at index {failure.Value.Index}.");
             }
         }
 
@@ -244,6 +256,20 @@ namespace Testify
             }
         }
 
+        private void VerifyOpGreaterThanOrEqualWithLeftNull()
+        {
+            if (OpGreaterThanOrEqualFunc == null)
+            {
+                return;
+            }
+
+            var failure = CompareItems(Items, Items, (x, _) => !OpGreaterThanOrEqualFunc(default(T), x));
+            if (failure != null)
+            {
+                Fail($"op_GreaterThanOrEqual failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
         private void VerifyOpGreaterThanOrEqualWithLesserItems()
         {
             if (OpGreaterThanOrEqualFunc == null)
@@ -258,6 +284,37 @@ namespace Testify
             if (failure != null)
             {
                 Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+            }
+        }
+
+        private void VerifyOpGreaterThanOrEqualWithRightAndLeftNull()
+        {
+            if (OpGreaterThanOrEqualFunc == null)
+            {
+                return;
+            }
+
+#pragma warning disable RCS1163 // Unused parameter.
+            var failure = CompareItems(Items, Items, (x, y) => OpGreaterThanOrEqualFunc(default(T), default(T)));
+#pragma warning restore RCS1163 // Unused parameter.
+
+            if (failure != null)
+            {
+                Fail($"op_GreaterThanOrEqual failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
+        private void VerifyOpGreaterThanOrEqualWithRightNull()
+        {
+            if (OpGreaterThanOrEqualFunc == null)
+            {
+                return;
+            }
+
+            var failure = CompareItems(Items, Items, (x, _) => OpGreaterThanOrEqualFunc(x, default(T)));
+            if (failure != null)
+            {
+                Fail($"op_GreaterThanOrEqual failed with null value at index {failure.Value.Index}.");
             }
         }
 
@@ -292,6 +349,20 @@ namespace Testify
             }
         }
 
+        private void VerifyOpGreaterThanWithLeftNull()
+        {
+            if (OpGreaterThanFunc == null)
+            {
+                return;
+            }
+
+            var failure = CompareItems(Items, Items, (x, _) => !OpGreaterThanFunc(default(T), x));
+            if (failure != null)
+            {
+                Fail($"op_GreaterThan failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
         private void VerifyOpGreaterThanWithLesserItems()
         {
             if (OpGreaterThanFunc == null)
@@ -306,6 +377,40 @@ namespace Testify
             if (failure != null)
             {
                 Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+            }
+        }
+
+        private void VerifyOpGreaterThanWithRightAndLeftNull()
+        {
+            if (OpGreaterThanFunc == null)
+            {
+                return;
+            }
+
+#pragma warning disable RCS1163 // Unused parameter.
+            var failure = CompareItems(Items, Items, (x, y) => !OpGreaterThanFunc(default(T), default(T)));
+#pragma warning restore RCS1163 // Unused parameter.
+
+            if (failure != null)
+            {
+                Fail($"op_GreaterThan failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
+        private void VerifyOpGreaterThanWithRightNull()
+        {
+            if (OpGreaterThanFunc == null)
+            {
+                return;
+            }
+
+#pragma warning disable RCS1163 // Unused parameter.
+            var failure = CompareItems(Items, Items, (x, y) => OpGreaterThanFunc(x, default(T)));
+#pragma warning restore RCS1163 // Unused parameter.
+
+            if (failure != null)
+            {
+                Fail($"op_GreaterThan failed with null value at index {failure.Value.Index}.");
             }
         }
 
@@ -340,6 +445,20 @@ namespace Testify
             }
         }
 
+        private void VerifyOpLessThanOrEqualWithLeftNull()
+        {
+            if (OpLessThanOrEqualFunc == null)
+            {
+                return;
+            }
+
+            var failure = CompareItems(Items, Items, (x, _) => OpLessThanOrEqualFunc(default(T), x));
+            if (failure != null)
+            {
+                Fail($"op_LessThanOrEqual failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
         private void VerifyOpLessThanOrEqualWithLesserItems()
         {
             if (OpLessThanOrEqualFunc == null)
@@ -354,6 +473,37 @@ namespace Testify
             if (failure != null)
             {
                 Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+            }
+        }
+
+        private void VerifyOpLessThanOrEqualWithRightAndLeftNull()
+        {
+            if (OpLessThanOrEqualFunc == null)
+            {
+                return;
+            }
+
+#pragma warning disable RCS1163 // Unused parameter.
+            var failure = CompareItems(Items, Items, (x, y) => OpLessThanOrEqualFunc(default(T), default(T)));
+#pragma warning restore RCS1163 // Unused parameter.
+
+            if (failure != null)
+            {
+                Fail($"op_LessThanOrEqual failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
+        private void VerifyOpLessThanOrEqualWithRightNull()
+        {
+            if (OpLessThanOrEqualFunc == null)
+            {
+                return;
+            }
+
+            var failure = CompareItems(Items, Items, (x, _) => !OpLessThanOrEqualFunc(x, default(T)));
+            if (failure != null)
+            {
+                Fail($"op_LessThanOrEqual failed with null value at index {failure.Value.Index}.");
             }
         }
 
@@ -388,6 +538,20 @@ namespace Testify
             }
         }
 
+        private void VerifyOpLessThanWithLeftNull()
+        {
+            if (OpLessThanFunc == null)
+            {
+                return;
+            }
+
+            var failure = CompareItems(Items, Items, (x, _) => OpLessThanFunc(default(T), x));
+            if (failure != null)
+            {
+                Fail($"op_LessThan failed with null value at index {failure.Value.Index}.");
+            }
+        }
+
         private void VerifyOpLessThanWithLesserItems()
         {
             if (OpLessThanFunc == null)
@@ -405,98 +569,17 @@ namespace Testify
             }
         }
 
-        private void VerifyOpGreaterThanWithLeftNull()
-        {
-            if (OpGreaterThanFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => !OpGreaterThanFunc(default(T), x));
-            if (failure != null)
-            {
-                Fail($"op_GreaterThan failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpGreaterThanWithRightNull()
-        {
-            if (OpGreaterThanFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => OpGreaterThanFunc(x, default(T)));
-            if (failure != null)
-            {
-                Fail($"op_GreaterThan failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpGreaterThanWithRightAndLeftNull()
-        {
-            if (OpGreaterThanFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => !OpGreaterThanFunc(default(T), default(T)));
-            if (failure != null)
-            {
-                Fail($"op_GreaterThan failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpGreaterThanOrEqualWithLeftNull()
-        {
-            if (OpGreaterThanOrEqualFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => !OpGreaterThanOrEqualFunc(default(T), x));
-            if (failure != null)
-            {
-                Fail($"op_GreaterThanOrEqual failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpGreaterThanOrEqualWithRightNull()
-        {
-            if (OpGreaterThanOrEqualFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => OpGreaterThanOrEqualFunc(x, default(T)));
-            if (failure != null)
-            {
-                Fail($"op_GreaterThanOrEqual failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpGreaterThanOrEqualWithRightAndLeftNull()
-        {
-            if (OpGreaterThanOrEqualFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => OpGreaterThanOrEqualFunc(default(T), default(T)));
-            if (failure != null)
-            {
-                Fail($"op_GreaterThanOrEqual failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpLessThanWithLeftNull()
+        private void VerifyOpLessThanWithRightAndLeftNull()
         {
             if (OpLessThanFunc == null)
             {
                 return;
             }
 
-            var failure = CompareItems(Items, Items, (x, y) => OpLessThanFunc(default(T), x));
+#pragma warning disable RCS1163 // Unused parameter.
+            var failure = CompareItems(Items, Items, (x, y) => !OpLessThanFunc(default(T), default(T)));
+#pragma warning restore RCS1163 // Unused parameter.
+
             if (failure != null)
             {
                 Fail($"op_LessThan failed with null value at index {failure.Value.Index}.");
@@ -510,66 +593,10 @@ namespace Testify
                 return;
             }
 
-            var failure = CompareItems(Items, Items, (x, y) => !OpLessThanFunc(x, default(T)));
+            var failure = CompareItems(Items, Items, (x, _) => !OpLessThanFunc(x, default(T)));
             if (failure != null)
             {
                 Fail($"op_LessThan failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpLessThanWithRightAndLeftNull()
-        {
-            if (OpLessThanFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => !OpLessThanFunc(default(T), default(T)));
-            if (failure != null)
-            {
-                Fail($"op_LessThan failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpLessThanOrEqualWithLeftNull()
-        {
-            if (OpLessThanOrEqualFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => OpLessThanOrEqualFunc(default(T), x));
-            if (failure != null)
-            {
-                Fail($"op_LessThanOrEqual failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpLessThanOrEqualWithRightNull()
-        {
-            if (OpLessThanOrEqualFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => !OpLessThanOrEqualFunc(x, default(T)));
-            if (failure != null)
-            {
-                Fail($"op_LessThanOrEqual failed with null value at index {failure.Value.Index}.");
-            }
-        }
-
-        private void VerifyOpLessThanOrEqualWithRightAndLeftNull()
-        {
-            if (OpLessThanOrEqualFunc == null)
-            {
-                return;
-            }
-
-            var failure = CompareItems(Items, Items, (x, y) => OpLessThanOrEqualFunc(default(T), default(T)));
-            if (failure != null)
-            {
-                Fail($"op_LessThanOrEqual failed with null value at index {failure.Value.Index}.");
             }
         }
     }

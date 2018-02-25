@@ -9,11 +9,11 @@ namespace Testify
         [Fact]
         public void Construct_InnerException_ShouldContainInnerException()
         {
-            var inner = new ArgumentNullException();
+            var inner = new InvalidOperationException("Failure.");
 
             var result = new AssertionException(inner);
 
-            Assert.Equal("An assertion failed. (Value cannot be null.)", result.Message);
+            Assert.Equal("An assertion failed. (Failure.)", result.Message);
             Assert.Equal(inner, result.InnerException);
             Assert.Equal(new[] { inner }, result.InnerExceptions);
         }
@@ -21,36 +21,24 @@ namespace Testify
         [Fact]
         public void Construct_InnerExceptions_ShouldContainInnerExceptions()
         {
-            var inner1 = new ArgumentNullException();
-            var inner2 = new ArgumentNullException();
+            var inner1 = new InvalidOperationException("Failure.");
+            var inner2 = new InvalidOperationException("Failure.");
 
             var result = new AssertionException(inner1, inner2);
 
-            Assert.Equal("An assertion failed. (Value cannot be null.) (Value cannot be null.)", result.Message);
+            Assert.Equal("An assertion failed. (Failure.) (Failure.)", result.Message);
             Assert.Equal(inner1, result.InnerException);
             Assert.Equal(new[] { inner1, inner2 }, result.InnerExceptions);
         }
 
         [Fact]
-        public void Construct_InnerExceptionsList_ShouldContainInnerExceptions()
-        {
-            var inner = new[] { new ArgumentNullException(), new ArgumentNullException() };
-
-            var result = new AssertionException(inner.ToList());
-
-            Assert.Equal("An assertion failed. (Value cannot be null.) (Value cannot be null.)", result.Message);
-            Assert.Equal(inner[0], result.InnerException);
-            Assert.Equal(inner, result.InnerExceptions);
-        }
-
-        [Fact]
         public void Construct_MessageAndInnerException_ShouldContainMessageAndInnerException()
         {
-            var inner = new ArgumentNullException();
+            var inner = new InvalidOperationException("Failure.");
 
             var result = new AssertionException("Some message.", inner);
 
-            Assert.Equal("Some message. (Value cannot be null.)", result.Message);
+            Assert.Equal("Some message. (Failure.)", result.Message);
             Assert.Equal(inner, result.InnerException);
             Assert.Equal(new[] { inner }, result.InnerExceptions);
         }
@@ -58,23 +46,11 @@ namespace Testify
         [Fact]
         public void Construct_MessageAndInnerExceptions_ShouldContainMessageAndInnerExceptions()
         {
-            var inner = new[] { new ArgumentNullException(), new ArgumentNullException() };
+            var inner = new[] { new InvalidOperationException("Failure."), new InvalidOperationException("Failure.") };
 
             var result = new AssertionException("Some message.", inner);
 
-            Assert.Equal("Some message. (Value cannot be null.) (Value cannot be null.)", result.Message);
-            Assert.Equal(inner[0], result.InnerException);
-            Assert.Equal(inner, result.InnerExceptions);
-        }
-
-        [Fact]
-        public void Construct_MessageAndInnerExceptionsList_ShouldContainMessageAndInnerExceptions()
-        {
-            var inner = new[] { new ArgumentNullException(), new ArgumentNullException() };
-
-            var result = new AssertionException("Some message.", inner.ToList());
-
-            Assert.Equal("Some message. (Value cannot be null.) (Value cannot be null.)", result.Message);
+            Assert.Equal("Some message. (Failure.) (Failure.)", result.Message);
             Assert.Equal(inner[0], result.InnerException);
             Assert.Equal(inner, result.InnerExceptions);
         }

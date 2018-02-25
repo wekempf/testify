@@ -27,7 +27,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void Completes<T>(this ActualValue<T> task)
             where T : Task
@@ -51,7 +51,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void Completes<T>(this ActualValue<T> task, int millisecondsTimeout)
             where T : Task
@@ -77,7 +77,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void Completes<T>(this ActualValue<T> task, string message)
             where T : Task
@@ -104,7 +104,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void Completes<T>(this ActualValue<T> task, string message, params object[] parameters)
             where T : Task
@@ -131,7 +131,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void Completes<T>(this ActualValue<T> task, int millisecondsTimeout, string message, params object[] parameters)
             where T : Task
@@ -156,7 +156,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void IsBusy<T>(this ActualValue<T> task)
             where T : Task
@@ -180,7 +180,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void IsBusy<T>(this ActualValue<T> task, int millisecondsTimeout)
             where T : Task
@@ -204,7 +204,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void IsBusy<T>(this ActualValue<T> task, string message)
             where T : Task
@@ -229,7 +229,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void IsBusy<T>(this ActualValue<T> task, string message, params object[] parameters)
             where T : Task
@@ -255,7 +255,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void IsBusy<T>(this ActualValue<T> task, int millisecondsTimeout, string message)
             where T : Task
@@ -282,7 +282,7 @@ namespace Testify
         /// make assertions by using the <see cref="M:Task.WhenAny"/> or <see cref="M:Task.WhenAll"/> methods.
         /// For example: <code>Assert(Task.WhenAll(tasks)).Complete();</code></para>
         /// </remarks>
-        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
         public static void IsBusy<T>(this ActualValue<T> task, int millisecondsTimeout, string message, params object[] parameters)
             where T : Task
