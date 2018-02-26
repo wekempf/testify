@@ -24,30 +24,30 @@ namespace Testify
             if (!typeInfo.IsPrimitive)
             {
                 var method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == "op_GreaterThan" &&
-                        m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
+                    .Where(m => m.Name == "op_GreaterThan"
+                        && m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
                     .OnlyOrDefault();
                 OpGreaterThanFunc = method?.CreateFunc<T, T, bool>();
 
                 method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == "op_GreaterThanOrEqual" &&
-                        m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
+                    .Where(m => m.Name == "op_GreaterThanOrEqual"
+                        && m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
                     .OnlyOrDefault();
                 OpGreaterThanOrEqualFunc = method?.CreateFunc<T, T, bool>();
 
                 method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == "op_LessThan" &&
-                        m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
+                    .Where(m => m.Name == "op_LessThan"
+                        && m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
                     .OnlyOrDefault();
                 OpLessThanFunc = method?.CreateFunc<T, T, bool>();
 
                 method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == "op_LessThanOrEqual" &&
-                        m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
+                    .Where(m => m.Name == "op_LessThanOrEqual"
+                        && m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
                     .OnlyOrDefault();
                 OpLessThanOrEqualFunc = method?.CreateFunc<T, T, bool>();
             }
@@ -101,13 +101,17 @@ namespace Testify
                     tests.AddTest(nameof(VerifyOpGreaterThanWithRightAndLeftNull), () => VerifyOpGreaterThanWithRightAndLeftNull());
                     tests.AddTest(nameof(VerifyOpGreaterThanOrEqualWithLeftNull), () => VerifyOpGreaterThanOrEqualWithLeftNull());
                     tests.AddTest(nameof(VerifyOpGreaterThanOrEqualWithRightNull), () => VerifyOpGreaterThanOrEqualWithRightNull());
-                    tests.AddTest(nameof(VerifyOpGreaterThanOrEqualWithRightAndLeftNull), () => VerifyOpGreaterThanOrEqualWithRightAndLeftNull());
+                    tests.AddTest(
+                        nameof(VerifyOpGreaterThanOrEqualWithRightAndLeftNull),
+                        () => VerifyOpGreaterThanOrEqualWithRightAndLeftNull());
                     tests.AddTest(nameof(VerifyOpLessThanWithLeftNull), () => VerifyOpLessThanWithLeftNull());
                     tests.AddTest(nameof(VerifyOpLessThanWithRightNull), () => VerifyOpLessThanWithRightNull());
                     tests.AddTest(nameof(VerifyOpLessThanWithRightAndLeftNull), () => VerifyOpLessThanWithRightAndLeftNull());
                     tests.AddTest(nameof(VerifyOpLessThanOrEqualWithLeftNull), () => VerifyOpLessThanOrEqualWithLeftNull());
                     tests.AddTest(nameof(VerifyOpLessThanOrEqualWithRightNull), () => VerifyOpLessThanOrEqualWithRightNull());
-                    tests.AddTest(nameof(VerifyOpLessThanOrEqualWithRightAndLeftNull), () => VerifyOpLessThanOrEqualWithRightAndLeftNull());
+                    tests.AddTest(
+                        nameof(VerifyOpLessThanOrEqualWithRightAndLeftNull),
+                        () => VerifyOpLessThanOrEqualWithRightAndLeftNull());
                 }
             }
 
@@ -146,7 +150,8 @@ namespace Testify
             var result = CompareItems(BaseItems, Items, (x, y) => ((IComparable)x).CompareTo(y) == 0);
             if (result != null)
             {
-                Fail($"IComparable.CompareTo failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"IComparable.CompareTo failed with values expected to be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -158,7 +163,8 @@ namespace Testify
             var failure = CompareItems(equalItems, greaterItems, (x, y) => ((IComparable)x).CompareTo(y) < 0);
             if (failure != null)
             {
-                Fail($"IComparable.CompareTo failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"IComparable.CompareTo failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -170,7 +176,8 @@ namespace Testify
             var failure = CompareItems(greaterItems, equalItems, (x, y) => ((IComparable)x).CompareTo(y) > 0);
             if (failure != null)
             {
-                Fail($"IComparable.CompareTo  failed with values expected to be lesser at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"IComparable.CompareTo  failed with values expected to be lesser at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -191,7 +198,8 @@ namespace Testify
             var failure = CompareItems(equalItems, greaterItems, (x, y) => x.CompareTo(y) < 0);
             if (failure != null)
             {
-                Fail($"IComparable<T>.CompareTo failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"IComparable<T>.CompareTo failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -200,7 +208,8 @@ namespace Testify
             var failure = CompareItems(BaseItems, Items, (x, y) => x.CompareTo(y) == 0);
             if (failure != null)
             {
-                Fail($"IComparable<T>.CompareTo failed with values expected to be equal at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"IComparable<T>.CompareTo failed with values expected to be equal at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -212,7 +221,8 @@ namespace Testify
             var failure = CompareItems(greaterItems, equalItems, (x, y) => x.CompareTo(y) > 0);
             if (failure != null)
             {
-                Fail($"IComparable<T>.CompareTo  failed with values expected to be lesser at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"IComparable<T>.CompareTo  failed with values expected to be lesser at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -238,7 +248,8 @@ namespace Testify
             var failure = CompareItems(equalItems, greaterItems, (x, y) => !OpGreaterThanOrEqualFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -252,7 +263,8 @@ namespace Testify
             var failure = CompareItems(BaseItems, Items, (x, y) => OpGreaterThanOrEqualFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_GreaterThanOrEqual failed with values expected to not be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_GreaterThanOrEqual failed with values expected to not be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -283,7 +295,8 @@ namespace Testify
             var failure = CompareItems(greaterItems, equalItems, (x, y) => OpGreaterThanOrEqualFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_GreaterThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -331,7 +344,8 @@ namespace Testify
             var failure = CompareItems(equalItems, greaterItems, (x, y) => !OpGreaterThanFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -345,7 +359,8 @@ namespace Testify
             var failure = CompareItems(BaseItems, Items, (x, y) => !OpGreaterThanFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_GreaterThan failed with values expected to not be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_GreaterThan failed with values expected to not be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -376,7 +391,8 @@ namespace Testify
             var failure = CompareItems(greaterItems, equalItems, (x, y) => OpGreaterThanFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_GreaterThan failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -404,9 +420,7 @@ namespace Testify
                 return;
             }
 
-#pragma warning disable RCS1163 // Unused parameter.
-            var failure = CompareItems(Items, Items, (x, y) => OpGreaterThanFunc(x, default(T)));
-#pragma warning restore RCS1163 // Unused parameter.
+            var failure = CompareItems(Items, Items, (x, _) => OpGreaterThanFunc(x, default(T)));
 
             if (failure != null)
             {
@@ -427,7 +441,8 @@ namespace Testify
             var failure = CompareItems(equalItems, greaterItems, (x, y) => OpLessThanOrEqualFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -441,7 +456,8 @@ namespace Testify
             var failure = CompareItems(BaseItems, Items, (x, y) => OpLessThanOrEqualFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_LessThanOrEqual failed with values expected to not be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_LessThanOrEqual failed with values expected to not be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -472,7 +488,8 @@ namespace Testify
             var failure = CompareItems(greaterItems, equalItems, (x, y) => !OpLessThanOrEqualFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_LessThanOrEqual failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -520,7 +537,8 @@ namespace Testify
             var failure = CompareItems(equalItems, greaterItems, (x, y) => OpLessThanFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_LessThan failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_LessThan failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -534,7 +552,8 @@ namespace Testify
             var failure = CompareItems(BaseItems, Items, (x, y) => !OpLessThanFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_LessThan failed with values expected to not be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_LessThan failed with values expected to not be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 
@@ -565,7 +584,8 @@ namespace Testify
             var failure = CompareItems(greaterItems, equalItems, (x, y) => !OpLessThanFunc(x, y));
             if (failure != null)
             {
-                Fail($"op_LessThan failed with values expected to be greater at index {failure.Value.Index}. Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
+                Fail($"op_LessThan failed with values expected to be greater at index {failure.Value.Index}. "
+                    + $"Expected: <{failure.Value.Right}>. Actual: <{failure.Value.Left}>.");
             }
         }
 

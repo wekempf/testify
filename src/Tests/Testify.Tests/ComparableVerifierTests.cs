@@ -118,7 +118,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory should not produce null values. AllItemsAreNotNull failed.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory should not produce null values. "
+                    + "AllItemsAreNotNull failed.");
                 return;
             }
 
@@ -131,11 +132,7 @@ namespace Testify
             var items = new[] { 1, 2, 3 };
             var verifier = new ComparableVerifier<int>
             {
-                OrderedItemsFactory = () =>
-                {
-                    items = items.Concat(new[] { 1 }).ToArray();
-                    return items;
-                },
+                OrderedItemsFactory = () => items = items.Concat(new[] { 1 }).ToArray(),
             };
 
             try
@@ -144,7 +141,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory is not stable. IsEqualTo failed. Expected: <4>. Actual: <5>.");
+                e.ExpectMessage("ComparableVerifier failed. OrderedItemsFactory is not stable. IsEqualTo failed. "
+                    + "Expected: <4>. Actual: <5>.");
                 return;
             }
 
@@ -306,7 +304,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("Object.Equals failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
+                e.ExpectInnerAssertion("Object.Equals failed with values expected to be equal at index 0. "
+                    + "Expected: <1>. Actual: <1>.");
                 return;
             }
 
@@ -333,7 +332,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("Object.Equals failed with values expected to not be equal at index 0. Expected: <2>. Actual: <1>.");
+                e.ExpectInnerAssertion("Object.Equals failed with values expected to not be equal at index 0. "
+                    + "Expected: <2>. Actual: <1>.");
                 return;
             }
 
@@ -355,7 +355,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
+                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to be equal at index 0. "
+                    + "Expected: <1>. Actual: <1>.");
                 return;
             }
 
@@ -382,7 +383,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to not be equal at index 0. Expected: <2>. Actual: <1>.");
+                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to not be equal at index 0. "
+                    + "Expected: <2>. Actual: <1>.");
                 return;
             }
 
@@ -409,7 +411,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("op_Equality failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
+                e.ExpectInnerAssertion("op_Equality failed with values expected to be equal at index 0. "
+                    + "Expected: <1>. Actual: <1>.");
                 return;
             }
 
@@ -436,7 +439,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("op_Equality failed with values expected to not be equal at index 0. Expected: <2>. Actual: <1>.");
+                e.ExpectInnerAssertion("op_Equality failed with values expected to not be equal at index 0. "
+                    + "Expected: <2>. Actual: <1>.");
                 return;
             }
 
@@ -463,7 +467,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("op_Inequality failed with values expected to not be equal at index 0. Expected: <2>. Actual: <1>.");
+                e.ExpectInnerAssertion("op_Inequality failed with values expected to not be equal at index 0. "
+                    + "Expected: <2>. Actual: <1>.");
                 return;
             }
 
@@ -490,7 +495,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("ComparableVerifier failed.");
-                e.ExpectInnerAssertion("op_Inequality failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
+                e.ExpectInnerAssertion("op_Inequality failed with values expected to be equal at index 0. "
+                    + "Expected: <1>. Actual: <1>.");
                 return;
             }
 
@@ -509,7 +515,7 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as Correct);
 
-            public bool Equals(Correct other) => !ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(Correct other) => !(other is null) && Value == other.Value;
 
             public int CompareTo(Correct other)
             {
@@ -538,21 +544,21 @@ namespace Testify
             }
 
             public static bool operator ==(Correct left, Correct right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(Correct left, Correct right) => !(left == right);
 
             public static bool operator >(Correct left, Correct right) =>
-                object.ReferenceEquals(left, null) ? false : left.CompareTo(right) > 0;
+                left is null ? false : left.CompareTo(right) > 0;
 
             public static bool operator <(Correct left, Correct right) =>
-                object.ReferenceEquals(left, null) ? !object.ReferenceEquals(right, null) : left.CompareTo(right) < 0;
+                left is null ? !(right is null) : left.CompareTo(right) < 0;
 
             public static bool operator >=(Correct left, Correct right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.CompareTo(right) >= 0;
+                left is null ? right is null : left.CompareTo(right) >= 0;
 
             public static bool operator <=(Correct left, Correct right) =>
-                object.ReferenceEquals(left, null) ? true : left.CompareTo(right) <= 0;
+                left is null ? true : left.CompareTo(right) <= 0;
         }
 
         private class NoObjectEqualsOverride
@@ -567,14 +573,14 @@ namespace Testify
             public override int GetHashCode() => Value.GetHashCode();
 
             public bool Equals(NoObjectEqualsOverride other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
-            public int CompareTo(NoObjectEqualsOverride other) => throw new NotImplementedException();
+            public int CompareTo(NoObjectEqualsOverride other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
             public static bool operator ==(NoObjectEqualsOverride left, NoObjectEqualsOverride right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(NoObjectEqualsOverride left, NoObjectEqualsOverride right) =>
                 !(left == right);
@@ -592,14 +598,14 @@ namespace Testify
             public override bool Equals(object obj) => Equals(obj as NoGetHashCodeOverride);
 
             public bool Equals(NoGetHashCodeOverride other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
-            public int CompareTo(NoGetHashCodeOverride other) => throw new NotImplementedException();
+            public int CompareTo(NoGetHashCodeOverride other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
             public static bool operator ==(NoGetHashCodeOverride left, NoGetHashCodeOverride right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(NoGetHashCodeOverride left, NoGetHashCodeOverride right) =>
                 !(left == right);
@@ -617,11 +623,11 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as NoEqualityOperators);
 
-            public bool Equals(NoEqualityOperators other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(NoEqualityOperators other) => !(other is null) && Value == other.Value;
 
-            public int CompareTo(NoEqualityOperators other) => throw new NotImplementedException();
+            public int CompareTo(NoEqualityOperators other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
         }
 
         private class NoComparisonOperators : IEquatable<NoComparisonOperators>, IComparable<NoComparisonOperators>, IComparable
@@ -636,13 +642,14 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as NoComparisonOperators);
 
-            public bool Equals(NoComparisonOperators other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(NoComparisonOperators other) => !(other is null) && Value == other.Value;
 
-            public int CompareTo(NoComparisonOperators other) => throw new NotImplementedException();
+            public int CompareTo(NoComparisonOperators other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
-            public static bool operator ==(NoComparisonOperators left, NoComparisonOperators right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+            public static bool operator ==(NoComparisonOperators left, NoComparisonOperators right)
+                => left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(NoComparisonOperators left, NoComparisonOperators right) => !(left == right);
         }
@@ -661,13 +668,14 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as UnstableGetHashCode);
 
-            public bool Equals(UnstableGetHashCode other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(UnstableGetHashCode other) => !(other is null) && Value == other.Value;
 
-            public int CompareTo(UnstableGetHashCode other) => throw new NotImplementedException();
+            public int CompareTo(UnstableGetHashCode other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
-            public static bool operator ==(UnstableGetHashCode left, UnstableGetHashCode right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+            public static bool operator ==(UnstableGetHashCode left, UnstableGetHashCode right)
+                => left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(UnstableGetHashCode left, UnstableGetHashCode right) => !(left == right);
         }
@@ -690,13 +698,14 @@ namespace Testify
 
             public override bool Equals(object obj) => result;
 
-            public bool Equals(BrokenObjectEquals other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(BrokenObjectEquals other) => !(other is null) && Value == other.Value;
 
-            public int CompareTo(BrokenObjectEquals other) => throw new NotImplementedException();
+            public int CompareTo(BrokenObjectEquals other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
-            public static bool operator ==(BrokenObjectEquals left, BrokenObjectEquals right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+            public static bool operator ==(BrokenObjectEquals left, BrokenObjectEquals right)
+                => left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(BrokenObjectEquals left, BrokenObjectEquals right) => !(left == right);
         }
@@ -717,19 +726,16 @@ namespace Testify
 
             public override int GetHashCode() => Value.GetHashCode();
 
-            public override bool Equals(object obj)
-            {
-                var other = obj as BrokenEquals;
-                return !object.ReferenceEquals(other, null) && Value == other.Value;
-            }
+            public override bool Equals(object obj) => (obj is BrokenEquals other) && Value == other.Value;
 
             public bool Equals(BrokenEquals other) => result;
 
-            public int CompareTo(BrokenEquals other) => throw new NotImplementedException();
+            public int CompareTo(BrokenEquals other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
-            public static bool operator ==(BrokenEquals left, BrokenObjectEquals right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : ((object)left).Equals(right);
+            public static bool operator ==(BrokenEquals left, BrokenObjectEquals right)
+                => left is null ? right is null : ((object)left).Equals(right);
 
             public static bool operator !=(BrokenEquals left, BrokenObjectEquals right) => !(left == right);
         }
@@ -752,17 +758,18 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as BrokenOpEquality);
 
-            public bool Equals(BrokenOpEquality other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(BrokenOpEquality other) => !(other is null) && Value == other.Value;
 
-            public int CompareTo(BrokenOpEquality other) => throw new NotImplementedException();
+            public int CompareTo(BrokenOpEquality other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
 #pragma warning disable RCS1163 // Unused parameter.
             public static bool operator ==(BrokenOpEquality left, BrokenOpEquality right) => left.result;
 #pragma warning restore RCS1163 // Unused parameter.
 
-            public static bool operator !=(BrokenOpEquality left, BrokenOpEquality right) => !(object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right));
+            public static bool operator !=(BrokenOpEquality left, BrokenOpEquality right)
+                => !(left is null ? right is null : left.Equals(right));
         }
 
         private class BrokenOpInequality : IEquatable<BrokenOpInequality>, IComparable<BrokenOpInequality>, IComparable
@@ -783,14 +790,15 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as BrokenOpInequality);
 
-            public bool Equals(BrokenOpInequality other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(BrokenOpInequality other) => !(other is null) && Value == other.Value;
 
-            public int CompareTo(BrokenOpInequality other) => throw new NotImplementedException();
+            public int CompareTo(BrokenOpInequality other) => throw new NotSupportedException();
 
-            public int CompareTo(object obj) => throw new NotImplementedException();
+            public int CompareTo(object obj) => throw new NotSupportedException();
 
 #pragma warning disable RCS1163 // Unused parameter.
-            public static bool operator ==(BrokenOpInequality left, BrokenOpInequality right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+            public static bool operator ==(BrokenOpInequality left, BrokenOpInequality right)
+                => left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(BrokenOpInequality left, BrokenOpInequality right) => left.result;
 #pragma warning restore RCS1163 // Unused parameter.
@@ -808,7 +816,7 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as BrokenOpGreaterThan);
 
-            public bool Equals(BrokenOpGreaterThan other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(BrokenOpGreaterThan other) => !(other is null) && Value == other.Value;
 
             public int CompareTo(BrokenOpGreaterThan other)
             {
@@ -836,7 +844,8 @@ namespace Testify
                 return CompareTo(other);
             }
 
-            public static bool operator ==(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+            public static bool operator ==(BrokenOpGreaterThan left, BrokenOpGreaterThan right)
+                => left is null ? right is null : left.Equals(right);
 
             public static bool operator !=(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => !(left == right);
 
@@ -844,11 +853,14 @@ namespace Testify
             public static bool operator >(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => false;
 #pragma warning restore RCS1163 // Unused parameter.
 
-            public static bool operator <(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => object.ReferenceEquals(left, null) ? !object.ReferenceEquals(right, null) : left.CompareTo(right) < 0;
+            public static bool operator <(BrokenOpGreaterThan left, BrokenOpGreaterThan right)
+                => left is null ? !(right is null) : left.CompareTo(right) < 0;
 
-            public static bool operator >=(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.CompareTo(right) > 0;
+            public static bool operator >=(BrokenOpGreaterThan left, BrokenOpGreaterThan right)
+                => left is null ? right is null : left.CompareTo(right) > 0;
 
-            public static bool operator <=(BrokenOpGreaterThan left, BrokenOpGreaterThan right) => object.ReferenceEquals(left, null) ? true : left.CompareTo(right) < 0;
+            public static bool operator <=(BrokenOpGreaterThan left, BrokenOpGreaterThan right)
+                => left is null ? true : left.CompareTo(right) < 0;
         }
     }
 }

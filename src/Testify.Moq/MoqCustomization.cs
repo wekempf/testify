@@ -3,7 +3,8 @@
 namespace Testify
 {
     /// <summary>
-    /// Customizes <see cref="AnonymousData"/> to use Moq to automatically create mock objects for interface and abstract class types.
+    /// Customizes <see cref="AnonymousData"/> to use Moq to automatically create mock objects for interface and abstract class
+    /// types.
     /// </summary>
     /// <seealso cref="Testify.IAnonymousDataCustomization" />
     public class MoqCustomization : IAnonymousDataCustomization

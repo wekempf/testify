@@ -17,7 +17,7 @@ namespace Testify
         /// <summary>
         /// Initializes a new instance of the <see cref="Distribution"/> class.
         /// </summary>
-        protected internal Distribution()
+        internal Distribution()
         {
         }
 

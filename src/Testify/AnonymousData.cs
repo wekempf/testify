@@ -5,7 +5,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using Factory = System.Func<Testify.IAnonymousData, object>;
-using PropertyFactories = System.Collections.Generic.Dictionary<System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, object>>;
+using PropertyFactories =
+    System.Collections.Generic.Dictionary<System.Reflection.PropertyInfo, System.Func<Testify.IAnonymousData, object>>;
 
 namespace Testify
 {
@@ -162,7 +163,7 @@ namespace Testify
                 return this;
             }
 
-            if (factories.TryGetValue(type, out Factory factory) || GlobalFactories.TryGetValue(type, out factory))
+            if (factories.TryGetValue(type, out var factory) || GlobalFactories.TryGetValue(type, out factory))
             {
                 object value;
                 try
@@ -181,7 +182,7 @@ namespace Testify
             var context = new AnonymousDataContext(this, type);
             try
             {
-                if (context.CallNextCustomization(out object result))
+                if (context.CallNextCustomization(out var result))
                 {
                     return Populate(result, populateOption);
                 }
@@ -244,7 +245,7 @@ namespace Testify
         {
             Argument.NotNull(key, nameof(key));
 
-            if (registeredValues.TryGetValue(key, out object value))
+            if (registeredValues.TryGetValue(key, out var value))
             {
                 return value;
             }
@@ -313,7 +314,7 @@ namespace Testify
                                     {
                                         foreach (var item in items)
                                         {
-                                            if (item != null && !item.GetType().GetTypeInfo().IsPrimitive)
+                                            if (item?.GetType().GetTypeInfo().IsPrimitive == false)
                                             {
                                                 queue.Enqueue(item);
                                             }
@@ -328,7 +329,7 @@ namespace Testify
                                     {
                                         foreach (var item in (IEnumerable)value)
                                         {
-                                            if (item != null && !item.GetType().GetTypeInfo().IsPrimitive)
+                                            if (item?.GetType().GetTypeInfo().IsPrimitive == false)
                                             {
                                                 queue.Enqueue(item);
                                             }
@@ -339,7 +340,7 @@ namespace Testify
                             else
                             {
                                 object value;
-                                if (propertyFactories.TryGetValue(prop, out Factory factory)
+                                if (propertyFactories.TryGetValue(prop, out var factory)
                                     || GlobalPropertyFactories.TryGetValue(prop, out factory))
                                 {
                                     value = factory(this);

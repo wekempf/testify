@@ -38,10 +38,7 @@ namespace Testify
         private EqualityTests<T> EqualityTests { get; set; }
 
         /// <inheritdoc/>
-        protected override IEnumerable<Action> GetTests()
-        {
-            return EqualityTests.GetTests();
-        }
+        protected override IEnumerable<Action> GetTests() => EqualityTests.GetTests();
 
         /// <inheritdoc/>
         protected override void VerifyConfiguration()

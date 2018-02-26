@@ -16,7 +16,7 @@
     <Rule Id="SA1633" Action="None" />
   </Rules>
   <Rules AnalyzerId="Roslynator.Analyzers" RuleNamespace="Roslynator.Analyzers">
-    <Rule Id="RCS1163" Action="Error" />
+    <Rule Id="RCS1080" Action="None" />
     <Rule Id="RCS1194" Action="None" />
   </Rules>
 </RuleSet>

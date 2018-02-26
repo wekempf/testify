@@ -30,11 +30,18 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="double"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static double AnyDouble(this IAnonymousData anon, double minimum, double maximum)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                double.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return anon.AnyDouble(minimum, maximum, Distribution.Uniform);
         }

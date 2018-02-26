@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using static Testify.Assertions;
 
 namespace Testify
 {
@@ -40,10 +37,7 @@ namespace Testify
         private CompareTests<T> CompareTests { get; set; }
 
         /// <inheritdoc/>
-        protected override IEnumerable<Action> GetTests()
-        {
-            return CompareTests.GetTests();
-        }
+        protected override IEnumerable<Action> GetTests() => CompareTests.GetTests();
 
         /// <inheritdoc/>
         protected override void VerifyConfiguration()

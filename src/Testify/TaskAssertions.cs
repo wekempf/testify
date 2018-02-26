@@ -43,7 +43,9 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The <see cref="Task" /> type.</typeparam>
         /// <param name="task">The task to verify completes.</param>
-        /// <param name="millisecondsTimeout">The amount of time in milliseconds to wait for the <see cref="Task"/> to complete.</param>
+        /// <param name="millisecondsTimeout">
+        ///     The amount of time in milliseconds to wait for the <see cref="Task"/> to complete.
+        /// </param>
         /// <remarks>
         /// <para>If this assertion fails you may have a deadlock or the task simply is taking too long
         /// to complete.</para>
@@ -120,7 +122,9 @@ namespace Testify
         /// </summary>
         /// <typeparam name="T">The <see cref="Task" /> type.</typeparam>
         /// <param name="task">The task to verify completes.</param>
-        /// <param name="millisecondsTimeout">The amount of time in milliseconds to wait for the <see cref="Task"/> to complete.</param>
+        /// <param name="millisecondsTimeout">
+        ///     The amount of time in milliseconds to wait for the <see cref="Task"/> to complete.
+        /// </param>
         /// <param name="message">A message to display if the assertion fails. This message can
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message" />.</param>
@@ -133,7 +137,11 @@ namespace Testify
         /// </remarks>
         /// <exception cref="ArgumentNullException"><paramref name="task"/> (or it's value) is <see langword="null"/>.</exception>
         /// <exception cref="AssertionException">The <paramref name="task"/> did not complete in the alloted time.</exception>
-        public static void Completes<T>(this ActualValue<T> task, int millisecondsTimeout, string message, params object[] parameters)
+        public static void Completes<T>(
+            this ActualValue<T> task,
+            int millisecondsTimeout,
+            string message,
+            params object[] parameters)
             where T : Task
         {
             Argument.NotNull(task, nameof(task));

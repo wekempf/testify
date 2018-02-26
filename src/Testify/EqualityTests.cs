@@ -24,30 +24,30 @@ namespace Testify
             if (!typeInfo.IsPrimitive)
             {
                 var method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == nameof(GetHashCode) &&
-                        !m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new Type[0]))
+                    .Where(m => m.Name == nameof(GetHashCode)
+                        && !m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new Type[0]))
                     .OnlyOrDefault();
                 GetHashCodeFunc = method?.CreateFunc<T, int>();
 
                 method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == nameof(Equals) &&
-                        !m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(object) }))
+                    .Where(m => m.Name == nameof(Equals)
+                        && !m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(object) }))
                     .OnlyOrDefault();
                 ObjectEqualsFunc = method?.CreateFunc<T, object, bool>();
 
                 method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == "op_Equality" &&
-                        m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
+                    .Where(m => m.Name == "op_Equality"
+                        && m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
                     .OnlyOrDefault();
                 OpEqualityFunc = method?.CreateFunc<T, T, bool>();
 
                 method = typeInfo.DeclaredMethods
-                    .Where(m => m.Name == "op_Inequality" &&
-                        m.IsStatic &&
-                        m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
+                    .Where(m => m.Name == "op_Inequality"
+                        && m.IsStatic
+                        && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(T), typeof(T) }))
                     .OnlyOrDefault();
                 OpInequalityFunc = method?.CreateFunc<T, T, bool>();
             }
@@ -270,7 +270,8 @@ namespace Testify
             var result = CompareItems(BaseItems, Items, (x, y) => x.Equals(y));
             if (result != null)
             {
-                Fail($"IEquatable<{typeof(T).Name}>.Equals failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"IEquatable<{typeof(T).Name}>.Equals failed with values expected to be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -279,7 +280,8 @@ namespace Testify
             var result = CompareItems(BaseItems, ShiftedItems, (x, y) => !x.Equals(y));
             if (result != null)
             {
-                Fail($"IEquatable<{typeof(T).Name}>.Equals failed with values expected to not be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"IEquatable<{typeof(T).Name}>.Equals failed with values expected to not be equal at index "
+                    + $"{result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -306,14 +308,15 @@ namespace Testify
             var result = CompareItems(BaseItems, Items, (x, y) => x.GetHashCode() == y.GetHashCode());
             if (result != null)
             {
-                Fail($"Object.GetHashCode failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"Object.GetHashCode failed with values expected to be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
         private void VerifyImmutability()
         {
             var anon = new AnonymousData();
-            var left = BaseItems.First();
+            var left = BaseItems[0];
             var right = ItemsFactory.Invoke().First();
             var typeInfo = typeof(T).GetTypeInfo();
             foreach (var property in typeInfo.DeclaredProperties.Where(p => p.CanRead && p.CanWrite))
@@ -338,7 +341,8 @@ namespace Testify
             var result = CompareItems(BaseItems, Items, (x, y) => ((object)x).Equals(y));
             if (result != null)
             {
-                Fail($"Object.Equals failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"Object.Equals failed with values expected to be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -347,7 +351,8 @@ namespace Testify
             var result = CompareItems(BaseItems, ShiftedItems, (x, y) => !((object)x).Equals(y));
             if (result != null)
             {
-                Fail($"Object.Equals failed with values expected to not be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"Object.Equals failed with values expected to not be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -370,7 +375,8 @@ namespace Testify
             var result = CompareItems(BaseItems, Items, OpEqualityFunc);
             if (result != null)
             {
-                Fail($"op_Equality failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"op_Equality failed with values expected to be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -398,7 +404,8 @@ namespace Testify
             var result = CompareItems(BaseItems, ShiftedItems, (x, y) => !OpEqualityFunc(x, y));
             if (result != null)
             {
-                Fail($"op_Equality failed with values expected to not be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"op_Equality failed with values expected to not be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -412,7 +419,8 @@ namespace Testify
             var result = CompareItems(BaseItems, BaseItems, (x, _) => !OpEqualityFunc(x, default(T)));
             if (result != null)
             {
-                Fail($"op_Equality failed when right hand side is null at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"op_Equality failed when right hand side is null at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -426,7 +434,8 @@ namespace Testify
             var result = CompareItems(BaseItems, Items, (x, y) => !OpInequalityFunc(x, y));
             if (result != null)
             {
-                Fail($"op_Inequality failed with values expected to be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"op_Inequality failed with values expected to be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -454,7 +463,8 @@ namespace Testify
             var result = CompareItems(BaseItems, ShiftedItems, OpInequalityFunc);
             if (result != null)
             {
-                Fail($"op_Inequality failed with values expected to not be equal at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"op_Inequality failed with values expected to not be equal at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
 
@@ -468,7 +478,8 @@ namespace Testify
             var result = CompareItems(BaseItems, BaseItems, (x, _) => OpInequalityFunc(x, default(T)));
             if (result != null)
             {
-                Fail($"op_Inequality failed when right hand side is null at index {result.Value.Index}. Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
+                Fail($"op_Inequality failed when right hand side is null at index {result.Value.Index}. "
+                    + $"Expected: <{result.Value.Right}>. Actual: <{result.Value.Left}>.");
             }
         }
     }

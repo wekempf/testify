@@ -57,7 +57,8 @@ namespace Testify.Tests
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. Completes failed. Task did not complete within allotted time and may be deadlocked.");
+                e.ExpectMessage("Some message. "
+                    + "Completes failed. Task did not complete within allotted time and may be deadlocked.");
                 return;
             }
 
@@ -75,7 +76,8 @@ namespace Testify.Tests
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. Completes failed. Task did not complete within allotted time and may be deadlocked.");
+                e.ExpectMessage("Some message. Completes failed. "
+                    + "Task did not complete within allotted time and may be deadlocked.");
                 return;
             }
 
@@ -133,7 +135,8 @@ namespace Testify.Tests
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. Completes failed. Task did not complete within allotted time and may be deadlocked.");
+                e.ExpectMessage("Some message. Completes failed. "
+                    + "Task did not complete within allotted time and may be deadlocked.");
                 return;
             }
 
@@ -151,7 +154,8 @@ namespace Testify.Tests
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. Completes failed. Task did not complete within allotted time and may be deadlocked.");
+                e.ExpectMessage("Some message. Completes failed. "
+                    + "Task did not complete within allotted time and may be deadlocked.");
                 return;
             }
 

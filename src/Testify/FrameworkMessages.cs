@@ -39,7 +39,7 @@ namespace Testify
                 Resources.FrameworkMessage_AssertionFailed,
                 assertionName,
                 assertionMessage,
-                (userArgs != null && userArgs.Any()) ? Format(ReplaceNullChars(userMessage), userArgs) : ReplaceNullChars(userMessage));
+                userArgs?.Any() == true ? Format(ReplaceNullChars(userMessage), userArgs) : ReplaceNullChars(userMessage));
 
         /// <summary>
         /// Collections the equal reason.
@@ -151,8 +151,8 @@ namespace Testify
         /// <param name="actual">The actual value.</param>
         /// <param name="actualType">The actual type.</param>
         /// <returns>The formatted message.</returns>
-        internal static string IsEqualToDifferentTypesFailMsg(string expected, string expectedType, string actual, string actualType) =>
-            Format(
+        internal static string IsEqualToDifferentTypesFailMsg(string expected, string expectedType, string actual, string actualType)
+            => Format(
                 Resources.FrameworkMessage_IsEqualToFailTypesMsg,
                 expected,
                 expectedType,

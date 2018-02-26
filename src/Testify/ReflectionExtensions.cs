@@ -55,11 +55,11 @@ namespace Testify
 
             return sourceType.GetTypeInfo().DeclaredConstructors
                 .FirstOrDefault(
-                    c => c.GetParameters().Length == parameterTypes.Length &&
-                        c.GetParameters()
-                        .Select(p => p.ParameterType)
-                        .Zip(parameterTypes, (t1, t2) => Tuple.Create(t1, t2))
-                        .All(t => t.Item1.Is(t.Item2)));
+                    c => c.GetParameters().Length == parameterTypes.Length
+                        && c.GetParameters()
+                            .Select(p => p.ParameterType)
+                            .Zip(parameterTypes, (t1, t2) => Tuple.Create(t1, t2))
+                            .All(t => t.Item1.Is(t.Item2)));
         }
 
         /// <summary>
@@ -112,19 +112,17 @@ namespace Testify
                 return null;
             }
 
-            MemberExpression memberExpr = null;
-
-            if (lambda.Body.NodeType == ExpressionType.Convert)
+            switch (lambda.Body.NodeType)
             {
-                memberExpr =
-                    ((UnaryExpression)lambda.Body).Operand as MemberExpression;
-            }
-            else if (lambda.Body.NodeType == ExpressionType.MemberAccess)
-            {
-                memberExpr = lambda.Body as MemberExpression;
-            }
+                case ExpressionType.Convert:
+                    return ((UnaryExpression)lambda.Body).Operand as MemberExpression;
 
-            return memberExpr;
+                case ExpressionType.MemberAccess:
+                    return lambda.Body as MemberExpression;
+
+                default:
+                    return null;
+            }
         }
 
         /// <summary>
@@ -276,9 +274,9 @@ namespace Testify
         {
             Argument.NotNull(sourceType, nameof(sourceType));
 
-            return sourceType.Is(typeof(ICollection<>)) ||
-                sourceType.Is(typeof(ICollection)) ||
-                sourceType.GetInterfaces().Any(t => t.IsCollectionType());
+            return sourceType.Is(typeof(ICollection<>))
+                || sourceType.Is(typeof(ICollection))
+                || sourceType.GetInterfaces().Any(t => t.IsCollectionType());
         }
 
         /// <summary>

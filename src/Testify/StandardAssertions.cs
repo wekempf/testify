@@ -19,7 +19,9 @@ namespace Testify
         /// <param name="delta">The required accuracy. The assertion will fail only if <paramref name="expected"/>
         /// is different from <paramref name="actualValue"/> by more than <paramref name="delta"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="actualValue"/> is <see langword="null"/>.</exception>
-        /// <exception cref="AssertionException"><paramref name="actualValue"/> and <paramref name="expected"/> are not equal.</exception>
+        /// <exception cref="AssertionException">
+        ///     <paramref name="actualValue"/> and <paramref name="expected"/> are not equal.
+        /// </exception>
         public static void IsEqualTo(this ActualValue<double> actualValue, double expected, double delta)
         {
             Argument.NotNull(actualValue, nameof(actualValue));

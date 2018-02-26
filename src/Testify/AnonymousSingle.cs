@@ -92,11 +92,18 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="float"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static float AnySingle(this IAnonymousData anon, float minimum, float maximum)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, float.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                float.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return anon.AnySingle(minimum, maximum, Distribution.Uniform);
         }
@@ -125,11 +132,18 @@ namespace Testify
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="float"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static float AnySingle(this IAnonymousData anon, float minimum, float maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, float.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                float.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return (float)anon.AnyDouble(minimum, maximum, distribution);
         }

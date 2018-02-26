@@ -56,7 +56,9 @@ namespace Testify
         /// <param name="value">The value.</param>
         /// <param name="type">The type <paramref name="value"/> should be assignable to.</param>
         /// <param name="argName">The name of the argument.</param>
-        /// <exception cref="ArgumentException">The <paramref name="value"/> is not assignable to the <paramref name="type"/>.</exception>
+        /// <exception cref="ArgumentException">
+        ///     The <paramref name="value"/> is not assignable to the <paramref name="type"/>.
+        /// </exception>
         internal static void IsAssignableTo(object value, Type type, string argName)
         {
             if (!type.IsInstanceOfType(value))

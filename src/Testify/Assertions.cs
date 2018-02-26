@@ -43,7 +43,9 @@ namespace Testify
         /// </summary>
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">A list of actions to be invoked to make assertions.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.
+        /// </exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static void AssertAll(string message, params Action[] assertions)
         {
@@ -58,7 +60,9 @@ namespace Testify
         /// </summary>
         /// <param name="message">The message to display if any of the assertions fail.</param>
         /// <param name="assertions">A list of actions to be invoked to make assertions.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="message"/> or <paramref name="assertions"/> is <see langword="null"/>.
+        /// </exception>
         /// <exception cref="ArgumentException"><paramref name="message"/> is empty.</exception>
         public static void AssertAll(string message, IEnumerable<Action> assertions)
         {
@@ -133,7 +137,7 @@ namespace Testify
             var startIndex = 0;
             foreach (var num in list)
             {
-                stringBuilder.Append(input.Substring(startIndex, num - startIndex));
+                stringBuilder.Append(input, startIndex, num - startIndex);
                 stringBuilder.Append("\\0");
                 startIndex = num + 1;
             }
@@ -167,7 +171,12 @@ namespace Testify
         /// <param name="userMessage">The user message.</param>
         /// <param name="userArgs">The user arguments used to format the user message.</param>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public static void Throw(string assertionName, Exception innerException, string assertionMessage, string userMessage, params object[] userArgs)
+        public static void Throw(
+            string assertionName,
+            Exception innerException,
+            string assertionMessage,
+            string userMessage,
+            params object[] userArgs)
         {
             Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
 
@@ -184,7 +193,12 @@ namespace Testify
         /// <param name="userMessage">The user message.</param>
         /// <param name="userArgs">The user arguments used to format the user message.</param>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public static void Throw(string assertionName, IEnumerable<Exception> innerExceptions, string assertionMessage, string userMessage, params object[] userArgs)
+        public static void Throw(
+            string assertionName,
+            IEnumerable<Exception> innerExceptions,
+            string assertionMessage,
+            string userMessage,
+            params object[] userArgs)
         {
             Argument.NotNullOrEmpty(assertionName, nameof(assertionName));
 
@@ -203,7 +217,9 @@ namespace Testify
             var str = string.Empty;
             if (!string.IsNullOrEmpty(message))
             {
-                str = parameters != null ? string.Format(CultureInfo.CurrentCulture, ReplaceNulls(message), parameters) : ReplaceNulls(message);
+                str = parameters != null
+                    ? string.Format(CultureInfo.CurrentCulture, ReplaceNulls(message), parameters)
+                    : ReplaceNulls(message);
             }
 
             return str;

@@ -32,11 +32,15 @@ namespace Testify
         /// </summary>
         /// <param name="name">The name of the classification category.</param>
         /// <param name="predicate">The predicate values must pass in order to be classified in this category.</param>
-        /// <exception cref="ArgumentNullException">Either <paramref name="name"/> or <paramref name="predicate"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     Either <paramref name="name"/> or <paramref name="predicate"/> is null.
+        /// </exception>
         /// <exception cref="ArgumentException"><para><paramref name="name"/> is empty.</para>
         /// <para>-or-</para>
         /// <para>A category with the same name already exists in the <see cref="Classifier{TValue}"/>.</para></exception>
-        /// <exception cref="ArgumentNullException"><paramref name="name"/> or <paramref name="predicate"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="name"/> or <paramref name="predicate"/> is <see langword="null"/>.
+        /// </exception>
         /// <exception cref="ArgumentException"><paramref name="name"/> is empty.</exception>
         /// <exception cref="InvalidOperationException">Values have already been classified.</exception>
         public void AddClassification(string name, Predicate<TValue> predicate)

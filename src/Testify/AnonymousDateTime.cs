@@ -31,11 +31,18 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="DateTime"/> value.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static DateTime AnyDateTime(this IAnonymousData anon, DateTime minimum, DateTime maximum)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, DateTime.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                DateTime.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return anon.AnyDateTime(minimum, maximum, Distribution.Uniform);
         }
@@ -64,7 +71,9 @@ namespace Testify
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="DateTime"/> value.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="anon"/> is null.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static DateTime AnyDateTime(this IAnonymousData anon, DateTime minimum, DateTime maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));

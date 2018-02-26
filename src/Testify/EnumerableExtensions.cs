@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Testify
 {
@@ -19,8 +17,8 @@ namespace Testify
         {
             Argument.NotNull(source, nameof(source));
 
-            bool found = false;
-            T result = default(T);
+            var found = false;
+            var result = default(T);
             using (var e = source.GetEnumerator())
             {
                 while (e.MoveNext())

@@ -29,11 +29,18 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="int"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static int AnyInt32(this IAnonymousData anon, int minimum, int maximum)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, int.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                int.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return anon.AnyInt32(minimum, maximum, Distribution.Uniform);
         }
@@ -62,11 +69,18 @@ namespace Testify
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="int"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static int AnyInt32(this IAnonymousData anon, int minimum, int maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, int.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                int.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return (int)anon.AnyInt64(minimum, maximum, distribution);
         }

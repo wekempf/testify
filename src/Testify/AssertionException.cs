@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Testify.Properties;
@@ -63,7 +62,7 @@ namespace Testify
         {
         }
 
-        [SuppressMessage("SonarLint", "S1144", Justification = "This is used by DebuggerDisplay.")]
+        [SuppressMessage("Rolynator", "RCS1213", Justification = "This is used by DebuggerDisplay.")]
         private int InnerExceptionCount => InnerExceptions.Count;
     }
 }

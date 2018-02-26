@@ -123,7 +123,7 @@ namespace Testify
             Argument.NotNull(predicate, nameof(predicate));
             Argument.InRange(retryAttempts, 0, int.MaxValue, nameof(retryAttempts));
 
-            for (int i = 0; i < retryAttempts; ++i)
+            for (var i = 0; i < retryAttempts; ++i)
             {
                 var result = anon.Any(type, populateOption);
                 if (predicate.Invoke(result))
@@ -211,7 +211,7 @@ namespace Testify
             Argument.NotNull(predicate, nameof(predicate));
             Argument.InRange(retryAttempts, 0, int.MaxValue, nameof(retryAttempts));
 
-            for (int i = 0; i < retryAttempts; ++i)
+            for (var i = 0; i < retryAttempts; ++i)
             {
                 var result = anon.Any<T>(populateOption);
                 if (predicate.Invoke(result))
@@ -245,7 +245,9 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="type">The type to freeze.</param>
         /// <param name="value">The instance to freeze.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="anon"/> or <paramref name="type"/> is <see langword="null"/>.
+        /// </exception>
         /// <exception cref="ArgumentException"><paramref name="value"/> is not assignable to <paramref name="type"/>.</exception>
         public static void Freeze(this IRegisterAnonymousData anon, Type type, object value)
         {
@@ -292,7 +294,9 @@ namespace Testify
         /// <typeparam name="T">The type of object the factory method creates.</typeparam>
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="factory">The factory method.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="factory"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="anon"/> or <paramref name="factory"/> is <see langword="null"/>.
+        /// </exception>
         public static void Register<T>(this IRegisterAnonymousData anon, Func<IAnonymousData, T> factory)
         {
             Argument.NotNull(anon, nameof(anon));

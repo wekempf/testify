@@ -81,6 +81,7 @@ namespace Testify
             }
         }
 
-        private static void InvokeTest(string name, Func<Task> test) => InvokeTest(name, () => TestSynchronizationContext.Run(test));
+        private static void InvokeTest(string name, Func<Task> test)
+            => InvokeTest(name, () => TestSynchronizationContext.Run(test));
     }
 }

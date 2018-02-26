@@ -200,9 +200,7 @@ Task("Docs")
         WorkingDirectory = "./docs"
     };
     DocFxBuild(settings);
-    if (!isRunningOnBuildServer && !forceDocPublish) {
-        Zip("./docs/_site", "./docs/site.zip");
-    }
+    Zip("./docs/_site", "./docs/site.zip");
     if ((isRunningOnBuildServer && branch == "master") || forceDocPublish) {
         var pagesDirectory = "./pages";
         Information($"Cloning {gitPagesRepo} pages branch to '{pagesDirectory}'...");

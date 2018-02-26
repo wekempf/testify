@@ -22,7 +22,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsEqualTo failed. Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsEqualTo failed. "
+                    + "Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -38,7 +39,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsEqualTo failed. Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsEqualTo failed. "
+                    + "Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -62,7 +64,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEqualTo failed. Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("IsEqualTo failed. "
+                    + "Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -78,7 +81,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEqualTo failed. Expected a difference no greater than <1.5> between expected value <1> and actual value <NaN>.");
+                e.ExpectMessage("IsEqualTo failed. "
+                    + "Expected a difference no greater than <1.5> between expected value <1> and actual value <NaN>.");
                 return;
             }
 
@@ -96,7 +100,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"IsEqualTo failed. Expected: <{expected} (System.TimeSpan)>. Actual: <{actual} (System.DateTime)>.");
+                e.ExpectMessage($"IsEqualTo failed. Expected: <{expected} (System.TimeSpan)>. "
+                    + $"Actual: <{actual} (System.DateTime)>.");
                 return;
             }
 
@@ -114,7 +119,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. IsEqualTo failed. Expected: <{expected} (System.TimeSpan)>. Actual: <{actual} (System.DateTime)>.");
+                e.ExpectMessage($"Some message. IsEqualTo failed. Expected: <{expected} (System.TimeSpan)>. "
+                    + $"Actual: <{actual} (System.DateTime)>.");
                 return;
             }
 
@@ -132,7 +138,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. IsEqualTo failed. Expected: <{expected} (System.TimeSpan)>. Actual: <{actual} (System.DateTime)>.");
+                e.ExpectMessage($"Some message. IsEqualTo failed. Expected: <{expected} (System.TimeSpan)>. "
+                    + $"Actual: <{actual} (System.DateTime)>.");
                 return;
             }
 
@@ -202,7 +209,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsEqualTo failed. Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsEqualTo failed. "
+                    + "Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -218,7 +226,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsEqualTo failed. Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsEqualTo failed. "
+                    + "Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -242,7 +251,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEqualTo failed. Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("IsEqualTo failed. "
+                    + "Expected a difference no greater than <0.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -258,7 +268,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsEqualTo failed. Expected a difference no greater than <1.5> between expected value <1> and actual value <NaN>.");
+                e.ExpectMessage("IsEqualTo failed. "
+                    + "Expected a difference no greater than <1.5> between expected value <1> and actual value <NaN>.");
                 return;
             }
 
@@ -345,7 +356,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. IsInstanceOfType failed. Expected type: {typeof(Exception)}. Actual type: {typeof(string)}.");
+                e.ExpectMessage($"Some message. IsInstanceOfType failed. "
+                    + $"Expected type: {typeof(Exception)}. Actual type: {typeof(string)}.");
                 return;
             }
 
@@ -361,7 +373,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. IsInstanceOfType failed. Expected type: {typeof(Exception)}. Actual type: {typeof(string)}.");
+                e.ExpectMessage($"Some message. IsInstanceOfType failed. "
+                    + $"Expected type: {typeof(Exception)}. Actual type: {typeof(string)}.");
                 return;
             }
 
@@ -384,7 +397,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsNotEqualTo failed. Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -400,7 +414,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsNotEqualTo failed. Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -416,7 +431,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEqualTo failed. Expected a difference greater than <1> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -432,7 +448,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEqualTo failed. Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -527,7 +544,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsNotEqualTo failed. Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -543,7 +561,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("Some message. IsNotEqualTo failed. Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("Some message. IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -559,7 +578,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEqualTo failed. Expected a difference greater than <1> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -575,7 +595,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage("IsNotEqualTo failed. Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
+                e.ExpectMessage("IsNotEqualTo failed. "
+                    + "Expected a difference greater than <1.05> between expected value <1> and actual value <2>.");
                 return;
             }
 
@@ -615,7 +636,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. IsNotInstanceOfType failed. Wrong type: {typeof(string)}. Actual type: {typeof(string)}.");
+                e.ExpectMessage($"Some message. IsNotInstanceOfType failed. "
+                    + $"Wrong type: {typeof(string)}. Actual type: {typeof(string)}.");
                 return;
             }
 
@@ -631,7 +653,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. IsNotInstanceOfType failed. Wrong type: {typeof(string)}. Actual type: {typeof(string)}.");
+                e.ExpectMessage($"Some message. IsNotInstanceOfType failed. "
+                    + $"Wrong type: {typeof(string)}. Actual type: {typeof(string)}.");
                 return;
             }
 

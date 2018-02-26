@@ -21,7 +21,7 @@ namespace Testify.Tests
         {
             var tests = new TestCollection();
             tests.AddTest("Test1", () => { });
-            tests.AddTest("Test2", () => { throw new AssertionException("xyzzy"); });
+            tests.AddTest("Test2", () => throw new AssertionException("xyzzy"));
 
             try
             {

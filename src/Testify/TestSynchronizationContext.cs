@@ -47,10 +47,7 @@ namespace Testify
         }
 
         /// <inheritdoc/>
-        void IDisposable.Dispose()
-        {
-            queue.Dispose();
-        }
+        void IDisposable.Dispose() => queue.Dispose();
 
         /// <summary>
         /// When overridden in a derived class, dispatches an asynchronous message to a synchronization context.

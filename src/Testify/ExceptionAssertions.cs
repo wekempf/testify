@@ -103,7 +103,11 @@ namespace Testify
         /// be seen in the unit test results.</param>
         /// <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="action"/> or it's value is <see langword="null"/>.</exception>
-        public static void Throws<T>(this ActualValue<Action> action, Action<T> additionalAssertion, string message, params object[] parameters)
+        public static void Throws<T>(
+            this ActualValue<Action> action,
+            Action<T> additionalAssertion,
+            string message,
+            params object[] parameters)
             where T : Exception
         {
             Argument.NotNull(action, nameof(action));

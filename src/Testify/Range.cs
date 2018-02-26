@@ -16,7 +16,12 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         public Range(long minimum, long maximum)
         {
-            Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                double.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             Minimum = minimum;
             Maximum = maximum;

@@ -220,11 +220,18 @@ namespace Testify
         /// <param name="maximumLength">The maximum length.</param>
         /// <returns>A random <see langword="string"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.
+        /// </exception>
         public static string AnyString(this IAnonymousData anon, int minimumLength, int maximumLength)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximumLength, minimumLength, int.MaxValue, nameof(maximumLength), "The maximum length must be greater than the minimum length.");
+            Argument.InRange(
+                maximumLength,
+                minimumLength,
+                int.MaxValue,
+                nameof(maximumLength),
+                "The maximum length must be greater than the minimum length.");
 
             return anon.AnyString(minimumLength, maximumLength, Distribution.Uniform);
         }
@@ -254,11 +261,18 @@ namespace Testify
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="string"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximumLength"/> is less than <paramref name="minimumLength"/>.
+        /// </exception>
         public static string AnyString(this IAnonymousData anon, int minimumLength, int maximumLength, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximumLength, minimumLength, int.MaxValue, nameof(maximumLength), "The maximum length must be greater than the minimum length.");
+            Argument.InRange(
+                maximumLength,
+                minimumLength,
+                int.MaxValue,
+                nameof(maximumLength),
+                "The maximum length must be greater than the minimum length.");
 
             var length = anon.AnyInt32(minimumLength, maximumLength);
             var builder = new StringBuilder(length);

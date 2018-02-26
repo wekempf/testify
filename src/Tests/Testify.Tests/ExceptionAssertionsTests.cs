@@ -16,7 +16,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Throws failed. Caught the expected exception type <{typeof(Exception)}>, but additional assertions failed.");
+                e.ExpectMessage($"Throws failed. Caught the expected exception type <{typeof(Exception)}>, "
+                    + "but additional assertions failed.");
                 return;
             }
 
@@ -46,7 +47,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. Throws failed. Caught the expected exception type <{typeof(Exception)}>, but additional assertions failed.");
+                e.ExpectMessage($"Some message. Throws failed. Caught the expected exception type <{typeof(Exception)}>, "
+                    + "but additional assertions failed.");
                 return;
             }
 
@@ -75,7 +77,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(Exception)}>. The action did not throw any exceptions.");
+                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(Exception)}>. "
+                    + "The action did not throw any exceptions.");
                 return;
             }
 
@@ -92,7 +95,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. Throws failed. Caught the expected exception type <{typeof(Exception)}>, but additional assertions failed.");
+                e.ExpectMessage($"Some message. Throws failed. Caught the expected exception type <{typeof(Exception)}>, "
+                    + "but additional assertions failed.");
                 return;
             }
 
@@ -121,7 +125,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(Exception)}>. The action did not throw any exceptions.");
+                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(Exception)}>. "
+                    + "The action did not throw any exceptions.");
                 return;
             }
 
@@ -137,7 +142,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(ArgumentOutOfRangeException)}>. Actual exception: <{typeof(ArgumentNullException)}>.");
+                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(ArgumentOutOfRangeException)}>. "
+                    + $"Actual exception: <{typeof(ArgumentNullException)}>.");
                 return;
             }
 
@@ -153,7 +159,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(ArgumentOutOfRangeException)}>. Actual exception: <{typeof(ArgumentNullException)}>.");
+                e.ExpectMessage($"Some message. Throws failed. Expected exception: <{typeof(ArgumentOutOfRangeException)}>. "
+                    + $"Actual exception: <{typeof(ArgumentNullException)}>.");
                 return;
             }
 
@@ -169,7 +176,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Throws failed. Expected exception: <{typeof(Exception)}>. The action did not throw any exceptions.");
+                e.ExpectMessage($"Throws failed. Expected exception: <{typeof(Exception)}>. "
+                    + "The action did not throw any exceptions.");
                 return;
             }
 
@@ -185,7 +193,8 @@ namespace Testify
             }
             catch (AssertionException e)
             {
-                e.ExpectMessage($"Throws failed. Expected exception: <{typeof(ArgumentOutOfRangeException)}>. Actual exception: <{typeof(ArgumentNullException)}>.");
+                e.ExpectMessage($"Throws failed. Expected exception: <{typeof(ArgumentOutOfRangeException)}>. "
+                    + $"Actual exception: <{typeof(ArgumentNullException)}>.");
                 return;
             }
 

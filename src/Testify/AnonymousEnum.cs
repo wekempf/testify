@@ -16,7 +16,9 @@ namespace Testify
         /// <param name="anon">The anonymous data provider to use.</param>
         /// <param name="enumType">The <see cref="Enum"/> type.</param>
         /// <returns>A random value of the specified <see cref="Enum"/> type.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/> or <paramref name="enumType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="anon"/> or <paramref name="enumType"/> is <see langword="null"/>.
+        /// </exception>
         public static object AnyEnumValue(this IAnonymousData anon, Type enumType)
         {
             Argument.NotNull(anon, nameof(anon));
@@ -34,7 +36,9 @@ namespace Testify
         /// <param name="enumType">The <see cref="Enum"/> type.</param>
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random value of the specified <see cref="Enum"/> type.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="anon"/>, <paramref name="enumType"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="anon"/>, <paramref name="enumType"/> is <see langword="null"/>.
+        /// </exception>
         /// <exception cref="ArgumentException"><paramref name="enumType"/> is not an enum type.</exception>
         public static object AnyEnumValue(this IAnonymousData anon, Type enumType, Distribution distribution)
         {

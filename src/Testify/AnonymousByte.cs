@@ -30,11 +30,18 @@ namespace Testify
         /// <param name="maximum">The maximum value.</param>
         /// <returns>A random <see langword="byte"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static byte AnyByte(this IAnonymousData anon, byte minimum, byte maximum)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                double.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return anon.AnyByte(minimum, maximum, Distribution.Uniform);
         }
@@ -63,11 +70,18 @@ namespace Testify
         /// <param name="distribution">The distribution algorithm to use.</param>
         /// <returns>A random <see langword="byte"/> value.</returns>
         /// <exception cref="System.ArgumentNullException"><paramref name="anon"/> is <see langword="null"/>.</exception>
-        /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="maximum"/> is less than <paramref name="minimum"/>.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        ///     <paramref name="maximum"/> is less than <paramref name="minimum"/>.
+        /// </exception>
         public static byte AnyByte(this IAnonymousData anon, byte minimum, byte maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, double.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                double.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return (byte)anon.AnyInt64(minimum, maximum, distribution);
         }

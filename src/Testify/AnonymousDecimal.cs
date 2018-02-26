@@ -32,7 +32,12 @@ namespace Testify
         public static decimal AnyDecimal(this IAnonymousData anon, decimal minimum, decimal maximum)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, decimal.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                decimal.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return (decimal)anon.AnyDecimal(minimum, maximum, Distribution.Uniform);
         }
@@ -63,7 +68,12 @@ namespace Testify
         public static decimal AnyDecimal(this IAnonymousData anon, decimal minimum, decimal maximum, Distribution distribution)
         {
             Argument.NotNull(anon, nameof(anon));
-            Argument.InRange(maximum, minimum, decimal.MaxValue, nameof(maximum), "The maximum value must be greater than the minimum value.");
+            Argument.InRange(
+                maximum,
+                minimum,
+                decimal.MaxValue,
+                nameof(maximum),
+                "The maximum value must be greater than the minimum value.");
 
             return (decimal)anon.AnyDouble((double)minimum, (double)maximum, distribution);
         }

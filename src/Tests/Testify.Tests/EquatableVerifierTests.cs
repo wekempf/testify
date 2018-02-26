@@ -26,7 +26,8 @@ namespace Testify
             catch (AssertionException e)
             {
                 e.ExpectMessage("EquatableVerifier failed.");
-                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to be equal at index 0. Expected: <1>. Actual: <1>.");
+                e.ExpectInnerAssertion("IEquatable<BrokenEquals>.Equals failed with values expected to be equal at index 0. "
+                    + "Expected: <1>. Actual: <1>.");
                 return;
             }
 
@@ -450,11 +451,7 @@ namespace Testify
             var items = new[] { 1, 2, 3 };
             var verifier = new EquatableVerifier<int>
             {
-                UniqueItemsFactory = () =>
-                {
-                    items = items.Concat(new[] { 1 }).ToArray();
-                    return items;
-                },
+                UniqueItemsFactory = () => items = items.Concat(new[] { 1 }).ToArray(),
             };
 
             try
@@ -485,14 +482,14 @@ namespace Testify
             public static bool operator !=(BrokenEquals left, BrokenObjectEquals right) => !(left == right);
 
             public static bool operator ==(BrokenEquals left, BrokenObjectEquals right) =>
-                object.ReferenceEquals(left, null)
-                    ? object.ReferenceEquals(right, null)
+                left is null
+                    ? right is null
                     : ((object)left).Equals(right);
 
             public override bool Equals(object obj)
             {
                 var other = obj as BrokenEquals;
-                return !object.ReferenceEquals(other, null) && Value == other.Value;
+                return !(other is null) && Value == other.Value;
             }
 
             public bool Equals(BrokenEquals other) => result;
@@ -517,12 +514,12 @@ namespace Testify
             public static bool operator !=(BrokenObjectEquals left, BrokenObjectEquals right) => !(left == right);
 
             public static bool operator ==(BrokenObjectEquals left, BrokenObjectEquals right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public override bool Equals(object obj) => result;
 
             public bool Equals(BrokenObjectEquals other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 
@@ -542,7 +539,7 @@ namespace Testify
             public int Value { get; }
 
             public static bool operator !=(BrokenOpEquality left, BrokenOpEquality right) =>
-                !(object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right));
+                !(left is null ? right is null : left.Equals(right));
 
 #pragma warning disable RCS1163 // Unused parameter.
             public static bool operator ==(BrokenOpEquality left, BrokenOpEquality right) => left.result;
@@ -550,7 +547,7 @@ namespace Testify
 
             public override bool Equals(object obj) => Equals(obj as BrokenOpEquality);
 
-            public bool Equals(BrokenOpEquality other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(BrokenOpEquality other) => !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 
@@ -574,12 +571,12 @@ namespace Testify
 #pragma warning restore RCS1163 // Unused parameter.
 
             public static bool operator ==(BrokenOpInequality left, BrokenOpInequality right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public override bool Equals(object obj) => Equals(obj as BrokenOpInequality);
 
             public bool Equals(BrokenOpInequality other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 
@@ -595,11 +592,11 @@ namespace Testify
             public static bool operator !=(Correct left, Correct right) => !(left == right);
 
             public static bool operator ==(Correct left, Correct right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public override bool Equals(object obj) => Equals(obj as Correct);
 
-            public bool Equals(Correct other) => !object.ReferenceEquals(other, null) && Value == other.Value;
+            public bool Equals(Correct other) => !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 
@@ -615,7 +612,7 @@ namespace Testify
             public override bool Equals(object obj) => Equals(obj as NoEqualityOperators);
 
             public bool Equals(NoEqualityOperators other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 
@@ -631,12 +628,12 @@ namespace Testify
             public static bool operator !=(NoGetHashCodeOverride left, NoGetHashCodeOverride right) => !(left == right);
 
             public static bool operator ==(NoGetHashCodeOverride left, NoGetHashCodeOverride right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public override bool Equals(object obj) => Equals(obj as NoGetHashCodeOverride);
 
             public bool Equals(NoGetHashCodeOverride other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
             public override string ToString() => Value.ToString();
         }
@@ -651,10 +648,10 @@ namespace Testify
                 !(left == right);
 
             public static bool operator ==(NoObjectEqualsOverride left, NoObjectEqualsOverride right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public bool Equals(NoObjectEqualsOverride other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 
@@ -672,12 +669,12 @@ namespace Testify
             public static bool operator !=(UnstableGetHashCode left, UnstableGetHashCode right) => !(left == right);
 
             public static bool operator ==(UnstableGetHashCode left, UnstableGetHashCode right) =>
-                object.ReferenceEquals(left, null) ? object.ReferenceEquals(right, null) : left.Equals(right);
+                left is null ? right is null : left.Equals(right);
 
             public override bool Equals(object obj) => Equals(obj as UnstableGetHashCode);
 
             public bool Equals(UnstableGetHashCode other) =>
-                !object.ReferenceEquals(other, null) && Value == other.Value;
+                !(other is null) && Value == other.Value;
 
             public override int GetHashCode() => hasCode++;
 
