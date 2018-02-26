@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "IZQEgp0rzRgtA2PBPKUjgA=="
+          "hash": "SIiLJlAEhDJ1o1DD1q8QGw=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "NS4yHgLHaaksoPOd5dLoTA=="
+          "hash": "2yfwlzwMf8jdWLiAO2IE7g=="
         }
       },
       "is_incremental": false,
@@ -55,7 +55,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ROTKSo+pWRwwe0wVXXcoAA=="
+          "hash": "HcTGNigEgspyM89IVLuMmg=="
         }
       },
       "is_incremental": false,
@@ -67,7 +67,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/AntiPatterns.html",
-          "hash": "5sbS1iHPucPwqRWKhCrlxA=="
+          "hash": "ERu7foGVW+bD169Vq8Zkaw=="
         }
       },
       "is_incremental": false,
@@ -79,7 +79,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/Assertions.html",
-          "hash": "eJEZ+lHRD8j0LvQCm/455Q=="
+          "hash": "n0IPykMRF3tIx+9vx2zntA=="
         }
       },
       "is_incremental": false,
@@ -91,7 +91,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/BestPractices.html",
-          "hash": "D0c+46m/MtJRtLMuIs7L8Q=="
+          "hash": "+OqxYPy5yrXSYCzA53ENYg=="
         }
       },
       "is_incremental": false,
@@ -103,7 +103,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/ContractVerifiers.html",
-          "hash": "lILlr/vzUWZ5/v0nDCrltQ=="
+          "hash": "TBYwT9QJkob7mdFXJR1kfA=="
         }
       },
       "is_incremental": false,
@@ -115,7 +115,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/GoodUnitTests.html",
-          "hash": "sfaX9VIQKat2FWLJvV06Mw=="
+          "hash": "ulEF7Wbah8TsRKlCGpwIXw=="
         }
       },
       "is_incremental": false,
@@ -127,7 +127,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/UsingAnonymousData.html",
-          "hash": "Q3cMsSJ6s9a7Wip0BsysHA=="
+          "hash": "nhBD/XqPjoQxrwfRUKg41Q=="
         }
       },
       "is_incremental": false,
@@ -139,7 +139,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/WhyUnitTest.html",
-          "hash": "xcY+i8F9cxaX4pKz9+JplA=="
+          "hash": "PyN1vIKun1zmEmlwwySXoQ=="
         }
       },
       "is_incremental": false,
@@ -151,7 +151,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/intro.html",
-          "hash": "aMSnKOdu1efDAQYcldTE1g=="
+          "hash": "NnoYsBTbdTCaqdq7dctpZw=="
         }
       },
       "is_incremental": false,

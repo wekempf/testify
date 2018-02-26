@@ -103,13 +103,13 @@ namespace Examples.UsingAnonymousData
         [Fact]
         public void IndexOf_ItemInList_ShouldReturnIndex()
         {
-            var item = 10;
+            const int item = 10;
             var anon = new AnonymousData();
             var front = anon.AnyEnumerable&lt;int&gt;().ToArray();
             var back = anon.AnyEnumerable&lt;int&gt;().ToArray();
             var list = new List&lt;int&gt;(front)
             {
-                item
+                item,
             };
             list.AddRange(back);
 
@@ -196,21 +196,30 @@ namespace Examples.UsingAnonymousData
     {
         public static Person AnyFemalePerson(this AnonymousData anon)
         {
-            if (anon == null) throw new ArgumentNullException(nameof(anon));
+            if (anon == null)
+            {
+                throw new ArgumentNullException(nameof(anon));
+            }
 
             return new Person(anon.AnyFirstName(false), anon.AnySurname());
         }
 
         public static Person AnyMalePerson(this AnonymousData anon)
         {
-            if (anon == null) throw new ArgumentNullException(nameof(anon));
+            if (anon == null)
+            {
+                throw new ArgumentNullException(nameof(anon));
+            }
 
             return new Person(anon.AnyFirstName(true), anon.AnySurname());
         }
 
         public static Person AnyPerson(this AnonymousData anon)
         {
-            if (anon == null) throw new ArgumentNullException(nameof(anon));
+            if (anon == null)
+            {
+                throw new ArgumentNullException(nameof(anon));
+            }
 
             return new Person(anon.AnyFirstName(), anon.AnySurname());
         }
@@ -267,7 +276,7 @@ namespace Examples.UsingAnonymousData
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/UsingAnonymousData.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/wekempf/testify/blob/master/docs/manual/UsingAnonymousData.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

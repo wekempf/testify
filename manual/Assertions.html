@@ -148,13 +148,21 @@ namespace Examples.Assertions
     {
         public static void IsLower(this ActualValue&lt;string&gt; actual)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             actual.IsLower(null, null);
         }
 
         public static void IsLower(this ActualValue&lt;string&gt; actual, string message)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             actual.IsLower(message, null);
         }
 
@@ -163,7 +171,11 @@ namespace Examples.Assertions
             string message,
             params object[] args)
         {
-            if (actual == null) throw new ArgumentNullException(nameof(actual));
+            if (actual == null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
             if (!actual.Value.All(c =&gt; !char.IsLetter(c) || char.IsLower(c)))
             {
                 Throw(
@@ -180,7 +192,7 @@ namespace Examples.Assertions
         [Fact]
         public void String_ToLower_ShouldReturnLowercaseString()
         {
-            var original = &quot;The Quick Brown Fox&quot;;
+            const string original = &quot;The Quick Brown Fox&quot;;
 
             var result = original.ToLower();
 
@@ -214,7 +226,7 @@ is also how contract verifiers can run multiple tests and report all of the fail
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wekempf/testify/blob/develop/docs/manual/Assertions.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/wekempf/testify/blob/master/docs/manual/Assertions.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
