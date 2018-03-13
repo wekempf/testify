@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "HZY6CFxDxiTR87X6uKwYPg=="
+          "hash": "lZl3oJ9gVYVczYBCc+GS6A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "6ezR5HLBCXmkSCjt8T/IHg=="
+          "hash": "dkr36p0cWFDsyAtsMhK5VQ=="
         }
       },
       "is_incremental": false,
@@ -55,10 +55,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "H61Cn2ORTB+FJdACndT6Vg=="
+          "hash": "qKOfCAP44i2OF04SKnUp8g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -67,10 +67,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/AntiPatterns.html",
-          "hash": "a6NDay1OZdED6u0tZGnTrQ=="
+          "hash": "CuMGvpJDCGH2uWN4hlU6Gw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -79,10 +79,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/Assertions.html",
-          "hash": "MmRclY8ioUSWniY4K2unIg=="
+          "hash": "eh5xtSnkpD0K0VtMdcRb/Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -91,10 +91,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/BestPractices.html",
-          "hash": "/bAwKEu01IoZJ2rNZ8r7WQ=="
+          "hash": "HOKjV+goCv+lV1sZq6F3LQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -103,10 +103,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/ContractVerifiers.html",
-          "hash": "UZ3KmxAVm10b+qsRP2k10Q=="
+          "hash": "QfW6f4UTbmGv9VPSe8zI7Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -115,10 +115,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/GoodUnitTests.html",
-          "hash": "fhq96CBGc5woQRkOllJXJw=="
+          "hash": "6cesN7g0i3Yzfib7bV18yw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -127,10 +127,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/UsingAnonymousData.html",
-          "hash": "EbzuqPj8rVaiks0UzwvS6g=="
+          "hash": "65VdDkFtQAL8YX1LZAig2g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -139,10 +139,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/WhyUnitTest.html",
-          "hash": "yPXtQhB6iPFXZ4p4qatqjA=="
+          "hash": "VxQ1mteU8+x6oQI3YkPPVg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -151,10 +151,10 @@
       "output": {
         ".html": {
           "relative_path": "manual/intro.html",
-          "hash": "DcgSmTzy8bUWMxYD8YsTtg=="
+          "hash": "iR9Gsii8D9oqvFMs3WhD8g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -163,7 +163,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "1RXw8I+Lvjjw19bSenOnvQ=="
+          "hash": "Pbr1EkL66OhHw6WDedhcUw=="
         }
       },
       "is_incremental": false,
@@ -175,7 +175,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "qmQDMVpIHrfkPohpFgmXeg=="
+          "hash": "TkmHX0KDaF/iv9oeFedEtA=="
         }
       },
       "is_incremental": false,
@@ -185,7 +185,8 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build"
       },
       "processors": {
@@ -194,21 +195,21 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}
