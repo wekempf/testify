@@ -224,6 +224,17 @@ namespace Testify
         }
 
         [Fact]
+        public void Verify_CorrectValueType_ShouldNotThrow()
+        {
+            var verifier = new EquatableVerifier<CorrectValueType>
+            {
+                UniqueItemsFactory = () => new[] { new CorrectValueType(1), new CorrectValueType(2), new CorrectValueType(3), },
+            };
+
+            verifier.Verify();
+        }
+
+        [Fact]
         public void Verify_Correct_ShouldNotThrow()
         {
             var verifier = new EquatableVerifier<Correct>
@@ -597,6 +608,25 @@ namespace Testify
             public override bool Equals(object obj) => Equals(obj as Correct);
 
             public bool Equals(Correct other) => !(other is null) && Value == other.Value;
+
+            public override int GetHashCode() => Value.GetHashCode();
+
+            public override string ToString() => Value.ToString();
+        }
+
+        private struct CorrectValueType : IEquatable<CorrectValueType>
+        {
+            public CorrectValueType(int value) => Value = value;
+
+            public int Value { get; }
+
+            public static bool operator !=(CorrectValueType left, CorrectValueType right) => !(left == right);
+
+            public static bool operator ==(CorrectValueType left, CorrectValueType right) => left.Equals(right);
+
+            public override bool Equals(object obj) => obj is CorrectValueType other && Equals(other);
+
+            public bool Equals(CorrectValueType other) => Value == other.Value;
 
             public override int GetHashCode() => Value.GetHashCode();
 

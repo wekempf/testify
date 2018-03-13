@@ -13,8 +13,8 @@ namespace Testify
     internal class EqualityTests<T>
             where T : IEquatable<T>
     {
-        private static readonly Func<T, int> GetHashCodeFunc;
-        private static readonly Func<T, object, bool> ObjectEqualsFunc;
+        private static readonly MethodInfo GetHashCodeFunc;
+        private static readonly MethodInfo ObjectEqualsFunc;
         private static readonly Func<T, T, bool> OpEqualityFunc;
         private static readonly Func<T, T, bool> OpInequalityFunc;
 
@@ -28,14 +28,14 @@ namespace Testify
                         && !m.IsStatic
                         && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new Type[0]))
                     .OnlyOrDefault();
-                GetHashCodeFunc = method?.CreateFunc<T, int>();
+                GetHashCodeFunc = method;
 
                 method = typeInfo.DeclaredMethods
                     .Where(m => m.Name == nameof(Equals)
                         && !m.IsStatic
                         && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] { typeof(object) }))
                     .OnlyOrDefault();
-                ObjectEqualsFunc = method?.CreateFunc<T, object, bool>();
+                ObjectEqualsFunc = method;
 
                 method = typeInfo.DeclaredMethods
                     .Where(m => m.Name == "op_Equality"
