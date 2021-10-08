@@ -1,0 +1,1 @@
+[!code-csharp[CompoundAssertion](../../../samples/Samples/CompoundAssertion.cs#compoundassertion)]

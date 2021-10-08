@@ -1,0 +1,1 @@
+[!code-csharp[CustomAssertion](../../../samples/Samples/CustomAssertion.cs#customassertion)]

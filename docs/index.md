@@ -20,10 +20,9 @@ This is a breaking version change that requires .NET 6 or newer. For more inform
     Install-Package Testify
     ```
 
-1. In a unit test source file add the following using statements.
+1. Add a `Usings.cs` file add the following using statements.
 
-    [!code-csharp[Inclusion](..\src\Examples\Testify.Examples\Inclusion.cs#L1-L2)]
-
+    [!Include[ExampleInclusion](articles/examples/inclusion.md)]
 
 1. In a unit test use the fluent syntax for declaring assertions, noting the rich IntelliSense support.
 

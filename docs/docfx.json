@@ -3,6 +3,7 @@
     {
       "src": [
         {
+          "src": "..",
           "files": [
             "src/**.csproj"
           ]
@@ -49,11 +50,11 @@
       }
     ],
     "dest": "_site",
+    "globalMetadata": {
+    },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
-    "template": [
-      "default"
-    ],
+    "template": ["default"],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,

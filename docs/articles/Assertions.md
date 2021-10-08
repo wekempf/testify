@@ -8,12 +8,7 @@ Assertions are a corner stone of any unit test framework. Testify provides a fra
 
 To use Testify assertions add the following to a `Usings.cs` (or other file used to declare global usings) in your unit test library.
 
-[!code-csharp[Inclusion](..\..\src\Examples\Testify.Examples\Inclusion.cs#L1-L2)]
-
-```csharp
-global using Testify;
-global using static Testify.Assertions;
-```
+[!include[ExampleInclusion](examples/inclusion.md)]
 
 > [!IMPORTANT]
 > The static using for `Testify.Assertions` allows you to use the static methods on the `Testify.Assertions` class without having to include the class name on every call. If you prefer to not use static usings you can either fully specify the call, or add an `Assert` helper method to your unit test class, possibly through a base class.
@@ -29,10 +24,7 @@ Testify also supports the concept of a compound assertion. A compound assertion 
 
 Here's an example of a compound assertion.
 
-[!code-csharp[Compound Assertion](..\..\src\Examples\Testify.Examples\Assertions\CompoundExample.cs)]
-
-> [!NOTE]
-> It's always a good idea to include assertion messages, but it's even more important when composing compound logical assertions using `AssertAll`. Failing to do so is very likely to result in test failure messages that are difficult to understand.
+[!include[ExampleCompoundAssertion](examples/compound_assertion.md)]
 
 ## Custom Assertions
 
@@ -43,7 +35,7 @@ It's easy to add assertions when using Testify. `Assertions.Assert` returns an `
 
 Here's an example of a custom assertion.
 
-[!code-csharp[Custom Assertion](..\..\src\Examples\Testify.Examples\Assertions\CustomAssertionExample.cs)]
+[!include[ExampleCustomAssertion](examples/custom_assertion.md)]
 
 > [!NOTE]
 > Custom assertions, like the assertions provided by Testify, should include overloads with and without a user message and user arguments. The example above shows the full overload and not the simpler overloads that should exist as well.

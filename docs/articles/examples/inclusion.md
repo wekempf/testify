@@ -1,0 +1,1 @@
+[!code-csharp[Inclusion](../../../samples/Samples/Usings.cs#inclusion)]
