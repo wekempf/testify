@@ -215,6 +215,7 @@ namespace Testify
             if (double.IsInfinity(maximum - minimum))
             {
                 throw new ArgumentOutOfRangeException(
+                    nameof(minimum),
                     $"The range of {nameof(maximum)} - {nameof(minimum)} is Infinity.");
             }
 

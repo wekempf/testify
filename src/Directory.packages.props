@@ -1,0 +1,13 @@
+<Project>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageVersion Include="System.ValueTuple" Version="4.5.0" />
+    <PackageVersion Include="xunit" Version="2.5.1" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.1" />
+    <PackageVersion Include="StyleCop.Analyzers" Version="1.1.0-beta006" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.0" />
+    <PackageVersion Include="Roslynator.Analyzers" Version="1.7.0" />
+    <PackageVersion Include="xunit.analyzers" Version="0.8.0" PrivateAssets="all" />
+    <PackageVersion Include="Moq" Version="4.7.99" />
+  </ItemGroup>
+</Project>

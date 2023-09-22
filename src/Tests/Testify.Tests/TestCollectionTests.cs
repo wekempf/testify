@@ -42,8 +42,8 @@ namespace Testify.Tests
         public void Run_PassingAsyncTests_ShouldNotThrow()
         {
             var tests = new TestCollection();
-            tests.AddTest("Test1", async () => await Task.Delay(1).ConfigureAwait(false));
-            tests.AddTest("Test2", async () => await Task.Delay(1).ConfigureAwait(false));
+            tests.AddTest("Test1", async () => await Task.Delay(1));
+            tests.AddTest("Test2", async () => await Task.Delay(1));
 
             tests.RunTests("MyTests");
         }
@@ -52,10 +52,10 @@ namespace Testify.Tests
         public void Run_OneFailingAsyncTest_ShouldThrow()
         {
             var tests = new TestCollection();
-            tests.AddTest("Test1", async () => await Task.Delay(1).ConfigureAwait(false));
+            tests.AddTest("Test1", async () => await Task.Delay(1));
             tests.AddTest("Test2", async () =>
             {
-                await Task.Delay(1).ConfigureAwait(false);
+                await Task.Delay(1);
                 throw new AssertionException("xyzzy");
             });
 
