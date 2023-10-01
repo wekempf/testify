@@ -1,0 +1,8 @@
+<Project>
+  <Import Project="..\..\Directory.build.props" />
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Testify.Tests.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <Authors>William E. Kempf</Authors>
+    <Company>William E. Kempf</Company>
+    <Copyright>Copyright © William E. Kempf</Copyright>
+    <PackageProjectUrl>http://wekempf.github.io/testify/</PackageProjectUrl>
+    <PackageIcon>gavel_icon-64x64.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>git@github.com:wekempf/testify.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>test, unit, testing, TDD, AAA, assert, assertion, factory, verifier</PackageTags>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/src/Testify.ruleset</CodeAnalysisRuleSet>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>    
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../docs/images/gavel_icon-64x64.png" Pack="true" PackagePath=""/>
+    <None Include="../../LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
+</Project>

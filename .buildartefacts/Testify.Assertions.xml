@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Testify.Assertions</name>
+    </assembly>
+    <members>
+        <member name="T:Testify.ActualValue`1">
+            <summary>
+            Represents a record that holds actual value for an assertion and the
+            expression for it.
+            </summary>
+            <typeparam name="T">The type of the actual value.</typeparam>
+        </member>
+        <member name="M:Testify.ActualValue`1.#ctor(`0,System.String)">
+            <summary>
+            Represents a record that holds actual value for an assertion and the
+            expression for it.
+            </summary>
+            <typeparam name="T">The type of the actual value.</typeparam>
+        </member>
+        <member name="M:Testify.ActualValue`1.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:Testify.ActualValue`1.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Testify.Assertion">
+            <summary>
+            Provides methods used to start an assertion or for use within an assertion
+            implementation.
+            </summary>
+        </member>
+        <member name="M:Testify.Assertion.BecauseHole">
+            <remarks>
+            Pattern explanation:<br/>
+            <code>
+            ○ Match the string "{because}".<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Testify.Assertion.Assert``1(``0,System.String)">
+            <summary>
+            Begins a fluent assertion by providing the actual value being asserted
+            on.
+            </summary>
+            <typeparam name="T">The type of the actual value.</typeparam>
+            <param name="value">The actual value.</param>
+            <param name="expression">The expression used when providing the actual
+                value.</param>
+            <returns>An <see cref="T:Testify.ActualValue`1"/> instance representing the
+                actual value being asserted on.</returns>
+        </member>
+        <member name="M:Testify.Assertion.Assert(System.Action,System.String)">
+            <summary>
+            Begins a fluent assertion by providing an <see cref="T:System.Action"/> as the
+            value being asserted on.
+            </summary>
+            <param name="action">The <see cref="T:System.Action"/> for the actual value.
+                </param>
+            <param name="expression">The expression used when providing the action.
+                </param>
+            <returns>An <see cref="T:Testify.ActualValue`1"/> instance representing the
+                actual value being asserted on.</returns>
+        </member>
+        <member name="M:Testify.Assertion.Assert(System.String,System.Action)">
+            <summary>
+            Makes a "compound assertion" that fails with the specified message if any
+            wrapped assertions fail.
+            </summary>
+            <param name="message">The assertion failure message to report if any
+                wrapped assertions fail.</param>
+            <param name="assertions">The <see cref="T:System.Action"/> to invoke which makes
+                assertions to be wrapped in the "compound assertions".</param>
+            <remarks>
+            This is a very low level assertion generally used in the implementation
+            of other "compound assertions" and not made directly within tests. The
+            behavior of assertions are temporarily changed within the scope of the
+            invoked <paramref name="assertions"/> to combine assertion failures,
+            rather than to immediately throw them. This allows multiple assertions
+            to be combined into a single assertion with a meaningful failure
+            message. Note that only assertion methods within <b>Testify</b> will be
+            combined this way, and any other exceptions thrown within the
+            <paramref name="assertions"/> will cause an immediate test failure.
+            </remarks>
+        </member>
+        <member name="M:Testify.Assertion.ShouldSatisfy``1(Testify.ActualValue{``0},System.Action{Testify.ActualValue{``0}})">
+            <summary>
+            Asserts that the <paramref name="actual"/> value should satisfy all of
+            the assertions made when invoking <paramref name="assertions"/>.
+            </summary>
+            <typeparam name="T">The type of the actual value being asserted on.
+                </typeparam>
+            <param name="actual">The actual value being asserted on.</param>
+            <param name="assertions">An <see cref="T:System.Action`1"/> that makes multiple
+                assertions on the <paramref name="actual"/> value.</param>
+        </member>
+        <member name="M:Testify.Assertion.Fail(System.String,System.String)">
+            <summary>
+            Generates a test platform specific failure exception. If the test
+            platform cannot be determined then raises the non-platform specific
+            <see cref="T:Testify.AssertionException"/>.
+            </summary>
+            <param name="message">The assertion message, including the "{because}"
+                hole used to format the user specified reason for the failure.
+                </param>
+            <param name="because">The user specified reason for the failure.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="T:Testify.AssertionException">
+            <summary>
+            Represents assertion failures that occur during test execution.
+            </summary>
+            <remarks>
+            This is the exception type thrown by assertions in the <b>Testify</b>
+            framework when no unit test framework can be detected.
+            </remarks>
+        </member>
+        <member name="M:Testify.AssertionException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Testify.AssertionException"/>
+            class.
+            </summary>
+        </member>
+        <member name="M:Testify.AssertionException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Testify.AssertionException"/> class
+            with a specified failure message.
+            </summary>
+            <param name="message">The message that describes the reason for an
+                assertion failure.</param>
+        </member>
+        <member name="M:Testify.AssertionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Testify.AssertionException"/> class
+            with a specified failure message and a reference to the inner exception
+            that is the cause of this exception.
+            </summary>
+            <param name="message">The message that describes the reason for an
+                assertion failure.</param>
+            <param name="inner">The exception that is the cause of the current
+                exception, or a <see langword="null"/> reference if no inner
+                exception is specified.</param>
+        </member>
+        <member name="M:Testify.AssertionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Testify.AssertionException"/> class
+            with serialized data.
+            </summary>
+            <param name="info">The
+                <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that
+                holds the serialized object data about the exception being thrown.
+                </param>
+            <param name="context">The
+                <see cref="T:System.Runtime.Serialization.StreamingContext"/> that
+                contains contextual information about the source or destination.
+                </param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="info"/> is
+                <see langword="null"/>.</exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is
+                <see langword="null"/> or <see cref="P:System.Exception.HResult"/> is zero
+                (0).</exception>
+        </member>
+        <member name="T:Testify.BooleanAssertions">
+            <summary>
+            Provides fluent assertions for <see cref="T:System.Boolean"/> values.
+            </summary>
+        </member>
+        <member name="M:Testify.BooleanAssertions.ShouldBeTrue(Testify.ActualValue{System.Boolean},System.String)">
+            <summary>
+            Asserts that the <paramref name="actual"/> value should be
+            <see langword="true"/>.
+            </summary>
+            <param name="actual">The <see cref="T:Testify.ActualValue`1"/> instance that
+                represents the actual value being asserted on.</param>
+            <param name="because">The user supplied "because phrase" describing why
+                the assertion is being made.</param>
+        </member>
+        <member name="M:Testify.BooleanAssertions.ShouldBeFalse(Testify.ActualValue{System.Boolean},System.String)">
+            <summary>
+            Asserts that the <paramref name="actual"/> value should be
+            <see langword="false"/>.
+            </summary>
+            <param name="actual">The <see cref="T:Testify.ActualValue`1"/> instance that
+                represents the actual value being asserted on.</param>
+            <param name="because">The user supplied "because phrase" describing why
+                the assertion is being made.</param>
+        </member>
+        <member name="T:Testify.ExceptionAssertions">
+            <summary>
+            Provides fluent assertions for exceptions.
+            </summary>
+        </member>
+        <member name="M:Testify.ExceptionAssertions.ShouldThrow(Testify.ActualValue{System.Action},System.String)">
+            <summary>
+            Asserts that the action, when invoked, should throw an <see cref="T:System.Exception"/>.
+            </summary>
+            <param name="actual">The <see cref="T:Testify.ActualValue`1"/> instance that
+                represents the actual value being asserted on.</param>
+            <param name="because">The user supplied "because phrase" describing why
+                the assertion is being made.</param>
+            <returns>An <see cref="T:Testify.ExceptionAssertions.IAdditionalThrowAssertions`1"/> instance which
+                can be used to make additional assertions about the exception
+                thrown.</returns>
+        </member>
+        <member name="M:Testify.ExceptionAssertions.ShouldThrow``1(Testify.ActualValue{System.Action},System.String)">
+            <summary>
+            Asserts that the action, when called, should throw the specified
+            exception type.
+            </summary>
+            <typeparam name="T">The exception type expected to be thrown.
+                </typeparam>
+            <param name="actual">The <see cref="T:Testify.ActualValue`1"/> instance that
+                represents the actual value being asserted on.</param>
+            <param name="because">The user supplied "because phrase" describing why
+                the assertion is being made.</param>
+            <returns>An <see cref="T:Testify.ExceptionAssertions.IAdditionalThrowAssertions`1"/> instance which
+                can be used to make additional assertions about the exception
+                thrown.</returns>
+        </member>
+        <member name="M:Testify.ExceptionAssertions.ShouldNotThrow(Testify.ActualValue{System.Action},System.String)">
+            <summary>
+            Asserts that the action, when invoked, should not throw any exceptions.
+            </summary>
+            <param name="actual">The <see cref="T:Testify.ActualValue`1"/> instance that
+                represents the actual value being asserted on.</param>
+            <param name="because">The user supplied "because phrase" describing why
+                the assertion is being made.</param>
+            <remarks>
+            This assertion isn't strictly needed as code that throws will fail a
+            test. However, using
+            <see cref="M:Testify.ExceptionAssertions.ShouldNotThrow(Testify.ActualValue{System.Action},System.String)"/> does a better
+            job describing the intent of the test code, as well as provides a better
+            test failure message.
+            </remarks>
+        </member>
+        <member name="M:Testify.ExceptionAssertions.ShouldNotThrow``1(Testify.ActualValue{System.Action},System.String)">
+            <summary>
+            Asserts the <see cref="T:System.Action"/>, when invoked, should not throw the
+            specified exception type.
+            </summary>
+            <typeparam name="T">The exception type not expected to be thrown.
+                </typeparam>
+            <param name="actual">The <see cref="T:Testify.ActualValue`1"/> instance that
+                represents the actual value being asserted on.</param>
+            <param name="because">The user supplied "because phrase" describing why
+                the assertion is being made.</param>
+            <remarks>
+            This assertion isn't strictly needed as code that throws will fail a
+            test. However, using
+            <see cref="M:Testify.ExceptionAssertions.ShouldNotThrow(Testify.ActualValue{System.Action},System.String)"/> does a better
+            job describing the intent of the test code, as well as provides a better
+            test failure message.
+            </remarks>
+        </member>
+        <member name="T:Testify.ExceptionAssertions.IAdditionalThrowAssertions`1">
+            <summary>
+            Result from throw assertions that provides fluent method for making
+            additional assertions about the exception thrown.
+            </summary>
+            <typeparam name="T">The exception type.</typeparam>
+        </member>
+        <member name="M:Testify.ExceptionAssertions.IAdditionalThrowAssertions`1.AndShouldSatisfy(System.Action{Testify.ActualValue{`0}})">
+            <summary>
+            Called to provide additional assertions about the exception that was
+            thrown.
+            </summary>
+            <param name="action">The action called to make additional assertions
+                about the exception that was thrown.</param>
+        </member>
+        <member name="T:Testify.Formatting.Formatter">
+            <summary>
+            Provides methods to help with formatting of assertion failure messages.
+            </summary>
+        </member>
+        <member name="M:Testify.Formatting.Formatter.Format(System.Object,System.String)">
+            <summary>
+            Formats the specified value in a manner appropriate for assertion
+            failure messages.
+            </summary>
+            <param name="value">The value to format.</param>
+            <param name="expression">The caller expression provided for the value.
+                </param>
+            <returns>A formatted representation of the <paramref name="value"/> and
+                <paramref name="expression"/>.</returns>
+            <remarks>
+            Several types and values are formatted to provide better assertion
+            messages. You can extend special formatting to other types (TODO).
+            </remarks>
+        </member>
+        <member name="M:Testify.Formatting.Formatter.FormatExpression(System.String)">
+            <summary>
+            Formats the specified caller expression.
+            </summary>
+            <param name="expression">The caller expression.</param>
+            <returns>The formatted caller expression.</returns>
+        </member>
+        <member name="T:Testify.Formatting.IValueFormatter">
+            <summary>
+            Provides a mechanism for controlling the formatting of values in assertion
+            failure messages.
+            </summary>
+        </member>
+        <member name="M:Testify.Formatting.IValueFormatter.CanFormat(System.Object)">
+            <summary>
+            Determines whether this instance can format the specified
+            <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be formatted.</param>
+            <returns><c>true</c> if this instance can format the specified value;
+                otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Testify.Formatting.IValueFormatter.Format(System.Object)">
+            <summary>
+            Formats the specified <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be formatted.</param>
+            <returns>The formatted string representation for the
+                <paramref name="value"/>.</returns>
+        </member>
+        <member name="T:Testify.Formatting.ValueFormatter`1">
+            <summary>
+            Base class for <see cref="T:Testify.Formatting.IValueFormatter"/> types that can format the specified <typeparamref name="T"/> type.
+            </summary>
+            <typeparam name="T">The type to format.</typeparam>
+            <seealso cref="T:Testify.Formatting.IValueFormatter" />
+        </member>
+        <member name="M:Testify.Formatting.ValueFormatter`1.CanFormat(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Testify.Formatting.ValueFormatter`1.Format(`0)">
+            <summary>
+            Formats the specified <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be formatted.</param>
+            <returns>The formatted string representation for the
+                <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:Testify.Formatting.ValueFormatter`1.Testify#Formatting#IValueFormatter#Format(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.BecauseHole_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the BecauseHole method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.BecauseHole_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.BecauseHole_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.BecauseHole_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.BecauseHole_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.BecauseHole_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.BecauseHole_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.BecauseHole_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+    </members>
+</doc>

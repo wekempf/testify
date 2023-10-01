@@ -62,7 +62,6 @@ namespace Testify
         {
         }
 
-        [SuppressMessage("Rolynator", "RCS1213", Justification = "This is used by DebuggerDisplay.")]
         private int InnerExceptionCount => InnerExceptions.Count;
     }
 }
