@@ -240,3 +240,4 @@ _Pvt_Extensions
 docs/site.zip
 tools/
 environment.ps1
+.buildtools/
