@@ -48,9 +48,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F33DA26-515
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Assertions", "src\Testify.Assertions\Testify.Assertions.csproj", "{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{38F9FCA7-EB52-400C-B9B9-8376AAB80C0F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{38F9FCA7-EB52-400C-B9B9-8376AAB80C0F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Assertions.Tests", "src\tests\Testify.Assertions.Tests\Testify.Assertions.Tests.csproj", "{AC504586-CB6A-4355-84D4-D18BD2B76838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Assertions.Tests", "src\Tests\Testify.Assertions.Tests\Testify.Assertions.Tests.csproj", "{AC504586-CB6A-4355-84D4-D18BD2B76838}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.xUnit.Traits", "src\Testify.xUnit.Traits\Testify.xUnit.Traits.csproj", "{E08C2037-1FF1-486D-BA93-956605D7007A}"
 EndProject

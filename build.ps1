@@ -40,16 +40,20 @@ Set-BuildFooter {
     Section DarkYellow "Done $Path, $($Task.Elapsed)"
 }
 
+task update {
+    exec -Echo { dotnet restore Testify.sln --no-cache --force --verbosity quiet }
+}
+
 task restore {
-    dotnet restore Testify.sln --no-cache --force --verbosity quiet
+    exec -Echo { dotnet restore Testify.sln --locked-mode --no-cache --force --verbosity quiet }
 }
 
 task build restore, {
-    dotnet build Testify.sln -c Release --no-restore --nologo
+    exec -Echo { dotnet build Testify.sln -c Release --no-restore --nologo }
 }
 
 task test build, {
-    dotnet test Testify.sln -c Release --no-build --no-restore --nologo
+    exec -Echo { dotnet test Testify.sln -c Release --no-build --no-restore --nologo }
 }
 
 # Synopsis: Default build task.

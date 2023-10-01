@@ -1,9 +1,19 @@
-function Verbose($Message) {
+function Test-BuildServer {
     if ($env:GITHUB_ACTIONS) {
-        Write-Output "::debug::$Message"
+        return 'github'
     }
-    else {
-        Write-Verbose $Message
+
+    return $null
+}
+
+function Verbose($Message) {
+    switch (Test-BuildServer) {
+        'github' {
+            Write-Output "::debug::$Message"
+        }
+        default {
+            Write-Verbose $Message
+        }
     }
 }
 
@@ -16,19 +26,23 @@ function Info($Message) {
 }
 
 function Warning($Message) {
-    if ($env:GITHUB_ACTIONS) {
-        Write-Output "::warning::$Message"
-    }
-    else {
-        Write-Build Yellow $Message
+    switch (Test-BuildServer) {
+        'github' {
+            Write-Output "::warning::$Message"
+        }
+        default {
+            Write-Build Yellow $Message
+        }
     }
 }
 
-function Error($Message) {
-    if ($env:GITHUB_ACTIONS) {
-        Write-Output "::error::$Message"
-    }
-    else {
-        Write-Build Red $Message
+function Err($Message) {
+    switch (Test-BuildServer) {
+        'github' {
+            Write-Output "::error::$Message"
+        }
+        default {
+            Write-Build Red $Message
+        }
     }
 }
