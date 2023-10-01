@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{469F900E-5D25-4CD0-A0CC-A255131F2D8F}"
 	ProjectSection(SolutionItems) = preProject
@@ -44,6 +44,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Moq.Tests", "src\Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Examples", "src\Examples\Testify.Examples\Testify.Examples.csproj", "{D0F601A2-DB9F-4BFE-88FE-8035D5130980}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F33DA26-5155-4499-A990-5042CB725506}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Assertions", "src\Testify.Assertions\Testify.Assertions.csproj", "{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{38F9FCA7-EB52-400C-B9B9-8376AAB80C0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testify.Assertions.Tests", "src\tests\Testify.Assertions.Tests\Testify.Assertions.Tests.csproj", "{AC504586-CB6A-4355-84D4-D18BD2B76838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testify.xUnit.Traits", "src\Testify.xUnit.Traits\Testify.xUnit.Traits.csproj", "{E08C2037-1FF1-486D-BA93-956605D7007A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +80,18 @@ Global
 		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F601A2-DB9F-4BFE-88FE-8035D5130980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC504586-CB6A-4355-84D4-D18BD2B76838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC504586-CB6A-4355-84D4-D18BD2B76838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC504586-CB6A-4355-84D4-D18BD2B76838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC504586-CB6A-4355-84D4-D18BD2B76838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08C2037-1FF1-486D-BA93-956605D7007A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08C2037-1FF1-486D-BA93-956605D7007A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08C2037-1FF1-486D-BA93-956605D7007A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08C2037-1FF1-486D-BA93-956605D7007A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +100,10 @@ Global
 		{0E1E52AC-741D-4A4B-AB6A-BFE5AB44BF86} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
 		{64174681-1570-45E3-9965-18433F644EEC} = {469F900E-5D25-4CD0-A0CC-A255131F2D8F}
 		{D0F601A2-DB9F-4BFE-88FE-8035D5130980} = {7F5EBA53-F3CE-42E8-AE96-35588E0EB67B}
+		{5D45EAD5-5694-44A9-9BC5-E8D4EC223C72} = {5F33DA26-5155-4499-A990-5042CB725506}
+		{38F9FCA7-EB52-400C-B9B9-8376AAB80C0F} = {5F33DA26-5155-4499-A990-5042CB725506}
+		{AC504586-CB6A-4355-84D4-D18BD2B76838} = {38F9FCA7-EB52-400C-B9B9-8376AAB80C0F}
+		{E08C2037-1FF1-486D-BA93-956605D7007A} = {5F33DA26-5155-4499-A990-5042CB725506}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {796564D4-DAEC-4717-ADD8-43C0947B2BBE}
