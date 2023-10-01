@@ -10,7 +10,7 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>test, unit, testing, TDD, AAA, assert, assertion, factory, verifier</PackageTags>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)Testify.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/src/Testify.ruleset</CodeAnalysisRuleSet>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>    
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
