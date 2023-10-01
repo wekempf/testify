@@ -12,8 +12,7 @@ jobs:
           # Semantic version range syntax or exact version of a dotnet version
           dotnet-version: '7.0.400'
       - name: Build
-        shell: pwsh
-        run: ./build.ps1 -Task Test
+        run: ./build.ps1 -Task Test 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
